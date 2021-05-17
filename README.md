@@ -8,7 +8,7 @@ Vous devez avoir yarn installé sur votre machine.
 
 ```bash
 git clone https://github.com/betagouv/ellesfontlaphoto.git
-cd tutorat-betagouv
+cd ellesfontlaphoto
 yarn add
 yarn start
 
