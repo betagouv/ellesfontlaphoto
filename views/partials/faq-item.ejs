@@ -1,0 +1,15 @@
+<li>
+    <section class="rf-accordion">
+        <h3 class="rf-accordion__title">
+            <button class="rf-accordion__btn" aria-expanded="false" aria-controls="accordion-<%= id %>"
+                aria-expanded="false">
+                <%= question %>
+            </button>
+        </h3>
+        <div class="rf-collapse" id="accordion-<%= id %>">
+            <div class="rf-accordion__inner">
+                <p class="rf-mb-1v"><%- response %></p>
+            </div>
+        </div>
+    </section>
+</li>
