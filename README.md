@@ -1,19 +1,16 @@
-# Tutorat pour les élèves des Prépas Talents | https://www.tutorat.fonction-publique.gouv.fr/
-
-## Lancer en prod
-Ce repo contient tout ce qu'il faut pour tourner sur Scalingo. Il suffit de déployer la branche main sur votre instance Scalingo.
-
-Le deploiement sur scalingo se base sur le fichier [`Procfile`](https://doc.scalingo.com/platform/app/procfile)
+# Elles font la Culture
+https://ellesfontlaphoto.herokuapp.com/
+Rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais sous-représentées dans le secteur, en commençant par la photographie
 
 
 ## Lancer ce site localement
-Vous devez avoir npm installé sur votre machine.
+Vous devez avoir yarn installé sur votre machine.
 
 ```bash
-git clone https://github.com/betagouv/tutorat-betagouv.git
+git clone https://github.com/betagouv/ellesfontlaphoto.git
 cd tutorat-betagouv
-npm install
-npm start
+yarn add
+yarn start
 
 # http://localhost:8000 is ready 
 ```
@@ -22,6 +19,6 @@ npm start
 Pour lancer les tests
 ```bash
 # start tests
-npm test
+yarn run test
 ```
 
