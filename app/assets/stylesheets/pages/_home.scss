@@ -1,0 +1,260 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+/*----------------------------------------*/
+/*COMMON*/
+
+h1 {
+  display: inline-block;
+  max-width: 1200px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Marianne-ExtraBold', sans-serif;
+  font-size: 60px;
+  line-height: 74px;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Marianne', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.question-subtitle {
+  padding-top: 0px;
+  opacity: 0.6;
+  font-family: 'Marianne', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Marianne', sans-serif;
+  font-weight: 400;
+  white-space: normal;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.paragraphe {
+  font-family: 'Marianne', sans-serif;
+}
+
+.main-paragraphe {
+  font-family: 'Marianne', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.paragraphe-quote {
+  font-family: "Marianne-Regular_Italic", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-left: 50px;
+}
+
+.dark-button {
+  border-radius: 5px;
+  padding: 12px 25px;
+  background-color: #1a1b1f;
+  transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.quote p {
+  display: block;
+  margin: 0px 60px 40px 100px;
+  padding: 0px 0px 0px 20px;
+  float: none;
+  justify-content: center;
+  border-style: none none none solid;
+  border-width: 1px 1px 1px 5px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 5px;
+  border-color: #000 #000 #000 #decaff;
+  transition: opacity 200ms ease;
+  font-family: 'Marianne', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  column-count: 0;
+  column-rule-color: $light-purple;
+  column-rule-style: solid;
+  white-space: normal;
+  background-clip: border-box;
+  object-fit: fill;
+  line-height: 34px;
+}
+
+.small-quote p {
+  display: block;
+  margin: 0px 60px 40px 100px;
+  padding: 0px 0px 0px 20px;
+  float: none;
+  justify-content: center;
+  border-style: none none none solid;
+  border-width: 1px 1px 1px 5px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 5px;
+  border-color: #000 #000 #000 $light-purple;
+  transition: opacity 200ms ease;
+  font-family: 'Marianne', sans-serif;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.flex-div {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin: 40px 0;
+}
+
+.mb-0 {
+  margin-bottom:0;
+}
+
+
+/*----------------------------------------*/
+/*NAVBAR*/
+
+.fr-header__brand {
+  max-width:20% !important;
+}
+
+.fr-header__logo,.logo {
+  max-width: 100% !important;
+}
+
+.link-menu {
+  color: black;
+  font-size: 12px !important;
+  opacity: 0.6;
+}
+
+.fr-links-group {
+  justify-content: center !important;
+}
+
+.fr-link:after {
+  display: none !important;
+}
+
+.fr-link:hover {
+  background-image: none !important;
+  opacity: 1;
+}
+
+/*----------------------------------------*/
+/*BANNER*/
+
+.banner {
+  min-height: 60vh;
+  padding: 5em 12em;
+  background-color: $light-purple;
+}
+
+
+/*----------------------------------------*/
+/*FIRST BLOCKS*/
+
+.first-block{
+  display: flex;
+  padding: 5% 10%
+}
+
+.know-more {
+  margin-top: 30px;
+}
+
+.camera-img {
+  max-width: 100%;
+}
+
+.quote-first-block {
+  max-width: 40% !important;
+  margin: 0 40px 40px auto !important;
+}
+
+/*----------------------------------------*/
+// SECOND BLOCK
+
+.second-block {
+  padding: 5% 10%;
+  background-color: $light-yellow;
+}
+
+.align-titles {
+  text-align:center;
+}
+
+.entretien-img {
+  width: 50%;
+}
+
+.vl {
+  border-left: 1px solid $black;
+  margin: 0 15px;
+  height: 120px;
+  opacity:0.5;
+}
+
+.entretien-paragraphe {
+  margin-left: 40px;
+}
+
+/*----------------------------------------*/
+// THIRD BLOCK
+
+.third-block {
+  padding: 5% 10%;
+}
+
+.third-block-div {
+  max-width: 50%;
+}
+
+.quote-third-block {
+  margin:0 !important;
+  margin-top: 20px !important;
+}
+
+/*----------------------------------------*/
+// FOURTH BLOCK
+
+.fourth-block {
+  padding: 5% 10%;
+  background-color: $light-white;
+}
+
+.quote-flex {
+  max-width:50%;
+  margin-bottom: 20px;
+}

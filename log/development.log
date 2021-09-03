@@ -1,0 +1,2615 @@
+Started GET "/" for ::1 at 2021-09-03 14:27:08 +0200
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "ellesfontlaphoto_development" does not exist
+):
+  
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.4.1) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.4.1) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.4.1) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.4.1) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.4.1) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (471.3ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_development" ENCODING = 'unicode'[0m
+  [1m[35m (87.1ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2021-09-03 14:27:53 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 352)
+Completed 200 OK in 24ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3271)
+
+
+Started GET "/" for ::1 at 2021-09-03 14:27:54 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.2ms | Allocations: 231)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 904)
+
+
+Started GET "/" for ::1 at 2021-09-03 14:30:26 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 232)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/Nadia/code/nadiaag/ellesfontlaphoto/public/packs
+[Webpacker] Hash: e2f281de3ea1fdc4fa5a
+Version: webpack 4.46.0
+Time: 2623ms
+Built at: 09/03/2021 2:30:33 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-be412d64645010827f4e.js    125 KiB  application  [emitted] [immutable]  application
+js/application-be412d64645010827f4e.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-be412d64645010827f4e.js js/application-be412d64645010827f4e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 6333.5ms | Allocations: 17836)
+Completed 200 OK in 6472ms (Views: 6367.1ms | ActiveRecord: 0.0ms | Allocations: 20558)
+
+
+Started GET "/" for ::1 at 2021-09-03 14:36:18 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 255)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/Nadia/code/nadiaag/ellesfontlaphoto/public/packs
+[Webpacker] Hash: e2f281de3ea1fdc4fa5a
+Version: webpack 4.46.0
+Time: 1043ms
+Built at: 09/03/2021 2:36:22 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-be412d64645010827f4e.js    125 KiB  application  [emitted] [immutable]  application
+js/application-be412d64645010827f4e.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-be412d64645010827f4e.js js/application-be412d64645010827f4e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3913.7ms | Allocations: 7311)
+Completed 200 OK in 3939ms (Views: 3920.5ms | ActiveRecord: 0.0ms | Allocations: 10091)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 14:36:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 14:36:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/" for ::1 at 2021-09-03 14:37:54 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4075)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 5311)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 14:37:54 +0200
+Started GET "/images/camera.png" for ::1 at 2021-09-03 14:37:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/" for ::1 at 2021-09-03 14:38:59 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 3943)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 5096)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 14:38:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 14:38:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/favicons/favicon.ico" for ::1 at 2021-09-03 14:38:59 +0200
+Started GET "/favicons/manifest.webmanifest" for ::1 at 2021-09-03 14:38:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicons/favicon.ico"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/favicons/manifest.webmanifest"):
+  
+Started GET "/favicons/favicon.svg" for ::1 at 2021-09-03 14:38:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicons/favicon.svg"):
+  
+Started GET "/" for ::1 at 2021-09-03 14:39:01 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 3621)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 4032)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 14:39:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 14:39:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/favicons/manifest.webmanifest" for ::1 at 2021-09-03 14:39:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicons/manifest.webmanifest"):
+  
+Started GET "/" for ::1 at 2021-09-03 14:40:34 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 3940)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 5089)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 14:40:34 +0200
+Started GET "/images/camera.png" for ::1 at 2021-09-03 14:40:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/favicons/manifest.webmanifest" for ::1 at 2021-09-03 14:40:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicons/manifest.webmanifest"):
+  
+Started GET "/" for ::1 at 2021-09-03 14:41:28 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1812)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2939)
+
+
+  
+ActionView::Template::Error (The asset "favicons/apple-touch-icon.png" is not present in the asset pipeline.
+):
+    3:   <head>
+    4:     <title>Ellesfontlaphoto</title>
+    5:     <meta name="viewport" content="width=device-width,initial-scale=1">
+    6:     <link rel="apple-touch-icon" href="<%= asset_path "favicons/apple-touch-icon.png"%>"><!-- 180×180 -->
+    7:     <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+    8:     <link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    9:     <link rel="manifest" href="favicons/manifest.webmanifest" crossorigin="use-credentials">
+  
+app/views/layouts/application.html.erb:6
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:41:35 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:41:35 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:41:40 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:16 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:16 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:21 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:24 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:47 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:42:56 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:44:38 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:44:43 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:44:46 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:45:28 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:45:53 +0200
+Started PUT "/__web_console/repl_sessions/79413c6f063e64f3a528a32388c93d1e" for ::1 at 2021-09-03 14:45:54 +0200
+Started GET "/" for ::1 at 2021-09-03 15:00:44 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 17487)
+Completed 200 OK in 102ms (Views: 84.2ms | ActiveRecord: 0.0ms | Allocations: 20266)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 15:00:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 15:00:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:13:06 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1764.2ms | Allocations: 82186)
+Completed 200 OK in 1773ms (Views: 1769.5ms | Allocations: 83414)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 15:13:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 15:13:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:13:09 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:13:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:13:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:13:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:15:33 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5082)
+Completed 200 OK in 19ms (Views: 17.7ms | Allocations: 6232)
+
+
+Started GET "/images/logo.png" for ::1 at 2021-09-03 15:15:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+Started GET "/images/camera.png" for ::1 at 2021-09-03 15:15:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:15:34 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:15:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:15:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:15:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:17:48 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 30.2ms | Allocations: 9052)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 13982)
+Completed 200 OK in 70ms (Views: 69.3ms | Allocations: 15132)
+
+
+Started GET "/images/camera.png" for ::1 at 2021-09-03 15:17:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/camera.png"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:17:48 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:17:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:17:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:17:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:19:31 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1117)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1198)
+Completed 500 Internal Server Error in 9ms (Allocations: 2323)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="banner">
+  <h4>Elles font la culture :</h4>
+  <h1>Accompagner les femmes photographes dans leur carrière</h1>
+</div>
+
+<div class="first-block">
+  <div>
+    <p class="question-subtitle">POURQUOI CE PROJET</p>
+    <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
+    <p class="paragraphe">Les femmes sont nombreuses à développer un intérêt pour les métiers de la photographie mais sont davantage freinées une fois en activité. Souvent moins programmées, moins visibles, moins rémunérées et moins primées que leurs homologues masculins, elles doivent faire face à de nombreux obstacles liés au genre.</p>
+    <a class="dark-button" href="#">En savoir plus</a>
+  </div>
+  <div>
+    <%= image_tag("camera.png"), class:"camera-img" %>
+    <!-- <img src="images/camera.png" class="camera-img" alt="camera"> -->
+  </div>
+</div>
+<div class="quote">
+  <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
+</div>
+
+):
+1:    <div class="banner">
+2:      <h4>Elles font la culture :</h4>
+3:      <h1>Accompagner les femmes photographes dans leur carrière</h1>
+4:    </div>
+5:    
+6:    <div class="first-block">
+7:      <div>
+8:        <p class="question-subtitle">POURQUOI CE PROJET</p>
+9:        <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
+10:        <p class="paragraphe">Les femmes sont nombreuses à développer un intérêt pour les métiers de la photographie mais sont davantage freinées une fois en activité. Souvent moins programmées, moins visibles, moins rémunérées et moins primées que leurs homologues masculins, elles doivent faire face à de nombreux obstacles liés au genre.</p>
+11:        <a class="dark-button" href="#">En savoir plus</a>
+12:      </div>
+13:      <div>
+14:        <%= image_tag("camera.png"), class:"camera-img" %>
+15:        <!-- <img src="images/camera.png" class="camera-img" alt="camera"> -->
+16:      </div>
+17:    </div>
+18:    <div class="quote">
+19:      <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
+20:    </div>
+  
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+Started GET "/" for ::1 at 2021-09-03 15:20:04 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1117)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1198)
+Completed 500 Internal Server Error in 5ms (Allocations: 2318)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="banner">
+  <h4>Elles font la culture :</h4>
+  <h1>Accompagner les femmes photographes dans leur carrière</h1>
+</div>
+
+<div class="first-block">
+  <div>
+    <p class="question-subtitle">POURQUOI CE PROJET</p>
+    <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
+    <p class="paragraphe">Les femmes sont nombreuses à développer un intérêt pour les métiers de la photographie mais sont davantage freinées une fois en activité. Souvent moins programmées, moins visibles, moins rémunérées et moins primées que leurs homologues masculins, elles doivent faire face à de nombreux obstacles liés au genre.</p>
+    <a class="dark-button" href="#">En savoir plus</a>
+  </div>
+  <div>
+    <%= image_tag("camera.png"), class:"camera-img" %>
+    <!-- <img src="images/camera.png" class="camera-img" alt="camera"> -->
+  </div>
+</div>
+<div class="quote">
+  <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
+</div>
+
+):
+1:    <div class="banner">
+2:      <h4>Elles font la culture :</h4>
+3:      <h1>Accompagner les femmes photographes dans leur carrière</h1>
+4:    </div>
+5:    
+6:    <div class="first-block">
+7:      <div>
+8:        <p class="question-subtitle">POURQUOI CE PROJET</p>
+9:        <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
+10:        <p class="paragraphe">Les femmes sont nombreuses à développer un intérêt pour les métiers de la photographie mais sont davantage freinées une fois en activité. Souvent moins programmées, moins visibles, moins rémunérées et moins primées que leurs homologues masculins, elles doivent faire face à de nombreux obstacles liés au genre.</p>
+11:        <a class="dark-button" href="#">En savoir plus</a>
+12:      </div>
+13:      <div>
+14:        <%= image_tag("camera.png"), class:"camera-img" %>
+15:        <!-- <img src="images/camera.png" class="camera-img" alt="camera"> -->
+16:      </div>
+17:    </div>
+18:    <div class="quote">
+19:      <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
+20:    </div>
+  
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected ',', expecting ')'
+Started GET "/" for ::1 at 2021-09-03 15:20:19 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 28.9ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | Allocations: 624)
+  Rendered layout layouts/application.html.erb (Duration: 107.7ms | Allocations: 6047)
+Completed 200 OK in 117ms (Views: 115.7ms | Allocations: 7197)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:20:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:20:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:20:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:20:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:31:00 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5447)
+Completed 200 OK in 19ms (Views: 17.8ms | Allocations: 5853)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:31:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:31:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:31:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:31:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:31:34 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 1078.9ms | Allocations: 47591)
+Completed 200 OK in 1080ms (Views: 1079.6ms | Allocations: 47997)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:31:35 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:31:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:31:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:31:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:33:09 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.5ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 328.0ms | Allocations: 16110)
+Completed 200 OK in 330ms (Views: 329.0ms | Allocations: 16515)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:33:10 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:33:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:33:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:33:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:33:34 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 70.8ms | Allocations: 11251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 635)
+  Rendered layout layouts/application.html.erb (Duration: 129.0ms | Allocations: 16937)
+Completed 200 OK in 153ms (Views: 134.4ms | ActiveRecord: 0.0ms | Allocations: 19717)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:33:34 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:33:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:33:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:33:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:34:14 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 403.7ms | Allocations: 19763)
+Completed 200 OK in 411ms (Views: 407.3ms | ActiveRecord: 0.0ms | Allocations: 20249)
+
+
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:34:15 +0200
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:34:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:34:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:34:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:34:53 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 24.1ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.9ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 519.2ms | Allocations: 18369)
+Completed 200 OK in 525ms (Views: 522.0ms | ActiveRecord: 0.0ms | Allocations: 18777)
+
+
+Started GET "/" for ::1 at 2021-09-03 15:35:46 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 594.2ms | Allocations: 35015)
+Completed 200 OK in 598ms (Views: 595.8ms | ActiveRecord: 0.0ms | Allocations: 35420)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:35:47 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:35:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:35:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:35:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:39:16 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 482)
+  Rendered layout layouts/application.html.erb (Duration: 163.1ms | Allocations: 22830)
+Completed 200 OK in 165ms (Views: 163.8ms | ActiveRecord: 0.0ms | Allocations: 23237)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:39:16 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:39:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:39:17 +0200
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:39:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:39:50 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 11.2ms | Allocations: 601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.3ms | Allocations: 481)
+  Rendered layout layouts/application.html.erb (Duration: 596.0ms | Allocations: 22395)
+Completed 200 OK in 602ms (Views: 598.7ms | Allocations: 22801)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 15:39:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 15:39:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 15:39:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 15:39:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 15:56:33 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.1ms | Allocations: 726)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 9634)
+Completed 500 Internal Server Error in 52ms (Allocations: 10769)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "  font-weight": expected "}", was ": 250;"
+        on line 6:3 of app/assets/stylesheets/config/_fonts.scss
+>>   font-weight: 250;
+
+   --^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/config/_fonts.scss:6
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 15:57:03 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 165.5ms | Allocations: 10279)
+Completed 500 Internal Server Error in 170ms (Allocations: 10657)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 15:57:43 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 8902)
+Completed 500 Internal Server Error in 32ms (Allocations: 9279)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 15:57:45 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5613)
+Completed 500 Internal Server Error in 10ms (Allocations: 5991)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:13:21 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 135.1ms | Allocations: 5602)
+Completed 500 Internal Server Error in 141ms (Allocations: 5980)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:14:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 767.8ms | Allocations: 40905)
+  Rendered layout layouts/application.html.erb (Duration: 768.1ms | Allocations: 40990)
+Completed 500 Internal Server Error in 793ms (ActiveRecord: 0.0ms | Allocations: 43735)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+  
+app/assets/stylesheets/pages/_home.scss:133
+Started GET "/" for ::1 at 2021-09-03 16:16:01 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 41.0ms | Allocations: 12532)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 12616)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 13077)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+  
+app/assets/stylesheets/pages/_home.scss:133
+Started GET "/" for ::1 at 2021-09-03 16:18:47 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 44.2ms | Allocations: 12322)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 12405)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms | Allocations: 12781)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+  
+app/assets/stylesheets/pages/_home.scss:133
+Started GET "/" for ::1 at 2021-09-03 16:18:59 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 54.6ms | Allocations: 10806)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 10889)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms | Allocations: 11265)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-yellow".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-yellow;
+
+   --------------------^
+):
+  
+app/assets/stylesheets/pages/_home.scss:133
+Started GET "/" for ::1 at 2021-09-03 16:19:34 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 164.6ms | Allocations: 13441)
+  Rendered layout layouts/application.html.erb (Duration: 165.7ms | Allocations: 13524)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.0ms | Allocations: 13900)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+  
+app/assets/stylesheets/pages/_home.scss:133
+Started GET "/" for ::1 at 2021-09-03 16:19:42 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 111.3ms | Allocations: 17329)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 718)
+  Rendered layout layouts/application.html.erb (Duration: 190.8ms | Allocations: 30528)
+Completed 200 OK in 192ms (Views: 191.5ms | ActiveRecord: 0.0ms | Allocations: 30940)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 16:19:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 16:19:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 16:20:06 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 10804)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms | Allocations: 11182)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:22:06 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 6363)
+Completed 500 Internal Server Error in 25ms (Allocations: 6743)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:23:08 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7045)
+Completed 500 Internal Server Error in 13ms (Allocations: 7422)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "h1": expected 1 selector or at-rule, was "{"
+        on line 5:3 of app/assets/stylesheets/pages/_home.scss
+        from line 1:1 of app/assets/stylesheets/pages/_index.scss
+        from line 22:1 of app/assets/stylesheets/application.scss
+>> h1 {
+
+   --^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:5
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:23:16 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.8ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 7045)
+Completed 500 Internal Server Error in 20ms (Allocations: 7422)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: ../config/colors.
+        on line 1:1 of app/assets/stylesheets/pages/_home.scss
+        from line 1:1 of app/assets/stylesheets/pages/_index.scss
+        from line 22:1 of app/assets/stylesheets/application.scss
+>> @import "../config/colors";
+
+   ^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:1
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:27:11 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 6793)
+Completed 500 Internal Server Error in 19ms (Allocations: 7170)
+
+
+  
+ActionView::Template::Error (Error: Undefined variable: "$light-purple".
+        on line 133:21 of app/assets/stylesheets/pages/_home.scss
+>>   background-color: $light-purple;
+
+   --------------------^
+):
+     6:     <%= favicon_link_tag %>
+     7:     <%= csrf_meta_tags %>
+     8:     <%= csp_meta_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/pages/_home.scss:133
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2021-09-03 16:27:33 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 163.6ms | Allocations: 27050)
+Completed 200 OK in 167ms (Views: 165.4ms | Allocations: 27455)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 16:27:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 16:27:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 16:56:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 16:56:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:01:30 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.2ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 6164)
+Completed 200 OK in 27ms (Views: 25.0ms | Allocations: 6575)
+
+
+Started GET "/" for ::1 at 2021-09-03 17:08:33 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 21.3ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 665.3ms | Allocations: 26670)
+Completed 200 OK in 688ms (Views: 671.0ms | Allocations: 27075)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:08:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:08:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:09:56 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 266.0ms | Allocations: 28465)
+Completed 200 OK in 269ms (Views: 267.1ms | Allocations: 28870)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:09:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:09:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:10:54 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 221.0ms | Allocations: 31304)
+Completed 200 OK in 223ms (Views: 222.0ms | Allocations: 31709)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:10:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:10:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:11:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:11:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:24:11 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 6338)
+Completed 200 OK in 24ms (Views: 23.5ms | Allocations: 6743)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:24:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:24:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:26:41 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 663.9ms | Allocations: 51477)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 746.6ms | Allocations: 67065)
+Completed 200 OK in 769ms (Views: 751.5ms | ActiveRecord: 0.0ms | Allocations: 69844)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:26:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:26:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:27:28 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 766)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 275.1ms | Allocations: 31743)
+Completed 200 OK in 278ms (Views: 277.2ms | ActiveRecord: 0.0ms | Allocations: 32229)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:27:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:27:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:31:32 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 142.5ms | Allocations: 30644)
+Completed 200 OK in 144ms (Views: 143.3ms | ActiveRecord: 0.0ms | Allocations: 31050)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:31:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:31:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/Marianne-ExtraBold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:33:17 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 583)
+  Rendered layout layouts/application.html.erb (Duration: 140.0ms | Allocations: 31166)
+Completed 200 OK in 141ms (Views: 140.6ms | Allocations: 31572)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:33:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:33:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:33:58 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 583)
+  Rendered layout layouts/application.html.erb (Duration: 615.5ms | Allocations: 30079)
+Completed 200 OK in 619ms (Views: 616.3ms | Allocations: 30485)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:33:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:33:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:35:18 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6332)
+Completed 200 OK in 18ms (Views: 17.0ms | Allocations: 6741)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:35:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:35:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:35:20 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 6331)
+Completed 200 OK in 21ms (Views: 20.2ms | Allocations: 6738)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:35:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:35:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:38:24 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 729)
+  Rendered layout layouts/application.html.erb (Duration: 179.9ms | Allocations: 31181)
+Completed 200 OK in 184ms (Views: 182.3ms | Allocations: 32339)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:38:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:38:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:38:45 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.0ms | Allocations: 761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 522.3ms | Allocations: 31063)
+Completed 200 OK in 524ms (Views: 523.1ms | Allocations: 31470)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:38:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:38:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:39:19 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6372)
+Completed 200 OK in 24ms (Views: 22.5ms | Allocations: 6777)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:39:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:39:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:40:16 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 164.5ms | Allocations: 30987)
+Completed 200 OK in 166ms (Views: 165.2ms | Allocations: 31393)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:40:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:40:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:41:16 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 311.1ms | Allocations: 30063)
+Completed 200 OK in 313ms (Views: 312.0ms | Allocations: 30469)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:41:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:41:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:41:47 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 162.0ms | Allocations: 29096)
+Completed 200 OK in 163ms (Views: 162.8ms | Allocations: 29504)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:41:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:41:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:42:02 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 172.8ms | Allocations: 29641)
+Completed 200 OK in 174ms (Views: 173.5ms | Allocations: 30047)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:42:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:42:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:42:09 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 169.1ms | Allocations: 30986)
+Completed 200 OK in 171ms (Views: 169.8ms | Allocations: 31392)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:42:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:42:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:44:20 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 729)
+  Rendered layout layouts/application.html.erb (Duration: 159.4ms | Allocations: 29258)
+Completed 200 OK in 165ms (Views: 163.4ms | Allocations: 30407)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:44:21 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:44:21 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:44:35 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 452.0ms | Allocations: 30483)
+Completed 200 OK in 457ms (Views: 455.0ms | Allocations: 30890)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:44:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:44:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:44:41 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.9ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 8.1ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 628.7ms | Allocations: 30557)
+Completed 200 OK in 631ms (Views: 630.2ms | Allocations: 30963)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:44:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:44:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:45:03 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 729)
+  Rendered layout layouts/application.html.erb (Duration: 181.0ms | Allocations: 30183)
+Completed 200 OK in 187ms (Views: 185.1ms | Allocations: 31332)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:45:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:45:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:45:43 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | Allocations: 587)
+  Rendered layout layouts/application.html.erb (Duration: 200.3ms | Allocations: 32353)
+Completed 200 OK in 202ms (Views: 201.0ms | Allocations: 32760)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:45:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:45:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:52:05 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 180.3ms | Allocations: 23728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 322.1ms | Allocations: 39719)
+Completed 200 OK in 364ms (Views: 330.3ms | Allocations: 40867)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:52:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:52:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:52:22 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1430)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 7486)
+Completed 200 OK in 25ms (Views: 23.8ms | Allocations: 8635)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:52:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:52:23 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:54:49 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 22.2ms | Allocations: 1431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 412.5ms | Allocations: 32249)
+Completed 200 OK in 425ms (Views: 422.7ms | Allocations: 33398)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:54:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:54:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:55:52 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1430)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 683.3ms | Allocations: 31325)
+Completed 200 OK in 689ms (Views: 686.0ms | Allocations: 32474)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:55:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:55:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:56:55 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 231.3ms | Allocations: 31522)
+Completed 200 OK in 233ms (Views: 232.2ms | Allocations: 31929)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:56:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:56:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:57:02 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1430)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 735)
+  Rendered layout layouts/application.html.erb (Duration: 55.6ms | Allocations: 7492)
+Completed 200 OK in 60ms (Views: 58.7ms | Allocations: 8641)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:57:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:57:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 17:59:49 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 8.7ms | Allocations: 735)
+  Rendered layout layouts/application.html.erb (Duration: 258.9ms | Allocations: 30361)
+Completed 200 OK in 264ms (Views: 262.6ms | Allocations: 31509)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 17:59:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 17:59:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:00:00 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 148.3ms | Allocations: 31572)
+Completed 200 OK in 149ms (Views: 148.8ms | Allocations: 31978)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:00:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:00:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:02:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 222.3ms | Allocations: 35055)
+Completed 200 OK in 230ms (Views: 228.2ms | Allocations: 36203)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:02:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:02:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:02:59 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 187.3ms | Allocations: 32137)
+Completed 200 OK in 189ms (Views: 188.0ms | Allocations: 32543)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:02:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:03:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:03:14 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 163.0ms | Allocations: 31164)
+Completed 200 OK in 165ms (Views: 163.6ms | Allocations: 31569)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:03:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:03:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:09:21 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 210.6ms | Allocations: 31417)
+Completed 200 OK in 218ms (Views: 215.7ms | Allocations: 32565)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:09:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:09:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:09:29 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 345.8ms | Allocations: 31656)
+Completed 200 OK in 347ms (Views: 346.6ms | Allocations: 32062)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:09:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:09:30 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:09:44 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 589)
+  Rendered layout layouts/application.html.erb (Duration: 283.9ms | Allocations: 31194)
+Completed 200 OK in 287ms (Views: 285.9ms | Allocations: 31601)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:09:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:09:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:09:56 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 249.8ms | Allocations: 33054)
+Completed 200 OK in 251ms (Views: 250.6ms | Allocations: 33459)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:09:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:09:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:10:17 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 288.8ms | Allocations: 29780)
+Completed 200 OK in 290ms (Views: 289.6ms | Allocations: 30185)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:10:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:10:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:40:01 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 24.1ms | Allocations: 1286)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 314.5ms | Allocations: 32165)
+Completed 200 OK in 328ms (Views: 319.3ms | Allocations: 32570)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:40:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:40:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:40:06 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 99.1ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 117.8ms | Allocations: 6859)
+Completed 200 OK in 120ms (Views: 118.9ms | Allocations: 7264)
+
+
+Started GET "/" for ::1 at 2021-09-03 18:40:55 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 205.7ms | Allocations: 32097)
+Completed 200 OK in 208ms (Views: 206.7ms | Allocations: 32502)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:40:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:40:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:48:00 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 236.9ms | Allocations: 26355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 737)
+  Rendered layout layouts/application.html.erb (Duration: 503.0ms | Allocations: 42846)
+Completed 200 OK in 536ms (Views: 516.1ms | Allocations: 43994)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:48:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:48:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:49:38 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 357.5ms | Allocations: 35275)
+Completed 200 OK in 365ms (Views: 363.3ms | Allocations: 36423)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:49:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:49:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:50:04 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 590)
+  Rendered layout layouts/application.html.erb (Duration: 217.6ms | Allocations: 31847)
+Completed 200 OK in 219ms (Views: 218.4ms | Allocations: 32253)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:50:05 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:50:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:50:42 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 47.9ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 72.8ms | Allocations: 8069)
+Completed 200 OK in 77ms (Views: 75.5ms | Allocations: 9218)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:50:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:50:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:52:35 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 39.6ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 933.6ms | Allocations: 34422)
+Completed 200 OK in 949ms (Views: 945.9ms | Allocations: 35570)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:52:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:52:37 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:53:39 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 172.4ms | Allocations: 34372)
+Completed 200 OK in 180ms (Views: 178.0ms | Allocations: 35520)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:53:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:53:41 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:54:03 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 7.8ms | Allocations: 590)
+  Rendered layout layouts/application.html.erb (Duration: 643.6ms | Allocations: 32808)
+Completed 200 OK in 646ms (Views: 644.9ms | Allocations: 33214)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:54:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:54:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:54:57 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 8077)
+Completed 200 OK in 30ms (Views: 28.5ms | Allocations: 9225)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:54:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:54:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:55:15 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 590)
+  Rendered layout layouts/application.html.erb (Duration: 277.0ms | Allocations: 32365)
+Completed 200 OK in 281ms (Views: 279.1ms | Allocations: 32771)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:55:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:55:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:55:22 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 590)
+  Rendered layout layouts/application.html.erb (Duration: 342.5ms | Allocations: 32331)
+Completed 200 OK in 344ms (Views: 343.4ms | Allocations: 32736)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:55:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:55:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:58:38 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 229.1ms | Allocations: 28674)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 354.2ms | Allocations: 45639)
+Completed 200 OK in 365ms (Views: 364.0ms | Allocations: 46787)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:58:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:58:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:59:04 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 701.2ms | Allocations: 32519)
+Completed 200 OK in 705ms (Views: 702.8ms | Allocations: 32925)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:59:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:59:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 18:59:24 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2573)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.1ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 8645)
+Completed 200 OK in 40ms (Views: 37.8ms | Allocations: 9794)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 18:59:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 18:59:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:01:50 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 8654)
+Completed 200 OK in 27ms (Views: 26.1ms | Allocations: 9802)
+
+
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:01:50 +0200
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:01:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:01:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:01:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:05:01 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 8656)
+Completed 200 OK in 22ms (Views: 20.1ms | Allocations: 9804)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:05:01 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:05:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:05:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:05:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:05:32 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 8656)
+Completed 200 OK in 25ms (Views: 23.4ms | Allocations: 9804)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:05:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:05:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:05:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:05:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:05:53 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 49.3ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 28.7ms | Allocations: 740)
+  Rendered layout layouts/application.html.erb (Duration: 215.1ms | Allocations: 8735)
+Completed 200 OK in 229ms (Views: 224.4ms | Allocations: 9884)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:05:54 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:05:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:05:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:05:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:06:53 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 8656)
+Completed 200 OK in 31ms (Views: 29.5ms | Allocations: 9805)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:06:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:06:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:06:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:06:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:07:24 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 183.3ms | Allocations: 32969)
+Completed 200 OK in 185ms (Views: 184.1ms | Allocations: 33375)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:07:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:07:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:07:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:07:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:11:38 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2584)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 739)
+  Rendered layout layouts/application.html.erb (Duration: 838.9ms | Allocations: 34712)
+Completed 200 OK in 855ms (Views: 848.1ms | Allocations: 35860)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:11:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:11:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:11:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:11:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:11:45 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 198.1ms | Allocations: 34406)
+Completed 200 OK in 200ms (Views: 199.3ms | Allocations: 34813)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:11:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:11:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:11:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:11:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:13:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 20.3ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 188.4ms | Allocations: 33041)
+Completed 200 OK in 190ms (Views: 189.2ms | Allocations: 33448)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:13:11 +0200
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:13:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:13:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:13:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:13:19 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 186.5ms | Allocations: 34058)
+Completed 200 OK in 188ms (Views: 187.4ms | Allocations: 34464)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:13:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:13:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:13:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:13:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Light.woff2" for ::1 at 2021-09-03 19:13:37 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Light.woff2"):
+  
+Started GET "/fonts/Marianne-Light.woff" for ::1 at 2021-09-03 19:13:37 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Light.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:14:14 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 193.3ms | Allocations: 34071)
+Completed 200 OK in 195ms (Views: 194.2ms | Allocations: 34477)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:14:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:14:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:14:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:14:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/" for ::1 at 2021-09-03 19:14:32 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 227.9ms | Allocations: 33500)
+Completed 200 OK in 229ms (Views: 228.7ms | Allocations: 33906)
+
+
+Started GET "/fonts/Marianne-Regular.woff2" for ::1 at 2021-09-03 19:14:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff2" for ::1 at 2021-09-03 19:14:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff2"):
+  
+Started GET "/fonts/Marianne-Bold.woff" for ::1 at 2021-09-03 19:14:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Bold.woff"):
+  
+Started GET "/fonts/Marianne-Regular.woff" for ::1 at 2021-09-03 19:14:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/Marianne-Regular.woff"):
+  
