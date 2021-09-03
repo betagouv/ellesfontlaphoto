@@ -3,7 +3,6 @@ Rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais
 
 
 ## Lancer ce site localement
-Vous devez avoir yarn installé sur votre machine.
 
 ```bash
 git clone https://github.com/betagouv/ellesfontlaphoto.git
