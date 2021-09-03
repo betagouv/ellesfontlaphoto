@@ -1,24 +1,17 @@
-# README
+# Elles font la Culture
+Rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais sous-représentées dans le secteur, en commençant par la photographie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Lancer ce site localement
+Vous devez avoir yarn installé sur votre machine.
 
-* Ruby version
+```bash
+git clone https://github.com/betagouv/ellesfontlaphoto.git
+cd ellesfontlaphoto
+bundle install
+yarn install
+rails db:create
+rails s
+# http://localhost:3000 is ready
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
