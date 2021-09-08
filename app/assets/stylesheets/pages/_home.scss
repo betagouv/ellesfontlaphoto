@@ -143,41 +143,11 @@ h4 {
 
 
 /*----------------------------------------*/
-/*NAVBAR*/
-
-.fr-header__brand {
-  max-width:20% !important;
-}
-
-.fr-header__logo,.logo {
-  max-width: 100% !important;
-}
-
-.link-menu {
-  color: black;
-  font-size: 12px !important;
-  opacity: 0.6;
-}
-
-.fr-links-group {
-  justify-content: center !important;
-}
-
-.fr-link:after {
-  display: none !important;
-}
-
-.fr-link:hover {
-  background-image: none !important;
-  opacity: 1;
-}
-
-/*----------------------------------------*/
 /*BANNER*/
 
 .banner {
-  min-height: 60vh;
-  padding: 5em 12em;
+  // min-height: 60vh;
+  padding: 5em 12em 8em 12em;
   background-color: $light-purple;
 }
 
@@ -275,5 +245,150 @@ h4 {
     width: 50%;
     text-align: center;
     padding: 2% 7%;
+  }
+  .newsletter-form {
+    padding-top: 4%;
+  }
+  form {
+    width: 100%;
+    margin: 0 auto;
+    .input {
+      text-align:left;
+
+    }
+    label {
+      font-family: "Marianne", sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    abbr {
+      display:none;
+    }
+    input,select {
+      border: 1px solid #000;
+      border-radius: 5px;
+      font-family: "Marianne", sans-serif;
+      display: block;
+      width: 100%;
+      height: 20px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: $grey;
+      vertical-align: middle;
+      background-color: $white;
+    }
+
+    select {
+      height: 40px;
+      width: 104%;
+    }
+
+    textarea {
+      min-height: 150px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: $black;
+      font-family: "Marianne", sans-serif;
+      border-radius: 5px;
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .button {
+      margin-top: 10px;
+      padding-top: 5px;
+      padding-bottom: 9px;
+      border-radius: 5px;
+      background-color: $black;
+      color: $white;
+      font-family: Marianne, sans-serif;
+      width: 20%;
+      height: 38px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .banner {
+    padding: 5em 0;
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  .subtitle {
+    text-align:center;
+  }
+
+  .question-subtitle {
+    text-align:center;
+    margin-bottom:20px;
+  }
+
+  .paragraphe {
+    color: #1a1b1f;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .first-block {
+    display: block;
+  }
+
+  .flex-div {
+    display:block;
+  }
+
+  .second-block {
+    .entretien-img {
+      width: 100%;
+    }
+    .vl {
+      display:none;
+    }
+  }
+
+  .entretien-paragraphe {
+    margin-left: 0;
+  }
+
+  .third-block-div {
+    min-width: 100%;
+  }
+
+  .paragraphe-quote {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .quote-first-block {
+    min-width: 80%;
+  }
+
+  .quote-flex {
+    min-width: 100%;
+  }
+
+  .camera-img {
+    margin: 30px 0;
+  }
+
+  .contact-block {
+    display: block;
+    .contact-newsletter {
+      min-width: 100%;
+    }
+    .contact-comment {
+      min-width: 100%;
+    }
   }
 }
