@@ -1,0 +1,24 @@
+<% if notice %>
+  <div id="flash-notice" class="alert-woonies-success alert-info alert-dismissible" role="alert">
+    <button id="close-notice" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <p><%= notice %></p>
+    <script>
+      var element = document.getElementById("flash-notice");
+      document.querySelector('#close-notice').addEventListener("click", function(){
+        element.parentNode.removeChild(element);
+      });
+    </script>
+  </div>
+<% end %>
+<% if alert %>
+  <div id="flash-alert" class="alert-woonies-fail alert-warning alert-dismissible" role="alert">
+    <button id="close-alert" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <p><%= alert %></p>
+    <script>
+      var element = document.getElementById("flash-alert");
+      document.querySelector('#close-alert').addEventListener("click", function(){
+        element.parentNode.removeChild(element);
+      });
+    </script>
+  </div>
+<% end %>

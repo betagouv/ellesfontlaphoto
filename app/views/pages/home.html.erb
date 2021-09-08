@@ -68,3 +68,21 @@
     </div>
   </div>
 </div>
+<div class="contact-block" id="contact">
+  <div class="contact-newsletter">
+    <p class="subtitle">Pour suivre le projet</p>
+    <p>Si vous voulez recevoir des informations sur le projet (avancées, tests, lancement…) laissez-nous votre adresse !</p>
+    <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
+      <%= f.input :email,
+                      label: "email",
+                      placeholder: "email",
+                      required: true %>
+
+      <%= f.button :submit, "S'abonner" %>
+    <% end %>
+  </div>
+  <div class="contact-comment">
+    <p class="subtitle">Nous écrire : une idée, une question ? </p>
+    <p>Vous avez des propositions à nous soumettre, ou une interrogation spécifique ? Laissez nous un message !</p>
+  </div>
+</div>
