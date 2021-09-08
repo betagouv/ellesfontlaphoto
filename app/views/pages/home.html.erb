@@ -3,7 +3,7 @@
   <h1>Accompagner les femmes photographes dans leur carrière</h1>
 </div>
 
-<div class="first-block">
+<div class="first-block" id="pourquoi">
   <div>
     <p class="question-subtitle">POURQUOI CE PROJET</p>
     <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
@@ -18,7 +18,7 @@
 <div class="quote">
   <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
 </div>
-<div class="second-block">
+<div class="second-block" id="comment">
   <div class="align-titles">
     <p class="question-subtitle">COMMENT</p>
     <p class="subtitle">On vous a interrogées</p>
@@ -35,7 +35,7 @@
     <p class="main-paragraphe">Vous avez été nombreuses à vous déclarer intéressées par le projet !</p>
   </div>
 </div>
-<div class="third-block flex-div">
+<div class="third-block flex-div" id="hypothese">
   <div class="third-block-div">
     <p class="question-subtitle">NOTRE HYPOTHÈSE DE SOLUTION</p>
     <p class="subtitle">Une boîte à outils collaborative</p>
@@ -49,7 +49,7 @@
     <p class="paragraphe-quote">L'initiative Elles font la culture est construite par la mission Diversité-Égalité appuyée par l’atelier numérique, l'incubateur du ministère de la Culture ainsi que Beta.gouv.fr</p>
   </div>
 </div>
-<div class="fourth-block">
+<div class="fourth-block" id="calendrier">
   <div class="align-titles">
     <p class="question-subtitle">CALENDRIER</p>
     <p class="subtitle">Les prochaines étapes</p>
@@ -66,5 +66,47 @@
     <div class="small-quote quote-flex">
       <p class="quote-third-block">Dans les années qui viennent, la plateforme en ligne a vocation à être étendue à d’autres disciplines de la culture et de la création !</p>
     </div>
+  </div>
+</div>
+<div class="contact-block" id="contact">
+  <div class="contact-newsletter">
+    <p class="subtitle">Pour suivre le projet</p>
+    <p class="paragraphe">Si vous voulez recevoir des informations sur le projet (avancées, tests, lancement…) laissez-nous votre adresse !</p>
+    <% if alert %>
+      <p style="font-weight: 900;"><%= alert %></p>
+    <% end %>
+    <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
+      <%= f.input :email,
+                      label: "Email (obligatoire)",
+                      placeholder: "Email",
+                      required: true %>
+      <%= f.input :contact_type,
+                      input_html: { value: 'newsletter' },
+                      as: :hidden %>
+      <%= f.button :submit, "S'abonner" %>
+    <% end %>
+  </div>
+  <div class="contact-comment">
+    <p class="subtitle">Nous écrire : une idée, une question ? </p>
+    <p class="paragraphe">Vous avez des propositions à nous soumettre, ou une interrogation spécifique ? Laissez nous un message !</p>
+    <% if notice %>
+      <p style="font-weight: 900;"><%= notice %></p>
+    <% end %>
+    <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
+      <%= f.input :email,
+                      label: "Email (obligatoire)",
+                      placeholder: "Email",
+                      required: true %>
+      <%= f.input :contact_type,
+                    as: :select,
+                    label: "Pourquoi ?",
+                    placeholder: "Choisissez votre type de contact",
+                    collection: ['Une idée ? Une question ?', 'Devenir Beta Testeuse'],
+                    include_hidden: false %>
+      <%= f.input :message,
+                      placeholder: "Votre message",
+                      as: :text %>
+      <%= f.button :submit, "Envoyer" %>
+    <% end %>
   </div>
 </div>

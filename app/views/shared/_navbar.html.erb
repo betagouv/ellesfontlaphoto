@@ -1,47 +1,40 @@
-<header role="banner" class="fr-header">
-  <div class="fr-header__body">
-    <div class="fr-container">
-      <div class="fr-header__body-row">
-        <div class="fr-header__brand fr-enlarge-link">
-          <div class="fr-header__brand-top">
-            <div class="fr-header__logo">
-              <%= image_tag "logo.png", class: "logo"%>
-              <!-- <img class="logo" src="images/logo.png" alt="logo"> -->
-            </div>
-            <div class="fr-header__navbar">
-              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-833" aria-haspopup="menu" title="Menu" id="fr-btn-menu-mobile">
-                  Menu
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="fr-header__tools">
-          <div class="fr-header__tools-links">
-            <ul class="fr-links-group">
-              <li>
-                <a class="fr-link link-menu" href="#">POURQUOI</a>
-              </li>
-              <li>
-                <a class="fr-link link-menu" href="#">COMMENT</a>
-              </li>
-              <li>
-                <a class="fr-link link-menu" href="#">HYPOTHÈSE</a>
-              </li>
-              <li>
-                <a class="fr-link link-menu" href="#">CALENDRIER</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <a class="dark-button" href="#">Contact</a>
-      </div>
+<header class="header">
+  <div class="header_body-row">
+    <div class="header_brand">
+      <a class="header_logo" href="">
+        <%= image_tag "logo.png", class: "logo"%>
+        <!-- <img class="logo" src="images/logo.png" alt="logo"> -->
+      </a>
     </div>
-  </div>
-  <!-- Navigation principale -->
-  <div class="fr-header__menu fr-modal" id="modal-833" aria-labelledby="fr-btn-menu-mobile">
-      <div class="fr-container">
-          <button class="fr-link--close fr-link" aria-controls="modal-833">Fermer</button>
-          <div class="fr-header__menu-links"></div>
-      </div>
+    <div class="header_tools-links">
+      <ul class="menu links-group">
+        <li>
+          <a class="link-menu" href="#pourquoi">POURQUOI</a>
+        </li>
+        <li>
+          <a class="link-menu" href="#comment">COMMENT</a>
+        </li>
+        <li>
+          <a class="link-menu" href="#hypothese">HYPOTHÈSE</a>
+        </li>
+        <li>
+          <a class="link-menu" href="#calendrier">CALENDRIER</a>
+        </li>
+      </ul>
+    </div>
+    <a class="dark-button" href="#contact">Contact</a>
   </div>
 </header>
+
+<header class="header-mobile">
+  <a href="" class="logo-mobile"><%= image_tag "logo.png"%></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="#pourquoi">POURQUOI</a></li>
+    <li><a href="#comment">COMMENT</a></li>
+    <li><a href="#hypothese">HYPOTHESE</a></li>
+    <li><a href="#calendrier">CALENDRIER</a></li>
+  </ul>
+</header>
+
