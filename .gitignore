@@ -1,3 +1,26 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+.DS_Store
+
+/public/assets
+.byebug_history
+.DS_Store
+
+#ignore secret KEYs
 .env*
+
+# Ignore application configuration
+application.yml
+
+# Ignore application configuration
+/config/application.yml
