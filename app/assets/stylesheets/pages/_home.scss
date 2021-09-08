@@ -258,3 +258,22 @@ h4 {
   max-width:50%;
   margin-bottom: 20px;
 }
+
+/*----------------------------------------*/
+// CONTACT BLOCK
+
+.contact-block {
+  display: flex;
+  .contact-newsletter {
+    background-color: $light-purple;
+    width: 50%;
+    text-align: center;
+    padding: 2% 7%;
+  }
+  .contact-comment {
+    background-color: $light-yellow;
+    width: 50%;
+    text-align: center;
+    padding: 2% 7%;
+  }
+}
