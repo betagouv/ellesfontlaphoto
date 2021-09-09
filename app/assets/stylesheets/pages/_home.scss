@@ -235,13 +235,13 @@ h4 {
   display: flex;
   .contact-newsletter {
     background-color: $light-purple;
-    width: 50%;
+    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
   .contact-comment {
     background-color: $light-yellow;
-    width: 50%;
+    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
@@ -389,10 +389,27 @@ h4 {
   .contact-block {
     display: block;
     .contact-newsletter {
-      min-width: 100%;
+      // width: 100%;
     }
     .contact-comment {
-      min-width: 100%;
+      // width: 100%;
+    }
+
+    .input {
+      text-align: center !important;
+    }
+
+    input,textarea {
+      width: 85% !important;
+      margin: 0 auto;
+    }
+    select {
+      width: 89% !important;
+      margin: 0 auto;
+    }
+
+    .btn {
+      height: 45px !important;
     }
   }
 }

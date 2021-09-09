@@ -6680,3 +6680,224 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms | Allocations: 20430)
 
 
+Started GET "/" for ::1 at 2021-09-09 17:21:45 +0200
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 349.4ms | Allocations: 52207)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 1063)
+  Rendered layout layouts/application.html.erb (Duration: 406.5ms | Allocations: 69629)
+Completed 200 OK in 453ms (Views: 413.9ms | ActiveRecord: 6.8ms | Allocations: 77626)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:22:14 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 47.6ms | Allocations: 13741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 332.6ms | Allocations: 45661)
+Completed 200 OK in 335ms (Views: 333.9ms | ActiveRecord: 0.0ms | Allocations: 46087)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:22:40 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 34.2ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 179.9ms | Allocations: 46092)
+Completed 200 OK in 182ms (Views: 181.1ms | ActiveRecord: 0.0ms | Allocations: 46525)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:23:49 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 77.5ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 548.2ms | Allocations: 45183)
+Completed 200 OK in 551ms (Views: 549.8ms | ActiveRecord: 0.0ms | Allocations: 45608)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:24:15 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 57.7ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 302.6ms | Allocations: 47113)
+Completed 200 OK in 306ms (Views: 304.6ms | ActiveRecord: 0.0ms | Allocations: 47545)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:25:07 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 60.9ms | Allocations: 13748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 209.7ms | Allocations: 47109)
+Completed 200 OK in 211ms (Views: 210.3ms | ActiveRecord: 0.0ms | Allocations: 47541)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:25:27 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 41.9ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 191.0ms | Allocations: 47981)
+Completed 200 OK in 193ms (Views: 192.0ms | ActiveRecord: 0.0ms | Allocations: 48414)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:25:37 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 52.5ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 91.9ms | Allocations: 19689)
+Completed 200 OK in 103ms (Views: 92.6ms | ActiveRecord: 0.0ms | Allocations: 20114)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:26:33 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 32.9ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 20140)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 20565)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:26:53 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 70.2ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 11.0ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 255.2ms | Allocations: 48011)
+Completed 200 OK in 257ms (Views: 256.4ms | ActiveRecord: 0.0ms | Allocations: 48436)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:27:26 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 56.9ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 296.0ms | Allocations: 47060)
+Completed 200 OK in 299ms (Views: 297.0ms | ActiveRecord: 0.0ms | Allocations: 47485)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:28:07 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 21.1ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 144.4ms | Allocations: 44695)
+Completed 200 OK in 146ms (Views: 145.1ms | Allocations: 45120)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:28:43 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 36.2ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.2ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 319.2ms | Allocations: 47536)
+Completed 200 OK in 321ms (Views: 320.0ms | Allocations: 47961)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:28:58 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 40.3ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 202.7ms | Allocations: 47076)
+Completed 200 OK in 205ms (Views: 203.8ms | Allocations: 47501)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:29:12 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 37.6ms | Allocations: 13748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 198.6ms | Allocations: 48848)
+Completed 200 OK in 200ms (Views: 199.2ms | Allocations: 49273)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:30:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 25.4ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 170.1ms | Allocations: 46151)
+Completed 200 OK in 172ms (Views: 170.8ms | Allocations: 46576)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:30:24 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 25.9ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 159.3ms | Allocations: 45712)
+Completed 200 OK in 162ms (Views: 160.3ms | Allocations: 46137)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:30:44 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 44.3ms | Allocations: 13732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 186.5ms | Allocations: 47509)
+Completed 200 OK in 190ms (Views: 187.9ms | Allocations: 47934)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:31:01 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 39.5ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 177.8ms | Allocations: 47075)
+Completed 200 OK in 180ms (Views: 178.9ms | Allocations: 47500)
+
+
+Started GET "/" for ::1 at 2021-09-09 17:31:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 32.0ms | Allocations: 13747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 19647)
+Completed 200 OK in 42ms (Views: 41.6ms | Allocations: 20072)
+
+

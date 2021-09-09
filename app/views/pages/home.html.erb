@@ -102,10 +102,12 @@
                     label: "Pourquoi ?",
                     placeholder: "Choisissez votre type de contact",
                     collection: ['Une idée ? Une question ?', 'Devenir Beta Testeuse'],
-                    include_hidden: false %>
+                    include_hidden: false,
+                    required: true %>
       <%= f.input :message,
                       placeholder: "Votre message",
-                      as: :text %>
+                      as: :text,
+                      required: true %>
       <%= f.button :submit, "Envoyer" %>
     <% end %>
   </div>
