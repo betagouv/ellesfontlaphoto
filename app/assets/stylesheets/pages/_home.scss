@@ -253,8 +253,8 @@ h4 {
     margin: 0 auto;
     .input {
       text-align:left;
-
     }
+
     label {
       font-family: "Marianne", sans-serif;
       font-size: 14px;
@@ -263,9 +263,11 @@ h4 {
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+
     abbr {
       display:none;
     }
+
     input,select {
       border: 1px solid #000;
       border-radius: 5px;
@@ -300,7 +302,7 @@ h4 {
       font-size: 14px;
     }
 
-    .button {
+    .btn {
       margin-top: 10px;
       padding-top: 5px;
       padding-bottom: 9px;
@@ -310,6 +312,7 @@ h4 {
       font-family: Marianne, sans-serif;
       width: 20%;
       height: 38px;
+      cursor: pointer;
     }
   }
 }
