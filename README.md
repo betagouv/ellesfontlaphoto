@@ -7,6 +7,7 @@ Rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais
 ```bash
 git clone https://github.com/betagouv/ellesfontlaphoto.git
 cd ellesfontlaphoto
+get the .env file and application.yml files
 bundle install
 yarn install
 rails db:create
