@@ -4,7 +4,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-tmp/*
 !/log/.keep
 !/tmp/.keep
 
@@ -21,10 +20,10 @@ tmp/*
 .env*
 
 # Ignore application configuration
-# application.yml
+application.yml
 
 # Ignore application configuration
-# /config/application.yml
+/config/application.yml
 
 
 
