@@ -6901,3 +6901,216 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 42ms (Views: 41.6ms | Allocations: 20072)
 
 
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
+DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateAdminUsers (20210910101511)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (60.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ellesfontlaphoto_development"[0m
+  [1m[35m (92.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ellesfontlaphoto_test"[0m
+  [1m[35m (282.6ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_development" ENCODING = 'unicode'[0m
+  [1m[35m (193.4ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20210908111253)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "email" character varying, "type" character varying, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908111253"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMessageToContacts (20210908112049)
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD "message" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908112049"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnContacts (20210908173627)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.2ms)[0m  [1m[35mALTER TABLE "contacts" RENAME COLUMN "type" TO "contact_type"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908173627"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20210910101511)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910101511"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20210910101514)
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210910101514"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-10 10:16:30.695523"], ["updated_at", "2021-09-10 10:16:30.695523"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin" for ::1 at 2021-09-10 12:17:14 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 35ms (ActiveRecord: 0.0ms | Allocations: 1286)
+
+
+Started GET "/admin/login" for ::1 at 2021-09-10 12:17:14 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 2.3ms | Allocations: 615)
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 56.7ms | Allocations: 11193)
+  Rendered layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 1158.7ms | Allocations: 148559)
+Completed 200 OK in 1204ms (Views: 1168.1ms | ActiveRecord: 10.1ms | Allocations: 156521)
+
+
+Started POST "/admin/login" for ::1 at 2021-09-10 12:17:45 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (31.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 63ms (ActiveRecord: 33.1ms | Allocations: 4675)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 0.8ms | Allocations: 122)
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 11.0ms | Allocations: 6285)
+  Rendered layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 32.6ms | Allocations: 21496)
+Completed 200 OK in 305ms (Views: 33.4ms | ActiveRecord: 0.0ms | Allocations: 22643)
+
+
+  [1m[36mAdminUser Load (2.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/admin/login" for ::1 at 2021-09-10 12:18:38 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (2.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 9ms (ActiveRecord: 2.2ms | Allocations: 1633)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  Rendering layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 11.3ms | Allocations: 5739)
+  Rendered layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 42.1ms | Allocations: 20948)
+Completed 200 OK in 307ms (Views: 42.7ms | ActiveRecord: 0.0ms | Allocations: 21441)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mAdminUser Create (0.9ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$12$hXOBR696G1pim0EHzMGz6ezYZesjE7Yu.reCyH/zUoIdRC3nyuGAi"], ["created_at", "2021-09-10 10:18:54.245755"], ["updated_at", "2021-09-10 10:18:54.245755"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/admin/login" for ::1 at 2021-09-10 12:18:59 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (1.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Update (24.6ms)[0m  [1m[33mUPDATE "admin_users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "admin_users"."id" = $3[0m  [["remember_created_at", "2021-09-10 10:18:59.889179"], ["updated_at", "2021-09-10 10:18:59.889590"], ["id", 1]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 331ms (ActiveRecord: 35.3ms | Allocations: 11130)
+
+
+Started GET "/admin" for ::1 at 2021-09-10 12:18:59 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (1.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 28.4ms | Allocations: 18464)
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 1.3ms | Allocations: 21412)
+
+
+Started GET "/admin/comments" for ::1 at 2021-09-10 12:19:09 +0200
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 121.2ms | Allocations: 37572)
+Completed 200 OK in 149ms (Views: 115.5ms | ActiveRecord: 16.3ms | Allocations: 42474)
+
+
+Started GET "/admin/comments?scope=all" for ::1 at 2021-09-10 12:19:12 +0200
+Processing by Admin::CommentsController#index as HTML
+  Parameters: {"scope"=>"all"}
+  [1m[36mAdminUser Load (1.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 87.7ms | Allocations: 33451)
+Completed 200 OK in 97ms (Views: 81.1ms | ActiveRecord: 9.5ms | Allocations: 35479)
+
+
+Started GET "/admin/comments?scope=admin" for ::1 at 2021-09-10 12:19:13 +0200
+Processing by Admin::CommentsController#index as HTML
+  Parameters: {"scope"=>"admin"}
+  [1m[36mAdminUser Load (2.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 78.4ms | Allocations: 33474)
+Completed 200 OK in 88ms (Views: 67.9ms | ActiveRecord: 13.1ms | Allocations: 35527)
+
+
+Started GET "/admin/logout" for ::1 at 2021-09-10 12:36:23 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdminUser Load (3.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Update (1.3ms)[0m  [1m[33mUPDATE "admin_users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "admin_users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2021-09-10 10:36:23.489967"], ["id", 1]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 124ms (ActiveRecord: 55.7ms | Allocations: 12397)
+
+
+Started GET "/admin" for ::1 at 2021-09-10 12:36:23 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 1158)
+
+
+Started GET "/admin/login" for ::1 at 2021-09-10 12:36:23 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 1.0ms | Allocations: 125)
+  Rendered /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 15.6ms | Allocations: 5744)
+  Rendered layout /Users/Nadia/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 115.8ms | Allocations: 20969)
+Completed 200 OK in 118ms (Views: 116.8ms | ActiveRecord: 0.0ms | Allocations: 21539)
+
+
+Started GET "/" for ::1 at 2021-09-10 12:36:27 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 105.9ms | Allocations: 21239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1075)
+  Rendered layout layouts/application.html.erb (Duration: 184.4ms | Allocations: 47061)
+Completed 200 OK in 222ms (Views: 194.3ms | ActiveRecord: 12.9ms | Allocations: 52977)
+
+

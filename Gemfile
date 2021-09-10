@@ -28,6 +28,10 @@ gem 'figaro'
 # Mailing Gem
 gem 'sendinblue'
 
+# Back office gems
+gem 'activeadmin'
+gem "devise"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
