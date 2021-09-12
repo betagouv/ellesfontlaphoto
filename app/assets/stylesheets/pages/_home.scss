@@ -4,7 +4,7 @@
 /*----------------------------------------*/
 /*COMMON*/
 
-h1 {
+.main-title {
   display: inline-block;
   max-width: 1200px;
   margin-top: 0px;
@@ -14,9 +14,11 @@ h1 {
   font-size: 60px;
   line-height: 74px;
   text-align: center;
+  font-weight: normal;
+  color: $black;
 }
 
-h4 {
+.second-title {
   font-family: 'Marianne', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -77,6 +79,8 @@ h4 {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
+  text-decoration: none !important;
+  color: $white !important;
 }
 
 .quote p {
@@ -313,6 +317,12 @@ h4 {
       width: 20%;
       height: 38px;
       cursor: pointer;
+      background-image: none;
+      &:hover {
+        background-image: none !important;
+        background-color: $black !important;
+        opacity: 0.8;
+      }
     }
   }
 }
