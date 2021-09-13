@@ -2,10 +2,10 @@
 
 one:
   email: MyString
-  type: 
+  contact_type: test
   comment: MyText
 
 two:
   email: MyString
-  type: 
+  contact_type: test
   comment: MyText
