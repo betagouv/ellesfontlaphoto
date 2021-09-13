@@ -5,4 +5,4 @@ test:
   port: 5432
   username: postgres
   password: postgres
-  database: product_hunt_clone_test
+  database: ellesfontlaphoto_test
