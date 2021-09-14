@@ -34,3 +34,4 @@ help_test = Help.new(
   )
 
 help_test.save
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
