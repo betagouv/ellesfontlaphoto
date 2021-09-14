@@ -1,0 +1,123 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+.banner-show {
+  background-color: $purple;
+  display: flex;
+  justify-content: space-around;
+  padding: 3em 3em 0 3em;
+}
+
+.help-type {
+  font-family: 'Marianne-Regular', sans-serif;
+  background-color: $white;
+  width: fit-content;
+  padding: 5px 17px;
+  border-radius: 50px;
+}
+
+ul li {
+  font-family: 'Marianne-Regular', sans-serif;
+}
+
+.help-title {
+  width: 50%;
+}
+
+.help-description {
+  width: 20%;
+  p {
+    margin: 3px;
+  }
+}
+
+.hl {
+  border-top: 0.1px solid $black;
+  border-style: outset;
+  margin: 20px 0;
+}
+
+.arrondis {
+  background-color: $purple;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  width: 100%;
+  height: 100px;
+}
+
+.help-content {
+  margin: 0 auto;
+  padding: 5% 20%;
+  .block-fiche-aide{
+    margin: 20px 0;
+  }
+  .div-btn {
+    text-align: center;
+    margin-bottom: 60px;
+    .btn-candidate {
+      font-family: 'Marianne-Regular', sans-serif;
+      width: fit-content;
+      padding: 12px 26px;
+      border-radius: 50px;
+      background-color: $purple;
+      text-decoration: none;
+      color: $black;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .btn-not-available {
+      font-family: 'Marianne-Regular', sans-serif;
+      width: fit-content;
+      padding: 12px 26px;
+      border-radius: 50px;
+      background-color: $white;
+      border: 1px solid $purple;
+      text-decoration: none;
+      color: $black;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+  }
+  .bhl {
+    border-top: 0.1px solid $purple;
+    border-style: outset;
+    margin: 40px 0;
+  }
+  .link-commission {
+    color: $dark-blue;
+    font-family: 'Marianne-Regular', sans-serif;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .banner-show {
+    display: block;
+    .help-title {
+      width: 100%;
+      .help-type {
+        margin: 40px auto;
+      }
+      h2 {
+        text-align: center;
+        font-size: 45px;
+      }
+    }
+    .help-description {
+      width: 100%;
+      p {
+        margin:0;
+      }
+    }
+  }
+  .help-content {
+    .div-btn {
+      margin-top: 30px;
+    }
+    .block-fiche-aide {
+      .paragraphe-bold {
+        text-align: center;
+      }
+    }
+  }
+}
