@@ -1,0 +1,88 @@
+h1 {
+  display: inline-block;
+  max-width: 1200px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Marianne-ExtraBold', sans-serif;
+  font-size: 60px;
+  line-height: 74px;
+  text-align: center;
+}
+
+h2 {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Marianne-ExtraBold', sans-serif;
+  font-size: 55px;
+  line-height: 70px;
+}
+
+h4 {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.question-subtitle {
+  padding-top: 0px;
+  opacity: 0.6;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-weight: 400;
+  white-space: normal;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.paragraphe {
+  font-family: 'Marianne-Regular', sans-serif;
+}
+
+.paragraphe-bold {
+  font-family: 'Marianne-ExtraBold', sans-serif;
+}
+
+.main-paragraphe {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.paragraphe-quote {
+  font-family: "Marianne-Regular_Italic", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-left: 50px;
+}
+
+.dark-button {
+  border-radius: 5px;
+  padding: 12px 25px;
+  background-color: #1a1b1f;
+  transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
