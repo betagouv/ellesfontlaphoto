@@ -6924,3 +6924,2124 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 158ms (Views: 156.4ms | ActiveRecord: 0.0ms | Allocations: 30460)
 
 
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (25.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.2ms)[0m  [1m[35mDROP TABLE "helps"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (19.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.1ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "sector" character varying, "structure_name" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mDROP TABLE "helps"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.5ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "sector" character varying, "structure_name" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "helps"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "sector" character varying, "structure_name" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE "helps"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "sector" character varying, "structure_name" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "help_type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Create (2.2ms)[0m  [1m[32mINSERT INTO "helps" ("title", "description", "sector", "structure_name", "start_month", "end_month", "help_amount", "residence_condition", "general_condition", "specific_condition", "candidate_url", "selection", "url_commission", "help_type", "admin_attachment", "artistic_attachment", "contact_institution", "contact_institution_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["title", "AIC"], ["description", "Accompagner le financement d'un projet de création ou de recherche artistique."], ["sector", "Arts visuels"], ["structure_name", "DRAC Grand-Est"], ["start_month", "Janvier"], ["end_month", "Février"], ["help_amount", "8000 euros maximum"], ["residence_condition", "Grand-Est"], ["general_condition", "Réservé à la création artistique ; Ne pas être étudiante"], ["specific_condition", "Un projet collectif ne peut faire l'objet que d'une seule demande ; Si vous avez déjà dénéficié de cette aide, attendez 4 ans avant une nouvelle candidature ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques."], ["candidate_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/aides/subventions/arts-visuels/AIC"], ["selection", "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. La composition de la commission consultative est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés)."], ["url_commission", "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023"], ["help_type", "Production"], ["admin_attachment", "CV, pièce d’identité, fiche SIREN, RIB, justificatif de résidence, dernier avis d’imposition"], ["artistic_attachment", "portfolio ; note de présentation du projet et montant détaillé des dépenses et du financement prévu;"], ["contact_institution", "Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)\n    Laurent Innocenzi, conseiller\n    laurent.innocenzi@culture.gouv.fr\n    Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)\n    Bernard Goy, conseiller\n    bernard.goy@culture.gouv.fr\n    "], ["contact_institution_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels"], ["created_at", "2021-09-13 16:16:10.687531"], ["updated_at", "2021-09-13 16:16:10.687531"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2021-09-13 18:18:42 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 649.8ms | Allocations: 64462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 1087)
+  Rendered layout layouts/application.html.erb (Duration: 729.2ms | Allocations: 86707)
+Completed 200 OK in 1006ms (Views: 763.6ms | ActiveRecord: 200.8ms | Allocations: 94833)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:18:44 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4175)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4256)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 28.3ms | Allocations: 21539)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `help' for #<ActionView::Base:0x007fc55ecc03a0>
+Did you mean?  @help):
+    1: <%= help.title %>
+  
+app/views/helps/show.html.erb:1
+Started GET "/helps/1" for ::1 at 2021-09-13 18:18:53 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7143)
+Completed 200 OK in 32ms (Views: 21.5ms | ActiveRecord: 1.9ms | Allocations: 9326)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:26:51 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1580)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 25.3ms | Allocations: 19673)
+
+
+  
+ActionView::Template::Error (undefined method `value' for nil:NilClass):
+    2: <% elsif @help.title == "AIC" %>
+    3:   <h1>Aide individuelle à la création | <%= @help.title %></h1>
+    4: <% end %>
+    5:   <h1><%= Help::HELP_TITLE[@help.title].value %></h1>
+  
+app/views/helps/show.html.erb:5
+Started PUT "/__web_console/repl_sessions/c2c8605c134a44df6f26d5a4bbe64ece" for ::1 at 2021-09-13 18:26:57 +0200
+Started PUT "/__web_console/repl_sessions/c2c8605c134a44df6f26d5a4bbe64ece" for ::1 at 2021-09-13 18:26:57 +0200
+Started PUT "/__web_console/repl_sessions/c2c8605c134a44df6f26d5a4bbe64ece" for ::1 at 2021-09-13 18:27:04 +0200
+Started PUT "/__web_console/repl_sessions/c2c8605c134a44df6f26d5a4bbe64ece" for ::1 at 2021-09-13 18:27:07 +0200
+Started PUT "/__web_console/repl_sessions/c2c8605c134a44df6f26d5a4bbe64ece" for ::1 at 2021-09-13 18:27:17 +0200
+Started GET "/helps/1" for ::1 at 2021-09-13 18:27:19 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1446)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 11.9ms | Allocations: 17194)
+
+
+  
+ActionView::Template::Error (undefined method `value' for nil:NilClass):
+    2: <% elsif @help.title == "AIC" %>
+    3:   <h1>Aide individuelle à la création | <%= @help.title %></h1>
+    4: <% end %>
+    5:   <h1><%= Help::HELP_TITLE[@help.title].value %></h1>
+  
+app/views/helps/show.html.erb:5
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:21 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:23 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:30 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:47 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:49 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:27:58 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:01 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:02 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:06 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:06 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:15 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:17 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:29 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:31 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:31 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:39 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:42 +0200
+Started PUT "/__web_console/repl_sessions/c66262a2de2283bb9d0f51a0ae374036" for ::1 at 2021-09-13 18:28:44 +0200
+Started GET "/helps/1" for ::1 at 2021-09-13 18:29:01 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 7060)
+Completed 200 OK in 40ms (Views: 22.9ms | ActiveRecord: 1.4ms | Allocations: 9074)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:29:22 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7076)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.9ms | Allocations: 9102)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Create (1.6ms)[0m  [1m[32mINSERT INTO "helps" ("title", "description", "sector", "structure_name", "start_month", "end_month", "help_amount", "residence_condition", "general_condition", "specific_condition", "candidate_url", "selection", "url_commission", "help_type", "admin_attachment", "artistic_attachment", "contact_institution", "contact_institution_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["title", "AIC"], ["description", "Accompagner le financement d'un projet de création ou de recherche artistique."], ["sector", "Arts visuels"], ["structure_name", "blabla"], ["start_month", "Janvier"], ["end_month", "Février"], ["help_amount", "8000 euros maximum"], ["residence_condition", "Grand-Est"], ["general_condition", "Réservé à la création artistique ; Ne pas être étudiante"], ["specific_condition", "Un projet collectif ne peut faire l'objet que d'une seule demande ; Si vous avez déjà dénéficié de cette aide, attendez 4 ans avant une nouvelle candidature ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques."], ["candidate_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/aides/subventions/arts-visuels/AIC"], ["selection", "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. La composition de la commission consultative est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés)."], ["url_commission", "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023"], ["help_type", "Production"], ["admin_attachment", "CV, pièce d’identité, fiche SIREN, RIB, justificatif de résidence, dernier avis d’imposition"], ["artistic_attachment", "portfolio ; note de présentation du projet et montant détaillé des dépenses et du financement prévu;"], ["contact_institution", "Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)\n    Laurent Innocenzi, conseiller\n    laurent.innocenzi@culture.gouv.fr\n    Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)\n    Bernard Goy, conseiller\n    bernard.goy@culture.gouv.fr\n    "], ["contact_institution_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels"], ["created_at", "2021-09-13 16:43:44.225813"], ["updated_at", "2021-09-13 16:43:44.225813"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHelp Load (0.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (55.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "helps"[0m
+  [1m[36mHelp Load (0.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Destroy (0.5ms)[0m  [1m[31mDELETE FROM "helps" WHERE "helps"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Destroy (0.3ms)[0m  [1m[31mDELETE FROM "helps" WHERE "helps"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Create (0.6ms)[0m  [1m[32mINSERT INTO "helps" ("title", "description", "sector", "structure_name", "start_month", "end_month", "help_amount", "residence_condition", "general_condition", "specific_condition", "candidate_url", "selection", "url_commission", "help_type", "admin_attachment", "artistic_attachment", "contact_institution", "contact_institution_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["title", "AIC"], ["description", "Accompagner le financement d'un projet de création ou de recherche artistique."], ["sector", "Arts visuels"], ["structure_name", "blabla"], ["start_month", "Janvier"], ["end_month", "Février"], ["help_amount", "8000 euros maximum"], ["residence_condition", "Grand-Est"], ["general_condition", "Réservé à la création artistique ; Ne pas être étudiante"], ["specific_condition", "Un projet collectif ne peut faire l'objet que d'une seule demande ; Si vous avez déjà dénéficié de cette aide, attendez 4 ans avant une nouvelle candidature ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques."], ["candidate_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/aides/subventions/arts-visuels/AIC"], ["selection", "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. La composition de la commission consultative est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés)."], ["url_commission", "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023"], ["help_type", "Production"], ["admin_attachment", "CV, pièce d’identité, fiche SIREN, RIB, justificatif de résidence, dernier avis d’imposition"], ["artistic_attachment", "portfolio ; note de présentation du projet et montant détaillé des dépenses et du financement prévu;"], ["contact_institution", "Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)\n    Laurent Innocenzi, conseiller\n    laurent.innocenzi@culture.gouv.fr\n    Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)\n    Bernard Goy, conseiller\n    bernard.goy@culture.gouv.fr\n    "], ["contact_institution_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels"], ["created_at", "2021-09-13 16:44:30.340997"], ["updated_at", "2021-09-13 16:44:30.340997"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "helps"[0m
+  [1m[36mHelp Load (0.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mHelp Load (0.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "helps"[0m
+  [1m[36mHelp Load (0.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Destroy (0.6ms)[0m  [1m[31mDELETE FROM "helps" WHERE "helps"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (61.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ellesfontlaphoto_development"[0m
+  [1m[35m (49.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ellesfontlaphoto_test"[0m
+  [1m[35m (206.8ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_development" ENCODING = 'unicode'[0m
+  [1m[35m (108.7ms)[0m  [1m[35mCREATE DATABASE "ellesfontlaphoto_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2160576274151720145)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20210908111253)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "email" character varying, "type" character varying, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908111253"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMessageToContacts (20210908112049)
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE "contacts" ADD "message" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908112049"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameColumnContacts (20210908173627)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.0ms)[0m  [1m[35mALTER TABLE "contacts" RENAME COLUMN "type" TO "contact_type"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210908173627"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHelps (20210913150842)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "helps" ("id" bigserial primary key, "title" character varying, "description" character varying, "sector" character varying, "structure_name" character varying, "start_month" character varying, "end_month" character varying, "help_amount" character varying, "residence_condition" character varying, "general_condition" character varying, "specific_condition" text, "candidate_url" character varying, "institution_url" character varying, "selection" text, "compo_commission" character varying, "url_commission" character varying, "old_laureat" character varying, "old_laureat_url" character varying, "help_type" character varying, "admin_attachment" text, "artistic_attachment" text, "other_attachment" text, "contact_institution" text, "contact_institution_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210913150842"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-13 16:45:48.257216"], ["updated_at", "2021-09-13 16:45:48.257216"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2160576274151720145)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mHelp Load (0.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Create (0.9ms)[0m  [1m[32mINSERT INTO "helps" ("title", "description", "sector", "structure_name", "start_month", "end_month", "help_amount", "residence_condition", "general_condition", "specific_condition", "candidate_url", "selection", "url_commission", "help_type", "admin_attachment", "artistic_attachment", "contact_institution", "contact_institution_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["title", "AIC"], ["description", "Accompagner le financement d'un projet de création ou de recherche artistique."], ["sector", "Arts visuels"], ["structure_name", "DRAC Grand-Est"], ["start_month", "Janvier"], ["end_month", "Février"], ["help_amount", "8000 euros maximum"], ["residence_condition", "Grand-Est"], ["general_condition", "Réservé à la création artistique ; Ne pas être étudiante"], ["specific_condition", "Un projet collectif ne peut faire l'objet que d'une seule demande ; Si vous avez déjà dénéficié de cette aide, attendez 4 ans avant une nouvelle candidature ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques."], ["candidate_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/aides/subventions/arts-visuels/AIC"], ["selection", "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. La composition de la commission consultative est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés)."], ["url_commission", "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023"], ["help_type", "Production"], ["admin_attachment", "CV, pièce d’identité, fiche SIREN, RIB, justificatif de résidence, dernier avis d’imposition"], ["artistic_attachment", "portfolio ; note de présentation du projet et montant détaillé des dépenses et du financement prévu;"], ["contact_institution", "Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)\n    Laurent Innocenzi, conseiller\n    laurent.innocenzi@culture.gouv.fr\n    Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)\n    Bernard Goy, conseiller\n    bernard.goy@culture.gouv.fr\n    "], ["contact_institution_url", "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels"], ["created_at", "2021-09-13 16:46:16.312414"], ["updated_at", "2021-09-13 16:46:16.312414"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHelp Load (0.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/helps/1" for ::1 at 2021-09-13 18:46:41 +0200
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 253)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 8.4ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 132.1ms | Allocations: 13860)
+Completed 200 OK in 367ms (Views: 144.1ms | ActiveRecord: 21.6ms | Allocations: 33967)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:49:23 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (7.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 6427)
+Completed 200 OK in 44ms (Views: 21.1ms | ActiveRecord: 7.9ms | Allocations: 7629)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:49:25 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (4.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 6424)
+Completed 200 OK in 49ms (Views: 40.6ms | ActiveRecord: 4.8ms | Allocations: 7624)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:50:01 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 23.8ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 119.3ms | Allocations: 7001)
+Completed 200 OK in 161ms (Views: 129.5ms | ActiveRecord: 2.8ms | Allocations: 9010)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:50:03 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 91.8ms | Allocations: 23456)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 115.5ms | Allocations: 29563)
+Completed 200 OK in 146ms (Views: 118.2ms | ActiveRecord: 4.8ms | Allocations: 35039)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:50:06 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 41.6ms | Allocations: 14344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 57.6ms | Allocations: 20449)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms | Allocations: 20883)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:50:11 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 6425)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 1.5ms | Allocations: 7604)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:51:39 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 384.4ms | Allocations: 58500)
+Completed 200 OK in 394ms (Views: 388.9ms | ActiveRecord: 1.0ms | Allocations: 60538)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:51:40 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 6393)
+Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 1.9ms | Allocations: 7572)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:51:42 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6390)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.7ms | Allocations: 7573)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:51:55 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 6971)
+Completed 200 OK in 40ms (Views: 31.8ms | ActiveRecord: 2.1ms | Allocations: 8993)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:51:57 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 6393)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 1.4ms | Allocations: 7571)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:51:59 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 49.0ms | Allocations: 14911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 20983)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms | Allocations: 22031)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:54:56 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 22.1ms | Allocations: 14344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 211.7ms | Allocations: 51232)
+Completed 200 OK in 213ms (Views: 212.5ms | ActiveRecord: 0.0ms | Allocations: 51662)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:55:15 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 25.5ms | Allocations: 14329)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 138.7ms | Allocations: 49968)
+Completed 200 OK in 141ms (Views: 139.4ms | ActiveRecord: 0.0ms | Allocations: 50395)
+
+
+Started GET "/" for ::1 at 2021-09-13 18:55:21 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 70.8ms | Allocations: 14344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 275.1ms | Allocations: 50497)
+Completed 200 OK in 282ms (Views: 280.5ms | ActiveRecord: 0.0ms | Allocations: 50924)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:55:55 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 122.9ms | Allocations: 36544)
+Completed 200 OK in 131ms (Views: 123.6ms | ActiveRecord: 2.3ms | Allocations: 37723)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:56:25 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 3972)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4052)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms | Allocations: 6047)
+
+
+  
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+    1: <div>
+    2:   <h1><%= Help::HELP_TITLE[@help.title.to_sym] %></h1>
+    3:   <p class="subtitle"><%= @title.description %></p>
+    4: </div>
+  
+app/views/helps/show.html.erb:3
+Started GET "/helps/1" for ::1 at 2021-09-13 18:56:33 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 7139)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 1.8ms | Allocations: 9304)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 18:56:42 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6994)
+Completed 200 OK in 25ms (Views: 19.3ms | ActiveRecord: 0.9ms | Allocations: 9003)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:09:17 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 167.7ms | Allocations: 40232)
+Completed 200 OK in 218ms (Views: 172.5ms | ActiveRecord: 15.0ms | Allocations: 45468)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:10:11 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 237)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 8871)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.1ms | Allocations: 10866)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "$purple": expected 1 selector or at-rule, was ": #D0ABFF"
+        on line 7:1 of app/assets/stylesheets/config/_colors.scss
+        from line 19:1 of app/assets/stylesheets/application.scss
+>> $purple: #D0ABFF
+
+   ^
+):
+     7:     <%= favicon_link_tag %>
+     8:     <%= csrf_meta_tags %>
+     9:     <%= csp_meta_tag %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/config/_colors.scss:7
+app/views/layouts/application.html.erb:10
+Started GET "/helps/1" for ::1 at 2021-09-13 19:10:21 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (3.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 265.4ms | Allocations: 47310)
+Completed 200 OK in 276ms (Views: 266.0ms | ActiveRecord: 3.7ms | Allocations: 48488)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:11:33 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 177.5ms | Allocations: 40691)
+Completed 200 OK in 185ms (Views: 179.5ms | ActiveRecord: 1.1ms | Allocations: 42706)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:11:48 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 129.8ms | Allocations: 38161)
+Completed 200 OK in 135ms (Views: 130.5ms | ActiveRecord: 1.1ms | Allocations: 39339)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:12:54 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 134.7ms | Allocations: 39761)
+Completed 200 OK in 144ms (Views: 137.9ms | ActiveRecord: 1.3ms | Allocations: 41776)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:15:28 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (4.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | Allocations: 1111)
+  Rendered layout layouts/application.html.erb (Duration: 383.2ms | Allocations: 41660)
+Completed 200 OK in 478ms (Views: 394.3ms | ActiveRecord: 4.8ms | Allocations: 43675)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:15:50 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (8.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 214.1ms | Allocations: 40218)
+Completed 200 OK in 228ms (Views: 214.8ms | ActiveRecord: 8.9ms | Allocations: 41396)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:17:41 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 270.2ms | Allocations: 39764)
+Completed 200 OK in 278ms (Views: 271.7ms | ActiveRecord: 1.4ms | Allocations: 40941)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:17:48 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (7.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 169.1ms | Allocations: 42010)
+Completed 200 OK in 181ms (Views: 170.0ms | ActiveRecord: 7.0ms | Allocations: 43187)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:17:57 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 310.6ms | Allocations: 40617)
+Completed 200 OK in 317ms (Views: 311.5ms | ActiveRecord: 1.4ms | Allocations: 41794)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:19:30 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 256.3ms | Allocations: 41748)
+Completed 200 OK in 270ms (Views: 261.1ms | ActiveRecord: 2.0ms | Allocations: 43763)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-13 19:21:37 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 158.1ms | Allocations: 40208)
+Completed 200 OK in 166ms (Views: 159.0ms | ActiveRecord: 1.9ms | Allocations: 41386)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:44:19 +0200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 379)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 508.7ms | Allocations: 32465)
+Completed 200 OK in 631ms (Views: 515.6ms | ActiveRecord: 23.2ms | Allocations: 52576)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:44:54 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 231.6ms | Allocations: 40929)
+Completed 200 OK in 239ms (Views: 233.7ms | ActiveRecord: 1.6ms | Allocations: 42107)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:45:20 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.7ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7150)
+Completed 200 OK in 32ms (Views: 24.7ms | ActiveRecord: 2.0ms | Allocations: 9183)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:45:36 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 331.6ms | Allocations: 39299)
+Completed 200 OK in 339ms (Views: 332.6ms | ActiveRecord: 1.5ms | Allocations: 40493)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:45:51 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 247.1ms | Allocations: 41600)
+Completed 200 OK in 257ms (Views: 251.5ms | ActiveRecord: 1.2ms | Allocations: 42777)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:46:13 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 20.6ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 6467)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 1.1ms | Allocations: 7644)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:49:09 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 140.4ms | Allocations: 41373)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 0.7ms | Allocations: 43405)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:49:37 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 242)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 7152)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 1.3ms | Allocations: 9161)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:53:06 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 173.9ms | Allocations: 40758)
+Completed 200 OK in 192ms (Views: 176.0ms | ActiveRecord: 1.7ms | Allocations: 41952)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 09:58:35 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (Allocations: 1378)
+
+
+  
+SyntaxError (/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+    "Matériel" = " 📸💸 Achat de matérie...
+                ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:8: syntax error, unexpected ',', expecting end
+..." 📸💸 Achat de matériel",
+...                              ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:9: syntax error, unexpected '=', expecting end
+    "Production" = " 📸💸 Aide à la produc...
+                 ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:9: syntax error, unexpected ',', expecting end
+...📸💸 Aide à la production",
+...                               ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:10: syntax error, unexpected '=', expecting end
+    "Autre" = " 📸💸 Aide diverses"
+            ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:11: syntax error, unexpected '}', expecting end):
+  
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/controllers/helps_controller.rb:4:in `show'
+Started GET "/helps/1" for ::1 at 2021-09-14 09:59:45 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (Allocations: 1408)
+
+
+  
+SyntaxError (/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+    "Matériel" = "Achat de matériel",
+                ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:8: syntax error, unexpected ',', expecting end
+...ériel" = "Achat de matériel",
+...                              ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:9: syntax error, unexpected '=', expecting end
+    "Production" = "Aide à la production",
+                 ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:9: syntax error, unexpected ',', expecting end
+...ion" = "Aide à la production",
+...                              ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:10: syntax error, unexpected '=', expecting end
+    "Autre" = "Aide diverses"
+            ^
+/Users/Nadia/code/nadiaag/ellesfontlaphoto/app/models/help.rb:11: syntax error, unexpected '}', expecting end):
+  
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/models/help.rb:8: syntax error, unexpected '=', expecting =>
+app/models/help.rb:8: syntax error, unexpected ',', expecting end
+app/models/help.rb:9: syntax error, unexpected '=', expecting end
+app/models/help.rb:9: syntax error, unexpected ',', expecting end
+app/models/help.rb:10: syntax error, unexpected '=', expecting end
+app/models/help.rb:11: syntax error, unexpected '}', expecting end
+app/controllers/helps_controller.rb:4:in `show'
+Started GET "/helps/1" for ::1 at 2021-09-14 10:00:19 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4160)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4240)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 31.3ms | Allocations: 22714)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Help:0x00007fe02e5c9d18>):
+    1: <div class="banner-show">
+    2:   <div class="help-title">
+    3:     <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.type.to_sym] %></p>
+    4:     <h2><%= Help::HELP_TITLE[@help.title.to_sym] %></h2>
+    5:     <p class="paragraphe"><%= @help.description %></p>
+    6:   </div>
+  
+app/views/helps/show.html.erb:3
+Started GET "/helps/1" for ::1 at 2021-09-14 10:00:43 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4090)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4170)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.7ms | Allocations: 6156)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Help:0x00007fe034b07040>):
+    1: <div class="banner-show">
+    2:   <div class="help-title">
+    3:     <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.type.to_sym] %></p>
+    4:     <h2><%= Help::HELP_TITLE[@help.help_title.to_sym] %></h2>
+    5:     <p class="paragraphe"><%= @help.description %></p>
+    6:   </div>
+  
+app/views/helps/show.html.erb:3
+Started GET "/helps/1" for ::1 at 2021-09-14 10:00:43 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3887)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3969)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 12.6ms | Allocations: 50814)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Help:0x00007fe02e58fdc0>):
+    1: <div class="banner-show">
+    2:   <div class="help-title">
+    3:     <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.type.to_sym] %></p>
+    4:     <h2><%= Help::HELP_TITLE[@help.help_title.to_sym] %></h2>
+    5:     <p class="paragraphe"><%= @help.description %></p>
+    6:   </div>
+  
+app/views/helps/show.html.erb:3
+Started GET "/helps/1" for ::1 at 2021-09-14 10:01:02 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 7305)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 1.7ms | Allocations: 9328)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:02:05 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 153.8ms | Allocations: 40340)
+Completed 200 OK in 159ms (Views: 154.4ms | ActiveRecord: 1.6ms | Allocations: 41518)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:04:30 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 9.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 298.4ms | Allocations: 40339)
+Completed 200 OK in 305ms (Views: 299.5ms | ActiveRecord: 1.8ms | Allocations: 41517)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:06:23 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 210.3ms | Allocations: 41313)
+Completed 200 OK in 216ms (Views: 210.9ms | ActiveRecord: 1.4ms | Allocations: 42490)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:06:29 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 7168)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.9ms | Allocations: 9183)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:06:39 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 6471)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 1.6ms | Allocations: 7649)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:06:41 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6468)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.1ms | Allocations: 7645)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:09:22 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.6ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 7186)
+Completed 200 OK in 88ms (Views: 59.2ms | ActiveRecord: 2.9ms | Allocations: 9201)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:09:53 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 56.5ms | Allocations: 957)
+  Rendered layout layouts/application.html.erb (Duration: 227.1ms | Allocations: 41719)
+Completed 200 OK in 233ms (Views: 228.1ms | ActiveRecord: 1.2ms | Allocations: 42897)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:10:15 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 282.1ms | Allocations: 40806)
+Completed 200 OK in 288ms (Views: 283.0ms | ActiveRecord: 1.3ms | Allocations: 41983)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:12:13 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 14.9ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 321.1ms | Allocations: 42939)
+Completed 200 OK in 334ms (Views: 326.4ms | ActiveRecord: 2.0ms | Allocations: 44954)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:12:48 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (3.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 222.1ms | Allocations: 41263)
+Completed 200 OK in 293ms (Views: 282.1ms | ActiveRecord: 3.3ms | Allocations: 42441)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:13:18 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (7.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 331.3ms | Allocations: 42072)
+Completed 200 OK in 364ms (Views: 345.7ms | ActiveRecord: 7.7ms | Allocations: 44087)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:13:42 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 203.9ms | Allocations: 40415)
+Completed 200 OK in 213ms (Views: 204.8ms | ActiveRecord: 0.9ms | Allocations: 41593)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:14:21 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 245.6ms | Allocations: 41989)
+Completed 200 OK in 261ms (Views: 254.0ms | ActiveRecord: 1.4ms | Allocations: 44004)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:15:03 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 176.2ms | Allocations: 40438)
+Completed 200 OK in 181ms (Views: 177.3ms | ActiveRecord: 0.8ms | Allocations: 41616)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:16:20 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 168.4ms | Allocations: 42094)
+Completed 200 OK in 175ms (Views: 170.9ms | ActiveRecord: 0.8ms | Allocations: 44109)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:16:46 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 58)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 145.1ms | Allocations: 42285)
+Completed 200 OK in 151ms (Views: 145.9ms | ActiveRecord: 1.3ms | Allocations: 43463)
+
+
+  [1m[36mHelp Load (0.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (17.3ms)[0m  [1m[33mUPDATE "helps" SET "selection" = $1, "compo_commission" = $2, "updated_at" = $3 WHERE "helps"."id" = $4[0m  [["selection", "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget."], ["compo_commission", "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés)."], ["updated_at", "2021-09-14 08:28:35.852554"], ["id", 1]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 10:32:46 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (3.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 24.5ms | Allocations: 3626)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 3706)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 22.0ms | Allocations: 8903)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url_commission' for #<ActionView::Base:0x007fe034d7f728>
+Did you mean?  url_options):
+    29:     <p class="paragraphe"><%= @help.selection %></p>
+    30:     <p class="subtitle">Composition de la compo</p>
+    31:     <p class="paragraphe"><%= @help.compo_commission %></p>
+    32:     <a class="link-commission" href="<%= url_commission %>"> -> Membres de la commission</a>
+    33:   </div>
+    34: </div>
+  
+app/views/helps/show.html.erb:32
+Started GET "/helps/1" for ::1 at 2021-09-14 10:33:10 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (7.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 333)
+  Rendered layout layouts/application.html.erb (Duration: 65.9ms | Allocations: 9473)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 7.5ms | Allocations: 11462)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "$dark-blue": expected 1 selector or at-rule, was ": #000091;"
+        on line 8:1 of app/assets/stylesheets/config/_colors.scss
+        from line 19:1 of app/assets/stylesheets/application.scss
+>> $dark-blue: #000091;
+
+   ^
+):
+     7:     <%= favicon_link_tag %>
+     8:     <%= csrf_meta_tags %>
+     9:     <%= csp_meta_tag %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/config/_colors.scss:8
+app/views/layouts/application.html.erb:10
+Started GET "/helps/1" for ::1 at 2021-09-14 10:33:28 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 67)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 191.7ms | Allocations: 46544)
+Completed 200 OK in 197ms (Views: 192.4ms | ActiveRecord: 0.8ms | Allocations: 47722)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:34:46 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 221.6ms | Allocations: 42221)
+Completed 200 OK in 232ms (Views: 225.2ms | ActiveRecord: 1.4ms | Allocations: 44237)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:35:20 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 67)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 206.2ms | Allocations: 40985)
+Completed 200 OK in 216ms (Views: 207.7ms | ActiveRecord: 2.7ms | Allocations: 42164)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:37:40 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 7274)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 1.7ms | Allocations: 9290)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:37:44 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 67)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6483)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.7ms | Allocations: 7668)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 10:38:15 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 7312)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.7ms | Allocations: 9328)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:11:11 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (6.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 7368)
+Completed 200 OK in 182ms (Views: 33.4ms | ActiveRecord: 34.4ms | Allocations: 12565)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:12:00 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 285.8ms | Allocations: 41431)
+Completed 200 OK in 294ms (Views: 287.0ms | ActiveRecord: 1.8ms | Allocations: 42610)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:12:26 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (10.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 449.9ms | Allocations: 41466)
+Completed 200 OK in 470ms (Views: 450.7ms | ActiveRecord: 10.4ms | Allocations: 42644)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:20:33 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (4.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 34.5ms | Allocations: 586)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 33.3ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 145.9ms | Allocations: 7490)
+Completed 200 OK in 367ms (Views: 171.6ms | ActiveRecord: 44.0ms | Allocations: 12714)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:21:02 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 7506)
+Completed 200 OK in 43ms (Views: 36.5ms | ActiveRecord: 1.6ms | Allocations: 9517)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:22:07 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (9.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 29.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 362.6ms | Allocations: 40991)
+Completed 200 OK in 378ms (Views: 363.8ms | ActiveRecord: 9.8ms | Allocations: 42171)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:23:14 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 134.7ms | Allocations: 41495)
+Completed 200 OK in 140ms (Views: 135.5ms | ActiveRecord: 1.6ms | Allocations: 42674)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:23:35 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 7.7ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 315.7ms | Allocations: 41608)
+Completed 200 OK in 327ms (Views: 316.6ms | ActiveRecord: 1.7ms | Allocations: 42787)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:24:32 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.0ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 586.4ms | Allocations: 41993)
+Completed 200 OK in 593ms (Views: 587.3ms | ActiveRecord: 2.0ms | Allocations: 43172)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:25:34 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 432.6ms | Allocations: 40581)
+Completed 200 OK in 440ms (Views: 433.9ms | ActiveRecord: 1.2ms | Allocations: 41760)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:26:11 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 7.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 288.1ms | Allocations: 42051)
+Completed 200 OK in 294ms (Views: 289.1ms | ActiveRecord: 1.4ms | Allocations: 43230)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:27:27 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 654.1ms | Allocations: 42036)
+Completed 200 OK in 659ms (Views: 654.8ms | ActiveRecord: 0.9ms | Allocations: 43215)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:27:56 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 144.1ms | Allocations: 42519)
+Completed 200 OK in 148ms (Views: 144.7ms | ActiveRecord: 0.7ms | Allocations: 43698)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:28:57 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 6496)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 1.4ms | Allocations: 7681)
+
+
+  [1m[36mHelp Load (0.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (0.5ms)[0m  [1m[33mUPDATE "helps" SET "admin_attachment" = $1, "updated_at" = $2 WHERE "helps"."id" = $3[0m  [["admin_attachment", "<ul>\n    <li>CV</li>\n    <li>pièce d’identité</li>\n    <li>fiche SIREN</li>\n    <li>RIB</li>\n    <li>justificatif de résidence</li>\n    <li>dernier avis d’imposition</li>\n    </ul>"], ["updated_at", "2021-09-14 09:32:14.418338"], ["id", 1]]
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 11:32:29 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 7513)
+Completed 200 OK in 71ms (Views: 52.9ms | ActiveRecord: 1.5ms | Allocations: 9530)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:34:59 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 16.8ms | Allocations: 3687)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 3767)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.8ms | Allocations: 5749)
+
+
+  
+ActionView::Template::Error (undefined method `render_to_string' for #<ActionView::Base:0x007fe03791d2e0>):
+    40:   <div class="block-fiche-aide">
+    41:     <p class="subtitle">Pièces à fournir</p>
+    42:     <p class="paragraphe-bold">🗒 Pièces administratives</p>
+    43:     <p class="paragraphe"><%= render_to_string(@help.admin_attachment) %></p>
+    44:     <p class="paragraphe-bold">🎨 Dossier artistique</p>
+    45:     <p class="paragraphe"><%= @help.artistic_attachment %></p>
+    46:     <% if @help.other_attachment.present? %>
+  
+app/views/helps/show.html.erb:43
+Started PUT "/__web_console/repl_sessions/f84b989a14957a50dc3290ba746b824c" for ::1 at 2021-09-14 11:35:05 +0200
+Started PUT "/__web_console/repl_sessions/f84b989a14957a50dc3290ba746b824c" for ::1 at 2021-09-14 11:35:05 +0200
+Started PUT "/__web_console/repl_sessions/f84b989a14957a50dc3290ba746b824c" for ::1 at 2021-09-14 11:36:10 +0200
+Started PUT "/__web_console/repl_sessions/f84b989a14957a50dc3290ba746b824c" for ::1 at 2021-09-14 11:36:10 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 11:36:33 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 606)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 7512)
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 1.7ms | Allocations: 9528)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:39:02 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 210.2ms | Allocations: 41602)
+Completed 200 OK in 218ms (Views: 211.1ms | ActiveRecord: 1.1ms | Allocations: 42782)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:48:15 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (3.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 6496)
+Completed 200 OK in 207ms (Views: 88.2ms | ActiveRecord: 59.2ms | Allocations: 10881)
+
+
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (17.3ms)[0m  [1m[33mUPDATE "helps" SET "artistic_attachment" = $1, "contact_institution" = $2, "updated_at" = $3 WHERE "helps"."id" = $4[0m  [["artistic_attachment", "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>"], ["contact_institution", "<ul><li>Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)\n    Laurent Innocenzi, conseiller\n    laurent.innocenzi@culture.gouv.fr</li>\n    <li>Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)\n    Bernard Goy, conseiller\n    bernard.goy@culture.gouv.fr</li></ul>\n    "], ["updated_at", "2021-09-14 09:49:29.390154"], ["id", 1]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 11:49:32 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | Allocations: 6496)
+Completed 200 OK in 69ms (Views: 63.5ms | ActiveRecord: 1.1ms | Allocations: 7675)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:49:55 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (4.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 7513)
+Completed 200 OK in 104ms (Views: 85.4ms | ActiveRecord: 4.6ms | Allocations: 9530)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 11:50:13 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 602)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 7505)
+Completed 200 OK in 46ms (Views: 39.5ms | ActiveRecord: 1.1ms | Allocations: 9516)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 12:00:51 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 24.6ms | Allocations: 17843)
+
+
+  
+RuntimeError ():
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:00:55 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:10 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:31 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:32 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:49 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:50 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:54 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:56 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:01:58 +0200
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:02:00 +0200
+  [1m[36mHelp Load (1.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (11.4ms)[0m  [1m[33mUPDATE "helps" SET "start_month" = $1, "end_month" = $2, "updated_at" = $3 WHERE "helps"."id" = $4[0m  [["start_month", "jenvier"], ["end_month", "février"], ["updated_at", "2021-09-14 10:02:47.745494"], ["id", 1]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+Started PUT "/__web_console/repl_sessions/26652c76a1e328173e668e942f44f421" for ::1 at 2021-09-14 12:02:50 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:02:52 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.4ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.4ms | Allocations: 1334)
+
+
+  
+RuntimeError ():
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started GET "/helps/1" for ::1 at 2021-09-14 12:02:53 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.8ms | Allocations: 1334)
+
+
+  
+RuntimeError ():
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/ae8131db6e8121d48f33dca41eba6261" for ::1 at 2021-09-14 12:02:56 +0200
+Started PUT "/__web_console/repl_sessions/ae8131db6e8121d48f33dca41eba6261" for ::1 at 2021-09-14 12:02:56 +0200
+  [1m[36mHelp Load (2.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (0.4ms)[0m  [1m[33mUPDATE "helps" SET "start_month" = $1, "updated_at" = $2 WHERE "helps"."id" = $3[0m  [["start_month", "janvier"], ["updated_at", "2021-09-14 10:03:07.302499"], ["id", 1]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 12:03:08 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms | Allocations: 1334)
+
+
+  
+RuntimeError ():
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:10 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:11 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:14 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:14 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:17 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:24 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:33 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:35 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:03:55 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:04:26 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:04:27 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:04:31 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:04:48 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:05:01 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:05:07 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:05:13 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:08:59 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:05 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:11 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:17 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:21 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:27 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:38 +0200
+Started PUT "/__web_console/repl_sessions/a0b3b30b0798285c81c9726d7314e0f2" for ::1 at 2021-09-14 12:09:42 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:14:58 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 30.6ms | Allocations: 18523)
+
+
+  
+NoMethodError (undefined method `now' for Date:Class
+Did you mean?  new):
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/0dc2c6de4506de8b0a01f68ff7c6f639" for ::1 at 2021-09-14 12:15:07 +0200
+Started PUT "/__web_console/repl_sessions/0dc2c6de4506de8b0a01f68ff7c6f639" for ::1 at 2021-09-14 12:15:07 +0200
+Started PUT "/__web_console/repl_sessions/0dc2c6de4506de8b0a01f68ff7c6f639" for ::1 at 2021-09-14 12:15:11 +0200
+Started PUT "/__web_console/repl_sessions/0dc2c6de4506de8b0a01f68ff7c6f639" for ::1 at 2021-09-14 12:15:17 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:15:24 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 35.2ms | Allocations: 16159)
+
+
+  
+ArgumentError (comparison of String with Date failed):
+  
+app/controllers/helps_controller.rb:5:in `<'
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/f6c1f993a693ce6a60c75465924278fd" for ::1 at 2021-09-14 12:15:35 +0200
+Started PUT "/__web_console/repl_sessions/f6c1f993a693ce6a60c75465924278fd" for ::1 at 2021-09-14 12:15:36 +0200
+Started PUT "/__web_console/repl_sessions/f6c1f993a693ce6a60c75465924278fd" for ::1 at 2021-09-14 12:15:38 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:16:01 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 5.9ms | Allocations: 16807)
+
+
+  
+NoMethodError (undefined method `end_month' for Mon, 01 Feb 2021:Date
+Did you mean?  end_of_month):
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started GET "/helps/1" for ::1 at 2021-09-14 12:16:18 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (0.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 7.4ms | Allocations: 16275)
+
+
+  
+NoMethodError (undefined method `<' for true:TrueClass):
+  
+app/controllers/helps_controller.rb:5:in `show'
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:27 +0200
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:27 +0200
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:33 +0200
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:34 +0200
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:35 +0200
+Started PUT "/__web_console/repl_sessions/d34d09278cfca04ed160f2498e7bd4f2" for ::1 at 2021-09-14 12:16:35 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:17:11 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 20.3ms | Allocations: 15951)
+
+
+  
+RuntimeError ():
+  
+app/controllers/helps_controller.rb:10:in `show'
+Started PUT "/__web_console/repl_sessions/0580ac7289e1ed271a9bc826d6c2956a" for ::1 at 2021-09-14 12:17:15 +0200
+Started PUT "/__web_console/repl_sessions/0580ac7289e1ed271a9bc826d6c2956a" for ::1 at 2021-09-14 12:17:18 +0200
+Started GET "/helps/1" for ::1 at 2021-09-14 12:17:28 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 571.7ms | Allocations: 42303)
+Completed 200 OK in 746ms (Views: 583.4ms | ActiveRecord: 49.6ms | Allocations: 58958)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 12:17:42 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6497)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 1.2ms | Allocations: 7708)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 12:18:13 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 8920)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.3ms | Allocations: 10103)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "... border: border": expected "}", was ": 1px solid $purple"
+        on line 74:15 of app/assets/stylesheets/pages/_help_show.scss
+        from line 2:1 of app/assets/stylesheets/pages/_index.scss
+        from line 22:1 of app/assets/stylesheets/application.scss
+>>       border: border: 1px solid $purple;
+
+   --------------^
+):
+     7:     <%= favicon_link_tag %>
+     8:     <%= csrf_meta_tags %>
+     9:     <%= csp_meta_tag %>
+    10:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:   </head>
+    13: 
+  
+app/assets/stylesheets/pages/_help_show.scss:74
+app/views/layouts/application.html.erb:10
+Started GET "/helps/1" for ::1 at 2021-09-14 12:18:21 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (2.9ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 265.0ms | Allocations: 41720)
+Completed 200 OK in 275ms (Views: 265.9ms | ActiveRecord: 2.9ms | Allocations: 42929)
+
+
+  [1m[36mHelp Load (3.7ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (6.1ms)[0m  [1m[33mUPDATE "helps" SET "start_month" = $1, "end_month" = $2, "updated_at" = $3 WHERE "helps"."id" = $4[0m  [["start_month", "août"], ["end_month", "septembre"], ["updated_at", "2021-09-14 10:19:22.206614"], ["id", 1]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 12:19:29 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.8ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 6496)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 1.8ms | Allocations: 7706)
+
+
+  [1m[36mHelp Load (0.6ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (6.2ms)[0m  [1m[33mUPDATE "helps" SET "start_month" = $1, "updated_at" = $2 WHERE "helps"."id" = $3[0m  [["start_month", "septembre"], ["updated_at", "2021-09-14 10:19:48.215363"], ["id", 1]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 12:19:54 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 6495)
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 1.3ms | Allocations: 7705)
+
+
+  [1m[36mHelp Load (1.1ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (0.5ms)[0m  [1m[33mUPDATE "helps" SET "end_month" = $1, "updated_at" = $2 WHERE "helps"."id" = $3[0m  [["end_month", "octobre"], ["updated_at", "2021-09-14 10:20:03.294610"], ["id", 1]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 12:20:06 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.5ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 6495)
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 1.5ms | Allocations: 7705)
+
+
+  [1m[36mHelp Load (2.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" ORDER BY "helps"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHelp Update (22.5ms)[0m  [1m[33mUPDATE "helps" SET "start_month" = $1, "end_month" = $2, "updated_at" = $3 WHERE "helps"."id" = $4[0m  [["start_month", "janvier"], ["end_month", "février"], ["updated_at", "2021-09-14 10:20:15.859781"], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/helps/1" for ::1 at 2021-09-14 12:20:19 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.3ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 6494)
+Completed 200 OK in 31ms (Views: 24.0ms | ActiveRecord: 1.3ms | Allocations: 7704)
+
+
+Started GET "/helps/1" for ::1 at 2021-09-14 12:20:30 +0200
+Processing by HelpsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHelp Load (1.2ms)[0m  [1m[34mSELECT "helps".* FROM "helps" WHERE "helps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/helps_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering helps/show.html.erb within layouts/application
+  Rendered helps/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 955)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 6494)
+Completed 200 OK in 27ms (Views: 21.1ms | ActiveRecord: 1.2ms | Allocations: 7704)
+
+
+Started GET "/admin" for ::1 at 2021-09-14 12:20:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_173627) do
+ActiveRecord::Schema.define(version: 2021_09_13_150842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,34 @@ ActiveRecord::Schema.define(version: 2021_09_08_173627) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "message"
+  end
+
+  create_table "helps", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "sector"
+    t.string "structure_name"
+    t.string "start_month"
+    t.string "end_month"
+    t.string "help_amount"
+    t.string "residence_condition"
+    t.string "general_condition"
+    t.text "specific_condition"
+    t.string "candidate_url"
+    t.string "institution_url"
+    t.text "selection"
+    t.string "compo_commission"
+    t.string "url_commission"
+    t.string "old_laureat"
+    t.string "old_laureat_url"
+    t.string "help_type"
+    t.text "admin_attachment"
+    t.text "artistic_attachment"
+    t.text "other_attachment"
+    t.text "contact_institution"
+    t.string "contact_institution_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
