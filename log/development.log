@@ -6901,6 +6901,7 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 42ms (Views: 41.6ms | Allocations: 20072)
 
 
+<<<<<<< HEAD
 DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
 DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from migration_template at (erb):6)
 DEPRECATION WARNING: [] is deprecated and will be removed from Rails 6.2 (Use configs_for) (called from <main> at /Users/Nadia/code/nadiaag/ellesfontlaphoto/bin/rails:5)
@@ -7112,5 +7113,28 @@ Processing by PagesController#home as HTML
   Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 1075)
   Rendered layout layouts/application.html.erb (Duration: 184.4ms | Allocations: 47061)
 Completed 200 OK in 222ms (Views: 194.3ms | ActiveRecord: 12.9ms | Allocations: 52977)
+=======
+Started GET "/" for ::1 at 2021-09-13 13:04:02 +0200
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 874.0ms | Allocations: 107388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 1087)
+  Rendered layout layouts/application.html.erb (Duration: 939.6ms | Allocations: 129241)
+Completed 200 OK in 1036ms (Views: 955.0ms | ActiveRecord: 28.0ms | Allocations: 138829)
+
+
+Started GET "/" for ::1 at 2021-09-13 13:04:03 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 54.2ms | Allocations: 15234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | Allocations: 1042)
+  Rendered layout layouts/application.html.erb (Duration: 126.4ms | Allocations: 30078)
+Completed 200 OK in 158ms (Views: 156.4ms | ActiveRecord: 0.0ms | Allocations: 30460)
+>>>>>>> staging
 
 
