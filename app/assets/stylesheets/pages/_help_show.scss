@@ -14,14 +14,19 @@
   width: fit-content;
   padding: 5px 17px;
   border-radius: 50px;
+  font-size: 1rem;
 }
 
 ul li {
   font-family: 'Marianne-Regular', sans-serif;
+  font-size: 1rem;
 }
 
 .help-title {
   width: 50%;
+  p {
+    margin-top:4%;
+  }
 }
 
 .help-description {
@@ -54,6 +59,9 @@ ul li {
   .div-btn {
     text-align: center;
     margin-bottom: 60px;
+    p {
+      margin-top:30px;
+    }
     .btn-candidate {
       font-family: 'Marianne-Regular', sans-serif;
       width: fit-content;
@@ -87,6 +95,7 @@ ul li {
     color: $dark-blue;
     font-family: 'Marianne-Regular', sans-serif;
     text-decoration: none;
+    font-size: 1rem;
   }
 }
 

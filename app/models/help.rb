@@ -7,6 +7,7 @@ class Help < ApplicationRecord
   HELP_TYPE = {
     "Matériel": "Achat de matériel",
     "Production": "Aide à la production",
+    "Social": "Aide sociale",
     "Autre": "Aide diverses"
   }
 
@@ -29,6 +30,7 @@ class Help < ApplicationRecord
     "Martinique",
     "Guyane",
     "Guadeloupe",
+    "France"
   ]
 
   HELP_MONTH = [
