@@ -1,0 +1,71 @@
+<div class="banner-show">
+  <div class="help-title">
+    <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <h2><%= Help::HELP_TITLE[@help.title.to_sym] %></h2>
+    <p class="paragraphe"><%= @help.description %></p>
+  </div>
+  <div class="help-description">
+    <p class="paragraphe paragraphe-bold">💰 Gains:</p>
+    <p class="paragraphe"><%= @help.help_amount %></p>
+    <hr class="hl">
+    <p class="paragraphe paragraphe-bold">📅 Dates:</p>
+    <p class="paragraphe">Début: <%= @help.start_month %></p>
+    <p class="paragraphe">Fin: <%= @help.end_month %></p>
+    <hr class="hl">
+    <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
+    <p class="paragraphe">📍Résidence: <%= @help.residence_condition %></p>
+    <p class="paragraphe"><%= @help.general_condition %></p>
+  </div>
+</div>
+<div class="arrondis">
+</div>
+<div class="help-content">
+  <div class="div-btn">
+    <% if @help_status == "open" %>
+      <a class="btn-candidate" href="<%= @help.candidate_url %>">🚀 Candidatez</a>
+    <% elsif @help_status == "close" %>
+      <a class="btn-not-available"> 🚀 Candidatez </a>
+      <p class="paragraphe-bold">Actuellement fermée, revenez en <%= @help.start_month %></p>
+    <% end %>
+  </div>
+  <hr class="bhl">
+  <div class="block-fiche-aide">
+    <p class="subtitle">Sélection des lauréates et lauréats</p>
+    <p class="paragraphe"><%= @help.selection %></p>
+    <p class="paragraphe-bold">Composition de la compo</p>
+    <p class="paragraphe"><%= @help.compo_commission %></p>
+    <a class="link-commission" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
+    <% if @help.old_laureat.present? %>
+      <p class="paragraphe-bold">Précédents lauréats</p>
+      <p class="paragraphe"><%= @help.old_laureat %></p>
+      <a class="link-commission" href="<%= @help.old_laureat_url %>"> -> Voir les lauréats</a>
+    <% end %>
+  </div>
+  <hr class="bhl">
+  <div class="block-fiche-aide">
+    <p class="subtitle">Pièces à fournir</p>
+    <p class="paragraphe-bold">🗒 Pièces administratives</p>
+    <p class="paragraphe"><%= @help.admin_attachment.html_safe %></p>
+    <p class="paragraphe-bold">🎨 Dossier artistique</p>
+    <p class="paragraphe"><%= @help.artistic_attachment.html_safe %></p>
+    <% if @help.other_attachment.present? %>
+      <p class="paragraphe-bold">📓 Pièces spécifiques</p>
+      <p class="paragraphe"><%= @help.other_attachment.html_safe %></p>
+    <% end %>
+  </div>
+  <% if @help.specific_condition.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="subtitle">Conditions spécifiques</p>
+      <p class="paragraphe"><%= @help.specific_condition %></p>
+    </div>
+  <% end %>
+  <hr class="bhl">
+  <div class="block-fiche-aide">
+    <p class="subtitle">Contact</p>
+    <p class="paragraphe">Aide donnée par <%= @help.structure_name %> <a class="link-commission" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
+    <p class="paragraphe"><%= @help.contact_institution.html_safe %></p>
+  </div>
+  <hr class="bhl">
+  <p class="link-commission" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
+</div>
