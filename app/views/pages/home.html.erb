@@ -76,7 +76,7 @@
       <p style="font-weight: 900;"><%= alert %></p>
     <% end %>
     <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
-      <%= f.input :email,
+      <%= f.input :contact_email,
                       label: "Email (obligatoire)",
                       placeholder: "Email",
                       required: true %>
@@ -93,7 +93,7 @@
       <p style="font-weight: 900;"><%= notice %></p>
     <% end %>
     <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
-      <%= f.input :email,
+      <%= f.input :contact_email,
                       label: "Email (obligatoire)",
                       placeholder: "Email",
                       required: true %>
