@@ -1,0 +1,5 @@
+<ul>
+  <% @helps.each do |help| %>
+    <li><%= link_to help.title, help_path(help) %></li>
+  <% end %>
+</ul>
