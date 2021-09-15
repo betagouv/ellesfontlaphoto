@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  contact_type: test
+  contact_email: email@test.fr
+  contact_type: Devenir Beta Testeuse
   comment: MyText
 
 two:
-  email: MyString
-  contact_type: test
+  contact_email: email@test2.fr
+  contact_type: Une idée ? Une question ?
   comment: MyText
