@@ -1,7 +1,7 @@
 
 @font-face {
   font-family:'Marianne-Regular';
-  src: url('Marianne-Regular.woff2') format('woff2'),
+  src: //url('Marianne-Regular.woff2') format('woff2'),
   url('Marianne-Regular.woff') format('woff');
   font-weight: 250;
   font-style: normal;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family:'Marianne-Light';
-  src: url('Marianne-Light.woff2') format('woff2'),
+  src: //url('Marianne-Light.woff2') format('woff2'),
   url('Marianne-Light.woff') format('woff');
   font-weight: 275;
   font-style: normal;
@@ -23,7 +23,8 @@
 
 @font-face {
   font-family:'Marianne-ExtraBold';
-  src: url('Marianne-ExtraBold.woff2') format('woff2');
+  src: //url('Marianne-ExtraBold.woff2') format('woff2');
+  url('Marianne-ExtraBold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -33,7 +34,7 @@
 
 @font-face {
   font-family:'Marianne-Bold';
-  src: url('Marianne-Bold.woff2') format('woff2'),
+  src: //url('Marianne-Bold.woff2') format('woff2'),
   url('Marianne-Bold.woff') format('woff');
   font-weight: 275;
   font-style: normal;
@@ -44,7 +45,7 @@
 
 @font-face {
   font-family:'Marianne-Regular_Italic';
-  src: url('Marianne-Regular_Italic.woff2') format('woff2'),
+  src: //url('Marianne-Regular_Italic.woff2') format('woff2'),
   url('Marianne-Regular_Italic.woff') format('woff');
   font-weight: 275;
   font-style: normal;
