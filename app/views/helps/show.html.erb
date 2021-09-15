@@ -34,13 +34,13 @@
     <p class="subtitle">Sélection des lauréates et lauréats</p>
     <p class="paragraphe"><%= @help.selection %></p>
     <% if @help.example_enrollment_url.present? %>
-      <p class="paragraphe-bold">Exemple de dossiers lauréats</p>
+      <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
       <a class="link-commission" href="<%= @help.example_enrollment_url %>"> -> C'est ici</a>
-      <p class="paragraphe-bold" style="margin-top:30px;" >Composition de la compo</p>
+      <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
     <% else %>
-      <p class="paragraphe-bold">Composition de la compo</p>
+      <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
-    <p class="paragraphe"><%= @help.compo_commission %></p>
+    <p class="paragraphe mb0"><%= @help.compo_commission %></p>
     <a class="link-commission" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
       <p class="paragraphe-bold">Précédents lauréats</p>
@@ -51,12 +51,12 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Pièces à fournir</p>
-    <p class="paragraphe-bold">🗒 Pièces administratives</p>
+    <p class="paragraphe-bold mb0">🗒 Pièces administratives</p>
     <p class="paragraphe"><%= @help.admin_attachment.html_safe %></p>
-    <p class="paragraphe-bold">🎨 Dossier artistique</p>
+    <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
     <p class="paragraphe"><%= @help.artistic_attachment.html_safe %></p>
     <% if @help.other_attachment.present? %>
-      <p class="paragraphe-bold">📓 Pièces spécifiques</p>
+      <p class="paragraphe-bold mb0">📓 Pièces spécifiques</p>
       <p class="paragraphe"><%= @help.other_attachment.html_safe %></p>
     <% end %>
   </div>
@@ -71,12 +71,12 @@
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
     <p class="paragraphe">Aide donnée par <%= @help.structure_name %> <a class="link-commission" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
-    <p class="paragraphe"><%= @help.contact_institution.html_safe %></p>
+    <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% if @help.contact_email.present? %>
-      <p class="paragraphe">✉️ Envoyer un email <a class="link-commission" href="<%= @help.contact_email %>"> -> <%= @help.contact_email %></a></p>
+      <p class="paragraphe mb0">✉️ Envoyer un email <a class="link-commission" href="<%= @help.contact_email %>"> -> <%= @help.contact_email %></a></p>
     <% end %>
     <% if @help.issue_contact.present? %>
-      <p class="paragraphe">Une problème, une question ? <a class="link-commission" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
+      <p class="paragraphe mb0">Une problème, une question ? <a class="link-commission" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
     <% end %>
   </div>
   <hr class="bhl">

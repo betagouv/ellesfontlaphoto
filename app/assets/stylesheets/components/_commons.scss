@@ -45,8 +45,7 @@ h4 {
 .subtitle {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-family: 'Marianne-Regular', sans-serif;
-  font-weight: 400;
+  font-family: 'Marianne-Bold', sans-serif;
   white-space: normal;
   font-size: 36px;
   line-height: 50px;
@@ -90,4 +89,8 @@ h4 {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.mb0 {
+  margin-bottom: 3px;
 }
