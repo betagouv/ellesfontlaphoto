@@ -8,14 +8,22 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import { searchIndex } from '../plugins/search-index';
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).ready(function(){
+import { searchIndex } from '../plugins/search-index';
+import { updateInput } from '../plugins/search-index';
+import { changeResidence } from '../plugins/search-index';
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
+document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search")) {
     searchIndex();
+    updateInput();
+    if (document.getElementById("text-to-change")) {
+      changeResidence();
+    }
   }
 })

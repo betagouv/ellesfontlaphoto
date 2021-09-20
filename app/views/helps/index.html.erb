@@ -1,24 +1,21 @@
 <div class="search-div">
   <p class="text-search">je réside en</p>
   <div class="dropdown">
-    <div id="select-search">Dropdown</div><span><%= image_tag "arrow-search.svg" %></span>
+    <% if @selected.present? %>
+      <div id="select-search"><%= @selected %><%= image_tag "arrow-search.svg", width: "25px" %></div>
+    <% else %>
+      <div id="select-search"><span id="text-to-change"><%= Help::HELP_RESIDENCE.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
+    <% end %>
     <div id="dropdown-elements">
       <% Help::HELP_RESIDENCE.each do |residence| %>
-        <%= link_to helps_path, class: "dropdown-content" do %>
-         <%= residence %>
-        <% end %>
-        <!-- <div class="dropdown-content"><%= residence %> </div> -->
+        <div class="dropdown-content"><%= residence %></div>
       <% end %>
     </div>
   </div>
 </div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
-  <% if @selected.present? %>
-    <%= select_tag :query_residence, options_for_select(Help::HELP_RESIDENCE, @selected)%>
-  <% else %>
-    <%= select_tag :query_residence, options_for_select(Help::HELP_RESIDENCE)%>
-  <% end %>
-  <%= submit_tag "Search", id: "search-submit" %>
+  <%= text_field_tag :query_residence, params[:query_residence] %>
+  <%= submit_tag "Search" %>
 <% end %>
 <div class="main-index">
   <div class="index-direction">
