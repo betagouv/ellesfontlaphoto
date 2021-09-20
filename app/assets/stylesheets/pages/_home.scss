@@ -62,10 +62,6 @@
   margin: 40px 0;
 }
 
-.mb-0 {
-  margin-bottom:0;
-}
-
 
 /*----------------------------------------*/
 /*BANNER*/
@@ -238,6 +234,7 @@
       width: 20%;
       height: 38px;
       cursor: pointer;
+      background-image: none;
     }
   }
 }
