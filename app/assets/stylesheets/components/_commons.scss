@@ -1,3 +1,6 @@
+@import "../config/colors";
+@import "../config/fonts";
+
 h1 {
   display: inline-block;
   max-width: 1200px;
@@ -30,6 +33,10 @@ h4 {
   color: black;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .question-subtitle {
   padding-top: 0px;
   opacity: 0.6;
@@ -53,12 +60,12 @@ h4 {
 
 .paragraphe {
   font-family: 'Marianne-Regular', sans-serif;
-      font-size: 1rem;
+  font-size: 1rem;
 }
 
 .paragraphe-bold {
   font-family: 'Marianne-ExtraBold', sans-serif;
-      font-size: 1rem;
+  font-size: 1rem;
 }
 
 .main-paragraphe {
@@ -69,6 +76,16 @@ h4 {
   margin-bottom:10px;
   text-align: center;
 }
+
+.main-bold-paragraphe {
+  font-family: 'Marianne-Bold', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom:10px;
+  text-align: center;
+}
+
 
 .paragraphe-quote {
   font-family: "Marianne-Regular_Italic", sans-serif;
@@ -89,8 +106,25 @@ h4 {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
+  color: $white !important;
 }
 
 .mb0 {
   margin-bottom: 3px;
+}
+
+.mb30 {
+  margin-bottom: 30px
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
 }
