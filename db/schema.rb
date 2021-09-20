@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_075455) do
+ActiveRecord::Schema.define(version: 2021_09_20_081059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 2021_09_15_075455) do
     t.string "description"
     t.string "sector"
     t.string "structure_name"
-    t.string "start_month"
-    t.string "end_month"
     t.string "help_amount"
     t.string "residence_condition"
     t.string "general_condition"
@@ -81,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_09_15_075455) do
     t.string "contact_email"
     t.string "issue_contact"
     t.text "statistic"
+    t.date "end_date"
+    t.date "start_date"
   end
 
 end

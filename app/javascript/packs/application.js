@@ -8,6 +8,14 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import { searchIndex } from '../plugins/search-index';
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).ready(function(){
+  if (document.querySelector("#select-search")) {
+    searchIndex();
+  }
+})

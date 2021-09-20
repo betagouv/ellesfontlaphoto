@@ -1,3 +1,25 @@
+<div class="search-div">
+  <p class="text-search">je réside en</p>
+  <div class="dropdown">
+    <div id="select-search">Dropdown</div><span><%= image_tag "arrow-search.svg" %></span>
+    <div id="dropdown-elements">
+      <% Help::HELP_RESIDENCE.each do |residence| %>
+        <%= link_to helps_path, class: "dropdown-content" do %>
+         <%= residence %>
+        <% end %>
+        <!-- <div class="dropdown-content"><%= residence %> </div> -->
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= form_tag helps_path, method: :get, id: "search-form" do %>
+  <% if @selected.present? %>
+    <%= select_tag :query_residence, options_for_select(Help::HELP_RESIDENCE, @selected)%>
+  <% else %>
+    <%= select_tag :query_residence, options_for_select(Help::HELP_RESIDENCE)%>
+  <% end %>
+  <%= submit_tag "Search", id: "search-submit" %>
+<% end %>
 <div class="main-index">
   <div class="index-direction">
     <p class="main-bold-paragraphe text-align-left">Toutes les aides</p>
@@ -8,10 +30,14 @@
       <div class="card-index">
         <%= link_to help_path(help) do %>
           <div class="flottante">🏠</div>
-          <div class="flottante2">C'est maintenant !</div>
+          <% if help.start_date < Date.today && Date.today < help.end_date %>
+            <div class="flottante2">C'est maintenant !</div>
+          <% elsif (help.start_date - Date.today).to_i < 31 %>
+            <div class="flottante2">C'est bientôt !</div>
+          <% end %>
           <p class="main-bold-paragraphe mb30"><%= Help::HELP_TITLE[help.title.to_sym] %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
-          <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= help.end_month %></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :default %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
           <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
         <% end %>
@@ -19,3 +45,29 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  // function myFunction() {
+  //   document.getElementById("dropdown-elements").classList.toggle("show");
+  // }
+
+  // Close the dropdown if the user clicks outside of it
+  // window.onclick = function(event) {
+  //   if (!event.target.matches('select-search')) {
+  //     var dropdowns = document.querySelectorAll(".dropdown-elements");
+  //     dropdowns.forEach((element) => {
+  //       if (element.classList.contains('show')) {
+  //         element.classList.remove('show');
+  //       }
+  //     })
+  //   }
+  // }
+  // document.querySelector('#select-search').addEventListener('click', () => {
+  //   document.querySelector('.dropdown-content').style.display = "block";
+  // })
+  // document.querySelector('#query_residence').addEventListener('change', () => {
+  //   document.querySelector('#search-form').submit();
+  // })
+</script>
