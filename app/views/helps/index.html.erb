@@ -1,5 +1,21 @@
-<ul>
-  <% @helps.each do |help| %>
-    <li><%= link_to help.title, help_path(help) %></li>
-  <% end %>
-</ul>
+<div class="main-index">
+  <div class="index-direction">
+    <p class="main-bold-paragraphe text-align-left">Toutes les aides</p>
+    <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le 26/09/2021</p>
+  </div>
+  <div class="cards">
+    <% @helps.each do |help| %>
+      <div class="card-index">
+        <%= link_to help_path(help) do %>
+          <div class="flottante">🏠</div>
+          <div class="flottante2">C'est maintenant !</div>
+          <p class="main-bold-paragraphe mb30"><%= Help::HELP_TITLE[help.title.to_sym] %></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= help.end_month %></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
+          <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
