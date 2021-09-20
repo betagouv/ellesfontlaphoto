@@ -3,6 +3,7 @@
 
 .search-div {
   display: flex;
+  margin-left: 25%;
   .text-search {
     font-family: 'Marianne-ExtraBold', sans-serif;
     font-size: 48px;
@@ -36,12 +37,12 @@
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       border: 1px solid $purple;
-      max-height:335px;/* you can change as you need it */
+      max-height: 335px;/* you can change as you need it */
       overflow:auto;/* to get scroll */
     }
 
     /* Links inside the dropdown */
-    #dropdown-elements a {
+    #dropdown-elements div {
       color: black;
       padding: 12px 16px;
       text-decoration: none;
@@ -49,10 +50,12 @@
       font-family: 'Marianne-ExtraBold', sans-serif;
       font-size: 20px;
       line-height: 40px;
+      cursor: pointer;
+      width: 400px;
     }
 
     /* Change color of dropdown links on hover */
-    #dropdown-elements a:hover {background-color: $very-light-purple;}
+    #dropdown-elements div:hover {background-color: $very-light-purple;}
 
     /* Show the dropdown menu on hover */
     .show {display: block !important;}
@@ -120,6 +123,25 @@
 }
 
 @media only screen and (max-width: 1250px) {
+  .search-div {
+    margin: 10% 2%;
+    display: block;
+    text-align: center;
+    .text-search {
+      font-size: 30px;
+      line-height: 0px;
+    }
+    #select-search {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    .dropdown #dropdown-elements div {
+      max-width: 200px;
+      border-bottom: 1px solid $purple;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
   .main-index {
     display: block;
     .index-direction {
