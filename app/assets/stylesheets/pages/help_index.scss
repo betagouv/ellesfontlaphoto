@@ -1,15 +1,81 @@
 @import "../config/colors";
 @import "../config/fonts";
 
+.search-div {
+  display: flex;
+  .text-search {
+    font-family: 'Marianne-ExtraBold', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    margin-right: 10px;
+  }
+  #select-search {
+    font-family: 'Marianne-ExtraBold', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    border: 0;
+    display: inline;
+    white-space: pre-wrap;
+    box-shadow: $purple 0px -1.2rem 0px inset;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+    /* Dropdown Content (Hidden by Default) */
+    #dropdown-elements {
+      display: none;
+      position: absolute;
+      background-color: $white;
+      min-width: 95%;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border: 1px solid $purple;
+      max-height:335px;/* you can change as you need it */
+      overflow:auto;/* to get scroll */
+    }
+
+    /* Links inside the dropdown */
+    #dropdown-elements a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: 'Marianne-ExtraBold', sans-serif;
+      font-size: 20px;
+      line-height: 40px;
+    }
+
+    /* Change color of dropdown links on hover */
+    #dropdown-elements a:hover {background-color: $very-light-purple;}
+
+    /* Show the dropdown menu on hover */
+    .show {display: block !important;}
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+}
+
+#search-form {
+  display: none;
+}
+
 .main-index {
   display: flex;
   color: $black;
   padding: 3% 5%;
   column-gap: 2rem;
   .index-direction {
-    max-width: 25%;
+    max-width: 20%;
   }
-
   .cards {
     width: 100%;
     .card-index {
