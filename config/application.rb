@@ -1,4 +1,4 @@
-require_relative "boot"
+# require_relative "boot"
 
 require "rails/all"
 
@@ -11,9 +11,7 @@ module Ellesfontlaphoto
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-
-    config.assets.initialize_on_precompile = false
-    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Configuration for the application, engines, and railties goes here.
     #
