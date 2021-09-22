@@ -39,7 +39,7 @@
           <% end %>
           <p class="main-bold-paragraphe mb30"><%= Help::HELP_TITLE[help.title.to_sym] %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
-          <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :default %></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
           <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
         <% end %>
@@ -47,29 +47,3 @@
     <% end %>
   </div>
 </div>
-
-<script>
-  /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
-  // function myFunction() {
-  //   document.getElementById("dropdown-elements").classList.toggle("show");
-  // }
-
-  // Close the dropdown if the user clicks outside of it
-  // window.onclick = function(event) {
-  //   if (!event.target.matches('select-search')) {
-  //     var dropdowns = document.querySelectorAll(".dropdown-elements");
-  //     dropdowns.forEach((element) => {
-  //       if (element.classList.contains('show')) {
-  //         element.classList.remove('show');
-  //       }
-  //     })
-  //   }
-  // }
-  // document.querySelector('#select-search').addEventListener('click', () => {
-  //   document.querySelector('.dropdown-content').style.display = "block";
-  // })
-  // document.querySelector('#query_residence').addEventListener('change', () => {
-  //   document.querySelector('#search-form').submit();
-  // })
-</script>

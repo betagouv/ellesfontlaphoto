@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_081059) do
+ActiveRecord::Schema.define(version: 2021_09_22_092726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_09_20_081059) do
     t.string "title"
     t.string "description"
     t.string "sector"
-    t.string "structure_name"
+    t.string "institution_name"
     t.string "help_amount"
     t.string "residence_condition"
     t.string "general_condition"
@@ -75,12 +75,22 @@ ActiveRecord::Schema.define(version: 2021_09_20_081059) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "example_enrollment_url"
-    t.string "qa_url"
-    t.string "contact_email"
+    t.string "faq_url"
     t.string "issue_contact"
     t.text "statistic"
     t.date "end_date"
     t.date "start_date"
+    t.string "identifiant"
+    t.string "institution_partenaire"
+    t.string "regularity"
+    t.string "description_url"
+    t.string "residence_time"
+    t.string "help_advantage"
+    t.string "old_laureats_case_url"
+    t.string "parentality"
+    t.string "accessibility"
+    t.string "contact_intitution_email", default: [], array: true
+    t.string "contact_intitution_partenaire", default: [], array: true
   end
 
 end
