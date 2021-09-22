@@ -45,9 +45,13 @@
     <p class="paragraphe mb0"><%= @help.compo_commission %></p>
     <a class="link-blue" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
-      <p class="paragraphe-bold">Précédents lauréats</p>
-      <p class="paragraphe"><%= @help.old_laureat %></p>
+      <p class="paragraphe-bold mt30 mb0">Précédents lauréats</p>
+      <p class="paragraphe mb0"><%= @help.old_laureat %></p>
       <a class="link-blue" href="<%= @help.old_laureat_url %>"> -> Voir les lauréats</a>
+    <% end %>
+    <% if @help.faq_url.present? %>
+      <p class="paragraphe-bold mt30 mb0">Des questions?</p>
+      <a class="link-blue" href="<%= @help.faq_url %>"> -> FAQ</a>
     <% end %>
   </div>
   <hr class="bhl">
@@ -73,12 +77,22 @@
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
     <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-commission" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
-    <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
-    <% if @help.contact_intitution_email.present? %>
-      <p class="paragraphe mb0">✉️ Envoyer un email <a class="link-commission" href="<%= @help.contact_intitution_email %>"> -> <%= @help.contact_intitution_email %></a></p>
+    <% if @help.contact_institution.present? %>
+      <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
-    <% if @help.issue_contact.present? %>
-      <p class="paragraphe mb0">Une problème, une question ? <a class="link-blue" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
+    <% if @help.contact_intitution_email.present? %>
+      <p class="paragraphe mb0">✉️ Envoyer un email
+      <% @help.contact_intitution_email.each do |email| %>
+        <%= mail_to email, email, class: "link-commission" %>
+      <% end %>
+      </p>
+    <% end %>
+    <% if @help.contact_intitution_partenaire.present? %>
+      <p class="paragraphe mb0">✉️ Les institutions partenaires
+      <% @help.contact_intitution_partenaire.each do |email| %>
+        <p class="paragraphe mb0"> <%= mail_to email, email, class: "link-commission" %></p>
+      <% end %>
+      </p>
     <% end %>
   </div>
   <hr class="bhl">

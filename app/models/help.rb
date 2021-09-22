@@ -4,7 +4,7 @@ class Help < ApplicationRecord
   pg_search_scope :search_by_residence_condition,
     against: [ :residence_condition ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true, any_word: true }
     }
 
   HELP_TITLE = {

@@ -37,7 +37,7 @@
           <% elsif (help.start_date - Date.today).to_i < 31 %>
             <div class="flottante2">C'est bientôt !</div>
           <% end %>
-          <p class="main-bold-paragraphe mb30"><%= Help::HELP_TITLE[help.title.to_sym] %></p>
+          <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
