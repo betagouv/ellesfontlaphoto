@@ -16,8 +16,8 @@ class Help < ApplicationRecord
   HELP_TYPE = {
     "Matériel": "Achat de matériel",
     "Production": "Aide à la production",
-    "Sociale": "Aide sociale",
-    "Autre": "Aide diverses"
+    "Aide Sociale": "Aide sociale",
+    "Diffusion": "Aide à la diffusion"
   }
 
   HELP_RESIDENCE = [
@@ -32,14 +32,14 @@ class Help < ApplicationRecord
     "Corse",
     "Centre Val de Loire",
     "Bretagne",
-    "Bourgogne -Franche Comté",
+    "Bourgogne-Franche Comté",
     "Auvergne-Rhône Alpes",
     "Réunion",
     "Mayotte",
     "Martinique",
     "Guyane",
     "Guadeloupe",
-    "France ou résidant en France"
+    "Française ou résidant en France"
   ]
 
   # HELP_MONTH = [
@@ -75,6 +75,6 @@ class Help < ApplicationRecord
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
   # validates :start_month, inclusion: { in: Help::HELP_MONTH }
   # validates :end_month, inclusion: { in: Help::HELP_MONTH }
-  validates :title, inclusion: { in: ["AIC", "AIA", "Secours exceptionnel"] }
-  validates :help_type, inclusion: { in: ["Matériel", "Production", "Sociale", "Autre"] }
+  # validates :title, inclusion: { in: ["AIC", "AIA", "Secours exceptionnel"] }
+  validates :help_type, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion"] }
 end
