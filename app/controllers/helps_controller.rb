@@ -2,7 +2,7 @@ class HelpsController < ApplicationController
 
   def index
     if params[:query_residence].present?
-      @helps = Help.search_by_residence_condition(params[:query_residence])
+      @helps = Help.search_by_residence_condition([params[:query_residence], "Française"])
       @selected = params[:query_residence]
       @searched = true
     else
