@@ -37,17 +37,17 @@
     <p class="paragraphe"><%= @help.selection %></p>
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
-      <a class="link-commission" href="<%= @help.example_enrollment_url %>"> -> C'est ici</a>
+      <a class="link-blue" href="<%= @help.example_enrollment_url %>"> -> C'est ici</a>
       <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
     <% else %>
       <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
     <p class="paragraphe mb0"><%= @help.compo_commission %></p>
-    <a class="link-commission" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
+    <a class="link-blue" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
       <p class="paragraphe-bold">Précédents lauréats</p>
       <p class="paragraphe"><%= @help.old_laureat %></p>
-      <a class="link-commission" href="<%= @help.old_laureat_url %>"> -> Voir les lauréats</a>
+      <a class="link-blue" href="<%= @help.old_laureat_url %>"> -> Voir les lauréats</a>
     <% end %>
   </div>
   <hr class="bhl">
@@ -78,9 +78,9 @@
       <p class="paragraphe mb0">✉️ Envoyer un email <a class="link-commission" href="<%= @help.contact_intitution_email %>"> -> <%= @help.contact_intitution_email %></a></p>
     <% end %>
     <% if @help.issue_contact.present? %>
-      <p class="paragraphe mb0">Une problème, une question ? <a class="link-commission" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
+      <p class="paragraphe mb0">Une problème, une question ? <a class="link-blue" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
     <% end %>
   </div>
   <hr class="bhl">
-  <p class="link-commission" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
+  <p class="link-blue" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
 </div>
