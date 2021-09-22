@@ -1,7 +1,7 @@
 <div class="banner-show">
   <div class="help-title">
     <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <h2><%= Help::HELP_TITLE[@help.title.to_sym] %></h2>
+    <h2><%= @help.title %></h2>
     <p class="paragraphe"><%= @help.description %></p>
   </div>
   <div class="help-description">
@@ -9,8 +9,8 @@
     <p class="paragraphe"><%= @help.help_amount %></p>
     <hr class="hl">
     <p class="paragraphe paragraphe-bold">📅 Dates de candidature:</p>
-    <p class="paragraphe">Début: <%= @help.start_date %></p>
-    <p class="paragraphe">Fin: <%= @help.end_date %></p>
+    <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %></p>
+    <p class="paragraphe">Fin: <%= I18n.l @help.end_date, format: :long %></p>
     <hr class="hl">
     <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
     <p class="paragraphe">📍Résidence: <%= @help.residence_condition %></p>
@@ -22,11 +22,13 @@
 </div>
 <div class="help-content">
   <div class="div-btn">
-    <% if @help_status == "open" %>
-      <a class="btn-candidate" href="<%= @help.candidate_url %>">🚀 Candidatez</a>
-    <% elsif @help_status == "close" %>
-      <a class="btn-not-available"> 🚀 Candidatez </a>
-      <p class="paragraphe-bold">Actuellement fermée, revenez en <%= I18n.l @help.start_date, format: "%B" %></p>
+    <% if @help.candidate_url.present? %>
+      <% if @help_status == "open" %>
+        <a class="btn-candidate" href="<%= @help.candidate_url %>">🚀 Candidatez</a>
+      <% elsif @help_status == "close" %>
+        <a class="btn-not-available"> 🚀 Candidatez </a>
+        <p class="paragraphe-bold">Actuellement fermée, revenez en <%= I18n.l @help.start_date, format: "%B" %></p>
+      <% end %>
     <% end %>
   </div>
   <hr class="bhl">
@@ -70,10 +72,10 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
-    <p class="paragraphe">Aide donnée par <%= @help.structure_name %> <a class="link-blue" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
+    <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-commission" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
     <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
-    <% if @help.contact_email.present? %>
-      <p class="paragraphe mb0">✉️ Envoyer un email <a class="link-blue" href="<%= @help.contact_email %>"> -> <%= @help.contact_email %></a></p>
+    <% if @help.contact_intitution_email.present? %>
+      <p class="paragraphe mb0">✉️ Envoyer un email <a class="link-commission" href="<%= @help.contact_intitution_email %>"> -> <%= @help.contact_intitution_email %></a></p>
     <% end %>
     <% if @help.issue_contact.present? %>
       <p class="paragraphe mb0">Une problème, une question ? <a class="link-blue" href="<%= @help.issue_contact %>"> Cliquez ici</a></p>
