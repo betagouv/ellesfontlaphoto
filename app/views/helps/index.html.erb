@@ -19,8 +19,13 @@
 <% end %>
 <div class="main-index">
   <div class="index-direction">
-    <p class="main-bold-paragraphe text-align-left">Toutes les aides</p>
-    <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le 26/09/2021</p>
+    <% if @selected.present? %>
+      <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
+      <p class="link-blue"><a href="/helps"> <- Toutes les aides </a></p>
+    <% else %>
+      <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
+      <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le 26/09/2021</p>
+    <% end %>
   </div>
   <div class="cards">
     <% @helps.each do |help| %>
