@@ -1,0 +1,19 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+.footer {
+  display: block;
+  padding: 3% 5%;
+  div {
+    margin-bottom: 20px;
+    a {
+      font-family: 'Marianne', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: $black;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
