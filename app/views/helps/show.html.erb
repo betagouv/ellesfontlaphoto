@@ -1,6 +1,14 @@
 <div class="banner-show">
   <div class="help-title">
-    <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% if Help::HELP_TYPE[@help.help_type.to_sym] == "Achat de matériel" %>
+      <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la production" %>
+      <p class="help-type"> 🛠💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide sociale" %>
+      <p class="help-type"> 🔮💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la diffusion" %>
+      <p class="help-type"> 📣💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% end %>
     <h2><%= @help.title %></h2>
     <p class="paragraphe"><%= @help.description %></p>
   </div>
