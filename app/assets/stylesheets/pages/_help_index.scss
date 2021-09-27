@@ -1,7 +1,7 @@
 @import "../config/colors";
 @import "../config/fonts";
 
-.search-div {
+.search-div-residence, .search-div-type {
   display: flex;
   margin-left: 25%;
   .text-search {
@@ -10,7 +10,7 @@
     line-height: 56px;
     margin-right: 10px;
   }
-  #select-search {
+  #select-search-residence, #select-search-type {
     font-family: 'Marianne-ExtraBold', sans-serif;
     font-size: 48px;
     line-height: 56px;
@@ -29,7 +29,7 @@
     display: inline-block;
 
     /* Dropdown Content (Hidden by Default) */
-    #dropdown-elements {
+    #dropdown-elements-residence, #dropdown-elements-type {
       display: none;
       position: absolute;
       background-color: $white;
@@ -39,23 +39,23 @@
       border: 1px solid $purple;
       max-height: 335px;/* you can change as you need it */
       overflow:auto;/* to get scroll */
+      /* Links inside the dropdown */
+      div {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Marianne-ExtraBold', sans-serif;
+        font-size: 20px;
+        line-height: 40px;
+        cursor: pointer;
+        width: 400px;
+      }
+
+      /* Change color of dropdown links on hover */
+      div:hover {background-color: $very-light-purple;}
     }
 
-    /* Links inside the dropdown */
-    #dropdown-elements div {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-family: 'Marianne-ExtraBold', sans-serif;
-      font-size: 20px;
-      line-height: 40px;
-      cursor: pointer;
-      width: 400px;
-    }
-
-    /* Change color of dropdown links on hover */
-    #dropdown-elements div:hover {background-color: $very-light-purple;}
 
     /* Show the dropdown menu on hover */
     .show {display: block !important;}
@@ -65,6 +65,18 @@
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+}
+
+.button-search {
+  background-color: $purple;
+  border-radius: 40px;
+  width: fit-content;
+  padding: 10px 20px;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  margin-left: 25%;
+  cursor: pointer;
 }
 
 #search-form {
@@ -141,6 +153,11 @@
       font-size: 16px;
       line-height: 20px;
     }
+  }
+  .button-search {
+    margin: 10% 2%;
+    display: block;
+    text-align: center;
   }
   .main-index {
     display: block;
