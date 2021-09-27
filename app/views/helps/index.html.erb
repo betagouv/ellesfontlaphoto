@@ -1,20 +1,47 @@
-<div class="search-div">
-  <p class="text-search">je réside en</p>
+<div class="search-div-type">
+  <p class="text-search">je veux</p>
   <div class="dropdown">
-    <% if @selected.present? %>
-      <div id="select-search"><%= @selected %><%= image_tag "arrow-search.svg", width: "25px" %></div>
+    <% if @selected_type.present? %>
+      <div id="select-search-type"><%= @selected_type %><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% else %>
-      <div id="select-search"><span id="text-to-change"><%= Help::HELP_RESIDENCE.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
+      <div id="select-search-type"><span id="text-to-change-type"><%= Help::HELP_TYPE.values.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% end %>
-    <div id="dropdown-elements">
-      <% Help::HELP_RESIDENCE.each do |residence| %>
-        <div class="dropdown-content"><%= residence %></div>
+    <div id="dropdown-elements-type">
+      <% Help::HELP_TYPE.values.each do |type| %>
+        <div class="dropdown-content-type"><%= type %></div>
       <% end %>
     </div>
   </div>
 </div>
+<div class="search-div-residence">
+  <p class="text-search">je réside en</p>
+  <div class="dropdown">
+    <% if @selected.present? %>
+      <div id="select-search-residence"><%= @selected %><%= image_tag "arrow-search.svg", width: "25px" %></div>
+    <% else %>
+      <div id="select-search-residence"><span id="text-to-change-residence"><%= Help::HELP_RESIDENCE.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
+    <% end %>
+    <div id="dropdown-elements-residence">
+      <% Help::HELP_RESIDENCE.each do |residence| %>
+        <div class="dropdown-content-residence"><%= residence %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="button-search">
+  🎯 Filtrer les aides
+</div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
-  <%= text_field_tag :query_residence, params[:query_residence] %>
+  <% if @selected.present? %>
+    <%= text_field_tag :query_residence, params[:query_residence], value: @selected %>
+  <% else %>
+    <%= text_field_tag :query_residence, params[:query_residence] %>
+  <% end %>
+  <% if @selected_type.present? %>
+    <%= text_field_tag :query_type, params[:query_residence], value: @selected_type %>
+  <% else %>
+    <%= text_field_tag :query_type, params[:query_residence] %>
+  <% end %>
   <%= submit_tag "Search" %>
 <% end %>
 <div class="main-index">
