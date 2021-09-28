@@ -14,31 +14,32 @@ class Help < ApplicationRecord
   }
 
   HELP_TYPE = {
-    "Matériel": "Achat de matériel",
-    "Production": "Aide à la production",
-    "Aide Sociale": "Aide sociale",
-    "Diffusion": "Aide à la diffusion"
+    "Matériel": "financer du matériel",
+    "Production": "financer une production",
+    "Aide Sociale": "un secours exceptionnel",
+    "Résidence": "une résidence (artistique)",
+    "Diffusion": "financer une diffusion"
   }
 
   HELP_RESIDENCE = [
-    "Provence-Alpes-Côte-d'Azur",
-    "Pays de la Loire",
-    "Occitanie",
-    "Nouvelle Aquitaine",
-    "Normandie",
-    "Ile de France",
-    "Hauts de France",
-    "Grand-Est",
-    "Corse",
-    "Centre Val de Loire",
-    "Bretagne",
-    "Bourgogne-Franche Comté",
     "Auvergne-Rhône Alpes",
-    "Réunion",
-    "Mayotte",
-    "Martinique",
-    "Guyane",
+    "Bourgogne-Franche Comté",
+    "Bretagne",
+    "Centre Val de Loire",
+    "Corse",
+    "Grand-Est",
     "Guadeloupe",
+    "Guyane",
+    "Hauts de France",
+    "Ile de France",
+    "Martinique",
+    "Mayotte",
+    "Normandie",
+    "Nouvelle Aquitaine",
+    "Occitanie",
+    "Pays de la Loire",
+    "Provence-Alpes-Côte-d'Azur",
+    "Réunion",
     "Française ou résidant en France"
   ]
 
