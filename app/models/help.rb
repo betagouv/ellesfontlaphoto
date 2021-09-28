@@ -77,5 +77,5 @@ class Help < ApplicationRecord
   # validates :start_month, inclusion: { in: Help::HELP_MONTH }
   # validates :end_month, inclusion: { in: Help::HELP_MONTH }
   # validates :title, inclusion: { in: ["AIC", "AIA", "Secours exceptionnel"] }
-  validates :help_type, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion"] }
+  validates :help_type, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
 end
