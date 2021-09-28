@@ -22,7 +22,7 @@ help1 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -60,7 +60,7 @@ help2 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -96,7 +96,7 @@ help3 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -135,7 +135,7 @@ help4 = Help.new(
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/arrete_membres_commission_AP.pdf",
     old_laureat: "Une dizaine d'AIC attribués en 2020 en Bourgogne Franche Comté, de façon paritaire. ",
     old_laureat_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/AIC_AIA_LISTE_ARTISTES_AIDES_ANNEES_ANTERIEURES.pdf2",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -173,7 +173,7 @@ help5 = Help.new(
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/2020_05_19_arrete_renouvellement_AIC_AIA.pdf",
     old_laureat: "Une quinzaine d’AIC attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 3000 euros en 2021.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Politique-et-actions-culturelles/Arts-visuels",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -208,7 +208,7 @@ help6 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.prefectures-regions.gouv.fr/centre-val-de-loire/content/download/57885/380715/file/%20recueil-r24-2019-134%20du%2002%20mai%202019.pdf",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -240,7 +240,7 @@ help7 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -274,7 +274,7 @@ help8 = Help.new(
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "37  AIC attribuées en 2020 en Ile-de-France, de façon paritaire, dont 4 projets photographiques.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Ile-de-France/Arts-visuels/Laureats-de-l-Aide-individuelle-a-la-creation-session-2020",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -307,7 +307,7 @@ help9 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -342,7 +342,7 @@ help10 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Regions/Drac-Normandie/Aides-et-demarches/Aides-et-demarches-pour-la-creation-artistique-et-le-developpement-des-publics/Aides-concernant-le-secteur-des-arts-plastiques",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -376,7 +376,7 @@ help11 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -412,7 +412,7 @@ help12 = Help.new(
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "8 AIC attribuées en 2017 en Pays de la Loire, dont deux attribuées à des femmes. ",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Pays-de-la-Loire/Politique-et-actions/Arts-visuels/Developper-la-creation",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -448,7 +448,7 @@ help13 = Help.new(
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Paca/Files/Aides-demarches/Aides-financieres/Arts-plastiques/Commission-consultative-d-aides-a-la-creation-et-des-allocations-d-installation-d-atelier-2020-2022",
     old_laureat: "Une trentaine d'AIC attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur/Aides-demarches/Aides-financieres/Aides-aux-artistes-plasticiens",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -482,7 +482,7 @@ help14 = Help.new(
     candidate_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/aide-a-la-creation-2020.doc",
     selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel devra être adressé à la DAC avant 20 décembre 2021. Les demandes sont ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -516,7 +516,7 @@ help15 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "4 AIC attribuées en 2021 en Guyane, dont 3 attribuées à des femmes, sur 6 candidatures.",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -551,7 +551,7 @@ help16 = Help.new(
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "4 AIC attribuées en 2018 en Martinique, dont deux attribuées à des femmes. ",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -583,7 +583,7 @@ help17 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIC dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. ",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -617,7 +617,7 @@ help18 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget. ",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -652,7 +652,7 @@ help19 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -690,7 +690,7 @@ help20 = Help.new(
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/2020_05_19_arrete_renouvellement_AIC_AIA.pdf",
     old_laureat: "Une vingtaine d’AIA attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 2500 euros en 2021. La plupart permettent de financer l’achat de matériel informatique ou de construction, ou les travaux d’installation d’un atelier ; environ 2 par an concernent spécifiquement du matériel photographique. Les descriptions des projets lauréats de l’année précédente peuvent être consultées en ligne.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Politique-et-actions-culturelles/Arts-visuels",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -728,7 +728,7 @@ help21 = Help.new(
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/arrete_membres_commission_AP.pdf",
     old_laureat: "Six AIA attribués en 2020 en Bourgogne Franche Comté, dont deux pour l'acquisition de matériel photographique et vidéo.",
     old_laureat_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/AIC_AIA_LISTE_ARTISTES_AIDES_ANNEES_ANTERIEURES.pdf2",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -763,7 +763,7 @@ help21bis = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -795,7 +795,7 @@ help22 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIA dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -829,7 +829,7 @@ help23 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.prefectures-regions.gouv.fr/centre-val-de-loire/content/download/57885/380715/file/%20recueil-r24-2019-134%20du%2002%20mai%202019.pdf",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -864,7 +864,7 @@ help24 = Help.new(
     candidate_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/Demande-d-installation-atelier-Gpe-2020.doc",
     selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel devra être adressé à la DAC avant 20 décembre 2021. Les demandes sont ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -899,7 +899,7 @@ help25 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Grand-Est/Files/Creation/Arts-plastiques/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -935,7 +935,7 @@ help26 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "5 AIA attribuées en 2021 en Guyane, dont 2 à des femmes, sur 6 candidatures.",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -970,7 +970,7 @@ help27 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1005,7 +1005,7 @@ help28 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1040,7 +1040,7 @@ help29 = Help.new(
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     old_laureat: "4 AIA attribuées en 2018 en Martinique, dont 3 attribuées à des femmes.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1073,7 +1073,7 @@ help30 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.
       Les candidatures doivent être addessées par courriel à dac-mayotte@culture.gouv.fr",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1109,7 +1109,7 @@ help31 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/content/download/205668/file/Arrete_2019.pdf?inLanguage=fre-FR",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1143,7 +1143,7 @@ help32 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1179,7 +1179,7 @@ help33 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Paca/Files/Aides-demarches/Aides-financieres/Arts-plastiques/Commission-consultative-d-aides-a-la-creation-et-des-allocations-d-installation-d-atelier-2020-2022",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     old_laureat: "Une dizaine d'AIA attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur/Aides-demarches/Aides-financieres/Aides-aux-artistes-plasticiens",
     admin_attachment: "<ul>
@@ -1216,7 +1216,7 @@ help34 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1250,7 +1250,7 @@ help35 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_allocation_02/",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1283,7 +1283,7 @@ help36 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIA dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    help_type: "Matériel",
+    help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1324,7 +1324,7 @@ help37 = Help.new(
     url_commission: "https://www.saif.fr/soutien-a-la-creation/",
     old_laureat: "Une personne lauréate par an. Le jury peut distinguer deux autres artistes.",
     old_laureat_url: "https://arthurmercier.fr/",
-    help_type: "Diffusion",
+    help_type: ["Diffusion"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1360,7 +1360,7 @@ help38 = Help.new(
     url_commission: "https://www.saif.fr/soutien-a-la-creation/",
     old_laureat: "Une personne lauréate par an. Le jury peut distinguer deux autres artistes.",
     old_laureat_url: "https://arthurmercier.fr/",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1395,7 +1395,7 @@ help39 = Help.new(
     specific_condition: "Identifier une structure partenaire aux États-Unis pour accompagner le projet (conseil, accès aux réseaux locaux, production, diffusion). La structure peut être un centre d'art, un musée, une galerie, une bibliothèque ou une université.",
     selection: "Les demandes sont examinées par un jury, qui émet un avis au vu de la qualité du projet, de son lien avec des enjeux locaux, de son inscription dans la carrière de l’artiste, et de la relation établie avec le partenaire aux États-Unis.",
     old_laureat: "3 personnes lauréates par an.",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV (français et anglais)</li>
     </ul>",
@@ -1439,7 +1439,7 @@ help40 = Help.new(
     url_commission: "https://manager.artishocsite.com/media/cia/183726-cp_laure_ats_ondes_2021.pdf",
     old_laureat: "5 candidatures sur 33 retenues en 2021, dont 3 femmes lauréates.",
     old_laureat_url: "https://manager.artishocsite.com/media/cia/183726-cp_laure_ats_ondes_2021.pdf",
-    help_type: "Production",
+    help_type: ["Production","Résidence"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>justificatif de résidence</li>
@@ -1484,7 +1484,7 @@ help41 = Help.new(
     compo_commission: "Les membres (8 femmes) sont nommées par le CNAP pour 3 ans.",
     url_commission: "https://www.cnap.fr/soutien-la-creation/artistes/secours-exceptionnel/membres-commission",
     old_laureat: "121 photographes lauréates et lauréats (dont 59 femmes et 62 hommes) sur 130 personnes candidates en 2021. Tous secteurs confondus, 806 artistes ont reçu ce soutien en 2021.",
-    help_type: "Aide Sociale",
+    help_type: ["Aide Sociale"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1526,7 +1526,7 @@ help42 = Help.new(
     old_laureat: "53 lauréates et lauréats (dont 25 femmes et 30 hommes) sur 200 projets candidats en 2021. Presque deux fois plus d’hommes sont candidats mais les aides du CNAP sont paritaires.",
     old_laureat_url:"https://www.cnap.fr/navigation/soutien-la-creation/photographes/r%C3%A9sultats",
     old_laureats_case_url: "https://www.cnap.fr/soutien-la-creation/photographes-documentaires/rapports-de-recherche",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1571,7 +1571,7 @@ help43 = Help.new(
     old_laureat: "5 lauréates et lauréats (dont 3 femmes et 2 hommes) sur 32 projets photographiques candidats en 2021. Davantage d’hommes sont candidats mais les aides du CNAP sont paritaires.",
     old_laureat_url:"https://www.cnap.fr/navigation/soutien-la-creation/artistes/r%C3%A9sultats",
     old_laureats_case_url: "https://www.cnap.fr/soutien-la-creation/artistes/rapports-de-recherche",
-    help_type: "Production",
+    help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>

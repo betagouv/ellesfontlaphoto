@@ -46,7 +46,7 @@
 <% end %>
 <div class="main-index">
   <div class="index-direction">
-    <% if @selected.present? %>
+    <% if @selected.present? || @selected_type.present? %>
       <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
       <p class="link-blue"><a href="/helps"> <- Toutes les aides </a></p>
     <% else %>
@@ -58,17 +58,25 @@
     <% @helps.each do |help| %>
       <div class="card-index">
         <%= link_to help_path(help) do %>
-        <% if Help::HELP_TYPE[help.help_type.to_sym] == "financer du matériel" %>
-          <div class="flottante">📸</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "financer une production" %>
-          <div class="flottante">🛠</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "un secours exceptionnel" %>
-          <div class="flottante">🔮</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "une résidence (artistique)" %>
-          <div class="flottante">🏠</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "financer une diffusion" %>
-          <div class="flottante">📣</div>
+          <div class="flottante">
+          <% help.help_type.each do |type| %>
+            <% if Help::HELP_TYPE[type.to_sym] == "financer du matériel" %>
+              📸
+            <% end %>
+            <% if Help::HELP_TYPE[type.to_sym] == "financer une production" %>
+              🛠
+            <% end %>
+            <% if Help::HELP_TYPE[type.to_sym] == "un secours exceptionnel" %>
+              🔮
+            <% end %>
+            <% if Help::HELP_TYPE[type.to_sym] == "une résidence (artistique)" %>
+              🏠
+            <% end %>
+            <% if Help::HELP_TYPE[type.to_sym] == "financer une diffusion" %>
+              📣
+            <% end %>
         <% end %>
+          </div>
           <% if help.start_date < Date.today && Date.today < help.end_date %>
             <div class="flottante2">C'est maintenant !</div>
           <% elsif (help.start_date - Date.today).to_i < 90 %>
