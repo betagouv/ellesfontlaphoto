@@ -1,58 +1,24 @@
 @import "../config/colors";
 @import "../config/fonts";
 
-/*----------------------------------------*/
-/*COMMON*/
-
-.quote p {
-  display: block;
-  margin: 0px 60px 40px 100px;
-  padding: 0px 0px 0px 20px;
-  float: none;
+.banner-contact {
+  background-color: $yellow;
+  text-align: center;
+  height: 60px;
+  display: flex;
   justify-content: center;
-  border-style: none none none solid;
-  border-width: 1px 1px 1px 5px;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 5px;
-  border-color: #000 #000 #000 #decaff;
-  transition: opacity 200ms ease;
-  font-family: 'Marianne', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-  text-decoration: none;
-  column-count: 0;
-  column-rule-color: $light-purple;
-  column-rule-style: solid;
-  white-space: normal;
-  background-clip: border-box;
-  object-fit: fill;
-  line-height: 34px;
+  align-items: center;
+  a {
+    color: $black !important;
+    margin: 0;
+  }
 }
 
-.small-quote p {
-  display: block;
-  margin: 0px 60px 40px 100px;
-  padding: 0px 0px 0px 20px;
-  float: none;
-  justify-content: center;
-  border-style: none none none solid;
-  border-width: 1px 1px 1px 5px;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 5px;
-  border-color: #000 #000 #000 $light-purple;
-  transition: opacity 200ms ease;
-  font-family: 'Marianne', sans-serif;
-  font-weight: 500;
-  text-align: left;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 500;
+.paragraphe-spectral-italic {
+  font-family: "Spectral-Regular", sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
 }
 
 .flex-div {
@@ -68,7 +34,13 @@
 
 .banner {
   padding: 5em 12em 8em 12em;
-  background-color: $light-purple;
+  h1 {
+    font-family: "Spectral-Regular", sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 123.2%;
+  }
 }
 
 
@@ -77,7 +49,18 @@
 
 .first-block{
   display: flex;
-  padding: 5% 10%
+  justify-content: space-between;
+  padding: 5% 10%;
+  .first-block-left{
+    max-width: 35%;
+  }
+  .first-block-right {
+    max-width: 50%;
+    .icones {
+      font-size: 40px;
+      margin-right: 30px;
+    }
+  }
 }
 
 .know-more {
@@ -88,17 +71,24 @@
   max-width: 100%;
 }
 
-.quote-first-block {
-  max-width: 40% !important;
-  margin: 0 40px 40px auto !important;
-}
-
 /*----------------------------------------*/
 // SECOND BLOCK
 
 .second-block {
   padding: 5% 10%;
-  background-color: $light-yellow;
+  background-color: $purple;
+  .button-helps {
+    background-color: $black;
+    border-radius: 40px;
+    width: fit-content;
+    padding: 10px 20px;
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    margin-left: 25%;
+    cursor: pointer;
+    color: $white !important;
+  }
 }
 
 .align-titles {
