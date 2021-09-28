@@ -1,0 +1,44 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+.cards {
+  width: 100%;
+  .card-index {
+    margin-bottom: 20px;
+    border-radius: 2%;
+    border: 1px solid $purple;
+    height: auto;
+    padding: 13% 5% 10% 5%;
+    position: relative;
+    a{
+      color: $black;
+    }
+    .arrow {
+      margin-bottom:0;
+      margin-top: 15%;
+    }
+    .flottante {
+      border: 1px solid $purple;
+      border-radius: 40px;
+      width: fit-content;
+      padding: 0px 10px 2px;
+      position: absolute;
+      background-color: white;
+      top: -15px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 1.3rem;
+    }
+    .flottante2 {
+      border: 1px solid $purple;
+      border-radius: 40px;
+      width: fit-content;
+      padding: 5px 10px 5px;
+      position: absolute;
+      background-color: white;
+      top: -15px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 0.9rem;
+      left: 70px;
+    }
+  }
+}

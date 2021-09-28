@@ -1,38 +1,59 @@
+<div class="banner-contact">
+  <a href="#contact" class="paragraphe">Vous consultez une page en construction, écrivez nous pour l'améliorer !</a>
+</div>
 <div class="banner">
-  <h4>Elles font la culture :</h4>
-  <h1>Accompagner les femmes photographes dans leur carrière</h1>
+  <h1>Aide financières et conseils pratiques pour les photographes femmes</h1>
 </div>
 
 <div class="first-block" id="pourquoi">
-  <div>
-    <p class="question-subtitle">POURQUOI CE PROJET</p>
-    <p class="subtitle">60% de femmes sur les bancs des écoles, 35% dans les métiers de la photographie</p>
-    <p class="paragraphe">Les femmes sont nombreuses à développer un intérêt pour les métiers de la photographie mais sont davantage freinées une fois en activité. Souvent moins programmées, moins visibles, moins rémunérées et moins primées que leurs homologues masculins, elles doivent faire face à de nombreux obstacles liés au genre.</p>
-    <a class="dark-button" href="#">En savoir plus</a>
+  <div class="first-block-left">
+    <p class="paragraphe-bold">Notre mission:</p>
+    <p class="subtitle">Accompagner les femmes et minorités de genre à poursuivre leur carrière</p>
+    <p class="paragraphe-spectral-italic">Car encore aujourd’hui, 60% de femmes sont sur les bancs des écoles contre 35% dans la vie professionnelle.</p>
   </div>
-  <div>
-    <%= image_tag "camera.png", class:"camera-img" %>
-    <!-- <img src="images/camera.png" class="camera-img" alt="camera"> -->
+  <div class="first-block-right">
+    <p class="paragraphe-bold">Concrètement notre service à vocation : </p>
+      <p><span class="icones">✨</span>
+      <span class="paragraphe">Faciliter l'accès aux aides et ressources financières, techniques... </span></p>
+      <p> <span class="icones">🤝</span>
+      <span class="paragraphe">Fomenter l'entraide par le partage d’expériences</span></p>
+      <p><span class="icones">🏹</span>
+      <span class="paragraphe">S’armer pour lutter contre les inégalités de genre et sensibiliser autour de soi</span></p>
   </div>
-</div>
-<div class="quote">
-  <p class="quote-first-block">Le ministère de la Culture s’engage à fournir aux femmes photographes des outils numériques pour combattre ces inégalités.</p>
 </div>
 <div class="second-block" id="comment">
-  <div class="align-titles">
-    <p class="question-subtitle">COMMENT</p>
-    <p class="subtitle">On vous a interrogées</p>
-  </div>
+  <p class="subtitle">Un catalogue d'aides financières, matérielles, résidences pour simplifier vos candidatures</p>
   <div class="flex-div">
-    <%= image_tag "illustration-entretien.png", class:"entretien-img"  %>
-    <p class="paragraphe entretien-paragraphe">Nous défendons un service public proche de ses usagères et usagers, et nous sommes donc allées à la rencontre de la profession pour développer une plateforme au plus près des besoins des femmes photographes.</p>
-  </div>
-  <div class="flex-div">
-    <p class="main-paragraphe">Plus de <span class="subtitle">500</span> témoignages en 2021 </p>
-    <hr class="vl">
-    <p class="main-paragraphe">L'ensemble du secteur de la photographie: institutions publiques et privées, agences, commanditaires, presse, femmes et hommes photographes…</p>
-    <hr class="vl">
-    <p class="main-paragraphe">Vous avez été nombreuses à vous déclarer intéressées par le projet !</p>
+    <a class="button-helps" href=""> 💸 Trouver mes aides</a>
+    <div class="exemple-helps">
+      <div class="cards">
+        <% @helps.each do |help| %>
+          <div class="card-index">
+            <%= link_to help_path(help) do %>
+            <% if Help::HELP_TYPE[help.help_type.to_sym] == "Achat de matériel" %>
+              <div class="flottante">📸</div>
+            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la production" %>
+              <div class="flottante">🛠</div>
+            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide sociale" %>
+              <div class="flottante">🔮</div>
+            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la diffusion" %>
+              <div class="flottante">📣</div>
+            <% end %>
+              <% if help.start_date < Date.today && Date.today < help.end_date %>
+                <div class="flottante2">C'est maintenant !</div>
+              <% elsif (help.start_date - Date.today).to_i < 90 %>
+                <div class="flottante2">C'est bientôt !</div>
+              <% end %>
+              <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
+              <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
+              <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
+              <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
+              <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="third-block flex-div" id="hypothese">
