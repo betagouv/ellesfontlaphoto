@@ -135,7 +135,7 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  .search-div {
+  .search-div-type, .search-div-residence {
     margin: 10% 2%;
     display: block;
     text-align: center;
@@ -143,11 +143,18 @@
       font-size: 30px;
       line-height: 0px;
     }
-    #select-search {
+    #select-search-type, #select-search-residence {
       font-size: 30px;
       line-height: 30px;
     }
-    .dropdown #dropdown-elements div {
+    .dropdown #dropdown-elements-residence div {
+      max-width: 200px;
+      border-bottom: 1px solid $purple;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .dropdown #dropdown-elements-type div {
       max-width: 200px;
       border-bottom: 1px solid $purple;
       font-size: 16px;
@@ -158,6 +165,7 @@
     margin: 10% 2%;
     display: block;
     text-align: center;
+    margin: 0 auto;
   }
   .main-index {
     display: block;
