@@ -99,7 +99,7 @@ ul li {
     .help-title {
       width: 100%;
       .help-type {
-        margin: 40px auto;
+        margin: 5px auto;
       }
       h2 {
         text-align: center;
@@ -114,6 +114,9 @@ ul li {
     }
   }
   .help-content {
+    .bhl {
+      margin: 20px auto;
+    }
     .div-btn {
       margin-top: 30px;
     }
