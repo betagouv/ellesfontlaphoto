@@ -1,13 +1,15 @@
 <div class="banner-show">
   <div class="help-title">
-    <% if Help::HELP_TYPE[@help.help_type.to_sym] == "Achat de matériel" %>
+    <% if Help::HELP_TYPE[@help.help_type.to_sym] == "financer du matériel" %>
       <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la production" %>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "financer une production" %>
       <p class="help-type"> 🛠💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide sociale" %>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "un secours exceptionnel" %>
       <p class="help-type"> 🔮💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la diffusion" %>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "financer une diffusion" %>
       <p class="help-type"> 📣💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "une résidence (artistique)" %>
+      <p class="help-type"> 🏠💸 résidence</p>
     <% end %>
     <h2><%= @help.title %></h2>
     <p class="paragraphe"><%= @help.description %></p>

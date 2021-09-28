@@ -28,10 +28,11 @@ const searchIndex = () => {
 
 const updateInput = () => {
     const types = [
-    "Achat de matériel",
-    "Aide à la production",
-    "Aide sociale",
-    "Aide à la diffusion",
+    "financer du matériel",
+    "financer une production",
+    "un secours exceptionnel",
+    "une résidence (artistique)",
+    "financer une diffusion",
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-type");
@@ -72,25 +73,25 @@ const updateInput = () => {
 
 const changeResidence = () => {
   const residences = [
-    "Provence-Alpes-Côte-d'Azur",
-    "Pays de la Loire",
-    "Occitanie",
-    "Nouvelle Aquitaine",
-    "Normandie",
-    "Ile de France",
-    "Hauts de France",
-    "Grand-Est",
-    "Corse",
-    "Centre Val de Loire",
-    "Bretagne",
-    "Bourgogne -Franche Comté",
     "Auvergne-Rhône Alpes",
-    "Réunion",
-    "Mayotte",
-    "Martinique",
-    "Guyane",
+    "Bourgogne-Franche Comté",
+    "Bretagne",
+    "Centre Val de Loire",
+    "Corse",
+    "Grand-Est",
     "Guadeloupe",
-    "France ou résidant en France"
+    "Guyane",
+    "Hauts de France",
+    "Ile de France",
+    "Martinique",
+    "Mayotte",
+    "Normandie",
+    "Nouvelle Aquitaine",
+    "Occitanie",
+    "Pays de la Loire",
+    "Provence-Alpes-Côte-d'Azur",
+    "Réunion",
+    "Française ou résidant en France"
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-residence");

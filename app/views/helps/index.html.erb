@@ -29,7 +29,7 @@
   </div>
 </div>
 <div class="button-search">
-  🎯 Filtrer les aides
+  🎯 Lancer la recherche
 </div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>
@@ -58,13 +58,15 @@
     <% @helps.each do |help| %>
       <div class="card-index">
         <%= link_to help_path(help) do %>
-        <% if Help::HELP_TYPE[help.help_type.to_sym] == "Achat de matériel" %>
+        <% if Help::HELP_TYPE[help.help_type.to_sym] == "financer du matériel" %>
           <div class="flottante">📸</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la production" %>
+        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "financer une production" %>
           <div class="flottante">🛠</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide sociale" %>
+        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "un secours exceptionnel" %>
           <div class="flottante">🔮</div>
-        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la diffusion" %>
+        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "une résidence (artistique)" %>
+          <div class="flottante">🏠</div>
+        <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "financer une diffusion" %>
           <div class="flottante">📣</div>
         <% end %>
           <% if help.start_date < Date.today && Date.today < help.end_date %>
