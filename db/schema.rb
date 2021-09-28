@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_22_092726) do
+ActiveRecord::Schema.define(version: 2021_09_28_130204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2021_09_22_092726) do
     t.string "url_commission"
     t.string "old_laureat"
     t.string "old_laureat_url"
-    t.string "help_type"
     t.text "admin_attachment"
     t.text "artistic_attachment"
     t.text "other_attachment"
@@ -91,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_092726) do
     t.string "accessibility"
     t.string "contact_intitution_email", default: [], array: true
     t.string "contact_intitution_partenaire", default: [], array: true
+    t.string "help_type", default: [], array: true
   end
 
 end
