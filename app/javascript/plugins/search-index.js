@@ -28,11 +28,11 @@ const searchIndex = () => {
 
 const updateInput = () => {
     const types = [
-    "financer du matériel",
-    "financer une production",
-    "un secours exceptionnel",
-    "une résidence (artistique)",
-    "financer une diffusion",
+    "📸 financer du matériel",
+    "🛠 financer une production",
+    "🔮 un secours exceptionnel",
+    "🏠 une résidence (artistique)",
+    "📣 financer une diffusion",
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-type");
@@ -51,6 +51,8 @@ const updateInput = () => {
     element.addEventListener("click", () => {
       document.querySelector("#query_residence").value = element.innerHTML;
       document.querySelector("#select-search-residence").innerHTML = element.innerHTML;
+      console.log("ici")
+      document.querySelector("#select-search-residence").classList.add("choosen");
       document.getElementById("dropdown-elements-residence").classList.toggle("show");
       // document.querySelector('#search-form').submit();
 
@@ -61,6 +63,8 @@ const updateInput = () => {
     element.addEventListener("click", () => {
       document.querySelector("#query_type").value = element.innerHTML;
       document.querySelector("#select-search-type").innerHTML = element.innerHTML;
+      console.log("ici")
+      document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");
       clearInterval(inst);
       // document.querySelector('#search-form').submit();

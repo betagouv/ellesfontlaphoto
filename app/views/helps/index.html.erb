@@ -2,7 +2,7 @@
   <p class="text-search">je veux</p>
   <div class="dropdown">
     <% if @selected_type.present? %>
-      <div id="select-search-type"><%= @selected_type %><%= image_tag "arrow-search.svg", width: "25px" %></div>
+      <div id="select-search-type choosen"><%= @selected_type %><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% else %>
       <div id="select-search-type"><span id="text-to-change-type"><%= Help::HELP_TYPE.values.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% end %>
@@ -17,7 +17,7 @@
   <p class="text-search">je réside en</p>
   <div class="dropdown">
     <% if @selected.present? %>
-      <div id="select-search-residence"><%= @selected %><%= image_tag "arrow-search.svg", width: "25px" %></div>
+      <div id="select-search-residence choosen"><%= @selected %><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% else %>
       <div id="select-search-residence"><span id="text-to-change-residence"><%= Help::HELP_RESIDENCE.sample %></span><%= image_tag "arrow-search.svg", width: "25px" %></div>
     <% end %>
@@ -60,19 +60,19 @@
         <%= link_to help_path(help) do %>
           <div class="flottante">
           <% help.help_type.each do |type| %>
-            <% if Help::HELP_TYPE[type.to_sym] == "financer du matériel" %>
+            <% if type == "Matériel" %>
               📸
             <% end %>
-            <% if Help::HELP_TYPE[type.to_sym] == "financer une production" %>
+            <% if type == "Production" %>
               🛠
             <% end %>
-            <% if Help::HELP_TYPE[type.to_sym] == "un secours exceptionnel" %>
+            <% if type == "Aide Sociale" %>
               🔮
             <% end %>
-            <% if Help::HELP_TYPE[type.to_sym] == "une résidence (artistique)" %>
+            <% if type == "Résidence" %>
               🏠
             <% end %>
-            <% if Help::HELP_TYPE[type.to_sym] == "financer une diffusion" %>
+            <% if type == "Diffusion" %>
               📣
             <% end %>
         <% end %>
