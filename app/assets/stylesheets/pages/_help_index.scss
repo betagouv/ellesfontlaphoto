@@ -24,6 +24,10 @@
     cursor: pointer;
   }
 
+  .choosen {
+    box-shadow: #d0abff 0px -3rem 0px inset !important;
+  }
+
   .dropdown {
     position: relative;
     display: inline-block;
@@ -139,6 +143,12 @@
     margin: 10% 2%;
     display: block;
     text-align: center;
+    #select-search-residence, #select-search-type {
+      box-shadow: #d0abff 0px -1rem 0px inset;
+    }
+    .choosen {
+      box-shadow: #d0abff 0px -2rem 0px inset !important;
+    }
     .text-search {
       font-size: 30px;
       line-height: 0px;
