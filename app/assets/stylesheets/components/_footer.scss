@@ -2,18 +2,77 @@
 @import "../config/fonts";
 
 .footer {
-  display: block;
+  display: flex;
   padding: 3% 5%;
-  div {
-    margin-bottom: 20px;
-    a {
-      font-family: 'Marianne', sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-      color: $black;
-      &:hover {
+  justify-content: space-between;
+  align-items: center;
+  .logo-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .div-link-footer {
+    min-width: 55%;
+    .links-footer {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      .vl {
+        border-left: 1px solid $light-grey;
+        margin: 0 15px;
+        height: 20px;
         opacity: 0.5;
+      }
+      a {
+        font-family: 'Marianne', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: $light-grey;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    p {
+      font-family: 'Marianne', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: $light-grey;
+      margin-top: 10px;
+      .license {
+      text-decoration: underline !important;
+      cursor: pointer;
+      color: $light-grey;
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }
 }
+
+/*----------------------------------------*/
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 1250px) {
+  .footer {
+    display: block;
+    .logo-footer {
+      justify-content: flex-start;
+      img {
+        width: 120px;
+      }
+    }
+    .div-link-footer {
+      p {
+        font-size: 10px;
+      }
+      .links-footer {
+        a {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
