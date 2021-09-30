@@ -1,5 +1,19 @@
 @import "../config/colors";
 @import "../config/fonts";
+.progress-container {
+  height: 0.15rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  background: transparent;
+  .progress {
+    height: 100%;
+    width: 0;
+    margin-top: 2%;
+    background: $purple;
+    transition: width 0.4s ease;
+  }
+}
+
 
 .search-div-residence, .search-div-type {
   display: flex;
@@ -86,7 +100,10 @@
 #search-form {
   display: none;
 }
-
+@-webkit-keyframes smooth {
+    100% { opacity: 0;}
+    0% { opacity: 1;}
+}
 .main-index {
   display: flex;
   color: $black;
@@ -97,6 +114,11 @@
   }
   .cards {
     width: 100%;
+    -webkit-animation: smooth 5s ease-out;
+    -moz-animation: smooth 5s ease-out;
+    -o-animation: smooth 5s ease-out;
+    -ms-animation: smooth 5s ease-out;
+    animation: smooth 5s ease-out;
     .card-index {
       margin-bottom: 20px;
       border-radius: 2%;

@@ -1,3 +1,5 @@
+import { searchProgressBar } from '../plugins/progress_bar';
+
 const searchIndex = () => {
   document.getElementById("select-search-residence").addEventListener("click", () => {
     document.getElementById("dropdown-elements-residence").classList.toggle("show");
@@ -27,31 +29,34 @@ const searchIndex = () => {
 }
 
 const updateInput = () => {
-    const types = [
-    "📸 financer du matériel",
-    "🛠 financer une production",
-    "🔮 un secours exceptionnel",
-    "🏠 une résidence (artistique)",
-    "📣 financer une diffusion",
+  // Animations for type changing
+  const types = [
+  "📸 financer du matériel",
+  "🛠 financer une production",
+  "🔮 un secours exceptionnel",
+  "🏠 une résidence (artistique)",
+  "📣 financer une diffusion",
   ];
-  let counter = 0;
   const element = document.getElementById("text-to-change-type");
-  const inst = setInterval(() => {
-    element.innerHTML = types[counter];
-    counter++;
-    if (counter >= types.length) {
-      counter = 0;
-    }
-  }, 1500);
+  if (element) {
+    let counter = 0;
+    const inst = setInterval(() => {
+      element.innerHTML = types[counter];
+      counter++;
+      if (counter >= types.length) {
+        counter = 0;
+      }
+    }, 1500);
+  }
 
+  // Change the input value when a type/residence is selected
   const dropdownElementsResidences = document.querySelectorAll(".dropdown-content-residence")
   const dropdownElementsTypes = document.querySelectorAll(".dropdown-content-type")
 
   dropdownElementsResidences.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#query_residence").value = element.innerHTML;
+      document.querySelector("#residence").value = element.innerHTML;
       document.querySelector("#select-search-residence").innerHTML = element.innerHTML;
-      console.log("ici")
       document.querySelector("#select-search-residence").classList.add("choosen");
       document.getElementById("dropdown-elements-residence").classList.toggle("show");
       // document.querySelector('#search-form').submit();
@@ -61,18 +66,35 @@ const updateInput = () => {
 
   dropdownElementsTypes.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#query_type").value = element.innerHTML;
+      document.querySelector("#type").value = element.innerHTML;
       document.querySelector("#select-search-type").innerHTML = element.innerHTML;
-      console.log("ici")
       document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");
-      clearInterval(inst);
+      // clearInterval(inst);
       // document.querySelector('#search-form').submit();
     })
   })
+
+  // Submit the form when user click on the button
   document.querySelector(".button-search").addEventListener("click", () => {
-    document.querySelector('#search-form').submit();
+     secondFunction();
   })
+}
+
+const secondFunction = async () => {
+  // const promises = searchProgressBar();
+    // e.preventDefault();
+    searchProgressBar();
+    document.querySelector(".index-direction").style.opacity = 0.2;
+    document.querySelector(".cards").style.opacity = 0.2;
+    await sleep(2600)
+    document.querySelector('#search-form').submit()
+
+  // do something else here after firstFunction completes
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const changeResidence = () => {
