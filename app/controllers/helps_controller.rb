@@ -10,8 +10,7 @@ class HelpsController < ApplicationController
       @searched = true
     end
     if params[:type].present?
-      # raise
-      @helps = @helps.where("help_type @> ?", "{#{Help::HELP_TYPE.key(params[:type]).to_s}}").order(start_date: :asc)
+      @helps = @helps.where("help_type @> ?", "{#{params[:type]}}").order(start_date: :asc)
       # @helps = @helps.where(help_type: Help::HELP_TYPE.key(params[:type]).to_s).order(start_date: :asc)
       @selected_type = params[:type]
       @searched = true
