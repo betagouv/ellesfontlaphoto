@@ -3,15 +3,16 @@ class HelpsController < ApplicationController
   def index
     @helps = Help.order(start_date: :asc)
     @searched = false
-    if params[:query_residence].present?
-      # @helps = Help.order(start_date: :asc).search_by_residence_condition([params[:query_residence], "Française ou résidant en France"])
-      @helps = Help.where(residence_condition: [params[:query_residence], "Française ou résidant en France"]).order(start_date: :asc)
-      @selected = params[:query_residence]
+    if params[:residence].present?
+      # @helps = Help.order(start_date: :asc).search_by_residence_condition([params[:residence], "Française ou résidant en France"])
+      @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France"]).order(start_date: :asc)
+      @selected = params[:residence]
       @searched = true
     end
-    if params[:query_type].present?
-      @helps = @helps.where(help_type: Help::HELP_TYPE.key(params[:query_type]).to_s).order(start_date: :asc)
-      @selected_type = params[:query_type]
+    if params[:type].present?
+      @helps = @helps.where("help_type @> ?", "{#{params[:type]}}").order(start_date: :asc)
+      # @helps = @helps.where(help_type: Help::HELP_TYPE.key(params[:type]).to_s).order(start_date: :asc)
+      @selected_type = params[:type]
       @searched = true
     end
     @helps_count = @helps.count
