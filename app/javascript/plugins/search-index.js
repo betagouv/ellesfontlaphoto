@@ -77,20 +77,16 @@ const updateInput = () => {
 
   // Submit the form when user click on the button
   document.querySelector(".button-search").addEventListener("click", () => {
-     secondFunction();
+     animSearch();
   })
 }
 
-const secondFunction = async () => {
-  // const promises = searchProgressBar();
-    // e.preventDefault();
+const animSearch = async () => {
     searchProgressBar();
     document.querySelector(".index-direction").style.opacity = 0.2;
     document.querySelector(".cards").style.opacity = 0.2;
-    await sleep(2600)
+    await sleep(2500)
     document.querySelector('#search-form').submit()
-
-  // do something else here after firstFunction completes
 }
 
 function sleep(ms) {

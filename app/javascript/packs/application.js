@@ -18,7 +18,6 @@ import { changeResidence } from '../plugins/search-index';
 import { changeTypes } from '../plugins/search-index';
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search-residence")) {
     // if (document.getElementById("text-to-change-type")) {
