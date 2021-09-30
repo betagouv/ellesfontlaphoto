@@ -1,6 +1,20 @@
 <div class="footer">
-  <div>
-    <%= link_to "Mentions Legales", mentions_legales_path %>
+  <div class="logo-footer">
+    <%= image_tag "gouv-footer.svg" %>
+    <%= image_tag "beta-gouv-footer.svg" %>
   </div>
-  <%= image_tag "footer_logo.png", width: "300px" %>
+  <div class="div-link-footer">
+    <div class="links-footer">
+      <%= link_to "Accessibilité", "#" %>
+      <hr class="vl">
+      <%= link_to "Mentions Legales", mentions_legales_path(anchor: "top") %>
+      <hr class="vl">
+      <%= link_to "Données personnelles", "#" %>
+      <hr class="vl">
+      <%= link_to "Gestion des cookies", "#" %>
+      <hr class="vl">
+      <%= link_to "Statistiques", "#" %>
+    </div>
+    <p>Sauf mention contraire, tous les textes de ce site sont sous <a href="#" class="license">licence etatlab-2.0</a> <%= image_tag "icone-download.svg" %></p>
+  </div>
 </div>

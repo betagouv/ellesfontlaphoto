@@ -1,5 +1,19 @@
 @import "../config/colors";
 @import "../config/fonts";
+.progress-container {
+  height: 0.15rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  background: transparent;
+  .progress {
+    height: 100%;
+    width: 0;
+    margin-top: 2%;
+    background: $purple;
+    transition: width 0.4s ease;
+  }
+}
+
 
 .search-div-residence, .search-div-type {
   display: flex;
@@ -22,6 +36,10 @@
     margin: 0;
     background-color: transparent;
     cursor: pointer;
+  }
+
+  .choosen {
+    box-shadow: #d0abff 0px -3rem 0px inset !important;
   }
 
   .dropdown {
@@ -98,6 +116,12 @@
     margin: 10% 2%;
     display: block;
     text-align: center;
+    #select-search-residence, #select-search-type {
+      box-shadow: #d0abff 0px -1rem 0px inset;
+    }
+    .choosen {
+      box-shadow: #d0abff 0px -2rem 0px inset !important;
+    }
     .text-search {
       font-size: 30px;
       line-height: 0px;
@@ -107,10 +131,10 @@
       line-height: 30px;
     }
     .dropdown #dropdown-elements-residence div {
-      max-width: 200px;
       border-bottom: 1px solid $purple;
       font-size: 16px;
       line-height: 20px;
+      min-width: 90%;
     }
 
     .dropdown #dropdown-elements-type div {
@@ -118,6 +142,7 @@
       border-bottom: 1px solid $purple;
       font-size: 16px;
       line-height: 20px;
+      min-width: 90%;
     }
   }
   .button-search {

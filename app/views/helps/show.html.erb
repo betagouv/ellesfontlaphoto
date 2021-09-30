@@ -1,13 +1,21 @@
 <div class="banner-show">
   <div class="help-title">
-    <% if Help::HELP_TYPE[@help.help_type.to_sym] == "Achat de matériel" %>
-      <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la production" %>
-      <p class="help-type"> 🛠💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide sociale" %>
-      <p class="help-type"> 🔮💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
-    <% elsif Help::HELP_TYPE[@help.help_type.to_sym] == "Aide à la diffusion" %>
-      <p class="help-type"> 📣💸 <%= Help::HELP_TYPE[@help.help_type.to_sym] %></p>
+    <% @help.help_type.each do |type| %>
+      <% if type == "Matériel" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% end %>
+      <% if type == "Production" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% end %>
+      <% if type == "Aide Sociale" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% end %>
+      <% if type == "Diffusion" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% end %>
+      <% if type == "Résidence" %>
+        <p class="help-type"> 💸 🏠 résidence</p>
+      <% end %>
     <% end %>
     <h2><%= @help.title %></h2>
     <p class="paragraphe"><%= @help.description %></p>
@@ -17,7 +25,9 @@
     <p class="paragraphe"><%= @help.help_amount %></p>
     <hr class="hl">
     <p class="paragraphe paragraphe-bold">📅 Dates de candidature:</p>
-    <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %></p>
+    <% if @help.start_date.present? %>
+      <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %></p>
+    <% end %>
     <p class="paragraphe">Fin: <%= I18n.l @help.end_date, format: :long %></p>
     <hr class="hl">
     <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
