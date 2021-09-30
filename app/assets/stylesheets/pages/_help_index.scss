@@ -100,10 +100,7 @@
 #search-form {
   display: none;
 }
-@-webkit-keyframes smooth {
-    100% { opacity: 0;}
-    0% { opacity: 1;}
-}
+
 .main-index {
   display: flex;
   color: $black;
@@ -114,11 +111,6 @@
   }
   .cards {
     width: 100%;
-    -webkit-animation: smooth 5s ease-out;
-    -moz-animation: smooth 5s ease-out;
-    -o-animation: smooth 5s ease-out;
-    -ms-animation: smooth 5s ease-out;
-    animation: smooth 5s ease-out;
     .card-index {
       margin-bottom: 20px;
       border-radius: 2%;
