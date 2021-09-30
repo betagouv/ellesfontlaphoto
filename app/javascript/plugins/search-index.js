@@ -30,20 +30,27 @@ const searchIndex = () => {
 
 const updateInput = () => {
   // Animations for type changing
-  const types = [
-  "📸 financer du matériel",
-  "🛠 financer une production",
-  "🔮 un secours exceptionnel",
-  "🏠 une résidence (artistique)",
-  "📣 financer une diffusion",
-  ];
+  // const types = [
+  // "📸 financer du matériel",
+  // "🛠 financer une production",
+  // "🔮 un secours exceptionnel",
+  // "🏠 une résidence (artistique)",
+  // "📣 financer une diffusion",
+  // ];
+  const types = {
+  "📸 financer du matériel" : "Matériel",
+  "🛠 financer une production": "Production",
+  "🔮 un secours exceptionnel": "Aide Sociale",
+  "🏠 une résidence (artistique)": "Résidence",
+  "📣 financer une diffusion": "Diffusion"
+  }
   const element = document.getElementById("text-to-change-type");
   if (element) {
     let counter = 0;
     const inst = setInterval(() => {
-      element.innerHTML = types[counter];
+      element.innerHTML = Object.keys(types)[counter];
       counter++;
-      if (counter >= types.length) {
+      if (counter >= Object.keys(types).length) {
         counter = 0;
       }
     }, 1500);
@@ -66,7 +73,7 @@ const updateInput = () => {
 
   dropdownElementsTypes.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#type").value = element.innerHTML;
+      document.querySelector("#type").value = types[element.innerHTML];
       document.querySelector("#select-search-type").innerHTML = element.innerHTML;
       document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");
@@ -126,25 +133,25 @@ const changeResidence = () => {
   }, 1500);
 }
 
-const changeTypes = () => {
-  const types = [
-    "Achat de matériel",
-    "Aide à la production",
-    "Aide sociale",
-    "Aide à la diffusion",
-  ];
-  let counter = 0;
-  const element = document.getElementById("text-to-change-type");
-  const inst = setInterval(() => {
-    element.innerHTML = types[counter];
-    counter++;
-    if (counter >= types.length) {
-      counter = 0;
-    }
-  }, 1500);
-}
+// const changeTypes = () => {
+//   const types = [
+//     "Achat de matériel",
+//     "Aide à la production",
+//     "Aide sociale",
+//     "Aide à la diffusion",
+//   ];
+//   let counter = 0;
+//   const element = document.getElementById("text-to-change-type");
+//   const inst = setInterval(() => {
+//     element.innerHTML = types[counter];
+//     counter++;
+//     if (counter >= types.length) {
+//       counter = 0;
+//     }
+//   }, 1500);
+// }
 
-export { changeTypes }
+// export { changeTypes }
 export { changeResidence }
 export { updateInput }
 export { searchIndex }
