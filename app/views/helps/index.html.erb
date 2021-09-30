@@ -90,7 +90,9 @@
             <% end %>
             <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
             <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
-            <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
+            <% if help.start_date.present? %>
+              <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
+            <% end %>
             <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
             <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
           <% end %>
