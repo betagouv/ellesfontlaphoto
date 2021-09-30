@@ -1,20 +1,20 @@
 <div class="banner-show">
   <div class="help-title">
     <% @help.help_type.each do |type| %>
-      <% if Help::HELP_TYPE[type.to_sym] == "financer du matériel" %>
-        <p class="help-type"> 📸💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% if type == "Matériel" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
       <% end %>
-      <% if Help::HELP_TYPE[type.to_sym] == "financer une production" %>
-        <p class="help-type"> 🛠💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% if type == "Production" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
       <% end %>
-      <% if Help::HELP_TYPE[type.to_sym] == "un secours exceptionnel" %>
-        <p class="help-type"> 🔮💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% if type == "Aide Sociale" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
       <% end %>
-      <% if Help::HELP_TYPE[type.to_sym] == "financer une diffusion" %>
-        <p class="help-type"> 📣💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+      <% if type == "Diffusion" %>
+        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
       <% end %>
-      <% if Help::HELP_TYPE[type.to_sym] == "une résidence (artistique)" %>
-        <p class="help-type"> 🏠💸 résidence</p>
+      <% if type == "Résidence" %>
+        <p class="help-type"> 💸 🏠 résidence</p>
       <% end %>
     <% end %>
     <h2><%= @help.title %></h2>
