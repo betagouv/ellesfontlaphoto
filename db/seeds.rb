@@ -1514,7 +1514,6 @@ help42 = Help.new(
     description: "Pour accompagner le financement d'un projet photographique documentaire.",
     description_url: "https://www.cnap.fr/navigation/soutien-la-creation/photographes/modalites-de-candidature",
     residence_time: "3 mois",
-    start_date: Date.new(1981,1,1),
     end_date: Date.new(2022,04,12),
     help_amount: "6 000, 10 000 ou 15 000 euros",
     residence_condition: "Française ou résidant en France",

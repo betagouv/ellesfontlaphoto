@@ -77,10 +77,12 @@
             <% end %>
         <% end %>
           </div>
-          <% if help.start_date < Date.today && Date.today < help.end_date %>
-            <div class="flottante2">C'est maintenant !</div>
-          <% elsif (help.start_date - Date.today).to_i < 90 %>
-            <div class="flottante2">C'est bientôt !</div>
+          <% if help.start_date.present? %>
+            <% if help.start_date < Date.today && Date.today < help.end_date %>
+              <div class="flottante2">C'est maintenant !</div>
+            <% elsif (help.start_date - Date.today).to_i < 90 %>
+              <div class="flottante2">C'est bientôt !</div>
+            <% end %>
           <% end %>
           <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
           <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
