@@ -16,6 +16,7 @@ import { searchIndex } from '../plugins/search-index';
 import { updateInput } from '../plugins/search-index';
 import { changeResidence } from '../plugins/search-index';
 import { changeTypes } from '../plugins/search-index';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
