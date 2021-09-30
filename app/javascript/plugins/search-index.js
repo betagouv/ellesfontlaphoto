@@ -103,24 +103,25 @@ function sleep(ms) {
 const changeResidence = () => {
   const residences = [
     "Auvergne-Rhône Alpes",
-    "Bourgogne-Franche Comté",
+    "Bourgogne-Franche-Comté",
     "Bretagne",
-    "Centre Val de Loire",
+    "Centre-Val de Loire",
     "Corse",
     "Grand-Est",
     "Guadeloupe",
     "Guyane",
     "Hauts de France",
-    "Ile de France",
+    "Ile-de-France",
     "Martinique",
     "Mayotte",
     "Normandie",
-    "Nouvelle Aquitaine",
+    "Nouvelle-Aquitaine",
     "Occitanie",
     "Pays de la Loire",
     "Provence-Alpes-Côte-d'Azur",
     "Réunion",
-    "Française ou résidant en France"
+    "Française ou résidant en France",
+    "Française résidant en outre-mer"
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-residence");
