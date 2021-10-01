@@ -201,13 +201,11 @@
   display: flex;
   .contact-newsletter {
     background-color: $light-purple;
-    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
   .contact-comment {
     background-color: $light-yellow;
-    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
@@ -358,12 +356,6 @@
 
   .contact-block {
     display: block;
-    .contact-newsletter {
-      // width: 100%;
-    }
-    .contact-comment {
-      // width: 100%;
-    }
 
     .input {
       text-align: center !important;
