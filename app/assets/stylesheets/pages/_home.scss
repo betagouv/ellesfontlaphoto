@@ -1,58 +1,17 @@
 @import "../config/colors";
 @import "../config/fonts";
 
-/*----------------------------------------*/
-/*COMMON*/
-
-.quote p {
-  display: block;
-  margin: 0px 60px 40px 100px;
-  padding: 0px 0px 0px 20px;
-  float: none;
+.banner-contact {
+  background-color: $yellow;
+  text-align: center;
+  height: 60px;
+  display: flex;
   justify-content: center;
-  border-style: none none none solid;
-  border-width: 1px 1px 1px 5px;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 5px;
-  border-color: #000 #000 #000 #decaff;
-  transition: opacity 200ms ease;
-  font-family: 'Marianne', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-  text-decoration: none;
-  column-count: 0;
-  column-rule-color: $light-purple;
-  column-rule-style: solid;
-  white-space: normal;
-  background-clip: border-box;
-  object-fit: fill;
-  line-height: 34px;
-}
-
-.small-quote p {
-  display: block;
-  margin: 0px 60px 40px 100px;
-  padding: 0px 0px 0px 20px;
-  float: none;
-  justify-content: center;
-  border-style: none none none solid;
-  border-width: 1px 1px 1px 5px;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 5px;
-  border-color: #000 #000 #000 $light-purple;
-  transition: opacity 200ms ease;
-  font-family: 'Marianne', sans-serif;
-  font-weight: 500;
-  text-align: left;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 500;
+  align-items: center;
+  a {
+    color: $black !important;
+    margin: 0;
+  }
 }
 
 .flex-div {
@@ -67,8 +26,62 @@
 /*BANNER*/
 
 .banner {
-  padding: 5em 12em 8em 12em;
-  background-color: $light-purple;
+  padding: 10vw 23vw 8vw 9.5vw;
+  position: relative;
+  h1 {
+    font-family: "Spectral-Regular", sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 123.2%;
+    display: inline-block;
+    .underline-purple {
+      color: black;
+      border: 0;
+      box-shadow: $purple 0px -2.5rem 0px inset;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover {
+        box-shadow: $purple 0px -4rem 0px inset;
+      }
+    }
+    .underline-pink {
+      border: 0;
+      box-shadow: $rouille 0px -2.5rem 0px inset;
+      background-color: transparent;
+      cursor: pointer;
+      color: black;
+      &:hover {
+        box-shadow: $rouille 0px -4rem 0px inset;
+      }
+    }
+
+  }
+
+  .bhl.home {
+    width: 77%;
+    position: absolute;
+    bottom: -57px;
+  }
+
+  .illu-home-1 {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 2%;
+  }
+  .illu-home-3 {
+    position: absolute;
+    width: 28%;
+    right: 0;
+    top: 7%;
+  }
+  .illu-home-2 {
+    position: absolute;
+    top: 0;
+    width: 130px;
+    left: 25%;
+  }
 }
 
 
@@ -77,7 +90,18 @@
 
 .first-block{
   display: flex;
-  padding: 5% 10%
+  justify-content: space-between;
+  padding: 5% 10%;
+  .first-block-left{
+    max-width: 35%;
+  }
+  .first-block-right {
+    max-width: 50%;
+    .icones {
+      font-size: 40px;
+      margin-right: 30px;
+    }
+  }
 }
 
 .know-more {
@@ -88,17 +112,29 @@
   max-width: 100%;
 }
 
-.quote-first-block {
-  max-width: 40% !important;
-  margin: 0 40px 40px auto !important;
-}
-
 /*----------------------------------------*/
 // SECOND BLOCK
 
 .second-block {
-  padding: 5% 10%;
-  background-color: $light-yellow;
+  padding: 5% 7%;
+  background-color: $purple;
+  .flex-div {
+    align-items: flex-start;
+    .button-helps {
+      background-color: $black;
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 1rem;
+      display: flex;
+      margin-left: 25%;
+      cursor: pointer;
+      color: $white !important;
+      margin: 0 auto;
+      min-width: 165px;
+      margin-right: 30px;
+    }
+  }
 }
 
 .align-titles {
@@ -124,29 +160,35 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 5% 10%;
+  padding: 2% 10%;
 }
 
 .third-block-div {
-  max-width: 50%;
-}
-
-.quote-third-block {
-  margin:0 !important;
-  margin-top: 20px !important;
+  min-width: 50%;
 }
 
 /*----------------------------------------*/
 // FOURTH BLOCK
 
 .fourth-block {
-  padding: 5% 10%;
-  background-color: $light-white;
+  padding: 1% 10%;
+  background-color: $very-light-purple;
+  border-top: 1px solid $purple;
+  border-bottom: 1px solid $purple;
+  .flex-div {
+    align-items: flex-start;
+  }
 }
 
-.quote-flex {
-  max-width:50%;
-  margin-bottom: 20px;
+.div-chiffre {
+  max-width: 20%;
+  .chiffre {
+    font-family: "Spectral-Regular", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 45px;
+  }
 }
 
 /*----------------------------------------*/
@@ -156,13 +198,11 @@
   display: flex;
   .contact-newsletter {
     background-color: $light-purple;
-    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
   .contact-comment {
     background-color: $light-yellow;
-    // width: 50%;
     text-align: center;
     padding: 2% 7%;
   }
@@ -243,19 +283,33 @@
 
 @media only screen and (max-width: 1250px) {
   .banner {
-    padding: 5em 0;
+    padding: 7em 0 3em 0;
+    .illu-home-1 {
+      width: 120px;
+    }
+    .illu-home-2 {
+      top: 70%;
+    }
+    .illu-home-3 {
+      width: 70px;
+    }
     h1 {
-      font-size: 50px;
+      font-size: 38px;
+      .underline-pink {
+        box-shadow: $rouille 0px -1.8rem 0px inset;
+      }
+      .underline-purple {
+        box-shadow: $purple 0px -1.8rem 0px inset;
+      }
+    }
+    .bhl.home {
+      display: none;
     }
   }
 
   .subtitle {
+    font-size: 28px;
     text-align:center;
-  }
-
-  .question-subtitle {
-    text-align:center;
-    margin-bottom:20px;
   }
 
   .paragraphe {
@@ -268,54 +322,37 @@
 
   .first-block {
     display: block;
+    text-align: center;
+    div {
+      min-width: 100%;
+    }
+  }
+
+  .second-block {
+    .flex-div {
+      justify-content: center;
+      .button-helps {
+        margin: 0;
+        margin-bottom: 40px;
+        justify-content: center;
+      }
+    }
+  }
+
+  .third-block, .fourth-block {
+    text-align: center;
+    .div-chiffre {
+      min-width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
   .flex-div {
     display:block;
   }
 
-  .second-block {
-    .entretien-img {
-      width: 100%;
-    }
-    .vl {
-      display:none;
-    }
-  }
-
-  .entretien-paragraphe {
-    margin-left: 0;
-  }
-
-  .third-block-div {
-    min-width: 100%;
-  }
-
-  .paragraphe-quote {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .quote-first-block {
-    min-width: 80%;
-  }
-
-  .quote-flex {
-    min-width: 100%;
-  }
-
-  .camera-img {
-    margin: 30px 0;
-  }
-
   .contact-block {
     display: block;
-    .contact-newsletter {
-      // width: 100%;
-    }
-    .contact-comment {
-      // width: 100%;
-    }
 
     .input {
       text-align: center !important;
@@ -332,6 +369,7 @@
 
     .btn {
       height: 45px !important;
+      margin: 0 auto;
     }
   }
 }

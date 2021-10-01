@@ -36,7 +36,6 @@ h4 {
 a {
   text-decoration: none !important;
 }
-
 .question-subtitle {
   padding-top: 0px;
   opacity: 0.6;
@@ -77,6 +76,13 @@ a {
   text-align: center;
 }
 
+.paragraphe-spectral-italic {
+  font-family: "Spectral-Regular", sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+}
+
 .main-bold-paragraphe {
   font-family: 'Marianne-Bold', sans-serif;
   font-size: 20px;
@@ -114,6 +120,17 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   text-decoration: none;
   font-size: 1rem;
+}
+
+.weight-normal {
+  font-family: 'Marianne-Regular', sans-serif;
+}
+
+.bhl {
+  border: transparent;
+  border-top: 0.1px solid $purple;
+  border-style: outset;
+  margin: 40px 0;
 }
 
 .mt30 {
