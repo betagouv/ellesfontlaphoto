@@ -37,17 +37,24 @@
     .underline-purple {
       color: black;
       border: 0;
-      box-shadow: $purple 0px -3rem 0px inset;
+      box-shadow: $purple 0px -2.5rem 0px inset;
       background-color: transparent;
       cursor: pointer;
+      &:hover {
+        box-shadow: $purple 0px -4rem 0px inset;
+      }
     }
     .underline-pink {
       border: 0;
-      box-shadow: $rouille 0px -3rem 0px inset;
+      box-shadow: $rouille 0px -2.5rem 0px inset;
       background-color: transparent;
       cursor: pointer;
-      color: black
+      color: black;
+      &:hover {
+        box-shadow: $rouille 0px -4rem 0px inset;
+      }
     }
+
   }
 
   .bhl.home {
