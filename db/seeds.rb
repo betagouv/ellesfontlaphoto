@@ -10,7 +10,7 @@ help1 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/aides/subventions/arts-visuels/AIC",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -32,12 +32,8 @@ help1 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "<ul><li>Départements des Ardennes (08) Aube (10) Marne (51) Haute-Marne (52) de Meurthe-et-Moselle (54) et Meuse (55)
-    Laurent Innocenzi, conseiller
-    laurent.innocenzi@culture.gouv.fr</li>
-    <li>Départements de Moselle (57) des Vosges (88) du Bas-Rhin (67) et du Haut-Rhin (68)
-    Bernard Goy, conseiller
-    bernard.goy@culture.gouv.fr</li></ul>
+    contact_institution: "Conseillers pour les arts plastiques et visuels : <ul><li> Laurent Innocenzi, référent sur les départements 08, 10, 51, 52, 54, et 55</li>
+    <li>Bernard Goy, référent sur les départements 57, 88, 67 et 68.</li></ul>
     ",
     contact_intitution_email: ["laurent.innocenzi@culture.gouv.fr", "bernard.goy@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels"
@@ -51,7 +47,7 @@ help2 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
     help_amount: "Jusqu'à 8 000 €",
@@ -70,7 +66,7 @@ help2 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "<ul><li>Conseillers pour les arts plastiques : Bertrand FLEURY, référent sur les départements 17, 33, 40, 47, 64, 79</li>
+    contact_institution: "Conseillers pour les arts plastiques et visuels :<ul><li>Bertrand FLEURY, référent sur les départements 17, 33, 40, 47, 64, 79</li>
     <li>Mathieu BORDES, référent sur les départements 16, 19, 23, 24, 86, 87</li></ul>
     ",
     contact_intitution_email: ["bertrand.fleury@culture.gouv.fr", "mathieu.bordes@culture.gouv.fr "],
@@ -85,7 +81,7 @@ help3 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Auvergne-Rhone-Alpes/Demarches-aides/Aides-financieres/Aides-arts-plastiques",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -106,8 +102,8 @@ help3 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "<ul><li>Conseillères pour les arts plastiques : Hélène Rongier, référente sur les départements 03, 07, 15, 42, 43 et 63</li>
-    <li>Pascale Morestin, référente sur les départements 01, 26, 38, 69, 73 et 74</li></ul>
+    contact_institution: "Conseillères pour les arts plastiques et visuels :<ul><li>Hélène Rongier, référente sur les départements 03, 07, 15, 42, 43 et 63</li>
+    <li>Pascale Morestin, référente sur les départements 01, 26, 38, 69, 73 et 74.</li></ul>
     ",
     contact_intitution_email: [" helene.bertin-rongier@culture.gouv.fr", "pascale.morestin@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Auvergne-Rhone-Alpes/Demarches-aides/Aides-financieres/Aides-arts-plastiques ",
@@ -121,7 +117,7 @@ help4 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Aides-demarches/Appels-a-projets/Candidatures-AIA-AIC",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -133,7 +129,7 @@ help4 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/arrete_membres_commission_AP.pdf",
-    old_laureat: "Une dizaine d'AIC attribués en 2020 en Bourgogne Franche Comté, de façon paritaire. ",
+    old_laureat: "Une dizaine d'aides attribuées en 2020 en Bourgogne Franche Comté, de façon paritaire.",
     old_laureat_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/AIC_AIA_LISTE_ARTISTES_AIDES_ANNEES_ANTERIEURES.pdf2",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -145,7 +141,7 @@ help4 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseiller·e·s pour les arts plastiques : Rémy FENZY, référent sur le site de Dijon, et Corinne GAMBI, référente sur le site de Besançon.
+    contact_institution: "Conseiller et conseillère pour les arts plastiques et visuels :<ul><li>Rémy Fenzy, référent sur le site de Dijon</li><li>Corinne Gambi, référente sur le site de Besançon.</li></ul>
     ",
     contact_intitution_email: [" remy.fenzy@culture.gouv.fr", "corinne.gambi@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Bourgogne-Franche-Comte/Votre-DRAC/Creation-Industries-et-Actions-Culturelles/Arts-Plastiques",
@@ -159,7 +155,7 @@ help5 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Aides-et-demarches/Arts-visuels-cinema-livre-et-lecture-spectacle-vivant/Arts-visuels",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -171,7 +167,7 @@ help5 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/2020_05_19_arrete_renouvellement_AIC_AIA.pdf",
-    old_laureat: "Une quinzaine d’AIC attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 3000 euros en 2021.",
+    old_laureat: "Une quinzaine d’aides attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 3000 euros en 2021.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Politique-et-actions-culturelles/Arts-visuels",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -183,7 +179,7 @@ help5 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseiller pour les arts visuels : Olivier Lerch. N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
+    contact_institution: "Conseiller pour les arts visuels : Olivier Lerch. N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_intitution_email: [" cap.bretagne@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Aides-et-demarches/Arts-visuels-cinema-livre-et-lecture-spectacle-vivant/Arts-visuels ",
   )
@@ -196,7 +192,7 @@ help6 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Centre-Val-de-Loire/Vos-demarches/Subventions/Arts-plastiques-Photographie-Multimedia/AIDE-INDIVIDUELLE-A-LA-CREATION",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -218,7 +214,7 @@ help6 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseiller pour les arts visuels : Jean-Christophe ROYOUX",
+    contact_institution: "Conseiller pour les arts visuels : Jean-Christophe Royoux",
     contact_intitution_email: [" artsplastiques.centre@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Centre-Val-de-Loire/Vos-demarches/Subventions/Arts-plastiques-Photographie-Multimedia",
   )
@@ -231,7 +227,7 @@ help7 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
     help_amount: "Jusqu'à 8 000 €",
@@ -261,7 +257,7 @@ help8 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Ile-de-France/Aides-et-demarches/Departements-des-arts-visuels",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -272,7 +268,7 @@ help8 = Help.new(
     candidate_url: "http://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/%20",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "37  AIC attribuées en 2020 en Ile-de-France, de façon paritaire, dont 4 projets photographiques.",
+    old_laureat: "37 aides attribuées en 2020 en Ile-de-France, de façon paritaire, dont 4 projets photographiques.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Ile-de-France/Arts-visuels/Laureats-de-l-Aide-individuelle-a-la-creation-session-2020",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -284,7 +280,7 @@ help8 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère aux arts visuels :  Isabelle Boulord",
+    contact_institution: "Conseillère pour les arts visuels : Isabelle Boulord",
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Ile-de-France/Aides-et-demarches/Departements-des-arts-visuels ",
   )
 
@@ -296,7 +292,7 @@ help9 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Occitanie/Aides-et-demarches/Aides-et-subventions/Aides-Arts-plastiques",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -317,7 +313,7 @@ help9 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillères pour les arts plastiques : Catherine Dumon, référente sur le site de Montpellier, et Marie-Béatrice Angelé, référente sur le site de Toulouse.  N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier. ",
+    contact_institution: "Conseillères pour les arts plastiques et visuels :<ul><li>Catherine Dumon, référente sur le site de Montpellier</li><li>Marie-Béatrice Angelé, référente sur le site de Toulouse</li></ul>  N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_intitution_email: [" catherine.dumon@culture.gouv.fr", "artsplastiques.occitanie@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Occitanie/Aides-et-demarches/Aides-et-subventions/Aides-Arts-plastiques",
   )
@@ -330,7 +326,7 @@ help10 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Normandie/Aides-et-demarches/Aides-et-demarches-pour-la-creation-artistique-et-le-developpement-des-publics/Aides-concernant-le-secteur-des-arts-plastiques",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -352,7 +348,7 @@ help10 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseiller pour les arts plastiques : Jérôme Felin. N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier. ",
+    contact_institution: "Conseiller pour les arts plastiques : Jérôme Felin. N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_intitution_email: [" catherine.dumon@culture.gouv.fr", "artsplastiques.occitanie@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Occitanie/Aides-et-demarches/Aides-et-subventions/Aides-Arts-plastiques",
   )
@@ -365,7 +361,7 @@ help11 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Hauts-de-France/Politique-et-actions-des-services/Pole-creation/Arts-visuels/Aides-destinees-aux-artistes-auteurs-arts-visuels",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -386,7 +382,7 @@ help11 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "<ul><li>Conseiller·e·s pour les arts plastiques : Françoise Dubois, référente dans les départements 02, 60, 80, </li><li>Eric Jarrot, référent pour les départements 59 et 62.</li></ul>",
+    contact_institution: "Conseiller et conseillère pour les arts plastiques et visuels :<ul><li>Françoise Dubois, référente dans les départements 02, 60, 80</li><li>Eric Jarrot, référent pour les départements 59 et 62.</li></ul>",
     contact_intitution_email: [" francoise.dubois@culture.gouv.fr", "eric.jarrot@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Hauts-de-France/Politique-et-actions-des-services/Pole-creation/Arts-visuels",
   )
@@ -399,7 +395,7 @@ help12 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Pays-de-la-Loire/Vos-demarches-et-documentations/Arts-plastiques-et-metiers-d-art",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -410,7 +406,7 @@ help12 = Help.new(
     candidate_url: "https://mesdemarches.culture.gouv.fr/mcc/requests/ARTSP_AIDES_creation_02/",
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "8 AIC attribuées en 2017 en Pays de la Loire, dont deux attribuées à des femmes. ",
+    old_laureat: "8 aides attribuées en 2017 en Pays de la Loire, dont deux attribuées à des femmes.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Pays-de-la-Loire/Politique-et-actions/Arts-visuels/Developper-la-creation",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -434,7 +430,7 @@ help13 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur/Aides-demarches/Aides-financieres/Aides-aux-artistes-plasticiens",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -446,7 +442,7 @@ help13 = Help.new(
     selection: "Les demandes sont examinées par une commission réunie une fois par an. La commission émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est composée de 7 femmes et 2 hommes (mais les membres peuvent être représentés).  ",
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Paca/Files/Aides-demarches/Aides-financieres/Arts-plastiques/Commission-consultative-d-aides-a-la-creation-et-des-allocations-d-installation-d-atelier-2020-2022",
-    old_laureat: "Une trentaine d'AIC attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
+    old_laureat: "Une trentaine d'aides attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur/Aides-demarches/Aides-financieres/Aides-aux-artistes-plasticiens",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -458,7 +454,7 @@ help13 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Aurélie Hence",
+    contact_institution: "Conseillère pour les arts visuels : Aurélie Hence",
     contact_intitution_email: ["aurelie.hance@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur",
   )
@@ -471,7 +467,7 @@ help14 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/aide-a-la-creation-2020.doc",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -480,7 +476,7 @@ help14 = Help.new(
     general_condition: "Réservé à la création artistique ; Ne pas être étudiante",
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Une aide publique ne peut financer la totalité du budget d'un projet ; Cette aide ne peut être obtenue que tous les 4 ans ; Il est interdit de candidater à cette aide dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     candidate_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/aide-a-la-creation-2020.doc",
-    selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel devra être adressé à la DAC avant 20 décembre 2021. Les demandes sont ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
+    selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel doit être envoyé avant le 20 décembre 2021. Les demandes seront ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -492,7 +488,7 @@ help14 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Valérie LABAYLE",
+    contact_institution: "Conseillère pour les arts visuels : Valérie Labayle",
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Guadeloupe/Disciplines-et-secteurs/Arts-plastiques",
   )
 
@@ -504,7 +500,7 @@ help15 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Dac-Guyane/Aides-et-demarches/Arts-plastiques",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,07,15),
@@ -515,7 +511,7 @@ help15 = Help.new(
     candidate_url: "https://www.culture.gouv.fr/Regions/Dac-Guyane/Aides-et-demarches/Arts-plastiques",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "4 AIC attribuées en 2021 en Guyane, dont 3 attribuées à des femmes, sur 6 candidatures.",
+    old_laureat: "4 aides attribuées en 2021 en Guyane, dont 3 attribuées à des femmes, sur 6 candidatures.",
     help_type: ["Production"],
     admin_attachment: "<ul>
     <li>CV</li>
@@ -526,7 +522,7 @@ help15 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Sandrine Moreau",
+    contact_institution: "Conseillère pour les arts visuels : Sandrine Moreau",
     contact_intitution_email: ["sandrine.moreau@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Guyane/Aides-et-demarches/Arts-plastiques",
   )
@@ -539,7 +535,7 @@ help16 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,03,31),
@@ -549,7 +545,7 @@ help16 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Une aide publique ne peut financer la totalité du budget d'un projet ; Cette aide ne peut être obtenue que tous les 4 ans ; Il est interdit de candidater à cette aide dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "4 AIC attribuées en 2018 en Martinique, dont deux attribuées à des femmes. ",
+    old_laureat: "4 aides attribuées en 2018 en Martinique, dont deux attribuées à des femmes.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
     help_type: ["Production"],
     admin_attachment: "<ul>
@@ -561,7 +557,7 @@ help16 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseiller aux arts plastiques et musées : Anthoni DOMINGUEZ",
+    contact_institution: "Conseiller pour les arts plastiques et visuels : Anthoni Dominguez",
     contact_intitution_email: ["sandrine.moreau@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
   )
@@ -574,7 +570,7 @@ help17 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,05,31),
     help_amount: "Jusqu'à 8 000 €",
@@ -593,7 +589,7 @@ help17 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère pour l'éducation artistique et culturelle, la création artistique, le cinéma et les politiques interministérielles : Gaëlle Metelus",
+    contact_institution: "Conseillère pour la création artistique : Gaëlle Metelus",
     contact_intitution_email: ["gaelle.metelus@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Mayotte/Action-culturelle-et-artistique/La-creation/Les-Aides-a-la-creation",
   )
@@ -606,7 +602,7 @@ help18 = Help.new(
     title: "Aide à la création artistique (AIC)",
     regularity: "Une fois par an",
     sector: "Arts visuels",
-    description: "Pour accompagner le financement d'un projet de création ou de recherche artistique.",
+    description: "Pour soutenir le développement d'un projet de création ou de recherche artistique. ",
     description_url: "https://www.culture.gouv.fr/Regions/Dac-de-La-Reunion/A-la-une/Aide-a-la-creation-individuelle-allocations-d-installation-d-atelier-et-achat-de-materiel-2021",
     start_date: Date.new(2022,1,1),
     end_date: Date.new(2022,02,28),
@@ -627,7 +623,7 @@ help18 = Help.new(
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
-    contact_institution: "Conseillère arts plastiques et enseignement supérieur : Natacha Provensal",
+    contact_institution: "Conseillère pour les arts plastiques et visuels : Natacha Provensal",
     contact_intitution_email: ["natacha.provensal@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-de-La-Reunion/A-la-une/Aide-a-la-creation-individuelle-allocations-d-installation-d-atelier-et-achat-de-materiel-2021",
   )
@@ -663,7 +659,7 @@ help19 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "<ul><li>Conseillères pour les arts plastiques : Hélène Rongier, référente sur les départements 03, 07, 15, 42, 43 et 63</li><li>Bernard Goy, référent sur les départements 57, 88, 67 et 68</li></ul>",
+    contact_institution: "<ul><li>Conseillères pour les arts plastiques : Hélène Rongier, référente sur les départements 03, 07, 15, 42, 43 et 63</li><li>Pascale Morestin, référente sur les départements 01, 26, 38, 69, 73 et 74</li></ul>",
     contact_intitution_email: [" helene.bertin-rongier@culture.gouv.fr","pascale.morestin@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Auvergne-Rhone-Alpes/Demarches-aides/Aides-financieres/Aides-arts-plastiques",
   )
@@ -688,7 +684,7 @@ help20 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/2020_05_19_arrete_renouvellement_AIC_AIA.pdf",
-    old_laureat: "Une vingtaine d’AIA attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 2500 euros en 2021. La plupart permettent de financer l’achat de matériel informatique ou de construction, ou les travaux d’installation d’un atelier ; environ 2 par an concernent spécifiquement du matériel photographique. Les descriptions des projets lauréats de l’année précédente peuvent être consultées en ligne.",
+    old_laureat: "Une vingtaine d’aides attribuées par an en Bretagne, de façon quasiment paritaire, pour une moyenne de 2500 euros en 2021. La plupart permettent de financer l’achat de matériel informatique ou de construction, ou les travaux d’installation d’un atelier ; environ 2 par an concernent spécifiquement du matériel photographique. Les descriptions des projets lauréats de l’année précédente peuvent être consultées en ligne.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Politique-et-actions-culturelles/Arts-visuels",
     help_type: ["Matériel"],
     admin_attachment: "<ul>
@@ -701,7 +697,7 @@ help20 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseiller pour les arts visuels : Olivier Lerch. N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
+    contact_institution: "Conseiller pour les arts visuels : Olivier Lerch. N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_intitution_email: [" cap.bretagne@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Bretagne/Aides-et-demarches/Arts-visuels-cinema-livre-et-lecture-spectacle-vivant/Arts-visuels",
   )
@@ -726,7 +722,7 @@ help21 = Help.new(
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/arrete_membres_commission_AP.pdf",
-    old_laureat: "Six AIA attribués en 2020 en Bourgogne Franche Comté, dont deux pour l'acquisition de matériel photographique et vidéo.",
+    old_laureat: "6 aides attribuées en 2020 en Bourgogne Franche Comté, dont deux pour l'acquisition de matériel photographique et vidéo. ",
     old_laureat_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/AIC_AIA_LISTE_ARTISTES_AIDES_ANNEES_ANTERIEURES.pdf2",
     help_type: ["Matériel"],
     admin_attachment: "<ul>
@@ -739,7 +735,7 @@ help21 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "<ul><li>Conseiller·e·s pour les arts plastiques : Rémy FENZY, référent sur le site de Dijon</li><li>Corinne GAMBI, référente sur le site de Besançon.</li></ul>",
+    contact_institution: "Conseillers pour les arts plastiques : Rémy Fenzy, référent sur le site de Dijon, et Corinne Gambi, référente sur le site de Besançon.",
     contact_intitution_email: ["remy.fenzy@culture.gouv.fr","corinne.gambi@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Bourgogne-Franche-Comte/Votre-DRAC/Creation-Industries-et-Actions-Culturelles/Arts-Plastiques",
   )
@@ -840,7 +836,7 @@ help23 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseiller pour les arts visuels  :  Jean-Christophe ROYOUX",
+    contact_institution: "Conseiller pour les arts visuels : Jean-Christophe Royoux",
     contact_intitution_email: ["artsplastiques.centre@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Centre-Val-de-Loire/Vos-demarches/Subventions/Arts-plastiques-Photographie-Multimedia",
   )
@@ -862,7 +858,7 @@ help24 = Help.new(
     general_condition: "Réservé à la création artistique ; Ne pas être étudiante",
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIA dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     candidate_url: "https://www.culture.gouv.fr/Media/Medias-creation-rapide/Demande-d-installation-atelier-Gpe-2020.doc",
-    selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel devra être adressé à la DAC avant 20 décembre 2021. Les demandes sont ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
+    selection: "Un premier dossier comprenant au moins une note d’intention artistique, un CV et un budget prévisionnel doit être envoyé avant le 20 décembre 2021. Les demandes seront ensuite examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     help_type: ["Matériel"],
     admin_attachment: "<ul>
@@ -875,7 +871,7 @@ help24 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Valérie LABAYLE",
+    contact_institution: "Conseillère pour les arts visuels : Valérie Labayle",
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Guadeloupe/Disciplines-et-secteurs/Arts-plastiques ",
   )
 
@@ -910,7 +906,7 @@ help25 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "<ul><li>Conseillers pour les arts plastiques : Laurent Innocenzi, référent sur les départements 08, 10, 51, 52, 54, et 55</li><li>Bernard Goy, référent sur les départements 57, 88, 67 et 68</li></ul>",
+    contact_institution: "Conseillers pour les arts plastiques : <ul><li>Laurent Innocenzi, référent sur les départements 08, 10, 51, 52, 54, et 55</li><li> Bernard Goy, référent sur les départements 57, 88, 67 et 68.</li></ul>",
     contact_intitution_email: ["laurent.innocenzi@culture.gouv.fr","bernard.goy@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Grand-Est/Creation/Arts-visuels",
   )
@@ -934,7 +930,7 @@ help26 = Help.new(
     candidate_url: "https://www.culture.gouv.fr/Regions/Dac-Guyane/Aides-et-demarches/Arts-plastiques",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "5 AIA attribuées en 2021 en Guyane, dont 2 à des femmes, sur 6 candidatures.",
+    old_laureat: "5 aides attribuées en 2021 en Guyane, dont 2 à des femmes, sur 6 candidatures. ",
     help_type: ["Matériel"],
     admin_attachment: "<ul>
     <li>CV</li>
@@ -946,7 +942,7 @@ help26 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Sandrine Moreau",
+    contact_institution: "Conseillère pour les arts visuels : Sandrine Moreau",
     contact_intitution_email: ["sandrine.moreau@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Guyane/Aides-et-demarches/Arts-plastiques",
   )
@@ -981,7 +977,7 @@ help27 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "<ul><li>Conseiller·e·s pour les arts plastiques : Françoise Dubois, référente dans les départements 02, 60, 80</li><li>Eric Jarrot, référent pour les départements 59 et 62.</li></ul>",
+    contact_institution: "Conseiller et conseillère pour les arts plastiques et visuels : <ul><li>Françoise Dubois, référente dans les départements 02, 60, 80</li><li> Eric Jarrot, référent pour les départements 59 et 62.</li></ul>",
     contact_intitution_email: ["francoise.dubois@culture.gouv.fr","eric.jarrot@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Hauts-de-France/Politique-et-actions-des-services/Pole-creation/Arts-visuels",
   )
@@ -1038,7 +1034,7 @@ help29 = Help.new(
     specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Cette aide ne peut être allouée que tous les 4 ans ; Il est interdit de candidater à l'AIA dans plusieurs régions ; Cette aide n'est pas cumulable avec la plupart des aides publiques la même année.",
     selection: "Les demandes sont examinées par une commission. Elle émet un avis au vu de la qualité et du professionnalisme du dossier artistique ainsi que de l’ensemble des pièces fournies, y compris de l’équilibre du budget.",
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
-    old_laureat: "4 AIA attribuées en 2018 en Martinique, dont 3 attribuées à des femmes.",
+    old_laureat: "4 aides attribuées en 2018 en Martinique, dont 3 attribuées à des femmes.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
     help_type: ["Matériel"],
     admin_attachment: "<ul>
@@ -1051,7 +1047,7 @@ help29 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseiller aux arts plastiques et musées : Anthoni DOMINGUEZ",
+    contact_institution: "Conseiller pour les arts plastiques et visuels : Anthoni Dominguez",
     contact_institution_url: "https://www.culture.gouv.fr/Regions/DAC-Martinique/Disciplines-et-secteurs/Arts-plastiques",
   )
 
@@ -1084,7 +1080,7 @@ help30 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseillère pour l'éducation artistique et culturelle, la création artistique, le cinéma et les politiques interministérielles : Gaëlle Metelus",
+    contact_institution: "Conseillère pour la création artistique : Gaëlle Metelus",
     contact_intitution_email: ["gaelle.metelus@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-Mayotte/Action-culturelle-et-artistique/La-creation/Les-Aides-a-la-creation",
   )
@@ -1120,7 +1116,7 @@ help31 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseiller pour les arts plastiques : Jérôme Felin.  N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
+    contact_institution: "Conseiller pour les arts plastiques et visuels : Jérôme Felin.  N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Normandie/Aides-et-demarches/Aides-et-demarches-pour-la-creation-artistique-et-le-developpement-des-publics",
   )
 
@@ -1154,7 +1150,7 @@ help32 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "<ul><li>Conseillères pour les arts plastiques : Catherine Dumon, référente sur le site de Montpellier</li><li>, et Marie-Béatrice Angelé, référente sur le site de Toulouse.</li></ul>  N'hésitez pas à soliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier. ",
+    contact_institution: "Conseillères pour les arts plastiques : <ul><li>Catherine Dumon, référente sur le site de Montpellier</li><li>Marie-Béatrice Angelé, référente sur le site de Toulouse.</li></ul>N'hésitez pas à solliciter un rendez-vous pour être accompagnée dans la constitution de votre dossier.",
     contact_intitution_email: ["catherine.dumon@culture.gouv.fr","artsplastiques.occitanie@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Occitanie/Aides-et-demarches/Aides-et-subventions/Aides-Arts-plastiques"
   )
@@ -1180,7 +1176,7 @@ help33 = Help.new(
     compo_commission: "Elle est fixée par arrêté du préfet ou de la préfète de région. Elle est paritaire (mais les membres peuvent être représentés).",
     url_commission: "https://www.culture.gouv.fr/Media/Regions/Drac-Paca/Files/Aides-demarches/Aides-financieres/Arts-plastiques/Commission-consultative-d-aides-a-la-creation-et-des-allocations-d-installation-d-atelier-2020-2022",
     help_type: ["Matériel"],
-    old_laureat: "Une dizaine d'AIA attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
+    old_laureat: "Une dizaine d'aides attribuées en 2020 en Provence-Alpes-Côte-d'Azur, de façon paritaire.",
     old_laureat_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur/Aides-demarches/Aides-financieres/Aides-aux-artistes-plasticiens",
     admin_attachment: "<ul>
     <li>CV</li>
@@ -1192,7 +1188,7 @@ help33 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseillère aux arts visuels : Aurélie Hence",
+    contact_institution: "Conseillère pour les arts visuels : Aurélie Hence",
     contact_intitution_email: ["aurelie.hance@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Drac-Provence-Alpes-Cote-d-Azur",
   )
@@ -1261,7 +1257,7 @@ help35 = Help.new(
     </ul>",
     artistic_attachment: "<ul><li>portfolio</li> <li>note de présentation du projet</li> <li> montant détaillé des dépenses et du financement prévu</li></ul>",
     other_attachment: "<ul><li>attestation du ou de la propriétaire autorisant les travaux</li> <li>devis pour l’aménagement ou l’achat de matériel</li> <li> plans avant et après l’aménagement le cas échéant.</li></ul>",
-    contact_institution: "Conseillère arts plastiques et enseignement supérieur : Natacha Provensal",
+    contact_institution: "Conseillère pour les arts plastiques et visuels : Natacha Provensal",
     contact_intitution_email: ["natacha.provensal@culture.gouv.fr"],
     contact_institution_url: "https://www.culture.gouv.fr/Regions/Dac-de-La-Reunion/A-la-une/Aide-a-la-creation-individuelle-allocations-d-installation-d-atelier-et-achat-de-materiel-2021",
   )
@@ -1324,7 +1320,7 @@ help37 = Help.new(
     url_commission: "https://www.saif.fr/soutien-a-la-creation/",
     old_laureat: "Une personne lauréate par an. Le jury peut distinguer deux autres artistes.",
     old_laureat_url: "https://arthurmercier.fr/",
-    help_type: ["Diffusion"],
+    help_type: ["Diffusion", "Production"],
     admin_attachment: "<ul>
     <li>CV</li>
     <li>pièce d’identité</li>
@@ -1395,7 +1391,7 @@ help39 = Help.new(
     specific_condition: "Identifier une structure partenaire aux États-Unis pour accompagner le projet (conseil, accès aux réseaux locaux, production, diffusion). La structure peut être un centre d'art, un musée, une galerie, une bibliothèque ou une université.",
     selection: "Les demandes sont examinées par un jury, qui émet un avis au vu de la qualité du projet, de son lien avec des enjeux locaux, de son inscription dans la carrière de l’artiste, et de la relation établie avec le partenaire aux États-Unis.",
     old_laureat: "3 personnes lauréates par an.",
-    help_type: ["Production"],
+    help_type: ["Production", "Résidence"],
     admin_attachment: "<ul>
     <li>CV (français et anglais)</li>
     </ul>",
@@ -1409,8 +1405,8 @@ help39 = Help.new(
     <li>lettre d’engagement du partenaire (anglais)</li>
     <li>lettre d’engagement d’une galerie française si l’artiste est représentée (anglais)</li>
     </ul>",
-    contact_institution: "Institut Français : Michelle Robert ; services culturels de l’ambassade de France aux Etats-Unis et Fondation FACE : Olivier Le Falher",
-    contact_intitution_email: ["michelle.robert@institutfrancais.com","visualarts@face-foundation.org"],
+    contact_institution: "Institut Français : Mathilde Lajarridge, chargée de projet Résidences ; services culturels de l’ambassade de France aux Etats-Unis et Fondation FACE : Olivier Le Falher",
+    contact_intitution_email: ["mathilde.lajarrige@institutfrancais.com","visualarts@face-foundation.org"],
     contact_institution_url: "https://www.pro.institutfrancais.com/fr/offre/residences-etant-donnes",
     contact_intitution_partenaire: ["https://face-foundation.org/artistic-funds/etant-donnes-contemporary-art/etant-donnes-residencies/"]
   )
@@ -1437,7 +1433,7 @@ help40 = Help.new(
     selection: "La commission émet un avis au vu de la qualité du projet, du parcours professionnel de l’artiste, de la nécessité du séjour à Paris et des contacts établis ou souhaités à Paris.",
     compo_commission: "La commission est composée de personnalités qualifiées. En 2021, elle était composée de 3 femmes et 2 hommes.",
     url_commission: "https://manager.artishocsite.com/media/cia/183726-cp_laure_ats_ondes_2021.pdf",
-    old_laureat: "5 candidatures sur 33 retenues en 2021, dont 3 femmes lauréates.",
+    old_laureat: "5 personnes lauréates sur 33 candidatures en 2021, dont 3 femmes lauréates.",
     old_laureat_url: "https://manager.artishocsite.com/media/cia/183726-cp_laure_ats_ondes_2021.pdf",
     help_type: ["Production","Résidence"],
     admin_attachment: "<ul>
@@ -1497,7 +1493,7 @@ help41 = Help.new(
     artistic_attachment: "<ul>
     <li>Portfolio (10 visuels minimum)</li> 
     </ul>",
-    contact_institution: "Estelle Moy, chargée des soutiens aux artistes au CNAP",
+    contact_institution: "Estelle Moy, chargée des soutiens aux artistes",
     contact_intitution_email: ["estelle.moy@cnap.fr"],
     contact_institution_url: "https://www.cnap.fr/navigation/soutien-la-creation/secours-exceptionnel/modalites-de-candidature",
   )
@@ -1541,7 +1537,7 @@ help42 = Help.new(
     <li>budget prévisionnel et justificatifs de dépenses</li> 
     </ul>",
     other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe",
-    contact_institution: "Isabelle Smadja, chargée des soutiens aux photographes documentaires au CNAP",
+    contact_institution: "Isabelle Smadja, chargée des soutiens aux photographes documentaires",
     contact_intitution_email: ["isabelle.smadja@cnap.fr"],
     contact_institution_url: "https://www.cnap.fr/navigation/soutien-la-creation/photographes/modalites-de-candidature",
   )
@@ -1585,7 +1581,7 @@ help43 = Help.new(
     <li>budget prévisionnel et justificatifs de dépenses</li> 
     </ul>",
     other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe",
-    contact_institution: "Estelle Moy, chargée des soutiens aux artistes au CNAP",
+    contact_institution: "Estelle Moy, chargée des soutiens aux artistes",
     contact_intitution_email: ["estelle.moy@cnap.fr"],
     contact_institution_url: "https://www.cnap.fr/navigation/soutien-la-creation/artistes/modalites-de-candidature",
   )
