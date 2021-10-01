@@ -63,23 +63,23 @@
         <div class="card-index">
           <%= link_to help_path(help) do %>
             <div class="flottante">
-            <% help.help_type.each do |type| %>
-              <% if type == "Matériel" %>
-                📸
+              <% help.help_type.each do |type| %>
+                <% if type == "Matériel" %>
+                  📸
+                <% end %>
+                <% if type == "Production" %>
+                  🛠
+                <% end %>
+                <% if type == "Aide Sociale" %>
+                  🔮
+                <% end %>
+                <% if type == "Résidence" %>
+                  🏠
+                <% end %>
+                <% if type == "Diffusion" %>
+                  📣
+                <% end %>
               <% end %>
-              <% if type == "Production" %>
-                🛠
-              <% end %>
-              <% if type == "Aide Sociale" %>
-                🔮
-              <% end %>
-              <% if type == "Résidence" %>
-                🏠
-              <% end %>
-              <% if type == "Diffusion" %>
-                📣
-              <% end %>
-          <% end %>
             </div>
             <% if help.start_date.present?  %>
               <% if help.start_date < Date.today && Date.today < help.end_date %>
