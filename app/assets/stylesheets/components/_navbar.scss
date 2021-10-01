@@ -4,7 +4,7 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
   .header_brand {
     max-width:20%;
     .header_logo,.logo {
@@ -13,7 +13,7 @@
   }
 
   .header_tools-links {
-    width: 35%;
+    width: 60%;
     .links-group {
       list-style-type: none;
       display:flex;
@@ -25,8 +25,8 @@
       font-family: 'Marianne', sans-serif;
       text-decoration:none;
       color: black;
-      font-size: 12px;
-      opacity: 0.6;
+      font-size: 16px;
+      opacity: 0.7;
     }
     .link-menu:after {
       display: none;

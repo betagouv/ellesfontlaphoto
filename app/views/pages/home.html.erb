@@ -2,10 +2,14 @@
   <a href="#contact" class="paragraphe">Vous consultez une page en construction, écrivez nous pour l'améliorer !</a>
 </div>
 <div class="banner">
-  <h1>Aide financières et conseils pratiques pour les photographes femmes</h1>
+  <%= image_tag "illu-home-1.png", class: "illu-home-1" %>
+  <%= image_tag "illu-home-3.png", class: "illu-home-3" %>
+  <h1><a href="/helps" class="underline-purple">Aides financières</a> et <a href="#" class="underline-pink">conseils pratiques</a> pour les photographes femmes</h1>
+  <hr class="bhl home">
+  <%= image_tag "illu-home-2.png", class: "illu-home-2" %>
 </div>
 
-<div class="first-block" id="pourquoi">
+<div class="first-block">
   <div class="first-block-left">
     <p class="paragraphe-bold">Notre mission:</p>
     <p class="subtitle">Accompagner les femmes et minorités de genre à poursuivre leur carrière</p>
@@ -28,64 +32,74 @@
     <div class="exemple-helps">
       <div class="cards">
         <% @helps.each do |help| %>
-          <div class="card-index">
-            <%= link_to help_path(help) do %>
-            <% if Help::HELP_TYPE[help.help_type.to_sym] == "Achat de matériel" %>
-              <div class="flottante">📸</div>
-            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la production" %>
-              <div class="flottante">🛠</div>
-            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide sociale" %>
-              <div class="flottante">🔮</div>
-            <% elsif Help::HELP_TYPE[help.help_type.to_sym] == "Aide à la diffusion" %>
-              <div class="flottante">📣</div>
-            <% end %>
-              <% if help.start_date < Date.today && Date.today < help.end_date %>
-                <div class="flottante2">C'est maintenant !</div>
-              <% elsif (help.start_date - Date.today).to_i < 90 %>
-                <div class="flottante2">C'est bientôt !</div>
+          <div class="hidden">
+            <div class="card-index">
+              <%= link_to help_path(help) do %>
+                <div class="flottante">
+                  <% help.help_type.each do |type| %>
+                    <% if type == "Matériel" %>
+                      📸
+                    <% end %>
+                    <% if type == "Production" %>
+                      🛠
+                    <% end %>
+                    <% if type == "Aide Sociale" %>
+                      🔮
+                    <% end %>
+                    <% if type == "Résidence" %>
+                      🏠
+                    <% end %>
+                    <% if type == "Diffusion" %>
+                      📣
+                    <% end %>
+                  <% end %>
+                </div>
+                <% if help.start_date.present?  %>
+                  <% if help.start_date < Date.today && Date.today < help.end_date %>
+                    <div class="flottante2">C'est maintenant !</div>
+                  <% elsif (help.start_date - Date.today).to_i < 90 %>
+                    <div class="flottante2">C'est bientôt !</div>
+                  <% end %>
+                <% end %>
+                <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
+                <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
+                <% if help.start_date.present? %>
+                  <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
+                <% end %>
+                <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
+                <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
               <% end %>
-              <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
-              <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
-              <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
-              <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
-              <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
-            <% end %>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-<div class="third-block flex-div" id="hypothese">
+<div class="third-block flex-div">
   <div class="third-block-div">
-    <p class="question-subtitle">NOTRE HYPOTHÈSE DE SOLUTION</p>
-    <p class="subtitle">Une boîte à outils collaborative</p>
-    <p class="paragraphe">Notre proposition de service se fonde sur les témoignages reçus au cours d’entretiens ou par réponse aux questionnaires. La plateforme Elles font la culture souhaite proposer une boîte à outils collaborative permettant de mettre en relation les femmes photographes entre elles. Parmi les services pouvant être proposés : ateliers en ligne, partages d’expérience, centralisation de ressources (aides financières, appels d’offre…)</p>
-    <div class="quote">
-      <p class="quote-third-block">À l’écoute des retours, cette plateforme évoluera régulièrement pour s'adapter aux besoins des utilisatrices.</p>
-    </div>
+    <p class="paragraphe-bold">⏳ À venir :</p>
+    <p class="subtitle">Trouvez les fiches pratiques et témoignages correspondant à votre besoin. <span class="weight-normal">Gérer son budget, créer son portfolio, conseils pour les appels à projet…  </span></p>
   </div>
-  <div>
-    <%= image_tag "help.png", class:"camera-img" %>
-    <p class="paragraphe-quote">L'initiative Elles font la culture est construite par la mission Diversité-Égalité appuyée par l’atelier numérique, l'incubateur du ministère de la Culture ainsi que Beta.gouv.fr</p>
-  </div>
+  <p class="paragraphe">L’équipe #Ellesfontlaculture travaille de pair avec les institutions publiques et privées pour vous fournir un contenu de qualité afin de vous accompagner tout au long de votre parcours.</p>
 </div>
-<div class="fourth-block" id="calendrier">
-  <div class="align-titles">
-    <p class="question-subtitle">CALENDRIER</p>
-    <p class="subtitle">Les prochaines étapes</p>
-    <%= image_tag "calendar.png", class:"camera-img"  %>
-  </div>
+<div class="fourth-block">
   <div class="flex-div">
     <div>
-      <p class="paragraphe mb0"><b>Juillet 2021</b> : Conception de la plateforme<br>
-          <b>Août 2021</b> : Début des tests de la première version de la plateforme<br>
-          <b>Novembre 2021</b> : Lancement officiel lors de Paris Photo<br>
-          <b>Après le lancement</b> : Suivi des retours des utilisatrices
+      <p class="paragraphe-bold">Nos chiffres:
       </p>
     </div>
-    <div class="small-quote quote-flex">
-      <p class="quote-third-block">Dans les années qui viennent, la plateforme en ligne a vocation à être étendue à d’autres disciplines de la culture et de la création !</p>
+    <div class="div-chiffre">
+      <p class="chiffre mb0">340</p>
+      <p class="paragraphe-spectral-italic mb0">testeuses pour une amélioration continue</p>
+    </div>
+    <div class="div-chiffre">
+      <p class="chiffre mb0">43</p>
+      <p class="paragraphe-spectral-italic mb0">aides financières</p>
+    </div>
+    <div class="div-chiffre">
+      <p class="chiffre mb0">15</p>
+      <p class="paragraphe-spectral-italic mb0">chiffres pratiques et témoignages</p>
     </div>
   </div>
 </div>
