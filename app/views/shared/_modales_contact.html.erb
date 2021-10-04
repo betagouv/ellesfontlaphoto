@@ -1,10 +1,13 @@
 <!-- MODAL NEWSLETTER -->
 <div id="modal-newsletter" class="modal">
   <div class="modal-inner">
-    <a class="js-close-modal">&times;</a>
+    <a class="js-close-modal">
+      <p>Fermer</p>
+      <p class="cross">&times;</p>
+    </a>
     <div class="modal-content">
-      <p class="subtitle">Pour suivre le projet</p>
-      <p class="paragraphe">Si vous voulez recevoir des informations sur le projet (avancées, tests, lancement…) laissez-nous votre adresse !</p>
+      <p class="subtitle">💌 S'abonner à l'infolettre</p>
+      <p class="paragraphe">Avec maximum un message par mois, nous vous informerons des nouveaux services proposés par le site, ou des appels à contributions pour nourrir cet outil ! Merci pour votre intérêt.</p>
       <% if alert %>
         <p style="font-weight: 900;"><%= alert %></p>
       <% end %>
@@ -16,7 +19,9 @@
         <%= f.input :contact_type,
                         input_html: { value: 'newsletter' },
                         as: :hidden %>
-        <%= f.button :submit, "S'abonner" %>
+        <div class="btn-div">
+          <%= f.button :submit, "S'abonner" %>
+        </div>
       <% end %>
     </div>
   </div>
@@ -25,18 +30,16 @@
 <!-- MODAL CONTACT -->
 <div id="modal-contact" class="modal">
   <div class="modal-inner">
-    <a class="js-close-modal">&times;</a>
+    <a class="js-close-modal">
+      <p>Fermer</p>
+      <p class="cross">&times;</p>
+    </a>
     <div class="modal-content">
-      <p class="subtitle">Nous écrire : une idée, une question ? </p>
-      <p class="paragraphe">Vous avez des propositions à nous soumettre, ou une interrogation spécifique ? Laissez nous un message !</p>
+      <p class="subtitle">✏️ Nous écrire</p>
       <% if notice %>
         <p style="font-weight: 900;"><%= notice %></p>
       <% end %>
       <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
-        <%= f.input :contact_email,
-                      label: "Email (obligatoire)",
-                      placeholder: "Email",
-                      required: true %>
         <%= f.input :contact_type,
                       as: :select,
                       label: "Pourquoi ?",
@@ -44,11 +47,17 @@
                       collection: ['Une idée ? Une question ?', 'Devenir Beta Testeuse'],
                       include_hidden: false,
                       required: true %>
+        <%= f.input :contact_email,
+                      label: "Email (obligatoire)",
+                      placeholder: "Email",
+                      required: true %>
         <%= f.input :message,
                       placeholder: "Votre message",
                       as: :text,
                       required: true %>
-        <%= f.button :submit, "Envoyer" %>
+        <div class="btn-div">
+          <%= f.button :submit, "Envoyer" %>
+        </div>
       <% end %>
     </div>
   </div>
