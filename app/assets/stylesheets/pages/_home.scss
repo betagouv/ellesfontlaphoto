@@ -69,18 +69,21 @@
     width: 200px;
     top: 0;
     left: 2%;
+    z-index: -1;
   }
   .illu-home-3 {
     position: absolute;
-    width: 28%;
+    width: 27%;
     right: 0;
-    top: 7%;
+    top: 11%;
+    z-index: -1;
   }
   .illu-home-2 {
     position: absolute;
     top: 0;
     width: 130px;
     left: 25%;
+    z-index: -1;
   }
 }
 
@@ -287,10 +290,10 @@
     .illu-home-1 {
       width: 120px;
     }
-    .illu-home-2 {
+    .illu-home-3 {
       top: 70%;
     }
-    .illu-home-3 {
+    .illu-home-2 {
       width: 70px;
     }
     h1 {
