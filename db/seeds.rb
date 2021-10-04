@@ -1530,12 +1530,7 @@ help42 = Help.new(
     <li>RIB</li>
     <li>justificatif de résidence ou titre de séjour</li>
     </ul>",
-    artistic_attachment: "<ul>
-    <li>Portfolio (30 visuels) </li> 
-    <li>note de présentation du projet (3 pages max) </li> 
-    <li>5 visuels légendés illustrant le projet </li> 
-    <li>budget prévisionnel et justificatifs de dépenses</li> 
-    </ul>",
+    artistic_attachment: "<ul><li>Portfolio (30 visuels)</li><li>note de présentation du projet (3 pages max) </li><li>5 visuels légendés illustrant le projet </li><li>budget prévisionnel et justificatifs de dépenses</li></ul>",
     other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe",
     contact_institution: "Isabelle Smadja, chargée des soutiens aux photographes documentaires",
     contact_intitution_email: ["isabelle.smadja@cnap.fr"],

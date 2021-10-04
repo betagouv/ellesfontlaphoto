@@ -14,13 +14,6 @@
   }
 }
 
-.flex-div {
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  margin: 40px 0;
-}
-
 
 /*----------------------------------------*/
 /*BANNER*/
@@ -75,7 +68,7 @@
     position: absolute;
     width: 27%;
     right: 0;
-    top: 11%;
+    bottom:0;
     z-index: -1;
   }
   .illu-home-2 {
@@ -87,6 +80,9 @@
   }
 }
 
+  .bhl.home {
+    margin: 0;
+  }
 
 /*----------------------------------------*/
 /*FIRST BLOCKS*/
