@@ -268,3 +268,25 @@ $ease: ease;
     box-shadow: 0 30px 18px -20px rgba(0, 0, 0, 0.5);
   }
 }
+
+@media only screen and (max-width: 1250px) {
+  .modal-content {
+    .input {
+      text-align: center !important;
+    }
+
+    input,textarea {
+      width: 85% !important;
+      margin: 0 auto;
+    }
+    select {
+      width: 89% !important;
+      margin: 0 auto;
+    }
+
+    .btn {
+      height: 45px !important;
+      margin: 0 auto;
+    }
+  }
+}
