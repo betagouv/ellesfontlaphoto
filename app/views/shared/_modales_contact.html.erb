@@ -1,0 +1,55 @@
+<!-- MODAL NEWSLETTER -->
+<div id="modal-newsletter" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">&times;</a>
+    <div class="modal-content">
+      <p class="subtitle">Pour suivre le projet</p>
+      <p class="paragraphe">Si vous voulez recevoir des informations sur le projet (avancées, tests, lancement…) laissez-nous votre adresse !</p>
+      <% if alert %>
+        <p style="font-weight: 900;"><%= alert %></p>
+      <% end %>
+      <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
+        <%= f.input :contact_email,
+                        label: "Email (obligatoire)",
+                        placeholder: "Email",
+                        required: true %>
+        <%= f.input :contact_type,
+                        input_html: { value: 'newsletter' },
+                        as: :hidden %>
+        <%= f.button :submit, "S'abonner" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONTACT -->
+<div id="modal-contact" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">&times;</a>
+    <div class="modal-content">
+      <p class="subtitle">Nous écrire : une idée, une question ? </p>
+      <p class="paragraphe">Vous avez des propositions à nous soumettre, ou une interrogation spécifique ? Laissez nous un message !</p>
+      <% if notice %>
+        <p style="font-weight: 900;"><%= notice %></p>
+      <% end %>
+      <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
+        <%= f.input :contact_email,
+                      label: "Email (obligatoire)",
+                      placeholder: "Email",
+                      required: true %>
+        <%= f.input :contact_type,
+                      as: :select,
+                      label: "Pourquoi ?",
+                      placeholder: "Choisissez votre type de contact",
+                      collection: ['Une idée ? Une question ?', 'Devenir Beta Testeuse'],
+                      include_hidden: false,
+                      required: true %>
+        <%= f.input :message,
+                      placeholder: "Votre message",
+                      as: :text,
+                      required: true %>
+        <%= f.button :submit, "Envoyer" %>
+      <% end %>
+    </div>
+  </div>
+</div>
