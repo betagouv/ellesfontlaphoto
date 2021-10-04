@@ -14,6 +14,9 @@
   }
 }
 
+.search-div-type {
+  margin-top: 2%;
+}
 
 .search-div-residence, .search-div-type {
   display: flex;
@@ -88,7 +91,7 @@
 .button-search {
   background-color: $purple;
   border-radius: 40px;
-  width: fit-content;
+  display: table !important;
   padding: 10px 20px;
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 1rem;
