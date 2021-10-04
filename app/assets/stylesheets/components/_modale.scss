@@ -1,0 +1,218 @@
+$time: 320ms;
+$ease: ease;
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ', '};
+    }
+  }
+
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin transition($val...) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin transform($val...) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+  transform: $val;
+}
+
+.modal-body {
+  overflow: hidden;
+
+  position: relative;
+
+  &:before {
+    position: fixed;
+    display: block;
+    content: '';
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+  }
+
+  &:before {
+    @include animation(fadeIn $time $ease);
+
+    @include transition(opacity $ease $time);
+  }
+
+  &.modal-fadeOut {
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+.modal {
+  @include transition(all $ease 0.01s);
+
+  display: block;
+  opacity: 0;
+  height: 0;
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.modal-visible {
+    opacity: 1;
+    height: auto;
+    bottom: 0;
+  }
+}
+
+.modal-inner {
+  @include transition(all $ease $time);
+
+  @include transform(translateY(-50px));
+
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  opacity: 0;
+  margin: 40px 0;
+  border-radius: 4px;
+  box-shadow: 0 30px 18px -20px rgb(2, 2, 2);
+
+  &.modal-reveal {
+    @include transform(translateY(0));
+
+    opacity: 1;
+  }
+}
+
+.js-close-modal {
+  -webkit-transition: color 320ms ease;
+  -moz-transition: color 320ms ease;
+  -ms-transition: color 320ms ease;
+  -o-transition: color 320ms ease;
+  transition: color 320ms ease;
+  color: #9e9e9e;
+  opacity: 0.75;
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  top: 0px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.js-close-modal:hover {
+  color: #000;
+}
+
+// CodePen Style, not necessary for the modal
+
+body {
+  background-color: #333;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+button {
+  @include transition(all $time $ease);
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  background-color: #a03cf8;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #ea4cfb;
+    box-shadow: 0 30px 18px -20px rgba(0, 0, 0, 0.5);
+  }
+}
