@@ -1,3 +1,6 @@
+@import "../config/colors";
+@import "../config/fonts";
+
 $time: 320ms;
 $ease: ease;
 
@@ -149,6 +152,77 @@ $ease: ease;
 
     opacity: 1;
   }
+
+  .modal-content {
+      form {
+        width: 100%;
+        margin: 0 auto;
+        .input {
+          text-align:left;
+        }
+
+      label {
+        font-family: "Marianne", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      abbr {
+        display:none;
+      }
+
+      input,select {
+        border: 1px solid #000;
+        border-radius: 5px;
+        font-family: "Marianne", sans-serif;
+        display: block;
+        width: 100%;
+        height: 20px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: $grey;
+        vertical-align: middle;
+        background-color: $white;
+      }
+
+      select {
+        height: 40px;
+        width: 104%;
+      }
+
+      textarea {
+        min-height: 150px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $black;
+        font-family: "Marianne", sans-serif;
+        border-radius: 5px;
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .btn {
+        margin-top: 10px;
+        padding-top: 5px;
+        padding-bottom: 9px;
+        border-radius: 5px;
+        background-color: $black;
+        color: $white;
+        font-family: Marianne, sans-serif;
+        width: 20%;
+        height: 38px;
+        cursor: pointer;
+        background-image: none;
+      }
+    }
+  }
 }
 
 .js-close-modal {
@@ -175,29 +249,7 @@ $ease: ease;
   color: #000;
 }
 
-// CodePen Style, not necessary for the modal
-
-body {
-  background-color: #333;
-  font-family: sans-serif;
-  height: 100vh;
-}
-
-.table {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.table-cell {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-  text-align: center;
-}
-
-button {
+.btn-modale-contact {
   @include transition(all $time $ease);
   font-size: 30px;
   font-weight: 100;
