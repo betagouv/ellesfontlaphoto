@@ -11,7 +11,7 @@
 .help-type {
   font-family: 'Marianne-Regular', sans-serif;
   background-color: $white;
-  width: fit-content;
+  display: table !important;
   padding: 5px 17px;
   border-radius: 50px;
   font-size: 1rem;
@@ -63,8 +63,9 @@ ul li {
       margin-top:30px;
     }
     .btn-candidate {
+      margin: 0 auto;
       font-family: 'Marianne-Regular', sans-serif;
-      width: fit-content;
+      display: table !important;
       padding: 12px 26px;
       border-radius: 50px;
       background-color: $purple;
@@ -74,8 +75,9 @@ ul li {
       margin-bottom: 40px;
     }
     .btn-not-available {
+      margin: 0 auto;
       font-family: 'Marianne-Regular', sans-serif;
-      width: fit-content;
+      display: table !important;
       padding: 12px 26px;
       border-radius: 50px;
       background-color: $white;
