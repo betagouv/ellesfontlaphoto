@@ -5,8 +5,8 @@ class CreateHelps < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :sector
       t.string :structure_name
-      t.string :start_date
-      t.string :end_date
+      t.string :start_month
+      t.string :end_month
       t.string :help_amount
       t.string :residence_condition
       t.string :general_condition
