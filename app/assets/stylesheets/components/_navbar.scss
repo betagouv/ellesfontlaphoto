@@ -1,5 +1,13 @@
 /*----------------------------------------*/
 /*NAVBAR*/
+.header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid rgb(235,235,235);
+  z-index: 11111;
+}
+
 .header_body-row {
   display:flex;
   justify-content: space-between;
@@ -13,7 +21,7 @@
   }
 
   .header_tools-links {
-    width: 60%;
+    width: 50%;
     .links-group {
       list-style-type: none;
       display:flex;

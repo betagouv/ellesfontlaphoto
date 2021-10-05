@@ -101,6 +101,15 @@ a {
   margin-left: 50px;
 }
 
+.flex-div {
+  display:flex;
+  display: -ms-flexbox;//IE
+  justify-content: space-between;
+  align-items:center;
+  margin: 40px 0;
+}
+
+
 .dark-button {
   border-radius: 5px;
   padding: 12px 25px;
