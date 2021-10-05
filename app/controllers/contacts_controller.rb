@@ -1,15 +1,16 @@
 class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
+    # raise
     if @contact.save
-      if @contact.contact_type = "newsletter"
-        add_to_sendinblue_list(@contact.email)
+      if @contact.contact_type == "newsletter"
+        add_to_sendinblue_list(@contact.contact_email)
         redirect_to root_path(anchor: 'contact'), alert: 'Votre demande a bien été prise en compte.'
       else
         redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'
       end
     else
-      if @contact.contact_type = "newsletter"
+      if @contact.contact_type == "newsletter"
         redirect_to root_path(anchor: 'contact'), alert: 'Un problème est survenu, réessayez.'
       else
         redirect_to root_path(anchor: 'contact'), notice: 'Un problème est survenu, réessayez.'
@@ -21,7 +22,7 @@ class ContactsController < ApplicationController
 
   def contacts_params
     params.require(:contact).permit(
-      :email,
+      :contact_email,
       :contact_type,
       :message
       )

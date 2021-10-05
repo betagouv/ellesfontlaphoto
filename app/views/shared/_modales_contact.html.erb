@@ -1,0 +1,52 @@
+<!-- MODAL NEWSLETTER -->
+<div id="modal-newsletter" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content">
+      <p class="subtitle">💌 S'abonner à l'infolettre</p>
+      <p class="paragraphe">Avec maximum un message par mois, nous vous informerons des nouveaux services proposés par le site, ou des appels à contributions pour nourrir cet outil ! Merci pour votre intérêt.</p>
+      <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
+        <%= f.input :contact_email,
+                        label: "E-mail",
+                        required: true %>
+        <%= f.input :contact_type,
+                        input_html: { value: 'newsletter' },
+                        as: :hidden %>
+        <div class="btn-div">
+          <%= f.button :submit, "✒️ S'abonner" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONTACT -->
+<div id="modal-contact" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content">
+      <p class="subtitle">✏️ Nous écrire</p>
+      <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
+        <%= f.input :contact_type,
+                      as: :select,
+                      label: "Objet",
+                      placeholder: "Sélectionnez une option",
+                      collection: ['Donner son avis', 'Une question ?', 'Devenir Testeuse', 'Partenariat et contribution', 'autre'],
+                      required: true %>
+        <%= f.input :contact_email,
+                      label: "E-mail",
+                      required: true %>
+        <%= f.input :message,
+                      as: :text,
+                      required: true %>
+        <div class="btn-div">
+          <%= f.button :submit, "✉️ Envoyer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
