@@ -15,7 +15,6 @@ $ease: ease;
       $animations: #{$animations + ', '};
     }
   }
-
   -webkit-animation: $animations;
   -moz-animation: $animations;
   -o-animation: $animations;
