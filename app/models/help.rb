@@ -44,6 +44,29 @@ class Help < ApplicationRecord
     "Française résidant en outre-mer"
   ]
 
+  HELP_RESIDENCE_TO_SHOW = [
+    "Auvergne-Rhône Alpes",
+    "Bourgogne-Franche-Comté",
+    "Bretagne",
+    "Centre-Val de Loire",
+    "Corse",
+    "Grand-Est",
+    "Guadeloupe",
+    "Guyane",
+    "Hauts de France",
+    "Ile-de-France",
+    "Martinique",
+    "Mayotte",
+    "Normandie",
+    "Nouvelle-Aquitaine",
+    "Occitanie",
+    "Pays de la Loire",
+    "Provence-Alpes-Côte-d'Azur",
+    "Réunion",
+    "Française ou résidant en France",
+    "Française résidant en outre-mer"
+  ]
+
   # HELP_MONTH = [
   #   "janvier",
   #   "février",
@@ -75,8 +98,5 @@ class Help < ApplicationRecord
   # }
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
-  # validates :start_month, inclusion: { in: Help::HELP_MONTH }
-  # validates :end_month, inclusion: { in: Help::HELP_MONTH }
-  # validates :title, inclusion: { in: ["AIC", "AIA", "Secours exceptionnel"] }
   validates :help_type, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
 end

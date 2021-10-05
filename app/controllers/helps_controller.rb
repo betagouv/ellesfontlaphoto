@@ -4,9 +4,10 @@ class HelpsController < ApplicationController
     @helps = Help.order(start_date: :asc)
     @searched = false
     if params[:residence].present?
+      params[:residence] = "Française résidant en outre-mer" if params[:residence] == "en outre-mer"
       # @helps = Help.order(start_date: :asc).search_by_residence_condition([params[:residence], "Française ou résidant en France"])
       @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France"]).order(start_date: :asc)
-      @selected = params[:residence]
+      @selected =  params[:residence] == "Française résidant en outre-mer" ? "en outre-mer" : params[:residence]
       @searched = true
     end
     if params[:type].present?

@@ -11,17 +11,15 @@ const searchIndex = () => {
 
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
-    if (event.target.matches('.search-div-residence')) {
-      const dropdowns = document.querySelector("#dropdown-elements-residence");
-      if (dropdowns.classList.contains('show')) {
-        dropdowns.classList.remove('show');
+    if ((event.target.matches('.search-div-residence')) || (event.target.matches('.search-div-type'))) {
+      const dropdowns_residence = document.querySelector("#dropdown-elements-residence");
+      const dropdowns_type = document.querySelector("#dropdown-elements-type");
+      if (dropdowns_residence.classList.contains('show')) {
+        dropdowns_residence.classList.remove('show');
         // clearInterval(inst);
       }
-    }
-    if (event.target.matches('.search-div-type')) {
-      const dropdowns = document.querySelector("#dropdown-elements-type");
-      if (dropdowns.classList.contains('show')) {
-        dropdowns.classList.remove('show');
+      if (dropdowns_type.classList.contains('show')) {
+        dropdowns_type.classList.remove('show');
         // clearInterval(inst);
       }
     }
