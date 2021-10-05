@@ -5,9 +5,9 @@
   <%= image_tag "illu-home-1.png", class: "illu-home-1" %>
   <%= image_tag "illu-home-2.png", class: "illu-home-2" %>
   <h1><a href="/helps" class="underline-purple">Aides financières</a> et <a href="#" class="underline-pink">conseils pratiques</a> pour les photographes femmes</h1>
-  <hr class="bhl home">
   <%= image_tag "illu-home-3.png", class: "illu-home-3" %>
 </div>
+<hr class="bhl home">
 
 <div class="first-block">
   <div class="first-block-left">
@@ -124,6 +124,12 @@
 </div>
 <div class="contact-block last">
   <div class="contact-div">
+    <% if alert %>
+      <p style="font-weight: 900;"><%= alert %></p>
+    <% end %>
+    <% if notice %>
+      <p style="font-weight: 900;"><%= notice %></p>
+    <% end %>
     <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact">✏️ Nous écrire</button>
     <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact">💌 S'abonner à l'infolettre</button>
   </div>

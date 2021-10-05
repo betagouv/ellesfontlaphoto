@@ -176,8 +176,8 @@ $ease: ease;
       }
 
       input,select {
-        border: 1px solid #000;
-        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid $black;
         font-family: "Marianne", sans-serif;
         display: block;
         box-sizing: border-box;
@@ -188,9 +188,9 @@ $ease: ease;
         margin-top: 10px;
         font-size: 14px;
         line-height: 1.42857143;
-        color: $grey;
+        background-color: $very-light-grey;
         vertical-align: middle;
-        background-color: $white;
+        border-radius: 0;
       }
 
       select {
@@ -198,16 +198,16 @@ $ease: ease;
       }
 
       textarea {
+        border: none;
+        border-bottom: 1px solid $black;
         min-height: 150px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: $black;
         font-family: "Marianne", sans-serif;
-        border-radius: 5px;
         box-sizing: border-box;
+        background-color: $very-light-grey;
         width: 100%;
         padding: 8px 12px;
         font-size: 14px;
+        border-radius: 0;
       }
       .btn-div {
         display: flex;
@@ -216,7 +216,6 @@ $ease: ease;
           margin-top: 10px;
           padding-top: 5px;
           padding-bottom: 9px;
-          border-radius: 5px;
           background-color: $purple;
           font-family: Marianne, sans-serif;
           width: 20%;
@@ -226,7 +225,9 @@ $ease: ease;
           border-radius: 40px;
           padding: 10px 20px;
           border: none;
+          color: $black;
           text-shadow: none;
+          font-weight: normal;
         }
       }
     }
@@ -251,11 +252,10 @@ $ease: ease;
   font-size: 20px;
   cursor: pointer;
   text-align: center;
-  p {
-    margin: 5px;
-  }
   .cross {
     margin-right: 20px;
+    font-size: 30px;
+    margin-top: 8px;
   }
 }
 
@@ -301,6 +301,8 @@ $ease: ease;
     .btn {
       height: 45px !important;
       margin: 0 auto;
+      color: $black;
+      font-weight: normal;
     }
   }
 }
