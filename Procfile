@@ -1,1 +1,1 @@
-postdeploy: rails db:migrate db:seed
+# postdeploy: rails db:migrate db:seed
