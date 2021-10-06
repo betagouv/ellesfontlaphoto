@@ -46,6 +46,9 @@ gem 'rails-i18n'
 # Gem pour la recherche/filtre
 gem 'pg_search', '~> 2.3.0'
 
+gem "sentry-ruby"
+gem "sentry-rails"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
