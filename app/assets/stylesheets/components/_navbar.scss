@@ -1,3 +1,6 @@
+@import "../config/colors";
+@import "../config/fonts";
+
 /*----------------------------------------*/
 /*NAVBAR*/
 .header {
@@ -12,39 +15,86 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   .header_brand {
     max-width:20%;
     .header_logo,.logo {
-      max-width: 100%;
+      font-family: 'Marianne-Bold', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+      color: $black;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
   .header_tools-links {
-    width: 50%;
+    width: 60%;
     .links-group {
       list-style-type: none;
       display:flex;
       padding:0;
       width:100%;
-      justify-content: space-between;
-    }
-    .link-menu {
-      font-family: 'Marianne', sans-serif;
-      text-decoration:none;
-      color: black;
-      font-size: 16px;
-      opacity: 0.7;
-    }
-    .link-menu:after {
-      display: none;
-    }
-
-    .link-menu:hover {
-      background-image: none;
-      opacity: 1;
+      justify-content: flex-start;
+      li {
+        margin-right: 40px;
+        a .links-icones {
+          font-size: 22px;
+        }
+      }
     }
   }
+
+  .link-menu {
+    font-family: 'Marianne-Regular', sans-serif;
+    text-decoration:none;
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 1;
+  }
+  .link-menu.helps-link-menu {
+    &:hover {
+      border-radius: 40px;
+      display: table !important;
+      padding: 5px 15px 7px;
+      background-color: $hover-purple;
+      opacity: 0.7;
+    }
+  }
+
+  .helps-link-selected {
+    border-radius: 40px;
+    display: table !important;
+    padding: 5px 15px 7px;
+    background-color: $hover-purple;
+  }
+
+  .link-menu.conseils-link-menu {
+    &:hover {
+      border-radius: 40px;
+      display: table !important;
+      padding: 5px 15px 7px;
+      background-color: $hover-pink;
+    }
+  }
+
+  .link-menu.manifeste-link-menu {
+    &:hover {
+      border-radius: 40px;
+      display: table !important;
+      padding: 5px 15px 7px;
+      background-color: $hover-black;
+    }
+  }
+
+  .link-menu:after {
+    display: none;
+  }
+
 
   .menu-btn {
     display: none;
@@ -93,7 +143,7 @@
     margin: 15px 0;
     text-align:center;
     a {
-      font-family: 'Marianne', sans-serif;
+      font-family: 'Marianne-Regular', sans-serif;
       text-decoration:none;
       color: black;
       font-size: 14px;
