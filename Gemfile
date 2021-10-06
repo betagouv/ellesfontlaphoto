@@ -46,6 +46,13 @@ gem 'rails-i18n'
 # Gem pour la recherche/filtre
 gem 'pg_search', '~> 2.3.0'
 
+# Gestion d'erreurs
+gem "sentry-raven"
+
+# Jobs
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
