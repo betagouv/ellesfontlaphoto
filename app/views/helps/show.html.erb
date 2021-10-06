@@ -1,43 +1,49 @@
-<div class="banner-show">
-  <div class="help-title">
-    <% @help.help_type.each do |type| %>
-      <% if type == "Matériel" %>
-        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
+<div class=div-banner>
+  <p><a class="link-blue" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a></p>
+  <div class="banner-show">
+    <div class="help-title">
+      <div class="flex-div-left">
+        <% @help.help_type.each do |type| %>
+          <% if type == "Matériel" %>
+            <a href="/helps?residence=&type=Matériel"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+          <% end %>
+          <% if type == "Production" %>
+            <a href="/helps?residence=&type=Production"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+          <% end %>
+          <% if type == "Aide Sociale" %>
+            <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+          <% end %>
+          <% if type == "Diffusion" %>
+            <a href="/helps?residence=&type=Diffusion"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+          <% end %>
+          <% if type == "Résidence" %>
+            <a href="/helps?residence=&type=Résidence"><p class="help-type"> 💸 🏠 résidence</p></a>
+          <% end %>
+        <% end %>
+      </div>
+      <h2><%= @help.title %></h2>
+      <p class="paragraphe"><%= @help.description %></p>
+    </div>
+    <div class="help-description">
+      <p class="paragraphe paragraphe-bold">💰 Gains:</p>
+      <p class="paragraphe"><%= @help.help_amount %></p>
+      <hr class="hl">
+      <p class="paragraphe paragraphe-bold">📅 Dates de candidature:</p>
+      <% if @help.start_date.present? %>
+        <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %></p>
       <% end %>
-      <% if type == "Production" %>
-        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
-      <% end %>
-      <% if type == "Aide Sociale" %>
-        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
-      <% end %>
-      <% if type == "Diffusion" %>
-        <p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p>
-      <% end %>
-      <% if type == "Résidence" %>
-        <p class="help-type"> 💸 🏠 résidence</p>
-      <% end %>
-    <% end %>
-    <h2><%= @help.title %></h2>
-    <p class="paragraphe"><%= @help.description %></p>
-  </div>
-  <div class="help-description">
-    <p class="paragraphe paragraphe-bold">💰 Gains:</p>
-    <p class="paragraphe"><%= @help.help_amount %></p>
-    <hr class="hl">
-    <p class="paragraphe paragraphe-bold">📅 Dates de candidature:</p>
-    <% if @help.start_date.present? %>
-      <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %></p>
-    <% end %>
-    <p class="paragraphe">Fin: <%= I18n.l @help.end_date, format: :long %></p>
-    <hr class="hl">
-    <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
-    <p class="paragraphe">📍Résidence: <%= @help.residence_condition %></p>
-    <p class="paragraphe"><%= @help.general_condition %></p>
+      <p class="paragraphe">Fin: <%= I18n.l @help.end_date, format: :long %></p>
+      <hr class="hl">
+      <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
+      <p class="paragraphe">📍Résidence: <%= @help.residence_condition %></p>
+      <p class="paragraphe"><%= @help.general_condition %></p>
+    </div>
   </div>
 </div>
 
 <div class="arrondis">
 </div>
+
 <div class="help-content">
   <div class="div-btn">
     <% if @help.candidate_url.present? %>
@@ -55,21 +61,21 @@
     <p class="paragraphe"><%= @help.selection %></p>
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
-      <a class="link-blue" href="<%= @help.example_enrollment_url %>"> -> C'est ici</a>
+      <a class="link-blue" href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
       <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
     <% else %>
       <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
     <p class="paragraphe mb0"><%= @help.compo_commission %></p>
-    <a class="link-blue" href="<%= @help.url_commission %>"> -> Membres de la commission</a>
+    <a class="link-blue" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
       <p class="paragraphe-bold mt30 mb0">Précédents lauréats</p>
       <p class="paragraphe mb0"><%= @help.old_laureat %></p>
-      <a class="link-blue" href="<%= @help.old_laureat_url %>"> -> Voir les lauréats</a>
+      <a class="link-blue" href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
     <% end %>
     <% if @help.faq_url.present? %>
       <p class="paragraphe-bold mt30 mb0">Des questions?</p>
-      <a class="link-blue" href="<%= @help.faq_url %>"> -> FAQ</a>
+      <a class="link-blue" href="<%= @help.faq_url %>"> <%= image_tag "arrow-darkblue.svg" %> FAQ</a>
     <% end %>
   </div>
   <hr class="bhl">
@@ -94,21 +100,21 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
-    <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-commission" href="<%= @help.url_commission %>"> -> Site de l'intitution</a></p>
+    <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-blue" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
     <% if @help.contact_intitution_email.present? %>
       <p class="paragraphe mb0">✉️ Envoyer un email
       <% @help.contact_intitution_email.each do |email| %>
-        <%= mail_to email, email, class: "link-commission" %>
+        <%= mail_to email, email, class: "link-blue" %>
       <% end %>
       </p>
     <% end %>
     <% if @help.contact_intitution_partenaire.present? %>
       <p class="paragraphe mb0">✉️ Les institutions partenaires
       <% @help.contact_intitution_partenaire.each do |email| %>
-        <p class="paragraphe mb0"> <%= mail_to email, email, class: "link-commission" %></p>
+        <p class="paragraphe mb0"> <%= mail_to email, email, class: "link-blue" %></p>
       <% end %>
       </p>
     <% end %>

@@ -1,0 +1,41 @@
+<% helps.each do |help| %>
+  <div class="card-index">
+    <%= link_to help_path(help) do %>
+      <div class="flottante-div">
+        <div class="flottante">
+          <% help.help_type.each do |type| %>
+            <% if type == "Matériel" %>
+              📸
+            <% end %>
+            <% if type == "Production" %>
+              🛠
+            <% end %>
+            <% if type == "Aide Sociale" %>
+              🔮
+            <% end %>
+            <% if type == "Résidence" %>
+              🏠
+            <% end %>
+            <% if type == "Diffusion" %>
+              📣
+            <% end %>
+          <% end %>
+        </div>
+        <% if help.start_date.present?  %>
+          <% if help.start_date < Date.today && Date.today < help.end_date %>
+            <div class="flottante2">C'est maintenant !</div>
+          <% elsif (help.start_date - Date.today).to_i < 90 %>
+            <div class="flottante2">C'est bientôt !</div>
+          <% end %>
+        <% end %>
+      </div>
+      <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
+      <p class="paragraphe mb0"><span class="paragraphe-bold">💰 Gains:</span> <%= help.help_amount %></p>
+      <% if help.start_date.present? %>
+        <p class="paragraphe mb0"><span class="paragraphe-bold">🗓 Dates de candidature:</span> <%= I18n.l help.start_date, format: :long %></p>
+      <% end %>
+      <p class="paragraphe mb0"><span class="paragraphe-bold">📍 Conditions:</span> <%= help.residence_condition %></p>
+      <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
+    <% end %>
+  </div>
+<% end %>
