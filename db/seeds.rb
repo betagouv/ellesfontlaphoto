@@ -1463,35 +1463,34 @@ help41 = Help.new(
     identifiant: "CNAPS",
     institution_name: "CNAP  (Centre national des arts plastiques, opérateur de la politique du ministère de la Culture en matière d’arts plastiques et d’arts visuels)",
     title: "Secours exceptionnel",
-    regularity: "Trois à quatre fois par an",
+    regularity: "Trois fois par an",
     sector: "Arts plastiques et arts visuels",
-    description: "Pour aider ponctuellement des artistes rencontrant des difficultés momentanées.",
+    description: "Pour aider ponctuellement des artistes rencontrant des difficultés momentanées et exceptionnelles ne leur permettant plus d’exercer leur activité artistique de manière professionnelle et constante.",
     description_url: "https://www.cnap.fr/navigation/soutien-la-creation/secours-exceptionnel/modalites-de-candidature",
     residence_time: "3 mois",
-    start_date: Date.new(2021,11,1),
+    start_date: Date.new(2021,9,20),
     end_date: Date.new(2021,11,16),
     help_amount: "1,500 €",
     residence_condition: "Française ou résidant en France",
     general_condition: "Interruption temporaire d’activité artistique ; Revenu fiscal de référence par part < 18 000 €",
-    specific_condition: "Un refus empêche de candidater l’année suivante ; Cette aide ne peut être obtenue que tous les trois ans",
+    specific_condition: "Un refus empêche de candidater l’année suivante ; le délai de carence entre deux soutiens est de deux ans",
     candidate_url: "https://www.cnap.fr/sites/default/files/Secours%20exceptionnel-Tutoriel%20des%20aides%20du%20Cnap.pdf",
     faq_url: "https://www.cnap.fr/soutien-la-creation/secours-exceptionnel/secours-exceptionnel/faq",
-    selection: "Les demandes sont examinées par une commission, qui émet un avis au vu du professionnalisme de l’artiste, et des difficultés financières ou sociales rencontrées et de leur impact sur la carrière et les capacités de production. L’accompagnement par les services sociaux locaux est également pris en compte.",
-    compo_commission: "Les membres (8 femmes) sont nommées par le CNAP pour 3 ans.",
+    selection: "Les demandes sont examinées par une commission, qui émet un avis au vu du professionnalisme de l’artiste, et de l’impact de ses difficultés sur sa carrière et ses capacités de production. L’accompagnement par les services sociaux locaux est également pris en compte.",
+    compo_commission: "La commission est composée de membres de droits, de représentants des organisations syndicales des artistes-auteurs et de deux personnalités qualifiées (1 homme et 1 femme)",
     url_commission: "https://www.cnap.fr/soutien-la-creation/artistes/secours-exceptionnel/membres-commission",
     old_laureat: "121 photographes lauréates et lauréats (dont 59 femmes et 62 hommes) sur 130 personnes candidates en 2021. Tous secteurs confondus, 806 artistes ont reçu ce soutien en 2021.",
     help_type: ["Aide Sociale"],
     admin_attachment: "<ul>
-    <li>CV</li>
     <li>pièce d’identité</li>
     <li>affiliation à la sécurité sociale des artistes-auteurs</li>
     <li>avis SIRENE</li>
     <li>RIB</li>
-    <li>titre de séjour</li>
     <li>dernier avis d’imposition</li>
     </ul>",
     artistic_attachment: "<ul>
-    <li>Portfolio (10 visuels minimum)</li> 
+    <li>CV artistique</li>
+    <li>Portfolio (10 visuels minimum)</li>
     </ul>",
     contact_institution: "Estelle Moy, chargée des soutiens aux artistes",
     contact_intitution_email: ["estelle.moy@cnap.fr"],
@@ -1510,15 +1509,16 @@ help42 = Help.new(
     description: "Pour accompagner le financement d'un projet photographique documentaire.",
     description_url: "https://www.cnap.fr/navigation/soutien-la-creation/photographes/modalites-de-candidature",
     residence_time: "3 mois",
-    end_date: Date.new(2022,04,17),
+    start_date: Date.new(2021,11,10),
+    end_date: Date.new(2022,04,12),
     help_amount: "5 000, 10 000 ou 15 000 €",
     residence_condition: "Française ou résidant en France",
-    general_condition: "Réservé aux documentaires liés au parcours professionnel ; Ne pas être étudiante ; Très sélectif",
-    specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Une aide publique ne peut financer la totalité du budget d'un projet ; Un refus empêche de candidater l’année suivante ; Cette aide n'est pas cumulable avec les AIC des DRAC reçues l’année précédente ni avec les soutiens artistiques du CNAP (Soutien à un projet artistique et Soutien à la photographie contemporaine documentaire) reçus les deux années précédentes ; Cette aide n’est pas cumulable avec la plupart des aides publiques la même année.",
-    selection: "Les demandes sont examinées par une commission, qui émet un avis au vu de la qualité et du professionnalisme du dossier artistique et de la faisabilité du projet. Ce jugement est porté sur l’ensemble des pièces fournies, y compris de l’équilibre du budget. Le travail de l’artiste doit avoir été validé par le secteur : expositions individuelles, publications, aides…",
-    compo_commission: "Les membres (6 femmes et 5 hommes) sont nommés par le CNAP pour 3 ans.",
+    general_condition: "Réservé aux professionnels ; Réservé aux projets documentaires",
+    specific_condition: "Cette aide n'est pas cumulable avec les AIC des DRAC reçues l’année précédente ni avec les soutiens artistiques du CNAP (Soutien à un projet artistique et Soutien Image/mouvement) reçus les deux années précédentes ; Un refus empêche de candidater l’année suivante",
+    selection: "Les demandes sont examinées par une commission qui émet un avis au vu de la faisabilité du projet, de la qualité et du professionnalisme du demandeur et du dossier artistique. Le travail de l’artiste doit s’inscrire dans un cadre professionnel avéré : expositions individuelles, publications, aides…",
+    compo_commission: "Les personnalités qualifiées (6 femmes et 5 hommes) sont nommées par le CNAP pour 3 ans.",
     url_commission: "https://www.cnap.fr/soutien-la-creation/photographes/membres-commission",
-    old_laureat: "53 lauréates et lauréats (dont 25 femmes et 30 hommes) sur 200 projets candidats en 2021. Presque deux fois plus d’hommes sont candidats mais les aides du CNAP sont paritaires.",
+    old_laureat: "53 lauréates et lauréats (dont 25 femmes et 30 hommes) sur 200 projets candidats en 2021. Le respect de la parité est pris en  compte au sein des aides comme des commissions du Cnap.",
     old_laureat_url:"https://www.cnap.fr/navigation/soutien-la-creation/photographes/r%C3%A9sultats",
     old_laureats_case_url: "https://www.cnap.fr/soutien-la-creation/photographes-documentaires/rapports-de-recherche",
     help_type: ["Production"],
@@ -1526,12 +1526,10 @@ help42 = Help.new(
     <li>CV</li>
     <li>pièce d’identité</li>
     <li>affiliation à la sécurité sociale des artistes-auteurs</li>
-    <li>avis SIRENE</li>
     <li>RIB</li>
-    <li>justificatif de résidence ou titre de séjour</li>
     </ul>",
-    artistic_attachment: "<ul><li>Portfolio (30 visuels)</li><li>note de présentation du projet (3 pages max) </li><li>5 visuels légendés illustrant le projet </li><li>budget prévisionnel et justificatifs de dépenses</li></ul>",
-    other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe",
+    artistic_attachment: "<ul><li>CV artistique</li><li>Portfolio (30 visuels)</li><li>note de présentation du projet (3 pages max) </li><li>5 visuels légendés illustrant le projet</li><li>budget prévisionnel et justificatifs de dépenses</li></ul>",
+    other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe et pour les artistes hors de France, justificatif de résidence ou titre de séjour.",
     contact_institution: "Isabelle Smadja, chargée des soutiens aux photographes documentaires",
     contact_intitution_email: ["isabelle.smadja@cnap.fr"],
     contact_institution_url: "https://www.cnap.fr/navigation/soutien-la-creation/photographes/modalites-de-candidature",
@@ -1549,33 +1547,32 @@ help43 = Help.new(
     description: "Pour accompagner le financement d'un projet original de création, de la recherche à la production.",
     description_url: "https://www.cnap.fr/navigation/soutien-la-creation/artistes/modalites-de-candidature",
     residence_time: "3 mois",
-    start_date: Date.new(2021,11,1),
+    start_date: Date.new(2021,11,10),
     end_date: Date.new(2022,02,28),
     help_amount: "5 000, 10 000 ou 15 000 €",
     residence_condition: "Française ou résidant en France",
-    general_condition: "Réservé à la création artistique ; Ne pas être étudiante ; Très sélectif",
-    specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande ; Une aide publique ne peut financer la totalité du budget d'un projet ; Un refus empêche de candidater l’année suivante ; Cette aide n'est pas cumulable avec les AIC des DRAC reçues l’année précédente ni avec les soutiens artistiques du CNAP (Soutien à un projet artistique et Soutien à la photographie contemporaine documentaire) reçus les deux années précédentes ; Cette aide n’est pas cumulable avec la plupart des aides publiques la même année.",
-    selection: "Les demandes sont examinées par une commission, qui émet un avis au vu de la qualité et du professionnalisme du dossier artistique  et de la faisabilité du projet. Ce jugement est porté sur l’ensemble des pièces fournies, y compris de l’équilibre du budget. Le travail de l’artiste doit avoir été validé par le secteur : expositions individuelles, publications, aides…",
+    general_condition: "Réservé à la création artistique (recherche et/ou production) ; Ne pas être étudiante",
+    specific_condition: "Un projet collectif ne peut faire l'objet que d'une seule demande Cette aide n'est pas cumulable avec les AIC des DRAC reçues l’année précédente ni avec les soutiens artistiques du CNAP (Soutien à la photographie documentaire contemporaine et Image/mouvement) reçus les deux années précédentes ; Un refus empêche de candidater l’année suivante",
+    selection: "Les demandes sont examinées par une commission, qui émet un avis au vu de la faisabilité du projet, de la qualité et du professionnalisme du demandeur et du dossier artistique. Le travail de l’artiste doit s’inscrire dans un cadre professionnel avéré : expositions individuelles, publications, aides…",
     compo_commission: "Les membres (7 femmes et 5 hommes) sont nommés par le CNAP pour 3 ans.",
     url_commission: "https://www.cnap.fr/soutien-la-creation/artistes/Arrete-du-prefet-de-region-Membres-de-la-commission-Aides-deconcentrees-Arts-plastiques-Grand-Est-2021-2023",
-    old_laureat: "5 lauréates et lauréats (dont 3 femmes et 2 hommes) sur 32 projets photographiques candidats en 2021. Davantage d’hommes sont candidats mais les aides du CNAP sont paritaires.",
+    old_laureat: "5 lauréates et lauréats (dont 3 femmes et 2 hommes) sur 32 projets photographiques candidats en 2021. Le respect de la parité est pris en  compte au sein des aides comme des commissions du Cnap.",
     old_laureat_url:"https://www.cnap.fr/navigation/soutien-la-creation/artistes/r%C3%A9sultats",
     old_laureats_case_url: "https://www.cnap.fr/soutien-la-creation/artistes/rapports-de-recherche",
     help_type: ["Production"],
     admin_attachment: "<ul>
-    <li>CV</li>
-    <li>pièce d’identité</li>
+    <li>Pièce d’identité</li>
     <li>affiliation à la sécurité sociale des artistes-auteurs</li>
     <li>RIB</li>
-    <li>justificatif de résidence ou titre de séjour</li>
     </ul>",
     artistic_attachment: "<ul>
-    <li>Portfolio (30 visuels) </li> 
-    <li>note de présentation du projet (3 pages max) </li> 
-    <li>5 visuels légendés illustrant le projet </li> 
-    <li>budget prévisionnel et justificatifs de dépenses</li> 
+    <li>CV artistique</li>
+    <li>portfolio (30 visuels)</li>
+    <li>note de présentation du projet (7500 signes max)</li>
+    <li>5 visuels légendés illustrant le projet</li>
+    <li>budget prévisionnel et justificatifs de dépenses</li>
     </ul>",
-    other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe",
+    other_attachment: "Pour les collectifs, liste des artistes et justificatif de l’indivision du groupe et pour les artistes hors de France, justificatif de résidence ou titre de séjour.",
     contact_institution: "Estelle Moy, chargée des soutiens aux artistes",
     contact_intitution_email: ["estelle.moy@cnap.fr"],
     contact_institution_url: "https://www.cnap.fr/navigation/soutien-la-creation/artistes/modalites-de-candidature",
