@@ -34,9 +34,6 @@ ul li {
   a {
     color: $black !important;
   }
-  p {
-    margin-top:4%;
-  }
 }
 
 .help-description {
@@ -107,16 +104,23 @@ ul li {
 }
 
 @media only screen and (max-width: 1250px) {
+  .link-blue {
+    margin-left: 10%;
+  }
   .banner-show {
-    display: block;
+    display: block !important;
     .help-title {
       width: 100%;
-      .help-type {
-        margin: 5px auto;
-      }
-      h2 {
-        text-align: center;
-        font-size: 45px;
+      text-align: center;
+      .flex-div-left {
+        display: block;
+        .help-type {
+          margin: 5px auto;
+        }
+        h2 {
+          text-align: center;
+          font-size: 45px;
+        }
       }
     }
     .help-description {
@@ -127,6 +131,7 @@ ul li {
     }
   }
   .help-content {
+    padding: 0 10%;
     .bhl {
       margin: 20px auto;
     }
