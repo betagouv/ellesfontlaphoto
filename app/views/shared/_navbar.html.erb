@@ -2,18 +2,22 @@
   <div class="header_body-row">
     <div class="header_brand">
       <a href="/" class="header_logo" >
-        <%= image_tag "logo.png", class: "logo"%>
-        <!-- <img class="logo" src="images/logo.png" alt="logo"> -->
+        <h2 class="logo">Elles font la culture</h2>
       </a>
     </div>
     <div class="header_tools-links">
       <ul class="menu links-group mb0">
         <li>
-          <a class="link-menu" href="/helps">💸 Aides</a>
+          <%= link_to helps_path, class: "link-menu helps-link-menu #{params[:controller] == "helps" && params[:action] == "index" ? "helps-link-selected" : "" }" do  %>
+            <span class="links-icones">💸 </span> Aides
+          <% end %>
+        </li>
+        <li>
+          <a class="link-menu conseils-link-menu" href="#"><span class="links-icones">🤝 </span> Conseils et pratiques</a>
         </li>
       </ul>
     </div>
-    <a class="dark-button" href="/#contact">Contact</a>
+    <a class="link-menu manifeste-link-menu" href="">Manifeste</a>
   </div>
 </header>
 
