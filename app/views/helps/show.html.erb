@@ -100,21 +100,21 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
-    <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-commission" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
+    <p class="paragraphe">Aide donnée par <%= @help.institution_name %> <a class="link-blue" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
     <% if @help.contact_intitution_email.present? %>
       <p class="paragraphe mb0">✉️ Envoyer un email
       <% @help.contact_intitution_email.each do |email| %>
-        <%= mail_to email, email, class: "link-commission" %>
+        <%= mail_to email, email, class: "link-blue" %>
       <% end %>
       </p>
     <% end %>
     <% if @help.contact_intitution_partenaire.present? %>
       <p class="paragraphe mb0">✉️ Les institutions partenaires
       <% @help.contact_intitution_partenaire.each do |email| %>
-        <p class="paragraphe mb0"> <%= mail_to email, email, class: "link-commission" %></p>
+        <p class="paragraphe mb0"> <%= mail_to email, email, class: "link-blue" %></p>
       <% end %>
       </p>
     <% end %>
