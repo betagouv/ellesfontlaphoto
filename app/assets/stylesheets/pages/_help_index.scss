@@ -121,6 +121,7 @@
   .search-div-type, .search-div-residence {
     margin: 10% 2%;
     display: block;
+    padding:0;
     text-align: center;
     #select-search-residence, #select-search-type {
       box-shadow: #d0abff 0px -1rem 0px inset;
@@ -131,10 +132,14 @@
     .text-search {
       font-size: 30px;
       line-height: 0px;
+      padding-top: 40px;
+      margin-bottom: 30px;
     }
     #select-search-type, #select-search-residence {
       font-size: 30px;
       line-height: 30px;
+      padding-top: 20px;
+      margin-bottom: 30px;
     }
 
     .dropdown {
@@ -153,6 +158,9 @@
           line-height: 20px;
         }
       }
+      .dropdown-content-type {
+        margin: 0 auto;
+      }
     }
     .button-search {
       margin: 10% 2%;
@@ -160,20 +168,22 @@
       text-align: center;
       margin: 0 auto;
     }
-    .main-index {
-      display: block;
-      .index-direction {
-        min-width: 100%;
-        p {
-          text-align: center;
-        }
+  }
+  .main-index {
+    display: block;
+    .index-direction {
+      min-width: 100%;
+      p {
+        text-align: center;
+        margin-top: 20px;
+        padding-bottom: 20px;
       }
-      .wrapper {
-        column-count: 1;
-        .arrow {
-          margin-top: 7% !important;
-          margin-right: 5%;
-        }
+    }
+    .wrapper {
+      column-count: 1;
+      .arrow {
+        margin-top: 7% !important;
+        margin-right: 5%;
       }
     }
   }
