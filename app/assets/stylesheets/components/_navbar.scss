@@ -9,6 +9,7 @@
   background-color: white;
   border-bottom: 1px solid rgb(235,235,235);
   z-index: 11111;
+  display: contents;
 }
 
 .header_body-row {
@@ -55,6 +56,10 @@
     font-size: 16px;
     line-height: 24px;
     opacity: 1;
+    border-radius: 40px;
+    display: table !important;
+    padding: 5px 15px 7px;
+    background-color: transparent;
   }
   .link-menu.helps-link-menu {
     &:hover {
@@ -62,7 +67,6 @@
       display: table !important;
       padding: 5px 15px 7px;
       background-color: $hover-purple;
-      opacity: 0.7;
     }
   }
 
@@ -125,11 +129,10 @@
   .header-mobile {
     background-color: #fff;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: fixed;
     width: 100%;
     z-index: 3;
+    top: 0;
     display: block;
-    position: inherit;
   }
 
   .header-mobile ul {
@@ -140,8 +143,11 @@
   }
 
   .header-mobile li {
-    margin: 15px 0;
+    padding: 15px 0;
     text-align:center;
+    background-color: $hover-purple;
+    border-top: 0.1px solid $white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
     a {
       font-family: 'Marianne-Regular', sans-serif;
       text-decoration:none;
@@ -177,20 +183,29 @@
 
   .header-mobile .menu-icon {
     cursor: pointer;
-    display: inline-block;
     float: right;
-    padding: 28px 20px;
     position: relative;
     user-select: none;
-  }
-
-  .header-mobile .menu-icon .navicon {
-    background: #333;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
+    display: flex;
+    justify-content:
+    space-between;
+    align-items: center;
+    border-radius: 40px;
+    margin: 18px 10px 0 0 ;
+    padding: 5px 15px 7px;
+    background-color: $hover-purple;
+    .navicon {
+      background: #333;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+      margin-left: 10px;
+    }
+    .menu-span {
+      font-family: 'Marianne-Regular', sans-serif;
+    }
   }
 
   .header-mobile .menu-icon .navicon:before,
@@ -202,6 +217,9 @@
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
+    .menu-span {
+      display: none;
+    }
   }
 
   .header-mobile .menu-icon .navicon:before {
@@ -222,6 +240,12 @@
     max-height: 240px;
   }
 
+  .header-mobile .menu-btn:checked ~ .menu-icon {
+    height: 16px;
+    padding-right: 9px;
+    padding-left: 0;
+  }
+
   .header-mobile .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
   }
@@ -232,6 +256,10 @@
 
   .header-mobile .menu-btn:checked ~ .menu-icon .navicon:after {
     transform: rotate(45deg);
+  }
+
+  .header-mobile .menu-btn:checked ~ .menu-icon .menu-span {
+    display: none;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
