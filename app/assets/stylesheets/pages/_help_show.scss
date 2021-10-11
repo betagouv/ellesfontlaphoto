@@ -62,7 +62,6 @@ ul li {
   margin: 0 auto;
   padding: 5% 20%;
   .block-fiche-aide{
-    margin: 20px 0;
   }
   .div-btn {
     text-align: center;
@@ -81,6 +80,9 @@ ul li {
       color: $black;
       font-size: 18px;
       margin-bottom: 40px;
+      &:hover {
+        background-color: $hover-purple;
+      }
     }
     .btn-not-available {
       margin: 0 auto;
@@ -94,6 +96,21 @@ ul li {
       color: $black;
       font-size: 18px;
       margin-bottom: 40px;
+    }
+  }
+  .btn-faq {
+    font-family: 'Marianne-Regular', sans-serif;
+    display: table !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background-color: $purple;
+    text-decoration: none;
+    color: $black;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    &:hover {
+      background-color: $hover-purple;
     }
   }
   .bhl {
