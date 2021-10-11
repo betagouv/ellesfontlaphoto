@@ -6,19 +6,21 @@
 .header {
   position: sticky;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid rgb(235,235,235);
-  z-index: 11111;
   display: contents;
 }
 
 .header_body-row {
+  background-color: white;
+  z-index: 11111;
+  position: sticky;
+  top: 0;
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
+  box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
   .header_brand {
     max-width:20%;
+    padding-left: 4rem;
     .header_logo,.logo {
       font-family: 'Marianne-Bold', sans-serif;
       font-style: normal;
@@ -40,6 +42,7 @@
       padding:0;
       width:100%;
       justify-content: flex-start;
+      margin:0;
       li {
         margin-right: 40px;
         a .links-icones {
@@ -58,39 +61,48 @@
     opacity: 1;
     border-radius: 40px;
     display: table !important;
-    padding: 5px 15px 7px;
+    padding: 1rem 15px 1rem 15px;
     background-color: transparent;
   }
   .link-menu.helps-link-menu {
     &:hover {
       border-radius: 40px;
       display: table !important;
+      margin-top: 0.7rem;
       padding: 5px 15px 7px;
       background-color: $hover-purple;
+      box-shadow: none;
     }
   }
 
   .helps-link-selected {
-    border-radius: 40px;
-    display: table !important;
-    padding: 5px 15px 7px;
-    background-color: $hover-purple;
+    white-space: pre-wrap;
+    box-shadow: #bcabff 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    border-radius: 0;
+    // border-radius: 40px;
+    // display: table !important;
+    // padding: 5px 15px 7px;
+    // background-color: $hover-purple;
   }
 
   .link-menu.conseils-link-menu {
     &:hover {
       border-radius: 40px;
       display: table !important;
+      margin-top: 0.7rem;
       padding: 5px 15px 7px;
       background-color: $hover-pink;
     }
   }
 
   .link-menu.manifeste-link-menu {
+    margin-right: 3rem;
+    margin-top: 0.4rem;
+    padding: 5px 15px 7px;
+    margin-bottom: 0;
     &:hover {
       border-radius: 40px;
       display: table !important;
-      padding: 5px 15px 7px;
       background-color: $hover-black;
     }
   }
