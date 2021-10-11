@@ -142,21 +142,21 @@
     overflow: hidden;
   }
 
-  .header-mobile li {
-    padding: 15px 0;
-    text-align:center;
-    background-color: $hover-purple;
-    border-top: 0.1px solid $white;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
-    a {
-      font-family: 'Marianne-Regular', sans-serif;
-      text-decoration:none;
-      color: black;
-      font-size: 14px;
-      opacity: 0.6;
-      line-height: 20px;
-      font-weight: 500;
-      letter-spacing: 1px;
+  .header-mobile a {
+    font-family: 'Marianne-Regular', sans-serif;
+    text-decoration:none;
+    color: $black;
+    font-size: 14px;
+    opacity: 0.6;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    li {
+      padding: 15px 0;
+      text-align:center;
+      background-color: $hover-purple;
+      border-top: 0.1px solid $white;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
     }
   }
 

@@ -162,12 +162,12 @@
         margin: 0 auto;
       }
     }
-    .button-search {
-      margin: 10% 2%;
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-    }
+  }
+  .button-search {
+    // margin: 10% 2%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
   }
   .main-index {
     display: block;
@@ -177,6 +177,9 @@
         text-align: center;
         margin-top: 20px;
         padding-bottom: 20px;
+      }
+      .link-blue {
+        margin: 0;
       }
     }
     .wrapper {
