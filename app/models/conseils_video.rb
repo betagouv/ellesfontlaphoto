@@ -1,0 +1,2 @@
+class ConseilsVideo < ApplicationRecord
+end
