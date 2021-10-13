@@ -1,0 +1,40 @@
+<% @conseils.each do |conseil| %>
+  <% if conseil.class == ConseilsArticle %>
+    <div class="card-index-conseils-articles">
+      <%= link_to conseils_path(conseil) do %>
+        <div class="flottante-div">
+          <div class="flottante">
+            <% conseil.category.each do |category| %>
+              <% if category == "Administratif" %>
+                📕
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <p class="main-bold-paragraphe mb30"><%= conseil.title %></p>
+        <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+        <% if conseil.objectif.present? %>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">👉 Objectif:</span> <%= conseil.objectif %></p>
+        <% end %>
+        <p class="arrow text-align-right"><%= image_tag "arrow-rouille.svg" %></p>
+      <% end %>
+    </div>
+  <% elsif conseil.class == ConseilsVideo %>
+    <div class="card-index-conseils-videos">
+      <%= link_to conseils_path(conseil) do %>
+        <div class="flottante-div">
+          <div class="flottante">
+            <% conseil.category.each do |category| %>
+              <% if category == "Administratif" %>
+                📕
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <p class="paragraphe mb0"><%= conseil.tags %></p>
+        <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="paragraphe"><%= conseil.protagoniste %></span></p>
+        <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

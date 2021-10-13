@@ -1,8 +1,47 @@
 p "Destroy elements"
 AdminUser.destroy_all
 Help.destroy_all
+ConseilsVideo.destroy_all
+ConseilsArticle.destroy_all
 
 p "Create helps"
+
+conseils_videos = ConseilsVideo.new(
+  title: "La place dans la profession",
+  subtitle: "La place dans la profession son soustitre",
+  category: ["Administratif"],
+  tags:["Commencer mon activité", "Sensibiliser pour l'égalité"],
+  format: "Thematique",
+  objectif: "Aider a comprendre la situation grace a cette video",
+  lecture_time: 2,
+  contenu_explication: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.
+
+  Sit voluptatum maiores eos earum tempore est nemo illum est asperiores totam sit perspiciatis nihil rem mollitia quos ut natus voluptas. Est rerum modi 33 facilis consequatur ut perspiciatis delectus ut unde ipsa quo sunt rerum ut nemo neque vel rerum itaque. Et officia sunt aut rerum sunt nam rerum quia quidem eligendi aut quae voluptas.
+
+  Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
+  liens_utiles:["www.google.fr","www.facebook.com"],
+  protagoniste: "Marie Docher"
+  )
+conseils_videos.save
+
+conseils_articles = ConseilsArticle.new(
+  title: "Comprendre les critères d'attribution d'une aide publique",
+  subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
+  category: ["Matrimoine"],
+  tags: ["Me former"],
+  objectif: "Adapter sa candidate aux attentes des services publics",
+  lecture_time: 2,
+  introduction: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
+  explication: "Sit voluptatum maiores eos earum tempore est nemo illum est asperiores totam sit perspiciatis nihil rem mollitia quos ut natus voluptas. Est rerum modi 33 facilis consequatur ut perspiciatis delectus ut unde ipsa quo sunt rerum ut nemo neque vel rerum itaque. Et officia sunt aut rerum sunt nam rerum quia quidem eligendi aut quae voluptas.",
+  perspective: "Sit voluptatum maiores eos earum tempore est nemo illum est asperiores totam sit perspiciatis nihil rem mollitia quos ut natus voluptas. Est rerum modi 33 facilis consequatur ut perspiciatis delectus ut unde ipsa quo sunt rerum ut nemo neque vel rerum itaque. Et officia sunt aut rerum sunt nam rerum quia quidem eligendi aut quae voluptas.,
+  Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
+  citation: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
+  a_retenir: "Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
+  liens_utiles:["www.google.fr","www.facebook.com"],
+  auteur: "Laurie Chapotte",
+  sources: ["Laurie Chapotte","Google.fr"]
+  )
+conseils_articles.save
 
 help1 = Help.new(
     identifiant: "AICGE",
