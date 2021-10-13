@@ -27,14 +27,6 @@ const searchIndex = () => {
 }
 
 const updateInput = () => {
-  // Animations for type changing
-  // const types = [
-  // "📸 financer du matériel",
-  // "🛠 financer une production",
-  // "🔮 un secours exceptionnel",
-  // "🏠 une résidence (artistique)",
-  // "📣 financer une diffusion",
-  // ];
   const types = {
   "📸 financer du matériel" : "Matériel",
   "🛠 financer une production": "Production",
