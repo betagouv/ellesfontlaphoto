@@ -1334,42 +1334,6 @@ help37 = Help.new(
 
 help37.save
 
-help38 = Help.new(
-    identifiant: "SAIFLTP",
-    institution_name: "SAIF (Société des auteurs des arts visuels et de l’image fixe)",
-    institution_partenaire: ["Association Laurent Troude", "Libération", "Divergence-Images", "Le festival ImageSingulières"],
-    title: "Bourse Laurent Troude",
-    regularity: "Une fois par an",
-    sector: "Photographie",
-    description: "Pour accompagner le travail de création d’un ou une jeune photographe",
-    description_url: "https://www.saif.fr/soutien-a-la-creation/",
-    start_date: Date.new(2022,2,1),
-    end_date: Date.new(2022,04,30),
-    help_amount: "8000 euros",
-    help_advantage: "Un an d’abonnement à la plateforme Divergence-Images ; Exposition au festival lmageSingulières ; Diffusion dans Libération.",
-    residence_condition: "Française ou résidant en France",
-    general_condition: "Avoir moins de 30 ans ; Présenter des œuvres originales et inédites",
-    specific_condition: "Le projet ne peut être présenté à aucun autre prix, concours ou bourse, ni publié avant sa présentation au festival ; Il doit être achevé en mars de l’année suivante ; L’artiste doit assister au festival.",
-    candidate_url: "https://www.saif.fr/site/assets/files/1477/formulairecandidature2021.pdf",
-    selection: "Les demandes sont examinées par un jury, qui émet un avis au vu de la qualité des photographies et de la pertinence du projet. Le projet doit être en lien avec le territoire français, dans un format propre au journalisme. Envoyer le formulaire de candidature par WeTransfer aux deux contacts cités plus bas",
-    compo_commission: "Le jury est constitué de la personne lauréate de l’année précédente et de représentantes et représentants de l’institution et des partenaires. En 2021, le jury était composé de 5 hommes et 2 femmes",
-    url_commission: "https://www.saif.fr/soutien-a-la-creation/",
-    old_laureat: "Une personne lauréate par an. Le jury peut distinguer deux autres artistes.",
-    old_laureat_url: "https://arthurmercier.fr/",
-    help_type: ["Production"],
-    admin_attachment: "<ul>
-    <li>CV</li>
-    <li>pièce d’identité</li>
-    <li>formulaire de candidature</li>
-    </ul>",
-    artistic_attachment: "<ul><li>note d’intention (1 page) </li> <li> 5 à 10 visuels numérotés et spécifiques au projet</li> <li> document texte avec les légendes des images.</li></ul>",
-    contact_intitution_email: ["bourselaurenttroude@gmail.com","actionculturelle@saif.fr "],
-    contact_institution_url: "https://www.saif.fr/soutien-a-la-creation/",
-    contact_intitution_partenaire: ["https://www.liberation.fr/", "http://www.divergence-images.com/", "https://www.imagesingulieres.com/ "]
-  )
-
-help38.save
-
 # IFED
 
 help39 = Help.new(
