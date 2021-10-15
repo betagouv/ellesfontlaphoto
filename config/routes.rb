@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "mentions_legales", to: 'pages#mentions_legales'
   resources :contacts, only: :create
   resources :helps, only: [:show, :index]
+  get "/conseils", to: "conseils_pratiques#index"
 end

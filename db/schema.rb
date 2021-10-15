@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_130204) do
+ActiveRecord::Schema.define(version: 2021_10_12_095455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,40 @@ ActiveRecord::Schema.define(version: 2021_09_28_130204) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "conseils_articles", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "category", default: [], array: true
+    t.string "tags", default: [], array: true
+    t.string "objectif"
+    t.integer "lecture_time"
+    t.text "introduction"
+    t.text "explication"
+    t.text "perspective"
+    t.text "citation"
+    t.text "a_retenir"
+    t.text "liens_utiles", default: [], array: true
+    t.string "auteur"
+    t.string "sources", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "conseils_videos", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "category", default: [], array: true
+    t.string "tags", default: [], array: true
+    t.string "format"
+    t.string "objectif"
+    t.integer "lecture_time"
+    t.text "contenu_explication"
+    t.text "liens_utiles", default: [], array: true
+    t.string "protagoniste"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
