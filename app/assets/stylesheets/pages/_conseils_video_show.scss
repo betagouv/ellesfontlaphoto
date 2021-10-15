@@ -1,0 +1,48 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+.div-banner-conseils-video {
+  background-color: $rouille;
+  padding-top: 2.5rem;
+  .flex-div-left {
+    padding: 0 3em 0 3em;
+  }
+  a {
+    color: $black !important;
+  }
+  .banner-show {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 3em 0 3em;
+  }
+}
+
+.conseil-tag {
+  font-family: 'Marianne-Regular', sans-serif;
+  background-color: $white;
+  display: table !important;
+  padding: 5px 17px;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-right: 10px;
+  &:hover {
+    box-shadow: 0 0 6px rgba(1,1,1,0.5);
+  }
+}
+
+ul li {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-title {
+  width: 60%;
+}
+
+.arrondis-conseils-videos {
+  background-color: $rouille;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  width: 100%;
+  height: 100px;
+}
