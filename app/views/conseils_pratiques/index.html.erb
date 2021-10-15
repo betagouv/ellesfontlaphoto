@@ -23,11 +23,11 @@
     <%= text_field_tag :category, params[:category] %>
   <% end %>
   <% if @selected_tag.present? %>
-    <%= text_field_tag :tags, params[:tags], multiple: true,  value: @selected_tag %>
+    <%= text_field_tag "tags[]", params[:tags], value: [@selected_tag] %>
   <% else %>
-    <%= text_field_tag :tags, params[:tags], multiple: true %>
+    <%= text_field_tag "tags[]", params[:tags], value: nil %>
   <% end %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search"%>
 <% end %>
 <div class="progress-container">
   <div class="progress"></div>
@@ -42,8 +42,8 @@
         <% end %>
         <% if @selected_tag.present? %>
           <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
-            <% if params[:tags].include?(tag) %>
-              <p class="button-criteria-selected" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
+            <% if @selected_tag.include?(tag) %>
+              <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
             <% end %>
           <% end %>
         <% end %>
@@ -52,7 +52,7 @@
         <p class="main-bold-paragraphe text-align-left">Précisez votre recherche:</p>
         <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
           <% unless params[:tags].include?(tag) %>
-            <p class="button-criteria" data-tag="<%= tag %>"><%= tag %></p>
+            <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
           <% end %>
         <% end %>
       </div>

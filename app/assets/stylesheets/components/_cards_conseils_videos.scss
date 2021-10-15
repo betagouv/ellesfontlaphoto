@@ -9,9 +9,9 @@
     border-radius: 2%;
     border: 1px solid $rouille;
     height: auto;
-    padding: 13% 5% 10% 5%;
+    // padding: 13% 5% 10% 5%;
     position: relative;
-    max-height: 250px;
+    // max-height: 250px;
     .main-bold-paragraphe {
       text-align: left;
     }
@@ -21,10 +21,25 @@
     }
     a{
       color: $black;
+      div {
+        img {
+          height: 200px;
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
     }
     .arrow {
       margin-bottom:0;
       margin-top: 15%;
+    }
+    .cards-videos-info {
+      padding: 5% 3%;
+      .cards-tags {
+        font-family: 'Marianne-Regular_Italic', sans-serif;
+        font-size: 0.6;
+      }
     }
     .flottante-div {
         display: flex;
@@ -36,9 +51,16 @@
         display: table !important;
         padding: 0px 10px 2px;
         background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
         font-size: 1.3rem;
         margin-right: 7px;
+      }
+    }
+    .flottante-play {
+      top: 185px;
+      right: 13px;
+      position: absolute;
+      img {
+        height: 30px;
       }
     }
   }

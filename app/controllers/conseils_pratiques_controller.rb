@@ -6,7 +6,6 @@ class ConseilsPratiquesController < ApplicationController
     @conseils = @conseil_articles + @conseil_videos
     @searched = false
     if params[:category].present?
-      # raise
       @conseil_articles = @conseil_articles.where("category @> ?", "{#{params[:category]}}").order(created_at: :asc)
       @conseil_videos = @conseil_videos.where("category @> ?", "{#{params[:category]}}").order(created_at: :asc)
       @conseils = @conseil_articles + @conseil_videos
@@ -14,11 +13,13 @@ class ConseilsPratiquesController < ApplicationController
       @searched = true
     end
     if params[:tags].present?
-      @conseil_articles = @conseil_articles.where("tags @> ?", "{#{params[:tags]}}").order(created_at: :asc)
-      @conseil_videos = @conseil_videos.where("tags @> ?", "{#{params[:tags]}}").order(created_at: :asc)
-      @conseils = @conseil_articles + @conseil_videos
-      @selected_tag = params[:tags]
-      @searched = true
+      if params[:tags].reject { |t| t.empty? }.present?
+        @conseil_articles = @conseil_articles.where("tags @> ARRAY[?]::varchar[]", params[:tags].reject { |t| t.empty? }.collect(&:strip)).order(created_at: :asc)
+        @conseil_videos = @conseil_videos.where("tags @> ARRAY[?]::varchar[]", params[:tags].reject { |t| t.empty? }.collect(&:strip)).order(created_at: :asc)
+        @conseils = @conseil_articles + @conseil_videos
+        @selected_tag = params[:tags].reject { |t| t.empty? }.collect(&:strip)
+        @searched = true
+      end
     end
     @conseils_count = @conseils.count
   end

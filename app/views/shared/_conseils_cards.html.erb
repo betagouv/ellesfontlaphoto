@@ -7,6 +7,14 @@
             <% conseil.category.each do |category| %>
               <% if category == "Administratif" %>
                 📕
+              <% elsif category == "Financier" %>
+                🤑
+              <% elsif category == "Rôle modèles" %>
+                🌟
+              <% elsif category == "Technique" %>
+                🛠
+              <% elsif category == "Matrimoine" %>
+                👑
               <% end %>
             <% end %>
           </div>
@@ -22,18 +30,36 @@
   <% elsif conseil.class == ConseilsVideo %>
     <div class="card-index-conseils-videos">
       <%= link_to conseils_path(conseil) do %>
+        <div>
+          <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" %>
+        </div>
         <div class="flottante-div">
           <div class="flottante">
             <% conseil.category.each do |category| %>
               <% if category == "Administratif" %>
                 📕
+              <% elsif category == "Financier" %>
+                🤑
+              <% elsif category == "Rôle modèles" %>
+                🌟
+              <% elsif category == "Technique" %>
+                🛠
+              <% elsif category == "Matrimoine" %>
+                👑
               <% end %>
             <% end %>
           </div>
         </div>
-        <p class="paragraphe mb0"><%= conseil.tags %></p>
-        <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="paragraphe"><%= conseil.protagoniste %></span></p>
-        <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+        <div class="flottante-play">
+          <%= image_tag "play.svg" %>
+        </div>
+        <div class="cards-videos-info">
+          <p class="cards-tags mb0">
+            <%= conseil.tags.join(",") %>
+          </p>
+          <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="paragraphe"><%= conseil.protagoniste %></span></p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+        </div>
       <% end %>
     </div>
   <% end %>
