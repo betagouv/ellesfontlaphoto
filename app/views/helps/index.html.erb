@@ -51,10 +51,10 @@
   <%= submit_tag "Search" %>
 <% end %>
 <div class="progress-container">
-  <div class="progress"></div>
+  <div class="progress-help"></div>
 </div>
 <div class="main-index">
-  <div class="index-direction">
+  <div class="index-direction-helps">
     <% if @selected.present? || @selected_type.present? %>
       <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
       <p><a class="link-blue" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a></p>

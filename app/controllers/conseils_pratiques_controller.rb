@@ -12,6 +12,7 @@ class ConseilsPratiquesController < ApplicationController
       @selected = params[:category]
       @searched = true
     end
+    # raise
     if params[:tags].present?
       if params[:tags].reject { |t| t.empty? }.present?
         @conseil_articles = @conseil_articles.where("tags @> ARRAY[?]::varchar[]", params[:tags].reject { |t| t.empty? }.collect(&:strip)).order(created_at: :asc)

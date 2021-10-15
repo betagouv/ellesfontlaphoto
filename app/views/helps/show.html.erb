@@ -1,8 +1,8 @@
 <div class=div-banner>
-  <p><a class="link-blue" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a></p>
   <div class="banner-show">
     <div class="help-title">
       <div class="flex-div-left">
+        <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
         <% @help.help_type.each do |type| %>
           <% if type == "Matériel" %>
             <a href="/helps?residence=&type=Matériel"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
@@ -66,17 +66,17 @@
     <p class="paragraphe"><%= @help.selection %></p>
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
-      <a class="link-blue" href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
+      <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
       <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
     <% else %>
       <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
     <p class="paragraphe mb0"><%= @help.compo_commission %></p>
-    <a class="link-blue" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+    <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
       <p class="paragraphe-bold mt30 mb0">Précédents lauréates & lauréats</p>
       <p class="paragraphe mb0"><%= @help.old_laureat %></p>
-      <a class="link-blue" href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
+      <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
     <% end %>
   </div>
   <hr class="bhl">
@@ -120,7 +120,7 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
-    <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
+    <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
     <p class="paragraphe">N'hésitez pas à envoyer un e-mail pour présicer votre candidature: </p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
@@ -144,7 +144,7 @@
       </p>
     <% end %>
     <% if @help.faq_url.present? %>
-      <a class="btn-faq" href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
+      <a class="btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
     <% end %>
   </div>
   <hr class="bhl">
