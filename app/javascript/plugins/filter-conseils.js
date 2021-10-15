@@ -1,10 +1,13 @@
 const unSelectFilter = (buttonsUnSelected) => {
   buttonsUnSelected.forEach((element) => {
     element.addEventListener("click", () =>{
-      if (document.querySelector("#category").value == element.dataset.category) {
+      if(element.classList.contains('tags')) {
+        document.querySelector("#tags_").value = document.querySelector("#tags_").value.replace(element.dataset.tag, "")
+      } else if (document.querySelector("#category").value == element.dataset.category) {
         document.querySelector("#category").value = ""
-        document.querySelector('#search-form').submit();
+        document.querySelector("#tags_").value = [""]
       }
+        document.querySelector('#search-form').submit();
     })
   })
 }
@@ -12,10 +15,8 @@ const unSelectFilter = (buttonsUnSelected) => {
 const selectFilter = (buttonsSelected) => {
   buttonsSelected.forEach((element) => {
     element.addEventListener("click", () => {
-      console.log(element.dataset.tag)
-      document.querySelector("#tags").value += element.dataset.tag
+      document.querySelector("#search-form").insertAdjacentHTML("beforeend", `<input type="text" name="tags[]" id="tags_" value="${element.dataset.tag}">`)
       document.querySelector('#search-form').submit();
-
     })
   })
 }
