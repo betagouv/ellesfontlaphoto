@@ -15,7 +15,7 @@ const unSelectFilter = (buttonsUnSelected) => {
 const selectFilter = (buttonsSelected) => {
   buttonsSelected.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#search-form").insertAdjacentHTML("beforeend", `<input type="text" name="tags[]" id="tags_" value="${element.dataset.tag}">`)
+      document.querySelector(".ici").insertAdjacentHTML("beforeend", `<input type="text" name="tags[]" id="tags_" value="${element.dataset.tag}">`)
       document.querySelector('#search-form').submit();
     })
   })

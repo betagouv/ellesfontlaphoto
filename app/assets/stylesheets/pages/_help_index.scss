@@ -5,7 +5,7 @@
   width: 100%;
   border-radius: 0.4rem;
   background: transparent;
-  .progress {
+  .progress-help {
     height: 100%;
     width: 0;
     margin-top: 2%;
@@ -112,8 +112,9 @@
   color: $black;
   padding: 3% 5%;
   column-gap: 2rem;
-  .index-direction {
+  .index-direction-helps {
     max-width: 20%;
+    color: $purple;
   }
 }
 
@@ -163,7 +164,7 @@
       }
     }
   }
-  .button-search {
+  .button-search-helps {
     // margin: 10% 2%;
     display: block;
     text-align: center;
@@ -171,7 +172,7 @@
   }
   .main-index {
     display: block;
-    .index-direction {
+    .index-direction-helps {
       min-width: 100%;
       p {
         text-align: center;

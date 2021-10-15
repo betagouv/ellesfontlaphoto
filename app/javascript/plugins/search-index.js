@@ -1,4 +1,4 @@
-import { searchProgressBar } from '../plugins/progress_bar';
+import { searchProgressBarHelp } from '../plugins/progress_bar';
 
 const searchIndex = () => {
   document.getElementById("select-search-residence").addEventListener("click", () => {
@@ -73,14 +73,14 @@ const updateInput = () => {
   })
 
   // Submit the form when user click on the button
-  document.querySelector(".button-search").addEventListener("click", () => {
+  document.querySelector(".button-search-helps").addEventListener("click", () => {
      animSearch();
   })
 }
 
 const animSearch = async () => {
-    searchProgressBar();
-    document.querySelector(".index-direction").style.opacity = 0.2;
+    searchProgressBarHelp();
+    document.querySelector(".index-direction-helps").style.opacity = 0.2;
     document.querySelector(".cards").style.opacity = 0.2;
     await sleep(2500)
     document.querySelector('#search-form').submit()
