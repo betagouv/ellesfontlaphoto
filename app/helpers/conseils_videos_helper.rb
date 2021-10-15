@@ -1,0 +1,2 @@
+module ConseilsVideosHelper
+end

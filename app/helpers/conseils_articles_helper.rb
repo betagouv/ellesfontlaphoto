@@ -1,0 +1,2 @@
+module ConseilsArticlesHelper
+end
