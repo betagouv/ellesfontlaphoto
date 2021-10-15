@@ -1,0 +1,67 @@
+<div class="search-div-category">
+  <p class="text-search">Conseils pratiques</p>
+  <div class="dropdown">
+    <% if @selected.present? %>
+      <div id="select-search-category" class="choosen"><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+    <% else %>
+      <div id="select-search-category"><span id="text-to-change-category"><%= ConseilsVideo::CONSEIL_CATEGORIES.values.sample %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+    <% end %>
+    <div id="dropdown-elements-category">
+      <% ConseilsVideo::CONSEIL_CATEGORIES.values.each do |category| %>
+        <div class="dropdown-content-category"><%= category %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="button-search">
+  🎯 Lancer la recherche
+</div>
+<%= form_tag conseils_path, method: :get, id: "search-form" do %>
+  <% if @selected.present? %>
+    <%= text_field_tag :category, params[:category], value: @selected %>
+  <% else %>
+    <%= text_field_tag :category, params[:category] %>
+  <% end %>
+  <% if @selected_tag.present? %>
+    <%= text_field_tag "tags[]", params[:tags], value: [@selected_tag] %>
+  <% else %>
+    <%= text_field_tag "tags[]", params[:tags], value: nil %>
+  <% end %>
+  <%= submit_tag "Search"%>
+<% end %>
+<div class="progress-container">
+  <div class="progress"></div>
+</div>
+<div class="main-index">
+  <div class="index-direction">
+    <% if @selected.present? || @selected_tag.present? %>
+      <div class="box-criteria">
+        <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques correspondent à vos critères 🎊</p>
+        <% if @selected.present? %>
+          <p class="button-criteria-selected" data-category="<%= @selected %>"><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
+        <% end %>
+        <% if @selected_tag.present? %>
+          <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
+            <% if @selected_tag.include?(tag) %>
+              <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="box-criteria">
+        <p class="main-bold-paragraphe text-align-left">Précisez votre recherche:</p>
+        <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
+          <% unless params[:tags].include?(tag) %>
+            <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques</p>
+      <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= @last_date_updated %></p>
+    <% end %>
+  </div>
+  <div class="cards">
+    <%= render "shared/conseils_cards", conseils: @conseils %>
+  </div>
+</div>

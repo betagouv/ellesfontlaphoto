@@ -3,11 +3,11 @@
 
 .cards {
   width: 100%;
-  .card-index {
+  .card-index-conseils-articles {
     background-color: white;
     margin-bottom: 20px;
     border-radius: 2%;
-    border: 1px solid $purple;
+    border: 1px solid $rouille;
     height: auto;
     padding: 13% 5% 10% 5%;
     position: relative;
@@ -31,7 +31,7 @@
         position: absolute;
         top: -15px;
       .flottante {
-        border: 1px solid $purple;
+        border: 1px solid $rouille;
         border-radius: 40px;
         display: table !important;
         padding: 0px 10px 2px;
@@ -39,18 +39,6 @@
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 1.3rem;
         margin-right: 7px;
-      }
-      .flottante2 {
-        border: 1px solid $purple;
-        border-radius: 40px;
-        display: table !important;
-        padding: 5px 10px 5px;
-        // position: absolute;
-        background-color: white;
-        // top: -15px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 0.9rem;
-        // left: 28%;
       }
     }
   }

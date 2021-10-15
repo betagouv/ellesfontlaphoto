@@ -15,7 +15,12 @@ ActiveStorage.start()
 import { searchIndex } from '../plugins/search-index';
 import { updateInput } from '../plugins/search-index';
 import { changeResidence } from '../plugins/search-index';
+import { searchIndexConseils } from '../plugins/search-conseils';
+import { updateInputCategories } from '../plugins/search-conseils';
+import { changeCategory } from '../plugins/search-conseils';
 // import { changeTypes } from '../plugins/search-index';
+import { unSelectFilter } from '../plugins/filter-conseils'
+import { selectFilter } from '../plugins/filter-conseils'
 
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
@@ -29,7 +34,26 @@ document.addEventListener('turbolinks:load', () => {
     //   changeResidence();
     // }
   }
-  new Modal();
+
+  if (document.querySelector("#select-search-category")) {
+    searchIndexConseils();
+    updateInputCategories();
+  }
+
+  const buttonsUnSelected = document.querySelectorAll(".button-criteria-selected")
+  if (buttonsUnSelected) {
+    unSelectFilter(buttonsUnSelected);
+  }
+
+  const buttonsSelected = document.querySelectorAll(".button-criteria")
+  if (buttonsSelected) {
+    selectFilter(buttonsSelected);
+  }
+
+
+  if (document.querySelector(".banner-contact")){
+    new Modal();
+  }
 })
 
 'use strict';
