@@ -92,7 +92,18 @@
       margin-top: 0.7rem;
       padding: 5px 15px 7px;
       background-color: $hover-pink;
+      box-shadow: none;
     }
+  }
+
+  .conseils-link-selected {
+    white-space: pre-wrap;
+    box-shadow: $rouille 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    border-radius: 0;
+    // border-radius: 40px;
+    // display: table !important;
+    // padding: 5px 15px 7px;
+    // background-color: $hover-purple;
   }
 
   .link-menu.manifeste-link-menu {
