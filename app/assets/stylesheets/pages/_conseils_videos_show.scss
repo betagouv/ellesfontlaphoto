@@ -1,0 +1,75 @@
+@import "config/colors";
+@import "config/fonts";
+
+.div-banner-conseils-video {
+  background-color: $rouille;
+  position: relative;
+  padding-top: 2.5rem;
+  .flex-div-left {
+    padding: 0 3em 0 3em;
+  }
+  a {
+    color: $black !important;
+  }
+  .banner-show {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 3em 10em 3em;;
+    .subtitle-protagoniste {
+      margin-top: 20px;
+      color: $black;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 36px;
+    }
+  }
+  .video-tag {
+    position: absolute;
+    max-width: 50%;
+    left: 25%;
+    top: 70%;
+  }
+}
+
+.conseil-tag {
+  font-family: 'Marianne-Regular', sans-serif;
+  background-color: $white;
+  display: table !important;
+  padding: 5px 17px;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-right: 10px;
+  &:hover {
+    box-shadow: 0 0 6px rgba(1,1,1,0.5);
+  }
+}
+
+ul li {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-title {
+  width: 60%;
+}
+
+.arrondis-conseils-videos {
+  background-color: $rouille;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  width: 100%;
+  height: 100px;
+}
+
+.conseils-video-content {
+  margin: 0 auto;
+  padding: 20% 20% 5% 20%;
+}
+
+.bhl {
+  border-top: 0.1px solid $rouille;
+  border-style: outset;
+  margin: 40px 0;
+}

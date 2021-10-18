@@ -24,17 +24,13 @@
   <% end %>
   <div class="ici"></div>
   <% if @selected_tag.present? %>
-    <%# raise %>
     <% @selected_tag.each do |selected_tag| %>
       <%= text_field_tag "tags[]", params[:tags], value: [selected_tag] %>
     <% end %>
   <% else %>
     <%= text_field_tag "tags[]", params[:tags], value: nil %>
   <% end %>
-  <!-- <input type="text" name="tags[]" id="tags_" value="Me former">
-  <input type="text" name="tags[]" id="tags_" value="Commencer mon activité">
-  <input type="text" name="tags[]" id="tags_" value="Sensibiliser pour l'égalité">
-  --> <%= submit_tag "Search"%>
+  <%= submit_tag "Search"%>
 <% end %>
 <div class="progress-container">
   <div class="progress"></div>

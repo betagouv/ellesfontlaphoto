@@ -1,0 +1,88 @@
+<div class=div-banner-conseils-article>
+  <div class="flex-div-left">
+    <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
+    <% @conseil_article.category.each do |category| %>
+      <% if category == "Administratif" %>
+        <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% end %>
+      <% if category == "Financier" %>
+        <a href="/conseils?category=Financier&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% end %>
+      <% if category == "Technique" %>
+        <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% end %>
+      <% if category == "Matrimoine" %>
+        <a href="/conseils?category=Matrimoine&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% end %>
+    <% end %>
+    <% @conseil_article.tags.each do |tag| %>
+      <% if tag == "Commencer mon activité" %>
+        <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag"> Commencer mon activité</p></a>
+      <% end %>
+      <% if tag == "Me former" %>
+        <a href="/conseils?category=&tags%5B%5D=Me+former&tags%5B%5D="><p class="conseil-tag"> Me former </p></a>
+      <% end %>
+      <% if tag == "Gérer ma carrière" %>
+        <a href="/conseils?category=&tags%5B%5D=Gérer+ma+carrière&tags%5B%5D="><p class="conseil-tag"> Gérer ma carrière</p></a>
+      <% end %>
+      <% if tag == "Sensibiliser pour l'égalité" %>
+        <a href="conseils?category=&tags%5B%5D=Sensibiliser+pour+l%27égalité&tags%5B%5D="><p class="conseil-tag"> Sensibiliser pour l'égalité</p></a>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="banner-show">
+    <div class="contact-title">
+      <h2><%= @conseil_article.title %></h2>
+      <p class="paragraphe mt30"><%= @conseil_article.subtitle %></p>
+    </div>
+    <div class="conseils-article-description">
+      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée: </span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs: </span><%= @conseil_article.objectif %></p>
+    </div>
+  </div>
+</div>
+<div class="arrondis-conseils-articles">
+</div>
+
+<div class="conseils-article-content">
+  <div class="block-conseils-article">
+    <p class="subtitle">Introduction</p>
+    <p class="paragraphe"><%= @conseil_article.introduction %></p>
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-article">
+    <p class="subtitle">En détails</p>
+    <p class="paragraphe"><%= @conseil_article.objectif %></p>
+    <p class="paragraphe"><%= @conseil_article.explication %></p>
+    <p class="paragraphe"><%= @conseil_article.perspective %></p>
+    <div class="quote">
+      <p class="paragraphe-spectral-italic"><%= @conseil_article.citation %> <span> <%= @conseil_article.citation_auteur %></span></p>
+    </div>
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-article">
+    <p class="subtitle">À retenir: </p>
+    <!-- <p class="paragraphe background-rouille"> -->
+      <ul class="paragraphe background-rouille">
+        <% @conseil_article.a_retenir.each do |element|%>
+          <li><%= element %></li>
+        <% end %>
+      </ul>
+    <!-- </p> -->
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-article">
+    <p class="subtitle">Liens utiles</p>
+      <% @conseil_article.liens_utiles.each do |lien| %>
+        <a href="<%= lien %>" class="link-blue"><%= image_tag "arrow-darkblue.svg" %> <%= lien %></a><br><br>
+      <% end %>
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-article">
+    <p class="main-bold-paragraphe text-align-left">Sources</p>
+    <p class="paragraphe"><%= @conseil_article.sources.join(", ") %></p>
+    <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
+    <p class="paragraphe"><%= @conseil_article.auteur %></p>
+  </div>
+  <hr class="bhl">
+</div>
