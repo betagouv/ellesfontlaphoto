@@ -62,21 +62,23 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">À retenir: </p>
-    <p class="paragraphe"><ul>
-      <% @conseil_article.a_retenir.each do |element|%>
-        <li><%= element %></li>
-      <% end %>
-    </ul> </p>
+    <!-- <p class="paragraphe background-rouille"> -->
+      <ul class="paragraphe background-rouille">
+        <% @conseil_article.a_retenir.each do |element|%>
+          <li><%= element %></li>
+        <% end %>
+      </ul>
+    <!-- </p> -->
   </div>
   <hr class="bhl">
-  <div class="block-conseils-video">
+  <div class="block-conseils-article">
     <p class="subtitle">Liens utiles</p>
       <% @conseil_article.liens_utiles.each do |lien| %>
         <a href="<%= lien %>" class="link-blue"><%= image_tag "arrow-darkblue.svg" %> <%= lien %></a><br><br>
       <% end %>
   </div>
   <hr class="bhl">
-  <div class="block-conseils-video">
+  <div class="block-conseils-article">
     <p class="main-bold-paragraphe text-align-left">Sources</p>
     <p class="paragraphe"><%= @conseil_article.sources.join(", ") %></p>
     <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>

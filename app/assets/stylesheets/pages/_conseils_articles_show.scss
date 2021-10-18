@@ -56,6 +56,11 @@ ul li {
 .conseils-article-content {
   margin: 0 auto;
   padding: 5% 20% 5% 20%;
+  .block-conseils-article .background-rouille {
+    background-color: $hover-pink;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .bhl {
