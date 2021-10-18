@@ -1,7 +1,7 @@
 <% @conseils.each do |conseil| %>
   <% if conseil.class == ConseilsArticle %>
     <div class="card-index-conseils-articles">
-      <%= link_to conseils_path(conseil) do %>
+      <%= link_to conseils_article_path(conseil) do %>
         <div class="flottante-div">
           <div class="flottante">
             <% conseil.category.each do |category| %>
@@ -29,7 +29,7 @@
     </div>
   <% elsif conseil.class == ConseilsVideo %>
     <div class="card-index-conseils-videos">
-      <%= link_to conseils_path(conseil) do %>
+      <%= link_to conseils_video_path(conseil) do %>
         <div>
           <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" %>
         </div>
