@@ -37,10 +37,10 @@ conseils_articles = ConseilsArticle.new(
   Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   citation: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
   citation_auteur: "Paul Ochon, Conseiller DRAC",
-  a_retenir: ["Quo praesentium magnam rem nisi exercitationem", "aut atque accusamus. Ab fugiat sunt sit sunt", "quas et fugiat cum aliquid corporis."],
+  a_retenir: "Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   liens_utiles:["www.google.fr","www.facebook.com"],
   auteur: "Jenn Stephan et Paul Vautrin",
-  sources: ["Laurie Chapotte","Google.fr"]
+  sources: "Laurie Chapotte, Google.fr"
   )
 conseils_articles.save
 
@@ -75,10 +75,10 @@ conseils_articles1 = ConseilsArticle.new(
   Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   citation: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
   citation_auteur: "Paul Ochon, Conseiller DRAC",
-  a_retenir: ["Quo praesentium magnam rem nisi exercitationem", "aut atque accusamus. Ab fugiat sunt sit sunt", "quas et fugiat cum aliquid corporis."],
+  a_retenir: "Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   liens_utiles:["www.google.fr","www.facebook.com"],
   auteur: "Laurie Chapotte et Paul Vautrin",
-  sources: ["Laurie Chapotte","Google.fr"]
+  sources: "Laurie Chapotte, Google.fr"
   )
 conseils_articles1.save
 

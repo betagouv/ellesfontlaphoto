@@ -47,13 +47,13 @@
 <div class="conseils-article-content">
   <div class="block-conseils-article">
     <p class="subtitle">Introduction</p>
-    <p class="paragraphe"><%= @conseil_article.introduction %></p>
+    <p class="paragraphe"><%= @conseil_article.introduction.html_safe %></p>
   </div>
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
-    <p class="paragraphe"><%= @conseil_article.explication %></p>
-    <p class="paragraphe"><%= @conseil_article.perspective %></p>
+    <p class="paragraphe"><%= @conseil_article.explication.html_safe %></p>
+    <p class="paragraphe"><%= @conseil_article.perspective.html_safe %></p>
     <div class="quote">
       <p class="paragraphe-spectral-italic"><%= @conseil_article.citation %> <span> <%= @conseil_article.citation_auteur %></span></p>
     </div>
@@ -61,13 +61,9 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">À retenir: </p>
-    <!-- <p class="paragraphe background-rouille"> -->
-      <ul class="paragraphe background-rouille">
-        <% @conseil_article.a_retenir.each do |element|%>
-          <li><%= element %></li>
-        <% end %>
-      </ul>
-    <!-- </p> -->
+    <ul class="paragraphe background-rouille">
+      <%= @conseil_article.a_retenir.html_safe%>
+    </ul>
   </div>
   <hr class="bhl">
   <div class="block-conseils-article">
@@ -79,7 +75,7 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="main-bold-paragraphe text-align-left">Sources</p>
-    <p class="paragraphe"><%= @conseil_article.sources.join(", ") %></p>
+    <p class="paragraphe"><%= @conseil_article.sources.html_safe %></p>
     <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
     <p class="paragraphe"><%= @conseil_article.auteur %></p>
   </div>

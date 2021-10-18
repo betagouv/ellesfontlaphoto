@@ -15,6 +15,17 @@ ActiveAdmin.register ConseilsArticle do
   #   permitted
   # end
 
+  before_create do
+    raise
+  end
+
+  before_update do
+    params[:conseils_article][:tags] = params[:conseils_article][:tags].reject(&:empty?)
+    params[:conseils_article][:category] = params[:conseils_article][:category].reject(&:empty?)
+    params[:conseils_article][:liens_utiles] = params[:conseils_article][:liens_utiles].split(",").reject(&:empty?)
+    # raise
+  end
+
   index do
     column :title
     column :subtitle
@@ -25,8 +36,8 @@ ActiveAdmin.register ConseilsArticle do
 
   form do |f|
     f.inputs "Filtres" do
-      f.input :category
-      f.input :tags
+      f.input :category, :as => :select, input_html: { multiple: true }, :collection => ConseilsArticle::CONSEIL_CATEGORIES.keys
+      f.input :tags, :as => :select, input_html: { multiple: true }, :collection => ConseilsArticle::CONSEIL_TAGS
     end
     f.inputs "Bandeau" do
       f.input :title
@@ -35,22 +46,22 @@ ActiveAdmin.register ConseilsArticle do
       f.input :lecture_time
     end
     f.inputs "Introduction" do
-      f.input :introduction, input_html: {class: 'js-rich-text'}
+      f.input :introduction, as: :quill_editor
     end
     f.inputs "En détails" do
-      f.input :explication, input_html: {class: 'js-rich-text'}
-      f.input :perspective, input_html: {class: 'js-rich-text'}
+      f.input :explication, as: :quill_editor
+      f.input :perspective, as: :quill_editor
       f.input :citation
       f.input :citation_auteur
     end
     f.inputs "A retenir" do
-      f.input :a_retenir
+      f.input :a_retenir, as: :quill_editor
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles
+      f.array :liens_utiles, as: :array
     end
     f.inputs "Sources" do
-      f.input :sources
+      f.input :sources, as: :quill_editor
     end
     f.inputs "Autrices, Auteurs" do
       f.input :auteur
