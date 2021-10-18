@@ -3,6 +3,7 @@
 
 .div-banner-conseils-video {
   background-color: $rouille;
+  position: relative;
   padding-top: 2.5rem;
   .flex-div-left {
     padding: 0 3em 0 3em;
@@ -13,7 +14,22 @@
   .banner-show {
     display: flex;
     justify-content: space-around;
-    padding: 0 3em 0 3em;
+    padding: 1em 3em 10em 3em;;
+    .subtitle-protagoniste {
+      margin-top: 20px;
+      color: $black;
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 36px;
+    }
+  }
+  .video-tag {
+    position: absolute;
+    max-width: 50%;
+    left: 25%;
+    top: 70%;
   }
 }
 
@@ -45,4 +61,15 @@ ul li {
   border-bottom-right-radius: 100%;
   width: 100%;
   height: 100px;
+}
+
+.conseils-video-content {
+  margin: 0 auto;
+  padding: 20% 20% 5% 20%;
+}
+
+.bhl {
+  border-top: 0.1px solid $rouille;
+  border-style: outset;
+  margin: 40px 0;
 }

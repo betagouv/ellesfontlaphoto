@@ -33,7 +33,7 @@
   <div class="banner-show">
     <div class="contact-title">
       <h2><%= @conseil_video.title %></h2>
-      <p class="subtitle-conseils-video"><%= @conseil_video.subtitle %></p>
+      <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="conseils-video-description">
       <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée:</span><%= @conseil_video.lecture_time %> min</p>
@@ -41,6 +41,27 @@
       <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo:</span><%= @conseil_video.format %></p>
     </div>
   </div>
+  <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "video-tag" %>
 </div>
 <div class="arrondis-conseils-videos">
+</div>
+<div class="conseils-video-content">
+  <div class="block-conseils-video">
+    <p class="subtitle">Description</p>
+    <p class="paragraphe"><%= @conseil_video.subtitle %></p>
+    <p class="paragraphe"><%= @conseil_video.objectif %></p>
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-video">
+    <p class="subtitle"><%= @conseil_video.protagoniste %> :</p>
+    <p class="paragraphe"><%= @conseil_video.contenu_explication %></p>
+  </div>
+  <hr class="bhl">
+  <div class="block-conseils-video">
+    <p class="main-bold-paragraphe text-align-left">Elle vous en a parlé</p>
+      <% @conseil_video.liens_utiles.each do |lien| %>
+        <a href="<%= lien %>" class="link-blue"><%= image_tag "arrow-darkblue.svg" %> <%= lien %></a><br><br>
+      <% end %>
+  </div>
+  <hr class="bhl">
 </div>
