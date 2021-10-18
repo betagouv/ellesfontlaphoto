@@ -23,7 +23,6 @@ conseils_videos = ConseilsVideo.new(
   protagoniste: "Marie Docher"
   )
 conseils_videos.save
-  sleep(2)
 
 conseils_articles = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
@@ -37,13 +36,14 @@ conseils_articles = ConseilsArticle.new(
   perspective: "Sit voluptatum maiores eos earum tempore est nemo illum est asperiores totam sit perspiciatis nihil rem mollitia quos ut natus voluptas. Est rerum modi 33 facilis consequatur ut perspiciatis delectus ut unde ipsa quo sunt rerum ut nemo neque vel rerum itaque. Et officia sunt aut rerum sunt nam rerum quia quidem eligendi aut quae voluptas.,
   Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   citation: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
-  a_retenir: "Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
+  citation_auteur: "Paul Ochon, Conseiller DRAC",
+  a_retenir: ["Quo praesentium magnam rem nisi exercitationem", "aut atque accusamus. Ab fugiat sunt sit sunt", "quas et fugiat cum aliquid corporis."],
   liens_utiles:["www.google.fr","www.facebook.com"],
-  auteur: "Laurie Chapotte",
+  auteur: "Jenn Stephan et Paul Vautrin",
   sources: ["Laurie Chapotte","Google.fr"]
   )
 conseils_articles.save
-sleep(2)
+
 conseils_videos1 = ConseilsVideo.new(
   title: "La place dans la profession",
   subtitle: "La place dans la profession son soustitre",
@@ -61,7 +61,7 @@ conseils_videos1 = ConseilsVideo.new(
   protagoniste: "Marie Docher"
   )
 conseils_videos1.save
-sleep(2)
+
 conseils_articles1 = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
@@ -74,9 +74,10 @@ conseils_articles1 = ConseilsArticle.new(
   perspective: "Sit voluptatum maiores eos earum tempore est nemo illum est asperiores totam sit perspiciatis nihil rem mollitia quos ut natus voluptas. Est rerum modi 33 facilis consequatur ut perspiciatis delectus ut unde ipsa quo sunt rerum ut nemo neque vel rerum itaque. Et officia sunt aut rerum sunt nam rerum quia quidem eligendi aut quae voluptas.,
   Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
   citation: "Lorem ipsum dolor sit amet. Id accusamus omnis ut veniam perferendis et impedit ratione! Nihil asperiores sed consequuntur nemo non sint ducimus ut dolorem omnis sit consequuntur voluptatem eos exercitationem molestiae ut velit distinctio.",
-  a_retenir: "Quo praesentium magnam rem nisi exercitationem aut atque accusamus. Ab fugiat sunt sit sunt quas et fugiat cum aliquid corporis.",
+  citation_auteur: "Paul Ochon, Conseiller DRAC",
+  a_retenir: ["Quo praesentium magnam rem nisi exercitationem", "aut atque accusamus. Ab fugiat sunt sit sunt", "quas et fugiat cum aliquid corporis."],
   liens_utiles:["www.google.fr","www.facebook.com"],
-  auteur: "Laurie Chapotte",
+  auteur: "Laurie Chapotte et Paul Vautrin",
   sources: ["Laurie Chapotte","Google.fr"]
   )
 conseils_articles1.save
