@@ -3,30 +3,30 @@
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_video.category.each do |category| %>
       <% if category == "Administratif" %>
-        <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"> 💸 <%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
       <% if category == "Financier" %>
-        <a href="/conseils?category=Financier&tags%5B%5D="><p class="conseil-tag"> 💸 <%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Financier&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
       <% if category == "Technique" %>
-        <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"> 💸 <%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
       <% if category == "Matrimoine" %>
-        <a href="/conseils?category=Matrimoine&tags%5B%5D="><p class="conseil-tag"> 💸 <%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Matrimoine&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
     <% @conseil_video.tags.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
-        <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag"> 💸 Commencer mon activité</p></a>
+        <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag">Commencer mon activité</p></a>
       <% end %>
       <% if tag == "Me former" %>
-        <a href="/conseils?category=&tags%5B%5D=Me+former&tags%5B%5D="><p class="conseil-tag"> 💸 Me former </p></a>
+        <a href="/conseils?category=&tags%5B%5D=Me+former&tags%5B%5D="><p class="conseil-tag">Me former </p></a>
       <% end %>
       <% if tag == "Gérer ma carrière" %>
-        <a href="/conseils?category=&tags%5B%5D=Gérer+ma+carrière&tags%5B%5D="><p class="conseil-tag"> 💸 Gérer ma carrière</p></a>
+        <a href="/conseils?category=&tags%5B%5D=Gérer+ma+carrière&tags%5B%5D="><p class="conseil-tag">Gérer ma carrière</p></a>
       <% end %>
       <% if tag == "Sensibiliser pour l'égalité" %>
-        <a href="conseils?category=&tags%5B%5D=Sensibiliser+pour+l%27égalité&tags%5B%5D="><p class="conseil-tag"> 💸 Sensibiliser pour l'égalité</p></a>
+        <a href="conseils?category=&tags%5B%5D=Sensibiliser+pour+l%27égalité&tags%5B%5D="><p class="conseil-tag">Sensibiliser pour l'égalité</p></a>
       <% end %>
     <% end %>
   </div>

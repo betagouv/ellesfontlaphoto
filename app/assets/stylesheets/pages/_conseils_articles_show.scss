@@ -1,0 +1,101 @@
+@import "config/colors";
+@import "config/fonts";
+
+.div-banner-conseils-article {
+  background-color: $rouille;
+  position: relative;
+  padding-top: 2.5rem;
+  .flex-div-left {
+    padding: 0 3em 0 3em;
+  }
+  a {
+    color: $black !important;
+  }
+  .banner-show {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 3em 5em 3em;
+    .conseils-article-description {
+      p {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.conseil-tag {
+  font-family: 'Marianne-Regular', sans-serif;
+  background-color: $white;
+  display: table !important;
+  padding: 5px 17px;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-right: 10px;
+  &:hover {
+    box-shadow: 0 0 6px rgba(1,1,1,0.5);
+  }
+}
+
+ul li {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-title {
+  width: 60%;
+}
+
+.arrondis-conseils-articles {
+  background-color: $rouille;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  width: 100%;
+  height: 100px;
+}
+
+.conseils-article-content {
+  margin: 0 auto;
+  padding: 5% 20% 5% 20%;
+}
+
+.bhl {
+  border-top: 0.1px solid $rouille;
+  border-style: outset;
+  margin: 40px 0;
+}
+
+.quote {
+  margin: 60px 0;
+  p {
+    display: block;
+    margin: 0px 60px 40px 100px;
+    padding: 0px 0px 0px 20px;
+    float: none;
+    justify-content: center;
+    border-style: none none none solid;
+    border-width: 1px 1px 1px 5px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 5px;
+    border-color: #000 #000 #000 $rouille;
+    transition: opacity 200ms ease;
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 36px;
+    color: $black;
+    text-align: left;
+    text-decoration: none;
+    column-count: 0;
+    column-rule-color: $rouille;
+    column-rule-style: solid;
+    white-space: normal;
+    background-clip: border-box;
+    object-fit: fill;
+    span {
+      font-size: 18px;
+    }
+  }
+}
