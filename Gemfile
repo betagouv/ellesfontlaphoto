@@ -53,6 +53,8 @@ gem "sentry-raven"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+gem 'acts-as-taggable-on'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
