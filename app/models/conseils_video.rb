@@ -1,5 +1,7 @@
 class ConseilsVideo < ApplicationRecord
 
+  acts_as_taggable_on :tags
+
   CONSEIL_CATEGORIES = {
     "Administratif": "📕 administratif",
     "Financier": "🤑 financiers",

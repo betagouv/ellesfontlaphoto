@@ -62,13 +62,7 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">À retenir: </p>
-    <!-- <p class="paragraphe background-rouille"> -->
-      <ul class="paragraphe background-rouille">
-        <% @conseil_article.a_retenir.each do |element|%>
-          <li><%= element %></li>
-        <% end %>
-      </ul>
-    <!-- </p> -->
+    <p class="paragraphe background-rouille"><%= @conseil_article.a_retenir %></p>
   </div>
   <hr class="bhl">
   <div class="block-conseils-article">
@@ -80,7 +74,7 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="main-bold-paragraphe text-align-left">Sources</p>
-    <p class="paragraphe"><%= @conseil_article.sources.join(", ") %></p>
+    <p class="paragraphe"><%= @conseil_article.sources %></p>
     <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
     <p class="paragraphe"><%= @conseil_article.auteur %></p>
   </div>
