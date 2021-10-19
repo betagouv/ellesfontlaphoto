@@ -24,11 +24,9 @@
   <% end %>
   <div class="ici"></div>
   <% if @selected_tag.present? %>
-    <% @selected_tag.each do |selected_tag| %>
-      <%= text_field_tag "tags[]", params[:tags], value: [selected_tag] %>
-    <% end %>
+    <%= text_field_tag :tag_list, @selected_tag %>
   <% else %>
-    <%= text_field_tag "tags[]", params[:tags], value: nil %>
+    <%= text_field_tag :tag_list %>
   <% end %>
   <%= submit_tag "Search"%>
 <% end %>
@@ -54,7 +52,7 @@
       <div class="box-criteria">
         <p class="main-bold-paragraphe text-align-left">Précisez votre recherche:</p>
         <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
-          <% unless params[:tags].include?(tag) %>
+          <% unless params[:tag_list].include?(tag) %>
             <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
           <% end %>
         <% end %>
