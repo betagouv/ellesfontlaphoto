@@ -1,25 +1,13 @@
 ActiveAdmin.register ConseilsArticle do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
   permit_params :title, :subtitle, :category, :tags, :objectif, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :sources, :auteur, :citation_auteur, :a_retenir
-  #
-  # or
-  #
   # permit_params do
   #   permitted = [:title, :subtitle, :category, :tags, :objectif, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :sources, :auteur, :citation_auteur, :a_retenir]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
 
-  before_create do
-    raise
-  end
-
-  before_update do
+  before_save do
     params[:conseils_article][:tags] = params[:conseils_article][:tags].reject(&:empty?)
     params[:conseils_article][:category] = params[:conseils_article][:category].reject(&:empty?)
     params[:conseils_article][:liens_utiles] = params[:conseils_article][:liens_utiles].split(",").reject(&:empty?)
@@ -58,7 +46,7 @@ ActiveAdmin.register ConseilsArticle do
       f.input :a_retenir, as: :quill_editor
     end
     f.inputs "Liens utiles" do
-      f.array :liens_utiles, as: :array
+      f.input :liens_utiles
     end
     f.inputs "Sources" do
       f.input :sources, as: :quill_editor
