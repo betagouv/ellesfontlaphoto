@@ -12,6 +12,7 @@ class ConseilsPratiquesController < ApplicationController
       @selected = params[:category]
       @searched = true
     end
+    # raise
     if params[:tag_list].present?
       @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
       @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
