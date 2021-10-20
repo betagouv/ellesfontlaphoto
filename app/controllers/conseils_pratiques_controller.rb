@@ -13,14 +13,12 @@ class ConseilsPratiquesController < ApplicationController
       @searched = true
     end
     # raise
-    if params[:tags].present?
-      if params[:tags].reject { |t| t.empty? }.present?
-        @conseil_articles = @conseil_articles.where("tags @> ARRAY[?]::varchar[]", params[:tags].reject { |t| t.empty? }.collect(&:strip)).order(created_at: :asc)
-        @conseil_videos = @conseil_videos.where("tags @> ARRAY[?]::varchar[]", params[:tags].reject { |t| t.empty? }.collect(&:strip)).order(created_at: :asc)
-        @conseils = @conseil_articles + @conseil_videos
-        @selected_tag = params[:tags].reject { |t| t.empty? }.collect(&:strip)
-        @searched = true
-      end
+    if params[:tag_list].present?
+      @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
+      @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
+      @conseils = @conseil_articles + @conseil_videos
+      @selected_tag = params[:tag_list]
+      @searched = true
     end
     @conseils_count = @conseils.count
   end
