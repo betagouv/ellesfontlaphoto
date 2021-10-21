@@ -18,9 +18,9 @@
 </div>
 <%= form_tag conseils_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>
-    <%= text_field_tag :category, params[:category], value: @selected %>
+    <%= text_field_tag :category_list, @selected %>
   <% else %>
-    <%= text_field_tag :category, params[:category] %>
+    <%= text_field_tag :category_list %>
   <% end %>
   <div class="ici"></div>
   <% if @selected_tag.present? %>

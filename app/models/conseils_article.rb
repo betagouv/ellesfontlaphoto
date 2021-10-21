@@ -1,6 +1,6 @@
 class ConseilsArticle < ApplicationRecord
 
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :tags, :category
 
   CONSEIL_CATEGORIES = {
     "Administratif": "📕 administratif",

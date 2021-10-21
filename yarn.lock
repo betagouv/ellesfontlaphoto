@@ -1173,6 +1173,10 @@ acorn@^6.4.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.2.tgz#35866fd710528e92de10cf06016498e47e39e1e6"
   integrity sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ==
 
+activeadmin_quill_editor@blocknotes/activeadmin_quill_editor:
+  version "0.3.4"
+  resolved "https://codeload.github.com/blocknotes/activeadmin_quill_editor/tar.gz/1cad5a10c3eb890ff5645e01d4c5138b0e92eb95"
+
 aggregate-error@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/aggregate-error/-/aggregate-error-3.1.0.tgz#92670ff50f5359bdb7a3e0d40d0ec30c5737687a"
