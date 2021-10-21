@@ -1,5 +1,4 @@
 p "Destroy elements"
-AdminUser.destroy_all
 Help.destroy_all
 ConseilsVideo.destroy_all
 ConseilsArticle.destroy_all
@@ -1621,6 +1620,3 @@ help43 = Help.new(
   )
 
 help43.save
-
-p "Create admin users"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
