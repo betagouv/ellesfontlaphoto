@@ -42,7 +42,7 @@ const updateInputCategories = () => {
 
   dropdownElementsCategories.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#category").value = categories[element.innerHTML];
+      document.querySelector("#category_list").value = categories[element.innerHTML];
       document.querySelector("#select-search-category").innerHTML = element.innerHTML;
       document.querySelector("#select-search-category").classList.add("choosen");
       document.getElementById("dropdown-elements-category").classList.toggle("show");

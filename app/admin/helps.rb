@@ -16,11 +16,11 @@ ActiveAdmin.register Help do
   # end
 
   index do
+    column :identifiant
     column :title
-    column :structure_name
-    column :description
+    column :residence_condition
     column :sector
-    column :help_amount
+    column :description
     column :start_date
     column :end_date
     actions
