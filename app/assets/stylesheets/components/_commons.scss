@@ -51,6 +51,11 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 1rem;
   color: $black;
+  p {
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 1rem;
+    color: $black;
+  }
 }
 
 .paragraphe-bold {
@@ -129,6 +134,16 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   text-decoration: none;
   font-size: 1rem;
+  ul li a {
+    color: $dark-blue !important;
+    font-family: 'Marianne-Regular', sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+    &::before {
+      background-image: url('arrow-darkblue.svg');
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 .link-blue-underlined {

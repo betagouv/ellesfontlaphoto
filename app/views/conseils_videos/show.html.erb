@@ -1,7 +1,7 @@
 <div class=div-banner-conseils-video>
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
-    <% @conseil_video.category.each do |category| %>
+    <% @conseil_video.category_list.each do |category| %>
       <% if category == "Administratif" %>
         <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
@@ -15,7 +15,7 @@
         <a href="/conseils?category=Matrimoine&tags%5B%5D="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
-    <% @conseil_video.tags.each do |tag| %>
+    <% @conseil_video.tag_list.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
         <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag">Commencer mon activité</p></a>
       <% end %>
@@ -36,9 +36,9 @@
       <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="conseils-video-description">
-      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée:</span><%= @conseil_video.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs:</span><%= @conseil_video.objectif %></p>
-      <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo:</span><%= @conseil_video.format %></p>
+      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée: </span><%= @conseil_video.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs: </span><%= @conseil_video.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo: </span><%= @conseil_video.format %></p>
     </div>
   </div>
   <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "video-tag" %>
@@ -59,9 +59,9 @@
   <hr class="bhl">
   <div class="block-conseils-video">
     <p class="main-bold-paragraphe text-align-left">Elle vous en a parlé</p>
-      <% @conseil_video.liens_utiles.each do |lien| %>
-        <a href="<%= lien %>" class="link-blue"><%= image_tag "arrow-darkblue.svg" %> <%= lien %></a><br><br>
-      <% end %>
+    <% if @conseil_video.liens_utiles %>
+      <div class="link-blue"><%= @conseil_video.liens_utiles.html_safe %></div>
+    <% end %>
   </div>
   <hr class="bhl">
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_131464) do
+ActiveRecord::Schema.define(version: 2021_10_21_124445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,37 +79,54 @@ ActiveRecord::Schema.define(version: 2021_10_19_131464) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "conseils", force: :cascade do |t|
+    t.string "title"
+    t.string "category", default: [], array: true
+    t.string "tags", default: [], array: true
+    t.text "introduction"
+    t.string "objectif"
+    t.string "lecture_time"
+    t.text "explication"
+    t.text "perspective"
+    t.text "citation"
+    t.string "video_title"
+    t.string "video_time"
+    t.text "to_remember"
+    t.text "useful_link"
+    t.string "en_savoir_plus"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "conseils_articles", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
-    t.string "category", default: [], array: true
     t.string "objectif"
     t.integer "lecture_time"
     t.text "introduction"
     t.text "explication"
     t.text "perspective"
     t.text "citation"
-    t.text "liens_utiles", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "auteur"
     t.string "citation_auteur"
     t.string "a_retenir"
     t.string "sources"
+    t.string "liens_utiles"
   end
 
   create_table "conseils_videos", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
-    t.string "category", default: [], array: true
     t.string "format"
     t.string "objectif"
     t.integer "lecture_time"
     t.text "contenu_explication"
-    t.text "liens_utiles", default: [], array: true
     t.string "protagoniste"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "liens_utiles"
   end
 
   create_table "contacts", force: :cascade do |t|

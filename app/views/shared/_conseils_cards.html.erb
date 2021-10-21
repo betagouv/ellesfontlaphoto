@@ -4,16 +4,20 @@
       <%= link_to conseils_article_path(conseil) do %>
         <div class="flottante-div">
           <div class="flottante">
-            <% conseil.category.each do |category| %>
+            <% conseil.category_list.each do |category| %>
               <% if category == "Administratif" %>
                 📕
-              <% elsif category == "Financier" %>
+              <% end %>
+              <% if category == "Financier" %>
                 🤑
-              <% elsif category == "Rôle modèles" %>
+              <% end %>
+              <% if category == "Rôle modèles" %>
                 🌟
-              <% elsif category == "Technique" %>
+              <% end %>
+              <% if category == "Technique" %>
                 🛠
-              <% elsif category == "Matrimoine" %>
+              <% end %>
+              <% if category == "Matrimoine" %>
                 👑
               <% end %>
             <% end %>
@@ -35,16 +39,20 @@
         </div>
         <div class="flottante-div">
           <div class="flottante">
-            <% conseil.category.each do |category| %>
+            <% conseil.category_list.each do |category| %>
               <% if category == "Administratif" %>
                 📕
-              <% elsif category == "Financier" %>
+              <% end %>
+              <% if category == "Financier" %>
                 🤑
-              <% elsif category == "Rôle modèles" %>
+              <% end %>
+              <% if category == "Rôle modèles" %>
                 🌟
-              <% elsif category == "Technique" %>
+              <% end %>
+              <% if category == "Technique" %>
                 🛠
-              <% elsif category == "Matrimoine" %>
+              <% end %>
+              <% if category == "Matrimoine" %>
                 👑
               <% end %>
             <% end %>
