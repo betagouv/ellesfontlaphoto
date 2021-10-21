@@ -60,6 +60,9 @@ ul li {
     background-color: $hover-pink;
     padding-top: 10px;
     padding-bottom: 10px;
+    ul {
+      margin-bottom: 0;
+    }
   }
 }
 

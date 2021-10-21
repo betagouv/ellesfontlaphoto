@@ -41,7 +41,8 @@ ActiveAdmin.register ConseilsArticle do
     attributes_table do
       row :title
       row :subtitle
-      row :category
+      row :category_list
+      row :tag_list
       row :objectif
       row :lecture_time
       row :introduction
@@ -53,7 +54,6 @@ ActiveAdmin.register ConseilsArticle do
       row :citation_auteur
       row :a_retenir
       row :sources
-      row :tag_list
     end
   end
 
@@ -80,19 +80,19 @@ ActiveAdmin.register ConseilsArticle do
       f.input :objectif
     end
     f.inputs "Introduction" do
-      f.input :introduction
+      f.input :introduction, as: :quill_editor
     end
     f.inputs "En détails" do
-      f.input :explication
-      f.input :perspective
+      f.input :explication, as: :quill_editor
+      f.input :perspective, as: :quill_editor
       f.input :citation
       f.input :citation_auteur
     end
     f.inputs "A retenir" do
-      f.input :a_retenir
+      f.input :a_retenir, as: :quill_editor
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles
+      f.input :liens_utiles, as: :quill_editor
     end
     f.inputs "Sources et Autrices/Auteurs" do
       f.input :sources

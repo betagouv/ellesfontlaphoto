@@ -78,13 +78,13 @@ ActiveAdmin.register ConseilsVideo do
     end
     f.inputs "Description" do
       f.input :subtitle
-      f.input :objectif
+      f.input :objectif, as: :quill_editor
     end
     f.inputs "Protagoniste" do
-      f.input :contenu_explication
+      f.input :contenu_explication, as: :quill_editor
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles
+      f.input :liens_utiles, as: :quill_editor
     end
     f.actions
   end
