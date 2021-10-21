@@ -69,6 +69,7 @@ ActiveAdmin.register ConseilsArticle do
   end
 
   form do |f|
+    f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys
