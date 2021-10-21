@@ -5,11 +5,11 @@ class ConseilsPratiquesController < ApplicationController
     @last_date_updated = [@conseil_articles.all.order(:created_at).last.created_at, @conseil_videos.all.order(:created_at).last.created_at.strftime("%d/%m/%Y")].max.strftime("%d/%m/%Y")
     @conseils = @conseil_articles + @conseil_videos
     @searched = false
-    if params[:category].present?
-      @conseil_articles = @conseil_articles.where("category @> ?", "{#{params[:category]}}").order(created_at: :asc)
-      @conseil_videos = @conseil_videos.where("category @> ?", "{#{params[:category]}}").order(created_at: :asc)
+    if params[:category_list].present?
+      @conseil_articles = @conseil_articles.where("category @> ?", "{#{params[:category_list]}}").order(created_at: :asc)
+      @conseil_videos = @conseil_videos.where("category @> ?", "{#{params[:category_list]}}").order(created_at: :asc)
       @conseils = @conseil_articles + @conseil_videos
-      @selected = params[:category]
+      @selected = params[:category_list]
       @searched = true
     end
     # raise

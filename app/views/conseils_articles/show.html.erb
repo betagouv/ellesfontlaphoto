@@ -1,7 +1,7 @@
 <div class=div-banner-conseils-article>
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
-    <% @conseil_article.category.each do |category| %>
+    <% @conseil_article.category_list.each do |category| %>
       <% if category == "Administratif" %>
         <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
@@ -15,7 +15,7 @@
         <a href="/conseils?category=Matrimoine&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
-    <% @conseil_article.tags.each do |tag| %>
+    <% @conseil_article.tag_list.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
         <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag"> Commencer mon activité</p></a>
       <% end %>
@@ -52,7 +52,6 @@
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
-    <p class="paragraphe"><%= @conseil_article.objectif %></p>
     <p class="paragraphe"><%= @conseil_article.explication %></p>
     <p class="paragraphe"><%= @conseil_article.perspective %></p>
     <div class="quote">
