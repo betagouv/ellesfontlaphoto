@@ -8,7 +8,7 @@ p "Create helps"
 conseils_videos = ConseilsVideo.new(
   title: "La place dans la profession",
   subtitle: "La place dans la profession son soustitre",
-  category: ["Administratif"],
+  category_list: ["Administratif"],
   tag_list:["Commencer mon activité", "Sensibiliser pour l'égalité"],
   format: "Thematique",
   objectif: "Aider a comprendre la situation grace a cette video",
@@ -26,7 +26,7 @@ conseils_videos.save
 conseils_articles = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
-  category: ["Matrimoine"],
+  category_list: ["Matrimoine"],
   tag_list: ["Me former"],
   objectif: "Adapter sa candidate aux attentes des services publics",
   lecture_time: 2,
@@ -46,7 +46,7 @@ conseils_articles.save
 conseils_videos1 = ConseilsVideo.new(
   title: "La place dans la profession",
   subtitle: "La place dans la profession son soustitre",
-  category: ["Financier"],
+  category_list: ["Financier"],
   tag_list:["Commencer mon activité", "Sensibiliser pour l'égalité", "Me former"],
   format: "Thematique",
   objectif: "Aider a comprendre la situation grace a cette video",
@@ -64,7 +64,7 @@ conseils_videos1.save
 conseils_articles1 = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
-  category: ["Financier"],
+  category_list: ["Financier"],
   tag_list: ["Me former", "Commencer mon activité"],
   objectif: "Adapter sa candidate aux attentes des services publics",
   lecture_time: 2,
