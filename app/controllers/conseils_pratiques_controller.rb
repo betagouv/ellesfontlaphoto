@@ -6,8 +6,8 @@ class ConseilsPratiquesController < ApplicationController
     @conseils = @conseil_articles + @conseil_videos
     @searched = false
     if params[:category_list].present?
-      @conseil_articles = @conseil_articles.where("category @> ?", "{#{params[:category_list]}}").order(created_at: :asc)
-      @conseil_videos = @conseil_videos.where("category @> ?", "{#{params[:category_list]}}").order(created_at: :asc)
+      @conseil_articles = @conseil_articles.tagged_with(params[:category_list])
+      @conseil_videos = @conseil_videos.tagged_with(params[:category_list])
       @conseils = @conseil_articles + @conseil_videos
       @selected = params[:category_list]
       @searched = true

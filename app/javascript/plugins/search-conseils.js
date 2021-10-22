@@ -23,7 +23,7 @@ const updateInputCategories = () => {
     "🤑 financiers": "Financier",
     "🌟 rôle modèles": "Rôle modèles",
     "🛠 technique": "Technique",
-    "👑 matrimoine": "Matrimoine"
+    "✨️ parcours inspirant": "Parcours"
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
@@ -75,7 +75,7 @@ const changeCategory = () => {
     "🤑 financiers",
     "🌟 rôle modèles",
     "🛠 technique",
-    "👑 matrimoine"
+    "✨️ parcours inspirant"
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-category");
