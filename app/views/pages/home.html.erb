@@ -26,7 +26,7 @@
   </div>
 </div>
 <div class="second-block" id="comment">
-  <p class="subtitle">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
+  <p class="subtitle-spectral">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
   <div class="flex-div">
     <a class="button-helps" href="/helps"> 💸 Trouver mes aides</a>
     <div class="exemple-helps">
@@ -34,18 +34,30 @@
         <%= render "shared/helps_cards", helps: @helps %>
       </div>
     </div>
+    <a class="button-helps-mobile" href="/helps"> 💸 Trouver mes aides</a>
   </div>
 </div>
 <div class="third-block flex-div">
   <div class="third-block-div">
-    <p class="paragraphe-bold">⏳ À venir :</p>
-    <p class="subtitle">Trouvez les fiches pratiques et témoignages correspondant à votre besoin. <span class="weight-normal">Gérer son budget, créer son portfolio, conseils pour les appels à projet…  </span></p>
+    <a class="button-conseils" href="/conseils"> 🤝 Conseils & témoignages</a>
+    <p class="subtitle-spectral">Pour présenter son portfolio, estimer ses cotisations d’artiste-auteur, s’inspirer d’expériences…</p>
+    <a class="button-conseils-mobile" href="/conseils"> 🤝 Conseils & témoignages</a>
+    <p class="paragraphe"><span style="line-height: 80px;">Thématiques:</span>
+      <a href="/conseils?category_list=Administratif&tag_list=" class="conseil-tag-home">📕 administratif</a>
+      <a href="/conseils?category_list=Financier&tag_list=" class="conseil-tag-home">🤑 finances</a href="">
+      <a href="/conseils?category_list=Technique&tag_list=" class="conseil-tag-home">🕹 technique</a href="">
+      <a href="/conseils?category_list=Parcours&tag_list=" class="conseil-tag-home">✨️ parcours inspirant</a href="">
+    </p>
   </div>
-  <p class="paragraphe">L’équipe #Ellesfontlaculture travaille de pair avec les institutions publiques et privées pour vous fournir un contenu de qualité afin de vous accompagner tout au long de votre parcours.</p>
+  <%= image_tag "illu-home-5.png", class: "illu-home-5"%>
 </div>
 <div class="fourth-block">
+  <div class="title-chiffre-mobile">
+    <p class="paragraphe-bold">Nos chiffres:
+    </p>
+  </div>
   <div class="flex-div">
-    <div>
+    <div class="title-chiffre">
       <p class="paragraphe-bold">Nos chiffres:
       </p>
     </div>

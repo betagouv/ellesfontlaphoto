@@ -7,7 +7,7 @@ class ConseilsArticle < ApplicationRecord
     "Financier": "🤑 financiers",
     "Rôle modèles": "🌟 rôle modèles",
     "Technique": "🛠 technique",
-    "Matrimoine":  "👑 matrimoine"
+    "Parcours": "✨️ parcours inspirant"
   }
 
   CONSEIL_TAGS = ["Commencer mon activité", "Me former", "Gérer ma carrière", "Sensibiliser pour l'égalité"]
