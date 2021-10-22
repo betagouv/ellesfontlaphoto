@@ -56,7 +56,6 @@
 
 @media only screen and (max-width: 1250px) {
   .footer {
-    display: block;
     padding: 3%;
     .logo-footer {
       justify-content: flex-start;
@@ -83,3 +82,31 @@
   }
 }
 
+@media only screen and (max-width: 750px) {
+  .footer {
+    display: block;
+    padding: 3%;
+    .logo-footer {
+      justify-content: flex-start;
+      img {
+        width: 120px;
+      }
+    }
+    .div-link-footer {
+      .links-footer {
+        .vl {
+          margin: 0 5px;
+        }
+      }
+      p {
+        font-size: 10px;
+      }
+      .links-footer {
+        a {
+          font-size: 10px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

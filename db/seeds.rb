@@ -26,7 +26,7 @@ conseils_videos.save
 conseils_articles = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
-  category_list: ["Matrimoine"],
+  category_list: ["Parcours"],
   tag_list: ["Me former"],
   objectif: "Adapter sa candidate aux attentes des services publics",
   lecture_time: 2,

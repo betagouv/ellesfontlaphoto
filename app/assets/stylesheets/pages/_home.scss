@@ -54,11 +54,6 @@
 
   }
 
-  .bhl.home {
-    width: 77%;
-    position: absolute;
-  }
-
   .illu-home-1 {
     position: absolute;
     width: 200px;
@@ -83,8 +78,10 @@
 }
 
   .bhl.home {
-    max-width: 80%;
+    width: 80%;
+    position: absolute;
     margin: 0 auto;
+    border-top: 0.1px solid $purple;
   }
 
 /*----------------------------------------*/
@@ -139,6 +136,9 @@
         background-color: $light-black;
       }
     }
+    .button-helps-mobile {
+      display:none;
+    }
     .exemple-helps {
       width: 70%;
       justify-content: center;
@@ -170,11 +170,46 @@
 
 .third-block {
   padding: 2% 10%;
+  .third-block-div {
+    min-width: 50%;
+    .button-conseils {
+      width: max-content;
+      background-color: $black;
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 1rem;
+      display: flex;
+      cursor: pointer;
+      color: $white !important;
+      margin: 0 30px 40px 0;
+      &:hover {
+        background-color: $light-black;
+      }
+    }
+    .button-conseils-mobile {
+      display: none;
+    }
+    .conseil-tag-home {
+      font-family: 'Marianne-Regular', sans-serif;
+      background-color: $white;
+      padding: 5px 17px;
+      border-radius: 50px;
+      font-size: 1rem;
+      margin-right: 10px;
+      border: 1px solid $rouille;
+      color: $black;
+      &:hover {
+        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      }
+    }
+  }
+  .illu-home-5 {
+    max-width: 55%;
+    margin-left: 5%;
+  }
 }
 
-.third-block-div {
-  min-width: 50%;
-}
 
 /*----------------------------------------*/
 // FOURTH BLOCK
@@ -184,6 +219,12 @@
   background-color: $very-light-purple;
   border-top: 1px solid $purple;
   border-bottom: 1px solid $purple;
+  .title-chiffre-mobile {
+    display:none;
+  }
+  .title-chiffre {
+    display: block;
+  }
   .flex-div {
     align-items: flex-start;
   }
@@ -265,16 +306,236 @@
   }
 }
 /*----------------------------------------*/
-// RESPONSIVE
+// RESPONSIVE IPAD
 
 @media only screen and (max-width: 1250px) {
   .banner {
-    padding: 7em 0 3em 0;
+    padding: 10em 10em 10em 10em;
+    .illu-home-1 {
+      width: 20%;
+    }
+    .illu-home-3 {
+      top: 63%;
+      width: 36%;
+    }
+    .illu-home-2 {
+      width: 13%;
+      top: 2%;
+    }
+    h1 {
+      line-height: 1.5em;
+      text-align: center;
+      font-size: 4rem;
+      .underline-pink {
+        box-shadow: $white 0px -1.2rem 0px inset, inset 0 -3rem 0 $rouille;
+      }
+      .underline-purple {
+        box-shadow: $white 0px -1.2rem 0px inset, inset 0 -3rem 0 $purple;
+      }
+    }
+  }
+
+  .bhl.home {
+    width: 80%;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    text-align:center;
+  }
+
+  .paragraphe {
+    color: #1a1b1f;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .first-block {
+    padding: 5%;
+    .first-block-left {
+      min-width: 47%;
+      .subtitle {
+        text-align: left;
+      }
+    }
+    .first-block-right {
+      max-width: 46%;
+      p .icones {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  .second-block {
+    padding: 5% 2%;
+    .subtitle-spectral {
+      text-align: center;
+    }
+    .flex-div {
+      justify-content: center;
+      margin-top: 10px;
+      .button-helps {
+        margin: 0 auto;
+        min-width: 28%;
+        justify-content: center;
+      }
+      .button-helps-mobile {
+        display:none;
+      }
+      .exemple-helps {
+        width: 100%;
+        margin-top: 40px;
+        .cards {
+          // grid-template-columns: 1fr 1fr 1fr;
+          .card-index-helps a .flottante-div {
+            .flottante {
+              font-size: 1rem;
+            }
+            .flottante2 {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .third-block.flex-div {
+    margin: 0;
+  }
+
+  .third-block {
+    text-align: center;
+    padding: 5% 2%;
+
+    .third-block-div {
+      .button-conseils {
+        display:none !important;
+      }
+      .button-conseils-mobile {
+        display: block !important;
+        width: max-content;
+        background-color: $black;
+        border-radius: 40px;
+        padding: 10px 20px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 1rem;
+        display: flex;
+        cursor: pointer;
+        color: $white !important;
+        margin: 0 auto 30px auto;
+      }
+      // .button-conseils {
+      //   margin: 0 auto 25px;
+      // }
+    }
+    .illu-home-5 {
+      max-width: 90%;
+    }
+    .paragraphe {
+      .conseil-tag-home {
+        margin:0;
+        padding: 5px 12px;
+        margin-bottom: 20px !important;
+      }
+    }
+  }
+
+  .fourth-block {
+    padding: 10% 6% 6% 6%;
+    .flex-div {
+      display: flex;
+      .div-chiffre {
+        .chiffre {
+          font-size: 60px;
+        }
+        margin-bottom: 20px;
+        max-width: 33%;
+        text-align: center;
+      }
+    }
+    .title-chiffre-mobile {
+      display:block;
+      text-align: center;
+    }
+    .title-chiffre {
+      display: none;
+    }
+  }
+
+  .flex-div {
+    display:block;
+  }
+
+  .contact-block.last {
+    display: none
+  }
+
+  .contact-block {
+    .contact-div {
+      border-bottom: 1px solid $dark-blue;
+      .manifesto-div {
+        width: 100%;
+        padding:0;
+      }
+    }
+
+    .manifesto-div {
+      border-bottom: 1px solid $dark-blue;
+      padding-bottom: 60px !important;
+      .paragraphe {
+        padding: 0 2%;
+      }
+    }
+    .btn-manifesto-mobile {
+      display: block;
+      text-align: center;
+      .btn-manifesto {
+        margin-bottom: 20px !important;
+        padding: 10px 15px;
+      }
+      .illu-home-4 {
+        bottom: -3%;
+        width: 60%;
+      }
+    }
+    .btn-contact-mobile {
+      display: block;
+      text-align: center;
+      button {
+        background-color: $purple;
+        border-radius: 40px;
+        padding: 15px 15px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 1rem;
+        margin-bottom: 20px !important;
+        cursor: pointer;
+        color: $black !important;
+        margin: 0 auto;
+        min-width: 165px;
+        margin-right: 30px;
+        font-weight: normal;
+        background-image: none;
+        text-shadow: none;
+        border : none;
+      }
+    }
+  }
+}
+
+// RESPONSIVE PHONE
+
+@media only screen and (max-width: 750px) {
+  .banner {
+    padding: 12em 0 10em 0;
     .illu-home-1 {
       width: 120px;
     }
     .illu-home-3 {
-      top: 70%;
+      width: 45%;
+      top: 67%;
     }
     .illu-home-2 {
       width: 70px;
@@ -309,25 +570,75 @@
 
   .first-block {
     display: block;
-    text-align: center;
+    padding: 5% 10%;
+    .first-block-left {
+      min-width: 100%;
+      .paragraphe-bold,.subtitle,.paragraphe-spectral-italic {
+        text-align: center;
+      }
+    }
+    .paragraphe-spectral-italic {
+      border-bottom: 1px solid $purple;
+      padding-bottom: 10%;
+    }
+    .first-block-right {
+      text-align: center;
+    }
     div {
       min-width: 100%;
     }
   }
 
   .second-block {
+    padding: 5% 6%;
     .flex-div {
       justify-content: center;
-      .button-helps {
-        margin: 0;
-        margin-bottom: 40px;
+      .button-helps-mobile {
+        display : block;
+        margin: 30px auto 40px auto;
+        max-width: 50%;
         justify-content: center;
+        background-color: $black;
+        border-radius: 40px;
+        padding: 10px 20px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        color: $white !important;
+        text-align: center;
+      }
+      .button-helps {
+        display:none;
+      }
+      .exemple-helps {
+        display: block;
+        .cards,.card-index-helps {
+          a  {
+            .main-bold-paragraphe.mb30 {
+              margin-bottom: 10px;
+              text-align: center;
+            }
+            .arrow {
+              margin-top: 7%;
+            }
+          }
+        }
       }
     }
   }
 
   .third-block, .fourth-block {
     text-align: center;
+    .flex-div {
+      display:block;
+    }
+    .paragraphe {
+      .conseil-tag-home {
+        margin:0;
+        padding: 5px 12px;
+        display: inline-flex;
+      }
+    }
     .div-chiffre {
       min-width: 100%;
       margin-bottom: 20px;
@@ -345,51 +656,38 @@
   .contact-block {
     display: block;
     .contact-div {
-      border: none;
+      border-bottom: 1px solid $purple;
     }
     .contact-div, .manifesto-div {
       width: 100%;
-      padding:0;
-      // margin-bottom: 60px;
+      padding: 0;
+      border-right: 0;
+      .subtitle {
+        text-align: left;
+        padding: 0 6%;
+      }
+      .paragraphe {
+        text-align: left;
+        padding: 0 6%;
+      }
     }
 
     .manifesto-div {
       border-bottom: 1px solid $dark-blue;
-      padding-bottom: 60px !important;
-      .paragraphe {
-        padding: 0 2%;
-      }
+      padding-bottom: 10em !important;
     }
     .btn-manifesto-mobile {
-      display: block;
-      text-align: center;
-      .btn-manifesto {
-        margin-bottom: 20px !important;
-      }
+      text-align: left;
+      padding: 0 6%;
       .illu-home-4 {
-        bottom: -3%;
-        width: 35%;
+        width: 48%;
       }
     }
     .btn-contact-mobile {
       display: block;
-      text-align: center;
+      text-align: left;
       button {
-        background-color: $purple;
-        border-radius: 40px;
-        padding: 15px 25px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 1rem;
-        margin-bottom: 20px !important;
-        cursor: pointer;
-        color: $black !important;
-        margin: 0 auto;
-        min-width: 165px;
-        margin-right: 30px;
-        font-weight: normal;
-        background-image: none;
-        text-shadow: none;
-        border : none;
+        margin: 0 6%;
       }
     }
   }
