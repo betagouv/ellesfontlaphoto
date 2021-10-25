@@ -78,36 +78,38 @@ ActiveAdmin.register ConseilsVideo do
 
   form do |f|
     f.semantic_errors # shows errors on :base
-    if f.object.video.attached?
-        f.input :video, as: :file, :hint => image_tag(f.object.video)
-    else
-      f.input :video, as: :file
-    end
-    if f.object.image.attached?
-      f.input :image, as: :file, :hint => image_tag(f.object.image)
-    else
-      f.input :image, as: :file
-    end
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys
+        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys, label: "Categorie List"
       f.input :tag_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_TAGS
-      f.input :title
+      f.input :title, label: "Titre"
       f.input :format, as: :select, collection: ConseilsVideo::VIDEO_FORMAT.keys
       f.input :protagoniste
-      f.input :lecture_time
+      f.input :lecture_time, label: "Temps de Lecture"
       f.input :objectif
     end
+    f.inputs "Multimedias" do
+      if f.object.video.attached?
+        f.input :video, as: :file, :hint => image_tag(f.object.video)
+      else
+        f.input :video, as: :file
+      end
+      if f.object.image.attached?
+        f.input :image, as: :file, :hint => image_tag(f.object.image), label: "Image (dans le catalogue)"
+      else
+        f.input :image, as: :file, label: "Image (dans le catalogue)"
+      end
+    end
     f.inputs "Description" do
-      f.input :subtitle
+      f.input :subtitle, label: "Sous titre"
       f.input :objectif, as: :quill_editor
     end
     f.inputs "Protagoniste" do
-      f.input :contenu_explication, as: :quill_editor
+      f.input :contenu_explication, as: :quill_editor, label: "Contenu explication"
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles, as: :quill_editor
+      f.input :liens_utiles, as: :quill_editor, label: "Liens utiles"
     end
     f.actions
   end
