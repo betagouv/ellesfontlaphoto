@@ -67,12 +67,6 @@ ActiveAdmin.register ConseilsVideo do
       row :title
       row :subtitle
       row :category_list
-      row :image do |ad|
-        image_tag ad.image.preview(resize_to_limit: [100, 100])
-      end
-      row :video do |ad|
-        video_tag ad.video.preview(resize_to_limit: [100, 100])
-      end
       row :format
       row :objectif
       row :lecture_time
