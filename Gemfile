@@ -55,6 +55,8 @@ gem 'sidekiq-failures', '~> 1.0'
 
 gem 'acts-as-taggable-on'
 
+gem 'cloudinary'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -68,6 +70,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '>= 3.26'
   gem 'capybara-select-2'
+  gem 'dotenv-rails'
   # Automated tests
   gem 'launchy'
 end
