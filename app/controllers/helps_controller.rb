@@ -10,10 +10,10 @@ class HelpsController < ApplicationController
       @selected =  params[:residence] == "Française résidant en outre-mer" ? "en outre-mer" : params[:residence]
       @searched = true
     end
-    if params[:type].present?
-      @helps = @helps.where("help_type @> ?", "{#{params[:type]}}").order(start_date: :asc)
-      # @helps = @helps.where(help_type: Help::HELP_TYPE.key(params[:type]).to_s).order(start_date: :asc)
-      @selected_type = params[:type]
+    # raise
+    if params[:type_list].present?
+      @helps = @helps.tagged_with(params[:type_list]).order(start_date: :asc)
+      @selected_type = params[:type_list]
       @searched = true
     end
     @helps_count = @helps.count

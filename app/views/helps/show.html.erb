@@ -3,7 +3,7 @@
     <div class="help-title">
       <div class="flex-div-left">
         <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
-        <% @help.help_type.each do |type| %>
+        <% @help.type_list.each do |type| %>
           <% if type == "Matériel" %>
             <a href="/helps?residence=&type=Matériel"><p class="help-type"> 💸 <%= Help::HELP_TYPE[type.to_sym] %></p></a>
           <% end %>

@@ -3,7 +3,7 @@
     <%= link_to help_path(help) do %>
       <div class="flottante-div">
         <div class="flottante">
-          <% help.help_type.each do |type| %>
+          <% help.type_list.each do |type| %>
             <% if type == "Matériel" %>
               📸
             <% end %>
