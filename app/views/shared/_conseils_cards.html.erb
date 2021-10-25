@@ -31,9 +31,11 @@
   <% elsif conseil.class == ConseilsVideo %>
     <div class="card-index-conseils-videos">
       <%= link_to conseils_video_path(conseil) do %>
-        <div>
-          <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" %>
-        </div>
+        <% if conseil.image.attached? %>
+          <div>
+            <%= cl_image_tag conseil.image.key %>
+          </div>
+        <% end %>
         <div class="flottante-div">
           <div class="flottante">
             <% conseil.category_list.each do |category| %>
