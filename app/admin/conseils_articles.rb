@@ -72,12 +72,12 @@ ActiveAdmin.register ConseilsArticle do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys
+        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys, label: "Categorie List"
       f.input :tag_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_TAGS
-      f.input :title
-      f.input :subtitle
-      f.input :lecture_time
+        :collection => ConseilsVideo::CONSEIL_TAGS, label: "List Tags"
+      f.input :title, label: "Titre"
+      f.input :subtitle, label: "Sous titre"
+      f.input :lecture_time, label: "Temps de Lecture (chiffre)"
       f.input :objectif
     end
     f.inputs "Introduction" do
@@ -87,13 +87,13 @@ ActiveAdmin.register ConseilsArticle do
       f.input :explication, as: :quill_editor
       f.input :perspective, as: :quill_editor
       f.input :citation
-      f.input :citation_auteur
+      f.input :citation_auteur, label: "Autrice/eur de la citation"
     end
     f.inputs "A retenir" do
-      f.input :a_retenir, as: :quill_editor
+      f.input :a_retenir, as: :quill_editor, label: "A retenir"
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles, as: :quill_editor
+      f.input :liens_utiles, as: :quill_editor, label: "Liens Utiles"
     end
     f.inputs "Sources et Autrices/Auteurs" do
       f.input :sources
