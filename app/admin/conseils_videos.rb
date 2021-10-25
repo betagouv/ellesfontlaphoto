@@ -21,7 +21,7 @@ ActiveAdmin.register ConseilsVideo do
       conseils_video.video = params["conseils_video"]["video"]
     end
     if params["conseils_video"]["image"].present?
-      conseils_video.video = params["conseils_video"]["image"]
+      conseils_video.image = params["conseils_video"]["image"]
     end
   end
 
@@ -32,11 +32,12 @@ ActiveAdmin.register ConseilsVideo do
     end
     conseils_video.category_list = categories
     conseils_video.tag_list = params["conseils_video"]["tag_list"]
+    # raise
     if params["conseils_video"]["video"].present?
       conseils_video.video = params["conseils_video"]["video"]
     end
     if params["conseils_video"]["image"].present?
-      conseils_video.video = params["conseils_video"]["image"]
+      conseils_video.image = params["conseils_video"]["image"]
     end
   end
 
@@ -66,6 +67,12 @@ ActiveAdmin.register ConseilsVideo do
       row :title
       row :subtitle
       row :category_list
+      row :image do |ad|
+        image_tag ad.image.preview(resize_to_limit: [100, 100])
+      end
+      row :video do |ad|
+        video_tag ad.video.preview(resize_to_limit: [100, 100])
+      end
       row :format
       row :objectif
       row :lecture_time
