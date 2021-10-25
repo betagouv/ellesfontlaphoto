@@ -17,6 +17,12 @@ ActiveAdmin.register ConseilsVideo do
     end
     conseils_video.category_list = categories
     conseils_video.tag_list = params["conseils_video"]["tag_list"]
+    if params["conseils_video"]["video"].present?
+      conseils_video.video = params["conseils_video"]["video"]
+    end
+    if params["conseils_video"]["image"].present?
+      conseils_video.video = params["conseils_video"]["image"]
+    end
   end
 
   before_update do |conseils_video|
@@ -26,6 +32,12 @@ ActiveAdmin.register ConseilsVideo do
     end
     conseils_video.category_list = categories
     conseils_video.tag_list = params["conseils_video"]["tag_list"]
+    if params["conseils_video"]["video"].present?
+      conseils_video.video = params["conseils_video"]["video"]
+    end
+    if params["conseils_video"]["image"].present?
+      conseils_video.video = params["conseils_video"]["image"]
+    end
   end
 
   filter :title
@@ -66,6 +78,16 @@ ActiveAdmin.register ConseilsVideo do
 
   form do |f|
     f.semantic_errors # shows errors on :base
+    if f.object.video.attached?
+        f.input :video, as: :file, :hint => image_tag(f.object.video)
+    else
+      f.input :video, as: :file
+    end
+    if f.object.image.attached?
+      f.input :image, as: :file, :hint => image_tag(f.object.image)
+    else
+      f.input :image, as: :file
+    end
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys

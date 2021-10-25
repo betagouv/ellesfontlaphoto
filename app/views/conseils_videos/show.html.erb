@@ -41,7 +41,13 @@
       <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo: </span><%= @conseil_video.format %></p>
     </div>
   </div>
-  <%= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "video-tag" %>
+  <% if @conseil_video.image.attached? %>
+    <%= cl_image_tag @conseil_video.image.key %>
+  <% end %>
+  <% if @conseil_video.video.attached? %>
+    <%= cl_video_tag @conseil_video.video.key, width: 500, muted: true, playsinline: true, controls: true %>
+  <% end %>
+  <%#= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "video-tag" %>
 </div>
 <div class="arrondis-conseils-videos">
 </div>
