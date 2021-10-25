@@ -1,5 +1,6 @@
 class ConseilsVideo < ApplicationRecord
-
+  has_one_attached :image
+  has_one_attached :video
   acts_as_taggable_on :tags, :category
 
   CONSEIL_CATEGORIES = {
