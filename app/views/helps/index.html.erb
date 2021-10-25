@@ -44,9 +44,9 @@
     <%= text_field_tag :residence, params[:residence] %>
   <% end %>
   <% if @selected_type.present? %>
-    <%= text_field_tag :type, params[:residence], value: @selected_type %>
+    <%= text_field_tag :type_list, params[:type_list], value: @selected_type %>
   <% else %>
-    <%= text_field_tag :type, params[:residence] %>
+    <%= text_field_tag :type_list, params[:type_list] %>
   <% end %>
   <%= submit_tag "Search" %>
 <% end %>

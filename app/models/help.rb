@@ -1,11 +1,6 @@
 class Help < ApplicationRecord
 
-  include PgSearch::Model
-  pg_search_scope :search_by_residence_condition,
-    against: [ :residence_condition ],
-    using: {
-      tsearch: { prefix: true }
-    }
+  acts_as_taggable_on :type
 
   HELP_TITLE = {
     "AIC": "Aide individuelle à la création | AIC",
@@ -98,5 +93,5 @@ class Help < ApplicationRecord
   # }
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
-  validates :help_type, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
+  validates :type_list, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
 end

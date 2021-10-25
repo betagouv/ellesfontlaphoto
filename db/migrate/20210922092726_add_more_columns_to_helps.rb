@@ -11,8 +11,8 @@ class AddMoreColumnsToHelps < ActiveRecord::Migration[6.1]
     add_column :helps, :parentality, :string
     add_column :helps, :accessibility, :string
     remove_column :helps, :contact_email, :string
-    add_column :helps, :contact_intitution_email, :string, array: true, default: []
-    add_column :helps, :contact_intitution_partenaire, :string, array: true, default: []
+    add_column :helps, :contact_intitution_email, :string
+    add_column :helps, :contact_intitution_partenaire, :string
     rename_column :helps, :structure_name, :institution_name
   end
 end

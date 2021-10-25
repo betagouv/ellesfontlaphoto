@@ -63,7 +63,7 @@ const updateInput = () => {
 
   dropdownElementsTypes.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#type").value = types[element.innerHTML];
+      document.querySelector("#type_list").value = types[element.innerHTML];
       document.querySelector("#select-search-type").innerHTML = element.innerHTML;
       document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");

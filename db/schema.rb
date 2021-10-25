@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_124445) do
+ActiveRecord::Schema.define(version: 2021_10_25_172135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "action_text_rich_texts", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "body"
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
-  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -79,25 +69,6 @@ ActiveRecord::Schema.define(version: 2021_10_21_124445) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "conseils", force: :cascade do |t|
-    t.string "title"
-    t.string "category", default: [], array: true
-    t.string "tags", default: [], array: true
-    t.text "introduction"
-    t.string "objectif"
-    t.string "lecture_time"
-    t.text "explication"
-    t.text "perspective"
-    t.text "citation"
-    t.string "video_title"
-    t.string "video_time"
-    t.text "to_remember"
-    t.text "useful_link"
-    t.string "en_savoir_plus"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "conseils_articles", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
@@ -107,11 +78,11 @@ ActiveRecord::Schema.define(version: 2021_10_21_124445) do
     t.text "explication"
     t.text "perspective"
     t.text "citation"
+    t.text "a_retenir"
+    t.string "auteur"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "auteur"
     t.string "citation_auteur"
-    t.string "a_retenir"
     t.string "sources"
     t.string "liens_utiles"
   end
@@ -176,9 +147,8 @@ ActiveRecord::Schema.define(version: 2021_10_21_124445) do
     t.string "old_laureats_case_url"
     t.string "parentality"
     t.string "accessibility"
-    t.string "contact_intitution_email", default: [], array: true
-    t.string "contact_intitution_partenaire", default: [], array: true
-    t.string "help_type", default: [], array: true
+    t.string "contact_intitution_email"
+    t.string "contact_intitution_partenaire"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

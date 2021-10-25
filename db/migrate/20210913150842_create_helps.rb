@@ -18,7 +18,6 @@ class CreateHelps < ActiveRecord::Migration[6.1]
       t.string :url_commission
       t.string :old_laureat
       t.string :old_laureat_url
-      t.string :help_type
       t.text :admin_attachment
       t.text :artistic_attachment
       t.text :other_attachment
