@@ -93,7 +93,7 @@ ActiveAdmin.register Help do
       f.input :help_amount
       f.input :help_advantage
       f.input :residence_time
-      f.input :residence_condition
+      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE
       f.input :general_condition
     end
     f.inputs "Candidatez" do

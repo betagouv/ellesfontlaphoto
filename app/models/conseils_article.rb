@@ -1,6 +1,7 @@
 class ConseilsArticle < ApplicationRecord
 
   acts_as_taggable_on :tags, :category
+  validates :title, presence: true
 
   CONSEIL_CATEGORIES = {
     "Administratif & Financier": "📕 administratifs et financiers",
