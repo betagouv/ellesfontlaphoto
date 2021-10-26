@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def mentions_legales
   end
+
+  def a_propos
+  end
 end

@@ -20,9 +20,10 @@ h2 {
   margin-bottom: 0px;
   padding-left: 0px;
   font-family: 'Marianne-Bold', sans-serif;
-  font-size: 55px;
-  line-height: 70px;
+  font-size: 50px;
+  line-height: 65px;
   color: $black;
+  padding-bottom: 20px;
 }
 
 h4 {
@@ -67,6 +68,12 @@ a {
     font-size: 1rem;
     color: $black;
   }
+}
+
+.paragraphe-italic {
+  font-family: 'Marianne-Regular_Italic', sans-serif;
+  font-size: 1rem;
+  color: $black;
 }
 
 .paragraphe-bold {
@@ -205,4 +212,39 @@ a {
 
 .text-align-right {
   text-align: right;
+}
+
+@media only screen and (max-width: 1250px) {
+  h1 {
+    padding-bottom: 20px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 43px;
+    padding-bottom: 20px;
+  }
+  .paragraphe {
+    text-align: left !important;
+  }
+  .subtitle {
+    text-align: left !important;
+  }
+}
+
+
+@media only screen and (max-width: 750px) {
+  h1 {
+    padding-bottom: 20px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 43px;
+    padding-bottom: 10px;
+  }
+  .paragraphe {
+    text-align: left !important;
+  }
+  .subtitle {
+    text-align: left !important;
+  }
 }

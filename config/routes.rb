@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get "mentions_legales", to: 'pages#mentions_legales'
+  get "a_propos", to: 'pages#a_propos'
   resources :contacts, only: :create
   resources :helps, only: [:show, :index]
   get "/conseils", to: "conseils_pratiques#index"
