@@ -1,5 +1,5 @@
 <div class="search-div-category">
-  <p class="text-search">Conseils pratiques</p>
+  <p class="text-search">Conseils</p>
   <div class="dropdown">
     <% if @selected.present? %>
       <div id="select-search-category" class="choosen"><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
