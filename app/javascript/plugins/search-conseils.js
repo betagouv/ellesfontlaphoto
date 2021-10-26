@@ -19,11 +19,9 @@ const searchIndexConseils = () => {
 
 const updateInputCategories = () => {
   const categories = {
-    "📕 administratif": "Administratif",
-    "🤑 financiers": "Financier",
+    "📕 administratifs et financiers": "Administratif & Financier",
+    "🖌 artistiques et techniques": "Artistique & Technique",
     "🌟 rôle modèles": "Rôle modèles",
-    "🛠 technique": "Technique",
-    "✨️ parcours inspirant": "Parcours"
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
@@ -71,11 +69,9 @@ function sleep(ms) {
 
 const changeCategory = () => {
   const categories = [
-    "📕 administratif",
-    "🤑 financiers",
+    "📕 administratifs et financiers",
+    "🖌 artistiques et techniques",
     "🌟 rôle modèles",
-    "🛠 technique",
-    "✨️ parcours inspirant"
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-category");

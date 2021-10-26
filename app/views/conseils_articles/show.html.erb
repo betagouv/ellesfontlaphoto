@@ -2,16 +2,13 @@
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_article.category_list.each do |category| %>
-      <% if category == "Administratif" %>
+      <% if category == "Administratif & Financier" %>
         <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
-      <% if category == "Financier" %>
-        <a href="/conseils?category=Financier&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
-      <% end %>
-      <% if category == "Technique" %>
+      <% if category == "Artistique & Technique" %>
         <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
-      <% if category == "Parcours" %>
+      <% if category == "Rôle modèles" %>
         <a href="/conseils?category=Parcours&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
@@ -36,8 +33,8 @@
       <p class="paragraphe mt30"><%= @conseil_article.subtitle %></p>
     </div>
     <div class="conseils-article-description">
-      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée: </span><%= @conseil_article.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs: </span><%= @conseil_article.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée : </span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs : </span><%= @conseil_article.objectif %></p>
     </div>
   </div>
 </div>
@@ -60,7 +57,7 @@
   </div>
   <hr class="bhl">
   <div class="block-conseils-article">
-    <p class="subtitle">À retenir: </p>
+    <p class="subtitle">À retenir : </p>
     <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
   </div>
   <hr class="bhl">

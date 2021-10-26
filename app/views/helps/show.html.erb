@@ -25,22 +25,22 @@
       <p class="paragraphe"><%= @help.description %></p>
     </div>
     <div class="help-description">
-      <p class="paragraphe paragraphe-bold">💰 Gains:</p>
+      <p class="paragraphe paragraphe-bold">💰 Gains :</p>
       <p class="paragraphe"><%= @help.help_amount %></p>
       <% if @help.residence_time.present? %>
         <p class="paragraphe">hébergement pour <%= @help.residence_time %></p>
       <% end %>
       <hr class="hl">
-      <p class="paragraphe paragraphe-bold">📅 Dates de candidature:</p>
+      <p class="paragraphe paragraphe-bold">📅 Dates limites :</p>
       <% if @help.start_date.present? %>
-        <p class="paragraphe">Début: <%= I18n.l @help.start_date, format: :long %> / Fin: <%= I18n.l @help.end_date, format: :long %></p>
+        <p class="paragraphe">Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %></p>
       <% end %>
       <% if @help.regularity.present? %>
         <p class="paragraphe"><%= @help.regularity %></p>
       <% end %>
       <hr class="hl">
-      <p class="paragraphe paragraphe-bold">Conditions pincipales:</p>
-      <p class="paragraphe">📍Résidence: <%= @help.residence_condition %></p>
+      <p class="paragraphe paragraphe-bold">Conditions pincipales :</p>
+      <p class="paragraphe">📍Résidence : <%= @help.residence_condition %></p>
       <p class="paragraphe"><%= @help.general_condition %></p>
     </div>
   </div>
@@ -121,7 +121,7 @@
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
     <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
-    <p class="paragraphe">N'hésitez pas à envoyer un e-mail pour présicer votre candidature: </p>
+    <p class="paragraphe">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
