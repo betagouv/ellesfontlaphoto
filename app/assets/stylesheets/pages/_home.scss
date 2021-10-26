@@ -56,23 +56,29 @@
 
   .illu-home-1 {
     position: absolute;
-    width: 200px;
+    width: 11%;
     top: 0;
     left: 2%;
     z-index: -1;
   }
-  .illu-home-3 {
+  .illu-home-3-1440 {
     position: absolute;
-    width: 27%;
+    width: 100%;
     right: 0;
-    bottom:-14%;
+    bottom: -34%;
     z-index: -1;
+  }
+  .illu-home-3-320-768 {
+    display: none;
+  }
+  .illu-home-3-768-1024 {
+    display: none;
   }
   .illu-home-2 {
     position: absolute;
     top: 0;
-    width: 130px;
-    left: 25%;
+    width: 7%;
+    left: 20%;
     z-index: -1;
   }
 }
@@ -314,9 +320,18 @@
     .illu-home-1 {
       width: 20%;
     }
-    .illu-home-3 {
+    .illu-home-3-1440 {
+      display: none;
+    }
+    .illu-home-3-320-768 {
+      display: none;
+    }
+    .illu-home-3-768-1024 {
+      display: block;
+      position: absolute;
       top: 63%;
-      width: 36%;
+      width: 100%;
+      left: 0;
     }
     .illu-home-2 {
       width: 13%;
@@ -533,9 +548,17 @@
     .illu-home-1 {
       width: 120px;
     }
-    .illu-home-3 {
-      width: 45%;
-      top: 67%;
+    .illu-home-3-1440 {
+      display: none;
+    }
+    .illu-home-3-768-1024 {
+      display: none;
+    }
+    .illu-home-3-320-768 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 65%;
     }
     .illu-home-2 {
       width: 70px;
@@ -570,7 +593,7 @@
 
   .first-block {
     display: block;
-    padding: 5% 10%;
+    padding: 10% 10% 5% 10%;
     .first-block-left {
       min-width: 100%;
       .paragraphe-bold,.subtitle,.paragraphe-spectral-italic {
