@@ -2,17 +2,14 @@
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_video.category_list.each do |category| %>
-      <% if category == "Administratif" %>
-        <a href="/conseils?category_list=Administratif&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% if category == "Administratif & Financier" %>
+        <a href="/conseils?category_list=Administratif+%26+Financier&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
-      <% if category == "Financier" %>
-        <a href="/conseils?category_list=Financier&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% if category == "Artistique & Technique" %>
+        <a href="/conseils?category_list=Artistique+%26+Technique&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
-      <% if category == "Technique" %>
-        <a href="/conseils?category_list=Technique&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
-      <% end %>
-      <% if category == "Parcours" %>
-        <a href="/conseils?category_list=Parcours&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+      <% if category == "Rôle modèles" %>
+        <a href="/conseils?category_list=Rôle+modèles&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
     <% @conseil_video.tag_list.each do |tag| %>
@@ -36,15 +33,14 @@
       <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="conseils-video-description">
-      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée: </span><%= @conseil_video.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs: </span><%= @conseil_video.objectif %></p>
-      <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo: </span><%= @conseil_video.format %></p>
+      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée : </span><%= @conseil_video.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs : </span><%= @conseil_video.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo : </span><%= @conseil_video.format %></p>
     </div>
   </div>
   <% if @conseil_video.video.attached? %>
     <%= cl_video_tag @conseil_video.video.key, width: 800, muted: true, playsinline: true, controls: true, class: "video-tag" %>
   <% end %>
-  <%#= image_tag "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "video-tag" %>
 </div>
 <div class="arrondis-conseils-videos">
 </div>

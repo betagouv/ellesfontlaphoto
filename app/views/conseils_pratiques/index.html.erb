@@ -50,7 +50,7 @@
         <% end %>
       </div>
       <div class="box-criteria">
-        <p class="main-bold-paragraphe text-align-left">Précisez votre recherche:</p>
+        <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
         <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
           <% unless params[:tag_list].include?(tag) %>
             <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>

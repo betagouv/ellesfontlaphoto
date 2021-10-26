@@ -8,7 +8,7 @@ p "Create helps"
 conseils_articles = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
-  category_list: ["Parcours"],
+  category_list: ["Artistique & Technique"],
   tag_list: ["Me former"],
   objectif: "Adapter sa candidate aux attentes des services publics",
   lecture_time: 2,
@@ -28,7 +28,7 @@ conseils_articles.save
 conseils_articles1 = ConseilsArticle.new(
   title: "Comprendre les critères d'attribution d'une aide publique",
   subtitle: "Comprendre les critères d'attribution d'une aide publique son soustitre",
-  category_list: ["Financier"],
+  category_list: ["Administratif & Financier"],
   tag_list: ["Me former", "Commencer mon activité"],
   objectif: "Adapter sa candidate aux attentes des services publics",
   lecture_time: 2,
@@ -1585,4 +1585,4 @@ help43 = Help.new(
 
 help43.save
 
-AdminUser.create!(email: "example@admin.fr", password: "password")
+# AdminUser.create!(email: "example@admin.fr", password: "password")
