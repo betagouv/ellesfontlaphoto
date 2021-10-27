@@ -8,6 +8,11 @@ class Help < ApplicationRecord
   validates :residence_condition, presence: true
   validates :description, presence: true
 
+  PARITE = [
+    "respectée",
+    "non-respectée"
+  ]
+
   HELP_TITLE = {
     "AIC": "Aide individuelle à la création | AIC",
     "AIA": "Aide à l'installation d'atelier et à l'achat de matériel | AIA",
