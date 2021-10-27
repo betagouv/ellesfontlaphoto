@@ -1,12 +1,5 @@
 ActiveAdmin.register Help do
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-
-  permit_params :title, :description, :type_list, :example_enrollment_url, :residence_time, :sector, :structure_name, :start_date, :end_date, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :commission_parite, :old_laureats_parite
+  permit_params :title, :description, :sector, :institution_name, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite
   #
   # or
   #
@@ -44,6 +37,8 @@ ActiveAdmin.register Help do
       row :other_attachment
       row :contact_institution
       row :contact_institution_url
+      row :contact_intitution_email
+      row :contact_intitution_partenaire
       row :example_enrollment_url
       row :faq_url
       row :issue_contact
@@ -57,8 +52,6 @@ ActiveAdmin.register Help do
       row :old_laureats_case_url
       row :parentality
       row :accessibility
-      row :contact_intitution_email
-      row :contact_intitution_partenaire
     end
   end
 
