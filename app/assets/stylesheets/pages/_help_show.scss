@@ -175,6 +175,12 @@ ul li {
   .link-blue {
     margin-left: 10%;
   }
+  .pastille-parite-r, .pastille-parite-nr {
+    display:none !important;
+  }
+  .pastille-parite-respectee, .pastille-parite-non-respectee {
+    top: -3% !important;
+  }
   .banner-show {
     display: block !important;
     .help-title {
