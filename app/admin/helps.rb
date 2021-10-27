@@ -6,7 +6,7 @@ ActiveAdmin.register Help do
   # Uncomment all parameters which should be permitted for assignment
   #
 
-  permit_params :title, :description, :type_list, :example_enrollment_url, :residence_time, :sector, :structure_name, :start_date, :end_date, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url
+  permit_params :title, :description, :type_list, :example_enrollment_url, :residence_time, :sector, :structure_name, :start_date, :end_date, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :commission_parite, :old_laureats_parite
   #
   # or
   #
@@ -18,6 +18,7 @@ ActiveAdmin.register Help do
 
   show do
     attributes_table do
+      row :identifiant
       row :title
       row :description
       row :sector
@@ -34,8 +35,10 @@ ActiveAdmin.register Help do
       row :selection
       row :compo_commission
       row :url_commission
+      row :commission_parite
       row :old_laureat
       row :old_laureat_url
+      row :old_laureats_parite
       row :admin_attachment
       row :artistic_attachment
       row :other_attachment
@@ -66,6 +69,14 @@ ActiveAdmin.register Help do
   before_update do |help|
     help.type_list = params["help"]["type_list"]
   end
+
+  filter :identifiant
+  filter :type
+  filter :start_date
+  filter :title
+  filter :sector
+  filter :objectif
+  filter :institution_name
 
   index do
     column :identifiant
@@ -99,14 +110,17 @@ ActiveAdmin.register Help do
     f.inputs "Candidatez" do
       f.input :candidate_url
     end
+
     f.inputs "Selection" do
       f.input :selection, as: :quill_editor
       f.input :example_enrollment_url
       f.input :compo_commission, as: :quill_editor
       f.input :url_commission
+      f.input :commission_parite, as: :select, collection: Help::PARITE
       f.input :old_laureat, as: :quill_editor
       f.input :old_laureat_url
       f.input :old_laureats_case_url
+      f.input :old_laureats_parite, as: :select, collection: Help::PARITE
       f.input :statistic, as: :quill_editor
     end
     f.inputs "Pièces à fournir" do

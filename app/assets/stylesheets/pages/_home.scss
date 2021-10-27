@@ -280,6 +280,9 @@
       background-image: none;
       text-shadow: none;
       border : none;
+      &:hover {
+        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      }
     }
   }
   .manifesto-div {
@@ -302,6 +305,9 @@
       background-image: none;
       text-shadow: none;
       border : none;
+      &:hover {
+        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      }
     }
     .illu-home-4{
       width: 40%;
