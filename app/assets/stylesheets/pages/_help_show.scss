@@ -61,6 +61,11 @@ ul li {
 .help-content {
   margin: 0 auto;
   padding: 5% 20%;
+  .block-fiche-aide.flex-div {
+    .flex-div-div {
+      width: 45%;
+    }
+  }
   .block-fiche-aide{
     .div-parite {
       position: relative;

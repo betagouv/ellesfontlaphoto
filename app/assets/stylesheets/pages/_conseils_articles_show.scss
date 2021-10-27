@@ -75,8 +75,9 @@ ul li {
 .quote {
   margin: 60px 0;
   p {
-    display: block;
-    margin: 0px 60px 40px 100px;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 15%;
     padding: 0px 0px 0px 20px;
     float: none;
     justify-content: center;
@@ -102,8 +103,8 @@ ul li {
     white-space: normal;
     background-clip: border-box;
     object-fit: fill;
-    span {
-      font-size: 18px;
-    }
+  }
+  .citation-auteur {
+    font-size: 18px;
   }
 }
