@@ -1,6 +1,10 @@
 @import "../config/colors";
 @import "../config/fonts";
 
+body {
+  font-family: 'Marianne-Regular', sans-serif;
+}
+
 h1 {
   display: inline-block;
   max-width: 1200px;
