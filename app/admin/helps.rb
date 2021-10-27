@@ -83,6 +83,7 @@ ActiveAdmin.register Help do
     column :title
     column :residence_condition
     column :sector
+    column :type_list
     column :description
     column :start_date
     column :end_date
@@ -94,7 +95,7 @@ ActiveAdmin.register Help do
     f.inputs "Bandeau" do
       f.input :identifiant
       f.input :title
-      f.input :type_list, :as => :radio, :collection => Help::HELP_TYPE.keys
+      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys
       f.input :description
       f.input :description_url
       f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}
