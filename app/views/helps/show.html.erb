@@ -63,7 +63,7 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Sélection des lauréates et lauréats</p>
-    <p class="paragraphe"><%= @help.selection %></p>
+    <div class="paragraphe"><%= @help.selection.html_safe %></div>
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
       <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
@@ -71,11 +71,11 @@
     <% else %>
       <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
-    <p class="paragraphe mb0"><%= @help.compo_commission %></p>
+    <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
     <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
     <% if @help.old_laureat.present? %>
       <p class="paragraphe-bold mt30 mb0">Précédents lauréates & lauréats</p>
-      <p class="paragraphe mb0"><%= @help.old_laureat %></p>
+      <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
       <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
     <% end %>
   </div>
@@ -100,7 +100,7 @@
     <% if @help.specific_condition.present? %>
       <div class="block-fiche-aide">
         <p class="paragraphe-bold mb0">Conditions spécifiques</p>
-        <p class="paragraphe"><%= @help.specific_condition %></p>
+        <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
       </div>
     <% end %>
     <% if @help.parentality.present? || @help.accessibility.present? %>
