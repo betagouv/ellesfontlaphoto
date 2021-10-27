@@ -121,17 +121,17 @@
   </div>
   <hr class="bhl">
   <div class="block-fiche-aide flex-div">
-    <div>
+    <div class="flex-div-div">
       <p class="subtitle">Pièces à fournir</p>
       <p class="paragraphe-bold mb0">🗒 Pièces administratives</p>
       <%= @help.admin_attachment.html_safe %>
       <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
       <%= @help.artistic_attachment.html_safe %>
     </div>
-    <div>
+    <div class="flex-div-div">
       <% if @help.other_attachment.present? %>
         <p class="paragraphe-bold mb0">📓 Pièces spécifiques</p>
-        <%= @help.other_attachment.html_safe %>
+        <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>
       <% end %>
     </div>
   </div>

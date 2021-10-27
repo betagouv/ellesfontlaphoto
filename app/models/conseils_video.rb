@@ -27,8 +27,8 @@ class ConseilsVideo < ApplicationRecord
     if image.attached? && !image.content_type.in?(%w(image/jpg image/jpeg image/png))
       errors.add(:image, "L'image doit être au format png ou jpeg/jpg")
     end
-    if video.attached? && !video.content_type.in?(%w(video/mp4))
-      errors.add(:image, "La vidéo doit être au format mp4")
+    if video.attached? && !video.content_type.in?(%w(video/mp4 video/mpeg))
+      errors.add(:image, "La vidéo doit être au format mp4 ou mpeg")
     end
   end
 

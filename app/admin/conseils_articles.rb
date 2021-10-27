@@ -49,9 +49,9 @@ ActiveAdmin.register ConseilsArticle do
       row :explication
       row :perspective
       row :citation
+      row :citation_auteur
       row :liens_utiles
       row :auteur
-      row :citation_auteur
       row :a_retenir
       row :sources
     end
@@ -86,7 +86,7 @@ ActiveAdmin.register ConseilsArticle do
     f.inputs "En détails" do
       f.input :explication, as: :quill_editor
       f.input :perspective, as: :quill_editor
-      f.input :citation
+      f.input :citation, as: :quill_editor
       f.input :citation_auteur, label: "Autrice/eur de la citation"
     end
     f.inputs "A retenir" do
