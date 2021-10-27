@@ -5,7 +5,7 @@ ActiveAdmin.register Contact do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :email, :contact_type, :comment, :message
+  permit_params :contact_email, :contact_type, :comment, :message
   #
   # or
   #
@@ -15,4 +15,22 @@ ActiveAdmin.register Contact do
   #   permitted
   # end
 
+  show do
+    attributes_table do
+      row :contact_email
+      row :contact_type
+      row :message
+      row :comment
+    end
+  end
+
+  form do |f|
+    f.semantic_errors # shows errors on :base
+    f.inputs "Contact" do
+      f.input :contact_email, input_html: { disabled: true }
+      f.input :contact_type, input_html: { disabled: true }
+      f.input :message, input_html: { disabled: true }
+      f.input :comment, as: :quill_editor
+    end
+  end
 end
