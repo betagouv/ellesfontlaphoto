@@ -64,38 +64,54 @@
   <div class="block-fiche-aide">
     <p class="subtitle">Sélection des lauréates et lauréats</p>
     <div class="paragraphe"><%= @help.selection.html_safe %></div>
+
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
       <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
-      <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
+      <div class="div-parite">
+        <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
     <% else %>
-      <p class="paragraphe-bold mb0">Composition de la commission</p>
+      <div class="div-parite">
+        <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
-    <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
-    <% if @help.commission_parite.present? %>
-      <% if @help.commission_parite == "respectée" %>
-        <div style="position: absolute;">
-          💛
-        </div>
-      <% else %>
-        <div style="position: absolute;">
-          😢
-        </div>
+      <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
+      <% if @help.commission_parite.present? %>
+        <% if @help.commission_parite == "respectée" %>
+          <div class="pastille-parite-r">
+            <p class="paragraphe-parite">Parité <br>respectée</p>
+          </div>
+          <div class="pastille-parite-respectee">
+            💛
+          </div>
+        <% else %>
+          <div class="pastille-parite-nr">
+            <p class="paragraphe-parite">Parité <br>non-respectée</p>
+          </div>
+          <div class="pastille-parite-non-respectee">
+            😢
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+      <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+    </div>
     <% if @help.old_laureat.present? %>
-      <div style="position: relative;">
+      <div class="div-parite">
         <p class="paragraphe-bold mt30 mb0">Précédents lauréates & lauréats</p>
         <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
         <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
         <% if @help.old_laureats_parite.present? %>
           <% if @help.old_laureats_parite == "respectée" %>
-            <div style="position: absolute;">
+            <div class="pastille-parite-r">
+              <p class="paragraphe-parite">Parité <br>respectée</p>
+            </div>
+            <div class="pastille-parite-respectee">
               💛
             </div>
           <% else %>
-            <div style="position: absolute;">
+            <div class="pastille-parite-nr">
+              <p class="paragraphe-parite">Parité <br>non-respectée</p>
+            </div>
+            <div class="pastille-parite-non-respectee">
               😢
             </div>
           <% end %>
@@ -124,7 +140,7 @@
     <% if @help.specific_condition.present? %>
       <div class="block-fiche-aide">
         <p class="paragraphe-bold mb0">Conditions spécifiques</p>
-        <p class="paragraphe"><%= @help.specific_condition %></p>
+        <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
       </div>
     <% end %>
     <% if @help.parentality.present? || @help.accessibility.present? %>
