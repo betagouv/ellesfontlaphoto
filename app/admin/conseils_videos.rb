@@ -1,6 +1,6 @@
 ActiveAdmin.register ConseilsVideo do
 
-  permit_params :title, :subtitle, :category_list, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :tag_list
+  permit_params :title, :subtitle, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :video, :image, :category_list, :type_list
   #
   # or
   #
@@ -31,6 +31,7 @@ ActiveAdmin.register ConseilsVideo do
       categories << category
     end
     conseils_video.category_list = categories
+    # raise
     conseils_video.tag_list = params["conseils_video"]["tag_list"]
     if params["conseils_video"]["video"].present?
       conseils_video.video = params["conseils_video"]["video"]

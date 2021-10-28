@@ -71,6 +71,7 @@ a {
     font-family: 'Marianne-Regular', sans-serif;
     font-size: 1rem;
     color: $black;
+    margin-bottom:0;
   }
 }
 
@@ -82,6 +83,12 @@ a {
 
 .paragraphe-bold {
   font-family: 'Marianne-Bold', sans-serif;
+  font-size: 1rem;
+  color: $black;
+}
+
+b, strong {
+  font-family: 'Marianne-ExtraBold', sans-serif;
   font-size: 1rem;
   color: $black;
 }
@@ -149,6 +156,13 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   color: $white !important;
+}
+
+a {
+  color: $dark-blue !important;
+  font-family: 'Marianne-Regular', sans-serif !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
 }
 
 .link-blue {

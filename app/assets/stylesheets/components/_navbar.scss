@@ -56,7 +56,7 @@
   .link-menu {
     font-family: 'Marianne-Regular', sans-serif;
     text-decoration:none;
-    color: $black;
+    color: $black !important;
     font-size: 16px;
     line-height: 24px;
     opacity: 1;
@@ -108,6 +108,7 @@
   }
 
   .link-menu.manifeste-link-menu {
+    white-space: nowrap;
     margin-right: 3rem;
     margin-top: 0.4rem;
     padding: 5px 15px 7px;
