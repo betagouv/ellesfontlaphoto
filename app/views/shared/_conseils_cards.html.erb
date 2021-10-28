@@ -1,4 +1,4 @@
-<% @conseils.each do |conseil| %>
+<% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
   <% if conseil.class == ConseilsArticle %>
     <div class="card-index-conseils-articles">
       <%= link_to conseils_article_path(conseil) do %>
