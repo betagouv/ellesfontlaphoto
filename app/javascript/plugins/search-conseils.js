@@ -21,7 +21,7 @@ const updateInputCategories = () => {
   const categories = {
     "📕 administratifs et financiers": "Administratif & Financier",
     "🖌 artistiques et techniques": "Artistique & Technique",
-    "🌟 rôle modèles": "Rôle modèles",
+    "🌟 égalité et inclusion": "Egalite & inclusion",
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
@@ -71,7 +71,7 @@ const changeCategory = () => {
   const categories = [
     "📕 administratifs et financiers",
     "🖌 artistiques et techniques",
-    "🌟 rôle modèles",
+    "🌟 égalité et inclusion",
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-category");

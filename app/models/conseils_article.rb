@@ -6,8 +6,8 @@ class ConseilsArticle < ApplicationRecord
   CONSEIL_CATEGORIES = {
     "Administratif & Financier": "📕 administratifs et financiers",
     "Artistique & Technique": "🖌 artistiques et techniques",
-    "Rôle modèles": "🌟 rôle modèles",
+    "Egalite & inclusion": "🌟 égalité et inclusion",
   }
 
-  CONSEIL_TAGS = ["Commencer mon activité", "Me former", "Gérer ma carrière", "Sensibiliser pour l'égalité"]
+  CONSEIL_TAGS = ["Commencer mon activité", "Me former"]
 end
