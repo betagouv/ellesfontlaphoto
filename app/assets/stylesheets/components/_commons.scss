@@ -63,6 +63,12 @@ a {
   color: $black;
 }
 
+p {
+  a {
+    text-decoration: underline !important;
+  }
+}
+
 .paragraphe {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 1rem;
