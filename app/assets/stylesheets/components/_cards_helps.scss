@@ -41,16 +41,14 @@
         margin-right: 7px;
       }
       .flottante2 {
+        color: $black !important;
         border: 1px solid $purple;
         border-radius: 40px;
         display: table !important;
         padding: 5px 10px 5px;
-        // position: absolute;
         background-color: white;
-        // top: -15px;
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 0.9rem;
-        // left: 28%;
       }
     }
   }

@@ -20,11 +20,12 @@ ActiveAdmin.register ConseilsArticle do
   end
 
   before_update do |conseils_article|
-    categories = []
-    params["conseils_article"]["category_list"].reject{ |c| c.empty? }.each do |category|
-      categories << category
-    end
-    conseils_article.category_list = categories
+    # categories = []
+    # params["conseils_article"]["category_list"].reject{ |c| c.empty? }.each do |category|
+    #   categories << category
+    # end
+
+    conseils_article.category_list = params["conseils_article"]["category_list"].reject{ |c| c.empty? }
     conseils_article.tag_list = params["conseils_article"]["tag_list"]
   end
 
