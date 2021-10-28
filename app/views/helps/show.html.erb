@@ -68,13 +68,14 @@
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
       <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
-      <div class="div-parite">
-        <p class="paragraphe-bold mb0" style="margin-top:30px;" >Composition de la commission</p>
-    <% else %>
-      <div class="div-parite">
-        <p class="paragraphe-bold mb0">Composition de la commission</p>
     <% end %>
-      <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
+      <% if @help.compo_commission.present? %>
+        <div class="div-parite">
+          <p class="paragraphe-bold mb0">Composition de la commission</p>
+          <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
+      <% else %>
+        <div class="div-parite">
+      <% end %>
       <% if @help.commission_parite.present? %>
         <% if @help.commission_parite == "respectée" %>
           <div class="pastille-parite-r">
