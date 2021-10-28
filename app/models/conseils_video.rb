@@ -12,10 +12,10 @@ class ConseilsVideo < ApplicationRecord
   CONSEIL_CATEGORIES = {
     "Administratif & Financier": "📕 administratifs et financiers",
     "Artistique & Technique": "🖌 artistiques et techniques",
-    "Rôle modèles": "🌟 rôle modèles",
+    "Egalite & inclusion": "🌟 égalité et inclusion",
   }
 
-  CONSEIL_TAGS = ["Commencer mon activité", "Me former", "Gérer ma carrière", "Sensibiliser pour l'égalité"]
+  CONSEIL_TAGS = ["Commencer mon activité", "Me former"]
 
   VIDEO_FORMAT = {
     "Verbatim": "un jour on m'a dit que...",
@@ -27,8 +27,8 @@ class ConseilsVideo < ApplicationRecord
     if image.attached? && !image.content_type.in?(%w(image/jpg image/jpeg image/png))
       errors.add(:image, "L'image doit être au format png ou jpeg/jpg")
     end
-    if video.attached? && !video.content_type.in?(%w(video/mp4))
-      errors.add(:image, "La vidéo doit être au format mp4")
+    if video.attached? && !video.content_type.in?(%w(video/mp4 video/mpeg))
+      errors.add(:image, "La vidéo doit être au format mp4 ou mpeg")
     end
   end
 

@@ -8,7 +8,7 @@
       <% if category == "Artistique & Technique" %>
         <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
-      <% if category == "Rôle modèles" %>
+      <% if category == "Egalite & inclusion" %>
         <a href="/conseils?category=Parcours&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
       <% end %>
     <% end %>
@@ -52,27 +52,40 @@
     <div class="paragraphe"><%= @conseil_article.explication.html_safe %></div>
     <div class="paragraphe"><%= @conseil_article.perspective.html_safe %></div>
     <div class="quote">
-      <p class="paragraphe-spectral-italic"><%= @conseil_article.citation %> <span> <%= @conseil_article.citation_auteur %></span></p>
+      <div class="paragraphe-spectral-italic">
+        <%= @conseil_article.citation.html_safe %>
+        <p class="citation-auteur"> <%= @conseil_article.citation_auteur %></p>
+      </div>
     </div>
   </div>
-  <hr class="bhl">
-  <div class="block-conseils-article">
-    <p class="subtitle">À retenir : </p>
-    <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
-  </div>
-  <hr class="bhl">
-  <div class="block-conseils-article">
-    <p class="subtitle">Liens utiles</p>
-    <div class="link-blue">
-      <%= @conseil_article.liens_utiles.html_safe %>
+  <% if @conseil_article.a_retenir.present? %>
+    <hr class="bhl">
+    <div class="block-conseils-article">
+      <p class="subtitle">À retenir : </p>
+      <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
     </div>
-  </div>
+  <% end %>
+  <% if @conseil_article.liens_utiles.present? %>
+    <hr class="bhl">
+    <div class="block-conseils-article">
+      <p class="subtitle">Liens utiles</p>
+      <div class="link-blue">
+        <%= @conseil_article.liens_utiles.html_safe %>
+      </div>
+    </div>
+  <% end %>
   <hr class="bhl">
   <div class="block-conseils-article">
-    <p class="main-bold-paragraphe text-align-left">Sources</p>
-    <p class="paragraphe"><%= @conseil_article.sources %></p>
-    <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
-    <p class="paragraphe"><%= @conseil_article.auteur %></p>
+    <% if @conseil_article.sources.present? %>
+      <p class="main-bold-paragraphe text-align-left">Sources</p>
+      <p class="paragraphe"><%= @conseil_article.sources %></p>
+    <% end %>
+    <% if @conseil_article.auteur.present? %>
+      <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
+      <p class="paragraphe"><%= @conseil_article.auteur %></p>
+    <% end %>
   </div>
-  <hr class="bhl">
+  <% if @conseil_article.auteur.present? || @conseil_article.sources.present? %>
+    <hr class="bhl">
+  <% end %>
 </div>

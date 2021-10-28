@@ -24,7 +24,7 @@ class Help < ApplicationRecord
     "Production": "🛠 financer une production",
     "Aide Sociale": "🔮 un secours exceptionnel",
     "Résidence": "🏠 une résidence (artistique)",
-    "Diffusion": "📣 financer une diffusion"
+    "Diffusion": "📣 financer une diffusion",
   }
 
   HELP_RESIDENCE = [
@@ -72,36 +72,6 @@ class Help < ApplicationRecord
     "Française ou résidant en France",
     "Française résidant en outre-mer"
   ]
-
-  # HELP_MONTH = [
-  #   "janvier",
-  #   "février",
-  #   "mars",
-  #   "avril",
-  #   "mai",
-  #   "juin",
-  #   "juillet",
-  #   "août",
-  #   "septembre",
-  #   "octobre",
-  #   "novembre",
-  #   "décembre",
-  # ]
-
-  # HELP_MONTH_TRANSLATE = {
-  #   "janvier": "jan",
-  #   "février": "feb",
-  #   "mars": "mar",
-  #   "avril": "apr",
-  #   "mai": "may",
-  #   "juin": "june",
-  #   "juillet": "jul",
-  #   "août": "aug",
-  #   "septembre": "sept",
-  #   "octobre": "oct",
-  #   "novembre": "nov",
-  #   "décembre": "dec",
-  # }
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
   validates :type_list, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }

@@ -14,7 +14,6 @@ class ConseilsPratiquesController < ApplicationController
       @selected = params[:category_list]
       @searched = true
     end
-    # raise
     if params[:tag_list].present?
       @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
       @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
@@ -22,6 +21,7 @@ class ConseilsPratiquesController < ApplicationController
       @selected_tag = params[:tag_list]
       @searched = true
     end
+    # @sorted_conseils = @conseils.sort_by(&:created_at).reverse
     @conseils_count = @conseils.count
   end
 end
