@@ -20,11 +20,6 @@ ActiveAdmin.register ConseilsArticle do
   end
 
   before_update do |conseils_article|
-    # categories = []
-    # params["conseils_article"]["category_list"].reject{ |c| c.empty? }.each do |category|
-    #   categories << category
-    # end
-
     conseils_article.category_list = params["conseils_article"]["category_list"].reject{ |c| c.empty? }
     conseils_article.tag_list = params["conseils_article"]["tag_list"]
   end
@@ -94,7 +89,7 @@ ActiveAdmin.register ConseilsArticle do
       f.input :a_retenir, as: :quill_editor, label: "A retenir"
     end
     f.inputs "Liens utiles" do
-      f.input :liens_utiles, as: :quill_editor, label: "Liens Utiles"
+      f.input :liens_utiles, as: :quill_editor, label: "Liens Utiles (⚠️: FAIRE UNE LISTE ICI)"
     end
     f.inputs "Sources et Autrices/Auteurs" do
       f.input :sources
