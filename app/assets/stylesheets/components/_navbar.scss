@@ -20,9 +20,9 @@
   box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
   .header_brand {
     max-width:20%;
-    padding-top: 10px;
-    padding-left: 4rem;
+    padding-left: 3rem;
     .header_logo,.logo {
+      padding: 1rem 15px 1rem 0;
       font-family: 'Marianne-Bold', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -63,7 +63,7 @@
     opacity: 1;
     border-radius: 40px;
     display: table !important;
-    padding: 1rem 15px 1rem 15px;
+    padding: 1.05rem 15px 1.05rem 15px;
     background-color: transparent;
   }
   .link-menu.helps-link-menu {
@@ -79,12 +79,8 @@
 
   .helps-link-selected {
     white-space: pre-wrap;
-    box-shadow: #bcabff 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     border-radius: 0;
-    // border-radius: 40px;
-    // display: table !important;
-    // padding: 5px 15px 7px;
-    // background-color: $hover-purple;
   }
 
   .link-menu.conseils-link-menu {
@@ -102,10 +98,6 @@
     white-space: pre-wrap;
     box-shadow: $rouille 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     border-radius: 0;
-    // border-radius: 40px;
-    // display: table !important;
-    // padding: 5px 15px 7px;
-    // background-color: $hover-purple;
   }
 
   .link-menu.manifeste-link-menu {
