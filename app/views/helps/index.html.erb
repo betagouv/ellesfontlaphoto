@@ -59,11 +59,14 @@
       <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
       <p><a class="link-blue" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a></p>
     <% else %>
-      <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
-      <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
+      <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
+      <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
     <% end %>
   </div>
-  <div class="cards">
+  <div class="arrow-down-mobile">
+    <a href="#cards-anchor"><%= image_tag "arrow-down-purple.svg" %></a>
+  </div>
+  <div class="cards" id="cards-anchor">
     <%= render "shared/helps_cards", helps: @helps %>
   </div>
 </div>

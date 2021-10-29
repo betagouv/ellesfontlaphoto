@@ -70,52 +70,24 @@
       <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg" %> C'est ici</a>
     <% end %>
       <% if @help.compo_commission.present? %>
-        <div class="div-parite">
+        <div class="div-parite mt30">
           <p class="paragraphe-bold mb0">Composition de la commission</p>
           <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
       <% else %>
         <div class="div-parite">
       <% end %>
       <% if @help.commission_parite.present? %>
-        <% if @help.commission_parite == "respectée" %>
-          <div class="pastille-parite-r">
-            <p class="paragraphe-parite">Parité <br>respectée</p>
-          </div>
-          <div class="pastille-parite-respectee">
-            💛
-          </div>
-        <% else %>
-          <div class="pastille-parite-nr">
-            <p class="paragraphe-parite">Parité <br>non-respectée</p>
-          </div>
-          <div class="pastille-parite-non-respectee">
-            😢
-          </div>
-        <% end %>
+        <%= render "shared/parite_pastille", commission_parite: @help.commission_parite %>
       <% end %>
-      <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
-    </div>
+        <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+      </div>
     <% if @help.old_laureat.present? %>
       <div class="div-parite">
         <p class="paragraphe-bold mt30 mb0">Précédents lauréates & lauréats</p>
         <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
         <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
         <% if @help.old_laureats_parite.present? %>
-          <% if @help.old_laureats_parite == "respectée" %>
-            <div class="pastille-parite-r">
-              <p class="paragraphe-parite">Parité <br>respectée</p>
-            </div>
-            <div class="pastille-parite-respectee">
-              💛
-            </div>
-          <% else %>
-            <div class="pastille-parite-nr">
-              <p class="paragraphe-parite">Parité <br>non-respectée</p>
-            </div>
-            <div class="pastille-parite-non-respectee">
-              😢
-            </div>
-          <% end %>
+          <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
         <% end %>
       </div>
     <% end %>
@@ -168,16 +140,12 @@
     <% end %>
     <% if @help.contact_intitution_email.present? %>
       <p class="paragraphe mb0">
-      <ul>
-        <div class="link-blue mb0"><%= @help.contact_intitution_email %></div>
-      </ul>
+      <div class="link-blue mb0"><%= @help.contact_intitution_email %></div>
       </p>
     <% end %>
     <% if @help.contact_intitution_partenaire.present? %>
       <p class="paragraphe mb0">Partenaire participant à la sélection :
-      <ul>
-        <div class="link-blue mb0"><%= @help.contact_intitution_partenaire %></div>
-      </ul>
+      <div class="link-blue mb0"><%= @help.contact_intitution_partenaire %></div>
       </p>
     <% end %>
     <% if @help.faq_url.present? %>
