@@ -40,7 +40,17 @@
       <% end %>
       <hr class="hl">
       <p class="paragraphe paragraphe-bold">Conditions pincipales :</p>
-      <p class="paragraphe">📍Résidence : <%= @help.residence_condition %></p>
+      <p class="paragraphe">📍Résidence en :
+        <% if residence == "Française ou résidant en France" %>
+          <div class="dropdown-content-residence">France</div>
+        <% elsif residence == "Française résidant en outre-mer" %>
+          <div class="dropdown-content-residence">outre-mer</div>
+        <% else %>
+          <div class="dropdown-content-residence"><%= residence %></div>
+        <% end %>
+        <%= @help.residence_condition %>
+
+      </p>
       <p class="paragraphe"><%= @help.general_condition %></p>
     </div>
   </div>
