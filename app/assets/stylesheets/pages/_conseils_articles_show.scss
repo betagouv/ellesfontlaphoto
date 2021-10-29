@@ -56,12 +56,19 @@ ul li {
 .conseils-article-content {
   margin: 0 auto;
   padding: 5% 20% 5% 20%;
-  .block-conseils-article .background-rouille {
-    background-color: $hover-pink;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .block-conseils-article {
+    .background-rouille {
+      background-color: $hover-pink;
+      padding: 10px;
+    }
     ul {
       margin-bottom: 0;
+      li {
+        list-style-image: url(arrow-darkblue.svg);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
