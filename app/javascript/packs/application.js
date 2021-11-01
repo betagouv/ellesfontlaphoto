@@ -21,7 +21,7 @@ import { changeCategory } from '../plugins/search-conseils';
 // import { changeTypes } from '../plugins/search-index';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
-
+import { unSelectFilterHelp } from '../plugins/filter-helps'
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search-residence")) {
@@ -38,6 +38,11 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search-category")) {
     searchIndexConseils();
     updateInputCategories();
+  }
+
+  const buttonsUnSelectedHelps = document.querySelectorAll(".button-criteria-selected-help")
+  if (buttonsUnSelectedHelps) {
+    unSelectFilterHelp(buttonsUnSelectedHelps);
   }
 
   const buttonsUnSelected = document.querySelectorAll(".button-criteria-selected")

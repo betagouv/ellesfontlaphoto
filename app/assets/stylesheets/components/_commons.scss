@@ -1,6 +1,10 @@
 @import "../config/colors";
 @import "../config/fonts";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Marianne-Regular', sans-serif;
 }

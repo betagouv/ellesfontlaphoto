@@ -56,8 +56,17 @@
 <div class="main-index">
   <div class="index-direction-helps">
     <% if @selected.present? || @selected_type.present? %>
-      <p class="main-bold-paragraphe text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
-      <p><a class="link-blue" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a></p>
+      <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
+      <a class="link-blue result-search" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a>
+      <div class="result-search-mobile">
+        <p class="main-bold-paragraphe result-search-mobile text-align-left">🎊 <%= @helps.count %> résultats pour :</p>
+        <% if @selected.present? %>
+          <p class="button-criteria-selected-help residence" data-category="<%= @selected %>"><%= @selected %> <%= image_tag "cross-criteria.svg" %></p>
+        <% end %>
+        <% if @selected_type.present? %>
+          <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= Help::HELP_TYPE[@selected_type.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
+        <% end %>
+      </div>
     <% else %>
       <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
       <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
