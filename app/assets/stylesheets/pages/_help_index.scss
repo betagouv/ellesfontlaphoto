@@ -119,18 +119,27 @@
       display:none;
     }
   }
+  .cards {
+    .index-direction-ipad {
+      display: none;
+    }
+  }
   .arrow-down-mobile {
     display:none;
   }
 }
 
 @media only screen and (max-width: 1250px) {
+  .search-div-type {
+    margin: 4% 0 0 5%;
+  }
+  .search-div-residence {
+    margin: 0 0 4% 5%;
+  }
   .search-div-type, .search-div-residence {
-    margin: 10% 2%;
-    display: block;
     padding:0;
-    text-align: center;
     #select-search-residence, #select-search-type {
+      line-height: 80px !important;
       box-shadow: $purple 0px -1rem 0px inset;
     }
     .choosen {
@@ -171,10 +180,9 @@
     }
   }
   .button-search-helps {
-    // margin: 10% 2%;
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin: 2% auto 3% auto;
   }
   .main-index {
     display: block;
@@ -196,6 +204,31 @@
         margin-right: 5%;
       }
     }
+    .index-direction-helps {
+      display: none;
+    }
+    .cards {
+      .index-direction-ipad {
+        display: block;
+        .result-search-mobile-div {
+          padding: 4%;
+          border: 1px solid $black;
+          .button-criteria-selected-help {
+            background-color: $white;
+            border-radius: 40px;
+            border: 1px solid $purple;
+            display: table !important;
+            padding: 5px 10px;
+            font-family: 'Marianne-Regular', sans-serif;
+            font-size: 0.7rem;
+            display: flex;
+            cursor: pointer;
+            color: $black;
+            margin: 5% 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -206,10 +239,10 @@
     padding:0;
     text-align: center;
     #select-search-residence, #select-search-type {
-      box-shadow: #d0abff 0px -1rem 0px inset;
+      box-shadow: $purple 0px -0.8rem 0px inset;
     }
     .choosen {
-      box-shadow: #d0abff 0px -2rem 0px inset !important;
+      box-shadow: $purple 0px -2rem 0px inset !important;
     }
     .text-search {
       font-size: 30px;
@@ -219,7 +252,7 @@
     }
     #select-search-type, #select-search-residence {
       font-size: 28px;
-      line-height: 30px;
+      line-height: 30px !important;
       padding-top: 20px;
       margin-bottom: 30px;
     }
@@ -253,6 +286,7 @@
   .main-index {
     display: block;
     .index-direction-helps {
+      display: block;
       min-width: 100%;
       border: 1px solid $black;
       padding-bottom: 30px;
@@ -261,6 +295,7 @@
       }
       .result-search-mobile {
         display: block;
+        padding-bottom: 0;
         .button-criteria-selected-help {
           background-color: $white;
           border-radius: 40px;
@@ -272,10 +307,7 @@
           display: flex;
           cursor: pointer;
           color: $black;
-          margin: 0 auto;
-          &:hover {
-            background-color: $purple;
-          }
+          margin: 3% auto;
         }
       }
       p {
@@ -290,6 +322,11 @@
       margin-top: 80px;
       margin-bottom: 50px;
       height: 15px;
+    }
+    .cards {
+      .index-direction-ipad {
+        display: none;
+      }
     }
     .wrapper {
       column-count: 1;
