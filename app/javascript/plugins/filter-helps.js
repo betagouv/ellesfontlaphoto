@@ -1,5 +1,4 @@
 const unSelectFilterHelp = (buttonsUnSelected) => {
-  console.log(buttonsUnSelected)
   buttonsUnSelected.forEach((element) => {
     element.addEventListener("click", () =>{
       if(element.classList.contains('residence')) {
