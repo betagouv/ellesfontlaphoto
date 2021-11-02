@@ -1,6 +1,10 @@
 @import "../config/colors";
 @import "../config/fonts";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Marianne-Regular', sans-serif;
 }
@@ -176,11 +180,13 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   text-decoration: none;
   font-size: 1rem;
+  cursor: pointer;
   ul li a {
     color: $dark-blue !important;
     font-family: 'Marianne-Regular', sans-serif;
     text-decoration: none;
     font-size: 1rem;
+    cursor: pointer;
     &::before {
       background-image: url('arrow-darkblue.svg');
       background-repeat: no-repeat;

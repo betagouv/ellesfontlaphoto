@@ -7,6 +7,7 @@
 // Smallest device
 @media only screen and (max-width: 750px) {
   .cards {
+    padding-top: 30px;
     grid-template-columns: 1fr !important;
   }
 }
