@@ -55,6 +55,12 @@ document.addEventListener('turbolinks:load', () => {
     selectFilter(buttonsSelected);
   }
 
+  if (document.querySelector("#check01")) {
+    document.querySelector("#check01").addEventListener("click", () =>{
+      document.querySelector(".plus").classList.toggle("display");
+      document.querySelector(".moins").classList.toggle("display");
+    })
+  }
 
   if (document.querySelector(".banner-contact")){
     new Modal();
