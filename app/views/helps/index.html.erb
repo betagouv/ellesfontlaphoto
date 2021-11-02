@@ -55,7 +55,8 @@
 </div>
 <div class="main-index">
   <div class="index-direction-helps">
-    <% if @selected.present? || @selected_type.present? %>
+  <% if @selected.present? || @selected_type.present? %>
+    <div class="index-direction-helps tag-present">
       <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
       <a class="link-blue result-search" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a>
       <div class="result-search-mobile">
