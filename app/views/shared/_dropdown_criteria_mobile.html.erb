@@ -2,8 +2,12 @@
 <label class="paragraphe dropdown-label" for="check01">Précisez <span class="moins"><%= image_tag "arrow-dark-top.svg" %></span><span class="plus display"><%= image_tag "arrow-dark-bottom.svg" %></span></label>
 <ul class="submenu">
   <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
-    <% unless params[:tag_list].include?(tag) %>
-      <li class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></li>
+    <% if params[:tag_list].present?  %>
+      <% unless params[:tag_list].include?(tag) %>
+        <li class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></li>
+      <% end %>
+    <% else %>
+        <li class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></li>
     <% end %>
   <% end %>
 </ul>
