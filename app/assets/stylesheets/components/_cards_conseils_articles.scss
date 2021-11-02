@@ -7,38 +7,40 @@
     background-color: white;
     margin-bottom: 20px;
     border-radius: 2%;
-    border: 1px solid $rouille;
     height: auto;
-    padding: 13% 5% 10% 5%;
     position: relative;
+    .card-index-conseils-articles-div {
+      border-radius: 2%;
+      border: solid 1px $rouille;
+      padding: 13% 5% 10% 5%;
+      .main-bold-paragraphe {
+        text-align: left;
+      }
 
-    .main-bold-paragraphe {
-      text-align: left;
-    }
-
-    &:hover {
-      box-shadow: 0 0 6px rgba(1,1,1,0.5);
-    }
-    a{
-      color: $black;
-    }
-    .arrow {
-      margin-bottom:0;
-      margin-top: 15%;
-    }
-    .flottante-div {
-        display: flex;
-        position: absolute;
-        top: -15px;
-      .flottante {
-        border: 1px solid $rouille;
-        border-radius: 40px;
-        display: table !important;
-        padding: 0px 10px 2px;
-        background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 1.3rem;
-        margin-right: 7px;
+      &:hover {
+        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      }
+      a{
+        color: $black;
+      }
+      .arrow {
+        margin-bottom:0;
+        margin-top: 15%;
+      }
+      .flottante-div {
+          display: flex;
+          position: absolute;
+          top: -15px;
+        .flottante {
+          border: 1px solid $rouille;
+          border-radius: 40px;
+          display: table !important;
+          padding: 0px 10px 2px;
+          background-color: white;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 1.3rem;
+          margin-right: 7px;
+        }
       }
     }
   }

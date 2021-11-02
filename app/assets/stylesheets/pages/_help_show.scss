@@ -79,6 +79,16 @@ ul li {
           color: $black;
           font-size: 1.1em;
           text-align: right;
+          margin-right: 10px;
+        }
+        .pastille-parite-respectee {
+          font-size: 20px;
+          background-color: $purple;
+          padding: 2px 5px 1px 7px;
+          border-radius: 50%;
+          text-align: center;
+          margin: 0 auto;
+          height: fit-content;
         }
       }
       .pastille-parite-nr {
@@ -91,31 +101,17 @@ ul li {
           color: $black;
           font-size: 1.1em;
           text-align: right;
+          margin-right: 10px;
         }
-      }
-      .pastille-parite-respectee {
-        position: absolute;
-        top: 3%;
-        left: -8%;
-        display: flex;
-        font-size: 20px;
-        background-color: $purple;
-        padding: 2px 5px 1px 7px;
-        border-radius: 50%;
-        text-align: center;
-        margin: 0 auto;
-      }
-      .pastille-parite-non-respectee {
-        position: absolute;
-        top: 3%;
-        left: -8%;
-        display: flex;
-        padding: 2px 5px 1px 7px;
-        border-radius: 50%;
-        text-align: center;
-        margin: 0 auto;
-        font-size: 20px;
-        background-color: $rouille;
+        .pastille-parite-non-respectee {
+          padding: 2px 5px 1px 7px;
+          border-radius: 50%;
+          text-align: center;
+          margin: 0 auto;
+          font-size: 20px;
+          background-color: $rouille;
+          height: fit-content;
+        }
       }
     }
   }

@@ -25,9 +25,9 @@
       }
       a {
         font-family: 'Marianne', sans-serif;
-        font-size: 12px;
+        font-size: 12px !important;
         font-weight: 500;
-        color: $light-grey;
+        color: $light-grey !important;
         &:hover {
           opacity: 0.5;
         }
@@ -42,7 +42,8 @@
       .license {
       text-decoration: underline !important;
       cursor: pointer;
-      color: $light-grey;
+      font-size: 12px !important;
+      color: $light-grey !important;
         &:hover {
           opacity: 0.5;
         }

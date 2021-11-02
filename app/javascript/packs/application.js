@@ -21,7 +21,7 @@ import { changeCategory } from '../plugins/search-conseils';
 // import { changeTypes } from '../plugins/search-index';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
-
+import { unSelectFilterHelp } from '../plugins/filter-helps'
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search-residence")) {
@@ -40,6 +40,11 @@ document.addEventListener('turbolinks:load', () => {
     updateInputCategories();
   }
 
+  const buttonsUnSelectedHelps = document.querySelectorAll(".button-criteria-selected-help")
+  if (buttonsUnSelectedHelps) {
+    unSelectFilterHelp(buttonsUnSelectedHelps);
+  }
+
   const buttonsUnSelected = document.querySelectorAll(".button-criteria-selected")
   if (buttonsUnSelected) {
     unSelectFilter(buttonsUnSelected);
@@ -50,6 +55,12 @@ document.addEventListener('turbolinks:load', () => {
     selectFilter(buttonsSelected);
   }
 
+  if (document.querySelector("#check01")) {
+    document.querySelector("#check01").addEventListener("click", () =>{
+      document.querySelector(".plus").classList.toggle("display");
+      document.querySelector(".moins").classList.toggle("display");
+    })
+  }
 
   if (document.querySelector(".banner-contact")){
     new Modal();

@@ -6,20 +6,9 @@
   .card-index-conseils-videos {
     background-color: white;
     margin-bottom: 20px;
-    border-radius: 2%;
-    border: 1px solid $rouille;
     height: auto;
-    // padding: 13% 5% 10% 5%;
     position: relative;
-    // max-height: 250px;
-    .main-bold-paragraphe {
-      text-align: left;
-    }
-
-    &:hover {
-      box-shadow: 0 0 6px rgba(1,1,1,0.5);
-    }
-    a{
+    a {
       color: $black;
       div {
         img {
@@ -30,38 +19,49 @@
         }
       }
     }
-    .arrow {
-      margin-bottom:0;
-      margin-top: 15%;
-    }
-    .cards-videos-info {
-      padding: 5% 3%;
-      .cards-tags {
-        font-family: 'Marianne-Regular_Italic', sans-serif;
-        font-size: 0.6;
-        color: $black !important;
+    .card-index-conseils-videos-div {
+      border-radius: 2%;
+      border: 1px solid $rouille;
+      .main-bold-paragraphe {
+        text-align: left;
       }
-    }
-    .flottante-div {
-        display: flex;
+
+      &:hover {
+        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      }
+      .arrow {
+        margin-bottom:0;
+        margin-top: 15%;
+      }
+      .cards-videos-info {
+        padding: 5% 3%;
+        .cards-tags {
+          font-family: 'Marianne-Regular_Italic', sans-serif;
+          font-size: 0.6;
+          color: $black !important;
+        }
+      }
+      .flottante-div {
+          display: flex;
+          position: absolute;
+          top: -15px;
+        .flottante {
+          border: 1px solid $rouille;
+          border-radius: 40px;
+          display: table !important;
+          padding: 0px 10px 2px;
+          background-color: white;
+          font-size: 1.3rem;
+          margin-right: 7px;
+        }
+      }
+      .flottante-play {
+        top: 185px;
+        right: 13px;
         position: absolute;
-        top: -15px;
-      .flottante {
-        border: 1px solid $rouille;
-        border-radius: 40px;
-        display: table !important;
-        padding: 0px 10px 2px;
-        background-color: white;
-        font-size: 1.3rem;
-        margin-right: 7px;
-      }
-    }
-    .flottante-play {
-      top: 185px;
-      right: 13px;
-      position: absolute;
-      img {
-        height: 30px;
+        img {
+          height: 30px;
+        }
       }
     }
   }
