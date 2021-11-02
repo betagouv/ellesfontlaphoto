@@ -37,7 +37,7 @@
   <div class="index-direction">
     <% if @selected.present? || @selected_tag.present? %>
       <div class="box-criteria">
-        <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques correspondent à vos critères 🎊</p>
+        <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques pour :</p>
         <% if @selected.present? %>
           <p class="button-criteria-selected" data-category="<%= @selected %>"><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
@@ -49,6 +49,37 @@
           <% end %>
         <% end %>
       </div>
+    <% else %>
+      <p class="main-bold-paragraphe conseils-sum text-align-left"><%= @conseils.count %> conseils pratiques</p>
+    <% end %>
+    <div class="box-criteria">
+      <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
+      <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
+        <% unless params[:tag_list].include?(tag) %>
+          <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="index-direction-ipad">
+      <% if @selected.present? || @selected_tag.present? %>
+        <div class="box-criteria">
+          <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques correspondent à vos critères 🎊</p>
+          <% if @selected.present? %>
+            <p class="button-criteria-selected" data-category="<%= @selected %>"><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
+          <% end %>
+          <% if @selected_tag.present? %>
+            <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
+              <% if @selected_tag.include?(tag) %>
+                <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="main-bold-paragraphe sum-conseils text-align-left"><%= @conseils.count %> conseils pratiques</p>
+      <% end %>
       <div class="box-criteria">
         <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
         <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
@@ -57,12 +88,7 @@
           <% end %>
         <% end %>
       </div>
-    <% else %>
-      <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques</p>
-      <p class="paragraphe">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= @last_date_updated %></p>
-    <% end %>
-  </div>
-  <div class="cards">
+    </div>
     <%= render "shared/conseils_cards", conseils: @sorted_conseils %>
   </div>
 </div>
