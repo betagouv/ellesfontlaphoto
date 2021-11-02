@@ -233,8 +233,13 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .search-div-type, .search-div-residence {
+  .search-div-type {
     margin: 14% 2%;
+  }
+  .search-div-residence {
+    margin: 14% 2% 5% 2%;
+  }
+  .search-div-type, .search-div-residence {
     display: block;
     padding:0;
     text-align: center;
@@ -285,10 +290,12 @@
   }
   .main-index {
     display: block;
+    .tag-present {
+      border: 1px solid $black;
+    }
     .index-direction-helps {
       display: block;
       min-width: 100%;
-      border: 1px solid $black;
       padding-bottom: 30px;
       .info-result,.result-search,.link-blue {
         display: none;
@@ -325,7 +332,7 @@
     }
     .cards {
       .index-direction-ipad {
-        display: none;
+        display: none !important;
       }
     }
     .wrapper {
