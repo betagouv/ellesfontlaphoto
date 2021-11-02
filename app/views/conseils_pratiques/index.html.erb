@@ -55,7 +55,11 @@
     <div class="box-criteria">
       <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
       <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
-        <% unless params[:tag_list].include?(tag) %>
+        <% if params[:tag_list].present? %>
+          <% unless params[:tag_list].include?(tag) %>
+            <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
+          <% end %>
+        <% else %>
           <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
         <% end %>
       <% end %>
@@ -83,7 +87,11 @@
       <div class="box-criteria non-dropdown">
         <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
         <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
-          <% unless params[:tag_list].include?(tag) %>
+          <% if params[:tag_list].present? %>
+            <% unless params[:tag_list].include?(tag) %>
+              <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
+            <% end %>
+          <% else %>
             <p class="button-criteria tags" data-tag="<%= tag %>"><%= tag %></p>
           <% end %>
         <% end %>
