@@ -85,6 +85,18 @@ p {
   }
 }
 
+.small-paragraphe {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 0.8rem;
+  color: $black;
+  p {
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 0.8rem;
+    color: $black;
+    margin-bottom:0;
+  }
+}
+
 .paragraphe-italic {
   font-family: 'Marianne-Regular_Italic', sans-serif;
   font-size: 1rem;

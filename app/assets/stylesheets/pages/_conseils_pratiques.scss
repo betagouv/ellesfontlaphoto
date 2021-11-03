@@ -109,7 +109,7 @@
   padding: 3% 5%;
   column-gap: 2rem;
   .index-direction {
-    min-width: 20%;
+    max-width: 20%;
     .dropdown {
       display: none;
     }
@@ -136,11 +136,48 @@
       padding: 10% 5%;
       margin-bottom:0;
     }
+    .contact-index-conseils-div {
+      .contact-index-conseils {
+        background-color: $rouille;
+        padding: 4%;
+        margin-top: 30px;
+        .img-div {
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 70%;
+          }
+        }
+        .paragraphe-bold {
+          color: $white;
+        }
+        .button-contact-index {
+          background-color: $white;
+          border-radius: 40px;
+          display: table !important;
+          padding: 10px 20px;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 1rem;
+          display: flex;
+          margin: 20px auto;
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-pink;
+          }
+        }
+      }
+      .small-paragraphe {
+        margin-top: 10px;
+      }
+    }
   }
   .cards {
     .index-direction-tablet-conseils {
       display: none;
     }
+  }
+  .contact-index-conseils-div-responsive {
+    display: none;
   }
 }
 
@@ -272,6 +309,41 @@
       }
       .dropdown {
         display: block
+      }
+    }
+    .contact-index-conseils-div-responsive {
+      display: block;
+      .contact-index-conseils {
+        background-color: $rouille;
+        padding: 4%;
+        margin-top: 30px;
+        .img-div {
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 60%;
+          }
+        }
+        .paragraphe-bold {
+          color: $white;
+        }
+        .button-contact-index {
+          background-color: $white;
+          border-radius: 40px;
+          display: table !important;
+          padding: 10px 20px;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 1rem;
+          display: flex;
+          margin: 20px auto;
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-pink;
+          }
+        }
+      }
+      .small-paragraphe {
+        margin-top: 10px;
       }
     }
   }
