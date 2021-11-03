@@ -5,19 +5,19 @@
         <div class="flottante">
           <% help.type_list.each do |type| %>
             <% if type == "Matériel" %>
-              <%= image_tag "emojis/appareil-photo.png", class: "emojis-eflc" %>
+              <%= image_tag "emojis/appareil-photo.png", class: "emojis-eflc-small" %>
             <% end %>
             <% if type == "Production" %>
-              <%= image_tag "emojis/outils.png", class: "emojis-eflc" %>
+              <%= image_tag "emojis/outils.png", class: "emojis-eflc-small" %>
             <% end %>
             <% if type == "Aide Sociale" %>
-              <%= image_tag "emojis/boule-de-cristal.png", class: "emojis-eflc" %>
+              <%= image_tag "emojis/boule-de-cristal.png", class: "emojis-eflc-small" %>
             <% end %>
             <% if type == "Résidence" %>
-              <%= image_tag "emojis/maison.png", class: "emojis-eflc" %>
+              <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %>
             <% end %>
             <% if type == "Diffusion" %>
-              <%= image_tag "emojis/haut-parleur.png", class: "emojis-eflc" %>
+              <%= image_tag "emojis/haut-parleur.png", class: "emojis-eflc-small" %>
             <% end %>
           <% end %>
         </div>
@@ -30,9 +30,9 @@
         <% end %>
       </div>
       <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
-      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc" %> Gains :</span> <%= help.help_amount %></p>
+      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount %></p>
       <% if help.start_date.present? %>
-        <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
+        <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
       <% end %>
       <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %> Résidence en :</span>
       <% if help.residence_condition == "Française ou résidant en France" %>

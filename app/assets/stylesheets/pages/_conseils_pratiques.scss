@@ -48,6 +48,9 @@
 
   .choosen {
     box-shadow: $rouille 0px -3rem 0px inset !important;
+    img {
+      width: 36px !important;
+    }
   }
 
   .dropdown {
@@ -266,6 +269,9 @@
         border: 1px solid $black;
         padding: 10px;
         padding-top:0;
+        .main-bold-paragraphe {
+          padding-bottom:0;
+        }
         .button-criteria-selected,.button-criteria {
           background-color: $white;
           border-radius: 40px;

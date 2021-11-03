@@ -153,17 +153,22 @@ b, strong {
   color: $black;
 }
 
-.emojis-eflc {
+.emojis-eflc-extra-small {
+  width: 12px;
+  margin-right: 3px;
+}
+
+.emojis-eflc-small {
   width: 18px;
   margin-right: 3px;
 }
 
-.emojis-eflc-navbar {
+.emojis-eflc-medium {
   width: 22px;
   margin-right: 3px;
 }
 
-.emojis-eflc-filter {
+.emojis-eflc-large {
   width: 36px;
   margin-right: 3px;
 }

@@ -48,6 +48,9 @@
 
   .choosen {
     box-shadow: $purple 0px -3rem 0px inset !important;
+    img {
+      width: 36px !important;
+    }
   }
 
   .dropdown {

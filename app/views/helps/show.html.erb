@@ -5,19 +5,19 @@
         <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
         <% @help.type_list.each do |type| %>
           <% if type == "Matériel" %>
-            <a href="/helps?residence=&type=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc" %> <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+            <a href="/helps?residence=&type=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
           <% end %>
           <% if type == "Production" %>
-            <a href="/helps?residence=&type=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc" %> <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+            <a href="/helps?residence=&type=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
           <% end %>
           <% if type == "Aide Sociale" %>
-            <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc" %> <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+            <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
           <% end %>
           <% if type == "Diffusion" %>
-            <a href="/helps?residence=&type=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc" %> <%= Help::HELP_TYPE[type.to_sym] %></p></a>
+            <a href="/helps?residence=&type=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
           <% end %>
           <% if type == "Résidence" %>
-            <a href="/helps?residence=&type=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc" %> résidence</p></a>
+            <a href="/helps?residence=&type=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %> résidence</p></a>
           <% end %>
         <% end %>
       </div>
@@ -25,13 +25,13 @@
       <p class="paragraphe"><%= @help.description %></p>
     </div>
     <div class="help-description">
-      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc" %> Gains :</p>
+      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</p>
       <p class="paragraphe"><%= @help.help_amount %></p>
       <% if @help.residence_time.present? %>
         <p class="paragraphe">hébergement pour <%= @help.residence_time %></p>
       <% end %>
       <hr class="hl">
-      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc" %> Dates limites :</p>
+      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates limites :</p>
       <% if @help.start_date.present? %>
         <p class="paragraphe">Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %></p>
       <% end %>
@@ -63,7 +63,7 @@
       <% if @help_status == "open" %>
         <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
       <% elsif @help_status == "close" %>
-        <a class="btn-not-available"> <%= image_tag "emojis/fusee.png", class: "emojis-eflc" %> Candidatez </a>
+        <a class="btn-not-available"> <%= image_tag "emojis/fusee.png", class: "emojis-eflc-small" %> Candidatez </a>
         <p class="paragraphe-bold">Actuellement fermée, revenez en <%= I18n.l @help.start_date, format: "%B" %></p>
       <% end %>
     <% end %>
@@ -104,14 +104,14 @@
   <div class="block-fiche-aide flex-div">
     <div class="flex-div-div">
       <p class="subtitle">Pièces à fournir</p>
-      <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", class: "emojis-eflc" %> Pièces administratives</p>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", class: "emojis-eflc-small" %> Pièces administratives</p>
       <%= @help.admin_attachment.html_safe %>
       <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
       <%= @help.artistic_attachment.html_safe %>
     </div>
     <div class="flex-div-div">
       <% if @help.other_attachment.present? %>
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", class: "emojis-eflc" %> Pièces spécifiques</p>
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", class: "emojis-eflc-small" %> Pièces spécifiques</p>
         <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>
       <% end %>
     </div>

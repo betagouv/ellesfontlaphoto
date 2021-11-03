@@ -10,9 +10,9 @@ class ConseilsVideo < ApplicationRecord
   acts_as_taggable_on :tags, :category
 
   CONSEIL_CATEGORIES = {
-    "Administratif & Financier": "📕 administratifs et financiers",
-    "Artistique & Technique": "🖌 artistiques et techniques",
-    "Egalite & inclusion": "🌟 égalité et inclusion",
+    "Administratif & Financier": {image: "livre-rouge.png", text: " administratifs et financiers"},
+    "Artistique & Technique": {image:"stylo.png", text: " artistiques et techniques"},
+    "Egalite & inclusion": {image: "etoile.png", text: " égalité et inclusion"},
   }
 
   CONSEIL_TAGS = ["Commencer mon activité", "Me former"]
