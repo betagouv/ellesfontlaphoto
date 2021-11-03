@@ -5,7 +5,6 @@
   <%= image_tag "illu-home-1.png", class: "illu-home-1" %>
   <%= image_tag "illu-home-2.png", class: "illu-home-2" %>
   <h1><a href="/helps" class="underline-purple">Aides financières</a> et <a href="/conseils" class="underline-pink">conseils pratiques</a> pour les photographes femmes</h1>
-  <!-- <div class="illu-home-3"></div> -->
   <%= image_tag "illu-home-3_1440.png", class: "illu-home-3-1440" %>
   <%= image_tag "illu-home-3_320_768.png", class: "illu-home-3-320-768" %>
   <%= image_tag "illu-home-3_768_1024.png", class: "illu-home-3-768-1024" %>
@@ -19,35 +18,35 @@
   </div>
   <div class="first-block-right">
     <p class="paragraphe-bold">Notre service a vocation à : </p>
-      <p> <span class="icones">✨</span>
+      <p> <span class="icones"><%= image_tag "emojis/etoile.png", style: "width: 5%;" %></span>
       <span class="paragraphe">Améliorer la connaissance des aides et ressources financières, techniques... </span></p>
-      <p> <span class="icones">🤝</span>
+      <p> <span class="icones"><%= image_tag "emojis/poignee-main.png", class: "emojis-eflc-small" %></span>
       <span class="paragraphe">Faciliter l'entraide par le partage d’expériences</span></p>
-      <p><span class="icones">🏹</span>
+      <p><span class="icones"><%= image_tag "emojis/arc.png", style: "width: 5%;" %></span>
       <span class="paragraphe">S’armer pour lutter contre les inégalités de genre et sensibiliser autour de soi</span></p>
   </div>
 </div>
 <div class="second-block" id="comment">
   <p class="subtitle-spectral">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
   <div class="flex-div">
-    <a class="button-helps" href="/helps"> 💸 Trouver mes aides</a>
+    <a class="button-helps" href="/helps"> <%= image_tag "emojis/argent-volant.png", style: "width: 10%; margin-right: 5px;" %> Trouver mes aides</a>
     <div class="exemple-helps">
       <div class="cards">
         <%= render "shared/helps_cards", helps: @helps %>
       </div>
     </div>
-    <a class="button-helps-mobile" href="/helps"> 💸 Trouver mes aides</a>
+    <a class="button-helps-mobile" href="/helps"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> Trouver mes aides</a>
   </div>
 </div>
 <div class="third-block flex-div">
   <div class="third-block-div">
-    <a class="button-conseils" href="/conseils"> 🤝 Conseils & témoignages</a>
+    <a class="button-conseils" href="/conseils"> <%= image_tag "emojis/poignee-main.png", class: "emojis-eflc-small" %> Conseils & témoignages</a>
     <p class="subtitle-spectral">Pour présenter son portfolio, estimer ses cotisations d’artiste-auteur, s’inspirer d’expériences…</p>
-    <a class="button-conseils-mobile" href="/conseils"> 🤝 Conseils & témoignages</a>
+    <a class="button-conseils-mobile" href="/conseils"> <%= image_tag "emojis/poignee-main.png", class: "emojis-eflc-small" %> Conseils & témoignages</a>
     <p class="paragraphe"><span style="line-height: 80px;">Thématiques :</span>
-      <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=" class="conseil-tag-home">📕 administratifs et financiers</a>
-      <a href="/conseils?category_list=Artistique+%26+Technique&tag_list=" class="conseil-tag-home">🖌 artistiques et techniques</a href="">
-      <a href="/conseils?category_list=Rôle+modèles&tag_list=" class="conseil-tag-home">🌟 rôle modèles</a href="">
+      <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=" class="conseil-tag-home"><%= image_tag "emojis/livre-rouge.png", class: "emojis-eflc-small" %> administratifs et financiers</a>
+      <a href="/conseils?category_list=Artistique+%26+Technique&tag_list=" class="conseil-tag-home"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> artistiques et techniques</a href="">
+      <a href="/conseils?category_list=Rôle+modèles&tag_list=" class="conseil-tag-home"><%= image_tag "emojis/etoile.png", class: "emojis-eflc-small" %> rôle modèles</a href="">
     </p>
   </div>
   <%= image_tag "illu-home-5.png", class: "illu-home-5"%>
@@ -82,15 +81,15 @@
     <p class="paragraphe">Vous êtes une institution, une professionnelle du secteur, une journaliste… Écrivez-nous pour faire évoluer cette boîte à outils d’empouvoirement ! </p>
     <p class="paragraphe">Et pour simplement suivre l’évolution du service, abonnez-vous à l’infolettre. À bientôt ! </p>
     <div class="btn-contact-mobile">
-      <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact">✏️ Nous écrire</button>
-      <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact">💌 S'abonner à l'infolettre</button>
+      <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</button>
+      <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</button>
     </div>
   </div>
   <div class="manifesto-div pb0">
     <p class="subtitle">Qui sommes-nous ? </p>
     <p class="paragraphe">On parle de “nous”, mais on ne vous a toujours pas dit qui l’on est. Nous sommes <a class="link-blue-underlined" href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target=”_blank”>une petite équipe </a>d’agentes du ministère de la Culture et d’expertes numérique rassemblées grâce à betagouv.</p>
     <div class="btn-manifesto-mobile">
-      <a href="/a_propos" class="btn-manifesto">📓 À propos</a>
+      <a href="/a_propos" class="btn-manifesto"><%= image_tag "emojis/carnet-noir.png", class: "emojis-eflc-small" %> À propos</a>
       <%= image_tag "illu-home-4.png", class: "illu-home-4" %>
     </div>
   </div>
@@ -103,11 +102,11 @@
     <% if notice %>
       <p style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact">✏️ Nous écrire</button>
-    <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact">💌 S'abonner à l'infolettre</button>
+    <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</button>
+    <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</button>
   </div>
   <div class="manifesto-div">
-    <a class="btn-manifesto" href="/a_propos">📓 À propos</a>
+    <a class="btn-manifesto" href="/a_propos"><%= image_tag "emojis/carnet-noir.png", class: "emojis-eflc-small" %> À propos</a>
     <%= image_tag "illu-home-4.png", class: "illu-home-4" %>
   </div>
 </div>

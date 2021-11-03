@@ -19,9 +19,9 @@ const searchIndexConseils = () => {
 
 const updateInputCategories = () => {
   const categories = {
-    "📕 administratifs et financiers": "Administratif & Financier",
-    "🖌 artistiques et techniques": "Artistique & Technique",
-    "🌟 égalité et inclusion": "Egalite & inclusion",
+    "<img src='assets/emojis/livre-rouge.png', class='emojis-eflc-large'/> administratifs et financiers": "Administratif & Financier",
+    "<img src='assets/emojis/stylo.png', class='emojis-eflc-large'/> artistiques et techniques": "Artistique & Technique",
+    "<img src='assets/emojis/etoile.png', class='emojis-eflc-large'/> égalité et inclusion": "Egalite & inclusion",
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
@@ -40,7 +40,7 @@ const updateInputCategories = () => {
 
   dropdownElementsCategories.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#category_list").value = categories[element.innerHTML];
+      document.querySelector("#category_list").value = element.dataset.filtre;
       document.querySelector("#select-search-category").innerHTML = element.innerHTML;
       document.querySelector("#select-search-category").classList.add("choosen");
       document.getElementById("dropdown-elements-category").classList.toggle("show");
@@ -67,23 +67,5 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const changeCategory = () => {
-  const categories = [
-    "📕 administratifs et financiers",
-    "🖌 artistiques et techniques",
-    "🌟 égalité et inclusion",
-  ];
-  let counter = 0;
-  const element = document.getElementById("text-to-change-category");
-  const inst = setInterval(() => {
-    element.innerHTML = categories[counter];
-    counter++;
-    if (counter >= categories.length) {
-      counter = 0;
-    }
-  }, 1500);
-}
-
-export { changeCategory }
 export { updateInputCategories }
 export { searchIndexConseils }

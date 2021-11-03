@@ -2,13 +2,14 @@
   <p class="text-search">je veux</p>
   <div class="dropdown">
     <% if @selected_type.present? %>
-      <div id="select-search-type" class="choosen"><%= Help::HELP_TYPE[@selected_type.to_sym] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <div id="select-search-type" class="choosen"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-large" %> <%= Help::HELP_TYPE[@selected_type.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% else %>
-      <div id="select-search-type"><span id="text-to-change-type"><%= Help::HELP_TYPE.values.sample %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <% @sample = Help::HELP_TYPE.values.sample %>
+      <div id="select-search-type"><span id="text-to-change-type"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %> <%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% end %>
     <div id="dropdown-elements-type">
-      <% Help::HELP_TYPE.values.each do |type| %>
-        <div class="dropdown-content-type"><%= type %></div>
+      <% Help::HELP_TYPE.each do |type| %>
+        <div class="dropdown-content-type" data-filter="<%= type.first.to_s %>"><%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-medium" %><%= type.second[:text] %></div>
       <% end %>
     </div>
   </div>
@@ -35,7 +36,7 @@
   </div>
 </div>
 <div class="button-search-helps">
-  🎯 Filtrer les aides
+  <%= image_tag "emojis/cible.png", class: "emojis-eflc-small" %> Filtrer les aides
 </div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>
@@ -56,15 +57,15 @@
 <div class="main-index">
   <% if @selected.present? || @selected_type.present? %>
     <div class="index-direction-helps tag-present">
-      <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
+      <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères <%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small" %></p>
       <a class="link-blue result-search" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a>
       <div class="result-search-mobile">
-        <p class="main-bold-paragraphe result-search-mobile text-align-left">🎊 <%= @helps.count %> résultats pour :</p>
+        <p class="main-bold-paragraphe result-search-mobile text-align-left"><%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small" %> <%= @helps.count %> résultats pour :</p>
         <% if @selected.present? %>
           <p class="button-criteria-selected-help residence" data-category="<%= @selected %>"><%= @selected %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
         <% if @selected_type.present? %>
-          <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= Help::HELP_TYPE[@selected_type.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
+          <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= Help::HELP_TYPE[@selected_type.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
       </div>
     </div>
@@ -81,12 +82,12 @@
     <div class="index-direction-tablet-help">
       <% if @selected.present? || @selected_type.present? %>
         <div class="result-search-mobile-div">
-          <p class="main-bold-paragraphe result-search-mobile text-align-left">🎊 <%= @helps.count %> résultats pour :</p>
+          <p class="main-bold-paragraphe result-search-mobile text-align-left"><%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small" %> <%= @helps.count %> résultats pour :</p>
           <% if @selected.present? %>
             <p class="button-criteria-selected-help residence" data-category="<%= @selected %>"><%= @selected %> <%= image_tag "cross-criteria.svg" %></p>
           <% end %>
           <% if @selected_type.present? %>
-            <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= Help::HELP_TYPE[@selected_type.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
+            <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= Help::HELP_TYPE[@selected_type.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
           <% end %>
         </div>
       <% else %>
