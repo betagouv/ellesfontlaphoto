@@ -35,7 +35,7 @@
   </div>
 </div>
 <div class="button-search-helps">
-  🎯 Filtrer les aides
+  <%= image_tag "emojis/cible.png", class: "emojis-eflc" %> Filtrer les aides
 </div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>

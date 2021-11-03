@@ -33,8 +33,8 @@
       <p class="paragraphe mt30"><%= @conseil_article.subtitle %></p>
     </div>
     <div class="conseils-article-description">
-      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée : </span><%= @conseil_article.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs : </span><%= @conseil_article.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc" %> Durée : </span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc" %> Objectifs : </span><%= @conseil_article.objectif %></p>
     </div>
   </div>
 </div>
