@@ -58,9 +58,9 @@
       display: none;
       position: absolute;
       background-color: $white;
-      min-width: 95%;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
+      width: 100%;
       border: 1px solid $rouille;
       max-height: 335px;
       overflow:auto;
@@ -109,7 +109,7 @@
   padding: 3% 5%;
   column-gap: 2rem;
   .index-direction {
-    min-width: 20%;
+    max-width: 20%;
     .dropdown {
       display: none;
     }
@@ -136,11 +136,48 @@
       padding: 10% 5%;
       margin-bottom:0;
     }
+    .contact-index-conseils-div {
+      .contact-index-conseils {
+        background-color: $rouille;
+        padding: 4%;
+        margin-top: 30px;
+        .img-div {
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 70%;
+          }
+        }
+        .paragraphe-bold {
+          color: $white;
+        }
+        .button-contact-index {
+          background-color: $white;
+          border-radius: 40px;
+          display: table !important;
+          padding: 10px 20px;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 1rem;
+          display: flex;
+          margin: 20px auto;
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-pink;
+          }
+        }
+      }
+      .small-paragraphe {
+        margin-top: 10px;
+      }
+    }
   }
   .cards {
     .index-direction-tablet-conseils {
       display: none;
     }
+  }
+  .contact-index-conseils-div-responsive {
+    display: none;
   }
 }
 
@@ -166,9 +203,8 @@
 
     .dropdown {
       #dropdown-elements-category {
-        max-width: 85%;
         div {
-          max-width: 200px;
+          max-width: 100%;
           border-bottom: 1px solid $rouille;
           font-size: 16px;
           line-height: 20px;
@@ -188,6 +224,42 @@
     display: block;
     .index-direction {
       display: none
+    }
+    .contact-index-conseils-div-responsive {
+      display: block;
+      grid-row-start: 2;
+      .contact-index-conseils {
+        background-color: $rouille;
+        padding: 4%;
+        margin-top:0;
+        .img-div {
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 70%;
+          }
+        }
+        .paragraphe-bold {
+          color: $white;
+        }
+        .button-contact-index {
+          background-color: $white;
+          border-radius: 40px;
+          display: table !important;
+          padding: 10px 20px;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 1rem;
+          display: flex;
+          margin: 20px auto;
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-pink;
+          }
+        }
+      }
+      .small-paragraphe {
+        margin-top: 10px;
+      }
     }
   }
   .cards {
@@ -272,6 +344,18 @@
       }
       .dropdown {
         display: block
+      }
+    }
+    .contact-index-conseils-div-responsive {
+      display: block;
+      grid-row-start: 5;
+      .contact-index-conseils {
+        margin-top: 30px;
+        .img-div {
+          img {
+            max-width: 60%;
+          }
+        }
       }
     }
   }
