@@ -54,7 +54,6 @@
   <div class="progress-help"></div>
 </div>
 <div class="main-index">
-  <div class="index-direction-helps">
   <% if @selected.present? || @selected_type.present? %>
     <div class="index-direction-helps tag-present">
       <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères 🎊</p>
@@ -68,16 +67,18 @@
           <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= Help::HELP_TYPE[@selected_type.to_sym] %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
       </div>
-    <% else %>
-      <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
-      <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+      <div class="index-direction-helps">
+        <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
+        <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+  <% end %>
   <div class="arrow-down-mobile">
     <a href="#cards-anchor"><%= image_tag "arrow-down-purple.svg" %></a>
   </div>
   <div class="cards" id="cards-anchor">
-    <div class="index-direction-ipad">
+    <div class="index-direction-tablet-conseils">
       <% if @selected.present? || @selected_type.present? %>
         <div class="result-search-mobile-div">
           <p class="main-bold-paragraphe result-search-mobile text-align-left">🎊 <%= @helps.count %> résultats pour :</p>
