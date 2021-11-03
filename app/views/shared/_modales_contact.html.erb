@@ -5,7 +5,7 @@
       <p class="cross">&times;</p>
     </a>
     <div class="modal-content">
-      <p class="subtitle">💌 S'abonner à l'infolettre</p>
+      <p class="subtitle"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-large" %> S'abonner à l'infolettre</p>
       <p class="paragraphe">Avec maximum un message par mois, nous vous informerons des nouveaux services proposés par le site, ou des appels à contributions pour nourrir cet outil ! Merci pour votre intérêt.</p>
       <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
         <%= f.input :contact_email,
@@ -15,7 +15,7 @@
                         input_html: { value: 'newsletter' },
                         as: :hidden %>
         <div class="btn-div">
-          <%= f.button :submit, "✒️ S'abonner" %>
+          <%= f.button :submit, "Envoyer" %>
         </div>
       <% end %>
     </div>
@@ -29,7 +29,7 @@
       <p class="cross">&times;</p>
     </a>
     <div class="modal-content">
-      <p class="subtitle">✏️ Nous écrire</p>
+      <p class="subtitle"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-large" %> Nous écrire</p>
       <%= simple_form_for [@contact], url: contacts_path, method: :post do |f| %>
         <%= f.input :contact_type,
                       as: :select,
@@ -44,7 +44,7 @@
                       as: :text,
                       required: true %>
         <div class="btn-div">
-          <%= f.button :submit, "✉️ Envoyer" %>
+          <%= f.button :submit, "Envoyer" %>
         </div>
       <% end %>
     </div>
