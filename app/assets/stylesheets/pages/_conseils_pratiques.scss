@@ -53,7 +53,6 @@
   .dropdown {
     position: relative;
     display: inline-block;
-    /* Dropdown Content (Hidden by Default) */
     #dropdown-elements-category {
       display: none;
       position: absolute;
@@ -64,7 +63,6 @@
       border: 1px solid $rouille;
       max-height: 335px;
       overflow:auto;
-      /* Links inside the dropdown */
       div {
         color: $black;
         padding: 12px 16px;
@@ -76,10 +74,8 @@
         cursor: pointer;
         width: 100%;
       }
-      /* Change color of dropdown links on hover */
       div:hover {background-color: $hover-pink;}
     }
-    /* Show the dropdown menu on hover */
     .show {display: block !important;}
   }
 }

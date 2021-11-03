@@ -19,9 +19,9 @@ const searchIndexConseils = () => {
 
 const updateInputCategories = () => {
   const categories = {
-    "📕 administratifs et financiers": "Administratif & Financier",
-    "🖌 artistiques et techniques": "Artistique & Technique",
-    "🌟 égalité et inclusion": "Egalite & inclusion",
+    "<img src='assets/emojis/livre-rouge.png', class='emojis-eflc-filter'/> administratifs et financiers": "Administratif & Financier",
+    "<img src='assets/emojis/stylo.png', class='emojis-eflc-filter'/> artistiques et techniques": "Artistique & Technique",
+    "<img src='assets/emojis/etoile.png', class='emojis-eflc-filter'/> égalité et inclusion": "Egalite & inclusion",
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
@@ -67,23 +67,5 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const changeCategory = () => {
-  const categories = [
-    "📕 administratifs et financiers",
-    "🖌 artistiques et techniques",
-    "🌟 égalité et inclusion",
-  ];
-  let counter = 0;
-  const element = document.getElementById("text-to-change-category");
-  const inst = setInterval(() => {
-    element.innerHTML = categories[counter];
-    counter++;
-    if (counter >= categories.length) {
-      counter = 0;
-    }
-  }, 1500);
-}
-
-export { changeCategory }
 export { updateInputCategories }
 export { searchIndexConseils }

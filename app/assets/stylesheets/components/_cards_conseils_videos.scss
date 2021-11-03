@@ -10,7 +10,7 @@
     a {
       color: $black;
       div {
-        img {
+        .image-conseil {
           height: 200px;
           height: 200px;
           width: 100%;
@@ -48,7 +48,7 @@
           border: 1px solid $rouille;
           border-radius: 40px;
           display: table !important;
-          padding: 0px 10px 2px;
+          padding: 3px 10px 0px;
           background-color: white;
           font-size: 1.3rem;
           margin-right: 7px;
