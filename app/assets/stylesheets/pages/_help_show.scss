@@ -129,7 +129,7 @@ ul li {
       border-radius: 50px;
       background-color: $purple;
       text-decoration: none;
-      color: $black;
+      color: $black !important;
       font-size: 18px;
       margin-bottom: 40px;
       &:hover {
@@ -145,7 +145,7 @@ ul li {
       background-color: $white;
       border: 1px solid $purple;
       text-decoration: none;
-      color: $black;
+      color: $black !important;
       font-size: 18px;
       margin-bottom: 40px;
     }
@@ -157,7 +157,7 @@ ul li {
     border-radius: 50px;
     background-color: $purple;
     text-decoration: none;
-    color: $black;
+    color: $black !important;
     font-size: 16px;
     margin-top: 20px;
     margin-bottom: 40px;

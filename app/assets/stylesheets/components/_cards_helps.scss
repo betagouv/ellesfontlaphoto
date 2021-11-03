@@ -11,7 +11,6 @@
     height: auto;
     padding: 13% 5% 10% 5%;
     position: relative;
-
     .main-bold-paragraphe {
       text-align: left;
     }
@@ -39,6 +38,7 @@
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 1.3rem;
         margin-right: 7px;
+        white-space: nowrap;
       }
       .flottante2 {
         color: $black !important;
@@ -49,10 +49,12 @@
         background-color: white;
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 0.9rem;
+        white-space: nowrap;
       }
     }
   }
 }
+
 @media only screen and (max-width: 1250px) {
   .cards .card-index a {
     .paragraphe {
@@ -60,6 +62,25 @@
     }
     .arrow {
       margin-top: 7%;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .card-index-helps {
+    padding: 8% 5% 5% 5% !important;
+    a {
+      .paragraphe {
+        padding-bottom: 0;
+        margin-top: 0px;
+      }
+      .main-bold-paragraphe {
+        padding-bottom:0;
+        margin-bottom: 10px;
+      }
+      .arrow {
+        margin-top: 8% !important;
+      }
     }
   }
 }
