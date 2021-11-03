@@ -9,7 +9,6 @@ const searchIndex = () => {
     document.getElementById("dropdown-elements-type").classList.toggle("show");
   });
 
-  // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
     if ((event.target.matches('.search-div-residence')) || (event.target.matches('.search-div-type'))) {
       const dropdowns_residence = document.querySelector("#dropdown-elements-residence");
@@ -28,11 +27,11 @@ const searchIndex = () => {
 
 const updateInput = () => {
   const types = {
-  "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-filter'/> financer du matériel" : "Matériel",
-  "<img src='assets/emojis/outils.png', class='emojis-eflc-filter'/> financer une production": "Production",
-  "<img src='assets/emojis/boule-de-cristal.png', class='emojis-eflc-filter'/> un secours exceptionnel": "Aide Sociale",
-  "<img src='assets/emojis/maison.png', class='emojis-eflc-filter'/> une résidence (artistique)": "Résidence",
-  "<img src='assets/emojis/haut-parleur.png', class='emojis-eflc-filter'/> financer une diffusion": "Diffusion"
+  "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
+  "<img src='assets/emojis/outils.png', class='emojis-eflc-large'/> financer une production": "Production",
+  "<img src='assets/emojis/boule-de-cristal.png', class='emojis-eflc-large'/> un secours exceptionnel": "Aide Sociale",
+  "<img src='assets/emojis/maison.png', class='emojis-eflc-large'/> une résidence (artistique)": "Résidence",
+  "<img src='assets/emojis/haut-parleur.png', class='emojis-eflc-large'/> financer une diffusion": "Diffusion"
   }
   const element = document.getElementById("text-to-change-type");
   if (element) {
@@ -61,7 +60,7 @@ const updateInput = () => {
 
   dropdownElementsTypes.forEach((element) => {
     element.addEventListener("click", () => {
-      document.querySelector("#type_list").value = types[element.innerHTML];
+      document.querySelector("#type_list").value = element.dataset.filter;
       document.querySelector("#select-search-type").innerHTML = element.innerHTML;
       document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");

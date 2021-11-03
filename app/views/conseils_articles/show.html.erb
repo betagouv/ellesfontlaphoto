@@ -3,14 +3,16 @@
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_article.category_list.each do |category| %>
       <% if category == "Administratif & Financier" %>
-        <a href="/conseils?category=Administratif&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Administratif&tags%5B%5D=">
       <% end %>
       <% if category == "Artistique & Technique" %>
-        <a href="/conseils?category=Technique&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Technique&tags%5B%5D=">
       <% end %>
       <% if category == "Egalite & inclusion" %>
-        <a href="/conseils?category=Parcours&tags%5B%5D="><p class="conseil-tag"> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category=Parcours&tags%5B%5D=">
       <% end %>
+        <p class="conseil-tag"><%= image_tag "emojis/#{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small" %> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
+      </a>
     <% end %>
     <% @conseil_article.tag_list.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
@@ -33,8 +35,8 @@
       <p class="paragraphe mt30"><%= @conseil_article.subtitle %></p>
     </div>
     <div class="conseils-article-description">
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc" %> Durée : </span><%= @conseil_article.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc" %> Objectifs : </span><%= @conseil_article.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Durée : </span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_article.objectif %></p>
     </div>
   </div>
 </div>
