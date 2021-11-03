@@ -168,7 +168,7 @@
       }
       #dropdown-elements-type {
         div {
-          max-width: 200px;
+          max-width: none;
           border-bottom: 1px solid $purple;
           font-size: 16px;
           line-height: 20px;
@@ -210,6 +210,10 @@
     .cards {
       .index-direction-tablet-help {
         display: block;
+        .info-result.main-bold-paragraphe {
+          border: solid 1px $black;
+          padding: 3%;
+        }
         .result-search-mobile-div {
           padding: 4%;
           border: 1px solid $black;
@@ -264,6 +268,7 @@
 
     .dropdown {
       #dropdown-elements-residence {
+        min-width: 100%;
         div {
           border-bottom: 1px solid $purple;
           font-size: 16px;
@@ -271,8 +276,8 @@
         }
       }
       #dropdown-elements-type {
+        min-width: 100%;
         div {
-          max-width: 200px;
           border-bottom: 1px solid $purple;
           font-size: 16px;
           line-height: 20px;
