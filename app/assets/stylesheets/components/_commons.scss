@@ -153,6 +153,26 @@ b, strong {
   color: $black;
 }
 
+.emojis-eflc-extra-small {
+  width: 12px;
+  margin-right: 3px;
+}
+
+.emojis-eflc-small {
+  width: 18px;
+  margin-right: 3px;
+}
+
+.emojis-eflc-medium {
+  width: 22px;
+  margin-right: 3px;
+}
+
+.emojis-eflc-large {
+  width: 36px;
+  margin-right: 3px;
+}
+
 .flex-div {
   display:flex;
   display: -ms-flexbox;//IE

@@ -22,7 +22,7 @@
     max-width:20%;
     padding-left: 3rem;
     .header_logo,.logo {
-      padding: 1rem 15px 1rem 0;
+      padding: 1rem 15px 0.7rem 0;
       font-family: 'Marianne-Bold', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -78,7 +78,7 @@
   }
 
   .helps-link-selected {
-    white-space: pre-wrap;
+    white-space: nowrap;
     box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     border-radius: 0;
   }
@@ -95,7 +95,7 @@
   }
 
   .conseils-link-selected {
-    white-space: pre-wrap;
+    white-space: nowrap;
     box-shadow: $rouille 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     border-radius: 0;
   }
@@ -142,6 +142,9 @@
     .header_brand {
       padding-left: 2rem;
       min-width: 27%;
+      .header_logo {
+        padding: 0;
+      }
     }
     .header_tools-links {
       .links-group {

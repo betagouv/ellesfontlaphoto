@@ -3,14 +3,16 @@
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_video.category_list.each do |category| %>
       <% if category == "Administratif & Financier" %>
-        <a href="/conseils?category_list=Administratif+%26+Financier&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=">
       <% end %>
       <% if category == "Artistique & Technique" %>
-        <a href="/conseils?category_list=Artistique+%26+Technique&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category_list=Artistique+%26+Technique&tag_list=">
       <% end %>
       <% if category == "Egalite & inclusion" %>
-        <a href="/conseils?category_list=Rôle+modèles&tag_list="><p class="conseil-tag"><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym] %></p></a>
+        <a href="/conseils?category_list=Rôle+modèles&tag_list=">
       <% end %>
+        <p class="conseil-tag"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
+      </a>
     <% end %>
     <% @conseil_video.tag_list.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
@@ -33,9 +35,9 @@
       <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="conseils-video-description">
-      <p class="paragraphe"><span class="paragraphe-bold">⏰ Durée : </span><%= @conseil_video.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold">👉 Objectifs : </span><%= @conseil_video.objectif %></p>
-      <p class="paragraphe"><span class="paragraphe-bold">📼 Format vidéo : </span><%= @conseil_video.format %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Durée : </span><%= @conseil_video.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_video.objectif %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", class: "emojis-eflc-small" %> Format vidéo : </span><%= @conseil_video.format %></p>
     </div>
   </div>
   <% if @conseil_video.video.attached? %>

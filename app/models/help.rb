@@ -20,11 +20,11 @@ class Help < ApplicationRecord
   }
 
   HELP_TYPE = {
-    "Matériel": "📸 financer du matériel",
-    "Production": "🛠 financer une production",
-    "Aide Sociale": "🔮 un secours exceptionnel",
-    "Résidence": "🏠 une résidence (artistique)",
-    "Diffusion": "📣 financer une diffusion",
+    "Matériel": {image: "appareil-photo.png", text: " financer du matériel"},
+    "Production": {image: "outils.png", text: " financer une production"},
+    "Aide Sociale": {image: "boule-de-cristal.png", text: " un secours exceptionnel"},
+    "Résidence": {image: "maison.png", text: " une résidence (artistique)"},
+    "Diffusion": {image: "haut-parleur.png", text: " financer une diffusion"},
   }
 
   HELP_RESIDENCE = [

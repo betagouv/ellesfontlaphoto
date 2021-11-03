@@ -48,12 +48,14 @@
 
   .choosen {
     box-shadow: $rouille 0px -3rem 0px inset !important;
+    img {
+      width: 36px !important;
+    }
   }
 
   .dropdown {
     position: relative;
     display: inline-block;
-    /* Dropdown Content (Hidden by Default) */
     #dropdown-elements-category {
       display: none;
       position: absolute;
@@ -64,7 +66,6 @@
       border: 1px solid $rouille;
       max-height: 335px;
       overflow:auto;
-      /* Links inside the dropdown */
       div {
         color: $black;
         padding: 12px 16px;
@@ -76,10 +77,8 @@
         cursor: pointer;
         width: 100%;
       }
-      /* Change color of dropdown links on hover */
       div:hover {background-color: $hover-pink;}
     }
-    /* Show the dropdown menu on hover */
     .show {display: block !important;}
   }
 }
@@ -270,6 +269,9 @@
         border: 1px solid $black;
         padding: 10px;
         padding-top:0;
+        .main-bold-paragraphe {
+          padding-bottom:0;
+        }
         .button-criteria-selected,.button-criteria {
           background-color: $white;
           border-radius: 40px;

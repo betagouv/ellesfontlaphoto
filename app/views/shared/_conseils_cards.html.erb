@@ -7,21 +7,21 @@
             <div class="flottante">
               <% conseil.category_list.each do |category| %>
                 <% if category == "Administratif & Financier" %>
-                  📕
+                  <%= image_tag "emojis/livre-rouge.png", class: "emojis-eflc-small" %>
                 <% end %>
                 <% if category == "Artistique & Technique" %>
-                  🖌
+                  <%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %>
                 <% end %>
                 <% if category == "Egalite & inclusion" %>
-                  ✨️
+                  <%= image_tag "emojis/etoile.png", class: "emojis-eflc-small" %>
                 <% end %>
               <% end %>
             </div>
           </div>
           <p class="main-bold-paragraphe mb30"><%= conseil.title %></p>
-          <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+          <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
           <% if conseil.objectif.present? %>
-            <p class="paragraphe mb0"><span class="paragraphe-bold">👉 Objectif:</span> <%= conseil.objectif %></p>
+            <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectif:</span> <%= conseil.objectif %></p>
           <% end %>
           <p class="arrow text-align-right"><%= image_tag "arrow-rouille.svg" %></p>
         </div>
@@ -33,20 +33,20 @@
         <div class="card-index-conseils-videos-div">
           <% if conseil.image.attached? %>
             <div>
-              <%= cl_image_tag conseil.image.key %>
+              <%= cl_image_tag conseil.image.key, class: "image-conseil"  %>
             </div>
           <% end %>
           <div class="flottante-div">
             <div class="flottante">
               <% conseil.category_list.each do |category| %>
                 <% if category == "Administratif & Financier" %>
-                  📕
+                  <%= image_tag "emojis/livre-rouge.png", class: "emojis-eflc-small" %>
                 <% end %>
                 <% if category == "Artistique & Technique" %>
-                  🖌
+                  <%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %>
                 <% end %>
                 <% if category == "Egalite & inclusion" %>
-                  ✨️
+                  <%= image_tag "emojis/etoile.png", class: "emojis-eflc-small" %>
                 <% end %>
               <% end %>
             </div>
@@ -59,7 +59,7 @@
               <%= conseil.tags.join(",") %>
             </p>
             <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="paragraphe"><%= conseil.protagoniste %></span></p>
-            <p class="paragraphe mb0"><span class="paragraphe-bold">⏰ Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+            <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
           </div>
         </div>
       <% end %>

@@ -17,7 +17,6 @@ import { updateInput } from '../plugins/search-index';
 import { changeResidence } from '../plugins/search-index';
 import { searchIndexConseils } from '../plugins/search-conseils';
 import { updateInputCategories } from '../plugins/search-conseils';
-import { changeCategory } from '../plugins/search-conseils';
 // import { changeTypes } from '../plugins/search-index';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
@@ -62,7 +61,7 @@ document.addEventListener('turbolinks:load', () => {
     })
   }
 
-  if (document.querySelector(".banner-contact")){
+  if (document.querySelector(".banner-contact") || document.querySelector(".contact-index-conseils")){
     new Modal();
   }
 })
