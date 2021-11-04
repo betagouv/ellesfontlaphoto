@@ -19,9 +19,9 @@ const searchIndexConseils = () => {
 
 const updateInputCategories = () => {
   const categories = {
-    "<img src='assets/emojis/livre-rouge.png', class='emojis-eflc-large'/> administratifs et financiers": "Administratif & Financier",
-    "<img src='assets/emojis/stylo.png', class='emojis-eflc-large'/> artistiques et techniques": "Artistique & Technique",
-    "<img src='assets/emojis/etoile.png', class='emojis-eflc-large'/> égalité et inclusion": "Egalite & inclusion",
+    "administratifs et financiers": "Administratif & Financier",
+    "artistiques et techniques": "Artistique & Technique",
+    "égalité et inclusion": "Egalite & inclusion",
   }
   const element = document.getElementById("text-to-change-category");
   if (element) {
