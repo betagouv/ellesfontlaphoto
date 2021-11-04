@@ -1,29 +1,30 @@
 <div class=div-banner>
+  <div class="flex-div-left">
+    <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
+    <% @help.type_list.each do |type| %>
+      <% if type == "Matériel" %>
+        <a href="/helps?residence=&type=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+      <% end %>
+      <% if type == "Production" %>
+        <a href="/helps?residence=&type=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+      <% end %>
+      <% if type == "Aide Sociale" %>
+        <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+      <% end %>
+      <% if type == "Diffusion" %>
+        <a href="/helps?residence=&type=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+      <% end %>
+      <% if type == "Résidence" %>
+        <a href="/helps?residence=&type=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %> résidence</p></a>
+      <% end %>
+    <% end %>
+  </div>
   <div class="banner-show">
     <div class="help-title">
-      <div class="flex-div-left">
-        <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
-        <% @help.type_list.each do |type| %>
-          <% if type == "Matériel" %>
-            <a href="/helps?residence=&type=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-          <% end %>
-          <% if type == "Production" %>
-            <a href="/helps?residence=&type=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-          <% end %>
-          <% if type == "Aide Sociale" %>
-            <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-          <% end %>
-          <% if type == "Diffusion" %>
-            <a href="/helps?residence=&type=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-          <% end %>
-          <% if type == "Résidence" %>
-            <a href="/helps?residence=&type=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %> résidence</p></a>
-          <% end %>
-        <% end %>
-      </div>
       <h2><%= @help.title %></h2>
       <p class="paragraphe"><%= @help.description %></p>
     </div>
+    <hr class="hl-mobile">
     <div class="help-description">
       <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</p>
       <p class="paragraphe"><%= @help.help_amount %></p>
@@ -79,21 +80,26 @@
     <% end %>
       <% if @help.compo_commission.present? %>
         <div class="div-parite mt30">
-          <p class="paragraphe-bold mb0">Composition de la commission</p>
-          <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
+          <div class="div-parite-sub">
+            <p class="paragraphe-bold mb0">Composition de la commission</p>
+            <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
       <% else %>
         <div class="div-parite">
+          <div class="div-parite-sub">
       <% end %>
+          <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+        </div>
       <% if @help.commission_parite.present? %>
         <%= render "shared/parite_pastille", commission_parite: @help.commission_parite %>
       <% end %>
-        <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
       </div>
     <% if @help.old_laureat.present? %>
-      <div class="div-parite">
-        <p class="paragraphe-bold mt30 mb0">Précédents lauréates & lauréats</p>
-        <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
-        <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
+      <div class="div-parite mt30">
+        <div class="div-parite-sub">
+          <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
+          <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
+          <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
+        </div>
         <% if @help.old_laureats_parite.present? %>
           <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
         <% end %>
@@ -142,18 +148,18 @@
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
     <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
-    <p class="paragraphe">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
+    <p class="paragraphe mb0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
     <% if @help.contact_intitution_email.present? %>
       <p class="paragraphe mb0">
-      <div class="link-blue mb0"><%= @help.contact_intitution_email %></div>
+      <div class="link-blue mb0"><a href="mailto:<%= @help.contact_intitution_email %>" target=”_blank”><%= @help.contact_intitution_email %></a></div>
       </p>
     <% end %>
     <% if @help.contact_intitution_partenaire.present? %>
       <p class="paragraphe mb0">Partenaire participant à la sélection :
-      <div class="link-blue mb0"><%= @help.contact_intitution_partenaire %></div>
+      <a href="<%= @help.contact_intitution_partenaire %>" target=”_blank” class="link-blue mb0"><%= @help.contact_intitution_partenaire %></a>
       </p>
     <% end %>
     <% if @help.faq_url.present? %>
