@@ -115,3 +115,60 @@ ul li {
     font-size: 18px;
   }
 }
+
+@media only screen and (max-width: 1250px) {
+  .div-banner-conseils-article {
+    .banner-show {
+      justify-content: space-between;
+      .contact-title {
+        width: 45%;
+      }
+      .conseils-article-description {
+        width: 45%;
+        padding-top: 3%;
+      }
+    }
+  }
+  .conseils-article-content {
+    padding: 5% 10% 5% 10%;
+    .block-conseils-article {
+      .quote {
+        color: red;
+        p {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .div-banner-conseils-article {
+    .flex-div-left {
+      a {
+        .conseil-tag {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .banner-show {
+      padding: 1em 3em 1em 3em;
+      .contact-title {
+        width: 100%;
+      }
+      .conseils-article-description {
+        width: 100%;
+      }
+    }
+  }
+  .conseils-article-content {
+    padding: 5%;
+    .block-conseils-article {
+      .quote {
+        p {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

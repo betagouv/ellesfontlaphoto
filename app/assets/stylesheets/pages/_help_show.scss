@@ -4,10 +4,23 @@
 .div-banner {
   background-color: $purple;
   padding-top: 2.5rem;
+  .flex-div-left {
+    align-items: center;
+    padding-left: 5%;
+    a {
+      color: $black !important;
+      .help-type {
+        margin-bottom: 0;
+      }
+    }
+  }
   .banner-show {
     display: flex;
     justify-content: space-around;
     padding: 0 3em 0 3em;
+    .hl-mobile {
+      display: none;
+    }
   }
 }
 
@@ -74,6 +87,7 @@ ul li {
         top: 3%;
         left: -16%;
         display: flex;
+        flex-direction: row-reverse;
         .paragraphe-parite {
           font-family: 'Marianne-Regular', sans-serif;
           color: $black;
@@ -96,6 +110,7 @@ ul li {
         top: 3%;
         left: -19%;
         display: flex;
+        flex-direction: row-reverse;
         .paragraphe-parite {
           font-family: 'Marianne-Regular', sans-serif;
           color: $black;
@@ -173,33 +188,24 @@ ul li {
 }
 
 @media only screen and (max-width: 1250px) {
-  .link-blue {
-    margin-left: 10%;
-  }
-  .pastille-parite-r, .pastille-parite-nr {
-    display:none !important;
-  }
-  .pastille-parite-respectee, .pastille-parite-non-respectee {
-    top: -3% !important;
+  .flex-div-left {
+    margin-bottom: 3%;
   }
   .banner-show {
-    display: block !important;
     .help-title {
-      width: 100%;
-      text-align: center;
-      .flex-div-left {
-        display: block;
-        .help-type {
-          margin: 5px auto;
-        }
-        h2 {
-          text-align: center;
-          font-size: 45px;
-        }
+      width: 45%;
+      padding: 0 2%;
+      h2 {
+        font-size: 45px;
+        letter-spacing: 2px;
+      }
+      .help-type {
+        margin: 5px auto;
       }
     }
     .help-description {
-      width: 100%;
+      width: 45%;
+      padding: 0 2%;
       p {
         margin:0;
       }
@@ -213,9 +219,112 @@ ul li {
     .div-btn {
       margin-top: 30px;
     }
+    .flex-div {
+      display: flex;
+    }
     .block-fiche-aide {
-      .paragraphe-bold {
-        text-align: center;
+      a,.link-blue {
+        margin-left: 0;
+      }
+      .div-parite {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items:center;
+        justify-content: space-between;
+        .pastille-parite-r, .pastille-parite-nr {
+          position: initial;
+          display: block;
+          min-width: 15%;
+          .pastille-parite-respectee, .pastille-parite-non-respectee {
+            max-width: 25px;
+          }
+          .paragraphe-parite {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .flex-div-left {
+    display:block;
+    a .help-type {
+      margin-bottom: 10px !important;
+    }
+  }
+  .banner-show {
+    display: block !important;
+    .hl {
+      border: 0;
+    }
+    .hl-mobile {
+      display: block !important;
+      border-top: 0.1px solid $black;
+      border-style: outset;
+      margin: 20px 0;
+    }
+    .help-title {
+      width: 100%;
+      padding: 5% 2% 0 2%;
+      h2 {
+        font-size: 45px;
+        letter-spacing: 2px;
+      }
+      .help-type {
+        margin: 5px auto;
+      }
+    }
+    .help-description {
+      width: 100%;
+      padding: 0 2%;
+      p {
+        margin:0;
+      }
+    }
+  }
+  .help-content {
+    padding: 0 5%;
+    .bhl {
+      margin: 20px auto;
+    }
+    .div-btn {
+      margin-top: 30px;
+    }
+    .flex-div {
+      display: flex;
+    }
+    .block-fiche-aide.flex-div {
+      display: block;
+      .flex-div-div {
+        width: 100%;
+      }
+    }
+    .block-fiche-aide {
+      a,.link-blue {
+        margin-left: 0;
+      }
+      .div-parite {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items:center;
+        justify-content: space-between;
+        .div-parite-sub.present {
+          width: 70%;
+        }
+        .pastille-parite-r, .pastille-parite-nr {
+          position: initial;
+          display: block;
+          width: 15%;
+          padding: 0 30px 0 0;
+          .pastille-parite-respectee, .pastille-parite-non-respectee {
+            max-width: 25px;
+          }
+          .paragraphe-parite {
+            text-align: center;
+          }
+        }
       }
     }
   }

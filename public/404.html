@@ -1,67 +1,412 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Cette page n'existe pas</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    @font-face {
+      font-family:'Marianne-Bold';
+      src: url("Marianne-Bold.woff");
+      font-url('Marianne-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      unicode-range: U+0020-00FE;
+      font-display: swap;
+    }
+    @font-face {
+      font-family:'Marianne-Regular';
+      src: url("Marianne-Regular.woff");
+      font-url('Marianne-Regular.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      unicode-range: U+0020-00FE;
+      font-display: swap;
+    }
+    .link {
+      color: black;
+      text-decoration: none;
+    }
+    h2 {
+      font-family: 'Marianne-Bold', sans-serif;
+      font-size: 35px;
+      text-align: center;
+    }
+    .main-error {
+      background-color: #BCABFF;
+      margin: 0;
+    }
+    .div-error {
+      padding: 10% 17%;
+    }
+    .emojis-eflc-small {
+      width: 18px;
+      margin-right: 3px;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .emojis-eflc-medium {
+      width: 22px;
+      margin-right: 3px;
+    }
+    .subtitle-error {
+      font-family: Spectral;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .title-error {
+      line-height: 110%;
+      font-family: 'Marianne-Bold', sans-serif;
+      font-size: 75px;
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+    .link-blue {
+      color:#000091;
+      font-family: 'Marianne-Regular', sans-serif;
+      text-decoration: none;
+      font-size: 3rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      display: contents;
+    }
+    .header_body-row {
+      background-color: white;
+      z-index: 11111;
+      position: sticky;
+      top: 0;
+      height: 60px;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .manifeste-link-menu {
+      white-space: nowrap;
+      margin-right: 3rem;
+      margin-top: 0.4rem;
+      padding: 5px 15px 7px;
+      margin-bottom: 0;
+    }
+    .manifeste-link-menu:hover {
+      border-radius: 40px;
+      display: table !important;
+      background-color: #E5E5E5;
+      line-height: 6px;
+    }
+    .link-menu.conseils-link-menu:hover {
+      border-radius: 40px;
+      display: table !important;
+      margin-top: 0.7rem;
+      padding: 5px 15px 7px;
+      background-color: #F5E6E6;
+      box-shadow: none;
+    }
+    .link-menu {
+      font-family: 'Marianne-Regular', sans-serif;
+      text-decoration:none;
+      color: black !important;
+      font-size: 16px;
+      line-height: 24px;
+      opacity: 1;
+      white-space: nowrap;
+      border-radius: 40px;
+      display: table !important;
+      padding: 1.05rem 15px 1.05rem 15px;
+      background-color: transparent;
+    }
+    .header_tools-links {
+      width: 60%;
+    }
+    .links-group {
+      list-style-type: none;
+      display:flex;
+      padding:0;
+      width:100%;
+      justify-content: flex-start;
+      margin:0;
+    }
+    .links-group li {
+      margin-right: 40px;
+    }
+    .links-icones {
+      font-size: 22px;
+    }
+    .link-menu.helps-link-menu:hover {
+      border-radius: 40px;
+      display: table !important;
+      margin-top: 0.7rem;
+      padding: 5px 15px 7px;
+      background-color: #F2EEFF;
+      box-shadow: none;
+    }
+    .conseils-link-menu:hover {
+      border-radius: 40px;
+      display: table !important;
+      margin-top: 0.7rem;
+      padding: 5px 15px 7px;
+      background-color: #F5E6E6;
+      box-shadow: none;
+    }
+    .header_brand {
+      max-width:20%;
+      padding-left: 3rem;
+    }
+    .logo {
+      padding: 1rem 15px 0.7rem 0;
+      font-family: 'Marianne-Bold', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+      padding-top: 8px;
+      color: black;
+      text-decoration: none;
+    }
+    .link-menu.helps-link-menu:hover {
+      border-radius: 40px;
+      display: table !important;
+      margin-top: 0.7rem;
+      padding: 5px 15px 7px;
+      background-color: #F2EEFF;
+      box-shadow: none;
+    }
+    .header_logo {
+      text-decoration: none;
+    }
+    .header_logo:hover {
+      opacity: 0.7;
+    }
+    .header-mobile {
+      display: none;
+    }
+    @media only screen and (max-width: 1250px) {
+      .div-error{
+        padding: 22% 10%;
+      }
+      .header .header_body-row {
+      }
+      .manifeste-link-menu {
+        margin-right: 1rem;
+      }
+      .link-menu {
+        font-size: 14px;
+      }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      .links-group {
+        margin:0;
+      }
+      .header_brand {
+        padding-left: 2rem;
+        min-width: 27%;
+      }
+      .header_logo {
+        padding: 0;
+      }
+    }
+    @media only screen and (max-width: 750px) {
+      .div-error{
+        padding: 22% 5%;
+      }
+      .title-error {
+        font-size: 44px;
+      }
+      .subtitle-error {
+        font-size: 22px;
+      }
+      .header {
+        display: none;
+      }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+      .header-mobile {
+        background-color: #fff;
+        box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+        width: 100%;
+        z-index: 3;
+        top: 0;
+        display: block;
+      }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      .header-mobile ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+
+      .header-mobile a {
+        font-family: 'Marianne-Regular', sans-serif;
+        text-decoration:none;
+        color: black !important;
+        font-size: 14px;
+        opacity: 0.6;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .header-mobile  li {
+        padding: 15px 0;
+        text-align:center;
+        background-color: #F2EEFF;
+        border-top: 0.1px solid white;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
+      }
+
+      .header-mobile .logo-mobile {
+        display: block;
+        float: left;
+        padding: 20px;
+        text-decoration: none;
+        max-width: 50%;
+        opacity: 1;
+      }
+
+      .header-mobile .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+      }
+
+      .header-mobile .menu-icon {
+        cursor: pointer;
+        float: right;
+        position: relative;
+        user-select: none;
+        display: flex;
+        justify-content:
+        space-between;
+        align-items: center;
+        border-radius: 40px;
+        margin: 18px 10px 0 0 ;
+        padding: 5px 15px 7px;
+        background-color: #F2EEFF;
+      }
+      .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 18px;
+        margin-left: 10px;
+      }
+      .menu-span {
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 10px;
+      }
+
+      .header-mobile .menu-icon .navicon:before {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      .header-mobile .menu-icon .navicon:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+
+      .header-mobile .menu-icon .navicon:before {
+        top: 5px;
+      }
+
+      .header-mobile .menu-icon .navicon:after {
+        top: -5px;
+      }
+
+      /* menu btn */
+
+      .header-mobile .menu-btn {
+        display: none;
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu {
+        max-height: 240px;
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon {
+        height: 16px;
+        padding-right: 9px;
+        padding-left: 0;
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon .menu-span {
+        display: none;
+      }
+
+      .header-mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before{
+        top: 0;
+      }
+      .header-mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+<body class="main-error">
+  <header class="header">
+    <div class="header_body-row">
+      <div class="header_brand">
+        <a href="/" class="header_logo" >
+          <h2 class="logo">Elles font la culture</h2>
+        </a>
+      </div>
+      <div class="header_tools-links">
+        <ul class="menu links-group mb0">
+          <li>
+            <a href="/helps" class="link-menu helps-link-menu"><span class="links-icones"><img src="argent-volant.png" class="emojis-eflc-medium" alt=""> </span> Aides</a>
+          </li>
+          <li>
+            <a class="link-menu conseils-link-menu" href="/conseils"><span class="links-icones"><img src="poignee-main.png" class="emojis-eflc-medium" alt=""> </span> Conseils et témoignages </a>
+          </li>
+        </ul>
+      </div>
+      <a class="link-menu manifeste-link-menu" href="/a_propos">À propos</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  </header>
+  <header class="header-mobile">
+    <a href="/" class="logo-mobile">Elles font la culture</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
+    <ul class="menu">
+      <a href="/helps"><li><img src="argent-volant.png" class="emojis-eflc-small" alt=""> Aides</li></a>
+      <a href="/conseils"><li><img src="poignee-main.png" class="emojis-eflc-small" alt=""> Conseils et témoignages</li></a>
+      <a href="/a_propos"><li>À propos</li></a>
+    </ul>
+  </header>
+  <div class="div-error">
+    <p class="subtitle-error">Page 404</p>
+    <p class="title-error">Tout comme les femmes dans l'histoire de l'art, cette page a disparu !</p>
+    <p class="subtitle-error">Nous allons tout faire pour résoudre ces problèmes mais en attendant nous vous invitons à retourner à l'accueil.</p>
   </div>
 </body>
 </html>
