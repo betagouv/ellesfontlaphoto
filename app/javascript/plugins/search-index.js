@@ -28,11 +28,11 @@ const searchIndex = () => {
 const updateInput = () => {
   const types = {
   // "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
-  "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
-  "<img src='assets/emojis/outils.png', class='emojis-eflc-large'/> financer une production": "Production",
-  "<img src='assets/emojis/boule-de-cristal.png', class='emojis-eflc-large'/> un secours exceptionnel": "Aide Sociale",
-  "<img src='assets/emojis/maison.png', class='emojis-eflc-large'/> une résidence (artistique)": "Résidence",
-  "<img src='assets/emojis/haut-parleur.png', class='emojis-eflc-large'/> financer une diffusion": "Diffusion"
+  "financer du matériel" : "Matériel",
+  "financer une production": "Production",
+  "un secours exceptionnel": "Aide Sociale",
+  "une résidence (artistique)": "Résidence",
+  "financer une diffusion": "Diffusion"
   }
   const element = document.getElementById("text-to-change-type");
   if (element) {

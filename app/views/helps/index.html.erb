@@ -5,7 +5,7 @@
       <div id="select-search-type" class="choosen"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-large" %> <%= Help::HELP_TYPE[@selected_type.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% else %>
       <% @sample = Help::HELP_TYPE.values.sample %>
-      <div id="select-search-type"><span id="text-to-change-type"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %> <%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <div id="select-search-type"><span id="text-to-change-type"><%#= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% end %>
     <div id="dropdown-elements-type">
       <% Help::HELP_TYPE.each do |type| %>
