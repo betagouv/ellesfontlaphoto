@@ -66,6 +66,19 @@ ul li {
 .conseils-video-content {
   margin: 0 auto;
   padding: 20% 20% 5% 20%;
+  .block-conseils-video {
+    .link-blue {
+      ul {
+        margin-bottom: 0;
+        li {
+          list-style-image: url(arrow-darkblue.svg);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
 
 .bhl {
@@ -73,3 +86,59 @@ ul li {
   border-style: outset;
   margin: 40px 0;
 }
+
+@media only screen and (max-width: 1250px) {
+  .div-banner-conseils-video {
+    .banner-show {
+      .contact-title {
+        max-width: 55%;
+        h2 {
+          padding-bottom: 0;
+          font-size: 36px;
+        }
+        .subtitle-protagoniste {
+          font-size: 26px !important;
+        }
+      }
+      .conseils-video-description {
+        max-width: 45%;
+        .paragraphe {
+          margin-bottom: 5px;
+        }
+      }
+    }
+    video {
+      position: absolute;
+      min-width: 70%;
+      left: 15% !important;
+    }
+  }
+  .conseils-video-content {
+    padding: 12% 10% 5% 10%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .div-banner-conseils-video {
+    .flex-div-left {
+      a {
+        .conseil-tag {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .banner-show {
+      padding: 1em 3em 1em 3em;
+      .contact-title {
+        width: 100%;
+      }
+    }
+    video {
+      top: 100% !important;
+    }
+  }
+  .conseils-video-content {
+    padding: 20% 10% 5% 10%;
+  }
+}
+

@@ -234,6 +234,7 @@ ul li {
         .pastille-parite-r, .pastille-parite-nr {
           position: initial;
           display: block;
+          min-width: 15%;
           .pastille-parite-respectee, .pastille-parite-non-respectee {
             max-width: 25px;
           }
