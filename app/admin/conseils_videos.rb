@@ -103,8 +103,7 @@ ActiveAdmin.register ConseilsVideo do
       end
     end
     f.inputs "Description" do
-      f.input :subtitle, label: "Sous titre"
-      f.input :objectif, as: :quill_editor
+      f.input :subtitle, label: "Description"
     end
     f.inputs "Protagoniste" do
       f.input :contenu_explication, as: :quill_editor, label: "Contenu explication"
