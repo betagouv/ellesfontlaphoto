@@ -1,15 +1,15 @@
 <% if commission_parite == "respectée" %>
   <div class="pastille-parite-r">
-    <p class="paragraphe-parite">Parité <br>respectée</p>
     <div class="pastille-parite-respectee">
       <%= image_tag "emojis/coeur-jaune.png", class: "emojis-eflc-small" %>
     </div>
+    <p class="paragraphe-parite">Parité <br>respectée</p>
   </div>
 <% else %>
   <div class="pastille-parite-nr">
-    <p class="paragraphe-parite">Parité <br>non-respectée</p>
     <div class="pastille-parite-non-respectee">
       <%= image_tag "emojis/visage-pleur.png", class: "emojis-eflc-small" %>
     </div>
+    <p class="paragraphe-parite">Parité <br>non-respectée</p>
   </div>
 <% end %>

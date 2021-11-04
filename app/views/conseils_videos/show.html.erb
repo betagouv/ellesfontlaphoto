@@ -50,12 +50,11 @@
   <div class="block-conseils-video">
     <p class="subtitle">Description</p>
     <p class="paragraphe"><%= @conseil_video.subtitle %></p>
-    <p class="paragraphe"><%= @conseil_video.objectif %></p>
   </div>
   <hr class="bhl">
   <div class="block-conseils-video">
     <p class="subtitle"><%= @conseil_video.protagoniste %> :</p>
-    <p class="paragraphe"><%= @conseil_video.contenu_explication %></p>
+    <div class="paragraphe"><%= @conseil_video.contenu_explication.html_safe %></div>
   </div>
   <hr class="bhl">
   <div class="block-conseils-video">
