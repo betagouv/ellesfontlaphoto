@@ -27,11 +27,12 @@ const searchIndex = () => {
 
 const updateInput = () => {
   const types = {
-  "<img src='emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
-  "<img src='emojis/outils.png', class='emojis-eflc-large'/> financer une production": "Production",
-  "<img src='emojis/boule-de-cristal.png', class='emojis-eflc-large'/> un secours exceptionnel": "Aide Sociale",
-  "<img src='emojis/maison.png', class='emojis-eflc-large'/> une résidence (artistique)": "Résidence",
-  "<img src='emojis/haut-parleur.png', class='emojis-eflc-large'/> financer une diffusion": "Diffusion"
+  // "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
+  "<img src='images/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
+  "<img src='images/emojis/outils.png', class='emojis-eflc-large'/> financer une production": "Production",
+  "<img src='images/emojis/boule-de-cristal.png', class='emojis-eflc-large'/> un secours exceptionnel": "Aide Sociale",
+  "<img src='images/emojis/maison.png', class='emojis-eflc-large'/> une résidence (artistique)": "Résidence",
+  "<img src='images/emojis/haut-parleur.png', class='emojis-eflc-large'/> financer une diffusion": "Diffusion"
   }
   const element = document.getElementById("text-to-change-type");
   if (element) {
