@@ -173,6 +173,10 @@ b, strong {
   margin-right: 3px;
 }
 
+.cursor-normal {
+  cursor: auto !important;
+}
+
 .flex-div {
   display:flex;
   display: -ms-flexbox;//IE

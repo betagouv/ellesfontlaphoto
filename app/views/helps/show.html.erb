@@ -87,7 +87,9 @@
         <div class="div-parite">
           <div class="div-parite-sub">
       <% end %>
+      <% if @help.url_commission.present? %>
           <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Membres de la commission</a>
+      <% end %>
         </div>
       <% if @help.commission_parite.present? %>
         <%= render "shared/parite_pastille", commission_parite: @help.commission_parite %>
@@ -98,7 +100,9 @@
         <div class="div-parite-sub">
           <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
           <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
-          <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
+          <% if @help.old_laureat_url.present? %>
+            <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
+          <% end %>
         </div>
         <% if @help.old_laureats_parite.present? %>
           <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
@@ -147,19 +151,24 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Contact</p>
-    <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
+    <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a></p>
     <p class="paragraphe mb0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
     <% if @help.contact_institution.present? %>
       <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
     <% end %>
     <% if @help.contact_intitution_email.present? %>
       <p class="paragraphe mb0">
-      <div class="link-blue mb0"><a href="mailto:<%= @help.contact_intitution_email %>" target=”_blank”><%= @help.contact_intitution_email %></a></div>
+      <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
       </p>
     <% end %>
-    <% if @help.contact_intitution_partenaire.present? %>
+    <% if @help.contact_intitution_partenaire.present? || @help.institution_partenaire.present? %>
       <p class="paragraphe mb0">Partenaire participant à la sélection :
-      <a href="<%= @help.contact_intitution_partenaire %>" target=”_blank” class="link-blue mb0"><%= @help.contact_intitution_partenaire %></a>
+      <% if @help.institution_partenaire.present? %>
+        <div class="paragraphe"><%= @help.institution_partenaire.html_safe %></div>
+      <% end %>
+      <% if @help.contact_intitution_partenaire.present? %>
+        <div class="link-blue mb0"><%= @help.contact_intitution_partenaire.html_safe %></div>
+      <% end %>
       </p>
     <% end %>
     <% if @help.faq_url.present? %>
@@ -167,5 +176,5 @@
     <% end %>
   </div>
   <hr class="bhl">
-  <p class="link-blue" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
+  <p class="link-blue cursor-normal" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
 </div>
