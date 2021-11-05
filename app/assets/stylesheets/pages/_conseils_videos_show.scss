@@ -130,7 +130,10 @@ ul li {
     .banner-show {
       padding: 1em 3em 1em 3em;
       .contact-title {
-        width: 100%;
+        min-width: 100%;
+      }
+      .conseils-video-description {
+        min-width: 100%;
       }
     }
     video {
