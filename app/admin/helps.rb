@@ -128,10 +128,10 @@ ActiveAdmin.register Help do
     f.inputs "Contact" do
       f.input :institution_name
       f.input :institution_url
-      f.input :institution_partenaire
-      f.input :contact_institution
-      f.input :contact_intitution_email
-      f.input :contact_intitution_partenaire
+      f.input :institution_partenaire, as: :quill_editor
+      f.input :contact_institution, as: :quill_editor
+      f.input :contact_intitution_email, as: :quill_editor
+      f.input :contact_intitution_partenaire, as: :quill_editor
       f.input :issue_contact
       f.input :faq_url
     end
