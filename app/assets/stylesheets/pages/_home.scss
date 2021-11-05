@@ -215,6 +215,7 @@
       border: 1px solid $rouille;
       color: $black !important;
       white-space: nowrap;
+      text-decoration: none !important;
       &:hover {
         box-shadow: 0 0 6px rgba(1,1,1,0.5);
       }
