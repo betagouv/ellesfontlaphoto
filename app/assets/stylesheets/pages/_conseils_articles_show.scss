@@ -79,6 +79,37 @@ ul li {
   margin: 40px 0;
 }
 
+blockquote {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 15%;
+  padding: 0px 0px 0px 20px;
+  float: none;
+  justify-content: center;
+  border-style: none none none solid;
+  border-width: 1px 1px 1px 5px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 5px;
+  border-color: #000 #000 #000 $rouille;
+  transition: opacity 200ms ease;
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 36px;
+  color: $black;
+  text-align: left;
+  text-decoration: none;
+  column-count: 0;
+  column-rule-color: $rouille;
+  column-rule-style: solid;
+  white-space: normal;
+  background-clip: border-box;
+  object-fit: fill;
+}
+
 .quote {
   margin: 60px 0;
   p {

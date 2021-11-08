@@ -34,18 +34,16 @@
       <% if help.start_date.present? %>
         <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
       <% end %>
-      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %> Résidence en :</span>
-      <% if help.residence_condition == "Française ou résidant en France" %>
-        France
-      <% elsif help.residence_condition == "Française résidant en outre-mer" %>
-        outre-mer
-      <% else %>
-        <%= help.residence_condition %>
-      <% end %>
-      </p>
-      <p class="paragraphe condition-help mb0"><span class="paragraphe-bold">Conditions :</span>
+      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %> Conditions :</span> résidence en
+        <% if help.residence_condition == "Française ou résidant en France" %>
+          France
+        <% elsif help.residence_condition == "Française résidant en outre-mer" %>
+          outre-mer
+        <% else %>
+          <%= help.residence_condition %>
+        <% end %>
         <% if help.general_condition.present? %>
-          <%= help.general_condition %>
+          , <%= help.general_condition %>
         <% end %>
       </p>
       <p class="arrow text-align-right"><%= image_tag "arrow.svg" %></p>
