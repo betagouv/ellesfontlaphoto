@@ -25,38 +25,35 @@
     font-family: 'Spectral', serif;
     font-style: italic;
     font-weight: normal;
-    font-size: 55px;
-    // letter-spacing: 2px;
-    // line-height: 123.2%;
+    font-size: 60px;
     display: inline-block;
     text-align: left;
     .underline-purple {
       font-family: 'Spectral', serif !important;
       font-style: italic !important;
       font-weight: normal !important;
-      font-size: 55px !important;
+      font-size: 60px !important;
       color: $black !important;
       border: 0 !important;
-      // box-shadow: $purple 0px -1.8rem 0px inset;
-      box-shadow: $white 0px -1rem 0px inset, inset 0 -2rem 0 $purple;
+      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $purple !important;
       background-color: transparent;
       cursor: pointer;
       &:hover {
-        box-shadow: $white 0px -1rem 0px inset, inset 0 -3.5rem 0 $purple;
+        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $purple !important;
       }
     }
     .underline-pink {
       font-family: 'Spectral', serif !important;
       font-style: italic !important;
       font-weight: normal !important;
-      font-size: 55px !important;
+      font-size: 60px !important;
       border: 0;
-      box-shadow: $white 0px -1rem 0px inset, inset 0 -2rem 0 $rouille;
+      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $rouille !important;
       background-color: transparent;
       cursor: pointer;
       color: $black !important;
       &:hover {
-        box-shadow: $white 0px -1rem 0px inset, inset 0 -3.5rem 0 $rouille;
+        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $rouille !important;
       }
     }
 
@@ -205,6 +202,9 @@
     }
     .button-conseils-mobile {
       display: none;
+    }
+    .thematique-span {
+      line-height: 80px;
     }
     .conseil-tag-home {
       font-family: 'Marianne-Regular', sans-serif;
@@ -359,15 +359,8 @@
       top: 2%;
     }
     h1 {
-      line-height: 1.5em;
       text-align: center;
-      font-size: 4rem;
-      .underline-pink {
-        box-shadow: $white 0px -1.2rem 0px inset, inset 0 -3rem 0 $rouille !important;
-      }
-      .underline-purple {
-        box-shadow: $white 0px -1.2rem 0px inset, inset 0 -3rem 0 $purple !important;
-      }
+      line-height: 65px;
     }
   }
 
@@ -389,7 +382,7 @@
   }
 
   .first-block {
-    padding: 5%;
+    padding: 10% 5% 5% 5%;
     .first-block-left {
       min-width: 47%;
       .subtitle {
@@ -470,7 +463,9 @@
     .illu-home-5 {
       max-width: 90%;
     }
-    .paragraphe {
+    .p-conseil-tag-home {
+      text-align: center !important;
+      line-height: 30px;
       .conseil-tag-home {
         margin:0;
         padding: 5px 12px;
@@ -541,21 +536,11 @@
       display: block;
       text-align: center;
       button {
-        background-color: $purple;
-        border-radius: 40px;
-        padding: 15px 15px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 1rem;
-        margin-bottom: 20px !important;
-        cursor: pointer;
-        color: $black !important;
-        margin: 0 auto;
-        min-width: 165px;
-        margin-right: 30px;
-        font-weight: normal;
-        background-image: none;
-        text-shadow: none;
-        border : none;
+        margin: 0 6%;
+        white-space: nowrap;
+        padding: 8px 15px 12px 15px;
+        min-width: 230px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -588,15 +573,16 @@
       width: 70px;
     }
     h1 {
-      font-size: 38px;
-      text-align: center;
+      font-size: 30px;
+      line-height: 40px;
+      padding: 1em 1em 2em 1em;
       .underline-pink {
-        box-shadow: $white 0px -0.5rem 0px inset, inset 0 -1.5rem 0 $rouille !important;
-        font-size: 38px !important;
+        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $rouille !important;
+        font-size: 30px !important;
       }
       .underline-purple {
-        box-shadow: $white 0px -0.5rem 0px inset, inset 0 -1.5rem 0 $purple !important;
-        font-size: 38px !important;
+        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $purple !important;
+        font-size: 30px !important;
       }
     }
     .bhl.home {
@@ -605,7 +591,7 @@
   }
 
   .subtitle {
-    font-size: 28px;
+    font-size: 26px;
     text-align:center !important;
   }
 
@@ -635,6 +621,12 @@
     }
     .first-block-right {
       text-align: center;
+      p {
+        display: grid;
+        .paragraphe,.icones {
+          text-align: center !important;
+        }
+      }
     }
     div {
       min-width: 100%;
@@ -643,11 +635,15 @@
 
   .second-block {
     padding: 16% 6% 5% 6%;
+    .subtitle-spectral {
+      font-size: 26px;
+      line-height: 40px;
+    }
     .flex-div {
       justify-content: center;
       .button-helps-mobile {
         display : block;
-        margin: 30px auto 40px auto;
+        margin: 30px auto 60px auto;
         max-width: 50%;
         justify-content: center;
         background-color: $black;
@@ -681,6 +677,9 @@
 
   .third-block, .fourth-block {
     text-align: center;
+    .subtitle-spectral {
+      margin-top: 60px;
+    }
     .flex-div {
       display:block;
     }
@@ -723,24 +722,30 @@
         padding: 0 6%;
       }
     }
+    .manifesto-div {
+      padding: 14% 0 0 0;
+    }
+    .contact-div {
+      padding: 14% 0;
+    }
 
     .manifesto-div {
       border-bottom: 1px solid $dark-blue;
       padding-bottom: 10em !important;
-    }
-    .btn-manifesto-mobile {
-      text-align: left;
-      padding: 0 6%;
-      .illu-home-4 {
-        width: 48%;
+      .btn-manifesto-mobile {
+        text-align: left;
+        margin: 0 6%;
+        .btn-manifesto {
+          padding: 10px 15px;
+        }
+        .illu-home-4 {
+          width: 48%;
+        }
       }
     }
     .btn-contact-mobile {
       display: block;
       text-align: left;
-      button {
-        margin: 0 6%;
-      }
     }
   }
 }

@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="search-div-residence">
-  <p class="text-search">je réside en</p>
+  <p class="text-search text-search-residence">je réside en</p>
   <div class="dropdown">
     <% if @selected.present? %>
       <div id="select-search-residence" class="choosen"><%= @selected %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
@@ -75,9 +75,13 @@
       <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
     </div>
   <% end %>
-  <div class="arrow-down-mobile">
-    <a href="#cards-anchor"><%= image_tag "arrow-down-purple.svg" %></a>
-  </div>
+  <% if @selected.present? || @selected_type.present? %>
+    <div class="arrow-down-mobile with-filter">
+  <% else %>
+    <div class="arrow-down-mobile">
+  <% end %>
+      <a href="#cards-anchor"><%= image_tag "arrow-down-purple.svg" %></a>
+    </div>
   <div class="cards" id="cards-anchor">
     <div class="index-direction-tablet-help">
       <% if @selected.present? || @selected_type.present? %>
