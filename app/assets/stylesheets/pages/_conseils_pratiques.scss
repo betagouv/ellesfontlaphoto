@@ -130,6 +130,9 @@
         }
       }
     }
+    .box-criteria-top {
+      border-bottom: none;
+    }
     .conseils-sum {
       border: solid 1px $black;
       padding: 10% 5%;
@@ -144,7 +147,8 @@
           display: flex;
           justify-content: center;
           img {
-            max-width: 70%;
+            max-width: 180px;
+            max-height: 180px;
           }
         }
         .paragraphe-bold {
@@ -284,6 +288,9 @@
           cursor: pointer;
         }
       }
+      .box-criteria.box-criteria-top {
+        border-bottom: none;
+      }
       .dropdown {
         display: none;
       }
@@ -351,6 +358,9 @@
     .contact-index-conseils-div-responsive {
       display: block;
       grid-row-start: 5;
+      p {
+        text-align: center;
+      }
       .contact-index-conseils {
         margin-top: 30px;
         .img-div {
