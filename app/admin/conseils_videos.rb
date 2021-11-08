@@ -31,7 +31,6 @@ ActiveAdmin.register ConseilsVideo do
       categories << category
     end
     conseils_video.category_list = categories
-    # raise
     conseils_video.tag_list = params["conseils_video"]["tag_list"]
     if params["conseils_video"]["video"].present?
       conseils_video.video = params["conseils_video"]["video"]
