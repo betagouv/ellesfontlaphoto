@@ -240,11 +240,14 @@
 }
 
 @media only screen and (max-width: 750px) {
+  .main-index {
+    padding: 5% 5% 3% 5%;
+  }
   .search-div-type {
-    margin: 14% 2%;
+    margin: 14% 5%;
   }
   .search-div-residence {
-    margin: 14% 2% 5% 2%;
+    margin: 14% 5% 5% 5%;
   }
   .search-div-type, .search-div-residence {
     display: block;
@@ -260,13 +263,16 @@
       font-size: 30px;
       line-height: 0px;
       padding-top: 0px;
-      margin: 30px 0;
+      margin: 20px 0;
+    }
+    .text-search-residence {
+      padding-top: 50px;
     }
     #select-search-type, #select-search-residence {
-      font-size: 28px;
+      font-size: 30px;
       line-height: 30px !important;
       padding-top: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .dropdown {
@@ -334,9 +340,11 @@
     .arrow-down-mobile {
       display: flex;
       justify-content: center;
-      margin-top: 80px;
       margin-bottom: 50px;
       height: 15px;
+    }
+    .arrow-down-mobile.with-filter {
+      margin-top: 60px;
     }
     .cards {
       .index-direction-tablet-help {

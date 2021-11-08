@@ -37,8 +37,8 @@
 <div class="main-index">
   <div class="index-direction">
     <% if @selected.present? || @selected_tag.present? %>
-      <div class="box-criteria">
-        <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques pour :</p>
+      <div class="box-criteria box-criteria-top">
+        <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils et temoignages pour :</p>
         <% if @selected.present? %>
           <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-extra-small" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
@@ -51,7 +51,7 @@
         <% end %>
       </div>
     <% else %>
-      <p class="main-bold-paragraphe conseils-sum text-align-left"><%= @conseils.count %> conseils pratiques</p>
+      <p class="main-bold-paragraphe conseils-sum text-align-left"><%= @conseils.count %> conseils et temoignages</p>
     <% end %>
     <div class="box-criteria">
       <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
@@ -80,8 +80,8 @@
   <div class="cards">
     <div class="index-direction-tablet-conseils">
       <% if @selected.present? || @selected_tag.present? %>
-        <div class="box-criteria">
-          <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils pratiques pour :</p>
+        <div class="box-criteria box-criteria-top">
+          <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils et temoignages pour :</p>
           <% if @selected.present? %>
             <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
           <% end %>
@@ -94,7 +94,7 @@
           <% end %>
         </div>
       <% else %>
-        <p class="main-bold-paragraphe sum-conseils text-align-left"><%= @conseils.count %> conseils pratiques</p>
+        <p class="main-bold-paragraphe sum-conseils text-align-left"><%= @conseils.count %> conseils et témoignages</p>
       <% end %>
       <div class="box-criteria non-dropdown">
         <p class="main-bold-paragraphe text-align-left">Précisez votre recherche :</p>
