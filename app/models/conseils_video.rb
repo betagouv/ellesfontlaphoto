@@ -3,7 +3,6 @@ class ConseilsVideo < ApplicationRecord
   has_one_attached :video
   validate :correct_type_attachment
 
-  validates :image, presence: true
   validates :video, presence: true
 
   has_one_attached :video
