@@ -1,31 +1,28 @@
+<% content_for :meta_title, "#{@conseil_article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @conseil_article.subtitle %>
+
 <div class=div-banner-conseils-article>
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
     <% @conseil_article.category_list.each do |category| %>
       <% if category == "Administratif & Financier" %>
-        <a href="/conseils?category=Administratif&tags%5B%5D=">
+        <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=">
       <% end %>
       <% if category == "Artistique & Technique" %>
-        <a href="/conseils?category=Technique&tags%5B%5D=">
+        <a href="/conseils?category_list=Artistique+%26+Technique&tag_list=">
       <% end %>
       <% if category == "Egalite & inclusion" %>
-        <a href="/conseils?category=Parcours&tags%5B%5D=">
+        <a href="/conseils?category_list=Egalite+%26+inclusion&tag_list=">
       <% end %>
         <p class="conseil-tag"><%= image_tag "emojis/#{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small" %> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
       </a>
     <% end %>
     <% @conseil_article.tag_list.each do |tag| %>
       <% if tag == "Commencer mon activité" %>
-        <a href="/conseils?category=&tags%5B%5D=Commencer+mon+activité&tags%5B%5D="><p class="conseil-tag"> Commencer mon activité</p></a>
+        <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="conseil-tag"> Commencer mon activité</p></a>
       <% end %>
       <% if tag == "Me former" %>
-        <a href="/conseils?category=&tags%5B%5D=Me+former&tags%5B%5D="><p class="conseil-tag"> Me former </p></a>
-      <% end %>
-      <% if tag == "Gérer ma carrière" %>
-        <a href="/conseils?category=&tags%5B%5D=Gérer+ma+carrière&tags%5B%5D="><p class="conseil-tag"> Gérer ma carrière</p></a>
-      <% end %>
-      <% if tag == "Sensibiliser pour l'égalité" %>
-        <a href="conseils?category=&tags%5B%5D=Sensibiliser+pour+l%27égalité&tags%5B%5D="><p class="conseil-tag"> Sensibiliser pour l'égalité</p></a>
+        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="conseil-tag"> Me former </p></a>
       <% end %>
     <% end %>
   </div>
