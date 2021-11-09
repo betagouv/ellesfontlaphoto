@@ -27,7 +27,7 @@ const updateInputCategories = () => {
   if (element) {
     let counter = 0;
     const inst = setInterval(() => {
-      element.innerHTML = Object.keys(categories)[counter];
+      element.innerHTML = `<img src="${document.querySelector(`#img-${Object.keys(categories)[counter].replace(/\s/g, '-')}`).innerHTML}" alt="" class="emojis-eflc-large"> ${Object.keys(categories)[counter]}`;
       counter++;
       if (counter >= Object.keys(categories).length) {
         counter = 0;
@@ -41,7 +41,7 @@ const updateInputCategories = () => {
   dropdownElementsCategories.forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelector("#category_list").value = element.dataset.filtre;
-      document.querySelector("#select-search-category").innerHTML = element.innerHTML;
+      document.querySelector("#select-search-category").innerHTML = `${element.innerHTML} <img src="${document.querySelector("#img-arrow-down").innerHTML}" alt="" class="arrow-search" style="width: 25px !important;">`;
       document.querySelector("#select-search-category").classList.add("choosen");
       document.getElementById("dropdown-elements-category").classList.toggle("show");
       // clearInterval(inst);
