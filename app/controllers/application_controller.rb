@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :set_raven_context
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def set_raven_context

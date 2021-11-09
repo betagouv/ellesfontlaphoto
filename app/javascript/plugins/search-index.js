@@ -27,8 +27,8 @@ const searchIndex = () => {
 
 const updateInput = () => {
   const types = {
-  // "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
-  "financer du matériel" : "Matériel",
+  "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
+  // "financer du matériel" : "Matériel",
   "financer une production": "Production",
   "un secours exceptionnel": "Aide Sociale",
   "une résidence (artistique)": "Résidence",
