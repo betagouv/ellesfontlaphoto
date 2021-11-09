@@ -1,11 +1,18 @@
+<div class="url-image" style="display: none;">
+  <p id="img-administratifs-et-financiers"><%= asset_path "emojis/livre-rouge.png" %></p>
+  <p id="img-artistiques-et-techniques"><%= asset_path "emojis/stylo.png" %></p>
+  <p id="img-égalité-et-inclusion"><%= asset_path "emojis/etoile.png" %></p>
+  <p id="img-arrow-down"><%= asset_path "arrow-search.svg" %></p>
+</div>
+
 <div class="search-div-category">
   <p class="text-search">Conseils</p>
   <div class="dropdown">
     <% if @selected.present? %>
-      <div id="select-search-category" class="choosen"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-large" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %></div>
+      <div id="select-search-category" class="choosen"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-large" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% else %>
       <% @sample = ConseilsVideo::CONSEIL_CATEGORIES.values.sample %>
-      <div id="select-search-category"><span id="text-to-change-category"><%#= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <div id="select-search-category"><span id="text-to-change-category"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% end %>
     <div id="dropdown-elements-category">
       <% ConseilsVideo::CONSEIL_CATEGORIES.each do |category| %>
@@ -23,7 +30,6 @@
   <% else %>
     <%= text_field_tag :category_list %>
   <% end %>
-  <div class="ici"></div>
   <% if @selected_tag.present? %>
     <%= text_field_tag :tag_list, @selected_tag %>
   <% else %>
@@ -71,7 +77,6 @@
           <%= image_tag "illu-contact-index.png" %>
         </div>
         <p class="paragraphe-bold">Une idée, un besoin d’article ou de témoignage que vous souhaiteriez partager avec nous ?</p>
-        <!-- <p class="button-contact-index"><%#= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p> -->
         <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p>
       </div>
       <p class="small-paragraphe">Nous ajoutons régulièrement des articles, dernière mise à jour le <%= @last_date_updated %></p>
@@ -119,7 +124,6 @@
           <%= image_tag "illu-contact-index.png"%>
         </div>
         <p class="paragraphe-bold">Une idée, un besoin d’article ou de témoignage que vous souhaiteriez partager avec nous ?</p>
-        <!-- <p class="button-contact-index"><%#= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p> -->
         <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p>
       </div>
       <p class="small-paragraphe">Nous ajoutons régulièrement des articles, dernière mise à jour le <%= @last_date_updated %></p>
