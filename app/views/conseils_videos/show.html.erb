@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@conseil_video.title} par #{@conseil_video.protagoniste} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% if @conseil_video.image.attached? %>
-  <% content_for :meta_image, cl_image_path(@conseil_video.image.path) %>
+  <% content_for :meta_image, url_for(@conseil_video.image) %>
 <% end %>
 
 <div class=div-banner-conseils-video>
