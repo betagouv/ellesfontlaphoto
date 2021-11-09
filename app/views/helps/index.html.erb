@@ -29,7 +29,7 @@
       <div id="select-search-residence" class="choosen"><%= @selected %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
     <% else %>
         <% if Help::HELP_RESIDENCE.sample == "Française ou résidant en France" %>
-          <div id="select-search-residence"><span id="text-to-change-residence"><%= France %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+          <div id="select-search-residence"><span id="text-to-change-residence">France</span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
         <% elsif Help::HELP_RESIDENCE.sample == "Française résidant en outre-mer" %>
           <div id="select-search-residence"><span id="text-to-change-residence">outre-mer</span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
         <% else %>
