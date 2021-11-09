@@ -27,8 +27,7 @@ const searchIndex = () => {
 
 const updateInput = () => {
   const types = {
-  "<img src='assets/emojis/appareil-photo.png', class='emojis-eflc-large'/> financer du matériel" : "Matériel",
-  // "financer du matériel" : "Matériel",
+  "financer du matériel" : "Matériel",
   "financer une production": "Production",
   "un secours exceptionnel": "Aide Sociale",
   "une résidence (artistique)": "Résidence",
@@ -38,7 +37,12 @@ const updateInput = () => {
   if (element) {
     let counter = 0;
     const inst = setInterval(() => {
-      element.innerHTML = Object.keys(types)[counter];
+      if(types[Object.keys(types)[counter]] == "Aide Sociale") {
+        element.innerHTML = `<img src="${document.querySelector(`#img-Aide-Sociale`).innerHTML}" alt="" class="emojis-eflc-large"> ${Object.keys(types)[counter]}`;
+      }
+      else {
+        element.innerHTML = `<img src="${document.querySelector(`#img-${types[Object.keys(types)[counter]]}`).innerHTML}" alt="" class="emojis-eflc-large"> ${Object.keys(types)[counter]}`;
+      }
       counter++;
       if (counter >= Object.keys(types).length) {
         counter = 0;
@@ -53,7 +57,7 @@ const updateInput = () => {
   dropdownElementsResidences.forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelector("#residence").value = element.innerHTML;
-      document.querySelector("#select-search-residence").innerHTML = element.innerHTML;
+      document.querySelector("#select-search-residence").innerHTML = `${element.innerHTML} <img src="${document.querySelector("#img-arrow-down").innerHTML}" alt="" class="arrow-search" style="width: 25px !important;">`;
       document.querySelector("#select-search-residence").classList.add("choosen");
       document.getElementById("dropdown-elements-residence").classList.toggle("show");
     })
@@ -62,7 +66,7 @@ const updateInput = () => {
   dropdownElementsTypes.forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelector("#type_list").value = element.dataset.filter;
-      document.querySelector("#select-search-type").innerHTML = element.innerHTML;
+      document.querySelector("#select-search-type").innerHTML = `${element.innerHTML} <img src="${document.querySelector("#img-arrow-down").innerHTML}" alt="" class="arrow-search" style="width: 25px !important;">`;
       document.querySelector("#select-search-type").classList.add("choosen");
       document.getElementById("dropdown-elements-type").classList.toggle("show");
     })
