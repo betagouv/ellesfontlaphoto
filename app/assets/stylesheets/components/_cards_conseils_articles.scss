@@ -9,9 +9,9 @@
     border-radius: 2%;
     height: auto;
     position: relative;
+    border-radius: 2%;
+    border: solid 1px $rouille;
     .card-index-conseils-articles-div {
-      border-radius: 2%;
-      border: solid 1px $rouille;
       padding: 13% 5% 10% 5%;
       .main-bold-paragraphe {
         text-align: left;

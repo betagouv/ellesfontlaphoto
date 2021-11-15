@@ -7,6 +7,8 @@
     background-color: white;
     height: auto;
     position: relative;
+    border: 1px solid $rouille;
+    border-radius: 2%;
     a {
       color: $black;
       div {
@@ -19,8 +21,6 @@
       }
     }
     .card-index-conseils-videos-div {
-      border-radius: 2%;
-      border: 1px solid $rouille;
       .main-bold-paragraphe {
         text-align: left;
       }
