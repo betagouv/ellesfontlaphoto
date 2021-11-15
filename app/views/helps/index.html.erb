@@ -72,8 +72,6 @@
 <div class="main-index">
   <% if @selected.present? || @selected_type.present? %>
     <div class="index-direction-helps tag-present">
-      <p class="main-bold-paragraphe result-search text-align-left"><%= @helps.count %> aides correspondent à vos critères <%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small" %></p>
-      <a class="link-blue result-search" href="/helps"> <%= image_tag "arrow-left-darkblue.svg" %> Toutes les aides </a>
       <div class="result-search-mobile">
         <p class="main-bold-paragraphe result-search-mobile text-align-left"><%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small" %> <%= @helps.count %> résultats pour :</p>
         <% if @selected.present? %>
@@ -83,11 +81,6 @@
           <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= Help::HELP_TYPE[@selected_type.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
         <% end %>
       </div>
-    </div>
-  <% else %>
-    <div class="index-direction-helps">
-      <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
-      <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
     </div>
   <% end %>
   <% if @selected.present? || @selected_type.present? %>

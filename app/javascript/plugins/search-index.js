@@ -80,8 +80,7 @@ const updateInput = () => {
 
 const animSearch = async () => {
     searchProgressBarHelp();
-    document.querySelector(".index-direction-helps").style.opacity = 0.2;
-    document.querySelector(".cards").style.opacity = 0.2;
+    document.querySelector(".main-index").style.opacity = 0.2;
     await sleep(2500)
     document.querySelector('#search-form').submit()
 }
