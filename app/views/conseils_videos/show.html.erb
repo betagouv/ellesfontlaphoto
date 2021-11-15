@@ -42,7 +42,7 @@
     </div>
   </div>
   <% if @conseil_video.video.attached? %>
-    <%= cl_video_tag @conseil_video.video.key, width: 800, muted: true, playsinline: true, controls: true, class: "video-tag" %>
+    <%= cl_video_tag @conseil_video.video.key, width: 800, playsinline: true, controls: true, class: "video-tag" %>
   <% end %>
 </div>
 <div class="arrondis-conseils-videos">
