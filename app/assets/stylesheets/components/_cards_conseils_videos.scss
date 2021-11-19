@@ -9,6 +9,9 @@
     position: relative;
     border: 1px solid $rouille;
     border-radius: 2%;
+    &:hover {
+      box-shadow: 0 0 6px rgba(1,1,1,0.5);
+    }
     a {
       color: $black;
       div {
@@ -25,9 +28,6 @@
         text-align: left;
       }
 
-      &:hover {
-        box-shadow: 0 0 6px rgba(1,1,1,0.5);
-      }
       .arrow {
         margin-bottom:0;
         margin-top: 15%;
