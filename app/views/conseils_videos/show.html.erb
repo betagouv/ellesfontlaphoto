@@ -38,7 +38,7 @@
       <% if @conseil_video.objectif.present? %>
         <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_video.objectif %></p>
       <% end %>
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", class: "emojis-eflc-small" %> Format vidéo : </span><%= @conseil_video.format %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", class: "emojis-eflc-small" %> Format vidéo : </span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
     </div>
   </div>
   <% if @conseil_video.video.attached? %>

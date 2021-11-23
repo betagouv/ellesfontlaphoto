@@ -107,9 +107,13 @@
   }
   .first-block-right {
     max-width: 50%;
-    .icones {
-      font-size: 30px;
-      margin-right: 10px;
+    .paragraphe-icones {
+      display: flex;
+      align-items: center;
+      .icones {
+        font-size: 30px;
+        width: 10%;
+      }
     }
   }
 }
@@ -128,6 +132,9 @@
 .second-block {
   padding: 5% 7%;
   background-color: $purple;
+  .subtitle-spectral {
+    width: 65%;
+  }
   .flex-div {
     align-items: flex-start;
     justify-content: space-between;
@@ -146,7 +153,7 @@
       color: $white !important;
       margin-right: 30px;
       &:hover {
-        background-color: $light-black;
+        opacity: 80%;
       }
     }
     .button-helps-mobile {
@@ -197,7 +204,7 @@
       color: $white !important;
       margin: 0 30px 40px 0;
       &:hover {
-        background-color: $light-black;
+        opacity: 80%;
       }
     }
     .button-conseils-mobile {
@@ -218,7 +225,7 @@
       white-space: nowrap;
       text-decoration: none !important;
       &:hover {
-        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+        opacity: 80%;
       }
     }
   }
@@ -252,7 +259,6 @@
   max-width: 20%;
   .chiffre {
     font-family: 'Spectral', serif;
-    font-weight: bold;
     font-size: 50px;
     line-height: 45px;
   }
@@ -297,8 +303,7 @@
       border : none;
       max-width: 50%;
       &:hover {
-        box-shadow: 0 0 6px rgba(1,1,1,0.5);
-      }
+        opacity: 80%;      }
     }
   }
   .manifesto-div {
@@ -321,7 +326,7 @@
       border : none;
       max-width: 50%;
       &:hover {
-        box-shadow: 0 0 6px rgba(1,1,1,0.5);
+        opacity: 80%;
       }
     }
     .illu-home-4{
@@ -350,7 +355,7 @@
     .illu-home-3-768-1024 {
       display: block;
       position: absolute;
-      top: 63%;
+      top: 50%;
       width: 100%;
       left: 0;
     }
@@ -401,6 +406,7 @@
     padding: 5% 2%;
     .subtitle-spectral {
       text-align: center;
+      width: 100%;
     }
     .flex-div {
       justify-content: center;
@@ -417,7 +423,6 @@
         width: 100%;
         margin-top: 40px;
         .cards {
-          // grid-template-columns: 1fr 1fr 1fr;
           .card-index-helps a .flottante-div {
             .flottante {
               font-size: 1rem;
@@ -621,11 +626,17 @@
     }
     .first-block-right {
       text-align: center;
-      p {
+      .paragraphe-icones {
         display: grid;
-        .paragraphe,.icones {
+        .icones {
+          margin: 0 auto;
+        }
+        .paragraphe {
           text-align: center !important;
         }
+      }
+      .paragraphe {
+        text-align: center !important;
       }
     }
     div {

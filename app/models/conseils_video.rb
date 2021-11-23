@@ -17,9 +17,9 @@ class ConseilsVideo < ApplicationRecord
   CONSEIL_TAGS = ["Commencer mon activité", "Me former"]
 
   VIDEO_FORMAT = {
-    "Verbatim": "un jour on m'a dit que...",
-    "Thématique": "Déclic",
-    "Témoignage": "La première fois que ..."
+    "Verbatim": "Un jour, on m'a dit que…",
+    "Thématique": "La première fois que...",
+    "Témoignage": "Déclic, témoignage"
   }
 
   def correct_type_attachment
