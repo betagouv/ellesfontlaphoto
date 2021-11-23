@@ -30,6 +30,7 @@
       line-height: 28px;
       padding-top: 8px;
       color: $black;
+      white-space: nowrap;
       &:hover {
         opacity: 0.7;
       }
@@ -171,7 +172,6 @@
     width: 100%;
     z-index: 3;
     top: 0;
-
     display: block;
   }
 
@@ -196,17 +196,24 @@
       text-align:center;
       background-color: $hover-purple;
       border-top: 0.1px solid $white;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
     }
   }
 
   .header-mobile .logo-mobile {
     display: block;
     float: left;
-    padding: 20px;
+    padding: 8px 20px 8px 20px;
     text-decoration: none;
     max-width: 50%;
     opacity: 1;
+    font-family: 'Marianne-Bold', sans-serif !important;
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    line-height: 28px;
+    padding-top: 8px;
+    white-space: nowrap;
+    color: $black;
     img {
       max-width: 100%;
     }
@@ -232,7 +239,7 @@
     space-between;
     align-items: center;
     border-radius: 40px;
-    margin: 18px 10px 0 0 ;
+    margin: 12px 10px 12px 0 ;
     padding: 5px 15px 7px;
     background-color: $hover-purple;
     .navicon {
