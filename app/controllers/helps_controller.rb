@@ -19,6 +19,7 @@ class HelpsController < ApplicationController
       @selected_type = params[:type_list]
       @searched = true
     end
+    @helps = @helps.where(visible: true)
     @helps_count = @helps.count
   end
 
