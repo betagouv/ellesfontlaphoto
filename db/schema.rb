@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_144506) do
+ActiveRecord::Schema.define(version: 2021_11_28_115637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 2021_10_26_144506) do
     t.string "contact_intitution_partenaire"
     t.string "commission_parite"
     t.string "old_laureats_parite"
+    t.boolean "visible", default: true
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
