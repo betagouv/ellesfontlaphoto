@@ -1,5 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite
+  permit_params :title, :description, :sector, :institution_name, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible
   #
   # or
   #
@@ -11,6 +11,7 @@ ActiveAdmin.register Help do
 
   show do
     attributes_table do
+      row :visible
       row :identifiant
       row :title
       row :description
@@ -72,6 +73,7 @@ ActiveAdmin.register Help do
   filter :institution_name
 
   index do
+    column :visible
     column :identifiant
     column :title
     column :residence_condition
@@ -86,6 +88,7 @@ ActiveAdmin.register Help do
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
+      f.input :visible
       f.input :identifiant
       f.input :title
       f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys
