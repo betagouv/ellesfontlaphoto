@@ -88,55 +88,55 @@ ActiveAdmin.register Help do
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
-      f.input :visible
-      f.input :identifiant
-      f.input :title
-      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys
-      f.input :description
-      f.input :description_url
-      f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}
-      f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}
-      f.input :sector
-      f.input :regularity
-      f.input :help_amount
-      f.input :help_advantage
-      f.input :residence_time
-      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE
-      f.input :general_condition
+      f.input :visible, as: :boolean, label: "Vibilité"
+      f.input :identifiant,label: "identifiant"
+      f.input :title, label: "Titre"
+      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys, label: "Type"
+      f.input :description, label: "Description"
+      f.input :description_url, label: "Url de description"
+      f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début"
+      f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin"
+      f.input :sector, label: "Sécteur"
+      f.input :regularity, label: "Régularité"
+      f.input :help_amount, label: "Montant de l'aide"
+      f.input :help_advantage, label: "Avantage de l'aide"
+      f.input :residence_time, label: "Temps de résidence"
+      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
+      f.input :general_condition, label: "Conditions générales"
     end
     f.inputs "Candidatez" do
-      f.input :candidate_url
+      f.input :candidate_url, label: "Url de candidature"
     end
 
     f.inputs "Selection" do
-      f.input :selection, as: :quill_editor
-      f.input :example_enrollment_url
-      f.input :compo_commission, as: :quill_editor
-      f.input :url_commission
-      f.input :commission_parite, as: :select, collection: Help::PARITE
-      f.input :old_laureat, as: :quill_editor
-      f.input :old_laureat_url
-      f.input :old_laureats_case_url
-      f.input :old_laureats_parite, as: :select, collection: Help::PARITE
-      f.input :statistic, as: :quill_editor
+      f.input :selection, as: :quill_editor, label: "Sélection"
+      f.input :example_enrollment_url, label: "Exemple d'inscription"
+      f.input :compo_commission, as: :quill_editor, label: "Composition de la commission"
+      f.input :url_commission, label: "URL de la commission"
+      f.input :commission_parite, as: :select, collection: Help::PARITE, label: "Parité de la commission"
+      f.input :old_laureat, as: :quill_editor, label: "Anciens lauréates"
+      f.input :old_laureat_url, label: "Anciens lauréates url"
+      f.input :old_laureats_case_url, label: "Anciens lauréates cas url"
+      f.input :old_laureats_parite, as: :select, collection: Help::PARITE, label: "Anciens lauréates parité"
+      f.input :statistic, as: :quill_editor, label: "Statistiques"
     end
     f.inputs "Pièces à fournir" do
-      f.input :admin_attachment, as: :quill_editor
-      f.input :artistic_attachment, as: :quill_editor
-      f.input :other_attachment, as: :quill_editor
-      f.input :specific_condition, as: :quill_editor
-      f.input :parentality
-      f.input :accessibility
+      f.input :admin_attachment, as: :quill_editor, label: "Pièces jointes administratives"
+      f.input :artistic_attachment, as: :quill_editor, label: "Pièces jointes artistiques"
+      f.input :other_attachment, as: :quill_editor, label: "Autres pièces jointes"
+      f.input :specific_condition, as: :quill_editor, label: "Conditions spécifiques"
+      f.input :parentality, label: "Parentalité"
+      f.input :accessibility, label: "Accéssibilité"
     end
     f.inputs "Contact" do
-      f.input :institution_name
-      f.input :institution_url
-      f.input :institution_partenaire, as: :quill_editor
-      f.input :contact_institution, as: :quill_editor
-      f.input :contact_intitution_email, as: :quill_editor
-      f.input :contact_intitution_partenaire, as: :quill_editor
-      f.input :issue_contact
-      f.input :faq_url
+      f.input :institution_name, label: "Nom de l'institution"
+      f.input :institution_url, label: "URL de l'institution"
+      f.input :institution_partenaire, as: :quill_editor, label: "Institution partenaires"
+      f.input :contact_institution, as: :quill_editor, label: "Contact institution"
+      f.input :contact_intitution_email, as: :quill_editor, label: "Email contact institution"
+      f.input :contact_intitution_partenaire, as: :quill_editor, label: "Contact institution partenaires"
+      f.input :issue_contact, label: "Contact problèmes"
+      f.input :faq_url, label: "FAQ url"
     end
     f.actions
   end
