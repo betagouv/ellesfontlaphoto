@@ -88,7 +88,7 @@ ActiveAdmin.register Help do
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
-      f.input :visible
+      f.input :visible, as: :boolean
       f.input :identifiant
       f.input :title
       f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys
