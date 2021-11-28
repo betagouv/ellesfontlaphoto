@@ -103,7 +103,7 @@
           <% end %>
         </div>
       <% else %>
-        <p class="info-result main-bold-paragraphe text-align-left"><%= @helps.count %> aides recensées</p>
+        <p class="info-result main-bold-paragraphe text-align-center"><%= @helps.count %> aides recensées</p>
         <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
       <% end %>
     </div>

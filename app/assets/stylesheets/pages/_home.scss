@@ -387,15 +387,21 @@
   }
 
   .first-block {
-    padding: 10% 5% 5% 5%;
+    padding: 9% 5% 5% 5%;
     .first-block-left {
       min-width: 47%;
+      .paragraphe-bold {
+        margin-bottom: 28px;
+      }
       .subtitle {
         text-align: left;
       }
     }
     .first-block-right {
       max-width: 46%;
+      .paragraphe-bold {
+        margin-bottom: 28px;
+      }
       p .icones {
         margin-right: 2px;
       }
@@ -527,7 +533,6 @@
     }
     .btn-manifesto-mobile {
       display: block;
-      text-align: center;
       .btn-manifesto {
         margin-bottom: 20px !important;
         padding: 10px 15px;
@@ -539,9 +544,7 @@
     }
     .btn-contact-mobile {
       display: block;
-      text-align: center;
       button {
-        margin: 0 6%;
         white-space: nowrap;
         padding: 8px 15px 12px 15px;
         min-width: 230px;
