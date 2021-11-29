@@ -56,10 +56,9 @@
           </div>
           <div class="cards-videos-info">
             <p class="cards-tags mb0">
-              <%= conseil.tags.join(",") %>
+              <%= ConseilsVideo::VIDEO_FORMAT[conseil.format.to_sym] %>
             </p>
-            <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="paragraphe"><%= conseil.protagoniste %></span></p>
-            <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+            <p class="main-bold-paragraphe mb30"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
           </div>
         </div>
       <% end %>

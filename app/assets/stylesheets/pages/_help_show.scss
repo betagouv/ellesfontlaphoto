@@ -7,6 +7,14 @@
   .flex-div-left {
     align-items: center;
     padding-left: 5%;
+    align-items: center;
+    .mr20 {
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      margin-bottom: 0;
+    }
     a {
       color: $black !important;
       .help-type {

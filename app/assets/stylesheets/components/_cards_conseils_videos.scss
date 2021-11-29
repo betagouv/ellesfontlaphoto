@@ -10,7 +10,7 @@
     border: 1px solid $rouille;
     border-radius: 2%;
     &:hover {
-      box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      background-color: $hover-pink;
     }
     a {
       color: $black;
@@ -34,6 +34,9 @@
       }
       .cards-videos-info {
         padding: 5% 3%;
+        // .paragraphe-italic {
+        //   font-size:
+        // }
         .cards-tags {
           font-family: 'Marianne-Regular_Italic', sans-serif;
           font-size: 0.6;
