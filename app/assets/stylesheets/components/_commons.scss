@@ -67,6 +67,16 @@ a {
   color: $black;
 }
 
+.spectral-italic {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  white-space: normal;
+  font-size: 1.5rem;
+  color: $black;
+}
+
 p {
   a {
     text-decoration: underline !important;
