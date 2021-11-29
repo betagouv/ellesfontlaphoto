@@ -7,16 +7,6 @@
 .cards-help {
   grid-template-columns: 1fr 1fr 1fr 1fr !important;
 }
-// Smallest device
-@media only screen and (max-width: 750px) {
-  .cards {
-    padding-top: 30px;
-    grid-template-columns: 1fr !important;
-  }
-  .cards-help {
-    grid-template-columns: 1fr !important;
-  }
-}
 
 
 // Extra large devices (large desktops, 1200px and up)
@@ -26,5 +16,16 @@
   }
   .cards-help {
     grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+// Smallest device
+@media only screen and (max-width: 750px) {
+  .cards {
+    padding-top: 30px;
+    grid-template-columns: 1fr !important;
+  }
+  .cards-help {
+    grid-template-columns: 1fr !important;
   }
 }
