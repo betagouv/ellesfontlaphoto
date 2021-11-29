@@ -7,6 +7,15 @@
   padding-top: 2.5rem;
   .flex-div-left {
     padding: 0 3em 0 3em;
+    align-items: center;
+    .mr20 {
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
   }
   a {
     color: $black !important;
@@ -18,6 +27,7 @@
     .conseils-article-description {
       p {
         width: 70%;
+        // white-space: nowrap;
       }
     }
   }
@@ -61,12 +71,21 @@ ul li {
       background-color: $hover-pink;
       padding: 10px;
     }
+    a {
+      color: $black !important;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
     ul {
       margin-bottom: 0;
       li {
         list-style-image: url(arrow-darkblue.svg);
-        &:hover {
-          text-decoration: underline;
+        a {
+          color: $black !important;
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -174,15 +193,26 @@ blockquote {
 
 @media only screen and (max-width: 750px) {
   .div-banner-conseils-article {
+    h2 {
+      line-height: 50px;
+    }
     .flex-div-left {
       a {
         .conseil-tag {
           margin-bottom: 10px;
         }
       }
+      .mr20 img {
+        margin-bottom: 20px;
+      }
     }
     .banner-show {
       padding: 1em 3em 1em 3em;
+      .conseils-article-description {
+        p {
+          white-space: normal;
+        }
+      }
       .contact-title {
         width: 100%;
       }
