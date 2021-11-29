@@ -7,6 +7,15 @@
   padding-top: 2.5rem;
   .flex-div-left {
     padding: 0 3em 0 3em;
+    align-items: center;
+    .mr20 {
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
   }
   a {
     color: $black !important;
@@ -22,7 +31,7 @@
       font-style: italic;
       font-weight: normal;
       font-size: 48px;
-      line-height: 36px;
+      line-height: 50px;
     }
   }
   .video-tag {
@@ -104,6 +113,7 @@ ul li {
         max-width: 45%;
         .paragraphe {
           margin-bottom: 5px;
+          // white-space: nowrap;
         }
       }
     }
@@ -120,11 +130,17 @@ ul li {
 
 @media only screen and (max-width: 750px) {
   .div-banner-conseils-video {
+    h2 {
+      line-height: 50px;
+    }
     .flex-div-left {
       a {
         .conseil-tag {
           margin-bottom: 10px;
         }
+      }
+      .mr20 img {
+        margin-bottom: 20px;
       }
     }
     .banner-show {
@@ -134,6 +150,9 @@ ul li {
       }
       .conseils-video-description {
         min-width: 100%;
+        p {
+          white-space: normal;
+        }
       }
     }
     video {
