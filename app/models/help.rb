@@ -1,5 +1,7 @@
 class Help < ApplicationRecord
 
+  has_many :help_notation
+
   acts_as_taggable_on :type
   validates :title, presence: true
   validates :identifiant, presence: true

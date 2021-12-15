@@ -1,6 +1,7 @@
 class HelpsController < ApplicationController
 
   def index
+    @voted = false
     @helps = Help.order(start_date: :asc)
     @searched = false
     if params[:residence].present?
@@ -30,5 +31,6 @@ class HelpsController < ApplicationController
     else
       @help_status = "close"
     end
+    @notation_helps = NotationHelp.new
   end
 end
