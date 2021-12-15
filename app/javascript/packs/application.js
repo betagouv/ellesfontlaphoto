@@ -17,21 +17,19 @@ import { updateInput } from '../plugins/search-index';
 import { changeResidence } from '../plugins/search-index';
 import { searchIndexConseils } from '../plugins/search-conseils';
 import { updateInputCategories } from '../plugins/search-conseils';
-// import { changeTypes } from '../plugins/search-index';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
 import { unSelectFilterHelp } from '../plugins/filter-helps'
+import { fillNotationHelpForm } from '../plugins/notation-form'
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#select-search-residence")) {
-    // if (document.getElementById("text-to-change-type")) {
-    //   changeTypes();
-    // }
     searchIndex();
     updateInput();
-    // if (document.getElementById("text-to-change-residence")) {
-    //   changeResidence();
-    // }
+  }
+
+  if (document.querySelector("#notation-help")) {
+    fillNotationHelpForm();
   }
 
   if (document.querySelector("#select-search-category")) {
@@ -61,7 +59,7 @@ document.addEventListener('turbolinks:load', () => {
     })
   }
 
-  if (document.querySelector(".banner-contact") || document.querySelector(".contact-index-conseils")){
+  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils")){
     new Modal();
   }
 })
@@ -160,3 +158,5 @@ class Modal {
 }
 
 
+
+import "controllers"

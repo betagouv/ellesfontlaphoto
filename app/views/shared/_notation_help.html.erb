@@ -1,0 +1,9 @@
+<div class="banner-yellow">
+  <p class="paragraphe mt10">Aidez-nous à améliorer le service. <b>Avez-vous trouvé une aide correspondant à votre besoin ?</b><span class="notation-button" id="notation-help-no">non</span><span class="notation-button" id="notation-help-yes">oui, je candidate</span><span class="notation-button" id="notation-help-yesbut">oui, mais elle n’est pas ouverte</span></p>
+</div>
+
+<%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true do %>
+  <%= text_field_tag :answer, params[:answer] %>
+  <%= text_field_tag :help_id, help_id %>
+  <%= submit_tag "Search" %>
+<% end %>

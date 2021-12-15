@@ -1,0 +1,14 @@
+@import "../config/colors";
+@import "../config/fonts";
+
+.notation-button {
+  padding: 3px 10px;
+  border-radius: 50px;
+  border: 1px solid $black;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#notation-help {
+  display:none;
+}
