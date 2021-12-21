@@ -1,0 +1,15 @@
+<div data-controller="notationhelp">
+  <div class="banner-yellow" data-notationhelp-target="div">
+    <p class="paragraphe mt10" data-notationhelp-target="text">Aidez-nous à améliorer le service. <b>Avez-vous trouvé une aide correspondant à votre besoin ?</b>
+      <span class="notation-button" id="notation-help-no" data-action="click->notationhelp#send">non</span>
+      <span class="notation-button" id="notation-help-yes" data-action="click->notationhelp#send">oui, je candidate</span>
+      <span class="notation-button" id="notation-help-yesbut" data-action="click->notationhelp#send">oui, mais elle n’est pas ouverte</span></p>
+  </div>
+
+  <%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true,
+      data: { notationhelp_target: 'form' } do %>
+    <%= text_field_tag :answer, params[:answer] %>
+    <%= text_field_tag :help_id, help_id %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>

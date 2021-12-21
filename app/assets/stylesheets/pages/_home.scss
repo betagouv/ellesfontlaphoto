@@ -1,20 +1,6 @@
 @import "../config/colors";
 @import "../config/fonts";
 
-.banner-contact {
-  background-color: $yellow;
-  text-align: center;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  a {
-    color: $black !important;
-    margin: 0;
-  }
-}
-
-
 /*----------------------------------------*/
 /*BANNER*/
 
@@ -557,9 +543,6 @@
 // RESPONSIVE PHONE
 
 @media only screen and (max-width: 750px) {
-  .banner-contact a {
-      text-align: center !important;
-  }
   .banner {
     padding: 12em 0 10em 0;
     .illu-home-1 {

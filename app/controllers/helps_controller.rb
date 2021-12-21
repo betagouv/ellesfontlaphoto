@@ -30,5 +30,6 @@ class HelpsController < ApplicationController
     else
       @help_status = "close"
     end
+    @notation_helps = NotationHelp.new
   end
 end
