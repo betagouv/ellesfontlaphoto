@@ -3,6 +3,8 @@
   <% content_for :meta_image, url_for(@conseil_video.image) %>
 <% end %>
 
+<%= render "shared/notation_conseil", conseil_id: @conseil_video.id, type: "video" %>
+
 <div class=div-banner-conseils-video>
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_115637) do
+ActiveRecord::Schema.define(version: 2021_12_21_143103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,34 @@ ActiveRecord::Schema.define(version: 2021_11_28_115637) do
     t.string "commission_parite"
     t.string "old_laureats_parite"
     t.boolean "visible", default: true
+  end
+
+  create_table "notation_conseils_articles", force: :cascade do |t|
+    t.bigint "conseils_article_id"
+    t.integer "utile", default: 0, null: false
+    t.integer "inutile", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conseils_article_id"], name: "index_notation_conseils_articles_on_conseils_article_id"
+  end
+
+  create_table "notation_conseils_videos", force: :cascade do |t|
+    t.bigint "conseils_video_id"
+    t.integer "utile", default: 0, null: false
+    t.integer "inutile", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conseils_video_id"], name: "index_notation_conseils_videos_on_conseils_video_id"
+  end
+
+  create_table "notation_helps", force: :cascade do |t|
+    t.bigint "help_id"
+    t.integer "oui", default: 0, null: false
+    t.integer "oui_mais_fermee", default: 0, null: false
+    t.integer "non", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_notation_helps_on_help_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

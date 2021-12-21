@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "a_propos", to: 'pages#a_propos'
   resources :contacts, only: :create
   resources :helps, only: [:show, :index]
+  resources :notation_helps, only: :create
   get "/conseils", to: "conseils_pratiques#index"
   resources :conseils_videos, only: [:show]
   resources :conseils_articles, only: [:show]
+  resources :notation_conseils_articles, only: :create
+  resources :notation_conseils_videos, only: :create
 end
