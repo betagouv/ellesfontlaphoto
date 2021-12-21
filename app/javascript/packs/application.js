@@ -24,12 +24,14 @@ import { unSelectFilterHelp } from '../plugins/filter-helps'
 
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
-  if (document.querySelector("#index-helps")) {
+  const index_helps = document.querySelector("#index-helps")
+  if (index_helps) {
     searchIndex();
     updateInput();
   }
 
-  if (document.querySelector("#select-search-category")) {
+  const index_conseils = document.querySelector("#index-conseils")
+  if (index_conseils) {
     searchIndexConseils();
     updateInputCategories();
   }
