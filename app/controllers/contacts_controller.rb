@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
-    # raise
     if @contact.save
       if @contact.contact_type == "newsletter"
         add_to_sendinblue_list(@contact.contact_email)

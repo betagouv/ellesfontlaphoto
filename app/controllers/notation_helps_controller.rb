@@ -21,6 +21,9 @@ class NotationHelpsController < ApplicationController
       @notation_help.oui_mais_fermee += 1
     end
     @notation_help.save
-    @voted = true
+    respond_to do |format|
+      format.html { render 'helps/show' }
+      format.json
+    end
   end
 end

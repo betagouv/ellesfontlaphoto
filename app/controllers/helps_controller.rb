@@ -1,7 +1,6 @@
 class HelpsController < ApplicationController
 
   def index
-    @voted = false
     @helps = Help.order(start_date: :asc)
     @searched = false
     if params[:residence].present?
