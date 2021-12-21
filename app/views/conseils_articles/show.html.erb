@@ -1,6 +1,8 @@
 <% content_for :meta_title, "#{@conseil_article.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @conseil_article.subtitle %>
 
+<%= render "shared/notation_conseil", conseil_id: @conseil_article.id, type: "article" %>
+
 <div class=div-banner-conseils-article>
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>

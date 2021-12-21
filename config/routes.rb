@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get "/conseils", to: "conseils_pratiques#index"
   resources :conseils_videos, only: [:show]
   resources :conseils_articles, only: [:show]
+  resources :notation_conseils_articles, only: :create
+  resources :notation_conseils_videos, only: :create
 end
