@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
@@ -20,16 +21,12 @@ import { updateInputCategories } from '../plugins/search-conseils';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
 import { unSelectFilterHelp } from '../plugins/filter-helps'
-import { fillNotationHelpForm } from '../plugins/notation-form'
+
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
-  if (document.querySelector("#select-search-residence")) {
+  if (document.querySelector("#index-helps")) {
     searchIndex();
     updateInput();
-  }
-
-  if (document.querySelector("#notation-help")) {
-    fillNotationHelpForm();
   }
 
   if (document.querySelector("#select-search-category")) {
@@ -157,6 +154,3 @@ class Modal {
 
 }
 
-
-
-import "controllers"
