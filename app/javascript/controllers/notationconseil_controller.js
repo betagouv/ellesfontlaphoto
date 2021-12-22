@@ -28,7 +28,7 @@ export default class extends Controller {
           this.textTarget.innerHTML = "Merci de votre réponse!";
           const myTimeout = setTimeout(() => {
             this.divTarget.style.display = "none";
-          }, 4000);
+          }, 3500);
         }
       })
   }

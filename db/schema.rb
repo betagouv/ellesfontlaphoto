@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_143103) do
+ActiveRecord::Schema.define(version: 2021_12_22_134749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,15 @@ ActiveRecord::Schema.define(version: 2021_12_21_143103) do
     t.string "commission_parite"
     t.string "old_laureats_parite"
     t.boolean "visible", default: true
+  end
+
+  create_table "notation_catalogues", force: :cascade do |t|
+    t.string "catalogue"
+    t.integer "utile", default: 0, null: false
+    t.integer "utile_mais_fermee", default: 0, null: false
+    t.integer "inutile", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "notation_conseils_articles", force: :cascade do |t|
