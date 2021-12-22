@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :conseils_articles, only: [:show]
   resources :notation_conseils_articles, only: :create
   resources :notation_conseils_videos, only: :create
+  resources :notation_catalogues, only: :create
 end

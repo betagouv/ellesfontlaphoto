@@ -1588,14 +1588,21 @@
 # # AdminUser.create!(email: "example@admin.fr", password: "password")
 # AdminUser.create!(email: "admin@example.fr", password: "password")
 
-Help.all.each do |help|
-  NotationHelp.create(help: help)
-end
+#-----------------------------------------------------------------
+# => CREATION DES NOTATIONS VIDES
+#-----------------------------------------------------------------
+# Help.all.each do |help|
+#   NotationHelp.create(help: help)
+# end
 
-ConseilsVideo.all.each do |conseils_video|
-  NotationConseilsVideo.create(conseils_video: conseils_video)
-end
+# ConseilsVideo.all.each do |conseils_video|
+#   NotationConseilsVideo.create(conseils_video: conseils_video)
+# end
 
-ConseilsArticle.all.each do |conseils_article|
-  NotationConseilsArticle.create(conseils_article: conseils_article)
-end
+# ConseilsArticle.all.each do |conseils_article|
+#   NotationConseilsArticle.create(conseils_article: conseils_article)
+# end
+
+NotationCatalogue.create(catalogue: "Aides")
+NotationCatalogue.create(catalogue: "Conseils")
+

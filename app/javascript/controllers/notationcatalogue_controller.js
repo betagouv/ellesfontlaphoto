@@ -10,14 +10,15 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault();
-    if(event.currentTarget.id == "notation-help-yes") {
-      document.querySelector("#answer").value = "yes"
+    console.log(event.currentTarget.id)
+    if(event.currentTarget.id == "notation-catalogue-utile") {
+      document.querySelector("#answer").value = "utile"
     }
-    if(event.currentTarget.id == "notation-help-yesbut") {
-      document.querySelector("#answer").value = "yesbut"
+    if(event.currentTarget.id == "notation-catalogue-utile-mais-fermee") {
+      document.querySelector("#answer").value = "utile-mais-fermee"
     }
-    if(event.currentTarget.id == "notation-help-no") {
-      document.querySelector("#answer").value = "no";
+    if(event.currentTarget.id == "notation-catalogue-inutile") {
+      document.querySelector("#answer").value = "inutile";
     }
 
     fetch(this.formTarget.action, {

@@ -3,22 +3,23 @@
     <p class="paragraphe mt10" data-notationconseil-target="text">Aidez-nous à améliorer le service. <b>Le contenu m'est ...</b>
       <span class="notation-button" id="notation-conseil-utile" data-action="click->notationconseil#send">utile</span>
       <span class="notation-button" id="notation-conseil-inutile" data-action="click->notationconseil#send">inutile</span>
+    </p>
     <p class="close" data-action="click->notationconseil#close"><%= image_tag "close.png" %></p>
   </div>
 
-<% if type == "article" %>
-  <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
-      data: { notationconseil_target: 'form' } do %>
-    <%= text_field_tag :answer, params[:answer] %>
-    <%= text_field_tag :conseil_id, conseil_id %>
-    <%= submit_tag "Search" %>
+  <% if type == "article" %>
+    <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
+        data: { notationconseil_target: 'form' } do %>
+      <%= text_field_tag :answer, params[:answer] %>
+      <%= text_field_tag :conseil_id, conseil_id %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  <% else %>
+    <%= form_tag notation_conseils_videos_path, id: "notation-conseil", method: :post, remote: true,
+        data: { notationconseil_target: 'form' } do %>
+      <%= text_field_tag :answer, params[:answer] %>
+      <%= text_field_tag :conseil_id, conseil_id %>
+      <%= submit_tag "Search" %>
+    <% end %>
   <% end %>
-<% else %>
-  <%= form_tag notation_conseils_videos_path, id: "notation-conseil", method: :post, remote: true,
-      data: { notationconseil_target: 'form' } do %>
-    <%= text_field_tag :answer, params[:answer] %>
-    <%= text_field_tag :conseil_id, conseil_id %>
-    <%= submit_tag "Search" %>
-  <% end %>
-<% end %>
 </div>
