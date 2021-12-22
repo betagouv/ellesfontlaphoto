@@ -1,0 +1,16 @@
+<div data-controller="notationcatalogue">
+  <div class="banner-yellow" data-notationcatalogue-target="div">
+    <p class="paragraphe mt10" data-notationcatalogue-target="text">Aidez-nous à améliorer le service. <b>Aidez-nous à améliorer le service, les  contenus de cette page me sont...</b>
+      <span class="notation-button" id="notation-catalogue-utile" data-action="click->notationcatalogue#send">utiles</span>
+      <span class="notation-button" id="notation-catalogue-inutile" data-action="click->notationcatalogue#send">inutiles</span>
+    </p>
+    <p class="close" data-action="click->notationcatalogue#close"><%= image_tag "close.png" %></p>
+  </div>
+
+  <%= form_tag notation_catalogues_path, id: "notation-catalogue-conseils", method: :post, remote: true,
+      data: { notationcatalogue_target: 'form' } do %>
+    <%= text_field_tag :answer, params[:answer] %>
+    <%= text_field_tag :catalogue, "Conseils" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
