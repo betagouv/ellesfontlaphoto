@@ -1,4 +1,4 @@
 class NotationHelp < ApplicationRecord
-  has_one :help
+  belongs_to :help
   validates :help, uniqueness: true
 end
