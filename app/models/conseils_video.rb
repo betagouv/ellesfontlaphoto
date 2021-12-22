@@ -5,6 +5,8 @@ class ConseilsVideo < ApplicationRecord
 
   validates :video, presence: true
 
+  has_one :notation_conseils_video
+
   has_one_attached :video
   acts_as_taggable_on :tags, :category
 
