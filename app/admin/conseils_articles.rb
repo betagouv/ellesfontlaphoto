@@ -61,6 +61,16 @@ ActiveAdmin.register ConseilsArticle do
     column :objectif
     column :created_at
     column :updated_at
+    column :utile do |conseils_article|
+      if NotationConseilsArticle.find_by(conseils_article: conseils_article)
+        NotationConseilsArticle.find_by(conseils_article: conseils_article).utile
+      end
+    end
+    column :inutile do |conseils_article|
+      if NotationConseilsArticle.find_by(conseils_article: conseils_article)
+        NotationConseilsArticle.find_by(conseils_article: conseils_article).inutile
+      end
+    end
     actions
   end
 
