@@ -272,6 +272,7 @@
     padding: 3% 7% 9% 7%;
     border-right: 1px solid $rouille;
     button {
+      white-space: nowrap;
       background-color: $purple;
       border-radius: 40px;
       height: 42px;
