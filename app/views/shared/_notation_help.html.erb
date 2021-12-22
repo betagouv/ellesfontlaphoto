@@ -4,6 +4,7 @@
       <span class="notation-button" id="notation-help-no" data-action="click->notationhelp#send">non</span>
       <span class="notation-button" id="notation-help-yes" data-action="click->notationhelp#send">oui, je candidate</span>
       <span class="notation-button" id="notation-help-yesbut" data-action="click->notationhelp#send">oui, mais elle n’est pas ouverte</span></p>
+    <p class="close" data-action="click->notationhelp#close"><%= image_tag "close.png" %></p>
   </div>
 
   <%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true,

@@ -9,6 +9,16 @@
   cursor: pointer;
 }
 
+.banner-yellow {
+  position: relative;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+}
+
 #notation-help,#notation-conseil {
   display:none;
 }

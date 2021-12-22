@@ -4,6 +4,10 @@ import { csrfToken } from "@rails/ujs";
 export default class extends Controller {
   static targets = ['div','text', 'form'];
 
+  close(event) {
+    this.divTarget.style.display = "none";
+  }
+
   send(event) {
     event.preventDefault();
     if(event.currentTarget.id == "notation-conseil-utile") {
