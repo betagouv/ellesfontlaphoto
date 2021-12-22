@@ -7,8 +7,21 @@
   border: 1px solid $black;
   margin: 0 5px;
   cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
 }
 
-#notation-help,#notation-conseil {
+.banner-yellow {
+  position: relative;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+}
+
+#notation-help,#notation-conseil,#notation-catalogue-helps,#notation-catalogue-conseils {
   display:none;
 }
