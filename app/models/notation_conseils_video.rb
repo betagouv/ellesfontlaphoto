@@ -1,4 +1,4 @@
 class NotationConseilsVideo < ApplicationRecord
-  has_one :conseils_video
+  belongs_to :conseils_video
   validates :conseils_video, uniqueness: true
 end
