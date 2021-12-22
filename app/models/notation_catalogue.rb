@@ -1,0 +1,3 @@
+class NotationCatalogue < ApplicationRecord
+
+end

@@ -1,0 +1,2 @@
+module NotationCataloguesHelper
+end
