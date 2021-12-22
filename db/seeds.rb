@@ -1586,6 +1586,7 @@
 # help43.save
 
 # # AdminUser.create!(email: "example@admin.fr", password: "password")
+# AdminUser.create!(email: "admin@example.fr", password: "password")
 
 Help.all.each do |help|
   NotationHelp.create(help: help)
