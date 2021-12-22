@@ -1586,3 +1586,15 @@
 # help43.save
 
 # # AdminUser.create!(email: "example@admin.fr", password: "password")
+
+Help.all.each do |help|
+  NotationHelp.create(help: help)
+end
+
+ConseilsVideo.all.each do |conseils_video|
+  NotationConseilsVideo.create(conseils_video: conseils_video)
+end
+
+ConseilsArticle.all.each do |conseils_article|
+  NotationConseilsArticle.create(conseils_article: conseils_article)
+end

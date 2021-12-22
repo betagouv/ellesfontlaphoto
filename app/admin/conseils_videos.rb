@@ -58,6 +58,16 @@ ActiveAdmin.register ConseilsVideo do
     column :updated_at
     column :category_list
     column :tag_list
+    column :utile do |conseils_video|
+      if NotationConseilsVideo.find_by(conseils_video: conseils_video)
+        NotationConseilsVideo.find_by(conseils_video: conseils_video).utile
+      end
+    end
+    column :inutile do |conseils_video|
+      if NotationConseilsVideo.find_by(conseils_video: conseils_video)
+        NotationConseilsVideo.find_by(conseils_video: conseils_video).inutile
+      end
+    end
     actions
   end
 

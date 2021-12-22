@@ -1,6 +1,6 @@
 class Help < ApplicationRecord
 
-  has_many :help_notation
+  has_one :notation_help
 
   acts_as_taggable_on :type
   validates :title, presence: true
@@ -9,6 +9,10 @@ class Help < ApplicationRecord
   validates :end_date, presence: true
   validates :residence_condition, presence: true
   validates :description, presence: true
+
+  def oui
+    self.notation_help.ui
+  end
 
   PARITE = [
     "respectée",
