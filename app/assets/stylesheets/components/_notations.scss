@@ -14,6 +14,13 @@
 
 .banner-yellow {
   position: relative;
+  .banner-text {
+    display: flex;
+    .mt10 {
+      display: flex;
+      align-items: center;
+    }
+  }
   .close {
     position: absolute;
     right: 15px;
@@ -24,4 +31,42 @@
 
 #notation-help,#notation-conseil,#notation-catalogue-helps,#notation-catalogue-conseils {
   display:none;
+}
+
+@media only screen and (max-width: 1250px) {
+  .banner-yellow {
+    padding: 10px;
+    .tablet {
+      display: block;
+    }
+    .banner-text {
+      .mt10 {
+        display: block;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  .banner-yellow {
+    height: auto;
+    .banner-text {
+      display: block;
+      padding: 20px;
+      .mt10 {
+        display: block;
+      }
+      .d-flex {
+        justify-content: center;
+      }
+      .d-grid {
+        display: inline-grid;
+        span {
+          margin-top: 8px;
+          display: block;
+          text-align: center;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
 }
