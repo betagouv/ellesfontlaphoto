@@ -1,9 +1,12 @@
 <div data-controller="notationcatalogue">
   <div class="banner-yellow" data-notationcatalogue-target="div">
-    <p class="paragraphe mt10" data-notationcatalogue-target="text">Aidez-nous à améliorer le service. <b>Aidez-nous à améliorer le service, les  contenus de cette page me sont...</b>
-      <span class="notation-button" id="notation-catalogue-utile" data-action="click->notationcatalogue#send">utiles</span>
-      <span class="notation-button" id="notation-catalogue-inutile" data-action="click->notationcatalogue#send">inutiles</span>
-    </p>
+    <div class="banner-text">
+      <p class="paragraphe mt10" data-notationcatalogue-target="text">Aidez-nous à améliorer le service. <b>Aidez-nous à améliorer le service, les  contenus de cette page me sont...</b></p>
+      <p class="paragraphe d-flex">
+        <span class="notation-button" id="notation-catalogue-utile" data-action="click->notationcatalogue#send">utiles</span>
+        <span class="notation-button" id="notation-catalogue-inutile" data-action="click->notationcatalogue#send">inutiles</span>
+      </p>
+    </div>
     <p class="close" data-action="click->notationcatalogue#close"><%= image_tag "close.png" %></p>
   </div>
 
