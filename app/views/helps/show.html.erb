@@ -8,19 +8,19 @@
     <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg" %></a>
     <% @help.type_list.each do |type| %>
       <% if type == "Matériel" %>
-        <a href="/helps?residence=&type=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+        <a href="/helps?residence=&type_list=Matériel"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
       <% end %>
       <% if type == "Production" %>
-        <a href="/helps?residence=&type=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+        <a href="/helps?residence=&type_list=Production"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
       <% end %>
       <% if type == "Aide Sociale" %>
-        <a href="/helps?residence=&type=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+        <a href="/helps?residence=&type_list=Aide+Sociale"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
       <% end %>
       <% if type == "Diffusion" %>
-        <a href="/helps?residence=&type=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
+        <a href="/helps?residence=&type_list=Diffusion"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
       <% end %>
       <% if type == "Résidence" %>
-        <a href="/helps?residence=&type=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %> résidence</p></a>
+        <a href="/helps?residence=&type_list=Résidence"><p class="help-type"> <%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", class: "emojis-eflc-small" %> résidence</p></a>
       <% end %>
     <% end %>
   </div>
