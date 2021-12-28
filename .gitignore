@@ -13,6 +13,7 @@
 .DS_Store
 
 /public/assets
+/public/packs/manifest.json
 .byebug_history
 
 #ignore secret KEYs
