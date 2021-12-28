@@ -1,77 +1,3 @@
-@import "config/colors";
-@import "config/fonts";
-
-.div-banner-conseils-video {
-  background-color: $rouille;
-  position: relative;
-  padding-top: 2.5rem;
-  .flex-div-left {
-    padding: 0 3em 0 3em;
-    align-items: center;
-    .mr20 {
-      display: flex;
-      justify-content: center;
-    }
-    p {
-      margin-bottom: 0;
-      white-space: nowrap;
-    }
-  }
-  a {
-    color: $black !important;
-  }
-  .banner-show {
-    display: flex;
-    justify-content: space-around;
-    padding: 1em 3em 10em 3em;;
-    .subtitle-protagoniste {
-      margin-top: 20px;
-      color: $black;
-      font-family: 'Spectral', serif;
-      font-style: italic;
-      font-weight: normal;
-      font-size: 48px;
-      line-height: 50px;
-    }
-  }
-  .video-tag {
-    position: absolute;
-    max-width: 50%;
-    left: 25%;
-    top: 75%;
-  }
-}
-
-.conseil-tag {
-  font-family: 'Marianne-Regular', sans-serif;
-  background-color: $white;
-  display: table !important;
-  padding: 5px 17px;
-  border-radius: 50px;
-  font-size: 1rem;
-  margin-right: 10px;
-  &:hover {
-    box-shadow: 0 0 6px rgba(1,1,1,0.5);
-  }
-}
-
-ul li {
-  font-family: 'Marianne-Regular', sans-serif;
-  font-size: 1rem;
-}
-
-.contact-title {
-  width: 60%;
-}
-
-.arrondis-conseils-videos {
-  background-color: $rouille;
-  border-bottom-left-radius: 100%;
-  border-bottom-right-radius: 100%;
-  width: 100%;
-  height: 100px;
-}
-
 .conseils-video-content {
   margin: 0 auto;
   padding: 20% 20% 5% 20%;
@@ -97,68 +23,12 @@ ul li {
 }
 
 @media only screen and (max-width: 1250px) {
-  .div-banner-conseils-video {
-    .banner-show {
-      .contact-title {
-        max-width: 55%;
-        h2 {
-          padding-bottom: 0;
-          font-size: 36px;
-        }
-        .subtitle-protagoniste {
-          font-size: 26px !important;
-        }
-      }
-      .conseils-video-description {
-        max-width: 45%;
-        .paragraphe {
-          margin-bottom: 5px;
-          // white-space: nowrap;
-        }
-      }
-    }
-    video {
-      position: absolute;
-      min-width: 70%;
-      left: 15% !important;
-    }
-  }
   .conseils-video-content {
     padding: 12% 10% 5% 10%;
   }
 }
 
 @media only screen and (max-width: 750px) {
-  .div-banner-conseils-video {
-    h2 {
-      line-height: 50px;
-    }
-    .flex-div-left {
-      a {
-        .conseil-tag {
-          margin-bottom: 10px;
-        }
-      }
-      .mr20 img {
-        margin-bottom: 20px;
-      }
-    }
-    .banner-show {
-      padding: 1em 3em 1em 3em;
-      .contact-title {
-        min-width: 100%;
-      }
-      .conseils-video-description {
-        min-width: 100%;
-        p {
-          white-space: normal;
-        }
-      }
-    }
-    video {
-      top: 100% !important;
-    }
-  }
   .conseils-video-content {
     padding: 20% 10% 5% 10%;
   }
