@@ -31,8 +31,11 @@
     </div>
     <hr class="hl-mobile">
     <div class="help-description">
-      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</p>
+      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains & avantages:</p>
       <p class="paragraphe"><%= @help.help_amount %></p>
+      <% if @help.help_advantage.present? %>
+        <p class="paragraphe"><%= @help.help_advantage %></p>
+      <% end %>
       <% if @help.residence_time.present? %>
         <p class="paragraphe">hébergement pour <%= @help.residence_time %></p>
       <% end %>
