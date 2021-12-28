@@ -580,11 +580,6 @@
     }
   }
 
-  .subtitle {
-    font-size: 26px;
-    text-align:center !important;
-  }
-
   .paragraphe {
     color: #1a1b1f;
     font-size: 16px;
@@ -603,6 +598,8 @@
       }
       .subtitle {
         line-height: 38px;
+        font-size: 26px;
+        text-align:center !important;
       }
     }
     .paragraphe-spectral-italic {
@@ -676,9 +673,9 @@
     .subtitle-spectral {
       margin-top: 60px;
     }
-    .flex-div {
-      display:block;
-    }
+    // .flex-div {
+    //   display:block !important;
+    // }
     .paragraphe {
       .conseil-tag-home {
         margin:0;
@@ -693,7 +690,7 @@
   }
 
   .flex-div {
-    display:block;
+    display:block !important;
   }
 
   .contact-block.last {
@@ -740,6 +737,7 @@
       }
     }
     .btn-contact-mobile {
+      margin-left: 20px;
       display: block;
       text-align: left;
     }

@@ -10,7 +10,6 @@ export default class extends Controller {
 
   send(event) {
     event.preventDefault();
-    console.log(event.currentTarget.id)
     if(event.currentTarget.id == "notation-catalogue-utile") {
       document.querySelector("#answer").value = "utile"
     }
