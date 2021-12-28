@@ -61,6 +61,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils")){
     new Modal();
   }
+
 })
 
 'use strict';
