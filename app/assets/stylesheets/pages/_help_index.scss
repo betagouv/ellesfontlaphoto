@@ -13,7 +13,7 @@
 }
 
 .search-div-type {
-  padding-top: 6%;
+  padding-top: 3%;
   height: 80px;
 }
 
@@ -24,16 +24,17 @@
 .search-div-residence, .search-div-type {
   display: flex;
   padding-left: 25%;
+  align-items: center;
   .text-search {
     font-family: 'Marianne-Bold', sans-serif;
     font-size: 48px;
-    line-height: 30px;
+    line-height: 0px;
     margin-right: 10px;
   }
   #select-search-residence, #select-search-type {
     font-family: 'Marianne-Bold', sans-serif;
     font-size: 48px;
-    line-height: 30px;
+    line-height: 57px;
     border: 0;
     display: inline;
     white-space: pre-wrap;
@@ -94,9 +95,10 @@
   display: table !important;
   padding: 10px 20px;
   font-family: 'Marianne-Regular', sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   display: flex;
   margin-left: 25%;
+  margin-top: 20px;
   cursor: pointer;
   &:hover {
     background-color: $hover-purple;
@@ -139,7 +141,7 @@
           display: table !important;
           padding: 5px 10px;
           font-family: 'Marianne-Regular', sans-serif;
-          font-size: 0.7rem;
+          font-size: 16px;
           display: flex;
           cursor: pointer;
           color: $black;
@@ -174,7 +176,6 @@
     .text-search {
       font-size: 38px;
       line-height: 0px;
-      padding-top: 40px;
       margin-bottom: 30px;
     }
     #select-search-type, #select-search-residence {
@@ -324,7 +325,7 @@
           display: table !important;
           padding: 5px 10px;
           font-family: 'Marianne-Regular', sans-serif;
-          font-size: 0.7rem;
+          font-size: 16px;
           display: flex;
           cursor: pointer;
           color: $black;
