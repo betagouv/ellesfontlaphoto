@@ -13,7 +13,7 @@
 }
 
 .search-div-category {
-  padding-top: 6%;
+  padding-top: 3%;
   height: 80px;
 }
 
@@ -23,6 +23,7 @@
 
 .search-div-category {
   display: flex;
+  align-items: center;
   padding-left: 25%;
   .text-search {
     font-family: 'Marianne-Bold', sans-serif;
@@ -87,9 +88,10 @@
   display: table !important;
   padding: 10px 20px;
   font-family: 'Marianne-Regular', sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   display: flex;
   margin-left: 25%;
+  margin-top: 20px;
   cursor: pointer;
   &:hover {
     background-color: $hover-pink;
@@ -121,7 +123,7 @@
         display: table !important;
         padding: 5px 10px;
         font-family: 'Marianne-Regular', sans-serif;
-        font-size: 0.7rem;
+        font-size: 14px;
         display: flex;
         cursor: pointer;
         &:hover {
@@ -160,7 +162,7 @@
           display: table !important;
           padding: 10px 20px;
           font-family: 'Marianne-Regular', sans-serif;
-          font-size: 1rem;
+          font-size: 16px;
           display: flex;
           margin: 20px auto;
           cursor: pointer;
@@ -251,7 +253,7 @@
           display: table !important;
           padding: 10px 20px;
           font-family: 'Marianne-Regular', sans-serif;
-          font-size: 1rem;
+          font-size: 16px;
           display: flex;
           margin: 20px auto;
           cursor: pointer;
@@ -283,7 +285,7 @@
           display: table !important;
           padding: 5px 10px;
           font-family: 'Marianne-Regular', sans-serif;
-          font-size: 0.7rem;
+          font-size: 14px;
           display: flex;
           cursor: pointer;
         }

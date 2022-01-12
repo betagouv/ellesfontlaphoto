@@ -31,11 +31,11 @@
   <div class="banner-show">
     <div class="fiche-title">
       <h2><%= @conseil_article.title %></h2>
-      <p class="paragraphe"><%= @conseil_article.subtitle %></p>
+      <p class="paragraphe lh28"><%= @conseil_article.subtitle %></p>
     </div>
     <div class="fiche-description">
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Temps de lecture : </span><%= @conseil_article.lecture_time %> min</p>
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_article.objectif %></p>
+      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Temps de lecture : </span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_article.objectif %></p>
     </div>
   </div>
 </div>
@@ -45,13 +45,13 @@
 <div class="conseils-article-content">
   <div class="block-conseils-article">
     <p class="subtitle">Introduction</p>
-    <div class="paragraphe"><%= @conseil_article.introduction.html_safe %></div>
+    <div class="paragraphe lh28"><%= @conseil_article.introduction.html_safe %></div>
   </div>
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
-    <div class="paragraphe"><%= @conseil_article.explication.html_safe %></div>
-    <div class="paragraphe"><%= @conseil_article.perspective.html_safe %></div>
+    <div class="paragraphe lh28"><%= @conseil_article.explication.html_safe %></div>
+    <div class="paragraphe lh28"><%= @conseil_article.perspective.html_safe %></div>
     <div class="quote">
       <div class="paragraphe-spectral-italic">
         <%= @conseil_article.citation.html_safe %>
@@ -70,18 +70,18 @@
     <hr class="bhl">
     <div class="block-conseils-article">
       <p class="subtitle">Liens utiles</p>
-      <div class="paragraphe"><%= @conseil_article.liens_utiles.html_safe %></div>
+      <div class="paragraphe lh28"><%= @conseil_article.liens_utiles.html_safe %></div>
     </div>
   <% end %>
   <hr class="bhl">
   <div class="block-conseils-article">
     <% if @conseil_article.sources.present? %>
       <p class="main-bold-paragraphe text-align-left">Sources</p>
-      <p class="paragraphe"><%= @conseil_article.sources %></p>
+      <p class="paragraphe lh28"><%= @conseil_article.sources %></p>
     <% end %>
     <% if @conseil_article.auteur.present? %>
       <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
-      <p class="paragraphe"><%= @conseil_article.auteur %></p>
+      <p class="paragraphe lh28"><%= @conseil_article.auteur %></p>
     <% end %>
   </div>
   <% if @conseil_article.auteur.present? || @conseil_article.sources.present? %>
