@@ -70,7 +70,7 @@ a {
   font-family: 'Spectral', serif;
   font-style: italic;
   white-space: normal;
-  font-size: 1.5rem;
+  font-size: 22px;
   color: $black;
 }
 
@@ -82,43 +82,45 @@ p {
 
 .paragraphe {
   font-family: 'Marianne-Regular', sans-serif;
-  font-size: 1rem;
+  font-size: 18px;
   color: $black;
   p {
     font-family: 'Marianne-Regular', sans-serif;
-    font-size: 1rem;
+    font-size: 18px;
     color: $black;
     margin-bottom:0;
   }
 }
 
-.small-paragraphe {
-  font-family: 'Marianne-Regular', sans-serif;
-  font-size: 0.8rem;
-  color: $black;
+.paragraphe.card {
+  font-size: 14px;
   p {
-    font-family: 'Marianne-Regular', sans-serif;
-    font-size: 0.8rem;
-    color: $black;
-    margin-bottom:0;
+    font-size: 14px;
+    a {
+      font-size: 14px !important;
+    }
   }
 }
 
 .paragraphe-italic {
   font-family: 'Marianne-Regular_Italic', sans-serif;
-  font-size: 1rem;
+  font-size: 14px;
   color: $black;
 }
 
 .paragraphe-bold {
   font-family: 'Marianne-Bold', sans-serif;
-  font-size: 1rem;
+  font-size: 18px;
   color: $black;
+}
+
+.paragraphe-bold.card {
+  font-size: 14px;
 }
 
 b, strong {
   font-family: 'Marianne-Bold', sans-serif;
-  font-size: 1rem;
+  font-size: 14px;
   color: $black;
 }
 
@@ -142,7 +144,7 @@ b, strong {
 
 .main-bold-paragraphe {
   font-family: 'Marianne-Bold', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 30px;
   font-weight: 400;
   margin-bottom:10px;
@@ -219,20 +221,19 @@ a {
   color: $dark-blue !important;
   font-family: 'Marianne-Regular', sans-serif !important;
   text-decoration: none !important;
-  font-size: 1rem !important;
 }
 
 .link-blue {
   color: $dark-blue !important;
   font-family: 'Marianne-Regular', sans-serif;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 18px;
   cursor: pointer;
   ul li a {
     color: $dark-blue !important;
     font-family: 'Marianne-Regular', sans-serif;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 18px;
     cursor: pointer;
     &::before {
       background-image: url('arrow-darkblue.svg');
@@ -241,11 +242,18 @@ a {
   }
 }
 
+.link-blue.card {
+  font-size: 14px !important;
+  ul li a {
+    font-size: 14px !important;
+  }
+}
+
 .link-blue-underlined {
   color: $dark-blue !important;
   font-family: 'Marianne-Regular', sans-serif;
   text-decoration: underline !important;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .weight-normal {
@@ -259,8 +267,16 @@ a {
   margin: 40px 0;
 }
 
+.mt0 {
+  margin-top: 0px;
+}
+
 .mt5 {
   margin-top: 5px;
+}
+
+.mt20 {
+  margin-top: 20px;
 }
 
 .mt30 {
@@ -279,8 +295,20 @@ a {
   padding-bottom: 0 !important;
 }
 
+.mb20 {
+  margin-bottom: 20px
+}
+
 .mb30 {
   margin-bottom: 30px
+}
+
+.mb40 {
+  margin-bottom: 40px
+}
+
+.lh28 {
+  line-height: 28px;
 }
 
 .text-align-center {
@@ -322,6 +350,7 @@ a {
     line-height: 43px;
     padding-bottom: 10px;
   }
+  .paragraphe-bold
   .paragraphe {
     text-align: left !important;
   }
@@ -335,6 +364,6 @@ a {
     font-size: 70px;
   }
   .paragraphe,.paragraphe-bold,.paragraphe-spectral-italic {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 }

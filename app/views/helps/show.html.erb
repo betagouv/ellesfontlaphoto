@@ -27,29 +27,32 @@
   <div class="banner-show">
     <div class="fiche-title">
       <h2><%= @help.title %></h2>
-      <p class="paragraphe"><%= @help.description %></p>
+      <p class="paragraphe lh28"><%= @help.description %></p>
     </div>
     <hr class="hl-mobile">
     <div class="fiche-description">
-      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</p>
-      <p class="paragraphe"><%= @help.help_amount %></p>
-      <% if @help.help_advantage.present? %>
-        <p class="paragraphe"><%= @help.help_advantage %></p>
-      <% end %>
-      <% if @help.residence_time.present? %>
-        <p class="paragraphe">hébergement pour <%= @help.residence_time %></p>
-      <% end %>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</p>
+      <p class="paragraphe lh28 mt0 mb40"><%= @help.help_amount %>
+        <% if @help.help_advantage.present? %>
+          <%= @help.help_advantage %>
+        <% end %>
+        <% if @help.residence_time.present? %>
+          hébergement pour <%= @help.residence_time %>
+        <% end %>
+      </p>
       <hr class="hl">
-      <p class="paragraphe paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates limites :</p>
-      <% if @help.start_date.present? %>
-        <p class="paragraphe">Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %></p>
-      <% end %>
-      <% if @help.regularity.present? %>
-        <p class="paragraphe"><%= @help.regularity %></p>
-      <% end %>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates limites :</p>
+      <p class="paragraphe lh28 lh28 mt0 mb40">
+        <% if @help.start_date.present? %>
+          Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
+        <% end %>
+        <% if @help.regularity.present? %>
+          <%= @help.regularity %>
+        <% end %>
+      </p>
       <hr class="hl">
-      <p class="paragraphe paragraphe-bold">Conditions pincipales :</p>
-      <p class="paragraphe"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %>Résidence en :
+      <p class="paragraphe-bold mb0">Conditions pincipales :</p>
+      <p class="paragraphe lh28 mt0 mb40"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %>Résidence en :
         <% if @help.residence_condition == "Française ou résidant en France" %>
           France
         <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
@@ -57,8 +60,7 @@
         <% else %>
           <%= @help.residence_condition %>
         <% end %>
-      </p>
-      <p class="paragraphe"><%= @help.general_condition %></p>
+      <%= @help.general_condition %></p>
     </div>
   </div>
 </div>
@@ -80,7 +82,7 @@
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Sélection des lauréates et lauréats</p>
-    <div class="paragraphe"><%= @help.selection.html_safe %></div>
+    <div class="paragraphe lh28"><%= @help.selection.html_safe %></div>
 
     <% if @help.example_enrollment_url.present? %>
       <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
@@ -90,7 +92,7 @@
         <div class="div-parite mt30">
           <div class="div-parite-sub">
             <p class="paragraphe-bold mb0">Composition de la commission</p>
-            <div class="paragraphe mb0"><%= @help.compo_commission.html_safe %></div>
+            <div class="paragraphe lh28 mb0 mt0"><%= @help.compo_commission.html_safe %></div>
       <% else %>
         <div class="div-parite">
           <div class="div-parite-sub">
@@ -107,7 +109,7 @@
       <div class="div-parite mt30">
         <div class="div-parite-sub">
           <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
-          <div class="paragraphe mb0"><%= @help.old_laureat.html_safe %></div>
+          <div class="paragraphe lh28 mb0 mt0"><%= @help.old_laureat.html_safe %></div>
           <% if @help.old_laureat_url.present? %>
             <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg" %> Voir les lauréats</a>
           <% end %>
@@ -147,7 +149,7 @@
         <p class="paragraphe-bold mb0">Accueil</p>
         <ul>
           <% if @help.parentality.present? %>
-            <li><p class="paragraphe mb0"><%= @help.parentality %></p></li>
+            <li><p class="paragraphe lh28 mb0"><%= @help.parentality %></p></li>
           <% end %>
           <% if @help.accessibility.present? %>
             <li><p class="paragraphe"><%= @help.accessibility %></p></li>
@@ -161,18 +163,18 @@
     <p class="subtitle">Contact</p>
     <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg" %> Site de l'intitution</a><% end %></p>
     <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
-      <p class="paragraphe mb0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
+      <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
       <% if @help.contact_institution.present? %>
-        <p class="paragraphe mb0"><%= @help.contact_institution.html_safe %></p>
+        <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
       <% end %>
       <% if @help.contact_intitution_email.present? %>
-        <p class="paragraphe mb0">
+        <p class="paragraphe lh28 mb0 mt0">
         <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
         </p>
       <% end %>
     <% end %>
     <% if @help.contact_intitution_partenaire.present? || @help.institution_partenaire.present? %>
-      <p class="paragraphe mb0">Partenaire participant à la sélection :
+      <p class="paragraphe lh28 mb0">Partenaire participant à la sélection :
       <% if @help.institution_partenaire.present? %>
         <div class="paragraphe"><%= @help.institution_partenaire.html_safe %></div>
       <% end %>
