@@ -29,12 +29,12 @@
           <% end %>
         <% end %>
       </div>
-      <p class="main-bold-paragraphe mb30"><%= help.title.to_sym %></p>
-      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount %></p>
+      <p class="main-bold-paragraphe card mt0 mb20"><%= help.title.to_sym %></p>
+      <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/gain.png", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount %></p>
       <% if help.start_date.present? %>
-        <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
       <% end %>
-      <p class="paragraphe mb0"><span class="paragraphe-bold"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %> Conditions :</span> résidence en
+      <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", style: "width: 15px;" %> Conditions :</span> résidence en
         <% if help.residence_condition == "Française ou résidant en France" %>
           France
         <% elsif help.residence_condition == "Française résidant en outre-mer" %>
