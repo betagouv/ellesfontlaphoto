@@ -13,13 +13,13 @@
         position: absolute;
         top: 3%;
         left: -16%;
-        display: flex;
+        display: block;
         flex-direction: row-reverse;
         .paragraphe-parite {
           font-family: 'Marianne-Regular', sans-serif;
           color: $black;
-          font-size: 1.1em;
-          text-align: right;
+          font-size: 14px;
+          text-align: center;
           margin-right: 10px;
         }
         .pastille-parite-respectee {
@@ -30,19 +30,20 @@
           text-align: center;
           margin: 0 auto;
           height: fit-content;
+          width: fit-content;
         }
       }
       .pastille-parite-nr {
         position: absolute;
         top: 3%;
         left: -19%;
-        display: flex;
+        display: block;
         flex-direction: row-reverse;
         .paragraphe-parite {
           font-family: 'Marianne-Regular', sans-serif;
           color: $black;
-          font-size: 1.1em;
-          text-align: right;
+          font-size: 14px;
+          text-align: center;
           margin-right: 10px;
         }
         .pastille-parite-non-respectee {
@@ -53,6 +54,7 @@
           font-size: 20px;
           background-color: $rouille;
           height: fit-content;
+          width: fit-content;
         }
       }
     }

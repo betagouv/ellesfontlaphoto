@@ -73,6 +73,7 @@ group :development, :test do
   gem 'capybara', '>= 3.26'
   gem 'capybara-select-2'
   gem 'dotenv-rails'
+  gem 'bullet'
   # Automated tests
   gem 'launchy'
 end
