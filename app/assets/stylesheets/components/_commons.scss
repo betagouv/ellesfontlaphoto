@@ -82,22 +82,22 @@ p {
 
 .paragraphe {
   font-family: 'Marianne-Regular', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: $black;
   p {
     font-family: 'Marianne-Regular', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: $black;
     margin-bottom:0;
   }
 }
 
 .paragraphe.card {
-  font-size: 14px;
+  font-size: 16px;
   p {
-    font-size: 14px;
+    font-size: 16px;
     a {
-      font-size: 14px !important;
+      font-size: 16px !important;
     }
   }
 }
@@ -115,7 +115,7 @@ p {
 }
 
 .paragraphe-bold.card {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 b, strong {
