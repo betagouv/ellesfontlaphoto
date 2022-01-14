@@ -81,8 +81,8 @@
     <p class="paragraphe lh28">Vous êtes une institution, une professionnelle du secteur, une journaliste… Écrivez-nous pour faire évoluer cette boîte à outils d’empouvoirement ! </p>
     <p class="paragraphe lh28">Et pour simplement suivre l’évolution du service, abonnez-vous à l’infolettre. À bientôt ! </p>
     <div class="btn-contact-mobile">
-      <button class="js-modal" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</button>
-      <button class="js-modal" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</button>
+      <a class="js-modal btn-contact" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</a>
+      <a class="js-modal btn-contact" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
     </div>
   </div>
   <div class="manifesto-div pb0">
@@ -102,8 +102,8 @@
     <% if notice %>
       <p style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <button class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</button>
-    <button class="js-modal btn-contact" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</button>
+    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small" %> Nous écrire</a>
+    <a class="js-modal btn-contact" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
   </div>
   <div class="manifesto-div">
     <a class="btn-manifesto" href="/a_propos">
