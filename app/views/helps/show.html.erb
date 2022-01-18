@@ -72,7 +72,7 @@
   <div class="div-btn">
     <% if @help.candidate_url.present? %>
       <% if @help_status == "open" %>
-        <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
+        <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help">🚀 Candidatez</a>
       <% elsif @help_status == "close" %>
         <a class="btn-not-available"> <%= image_tag "emojis/fusee.png", class: "emojis-eflc-small" %> Candidatez </a>
         <p class="paragraphe-bold">Actuellement fermée, revenez en <%= I18n.l @help.start_date, format: "%B" %></p>
