@@ -55,9 +55,16 @@ gem "sentry-raven"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# Object taggables
 gem 'acts-as-taggable-on'
 
+# Cloud Videos
 gem 'cloudinary'
+
+# Chart Stats
+gem "chartkick"
+# To group by date
+gem "groupdate"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
