@@ -1,0 +1,48 @@
+.stats-container {
+  padding: 2em 4em;
+  h3 {
+    text-align: center;
+  }
+  .p-pourcentage {
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 25px;
+    .stats-pourcentage {
+      font-weight: bold !important;
+      color: $black !important;
+      border: 0 !important;
+      box-shadow: #ffffff 0px 1.5rem 0px inset, inset 0 -0.6rem 0 #bcabff !important;
+      background-color: transparent;
+    }
+  }
+  .stats-number {
+    border-radius: 50%;
+    padding: 20px;
+    background-color: $purple;
+    font-family: 'Marianne-Regular', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    width: 55px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .stats-flex-div {
+    min-width: 45%;
+  }
+  .subtitle {
+    margin-top: 30px;
+    font-family: 'Spectral', serif !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    font-size: 30px !important;
+  }
+  .underline-purple {
+    font-family: 'Spectral', serif !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    font-size: 60px !important;
+    color: $black !important;
+    border: 0 !important;
+    box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $purple !important;
+    background-color: transparent;
+  }
+}
