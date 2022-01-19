@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @contact = Contact.new
-    @helps = Help.order(start_date: :asc).first(3)
+    @helps = Help.includes([:taggings]).order(start_date: :asc).first(3)
   end
 
   def mentions_legales

@@ -8,7 +8,7 @@
         <span class="notation-button" id="notation-catalogue-inutile" data-action="click->notationcatalogue#send">non</span>
       </p>
     </div>
-    <p class="close" data-action="click->notationcatalogue#close"><%= image_tag "close.png" %></p>
+    <p class="close" data-action="click->notationcatalogue#close"><%= image_tag "close.png", alt: "icône fermeture" %></p>
   </div>
 
   <%= form_tag notation_catalogues_path, id: "notation-catalogue-helps", method: :post, remote: true,

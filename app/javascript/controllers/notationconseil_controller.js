@@ -25,7 +25,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
-          this.textTarget.innerHTML = "Merci de votre réponse!";
+          this.divTarget.innerHTML = "Merci de votre réponse!";
           const myTimeout = setTimeout(() => {
             this.divTarget.style.display = "none";
           }, 3500);

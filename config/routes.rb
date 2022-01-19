@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "mentions_legales", to: 'pages#mentions_legales'
   get "a_propos", to: 'pages#a_propos'
+  get "stats", to: 'pages#stats'
   resources :contacts, only: :create
   resources :helps, only: [:show, :index]
   resources :notation_helps, only: :create
