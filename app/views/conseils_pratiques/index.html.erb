@@ -11,20 +11,20 @@
   <p class="text-search">Conseils</p>
   <div class="dropdown">
     <% if @selected.present? %>
-      <div id="select-search-category" class="choosen"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-large" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <div id="select-search-category" class="choosen"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-large", alt: "émoji #{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym]}" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", alt: "icône flèche", width: "25px" %></div>
     <% else %>
       <% @sample = ConseilsVideo::CONSEIL_CATEGORIES.values.sample %>
-      <div id="select-search-category"><span id="text-to-change-category"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px" %></div>
+      <div id="select-search-category"><span id="text-to-change-category"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", alt: "icône flèche", width: "25px" %></div>
     <% end %>
     <div id="dropdown-elements-category">
       <% ConseilsVideo::CONSEIL_CATEGORIES.each do |category| %>
-        <div class="dropdown-content-category" data-filtre="<%= category.first.to_s %>"><%= image_tag "emojis/#{category.second[:image]}", class: "emojis-eflc-medium" %> <%= category.second[:text] %></div>
+        <div class="dropdown-content-category" data-filtre="<%= category.first.to_s %>"><%= image_tag "emojis/#{category.second[:image]}", alt: "émoji #{category.first.to_s}", class: "emojis-eflc-medium" %> <%= category.second[:text] %></div>
       <% end %>
     </div>
   </div>
 </div>
 <div class="button-search">
-  <%= image_tag "emojis/cible.png", class: "emojis-eflc-small" %> Lancer la recherche
+  <%= image_tag "emojis/cible.png", class: "emojis-eflc-small", alt: "émoji cible" %> Lancer la recherche
 </div>
 <%= form_tag conseils_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>
@@ -48,12 +48,12 @@
       <div class="box-criteria box-criteria-top">
         <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils et temoignages pour :</p>
         <% if @selected.present? %>
-          <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-extra-small" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
+          <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym]}" %> <%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
         <% end %>
         <% if @selected_tag.present? %>
           <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
             <% if @selected_tag.include?(tag) %>
-              <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
+              <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
             <% end %>
           <% end %>
         <% end %>
@@ -76,10 +76,10 @@
     <div class="contact-index-conseils-div">
       <div class="contact-index-conseils">
         <div class="img-div">
-          <%= image_tag "illu-contact-index.png" %>
+          <%= image_tag "illu-contact-index.png", alt: "illustration contact" %>
         </div>
         <p class="paragraphe-bold">Une idée, un besoin d’article ou de témoignage que vous souhaiteriez partager avec nous ?</p>
-        <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p>
+        <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", alt: "émoji stylo", class: "emojis-eflc-small" %> Nous écrire</p>
       </div>
       <p class="paragraphe card">Nous ajoutons régulièrement des articles, dernière mise à jour le <%= @last_date_updated %></p>
     </div>
@@ -90,12 +90,12 @@
         <div class="box-criteria box-criteria-top">
           <p class="main-bold-paragraphe text-align-left"><%= @conseils.count %> conseils et temoignages pour :</p>
           <% if @selected.present? %>
-            <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
+            <p class="button-criteria-selected" data-category="<%= @selected %>"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:image]}", alt: "#{ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym]}",class: "emojis-eflc-extra-small" %><%= ConseilsVideo::CONSEIL_CATEGORIES[@selected.to_sym][:text] %> <%= image_tag "cross-criteria.svg" %></p>
           <% end %>
           <% if @selected_tag.present? %>
             <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
               <% if @selected_tag.include?(tag) %>
-                <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg" %></p>
+                <p class="button-criteria-selected tags" data-tag="<%= tag %>"><%= tag %>  <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
               <% end %>
             <% end %>
           <% end %>
@@ -123,10 +123,10 @@
     <div class="contact-index-conseils-div-responsive">
       <div class="contact-index-conseils">
         <div class="img-div">
-          <%= image_tag "illu-contact-index.png"%>
+          <%= image_tag "illu-contact-index.png", alt: "illustration contact"%>
         </div>
         <p class="paragraphe-bold">Une idée, un besoin d’article ou de témoignage que vous souhaiteriez partager avec nous ?</p>
-        <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small" %> Nous écrire</p>
+        <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small", alt: "émoji stylo" %> Nous écrire</p>
       </div>
       <p class="paragraphe card">Nous ajoutons régulièrement des articles, dernière mise à jour le <%= @last_date_updated %></p>
     </div>
