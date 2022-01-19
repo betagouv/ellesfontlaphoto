@@ -72,6 +72,12 @@ ActiveAdmin.register Help do
   filter :objectif
   filter :institution_name
 
+  controller do
+    def scoped_collection
+      super.includes :notation_help # prevents N+1 queries to your database
+    end
+  end
+
   index do
     column :visible
     column :identifiant
@@ -82,21 +88,21 @@ ActiveAdmin.register Help do
     column :description
     column :start_date
     column :end_date
-    column :utile do |help|
+    column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui
       else
         0
       end
     end
-    column :inutile do |help|
+    column :inutile, sortable: 'notation_help.non' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).non
       else
         0
       end
     end
-    column :utile_mais_fermee do |help|
+    column :utile_mais_fermee, sortable: 'notation_help.oui_mais_fermee' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui_mais_fermee
       else

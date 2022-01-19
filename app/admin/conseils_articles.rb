@@ -53,6 +53,12 @@ ActiveAdmin.register ConseilsArticle do
     end
   end
 
+  controller do
+    def scoped_collection
+      super.includes :notation_conseils_article # prevents N+1 queries to your database
+    end
+  end
+
   index do
     id_column
     column :title
@@ -61,12 +67,12 @@ ActiveAdmin.register ConseilsArticle do
     column :objectif
     column :created_at
     column :updated_at
-    column :utile do |conseils_article|
+    column :utile, sortable: 'notation_conseils_article.utile' do |conseils_article|
       if NotationConseilsArticle.find_by(conseils_article: conseils_article)
         NotationConseilsArticle.find_by(conseils_article: conseils_article).utile
       end
     end
-    column :inutile do |conseils_article|
+    column :inutile, sortable: 'notation_conseils_article.inutile' do |conseils_article|
       if NotationConseilsArticle.find_by(conseils_article: conseils_article)
         NotationConseilsArticle.find_by(conseils_article: conseils_article).inutile
       end
