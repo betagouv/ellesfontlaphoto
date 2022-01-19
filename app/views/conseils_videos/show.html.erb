@@ -7,7 +7,7 @@
 
 <div class="div-banner div-banner-conseil div-banner-conseil-video">
   <div class="flex-div-left">
-    <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg" %></a>
+    <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @conseil_video.category_list.each do |category| %>
       <% if category == "Administratif & Financier" %>
         <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=">
@@ -18,7 +18,7 @@
       <% if category == "Egalite & inclusion" %>
         <a href="/conseils?category_list=Egalite+%26+inclusion&tag_list=">
       <% end %>
-        <p class="fiche-tag"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small" %><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
+        <p class="fiche-tag"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "icône #{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text]}" %><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
       </a>
     <% end %>
     <% @conseil_video.tag_list.each do |tag| %>
@@ -36,15 +36,15 @@
       <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="fiche-description">
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", class: "emojis-eflc-small" %> Durée : </span><%= @conseil_video.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt: "émoji durée", class: "emojis-eflc-small" %> Durée : </span><%= @conseil_video.lecture_time %> min</p>
       <% if @conseil_video.objectif.present? %>
-        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_video.objectif %></p>
+        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectifs", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_video.objectif %></p>
       <% end %>
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", class: "emojis-eflc-small" %> Format vidéo : </span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", alt: "émoji format vidéo", class: "emojis-eflc-small" %> Format vidéo : </span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
     </div>
   </div>
   <% if @conseil_video.video.attached? %>
-    <%= cl_video_tag @conseil_video.video.key, width: 800, playsinline: true, controls: true, class: "video-tag" %>
+    <%= cl_video_tag @conseil_video.video.key, width: 800, playsinline: true, controls: true, class: "video-tag", alt:"vidéo conseil" %>
   <% end %>
 </div>
 <div class="arrondis arrondis-conseil">

@@ -1,5 +1,5 @@
 <input id="check01" type="checkbox" name="menu" />
-<label class="paragraphe dropdown-label" for="check01">Précisez <span class="moins"><%= image_tag "arrow-dark-top.svg" %></span><span class="plus display"><%= image_tag "arrow-dark-bottom.svg" %></span></label>
+<label class="paragraphe dropdown-label" for="check01">Précisez <span class="moins"><%= image_tag "arrow-dark-top.svg" %></span><span class="plus display"><%= image_tag "arrow-dark-bottom.svg", alt: "icône flèche" %></span></label>
 <ul class="submenu">
   <% ConseilsVideo::CONSEIL_TAGS.each do |tag| %>
     <% if params[:tag_list].present?  %>

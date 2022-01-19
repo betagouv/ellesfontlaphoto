@@ -1,29 +1,42 @@
 <div class="stats-container">
-  <h2 class="underline-purple">Aides</h1>
+  <h2 class="underline-purple">Visites</h2>
+  <h3 class="subtitle">Visites Totales</h3>
+  <div class="flex-div">
+    <iframe width="100%" height="350" src="https://stats.data.gouv.fr/index.php?module=Widgetize&action=iframe&disableLink=0&widget=1&moduleToWidgetize=UserCountryMap&actionToWidgetize=visitorMap&idSite=187&period=range&date=previous30&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+    <iframe width="100%" height="350" src="https://stats.data.gouv.fr/index.php?module=Widgetize&action=iframe&forceView=1&viewDataTable=graphEvolution&disableLink=0&widget=1&moduleToWidgetize=VisitsSummary&actionToWidgetize=getEvolutionGraph&idSite=187&period=range&date=previous30&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </div>
+  <div id="widgetIframe">
+    <h3 class="subtitle">Pages Visitées</h3>
+    <iframe width="100%" height="100%" src="https://stats.data.gouv.fr/index.php?module=Widgetize&action=iframe&disableLink=0&widget=1&moduleToWidgetize=Actions&actionToWidgetize=getEntryPageTitles&idSite=187&period=range&date=previous30&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+  </div>
+  <h2 class="underline-purple" style="padding-top: 90px;">Aides</h2>
   <div>
     <h3 class="subtitle">Nombres total d'aides</h3>
     <p class="stats-number"><%= Help.count %></p>
     <p class="p-pourcentage"><span class="stats-pourcentage"><%= NotationCatalogue.pourcentage_notation_help_utile %>%</span> d'utilisatrices ont jugées le catalogue d'aides <span class="stats-pourcentage">utile</span></p>
     <p class="p-pourcentage"><span class="stats-pourcentage"><%= NotationCatalogue.pourcentage_notation_help_utile_mais_fermee %>%</span> d'utilisatrices ont jugées le catalogue d'aides <span class="stats-pourcentage">utile mais fermée</span></p>
     <p class="p-pourcentage"><span class="stats-pourcentage"><%= NotationCatalogue.pourcentage_notation_help_inutile %>%</span> d'utilisatrices ont jugées le catalogue d'aides <span class="stats-pourcentage">inutile</span></p>
-    <p></p>
-    <h3>Nombres total de notations</h3>
+    <h3 class="subtitle">Femmes photographes ayant cliquées sur "Candidatez"</h3>
+    <div id="widgetIframe">
+      <iframe width="100%" height="350" src="https://stats.data.gouv.fr/index.php?module=Widgetize&action=iframe&secondaryDimension=eventAction&disableLink=0&widget=1&moduleToWidgetize=Events&actionToWidgetize=getName&idSite=187&period=range&date=previous30&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+    </div>
+    <h3 class="subtitle">Enquête de satisfaction</h3>
     <%= column_chart [
-      {name: "Inutiles", data: {"": NotationCatalogue.where(catalogue: "Aides").first.inutile}},
+      {name: "Aides Utiles", data: {"": NotationCatalogue.where(catalogue: "Aides").first.utile}},
       {name: "Aides Mais Fermée", data: {"": NotationCatalogue.where(catalogue: "Aides").first.utile_mais_fermee}},
-      {name: "Aides Utiles", data: {"": NotationCatalogue.where(catalogue: "Aides").first.utile}}
+      {name: "Aides Inutiles", data: {"": NotationCatalogue.where(catalogue: "Aides").first.inutile}}
     ] %>
   </div>
-  <h2 class="underline-purple">Conseils</h2>
+  <h2 class="underline-purple">Conseils & témoignages</h2>
   <div>
-    <h3 subtitle>Nombres total conseils</h3>
+    <h3 class="subtitle">Nombres total de conseils & témoignages</h3>
     <p class="stats-number"><%= ConseilsVideo.count + ConseilsArticle.count %></p>
     <p class="p-pourcentage"><span class="stats-pourcentage"><%= NotationCatalogue.pourcentage_notation_conseil_utile %>%</span> d'utilisatrices ont jugées le catalogue de conseils <span class="stats-pourcentage">utile</span></p>
     <p class="p-pourcentage"><span class="stats-pourcentage"><%= NotationCatalogue.pourcentage_notation_conseil_inutile %>%</span> d'utilisatrices ont jugées le catalogue de conseils <span class="stats-pourcentage">inutile</span></p>
   </div>
   <div class="flex-div">
     <div class="stats-flex-div">
-      <h3 subtitle>Conseils Articles</h3>
+      <h3 class="subtitle">Conseils Articles</h3>
       <%= line_chart ConseilsArticle.group_by_month(:created_at).count, xtitle: "Mois", ytitle: "Conseils Articles" %>
     </div>
     <div class="stats-flex-div">
@@ -31,7 +44,9 @@
       <%= line_chart ConseilsVideo.group_by_month(:created_at).count, xtitle: "Mois", ytitle: "Conseils Vidéos" %>
     </div>
   </div>
-  <div style="height: 250vh;">
-    <iframe src="https://stats.data.gouv.fr/index.php?module=Widgetize&action=iframe&moduleToWidgetize=Dashboard&actionToWidgetize=index&idSite=187&period=week&date=yesterday" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%"></iframe>
-  </div>
+  <h3 class="subtitle">Enquête de satisfaction</h3>
+  <%= column_chart [
+    {name: "Conseils Utiles", data: {"": NotationCatalogue.where(catalogue: "Conseils").first.utile}},
+    {name: "Conseils Inutiles", data: {"": NotationCatalogue.where(catalogue: "Conseils").first.inutile}}
+  ] %>
 </div>

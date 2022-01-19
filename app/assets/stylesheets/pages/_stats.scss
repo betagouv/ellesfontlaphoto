@@ -3,6 +3,9 @@
   h3 {
     text-align: center;
   }
+  #widgetIframe {
+    margin-bottom: 40px;
+  }
   .p-pourcentage {
     font-family: 'Marianne-Regular', sans-serif;
     font-size: 25px;
@@ -44,5 +47,15 @@
     border: 0 !important;
     box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $purple !important;
     background-color: transparent;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .stats-container {
+    padding: 2em 1em;
+    iframe {
+      height: 250px;
+    }
+
   }
 }

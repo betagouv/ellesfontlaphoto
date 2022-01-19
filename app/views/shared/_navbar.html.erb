@@ -9,12 +9,12 @@
       <ul class="menu links-group mb0">
         <li>
           <%= link_to helps_path, class: "link-menu helps-link-menu #{params[:controller] == "helps" && params[:action] == "index" ? "helps-link-selected" : "" }" do  %>
-            <span class="links-icones"><%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-medium" %> </span> Aides
+            <span class="links-icones"><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-medium" %> </span> Aides
           <% end %>
         </li>
         <li>
           <%= link_to conseils_path, class: "link-menu conseils-link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "conseils-link-selected" : "" }" do  %>
-            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", class: "emojis-eflc-medium" %> </span> Conseils et témoignages
+            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %> </span> Conseils et témoignages
           <% end %>
         </li>
       </ul>
@@ -28,8 +28,8 @@
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
   <ul class="menu">
-    <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small" %> Aides</li></a>
-    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", class: "emojis-eflc-small" %> Conseils et témoignages</li></a>
+    <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small" %> Aides</li></a>
+    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-small" %> Conseils et témoignages</li></a>
     <a href="/a_propos"><li>À propos</li></a>
   </ul>
 </header>
