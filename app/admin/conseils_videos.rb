@@ -48,6 +48,12 @@ ActiveAdmin.register ConseilsVideo do
   filter :created_at
   filter :updated_at
 
+  controller do
+    def scoped_collection
+      super.includes :notation_conseils_video # prevents N+1 queries to your database
+    end
+  end
+
   index do
     id_column
     column :title
@@ -58,12 +64,12 @@ ActiveAdmin.register ConseilsVideo do
     column :updated_at
     column :category_list
     column :tag_list
-    column :utile do |conseils_video|
+    column :utile, sortable: 'notation_conseils_video.utile' do |conseils_video|
       if NotationConseilsVideo.find_by(conseils_video: conseils_video)
         NotationConseilsVideo.find_by(conseils_video: conseils_video).utile
       end
     end
-    column :inutile do |conseils_video|
+    column :inutile, sortable: 'notation_conseils_video.inutile' do |conseils_video|
       if NotationConseilsVideo.find_by(conseils_video: conseils_video)
         NotationConseilsVideo.find_by(conseils_video: conseils_video).inutile
       end
