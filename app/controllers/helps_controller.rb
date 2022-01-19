@@ -1,7 +1,7 @@
 class HelpsController < ApplicationController
 
   def index
-    @helps = Help.order(start_date: :asc)
+    @helps = Help.includes([:taggings]).order(start_date: :asc)
     @searched = false
     if params[:residence].present?
       if params[:residence] == "outre-mer"

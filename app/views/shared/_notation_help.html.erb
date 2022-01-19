@@ -8,7 +8,7 @@
         <span class="notation-button" id="notation-help-no" data-action="click->notationhelp#send">inutile</span>
       </p>
     </div>
-    <p class="close" data-action="click->notationhelp#close"><%= image_tag "close.png" %></p>
+    <p class="close" data-action="click->notationhelp#close"><%= image_tag "close.png", alt: "icône fermeture" %></p>
   </div>
 
   <%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true,

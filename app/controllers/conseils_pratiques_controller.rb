@@ -1,7 +1,7 @@
 class ConseilsPratiquesController < ApplicationController
   def index
-    @conseil_articles = ConseilsArticle.all
-    @conseil_videos = ConseilsVideo.all
+    @conseil_articles = ConseilsArticle.includes([:taggings]).all
+    @conseil_videos = ConseilsVideo.includes([:taggings]).all
     @contact = Contact.new
     unless @conseil_articles.empty? || @conseil_videos.empty?
       @last_date_updated = [@conseil_articles.all.order(:created_at).last.created_at, @conseil_videos.all.order(:created_at).last.created_at].max.strftime("%d/%m/%Y")
