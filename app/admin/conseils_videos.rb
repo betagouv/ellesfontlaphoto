@@ -67,11 +67,15 @@ ActiveAdmin.register ConseilsVideo do
     column :utile, sortable: 'notation_conseils_video.utile' do |conseils_video|
       if NotationConseilsVideo.find_by(conseils_video: conseils_video)
         NotationConseilsVideo.find_by(conseils_video: conseils_video).utile
+      else
+        0
       end
     end
     column :inutile, sortable: 'notation_conseils_video.inutile' do |conseils_video|
       if NotationConseilsVideo.find_by(conseils_video: conseils_video)
         NotationConseilsVideo.find_by(conseils_video: conseils_video).inutile
+      else
+        0
       end
     end
     actions

@@ -70,11 +70,15 @@ ActiveAdmin.register ConseilsArticle do
     column :utile, sortable: 'notation_conseils_article.utile' do |conseils_article|
       if NotationConseilsArticle.find_by(conseils_article: conseils_article)
         NotationConseilsArticle.find_by(conseils_article: conseils_article).utile
+      else
+        0
       end
     end
     column :inutile, sortable: 'notation_conseils_article.inutile' do |conseils_article|
       if NotationConseilsArticle.find_by(conseils_article: conseils_article)
         NotationConseilsArticle.find_by(conseils_article: conseils_article).inutile
+      else
+        0
       end
     end
     actions
