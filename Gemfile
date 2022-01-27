@@ -65,6 +65,8 @@ gem 'cloudinary'
 gem "chartkick"
 # To group by date
 gem "groupdate"
+# block spam and bots
+gem 'invisible_captcha'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
