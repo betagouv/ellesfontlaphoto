@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  invisible_captcha only: [:create]
   def create
     @contact = Contact.new(contacts_params)
     if @contact.save
