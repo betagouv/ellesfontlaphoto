@@ -9,8 +9,12 @@
   }
 }
 
-.banner-yellow {
-  position: relative;
+.banner-green {
+  background-color: $green;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
   .banner-text {
     display: flex;
     .mt10 {
@@ -31,7 +35,7 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  .banner-yellow {
+  .banner-green {
     padding: 10px;
     .tablet {
       display: block;
@@ -47,7 +51,7 @@
   }
 }
 @media only screen and (max-width: 750px) {
-  .banner-yellow {
+  .banner-green {
     height: auto;
     .banner-text {
       display: block;
