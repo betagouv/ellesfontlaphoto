@@ -18,7 +18,7 @@
       <div class="modal-content text-align-left">
         <p class="paragraphe">On insiste un peu, mais vos retours nous permettrons de faire un service plus pertinent !</p>
         <p class="subtitle">💬 Pourriez-vous nous dire pourquoi ?</p>
-        <p class="paragraphe p-subtitle-notation-conseil" data-notationconseil-target="subtitle"></p>
+        <p class="paragraphe" data-notationconseil-target="subtitle"></p>
         <% if type == "article" %>
           <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
               data: { notationconseil_target: 'form' } do %>

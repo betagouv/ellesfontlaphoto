@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_133232) do
+ActiveRecord::Schema.define(version: 2022_01_29_135557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,6 +178,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_133232) do
     t.integer "non", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "comment"
+    t.text "suggestion"
     t.index ["help_id"], name: "index_notation_helps_on_help_id"
   end
 
