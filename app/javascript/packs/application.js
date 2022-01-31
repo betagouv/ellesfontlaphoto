@@ -60,7 +60,7 @@ document.addEventListener('turbolinks:load', () => {
     })
   }
 
-  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils")){
+  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils") || document.querySelector(".notation-button")){
     new Modal();
   }
 

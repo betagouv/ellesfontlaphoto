@@ -9,8 +9,12 @@
   }
 }
 
-.banner-yellow {
-  position: relative;
+.banner-green {
+  background-color: $green;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
   .banner-text {
     display: flex;
     .mt10 {
@@ -26,12 +30,12 @@
   }
 }
 
-#notation-help,#notation-conseil,#notation-catalogue-helps,#notation-catalogue-conseils {
+#notation-catalogue-helps,#notation-catalogue-conseils {
   display:none;
 }
 
 @media only screen and (max-width: 1250px) {
-  .banner-yellow {
+  .banner-green {
     padding: 10px;
     .tablet {
       display: block;
@@ -47,7 +51,7 @@
   }
 }
 @media only screen and (max-width: 750px) {
-  .banner-yellow {
+  .banner-green {
     height: auto;
     .banner-text {
       display: block;
@@ -69,7 +73,7 @@
       }
     }
     .close {
-      right: 20px;
+      right: 35px;
       top: 12px;
       img {
         width: 17px;
