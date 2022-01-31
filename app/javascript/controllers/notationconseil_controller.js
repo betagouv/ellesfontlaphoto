@@ -27,7 +27,7 @@ export default class extends Controller {
     event.preventDefault();
     fetch(this.formTarget.action, {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
+      headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken()  },
       body: new FormData(this.formTarget)
     })
       .then(response => response.json())
