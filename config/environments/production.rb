@@ -63,6 +63,18 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "ellesfontlaphoto_production"
 
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'ssl0.ovh.net',
+    :port => 587,
+    :user_name => 'nadia.auger@beta.gouv.fr',
+    :password => 'XiIn7oiuVCGIkBthSOxHIw',
+    :authentication => 'login',
+    :enable_starttls_auto => true
+  }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

@@ -1,0 +1,19 @@
+<html>
+
+   <head>
+      <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+   </head>
+
+   <body>
+      <h1>Il y a un nouveau contact !</h1>
+
+      <p class="paragraphe"><%= @contact.contact_email %> nous a contacter pour <%= @contact.contact_type%><br>
+      </p>
+
+      <p class="paragraphe"> Le message est :
+      </p>
+
+      <p class="paragraphe"><%= @contact.comment.html_safe %></p>
+
+   </body>
+</html>
