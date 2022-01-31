@@ -25,19 +25,23 @@
             <%= hidden_field_tag :answer, params[:answer], data: { notationconseil_target: "answer_input" } %>
             <%= text_area_tag :comment, params[:comment] %>
             <p class="paragraphe">Suggestions:</p>
-            <div class="checkboxes-div" data-notationconseil-target="checkboxesutiles">
-              <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
-                <div data-notationconseil-target="modal" >
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationconseil-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationconseil-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
-            <div class="checkboxes-div" data-notationconseil-target="checkboxesinutiles" >
-              <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
-                <div>
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationconseil-target="checkboxesinutiles">
+              <div class="checkboxes-div" >
+                <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
             <%= hidden_field_tag :conseil_id, conseil_id %>
             <div class="btn-div">
@@ -50,19 +54,23 @@
             <%= hidden_field_tag :answer, params[:answer], data: { notationconseil_target: "answer_input" } %>
             <%= text_area_tag :comment, params[:comment] %>
             <p class="paragraphe">Suggestions:</p>
-            <div class="checkboxes-div" data-notationconseil-target="checkboxesutiles">
-              <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
-                <div data-notationconseil-target="modal" >
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationconseil-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationconseil-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
-            <div class="checkboxes-div" data-notationconseil-target="checkboxesinutiles" >
-              <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
-                <div>
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationconseil-target="checkboxesinutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
             <%= hidden_field_tag :conseil_id, conseil_id %>
             <div class="btn-div">

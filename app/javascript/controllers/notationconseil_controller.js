@@ -13,13 +13,13 @@ export default class extends Controller {
       document.querySelector("#answer").value = "utile"
       this.subtitleTarget.innerHTML = "C'est utile car ..."
       this.checkboxesinutilesTarget.style.display = "none"
-      this.checkboxesutilesTarget.style.display = "grid"
+      this.checkboxesutilesTarget.style.display = "block"
     }
     if(event.currentTarget.id == "notation-conseil-inutile") {
       document.querySelector("#answer").value = "inutile";
       this.subtitleTarget.innerHTML = "C'est inutile car ..."
       this.checkboxesutilesTarget.style.display = "none"
-      this.checkboxesinutilesTarget.style.display = "grid"
+      this.checkboxesinutilesTarget.style.display = "block"
     }
   }
 

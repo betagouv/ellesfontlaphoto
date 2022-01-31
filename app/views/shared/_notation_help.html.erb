@@ -4,7 +4,7 @@
       <p class="paragraphe card mt10" data-notationhelp-target="text">Aidez-nous à améliorer le service.&nbsp;<b> Cette page m'est ...</b></p>
       <p class="paragraphe card d-grid">
         <span class="js-modal notation-button" data-modal="modal-notation-helps" id="notation-help-yes" data-action="click->notationhelp#set">utile, je candidate</span>
-        <span class="js-modal notation-button" data-modal="modal-notation-helps" id="notation-help-yesbut" data-action="click->notationhelp#set">utile, mais l'aide n’est pas ouverte</span>
+        <span class="notation-button" id="notation-help-yesbut" data-action="click->notationhelp#set">utile, mais l'aide n’est pas ouverte</span>
         <span class="js-modal notation-button" data-modal="modal-notation-helps" id="notation-help-no" data-action="click->notationhelp#set">inutile</span>
       </p>
     </div>
@@ -25,19 +25,23 @@
             <%= hidden_field_tag :answer, params[:answer], data: { notationhelp_target: "answer_input" } %>
             <%= text_area_tag :comment, params[:comment] %>
             <p class="paragraphe">Suggestions:</p>
-            <div class="checkboxes-div" data-notationhelp-target="checkboxesutiles">
-              <% NotationHelp::SUGGESTIONS_UTILES.each do |sugg| %>
-                <div data-notationhelp-target="modal" >
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationhelp-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationHelp::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationhelp-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
-            <div class="checkboxes-div" data-notationhelp-target="checkboxesinutiles" >
-              <% NotationHelp::SUGGESTIONS_INUTILES.each do |sugg| %>
-                <div>
-                  <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
-                </div>
-              <% end %>
+            <div data-notationhelp-target="checkboxesinutiles" >
+              <div class="checkboxes-div">
+                <% NotationHelp::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           <%= hidden_field_tag :help_id, help_id %>
           <div class="btn-div">

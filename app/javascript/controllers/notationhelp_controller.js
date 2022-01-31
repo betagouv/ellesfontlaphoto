@@ -13,16 +13,17 @@ export default class extends Controller {
       document.querySelector("#answer").value = "yes"
       this.subtitleTarget.innerHTML = "C'est utile car ..."
       this.checkboxesinutilesTarget.style.display = "none"
-      this.checkboxesutilesTarget.style.display = "grid"
+      this.checkboxesutilesTarget.style.display = "block"
     }
     if(event.currentTarget.id == "notation-help-yesbut") {
       document.querySelector("#answer").value = "yesbut"
+      this.send(event)
     }
     if(event.currentTarget.id == "notation-help-no") {
       document.querySelector("#answer").value = "no";
       this.subtitleTarget.innerHTML = "C'est inutile car ..."
       this.checkboxesutilesTarget.style.display = "none"
-      this.checkboxesinutilesTarget.style.display = "grid"
+      this.checkboxesinutilesTarget.style.display = "block"
     }
   }
 
