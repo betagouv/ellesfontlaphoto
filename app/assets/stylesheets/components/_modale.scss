@@ -307,20 +307,26 @@ $ease: ease;
       text-align: center !important;
     }
 
-    input,textarea {
-      width: 85% !important;
-      margin: 0 auto;
-    }
-    select {
-      width: 89% !important;
-      margin: 0 auto;
-    }
 
     .btn {
       height: 45px !important;
       margin: 0 auto;
       color: $black;
       font-weight: normal;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .modal-content {
+    .checkboxes-div {
+      display: block !important;
+    }
+    .subtitle {
+      font-size: 28px;
+    }
+    .btn {
+      width: 45% !important;
     }
   }
 }
