@@ -7,13 +7,13 @@
    <body>
       <h1>Il y a un nouveau contact !</h1>
 
-      <p class="paragraphe"><%= @contact.contact_email %> nous a contacter pour <%= @contact.contact_type%><br>
+      <p class="paragraphe"><b><%= @contact.contact_email %></b> nous a contacter pour <b><%= @contact.contact_type%></b><br>
       </p>
 
       <p class="paragraphe"> Le message est :
       </p>
 
-      <p class="paragraphe"><%= @contact.comment.html_safe %></p>
+      <p class="paragraphe"><b><%= @contact.comment.html_safe %></b></p>
 
    </body>
 </html>

@@ -43,17 +43,22 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :cloudinary
 
+<<<<<<< HEAD
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => 'ssl0.ovh.net',
     :port => 587,
-    :user_name => 'nadia.auger@beta.gouv.fr',
-    :password => 'XiIn7oiuVCGIkBthSOxHIw',
+    :user_name => Figaro.env.smtp_email,
+    :password => Figaro.env.smtp_password,
     :authentication => 'login',
     :enable_starttls_auto => true
   }
+=======
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+>>>>>>> parent of 5eb1eff4 (mise a jour de la gestion des contacts)
 
   config.action_mailer.perform_caching = false
 
