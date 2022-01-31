@@ -1,20 +1,54 @@
 <div data-controller="notationhelp">
-  <div class="banner-yellow card" data-notationhelp-target="div">
+  <div class="banner-info banner-green card" data-notationhelp-target="div">
     <div class="banner-text">
       <p class="paragraphe card mt10" data-notationhelp-target="text">Aidez-nous à améliorer le service.&nbsp;<b> Cette page m'est ...</b></p>
       <p class="paragraphe card d-grid">
-        <span class="notation-button" id="notation-help-yes" data-action="click->notationhelp#send">utile, je candidate</span>
-        <span class="notation-button" id="notation-help-yesbut" data-action="click->notationhelp#send">utile, mais l'aide n’est pas ouverte</span>
-        <span class="notation-button" id="notation-help-no" data-action="click->notationhelp#send">inutile</span>
+        <span class="js-modal notation-button" data-modal="modal-notation-helps" id="notation-help-yes" data-action="click->notationhelp#set">utile, je candidate</span>
+        <span class="notation-button" id="notation-help-yesbut" data-action="click->notationhelp#set">utile, mais l'aide n’est pas ouverte</span>
+        <span class="js-modal notation-button" data-modal="modal-notation-helps" id="notation-help-no" data-action="click->notationhelp#set">inutile</span>
       </p>
     </div>
     <p class="close" data-action="click->notationhelp#close"><%= image_tag "close.png", alt: "icône fermeture" %></p>
   </div>
+  <div id="modal-notation-helps" data-notationhelp-target="modal" class="modal">
+    <div class="modal-inner">
+      <a class="js-close-modal">
+        <p class="cross">&times;</p>
+      </a>
+      <div class="modal-content text-align-left">
+        <p class="paragraphe">On insiste un peu, mais vos retours nous permettrons de faire un service plus pertinent !</p>
+        <p class="subtitle">💬 Pourriez-vous nous dire pourquoi ?</p>
+        <p class="paragraphe" data-notationhelp-target="subtitle"></p>
 
-  <%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true,
-      data: { notationhelp_target: 'form' } do %>
-    <%= text_field_tag :answer, params[:answer] %>
-    <%= text_field_tag :help_id, help_id %>
-    <%= submit_tag "Search" %>
-  <% end %>
+        <%= form_tag notation_helps_path, id: "notation-help", method: :post, remote: true,
+            data: { notationhelp_target: 'form' } do %>
+            <%= hidden_field_tag :answer, params[:answer], data: { notationhelp_target: "answer_input" } %>
+            <%= text_area_tag :comment, params[:comment] %>
+            <p class="paragraphe">Suggestions:</p>
+            <div data-notationhelp-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationHelp::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationhelp-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div data-notationhelp-target="checkboxesinutiles" >
+              <div class="checkboxes-div">
+                <% NotationHelp::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <%= hidden_field_tag :help_id, help_id %>
+          <div class="btn-div">
+            <%= submit_tag "Terminé", data: { action: "click->notationhelp#send"}, class: "btn btn-green" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

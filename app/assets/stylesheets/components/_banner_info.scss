@@ -1,5 +1,4 @@
-.banner-yellow {
-  background-color: $yellow;
+.banner-info {
   text-align: center;
   height: 60px;
   display: flex;
@@ -15,10 +14,16 @@
     margin: 0;
   }
 }
+.banner-yellow {
+  background-color: $yellow;
+}
 
 
 @media only screen and (max-width: 750px) {
   .banner-yellow a {
+      text-align: center !important;
+  }
+  .banner-green a {
       text-align: center !important;
   }
 }

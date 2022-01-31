@@ -1,28 +1,84 @@
 <div data-controller="notationconseil">
-  <div class="banner-yellow" data-notationconseil-target="div">
+  <div class="banner-info banner-green" data-notationconseil-target="div">
     <div class="banner-text">
       <p class="paragraphe card mt10" data-notationconseil-target="text">Aidez-nous à améliorer le service.&nbsp;<b>Le contenu m'est ...</b></p>
       <p class="paragraphe card d-flex">
-        <span class="notation-button" id="notation-conseil-utile" data-action="click->notationconseil#send">utile</span>
-        <span class="notation-button" id="notation-conseil-inutile" data-action="click->notationconseil#send">inutile</span>
+        <span class="js-modal notation-button" data-modal="modal-notation-conseils" id="notation-conseil-utile" data-action="click->notationconseil#set">utile</span>
+        <span class="js-modal notation-button" data-modal="modal-notation-conseils" id="notation-conseil-inutile" data-action="click->notationconseil#set">inutile</span>
       </p>
     </div>
     <p class="close" data-action="click->notationconseil#close"><%= image_tag "close.png", alt: "icône fermeture" %></p>
   </div>
 
-  <% if type == "article" %>
-    <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
-        data: { notationconseil_target: 'form' } do %>
-      <%= text_field_tag :answer, params[:answer] %>
-      <%= text_field_tag :conseil_id, conseil_id %>
-      <%= submit_tag "Search" %>
-    <% end %>
-  <% else %>
-    <%= form_tag notation_conseils_videos_path, id: "notation-conseil", method: :post, remote: true,
-        data: { notationconseil_target: 'form' } do %>
-      <%= text_field_tag :answer, params[:answer] %>
-      <%= text_field_tag :conseil_id, conseil_id %>
-      <%= submit_tag "Search" %>
-    <% end %>
-  <% end %>
+  <div id="modal-notation-conseils" data-notationconseil-target="modal" class="modal">
+    <div class="modal-inner">
+      <a class="js-close-modal">
+        <p class="cross">&times;</p>
+      </a>
+      <div class="modal-content text-align-left">
+        <p class="paragraphe">On insiste un peu, mais vos retours nous permettrons de faire un service plus pertinent !</p>
+        <p class="subtitle">💬 Pourriez-vous nous dire pourquoi ?</p>
+        <p class="paragraphe" data-notationconseil-target="subtitle"></p>
+        <% if type == "article" %>
+          <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
+              data: { notationconseil_target: 'form' } do %>
+            <%= hidden_field_tag :answer, params[:answer], data: { notationconseil_target: "answer_input" } %>
+            <%= text_area_tag :comment, params[:comment] %>
+            <p class="paragraphe">Suggestions:</p>
+            <div data-notationconseil-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationconseil-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div data-notationconseil-target="checkboxesinutiles">
+              <div class="checkboxes-div" >
+                <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <%= hidden_field_tag :conseil_id, conseil_id %>
+            <div class="btn-div">
+              <%= submit_tag "Terminé", data: { action: "click->notationconseil#send"}, class: "btn btn-green" %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= form_tag notation_conseils_videos_path, id: "notation-conseil", method: :post, remote: true,
+              data: { notationconseil_target: 'form' } do %>
+            <%= hidden_field_tag :answer, params[:answer], data: { notationconseil_target: "answer_input" } %>
+            <%= text_area_tag :comment, params[:comment] %>
+            <p class="paragraphe">Suggestions:</p>
+            <div data-notationconseil-target="checkboxesutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
+                  <div data-notationconseil-target="modal" >
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div data-notationconseil-target="checkboxesinutiles">
+              <div class="checkboxes-div">
+                <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
+                  <div>
+                    <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <%= hidden_field_tag :conseil_id, conseil_id %>
+            <div class="btn-div">
+              <%= submit_tag "Terminé", data: { action: "click->notationconseil#send"}, class: "btn btn-green" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

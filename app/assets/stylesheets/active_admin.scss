@@ -32,3 +32,7 @@ textarea[disabled] {
   border: 0px solid #F4F4F4 !important;
   color: black;
 }
+
+#header ul.tabs > li#comments {
+  display: none;
+}
