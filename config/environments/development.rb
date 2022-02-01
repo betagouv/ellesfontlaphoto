@@ -43,7 +43,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :cloudinary
 
-<<<<<<< HEAD
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
@@ -55,10 +54,12 @@ Rails.application.configure do
     :authentication => 'login',
     :enable_starttls_auto => true
   }
-=======
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
->>>>>>> parent of 5eb1eff4 (mise a jour de la gestion des contacts)
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
