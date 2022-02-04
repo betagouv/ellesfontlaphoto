@@ -40,16 +40,18 @@
           hébergement pour <%= @help.residence_time %>
         <% end %>
       </p>
-      <hr class="hl">
-      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites :</p>
-      <p class="paragraphe lh28 lh28 mt0 mb40">
-        <% if @help.start_date.present? %>
-          Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
-        <% end %>
-        <% if @help.regularity.present? %>
-          <%= @help.regularity %>
-        <% end %>
-      </p>
+      <% unless @help.permanent %>
+        <hr class="hl">
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites :</p>
+        <p class="paragraphe lh28 lh28 mt0 mb40">
+          <% if @help.start_date.present? %>
+            Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
+          <% end %>
+          <% if @help.regularity.present? %>
+            <%= @help.regularity %>
+          <% end %>
+        </p>
+      <% end %>
       <hr class="hl">
       <p class="paragraphe-bold mb0">Conditions principales :</p>
       <p class="paragraphe lh28 mt0 mb40"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence en :
@@ -71,7 +73,7 @@
 <div class="help-content">
   <div class="div-btn">
     <% if @help.candidate_url.present? %>
-      <% if @help_status == "open" %>
+      <% if @help_status == "open" || @help.permanent %>
         <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help" onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
       <% elsif @help_status == "close" %>
         <a class="btn-not-available"> <%= image_tag "emojis/fusee.png", alt: "émoji fusée", class: "emojis-eflc-small" %> Candidatez </a>
@@ -79,6 +81,13 @@
       <% end %>
     <% end %>
   </div>
+  <% if @help.description_longue.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="subtitle">Description</p>
+      <div class="paragraphe lh28"><%= @help.description_longue.html_safe %></div>
+    </div>
+  <% end %>
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Sélection des lauréates et lauréats</p>

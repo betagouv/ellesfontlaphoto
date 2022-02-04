@@ -1,5 +1,4 @@
 class HelpsController < ApplicationController
-
   def index
     @helps = Help.includes([:taggings]).order(start_date: :asc)
     @searched = false
