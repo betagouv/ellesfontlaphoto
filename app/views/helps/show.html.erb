@@ -40,9 +40,11 @@
           hébergement pour <%= @help.residence_time %>
         <% end %>
       </p>
-      <% unless @help.permanent %>
-        <hr class="hl">
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites :</p>
+      <hr class="hl">
+      <% if @help.permanent %>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dépôt de candidatures toute l'année :</p>
+      <% else %>
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites de candidature :</p>
         <p class="paragraphe lh28 lh28 mt0 mb40">
           <% if @help.start_date.present? %>
             Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
@@ -54,15 +56,19 @@
       <% end %>
       <hr class="hl">
       <p class="paragraphe-bold mb0">Conditions principales :</p>
-      <p class="paragraphe lh28 mt0 mb40"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence en :
+      <% if @help.residence_condition.present? %>
+        <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence en :
         <% if @help.residence_condition == "Française ou résidant en France" %>
           France
         <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
           outre-mer
         <% else %>
           <%= @help.residence_condition %>
-        <% end %>
-      <%= @help.general_condition %></p>
+        <% end %></p>
+      <% end %>
+      <% if @help.general_condition.present? %>
+          <p class="paragraphe mt0 mb40"><%= @help.general_condition %></p>
+      <% end %>
     </div>
   </div>
 </div>

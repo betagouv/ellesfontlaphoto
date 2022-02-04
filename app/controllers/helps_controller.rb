@@ -4,11 +4,11 @@ class HelpsController < ApplicationController
     @searched = false
     if params[:residence].present?
       if params[:residence] == "outre-mer"
-        @helps = Help.where(residence_condition: ["Guadeloupe", "Guyane", "Martinique", "Mayotte", "Réunion", "Française résidant en outre-mer", "Française ou résidant en France"]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: ["Guadeloupe", "Guyane", "Martinique", "Mayotte", "Réunion", "Française résidant en outre-mer", "Française ou résidant en France", ""]).order(start_date: :asc)
       elsif params[:residence] == "Guadeloupe" || params[:residence] == "Guyane" || params[:residence] == "Martinique" || params[:residence] == "Mayotte" || params[:residence] == "Réunion"
-        @helps = Help.where(residence_condition: [params[:residence], "Française résidant en outre-mer", "Française ou résidant en France"]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: [params[:residence], "Française résidant en outre-mer", "Française ou résidant en France", ""]).order(start_date: :asc)
       else
-        @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France"]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France", ""]).order(start_date: :asc)
       end
       @selected = params[:residence] == "Française résidant en outre-mer" ? "en outre-mer" : params[:residence]
       @searched = true

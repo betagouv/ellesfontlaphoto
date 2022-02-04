@@ -5,7 +5,6 @@ class Help < ApplicationRecord
   acts_as_taggable_on :type
   validates :title, presence: true
   validates :identifiant, presence: true
-  validates :residence_condition, presence: true
   validates :description, presence: true
 
   def oui
@@ -77,6 +76,6 @@ class Help < ApplicationRecord
     "Française résidant en outre-mer"
   ]
 
-  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
+  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
   validates :type_list, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
 end
