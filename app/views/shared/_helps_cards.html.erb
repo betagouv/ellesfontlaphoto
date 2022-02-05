@@ -34,7 +34,10 @@
       <% if help.start_date.present? %>
         <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
       <% end %>
-      <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span> résidence en
+      <% if help.residence_condition.present? || help.general_condition.present? %>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span> résidence en
+      <% end %>
+      <% if help.residence_condition.present? %>
         <% if help.residence_condition == "Française ou résidant en France" %>
           France
         <% elsif help.residence_condition == "Française résidant en outre-mer" %>
@@ -42,6 +45,7 @@
         <% else %>
           <%= help.residence_condition %>
         <% end %>
+      <% end %>
         <% if help.general_condition.present? %>
           , <%= help.general_condition %>
         <% end %>
