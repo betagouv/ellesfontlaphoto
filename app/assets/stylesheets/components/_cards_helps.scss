@@ -33,17 +33,6 @@
         position: absolute;
         top: -15px;
       .flottante {
-        border: 1px solid $purple;
-        border-radius: 40px;
-        display: table !important;
-        padding: 3px 10px 0px;
-        background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 1.3rem;
-        margin-right: 7px;
-        white-space: nowrap;
-      }
-      .flottante2 {
         color: $black !important;
         border: 1px solid $purple;
         border-radius: 40px;
@@ -54,8 +43,7 @@
         font-size: 14px;
         white-space: nowrap;
       }
-
-      .flottante2-purple {
+      .flottante-purple {
         color: $purple !important;
       }
     }
