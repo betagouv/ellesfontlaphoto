@@ -9,14 +9,6 @@ class Help < ApplicationRecord
   validates :identifiant, presence: true
   validates :description, presence: true
 
-  def oui
-    self.notation_help.oui
-  end
-
-  def next_candidature_date
-    self.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.start_date
-  end
-
   PARITE = [
     "respectée",
     "non-respectée"
