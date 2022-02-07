@@ -32,25 +32,27 @@
     <hr class="hl-mobile">
     <div class="fiche-description">
       <p class="paragraphe-bold mb0"><%= image_tag "emojis/gain.png", alt: "émoji gains",class: "emojis-eflc-small" %> Gains :</p>
-      <p class="paragraphe lh28 mt0 mb40"><%= @help.help_amount %>
+      <div class="paragraphe lh28 mt0 mb40">
+        <%= @help.help_amount.html_safe %>
         <% if @help.help_advantage.present? %>
           <%= @help.help_advantage %>
         <% end %>
         <% if @help.residence_time.present? %>
           hébergement pour <%= @help.residence_time %>
         <% end %>
-      </p>
+      </div>
       <hr class="hl">
       <% if @help.permanent %>
-      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dépôt de candidatures toute l'année :</p>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dépôt de candidatures :</p>
+      <p class="paragraphe">Toute l'année</p>
       <% else %>
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites de candidature :</p>
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates de candidature :</p>
         <p class="paragraphe lh28 lh28 mt0 mb40">
-          <% if @help.start_date.present? %>
-            Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
-          <% end %>
           <% if @help.regularity.present? %>
-            <%= @help.regularity %>
+            <%= @help.regularity %><br>
+          <% end %>
+          <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
+            Du <%= I18n.l candidature_date.start_date, format: :long %> au <%= I18n.l candidature_date.end_date, format: :long %><br>
           <% end %>
         </p>
       <% end %>

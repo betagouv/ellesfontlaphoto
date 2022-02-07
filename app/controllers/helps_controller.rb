@@ -1,6 +1,7 @@
 class HelpsController < ApplicationController
   def index
-    @helps = Help.includes([:taggings]).order(start_date: :asc)
+    @helps = Help.includes([:taggings])
+    @helps = @helps.where(visible: true)
     @searched = false
     if params[:residence].present?
       if params[:residence] == "outre-mer"
@@ -18,13 +19,15 @@ class HelpsController < ApplicationController
       @selected_type = params[:type_list]
       @searched = true
     end
-    @helps = @helps.where(visible: true)
     @helps_count = @helps.count
   end
 
   def show
     @help = Help.find(params[:id])
-    if @help.start_date < Date.today && Date.today < @help.end_date
+    next_date = @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first
+    if next_date.nil?
+      @help_status = "close"
+    elsif next_date.start_date < Date.today && Date.today < next_date.end_date
       @help_status = "open"
     else
       @help_status = "close"

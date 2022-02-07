@@ -12,6 +12,12 @@
       text-align: left;
     }
 
+    .paragrahe-gains {
+      p {
+        margin: 0;
+      }
+    }
+
     &:hover {
       box-shadow: 0 0 6px rgba(1,1,1,0.5);
     }
@@ -47,6 +53,10 @@
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 14px;
         white-space: nowrap;
+      }
+
+      .flottante2-purple {
+        color: $purple !important;
       }
     }
   }

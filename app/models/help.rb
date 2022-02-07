@@ -1,6 +1,8 @@
 class Help < ApplicationRecord
 
   has_one :notation_help
+  has_many :candidature_dates, dependent: :destroy
+  accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
   acts_as_taggable_on :type
   validates :title, presence: true
@@ -8,7 +10,11 @@ class Help < ApplicationRecord
   validates :description, presence: true
 
   def oui
-    self.notation_help.ui
+    self.notation_help.oui
+  end
+
+  def next_candidature_date
+    self.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.start_date
   end
 
   PARITE = [
