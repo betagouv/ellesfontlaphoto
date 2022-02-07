@@ -1,0 +1,11 @@
+<div class="flottante-div">
+  <% if help.permanent %>
+    <div class="flottante2">Ouverte</div>
+  <% elsif next_date.nil? %>
+    <div class="flottante2">Fermée</div>
+  <% elsif next_date.start_date < Date.today && Date.today < next_date.end_date %>
+    <div class="flottante2 <%= (next_date.end_date - Date.today).to_i <= 15 ? "flottante2-purple" : "" %>">Ferme dans <%= (next_date.end_date - Date.today).to_i %> jours</div>
+  <% elsif (next_date.start_date - Date.today).to_i < 15 %>
+    <div class="flottante2">Bientôt !</div>
+  <% end %>
+</div>

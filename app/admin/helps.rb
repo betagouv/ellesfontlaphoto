@@ -1,13 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :description, :sector, :structure_name, :start_date, :end_date, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :help_type, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :title, :description, :sector, :institution_name, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   show do
     attributes_table do
@@ -19,8 +11,8 @@ ActiveAdmin.register Help do
       row :type_list
       row :institution_name
       row :permanent
-      row :start_date
-      row :end_date
+      # row :start_date
+      # row :end_date
       row :help_amount
       row :description_longue
       row :residence_condition
@@ -88,9 +80,6 @@ ActiveAdmin.register Help do
     column :sector
     column :type_list
     column :description
-    column :permanent
-    column :start_date
-    column :end_date
     column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui
@@ -125,10 +114,16 @@ ActiveAdmin.register Help do
       f.input :description, label: "Description"
       f.input :description_url, label: "Url de description"
       f.input :permanent
-      f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
-      f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
-      f.input :sector, label: "Sécteur"
       f.input :regularity, label: "Régularité"
+      f.has_many :candidature_dates, allow_destroy: true do |a|
+        a.inputs do
+          a.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
+          a.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
+        end
+      end
+      # f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
+      # f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
+      f.input :sector, label: "Sécteur"
       f.input :help_amount, as: :quill_editor, label: "Montant de l'aide"
       f.input :help_advantage, label: "Avantage de l'aide"
       f.input :residence_time, label: "Temps de résidence"

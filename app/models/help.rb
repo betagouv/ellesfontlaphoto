@@ -1,15 +1,13 @@
 class Help < ApplicationRecord
 
   has_one :notation_help
+  has_many :candidature_dates, dependent: :destroy
+  accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
   acts_as_taggable_on :type
   validates :title, presence: true
   validates :identifiant, presence: true
   validates :description, presence: true
-
-  def oui
-    self.notation_help.ui
-  end
 
   PARITE = [
     "respectée",
