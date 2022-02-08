@@ -11,8 +11,6 @@ ActiveAdmin.register Help do
       row :type_list
       row :institution_name
       row :permanent
-      # row :start_date
-      # row :end_date
       row :help_amount
       row :description_longue
       row :residence_condition
@@ -60,7 +58,6 @@ ActiveAdmin.register Help do
 
   filter :identifiant
   filter :type
-  filter :start_date
   filter :title
   filter :sector
   filter :objectif
@@ -121,8 +118,6 @@ ActiveAdmin.register Help do
           a.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
         end
       end
-      # f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
-      # f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
       f.input :sector, label: "Sécteur"
       f.input :help_amount, as: :quill_editor, label: "Montant de l'aide"
       f.input :help_advantage, label: "Avantage de l'aide"
