@@ -1,0 +1,41 @@
+<a class="btn-candidate js-modal" data-modal="modal-notification-help" id="notification-help"> <%= image_tag "emojis/cloche.png", alt: "émoji fusée", class: "emojis-eflc-small" %> Recevez un rappel </a>
+<div id="modal-notification-help" data-notationconseil-target="modal" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content text-align-left">
+      <p class="paragraphe">On insiste un peu, mais vos retours nous permettrons de faire un service plus pertinent !</p>
+      <p class="subtitle">💬 Pourriez-vous nous dire pourquoi ?</p>
+      <p class="paragraphe" data-notationconseil-target="subtitle"></p>
+      <%= form_tag notation_conseils_articles_path, id: "notation-conseil", method: :post, remote: true,
+          data: { notationconseil_target: 'form' } do %>
+        <%= hidden_field_tag :answer, params[:answer], data: { notationconseil_target: "answer_input" } %>
+        <%= text_area_tag :comment, params[:comment] %>
+        <p class="paragraphe">Suggestions:</p>
+        <div data-notationconseil-target="checkboxesutiles">
+          <div class="checkboxes-div">
+            <% NotationConseilsArticle::SUGGESTIONS_UTILES.each do |sugg| %>
+              <div data-notationconseil-target="modal" >
+                <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div data-notationconseil-target="checkboxesinutiles">
+          <div class="checkboxes-div" >
+            <% NotationConseilsArticle::SUGGESTIONS_INUTILES.each do |sugg| %>
+              <div>
+                <%= check_box_tag "sugg[]", sugg, false, class: "checkboxes" -%><%= sugg %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= hidden_field_tag :conseil_id, conseil_id %>
+        <div class="btn-div">
+          <%= submit_tag "Terminé", data: { action: "click->notationconseil#send"}, class: "btn btn-green" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

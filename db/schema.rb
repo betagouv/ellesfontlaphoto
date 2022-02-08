@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_134736) do
+ActiveRecord::Schema.define(version: 2022_02_08_092716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -206,6 +206,14 @@ ActiveRecord::Schema.define(version: 2022_02_05_134736) do
     t.text "comment"
     t.text "suggestion"
     t.index ["help_id"], name: "index_notation_helps_on_help_id"
+  end
+
+  create_table "notification_helps", force: :cascade do |t|
+    t.string "email"
+    t.bigint "help_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_notification_helps_on_help_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
