@@ -42,9 +42,11 @@
     <div id="dropdown-elements-residence">
       <% Help::HELP_RESIDENCE.each do |residence| %>
         <% if residence == "Française ou résidant en France" %>
-          <div class="dropdown-content-residence">France</div>
+          <div class="dropdown-content-residence">France ou à l'étranger</div>
         <% elsif residence == "Française résidant en outre-mer" %>
           <div class="dropdown-content-residence">outre-mer</div>
+        <% elsif residence == "Résidant en France"%>
+          <div class="dropdown-content-residence">France</div>
         <% else %>
           <div class="dropdown-content-residence"><%= residence %></div>
         <% end %>
