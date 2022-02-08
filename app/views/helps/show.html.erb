@@ -85,11 +85,11 @@
         <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help" onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
       <% end %>
     <% end %>
-    <% if @help_status == "close" %>
+    <% if @help_status == "close" && !(@help.permanent) %>
       <% if @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.nil? %>
         <p class="paragraphe-bold">Candidature actuellement fermée </p>
       <% else %>
-        <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %> ou </p>
+        <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %> </p>
       <% end %>
       <%= render "shared/notification_help", help: @help %>
     <% end %>

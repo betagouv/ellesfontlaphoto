@@ -48,7 +48,8 @@ class Help < ApplicationRecord
     "Provence-Alpes-Côte-d'Azur",
     "Réunion",
     "Française ou résidant en France",
-    "Française résidant en outre-mer"
+    "Française résidant en outre-mer",
+    "Résidant en France"
   ]
 
   HELP_RESIDENCE_TO_SHOW = [
@@ -70,8 +71,9 @@ class Help < ApplicationRecord
     "Pays de la Loire",
     "Provence-Alpes-Côte-d'Azur",
     "Réunion",
-    "Française ou résidant en France",
-    "Française résidant en outre-mer"
+    "en France ou française à l'étranger",
+    "Française résidant en outre-mer",
+    "en France"
   ]
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
