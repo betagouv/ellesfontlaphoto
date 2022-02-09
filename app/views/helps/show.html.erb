@@ -91,7 +91,7 @@
       <% else %>
         <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %> </p>
       <% end %>
-      <!-- <a class="btn-candidate"> <%#= image_tag "emojis/cloche.png", alt: "émoji fusée", class: "emojis-eflc-small" %> Recevez un rappel </a> -->
+      <%= render "shared/notification_help", help: @help %>
     <% end %>
   </div>
   <% if @help.description_longue.present? %>
