@@ -72,6 +72,16 @@
     p {
       margin-top:30px;
     }
+    .btn-modal {
+      cursor: pointer;
+      margin-right: 0;
+      background-color: $purple;
+      padding: 14px 20px !important;
+      height: 46px !important;
+      &:hover {
+        background-color: $hover-purple;
+      }
+    }
     .btn-candidate {
       cursor: pointer;
       margin: 0 auto;
