@@ -4,7 +4,11 @@
   <% elsif next_date.nil? || (next_date.start_date - Date.today).to_i > 15 %>
     <div class="flottante">fermée</div>
   <% elsif next_date.start_date < Date.today && Date.today < next_date.end_date %>
-    <div class="flottante <%= (next_date.end_date - Date.today).to_i <= 15 ? "flottante-pink" : "" %>">Ferme dans <%= pluralize (next_date.end_date - Date.today).to_i, "jours" %></div>
+    <% if (next_date.end_date - Date.today).to_i > 30 %>
+        <div class="flottante">ouverte</div>
+    <% else %>
+      <div class="flottante <%= (next_date.end_date - Date.today).to_i <= 15 ? "flottante-pink" : "" %>">Ferme dans <%= pluralize (next_date.end_date - Date.today).to_i, "jours" %></div>
+    <% end %>
   <% elsif (next_date.start_date - Date.today).to_i < 15 %>
     <div class="flottante">bientôt</div>
   <% end %>
