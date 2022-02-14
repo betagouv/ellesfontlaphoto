@@ -32,11 +32,11 @@
     <% else %>
         <% @sample = Help::HELP_RESIDENCE.sample %>
         <% if @sample == "Française ou résidant en France" %>
-          <div id="select-search-residence"><span id="text-to-change-residence">À l'étranger</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
+          <div id="select-search-residence"><span id="text-to-change-residence">France</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
         <% elsif @sample == "Française résidant en outre-mer" %>
           <div id="select-search-residence"><span id="text-to-change-residence">Outre-mer</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
-        <% elsif @sample == "Résidant en France" %>
-          <div id="select-search-residence"><span id="text-to-change-residence">France</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
+        <% elsif @sample == "Française ou résidant à l'étranger" %>
+          <div id="select-search-residence"><span id="text-to-change-residence">À l'étranger</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
         <% else %>
           <div id="select-search-residence"><span id="text-to-change-residence"><%= @sample %></span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
         <% end %>
@@ -44,11 +44,11 @@
     <div id="dropdown-elements-residence">
       <% Help::HELP_RESIDENCE.each do |residence| %>
         <% if residence == "Française ou résidant en France" %>
-          <div class="dropdown-content-residence">À l'étranger</div>
+          <div class="dropdown-content-residence">France</div>
         <% elsif residence == "Française résidant en outre-mer" %>
           <div class="dropdown-content-residence">Outre-mer</div>
-        <% elsif residence == "Résidant en France"%>
-          <div class="dropdown-content-residence">France</div>
+        <% elsif residence == "Française résidant à l'étranger"%>
+          <div class="dropdown-content-residence">À l'étranger</div>
         <% else %>
           <div class="dropdown-content-residence"><%= residence %></div>
         <% end %>

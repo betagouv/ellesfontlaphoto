@@ -16,13 +16,15 @@
         <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span>
       <% end %>
       <% if help.residence_condition.present? %>
-        résidence en
+        résidence
         <% if help.residence_condition == "Française ou résidant en France" %>
-          France
+          en France
         <% elsif help.residence_condition == "Française résidant en outre-mer" %>
-          outre-mer
+          en Outre-mer
+        <% elsif help.residence_condition == "Française résidant à l'étranger" %>
+          à l'étranger
         <% else %>
-          <%= help.residence_condition %>
+          en <%= help.residence_condition %>
         <% end %>
         ,
       <% end %>
