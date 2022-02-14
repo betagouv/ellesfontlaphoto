@@ -1,0 +1,22 @@
+<div data-controller="notificationhelp">
+  <a class="btn-candidate js-modal" data-modal="modal-notification-help" id="notification-help"> <%= image_tag "emojis/cloche.png", alt: "émoji fusée", class: "emojis-eflc-small" %> Recevez un rappel </a>
+  <div id="modal-notification-help" data-notificationhelp-target="modal" class="modal">
+    <div class="modal-inner">
+      <a class="js-close-modal">
+        <p class="cross">&times;</p>
+      </a>
+      <div class="modal-content text-align-left" data-notificationhelp-target="content">
+        <p class="subtitle">Recevoir un e-mail à l’ouverture de cette aide</p>
+        <p class="paragraphe">Nous vous enverrons un message le jour de l’ouverture des candidatures, il vous rappelera cette page et où candidater !</p>
+        <%= form_tag notification_helps_path, id: "notification-help-form", method: :post, remote: true,
+            data: { notificationhelp_target: 'form' } do %>
+          <%= text_field_tag :email, params[:email] %>
+          <%= hidden_field_tag :help_id, help.id %>
+          <div class="btn-div">
+            <%= submit_tag "S'inscrire", data: { action: "click->notificationhelp#create"}, class: "btn btn-modal" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

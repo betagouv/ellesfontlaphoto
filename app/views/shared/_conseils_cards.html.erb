@@ -3,23 +3,6 @@
     <div class="card-index-conseils-articles">
       <%= link_to conseils_article_path(conseil) do %>
         <div class="card-index-conseils-articles-div">
-          <% unless conseil.category_list.empty? %>
-            <div class="flottante-div">
-              <div class="flottante">
-                <% conseil.category_list.each do |category| %>
-                  <% if category == "Administratif & Financier" %>
-                    <%= image_tag "emojis/livre-rouge.png", alt: "émoji livre",class: "emojis-eflc-small" %>
-                  <% end %>
-                  <% if category == "Artistique & Technique" %>
-                    <%= image_tag "emojis/stylo.png", alt: "émoji stylo", class: "emojis-eflc-small" %>
-                  <% end %>
-                  <% if category == "Egalite & inclusion" %>
-                    <%= image_tag "emojis/etoile.png", alt: "émoji étoile", class: "emojis-eflc-small" %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
           <p class="main-bold-paragraphe mt0 mb20"><%= conseil.title %></p>
           <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
           <% if conseil.objectif.present? %>
@@ -38,21 +21,6 @@
               <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
             </div>
           <% end %>
-          <div class="flottante-div">
-            <div class="flottante">
-              <% conseil.category_list.each do |category| %>
-                <% if category == "Administratif & Financier" %>
-                  <%= image_tag "emojis/livre-rouge.png", alt: "émoji livre", class: "emojis-eflc-small" %>
-                <% end %>
-                <% if category == "Artistique & Technique" %>
-                  <%= image_tag "emojis/stylo.png", alt: "émoji stylo", class: "emojis-eflc-small" %>
-                <% end %>
-                <% if category == "Egalite & inclusion" %>
-                  <%= image_tag "emojis/etoile.png", alt: "émoji étoile", class: "emojis-eflc-small" %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
           <div class="flottante-play">
             <%= image_tag "play.svg", alt: "icône play vidéo" %>
           </div>

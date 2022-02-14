@@ -37,21 +37,6 @@
           color: $black !important;
         }
       }
-      .flottante-div {
-          display: flex;
-          position: absolute;
-          top: -15px;
-        .flottante {
-          border: 1px solid $rouille;
-          border-radius: 40px;
-          display: table !important;
-          padding: 3px 10px 0px;
-          background-color: white;
-          font-size: 1.3rem;
-          margin-right: 7px;
-          white-space: nowrap;
-        }
-      }
       .flottante-play {
         top: 185px;
         right: 13px;

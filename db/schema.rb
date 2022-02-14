@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_135557) do
+ActiveRecord::Schema.define(version: 2022_02_08_092716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2022_01_29_135557) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "candidature_dates", force: :cascade do |t|
+    t.bigint "help_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_candidature_dates_on_help_id"
   end
 
   create_table "conseils_articles", force: :cascade do |t|
@@ -152,6 +161,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_135557) do
     t.string "commission_parite"
     t.string "old_laureats_parite"
     t.boolean "visible", default: true
+    t.text "description_longue"
+    t.boolean "permanent", default: false
   end
 
   create_table "notation_catalogues", force: :cascade do |t|
@@ -195,6 +206,14 @@ ActiveRecord::Schema.define(version: 2022_01_29_135557) do
     t.text "comment"
     t.text "suggestion"
     t.index ["help_id"], name: "index_notation_helps_on_help_id"
+  end
+
+  create_table "notification_helps", force: :cascade do |t|
+    t.string "email"
+    t.bigint "help_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_notification_helps_on_help_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

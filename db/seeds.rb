@@ -1588,9 +1588,9 @@
 # # AdminUser.create!(email: "example@admin.fr", password: "password")
 # AdminUser.create!(email: "admin@example.fr", password: "password")
 
-#-----------------------------------------------------------------
+# -----------------------------------------------------------------
 # => CREATION DES NOTATIONS VIDES
-#-----------------------------------------------------------------
+# -----------------------------------------------------------------
 # Help.all.each do |help|
 #   NotationHelp.create(help: help)
 # end
@@ -1603,6 +1603,6 @@
 #   NotationConseilsArticle.create(conseils_article: conseils_article)
 # end
 
-NotationCatalogue.create(catalogue: "Aides")
-NotationCatalogue.create(catalogue: "Conseils")
+# NotationCatalogue.create(catalogue: "Aides")
+# NotationCatalogue.create(catalogue: "Conseils")
 

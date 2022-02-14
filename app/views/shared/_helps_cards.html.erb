@@ -1,49 +1,35 @@
 <% helps.each do |help| %>
   <div class="card-index-helps">
     <%= link_to help_path(help) do %>
-      <div class="flottante-div">
-        <div class="flottante">
-          <% help.type_list.each do |type| %>
-            <% if type == "Matériel" %>
-              <%= image_tag "emojis/appareil-photo.png", alt: "émoji appareil photo", class: "emojis-eflc-small" %>
-            <% end %>
-            <% if type == "Production" %>
-              <%= image_tag "emojis/outils.png", alt: "émoji outils", class: "emojis-eflc-small" %>
-            <% end %>
-            <% if type == "Aide Sociale" %>
-              <%= image_tag "emojis/boule-de-cristal.png", alt: "émoji boule de cristal", class: "emojis-eflc-small" %>
-            <% end %>
-            <% if type == "Résidence" %>
-              <%= image_tag "emojis/maison.png", alt: "émoji maison", class: "emojis-eflc-small" %>
-            <% end %>
-            <% if type == "Diffusion" %>
-              <%= image_tag "emojis/haut-parleur.png", alt: "émoji haut parleur", class: "emojis-eflc-small" %>
-            <% end %>
-          <% end %>
-        </div>
-        <% if help.start_date.present?  %>
-          <% if help.start_date < Date.today && Date.today < help.end_date %>
-            <div class="flottante2">C'est maintenant !</div>
-          <% elsif (help.start_date - Date.today).to_i < 90 %>
-            <div class="flottante2">C'est bientôt !</div>
-          <% end %>
-        <% end %>
-      </div>
+      <% next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first %>
+      <%= render "shared/flottante_help", help: help, next_date: next_date %>
       <p class="main-bold-paragraphe card mt0 mb20"><%= help.title.to_sym %></p>
-      <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount %></p>
-      <% if help.start_date.present? %>
-        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.start_date, format: :long %></p>
+      <div class="paragraphe paragrahe-gains card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount.html_safe %></div>
+      <% if help.permanent %>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Toute l'année</p>
+      <% elsif next_date.nil? %>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Fermée</p>
+      <% else %>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.start_date, format: :long %> - <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></p>
       <% end %>
-      <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span> résidence en
+      <% if help.general_condition.present? %>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span>
+      <% end %>
+      <% if help.residence_condition.present? %>
+        résidence
         <% if help.residence_condition == "Française ou résidant en France" %>
-          France
+          en France
         <% elsif help.residence_condition == "Française résidant en outre-mer" %>
-          outre-mer
+          en Outre-mer
+        <% elsif help.residence_condition == "Française résidant à l'étranger" %>
+          à l'étranger
         <% else %>
-          <%= help.residence_condition %>
+          en <%= help.residence_condition %>
         <% end %>
+        ,
+      <% end %>
         <% if help.general_condition.present? %>
-          , <%= help.general_condition %>
+          <%= help.general_condition %>
         <% end %>
       </p>
       <p class="arrow text-align-right"><%= image_tag "arrow.svg", alt: "icône flèche" %></p>

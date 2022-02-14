@@ -1,29 +1,31 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :description, :sector, :structure_name, :start_date, :end_date, :help_amount, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :help_type, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :title, :description, :sector, :institution_name, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   show do
     attributes_table do
+      row :id
       row :visible
-      row :identifiant
       row :title
       row :description
+      panel "dates de candidatures" do
+        table_for help.candidature_dates do
+          column "dates début" do |date|
+            date.start_date
+          end
+          column "dates fin" do |date|
+            date.end_date
+          end
+        end
+      end
       row :sector
       row :type_list
       row :institution_name
-      row :start_date
-      row :end_date
+      row :permanent
       row :help_amount
       row :residence_condition
       row :general_condition
       row :specific_condition
+      row :description_longue
       row :candidate_url
       row :institution_url
       row :selection
@@ -64,9 +66,7 @@ ActiveAdmin.register Help do
     help.type_list = params["help"]["type_list"]
   end
 
-  filter :identifiant
   filter :type
-  filter :start_date
   filter :title
   filter :sector
   filter :objectif
@@ -79,15 +79,13 @@ ActiveAdmin.register Help do
   end
 
   index do
+    column :id
     column :visible
-    column :identifiant
     column :title
     column :residence_condition
     column :sector
     column :type_list
     column :description
-    column :start_date
-    column :end_date
     column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui
@@ -116,16 +114,20 @@ ActiveAdmin.register Help do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :visible, as: :boolean, label: "Vibilité"
-      f.input :identifiant,label: "identifiant"
       f.input :title, label: "Titre"
       f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys, label: "Type"
       f.input :description, label: "Description"
       f.input :description_url, label: "Url de description"
-      f.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début"
-      f.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin"
-      f.input :sector, label: "Sécteur"
+      f.input :permanent
       f.input :regularity, label: "Régularité"
-      f.input :help_amount, label: "Montant de l'aide"
+      f.has_many :candidature_dates, allow_destroy: true do |a|
+        a.inputs do
+          a.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
+          a.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
+        end
+      end
+      f.input :sector, label: "Sécteur"
+      f.input :help_amount, as: :quill_editor, label: "Montant de l'aide"
       f.input :help_advantage, label: "Avantage de l'aide"
       f.input :residence_time, label: "Temps de résidence"
       f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
@@ -133,6 +135,10 @@ ActiveAdmin.register Help do
     end
     f.inputs "Candidatez" do
       f.input :candidate_url, label: "Url de candidature"
+    end
+
+    f.inputs "Description Longue" do
+      f.input :description_longue, as: :quill_editor, label: "Description Longue"
     end
 
     f.inputs "Selection" do

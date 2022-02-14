@@ -1,18 +1,13 @@
 class Help < ApplicationRecord
 
   has_one :notation_help
+  has_many :candidature_dates, dependent: :destroy
+  has_many :notificationhelp
+  accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
   acts_as_taggable_on :type
   validates :title, presence: true
-  validates :identifiant, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :residence_condition, presence: true
   validates :description, presence: true
-
-  def oui
-    self.notation_help.ui
-  end
 
   PARITE = [
     "respectée",
@@ -53,32 +48,10 @@ class Help < ApplicationRecord
     "Provence-Alpes-Côte-d'Azur",
     "Réunion",
     "Française ou résidant en France",
-    "Française résidant en outre-mer"
+    "Française résidant en outre-mer",
+    "Française résidant à l'étranger"
   ]
 
-  HELP_RESIDENCE_TO_SHOW = [
-    "Auvergne-Rhône Alpes",
-    "Bourgogne-Franche-Comté",
-    "Bretagne",
-    "Centre-Val de Loire",
-    "Corse",
-    "Grand-Est",
-    "Guadeloupe",
-    "Guyane",
-    "Hauts de France",
-    "Ile-de-France",
-    "Martinique",
-    "Mayotte",
-    "Normandie",
-    "Nouvelle-Aquitaine",
-    "Occitanie",
-    "Pays de la Loire",
-    "Provence-Alpes-Côte-d'Azur",
-    "Réunion",
-    "Française ou résidant en France",
-    "Française résidant en outre-mer"
-  ]
-
-  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE }
+  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
   validates :type_list, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
 end

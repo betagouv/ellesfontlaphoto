@@ -12,6 +12,12 @@
       text-align: left;
     }
 
+    .paragrahe-gains {
+      p {
+        margin: 0;
+      }
+    }
+
     &:hover {
       box-shadow: 0 0 6px rgba(1,1,1,0.5);
     }
@@ -27,17 +33,6 @@
         position: absolute;
         top: -15px;
       .flottante {
-        border: 1px solid $purple;
-        border-radius: 40px;
-        display: table !important;
-        padding: 3px 10px 0px;
-        background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 1.3rem;
-        margin-right: 7px;
-        white-space: nowrap;
-      }
-      .flottante2 {
         color: $black !important;
         border: 1px solid $purple;
         border-radius: 40px;
@@ -47,6 +42,10 @@
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 14px;
         white-space: nowrap;
+      }
+      .flottante-pink {
+        background-color: $background-pink !important;
+        border: none;
       }
     }
   }

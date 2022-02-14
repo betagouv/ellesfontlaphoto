@@ -410,9 +410,6 @@
         .cards {
           .card-index-helps a .flottante-div {
             .flottante {
-              font-size: 1rem;
-            }
-            .flottante2 {
               font-size: 14px;
             }
           }
@@ -733,11 +730,5 @@
       display: block;
       text-align: left;
     }
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .chiffre {
-    font-size: 60px;
   }
 }

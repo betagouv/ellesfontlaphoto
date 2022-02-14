@@ -299,6 +299,14 @@ a {
   padding-bottom: 0 !important;
 }
 
+.pt30 {
+  padding-top: 30px;
+}
+
+.pb50 {
+  padding-bottom: 50px;
+}
+
 .mb20 {
   margin-bottom: 20px
 }
@@ -363,11 +371,3 @@ a {
   }
 }
 
-@media screen and (min-width: 1400px) {
-  h1 {
-    font-size: 70px;
-  }
-  .paragraphe,.paragraphe-bold,.paragraphe-spectral-italic {
-    font-size: 20px;
-  }
-}

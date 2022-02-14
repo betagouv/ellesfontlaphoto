@@ -32,35 +32,47 @@
     <hr class="hl-mobile">
     <div class="fiche-description">
       <p class="paragraphe-bold mb0"><%= image_tag "emojis/gain.png", alt: "émoji gains",class: "emojis-eflc-small" %> Gains :</p>
-      <p class="paragraphe lh28 mt0 mb40"><%= @help.help_amount %>
+      <div class="paragraphe lh28 mt0 mb40">
+        <%= @help.help_amount.html_safe %>
         <% if @help.help_advantage.present? %>
           <%= @help.help_advantage %>
         <% end %>
         <% if @help.residence_time.present? %>
-          hébergement pour <%= @help.residence_time %>
+          Durée résidence : <%= @help.residence_time %>
         <% end %>
-      </p>
+      </div>
       <hr class="hl">
-      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates limites :</p>
-      <p class="paragraphe lh28 lh28 mt0 mb40">
-        <% if @help.start_date.present? %>
-          Début : <%= I18n.l @help.start_date, format: :long %> / Fin : <%= I18n.l @help.end_date, format: :long %>
-        <% end %>
-        <% if @help.regularity.present? %>
-          <%= @help.regularity %>
-        <% end %>
-      </p>
+      <% if @help.permanent %>
+      <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dépôt de candidatures :</p>
+      <p class="paragraphe">Toute l'année</p>
+      <% else %>
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates de candidature :</p>
+        <p class="paragraphe lh28 lh28 mt0 mb40">
+          <% if @help.regularity.present? %>
+            <%= @help.regularity %><br>
+          <% end %>
+          <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
+            Du <%= I18n.l candidature_date.start_date, format: :long %> au <%= I18n.l candidature_date.end_date, format: :long %><br>
+          <% end %>
+        </p>
+      <% end %>
       <hr class="hl">
       <p class="paragraphe-bold mb0">Conditions principales :</p>
-      <p class="paragraphe lh28 mt0 mb40"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence en :
+      <% if @help.residence_condition.present? %>
+        <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence
         <% if @help.residence_condition == "Française ou résidant en France" %>
-          France
+          en : France
         <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
-          outre-mer
+          en : Outre-mer
+        <% elsif @help.residence_condition == "Française résidant à l'étranger" %>
+          à l'étranger
         <% else %>
-          <%= @help.residence_condition %>
-        <% end %>
-      <%= @help.general_condition %></p>
+          en : <%= @help.residence_condition %>
+        <% end %></p>
+      <% end %>
+      <% if @help.general_condition.present? %>
+          <p class="paragraphe mt0 mb40"><%= @help.general_condition %></p>
+      <% end %>
     </div>
   </div>
 </div>
@@ -71,14 +83,26 @@
 <div class="help-content">
   <div class="div-btn">
     <% if @help.candidate_url.present? %>
-      <% if @help_status == "open" %>
+      <% if @help_status == "open" || @help.permanent %>
         <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help" onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
-      <% elsif @help_status == "close" %>
-        <a class="btn-not-available"> <%= image_tag "emojis/fusee.png", alt: "émoji fusée", class: "emojis-eflc-small" %> Candidatez </a>
-        <p class="paragraphe-bold">Actuellement fermée, revenez en <%= I18n.l @help.start_date, format: "%B" %></p>
       <% end %>
     <% end %>
+    <% if @help_status == "close" && !(@help.permanent) %>
+      <% if @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.nil? %>
+        <p class="paragraphe-bold">Candidature actuellement fermée </p>
+      <% else %>
+        <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %> </p>
+      <% end %>
+      <%= render "shared/notification_help", help: @help %>
+    <% end %>
   </div>
+  <% if @help.description_longue.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="subtitle">Description</p>
+      <div class="paragraphe lh28"><%= @help.description_longue.html_safe %></div>
+    </div>
+  <% end %>
   <hr class="bhl">
   <div class="block-fiche-aide">
     <p class="subtitle">Sélection des lauréates et lauréats</p>

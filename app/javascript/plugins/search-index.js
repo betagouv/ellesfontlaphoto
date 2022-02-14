@@ -110,7 +110,8 @@ const changeResidence = () => {
     "Provence-Alpes-Côte-d'Azur",
     "Réunion",
     "France",
-    "outre-mer"
+    "Outre-mer",
+    "À l'étranger"
   ];
   let counter = 0;
   const element = document.getElementById("text-to-change-residence");
