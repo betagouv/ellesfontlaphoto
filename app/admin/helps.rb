@@ -3,19 +3,29 @@ ActiveAdmin.register Help do
 
   show do
     attributes_table do
+      row :id
       row :visible
-      row :identifiant
       row :title
       row :description
+      panel "dates de candidatures" do
+        table_for help.candidature_dates do
+          column "dates début" do |date|
+            date.start_date
+          end
+          column "dates fin" do |date|
+            date.end_date
+          end
+        end
+      end
       row :sector
       row :type_list
       row :institution_name
       row :permanent
       row :help_amount
-      row :description_longue
       row :residence_condition
       row :general_condition
       row :specific_condition
+      row :description_longue
       row :candidate_url
       row :institution_url
       row :selection
@@ -56,7 +66,6 @@ ActiveAdmin.register Help do
     help.type_list = params["help"]["type_list"]
   end
 
-  filter :identifiant
   filter :type
   filter :title
   filter :sector
@@ -70,8 +79,8 @@ ActiveAdmin.register Help do
   end
 
   index do
+    column :id
     column :visible
-    column :identifiant
     column :title
     column :residence_condition
     column :sector
@@ -105,7 +114,6 @@ ActiveAdmin.register Help do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :visible, as: :boolean, label: "Vibilité"
-      f.input :identifiant,label: "identifiant"
       f.input :title, label: "Titre"
       f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys, label: "Type"
       f.input :description, label: "Description"

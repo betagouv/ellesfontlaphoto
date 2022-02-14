@@ -85,6 +85,7 @@ group :development, :test do
   gem 'bullet'
   # Automated tests
   gem 'launchy'
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do

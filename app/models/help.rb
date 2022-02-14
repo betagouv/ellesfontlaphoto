@@ -7,7 +7,6 @@ class Help < ApplicationRecord
 
   acts_as_taggable_on :type
   validates :title, presence: true
-  validates :identifiant, presence: true
   validates :description, presence: true
 
   PARITE = [
@@ -50,31 +49,7 @@ class Help < ApplicationRecord
     "Réunion",
     "Française ou résidant en France",
     "Française résidant en outre-mer",
-    "Résidant en France"
-  ]
-
-  HELP_RESIDENCE_TO_SHOW = [
-    "Auvergne-Rhône Alpes",
-    "Bourgogne-Franche-Comté",
-    "Bretagne",
-    "Centre-Val de Loire",
-    "Corse",
-    "Grand-Est",
-    "Guadeloupe",
-    "Guyane",
-    "Hauts de France",
-    "Ile-de-France",
-    "Martinique",
-    "Mayotte",
-    "Normandie",
-    "Nouvelle-Aquitaine",
-    "Occitanie",
-    "Pays de la Loire",
-    "Provence-Alpes-Côte-d'Azur",
-    "Réunion",
-    "en France ou française à l'étranger",
-    "Française résidant en outre-mer",
-    "en France"
+    "Française résidant à l'étranger"
   ]
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }

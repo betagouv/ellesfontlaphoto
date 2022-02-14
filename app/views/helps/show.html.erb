@@ -38,7 +38,7 @@
           <%= @help.help_advantage %>
         <% end %>
         <% if @help.residence_time.present? %>
-          hébergement pour <%= @help.residence_time %>
+          Durée résidence : <%= @help.residence_time %>
         <% end %>
       </div>
       <hr class="hl">
@@ -59,13 +59,15 @@
       <hr class="hl">
       <p class="paragraphe-bold mb0">Conditions principales :</p>
       <% if @help.residence_condition.present? %>
-        <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence en :
+        <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence
         <% if @help.residence_condition == "Française ou résidant en France" %>
-          France
+          en : France
         <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
-          outre-mer
+          en : Outre-mer
+        <% elsif @help.residence_condition == "Française résidant à l'étranger" %>
+          à l'étranger
         <% else %>
-          <%= @help.residence_condition %>
+          en : <%= @help.residence_condition %>
         <% end %></p>
       <% end %>
       <% if @help.general_condition.present? %>
