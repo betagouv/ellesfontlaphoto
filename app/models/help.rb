@@ -7,7 +7,6 @@ class Help < ApplicationRecord
 
   acts_as_taggable_on :type
   validates :title, presence: true
-  validates :identifiant, presence: true
   validates :description, presence: true
 
   PARITE = [
