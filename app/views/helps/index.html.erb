@@ -30,7 +30,7 @@
     <% if @selected.present? %>
       <div id="select-search-residence" class="choosen"><%= @selected %><%= image_tag "arrow-search.svg", class: "arrow-search", alt: "icône flèche", width: "25px" %></div>
     <% else %>
-        <% @sample = Help::HELP_RESIDENCE.sample %>
+        <% @sample = Help::HELP_RESIDENCE.reject{|i| i == ""}.sample %>
         <% if @sample == "Française ou résidant en France" %>
           <div id="select-search-residence"><span id="text-to-change-residence">France</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
         <% elsif @sample == "Française résidant en outre-mer" %>
@@ -42,7 +42,7 @@
         <% end %>
     <% end %>
     <div id="dropdown-elements-residence">
-      <% Help::HELP_RESIDENCE.each do |residence| %>
+      <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
         <% if residence == "Française ou résidant en France" %>
           <div class="dropdown-content-residence">France</div>
         <% elsif residence == "Française résidant en outre-mer" %>
