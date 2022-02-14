@@ -9,9 +9,9 @@ class HelpsController < ApplicationController
       elsif params[:residence] == "Guadeloupe" || params[:residence] == "Guyane" || params[:residence] == "Martinique" || params[:residence] == "Mayotte" || params[:residence] == "Réunion"
         @helps = Help.where(residence_condition: [params[:residence], "Française résidant en outre-mer", "Résidant en France", ""])
       elsif params[:residence] == "France"
-        @helps = Help.where.not(residence_condition: "Française ou résidant en France").order(start_date: :asc)
+        @helps = Help.where.not(residence_condition: ["Française résidant à l'étranger"]).order(start_date: :asc)
       elsif params[:residence] == "À l'étranger"
-        @helps = Help.where(residence_condition: "Française ou résidant en France").order(start_date: :asc)
+        @helps = Help.where(residence_condition: ["Française résidant à l'étranger", ""]).order(start_date: :asc)
       else
         @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France", "Résidant en France", ""]).order(start_date: :asc)
       end
