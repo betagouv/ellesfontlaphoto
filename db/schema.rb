@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_08_092716) do
+ActiveRecord::Schema.define(version: 2022_02_15_091014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_092716) do
     t.string "citation_auteur"
     t.string "sources"
     t.string "liens_utiles"
+    t.string "iframe_url"
   end
 
   create_table "conseils_videos", force: :cascade do |t|

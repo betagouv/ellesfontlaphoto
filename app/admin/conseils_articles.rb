@@ -1,6 +1,6 @@
 ActiveAdmin.register ConseilsArticle do
 
-  permit_params :title, :subtitle, :category_list, :objectif, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources, :tag_list
+  permit_params :title, :subtitle, :category_list, :objectif, :iframe_url, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources, :tag_list
   #
   # or
   #
@@ -44,6 +44,7 @@ ActiveAdmin.register ConseilsArticle do
       row :introduction
       row :explication
       row :perspective
+      row :iframe_url
       row :citation
       row :citation_auteur
       row :liens_utiles
@@ -102,6 +103,7 @@ ActiveAdmin.register ConseilsArticle do
     f.inputs "En détails" do
       f.input :explication, as: :quill_editor
       f.input :perspective, as: :quill_editor
+      f.input :iframe_url
       f.input :citation, as: :quill_editor
       f.input :citation_auteur, label: "Autrice/eur de la citation"
     end
