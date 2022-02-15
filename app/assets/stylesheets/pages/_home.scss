@@ -220,6 +220,34 @@
   }
 }
 
+/*----------------------------------------*/
+// THIRD BLOCK
+
+.third-bis-block {
+  background-color: $black;
+  color: $purple;
+  font-family: Marianne-Bold;
+  font-size: 28px;
+  line-height: 32.81px;
+  text-align: center;
+  padding: 73px;
+  p {
+    margin:0;
+    margin-bottom: 60px;
+  }
+  .button-contenu {
+    background-color: $white;
+    padding: 11px 19.5px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-right: 10px;
+    color: $black !important;
+    white-space: nowrap;
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
 
 /*----------------------------------------*/
 // FOURTH BLOCK
