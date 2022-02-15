@@ -108,14 +108,13 @@
   padding: 3% 5%;
   column-gap: 2rem;
   .index-direction {
-    max-width: 20%;
-    margin-right: 16px;
+    max-width: 23%;
     .dropdown {
       display: none;
     }
     .box-criteria {
       border: 1px solid $black;
-      padding: 10% 5%;
+      padding: 3%;
       .button-criteria-selected,.button-criteria {
         background-color: $white;
         border-radius: 40px;

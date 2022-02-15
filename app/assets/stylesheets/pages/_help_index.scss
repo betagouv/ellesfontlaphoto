@@ -124,6 +124,9 @@
   }
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+    .info-notification-mobile {
+      display: none;
+    }
     .index-direction-tablet-help {
       display: block;
       .info-result.main-bold-paragraphe {
@@ -137,9 +140,6 @@
         padding: 26px 22px;
         border-radius: 4px;
         background-color: $purple;
-      }
-      .info-notification-mobile {
-        display: none;
       }
       .result-search-mobile-div {
         padding: 4%;
@@ -361,6 +361,9 @@
       margin-top: 60px;
     }
     .cards {
+      .index-direction-tablet-help {
+        display: none !important;
+      }
       .info-notification-mobile {
         grid-row-start: 4;
         display: block;
@@ -369,9 +372,6 @@
         border-radius: 4px;
         background-color: $purple;
         text-align: center !important;
-      }
-      .index-direction-tablet-help {
-        display: none !important;
       }
     }
     .wrapper {
