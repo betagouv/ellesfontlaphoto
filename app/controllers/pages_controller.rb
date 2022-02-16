@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
   def donnees_personelles
   end
+
+  def proposer_aide
+  end
 end
