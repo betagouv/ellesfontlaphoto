@@ -1,3 +1,9 @@
+<div class="info-contenu-div-conseil">
+  <p class="info-contenu-conseil lh35 main-bold-paragraphe text-align-center">Vous connaissez <br>une ressource utile aux femmes photographes ?  Site, livre, asso... Soumettez-la, et contribuez à cette initiative !</p>
+  <div class="text-align-center">
+    <a href="/proposer_conseil" class="button-contenu-conseil">Recensez une ressource</a>
+  </div>
+</div>
 <% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
   <% if conseil.class == ConseilsArticle %>
     <div class="card-index-conseils-articles">

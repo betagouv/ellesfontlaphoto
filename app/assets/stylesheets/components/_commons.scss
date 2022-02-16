@@ -120,7 +120,7 @@ p {
 
 b, strong {
   font-family: 'Marianne-Bold', sans-serif;
-  font-size: 14px;
+  // font-size: 14px;
   color: $black;
 }
 
@@ -323,8 +323,12 @@ a {
   line-height: 28px;
 }
 
+.lh35 {
+  line-height: 35px;
+}
+
 .text-align-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-align-left {

@@ -1,3 +1,10 @@
+<p class="info-notification-mobile lh28 paragraphe text-align-center"><%= image_tag "emojis/cloche.png", alt: "émoji cloche", class: "emojis-eflc-medium" %> <br>Nouvelle fonctionnalités ! <br><strong>Inscrivez-vous sur l’aide qui vous intéresse pour obtenir un rappel à l’ouverture des candidatures !</strong></p>
+<div class="info-contenu-div-help">
+  <p class="info-contenu-help lh35 main-bold-paragraphe text-align-center">Vous connaissez  <br>une autre aide ? Soumettez la, et contribuez à cette initiative !</p>
+  <div class="text-align-center">
+    <a href="#" class="button-contenu-help">Recensez une aide</a>
+  </div>
+</div>
 <% helps.each do |help| %>
   <div class="card-index-helps">
     <%= link_to help_path(help) do %>
