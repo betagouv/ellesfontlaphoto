@@ -5,7 +5,9 @@
 }
 
 .cards-help {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  grid-gap: 20px;
 }
 
 
@@ -15,6 +17,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
   .cards-help {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr !important;
   }
 }
@@ -26,6 +29,7 @@
     grid-template-columns: 1fr !important;
   }
   .cards-help {
+    display: grid;
     grid-template-columns: 1fr !important;
   }
 }
