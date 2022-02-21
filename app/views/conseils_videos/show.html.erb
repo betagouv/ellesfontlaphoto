@@ -26,7 +26,7 @@
         <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
       <% end %>
       <% if tag == "Me former" %>
-        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former </p></a>
+        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
       <% end %>
     <% end %>
   </div>
@@ -36,11 +36,11 @@
       <p class="subtitle-protagoniste">avec <%= @conseil_video.protagoniste %></p>
     </div>
     <div class="fiche-description">
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt: "émoji durée", class: "emojis-eflc-small" %> Durée : </span><%= @conseil_video.lecture_time %> min</p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt: "émoji durée", class: "emojis-eflc-small" %> Durée :</span><%= @conseil_video.lecture_time %> min</p>
       <% if @conseil_video.objectif.present? %>
-        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectifs", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_video.objectif %></p>
+        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectifs", class: "emojis-eflc-small" %> Objectifs :</span><%= @conseil_video.objectif %></p>
       <% end %>
-      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", alt: "émoji format vidéo", class: "emojis-eflc-small" %> Format vidéo : </span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
+      <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", alt: "émoji format vidéo", class: "emojis-eflc-small" %> Format vidéo :</span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
     </div>
   </div>
   <% if @conseil_video.video.attached? %>

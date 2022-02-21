@@ -91,9 +91,9 @@
     <% end %>
     <% if @help_status == "close" && !(@help.permanent) %>
       <% if @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.nil? %>
-        <p class="paragraphe-bold">Candidature actuellement fermée </p>
+        <p class="paragraphe-bold">Candidature actuellement fermée</p>
       <% else %>
-        <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %> </p>
+        <p class="paragraphe-bold">Candidature actuellement fermée, revenez en <%= I18n.l @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date, format: "%B" %></p>
       <% end %>
       <%= render "shared/notification_help", help: @help %>
     <% end %>
@@ -189,7 +189,7 @@
     <p class="subtitle">Contact</p>
     <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'intitution</a><% end %></p>
     <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
-      <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature : </p>
+      <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour présicer votre candidature :</p>
       <% if @help.contact_institution.present? %>
         <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
       <% end %>

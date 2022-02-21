@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "stats", to: 'pages#stats'
   get "stats", to: 'pages#stats'
   get "proposer_conseil", to: 'pages#proposer_conseil'
+  get "proposer_aide", to: 'pages#proposer_aide'
 
   resources :contacts, only: :create
   resources :helps, only: [:show, :index]

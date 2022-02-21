@@ -24,7 +24,7 @@
         <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
       <% end %>
       <% if tag == "Me former" %>
-        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former </p></a>
+        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
       <% end %>
     <% end %>
   </div>
@@ -34,8 +34,8 @@
       <p class="paragraphe lh28"><%= @conseil_article.subtitle %></p>
     </div>
     <div class="fiche-description">
-      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt:"émoji réveil", class: "emojis-eflc-small" %> Temps de lecture : </span><%= @conseil_article.lecture_time %> min</p>
-      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt:"émoji objectif", class: "emojis-eflc-small" %> Objectifs : </span><%= @conseil_article.objectif %></p>
+      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt:"émoji réveil", class: "emojis-eflc-small" %> Temps de lecture :</span><%= @conseil_article.lecture_time %> min</p>
+      <p class="paragraphe lh28"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt:"émoji objectif", class: "emojis-eflc-small" %> Objectifs :</span><%= @conseil_article.objectif %></p>
     </div>
   </div>
 </div>
@@ -67,7 +67,7 @@
   <% if @conseil_article.a_retenir.present? %>
     <hr class="bhl">
     <div class="block-conseils-article">
-      <p class="subtitle">À retenir : </p>
+      <p class="subtitle">À retenir :</p>
       <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
     </div>
   <% end %>
