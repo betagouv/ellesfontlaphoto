@@ -1,6 +1,6 @@
 class NotationCataloguesController < ApplicationController
   def create
-    @notation_catalogue = NotationCatalogue.find_by(catalogue: params[:catalogue])
+    @notation_catalogue = NotationCatalogue.new(catalogue: params[:catalogue])
     if params[:answer] == "utile"
       @notation_catalogue.utile += 1
     end
