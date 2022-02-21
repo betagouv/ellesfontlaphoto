@@ -158,6 +158,19 @@ $ease: ease;
         text-align:left;
       }
 
+      .input-error {
+        border-color: #D52941;
+      }
+
+      .display-error {
+        display: block;
+        color: #D52941;
+      }
+
+      .undisplay-error {
+        display: none;
+      }
+
       label {
         font-family: "Marianne", sans-serif;
         font-size: 14px;

@@ -1,0 +1,18 @@
+<div class="modal-content text-align-left" data-notificationhelp-target="content">
+  <p class="subtitle">Recevoir un e-mail à l’ouverture de cette aide</p>
+  <p class="paragraphe">Nous vous enverrons un message le jour de l’ouverture des candidatures, il vous rappelera cette page et où candidater !</p>
+  <%= form_tag notification_helps_path, id: "notification-help-form", method: :post, remote: true,
+      data: { notificationhelp_target: 'form' } do %>
+      <% if error_save %>
+        <%= text_field_tag :email, params[:email], class: "input-error" %>
+      <% else %>
+        <%= text_field_tag :email, params[:email] %>
+      <% end %>
+    <p class="<%= error_save ? 'display-error' : 'undisplay-error' %>">Veuillez renseigner votre email</p>
+    <%= hidden_field_tag :help_id, help.id %>
+    <div class="btn-div">
+      <%= submit_tag "S'inscrire", data: { action: "click->notificationhelp#create"}, class: "btn btn-modal" %>
+    </div>
+  <% end %>
+</div>
+
