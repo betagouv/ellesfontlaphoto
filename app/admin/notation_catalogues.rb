@@ -6,6 +6,7 @@ ActiveAdmin.register NotationCatalogue do
     column :utile_mais_fermee
     column :inutile
     column :created_at
+    column :updated_at
   end
 
 end
