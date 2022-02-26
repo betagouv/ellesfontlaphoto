@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_091014) do
+ActiveRecord::Schema.define(version: 2022_02_25_160317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,6 +217,14 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.index ["help_id"], name: "index_notification_helps_on_help_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "help_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_reviews_on_help_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -248,5 +256,6 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "helps"
   add_foreign_key "taggings", "tags"
 end

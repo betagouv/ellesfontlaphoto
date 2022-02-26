@@ -134,6 +134,13 @@
   }
 }
 
+.div-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  margin: 20px 48px;
+}
+
 @media only screen and (max-width: 1250px) {
   .help-content {
     padding: 0 10%;
