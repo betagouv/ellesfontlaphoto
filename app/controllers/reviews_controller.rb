@@ -4,9 +4,9 @@ class ReviewsController < ApplicationController
     @help = Help.find(params[:help_id])
     @review.help = @help
     if @review.save
-      redirect_to help_path(@help), anchor: "#review-div"
+      redirect_to help_path(@help, anchor: "review-div")
     else
-      redirect_to help_path(@help), anchor: "#review-div"
+      redirect_to help_path(@help, anchor: "review-div")
     end
   end
 

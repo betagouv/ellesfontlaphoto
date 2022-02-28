@@ -1,5 +1,6 @@
-<div class="div-review">
+<div class="display-reviews">
+  <p class="paragraphe-title mt0">Avis et commentaires</p>
   <% reviews.each do |review| %>
-    <%= review.comment %>
+    <p class="comment-help"><%= review.comment %></p>
   <% end %>
 </div>
