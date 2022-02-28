@@ -41,8 +41,14 @@ class HelpsController < ApplicationController
     @help = Help.find(params[:id])
     next_start_date = @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first
     next_end_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
-    unless next_end_date.nil?
-      if (next_end_date.start_date < Date.today && Date.today < next_end_date.end_date) || (next_start_date.start_date < Date.today && Date.today < next_start_date.end_date)
+    if next_start_date.nil?
+      if (next_end_date.start_date < Date.today && Date.today <= next_end_date.end_date)
+        @help_status = "open"
+      else
+        @help_status = "close"
+      end
+    elsif !(next_end_date.nil?)
+      if (next_end_date.start_date < Date.today && Date.today <= next_end_date.end_date) || (next_start_date.start_date < Date.today && Date.today < next_start_date.end_date)
         @help_status = "open"
       elsif next_start_date.nil? || next_start_date.start_date > Date.today
         @help_status = "close"
