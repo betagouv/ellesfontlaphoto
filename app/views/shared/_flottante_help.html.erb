@@ -5,9 +5,7 @@
     <div class="flottante">fermée</div>
   <% elsif next_date.end_date == Date.today %>
     <div class="flottante <%= (next_date.end_date - Date.today).to_i <= 15 ? "flottante-pink" : "" %>">Ferme aujourd'hui</div>
-  <% elsif next_date.start_date == Date.today %>
-    <div class="flottante">ouverte</div>
-  <% elsif next_date.start_date < Date.today && Date.today < next_date.end_date %>
+  <% elsif next_date.start_date <= Date.today && Date.today < next_date.end_date %>
     <% if (next_date.end_date - Date.today).to_i > 30 %>
         <div class="flottante">ouverte</div>
     <% else %>
