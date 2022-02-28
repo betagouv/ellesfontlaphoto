@@ -1,0 +1,12 @@
+<div class="evaluation-help-div" id="review-div" data-controller="">
+  <p class="paragraphe-title mt0">Vous connaissez ce dispositif, évaluez-le !</p>
+  <p class="paragraphe">Dossier de candidature :</p>
+  <p class="paragraphe evaluation-text">difficile <span class="notes-evaluation">1</span> <span class="notes-evaluation">2</span> <span class="notes-evaluation">3</span> <span class="notes-evaluation">4</span> <span class="notes-evaluation">5</span> simple</p>
+  <p class="paragraphe">Dispositif :</p>
+  <p class="paragraphe evaluation-text">à éviter <span class="notes-evaluation">1</span> <span class="notes-evaluation">2</span> <span class="notes-evaluation">3</span> <span class="notes-evaluation">4</span> <span class="notes-evaluation">5</span> à tenter !</p>
+  <%= simple_form_for([help, evaluation_help]) do |f| %>
+    <%= f.input :eval_dossier %>
+    <%= f.input :eval_dispositif %>
+    <%= f.submit "Envoyer", class: "review-button" %>
+  <% end %>
+</div>

@@ -135,10 +135,13 @@
 }
 
 .div-review {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
+  display: flex;
+  gap: 24px;
   margin: 20px 48px;
+  .test {
+    width: 100%;
+    margin-bottom: 12px;
+  }
 }
 
 @media only screen and (max-width: 1250px) {

@@ -217,6 +217,11 @@
   <p class="link-blue cursor-normal" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
 </div>
 <div class="div-review" id="review-div">
-  <%= render "reviews/new", help: @help, review: @review %>
-  <%= render "reviews/index", reviews: @reviews %>
+  <div class="test">
+    <%= render "evaluation_helps/new", help: @help, evaluation_help: @evaluation_help %>
+    <%= render "reviews/new", help: @help, review: @review %>
+  </div>
+  <div class="test">
+    <%= render "reviews/index", reviews: @reviews %>
+  </div>
 </div>

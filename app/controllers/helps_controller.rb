@@ -40,6 +40,7 @@ class HelpsController < ApplicationController
   def show
     @help = Help.find(params[:id])
     @review = Review.new
+    @evaluation_help = EvaluationHelp.new
     @reviews = @help.reviews
     next_start_date = @help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first
     next_end_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first

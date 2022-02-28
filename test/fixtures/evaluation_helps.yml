@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  help: one
+  eval_dossier: 1
+  eval_dispositif: 1
+
+two:
+  help: two
+  eval_dossier: 1
+  eval_dispositif: 1
