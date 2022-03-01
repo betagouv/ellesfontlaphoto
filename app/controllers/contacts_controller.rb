@@ -1,14 +1,17 @@
 class ContactsController < ApplicationController
   invisible_captcha only: [:create]
+
   def create
-    @contact = Contact.new(contacts_params)
-    unless @contact.contact_email == "foo-bar@example.com"
-      if @contact.contact_type == "newsletter"
-        add_to_sendinblue_list(@contact.contact_email)
-        redirect_to root_path(anchor: 'contact'), alert: 'Votre demande a bien été prise en compte.'
-      else
-        ContactMailer.new_contact(@contact).deliver_now
-        redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'
+    unless params[:email].present?
+      @contact = Contact.new(contacts_params)
+      unless @contact.contact_email == "foo-bar@example.com"
+        if @contact.contact_type == "newsletter"
+          add_to_sendinblue_list(@contact.contact_email)
+          redirect_to root_path(anchor: 'contact'), alert: 'Votre demande a bien été prise en compte.'
+        else
+          ContactMailer.new_contact(@contact).deliver_now
+          redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'
+        end
       end
     end
   end
