@@ -1,5 +1,7 @@
 class NotationCatalogue < ApplicationRecord
 
+  ANSWERS = ["utile", "inutile", "utile-mais-fermee"]
+
   def self.pourcentage_notation_help_utile
     nb_total_notation = NotationCatalogue.where(catalogue: "Aides").first.inutile + NotationCatalogue.where(catalogue: "Aides").first.utile + NotationCatalogue.where(catalogue: "Aides").first.utile_mais_fermee
     return NotationCatalogue.where(catalogue: "Aides").first.utile * 100 / nb_total_notation
