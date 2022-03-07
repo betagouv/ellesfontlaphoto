@@ -19,14 +19,16 @@
         <p class="fiche-tag"><%= image_tag "emojis/#{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text]}" %> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
       </a>
     <% end %>
-    <% @conseil_article.tag_list.each do |tag| %>
-      <% if tag == "Commencer mon activité" %>
-        <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
+    <div class="d-none">
+      <% @conseil_article.tag_list.each do |tag| %>
+        <% if tag == "Commencer mon activité" %>
+          <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
+        <% end %>
+        <% if tag == "Me former" %>
+          <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
+        <% end %>
       <% end %>
-      <% if tag == "Me former" %>
-        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
-      <% end %>
-    <% end %>
+    </div>
   </div>
   <div class="banner-show">
     <div class="fiche-title">
