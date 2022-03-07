@@ -22,7 +22,7 @@ class HelpsController < ApplicationController
       @selected_type = params[:type_list]
       @searched = true
     end
-    @helps = @helps.order(:start_date)
+    @helps = @helps.order(:end_date)
     @helps_count = @helps.count
   end
 
