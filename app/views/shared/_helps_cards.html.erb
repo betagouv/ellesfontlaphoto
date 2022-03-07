@@ -1,7 +1,7 @@
 <% helps.each do |help| %>
   <div class="card-index-helps">
+    <% next_date = CandidatureDate.where(help: help).where("end_date >= ?", Date.today).order("end_date ASC").first %>
     <%= link_to help_path(help) do %>
-      <% next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first %>
       <%= render "shared/flottante_help", help: help, next_date: next_date %>
       <p class="main-bold-paragraphe card mt0 mb20"><%= help.title.to_sym %></p>
       <div class="paragraphe paragrahe-gains card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %> Gains :</span> <%= help.help_amount.html_safe %></div>

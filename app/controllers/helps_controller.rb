@@ -1,19 +1,18 @@
-require 'pry'
 class HelpsController < ApplicationController
   def index
     @helps = Help.all.where(visible: true)
     @searched = false
     if params[:residence].present?
       if params[:residence] == "Outre-mer"
-        @helps = Help.where(residence_condition: ["Guadeloupe", "Guyane", "Martinique", "Mayotte", "Réunion", "Française résidant en outre-mer", "Française ou résidant en France", ""]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: ["Guadeloupe", "Guyane", "Martinique", "Mayotte", "Réunion", "Française résidant en outre-mer", "Française ou résidant en France", ""])
       elsif params[:residence] == "Guadeloupe" || params[:residence] == "Guyane" || params[:residence] == "Martinique" || params[:residence] == "Mayotte" || params[:residence] == "Réunion"
-        @helps = Help.where(residence_condition: [params[:residence], "Française résidant en outre-mer", "Française ou résidant en France", ""]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: [params[:residence], "Française résidant en outre-mer", "Française ou résidant en France", ""])
       elsif params[:residence] == "À l'étranger"
-        @helps = Help.where(residence_condition: [params[:residence], "Française résidant à l'étranger", "Française ou résidant en France", ""]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: [params[:residence], "Française résidant à l'étranger", "Française ou résidant en France", ""])
       elsif params[:residence] == "France"
-        @helps = Help.where.not(residence_condition: ["Française résidant à l'étranger"]).order(start_date: :asc)
+        @helps = Help.where.not(residence_condition: ["Française résidant à l'étranger"])
       else
-        @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France", ""]).order(start_date: :asc)
+        @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France", ""])
       end
       @selected = params[:residence] == "Française résidant en outre-mer" ? "en Outre-mer" : params[:residence]
       @searched = true
@@ -23,17 +22,7 @@ class HelpsController < ApplicationController
       @selected_type = params[:type_list]
       @searched = true
     end
-    @helps = @helps.sort_by do |help|
-      if help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.nil?
-        if help.permanent
-          Date.today
-        else
-          Date.today + 9000
-        end
-      else
-        help.candidature_dates.where("start_date >= ?", Date.today).order("start_date ASC").first.start_date
-      end
-    end
+    @helps = @helps.order(:start_date)
     @helps_count = @helps.count
   end
 

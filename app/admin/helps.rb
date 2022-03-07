@@ -1,6 +1,28 @@
 ActiveAdmin.register Help do
   permit_params :title, :description, :sector, :institution_name, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
+  after_create do |help|
+    next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
+    if help.permanent?
+      help.update(start_date: Date.today, end_date: Date.today)
+    elsif next_date.nil?
+      help.update(start_date: nil, end_date: nil)
+    else
+      help.update(start_date: next_date.start_date, end_date: next_date.end_date)
+    end
+  end
+
+  after_update do |help|
+    next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
+    if help.permanent?
+      help.update(start_date: Date.tonday, end_date: Date.today)
+    elsif next_date.nil?
+      help.update(start_date: nil, end_date: nil)
+    else
+      help.update(start_date: next_date.start_date, end_date: next_date.end_date)
+    end
+  end
+
   show do
     attributes_table do
       row :id
