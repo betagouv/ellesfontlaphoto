@@ -49,6 +49,13 @@
     <p class="subtitle">Introduction</p>
     <div class="paragraphe lh28"><%= @conseil_article.introduction.html_safe %></div>
   </div>
+  <% if @conseil_article.a_retenir.present? %>
+    <hr class="bhl">
+    <div class="block-conseils-article">
+      <p class="subtitle">À retenir :</p>
+      <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
+    </div>
+  <% end %>
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
@@ -66,13 +73,6 @@
       </div>
     </div>
   </div>
-  <% if @conseil_article.a_retenir.present? %>
-    <hr class="bhl">
-    <div class="block-conseils-article">
-      <p class="subtitle">À retenir :</p>
-      <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
-    </div>
-  <% end %>
   <% if @conseil_article.liens_utiles.present? %>
     <hr class="bhl">
     <div class="block-conseils-article">
