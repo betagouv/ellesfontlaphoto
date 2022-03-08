@@ -88,7 +88,7 @@
     <% end %>
     <% if @conseil_article.auteur.present? %>
       <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
-      <p class="paragraphe lh28"><%= @conseil_article.auteur %></p>
+      <p class="paragraphe lh28"><%= @conseil_article.auteur.html_safe %></p>
     <% end %>
   </div>
   <% if @conseil_article.auteur.present? || @conseil_article.sources.present? %>
