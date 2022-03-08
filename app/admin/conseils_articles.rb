@@ -115,7 +115,7 @@ ActiveAdmin.register ConseilsArticle do
     end
     f.inputs "Sources et Autrices/Auteurs" do
       f.input :sources
-      f.input :auteur
+      f.input :auteur, as: :quill_editor
     end
     f.actions
   end
