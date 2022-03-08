@@ -130,12 +130,8 @@
         }
       }
     }
-    .box-criteria-top {
-      border-bottom: none;
-    }
     .conseils-sum {
       border: solid 1px $black;
-      border-bottom: 0;
       padding: 10% 5%;
       margin:0 auto;
     }
@@ -314,9 +310,6 @@
           cursor: pointer;
         }
       }
-      .box-criteria.box-criteria-top {
-        border-bottom: none;
-      }
       .dropdown {
         display: none;
       }
@@ -363,7 +356,6 @@
         grid-row-start: 6;
       }
       .index-direction-tablet-conseils {
-        margin-bottom: 30px;
         .dropdown {
           padding-bottom: 20px;
         }

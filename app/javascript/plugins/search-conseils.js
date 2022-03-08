@@ -19,6 +19,7 @@ const searchIndexConseils = () => {
 
 const updateInputCategories = () => {
   const categories = {
+    "promotion et commercial": "Promotion & Commercial",
     "administratifs et financiers": "Administratif & Financier",
     "artistiques et techniques": "Artistique & Technique",
     "égalité et inclusion": "Egalite & inclusion",

@@ -19,14 +19,16 @@
         <p class="fiche-tag"><%= image_tag "emojis/#{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text]}" %> <%= ConseilsArticle::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
       </a>
     <% end %>
-    <% @conseil_article.tag_list.each do |tag| %>
-      <% if tag == "Commencer mon activité" %>
-        <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
+    <div class="d-none">
+      <% @conseil_article.tag_list.each do |tag| %>
+        <% if tag == "Commencer mon activité" %>
+          <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
+        <% end %>
+        <% if tag == "Me former" %>
+          <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
+        <% end %>
       <% end %>
-      <% if tag == "Me former" %>
-        <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
-      <% end %>
-    <% end %>
+    </div>
   </div>
   <div class="banner-show">
     <div class="fiche-title">
@@ -47,6 +49,13 @@
     <p class="subtitle">Introduction</p>
     <div class="paragraphe lh28"><%= @conseil_article.introduction.html_safe %></div>
   </div>
+  <% if @conseil_article.a_retenir.present? %>
+    <hr class="bhl">
+    <div class="block-conseils-article">
+      <p class="subtitle">À retenir :</p>
+      <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
+    </div>
+  <% end %>
   <hr class="bhl">
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
@@ -64,13 +73,6 @@
       </div>
     </div>
   </div>
-  <% if @conseil_article.a_retenir.present? %>
-    <hr class="bhl">
-    <div class="block-conseils-article">
-      <p class="subtitle">À retenir :</p>
-      <div class="paragraphe background-rouille"><%= @conseil_article.a_retenir.html_safe %></div>
-    </div>
-  <% end %>
   <% if @conseil_article.liens_utiles.present? %>
     <hr class="bhl">
     <div class="block-conseils-article">
@@ -86,7 +88,7 @@
     <% end %>
     <% if @conseil_article.auteur.present? %>
       <p class="main-bold-paragraphe text-align-left">Autrices, Auteurs</p>
-      <p class="paragraphe lh28"><%= @conseil_article.auteur %></p>
+      <p class="paragraphe lh28"><%= @conseil_article.auteur.html_safe %></p>
     <% end %>
   </div>
   <% if @conseil_article.auteur.present? || @conseil_article.sources.present? %>

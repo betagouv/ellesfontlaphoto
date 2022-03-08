@@ -155,8 +155,6 @@ ActiveRecord::Schema.define(version: 2022_02_28_131435) do
     t.string "faq_url"
     t.string "issue_contact"
     t.text "statistic"
-    t.date "end_date"
-    t.date "start_date"
     t.string "identifiant"
     t.string "institution_partenaire"
     t.string "regularity"
@@ -173,6 +171,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_131435) do
     t.boolean "visible", default: true
     t.text "description_longue"
     t.boolean "permanent", default: false
+    t.date "end_date"
+    t.date "start_date"
   end
 
   create_table "notation_catalogues", force: :cascade do |t|
