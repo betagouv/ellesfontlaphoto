@@ -1,12 +1,26 @@
-<div class="evaluation-help-div" id="review-div" data-controller="">
+<div class="evaluation-help-div" id="review-div" data-controller="evaluation-helps">
   <p class="paragraphe-title mt0">Vous connaissez ce dispositif, évaluez-le !</p>
   <p class="paragraphe">Dossier de candidature :</p>
-  <p class="paragraphe evaluation-text">difficile <span class="notes-evaluation">1</span> <span class="notes-evaluation">2</span> <span class="notes-evaluation">3</span> <span class="notes-evaluation">4</span> <span class="notes-evaluation">5</span> simple</p>
+  <p class="paragraphe evaluation-text" data-evaluation-helps-target="listDossier">difficile
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">1</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">2</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">3</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">4</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">5</span>
+  simple</p>
   <p class="paragraphe">Dispositif :</p>
-  <p class="paragraphe evaluation-text">à éviter <span class="notes-evaluation">1</span> <span class="notes-evaluation">2</span> <span class="notes-evaluation">3</span> <span class="notes-evaluation">4</span> <span class="notes-evaluation">5</span> à tenter !</p>
-  <%= simple_form_for([help, evaluation_help]) do |f| %>
-    <%= f.input :eval_dossier %>
-    <%= f.input :eval_dispositif %>
-    <%= f.submit "Envoyer", class: "review-button" %>
+  <p class="paragraphe evaluation-text" data-evaluation-helps-target="listDispositif">à éviter
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">1</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">2</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">3</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">4</span>
+    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">5</span> à tenter !</p>
+  <div class="button">
+    <button class="button-evaluation" data-action="click->evaluation-helps#send">Valider</button>
+  </div>
+  <%= simple_form_for [help, evaluation_help], html: { data: { evaluation_helps_target: "form" } } do |f| %>
+    <%= f.input :eval_dossier, input_html: { "data-evaluation-helps-target" => "inputDossier" } %>
+    <%= f.input :eval_dispositif, input_html: { "data-evaluation-helps-target" => "inputDispositif" } %>
+    <%= f.submit %>
   <% end %>
 </div>

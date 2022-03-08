@@ -24,9 +24,32 @@
   form {
     display: none;
   }
+  .button {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    .button-evaluation {
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      padding: 12px 25px;
+      font-family: 'Marianne-Regular', sans-serif;
+      background-color: $purple-blue;
+      transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+      color: $white;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+  }
+
   .evaluation-text {
     font-size: 14px;
     margin: 25px 0;
+    cursor: pointer;
+    .notes-evaluation.active {
+      background-color: $purple-blue;
+    }
     .notes-evaluation {
       background-color: $white;
       border-radius: 50%;
@@ -37,5 +60,4 @@
       }
     }
   }
-
 }
