@@ -1,0 +1,11 @@
+<div class="sub-div-review">
+  <%= render "evaluation_helps/new", help: @help, evaluation_help: @evaluation_help %>
+  <%= render "reviews/new", help: @help, review: @review %>
+</div>
+<div class="sub-div-review">
+  <div class="display-reviews">
+    <p class="paragraphe-title mt0">Avis et commentaires</p>
+    <%= render "evaluation_helps/index", reviews: @reviews %>
+    <%= render "reviews/index", reviews: @reviews %>
+  </div>
+</div>

@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   get "proposer_aide", to: 'pages#proposer_aide'
 
   resources :contacts, only: :create
-  resources :helps, only: [:show, :index]
+  resources :helps, only: [:show, :index] do
+    resources :reviews, only: [:index, :create, :new]
+    resources :evaluation_helps, only: [:index, :create, :new]
+  end
   resources :notation_helps, only: :create
   get "/conseils", to: "conseils_pratiques#index"
   resources :conseils_videos, only: [:show]

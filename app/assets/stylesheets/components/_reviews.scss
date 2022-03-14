@@ -1,0 +1,108 @@
+.evaluation-help-div,.display-reviews{
+  background-color: $purple-comment;
+  padding: 46px 72px;
+  border-radius: 4px;
+}
+
+.display-reviews {
+  .comment {
+      background-color: $purple-blue;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+      border-radius: 0px 24px 24px 24px;
+      font-family: Marianne-Regular;
+      color: $white;
+      padding: 12px 20px;
+      margin: 10px;
+    .comment-help {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .comment-date {
+      font-size: 10px;
+      line-height: 20px;
+    }
+  }
+  .evaluations_helps_index {
+    margin-bottom: 30px;
+    .progress-bar {
+      background: $white;
+      border-radius: 8px;
+      height: 9px;
+      width: 200px;
+      .progress1 {
+        background: $purple-blue;
+        height: 9px;
+        width: 20%;
+        border-radius: 8px;
+      }
+      .progress2 {
+        background: $purple-blue;
+        height: 9px;
+        width: 40%;
+        border-radius: 8px;
+      }
+      .progress3 {
+        background: $purple-blue;
+        height: 9px;
+        width: 60%;
+        border-radius: 8px;
+      }
+      .progress4 {
+        background: $purple-blue;
+        height: 9px;
+        width: 80%;
+        border-radius: 8px;
+      }
+      .progress5 {
+        background: $purple-blue;
+        height: 9px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.evaluation-help-div {
+  height: fit-content;
+  margin-bottom: 24px;
+  form {
+    display: none;
+  }
+  .button {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    .button-evaluation {
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      padding: 12px 25px;
+      font-family: 'Marianne-Regular', sans-serif;
+      background-color: $purple-blue;
+      transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+      color: $white;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+  }
+
+  .evaluation-text {
+    font-size: 14px;
+    margin: 25px 0;
+    cursor: pointer;
+    .notes-evaluation.active {
+      background-color: $purple-blue;
+    }
+    .notes-evaluation {
+      background-color: $white;
+      border-radius: 50%;
+      padding: 8px 14px 9px 14px;
+      margin: 0 8px;
+      &:hover {
+        background-color: $hover-blue;
+      }
+    }
+  }
+}

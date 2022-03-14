@@ -2,7 +2,9 @@ class Help < ApplicationRecord
 
   has_one :notation_help
   has_many :candidature_dates, dependent: :destroy
-  has_many :notificationhelp
+  has_many :notification_helps
+  has_many :reviews
+  has_many :evaluation_helps
   accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
   acts_as_taggable_on :type

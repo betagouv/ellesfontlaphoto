@@ -134,6 +134,16 @@
   }
 }
 
+.div-review {
+  display: flex;
+  gap: 24px;
+  padding: 20px 48px;
+  .sub-div-review {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
 @media only screen and (max-width: 1250px) {
   .help-content {
     padding: 0 10%;
