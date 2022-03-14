@@ -8,16 +8,24 @@ export default class extends Controller {
     if (this.listDossierTarget.querySelector(".active")) {
       this.listDossierTarget.querySelector(".active").classList.remove("active");
     }
-    event.currentTarget.classList.add("active");
-    this.inputDossierTarget.value = event.currentTarget.innerHTML
+    if (this.inputDossierTarget.value == event.currentTarget.innerHTML) {
+      this.inputDossierTarget.value = ""
+    } else {
+      event.currentTarget.classList.add("active");
+      this.inputDossierTarget.value = event.currentTarget.innerHTML
+    }
   }
 
   setDispositif(event) {
     if (this.listDispositifTarget.querySelector(".active")) {
       this.listDispositifTarget.querySelector(".active").classList.remove("active");
     }
-    event.currentTarget.classList.add("active");
-    this.inputDispositifTarget.value = event.currentTarget.innerHTML
+    if (this.inputDispositifTarget.value == event.currentTarget.innerHTML) {
+      this.inputDispositifTarget.value = ""
+    } else {
+      event.currentTarget.classList.add("active");
+      this.inputDispositifTarget.value = event.currentTarget.innerHTML
+    }
   }
 
   send() {

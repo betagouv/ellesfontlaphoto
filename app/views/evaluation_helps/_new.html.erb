@@ -4,20 +4,51 @@
     <p class="paragraphe-bold" style="color: red; font-weight: 900;">Une erreur est survenue pouvez vous réessayez</p>
   <% end %>
   <p class="paragraphe">Dossier de candidature :</p>
-  <p class="paragraphe evaluation-text" data-evaluation-helps-target="listDossier">difficile
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">1</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">2</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">3</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">4</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">5</span>
-  simple</p>
+  <div data-evaluation-helps-target="listDossier">
+    <p class="paragraphe evaluation-text">difficile
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">1</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">2</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">3</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">4</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">5</span>
+    simple</p>
+    <div class="evaluation-text-phone">
+      <div class="d-flex list-notes">
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDossier">1</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDossier">2</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDossier">3</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDossier">4</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDossier">5</span>
+      </div>
+      <div class="d-flex info-notation">
+        <p class="paragraphe">difficile</p>
+        <p class="paragraphe">simple</p>
+      </div>
+    </div>
+  </div>
   <p class="paragraphe">Dispositif :</p>
-  <p class="paragraphe evaluation-text" data-evaluation-helps-target="listDispositif">à éviter
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">1</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">2</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">3</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">4</span>
-    <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">5</span> à tenter !</p>
+  <div data-evaluation-helps-target="listDispositif">
+    <p class="paragraphe evaluation-text">à éviter
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">1</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">2</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">3</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">4</span>
+      <span class="notes-evaluation" data-action="click->evaluation-helps#setDispositif">5</span>
+    à tenter !</p>
+    <div class="evaluation-text-phone">
+      <div class="d-flex list-notes">
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDispositif">1</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDispositif">2</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDispositif">3</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDispositif">4</span>
+        <span class="notes-evaluation-phone" data-action="click->evaluation-helps#setDispositif">5</span>
+      </div>
+      <div class="d-flex info-notation">
+        <p class="paragraphe">à éviter</p>
+        <p class="paragraphe">à tenter !</p>
+      </div>
+    </div>
+  </div>
   <div class="button">
     <button class="button-evaluation" data-action="click->evaluation-helps#send">Valider</button>
   </div>
