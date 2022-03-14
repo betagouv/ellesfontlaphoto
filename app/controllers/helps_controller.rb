@@ -29,12 +29,12 @@ class HelpsController < ApplicationController
   def show
     @help = Help.find(params[:id])
     @review = Review.new
-    @evaluation_help = EvaluationHelp.new
     @reviews = @help.reviews
+    @evaluation_help = EvaluationHelp.new
     @dossier_grades_count = @help.evaluation_helps.where.not(eval_dossier: nil).count
-    @dossier_grade = @dossier_grades_count == 0 ? nil : @help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count
+    @dossier_grade = @dossier_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count.to_f).round()
     @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count
-    @dispositif_grade = @dispositif_grades_count == 0 ? nil : @help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count
+    @dispositif_grade = @dispositif_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count.to_f).round()
     next_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
     if next_date.nil? || (next_date.start_date - Date.today).to_i > 15
       @help_status = "close"

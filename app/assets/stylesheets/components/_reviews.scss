@@ -24,6 +24,16 @@
   }
   .evaluations_helps_index {
     margin-bottom: 30px;
+    .d-flex {
+      align-items: center;
+      justify-content: space-between;
+      .paragraphe {
+        margin: 0;
+      }
+    }
+    .paragraphe-small {
+      margin-top: 0;
+    }
     .progress-bar {
       background: $white;
       border-radius: 8px;
@@ -87,19 +97,36 @@
       margin-top: 12px;
     }
   }
-
-  .evaluation-text {
+  .evaluation-text-phone {
+    display: none;
+  }
+  .evaluation-text,.evaluation-text-phone {
     font-size: 14px;
     margin: 25px 0;
     cursor: pointer;
-    .notes-evaluation.active {
-      background-color: $purple-blue;
+    .notes-evaluation.active,.notes-evaluation-phone.active {
+      background-color: $purple-blue !important;
     }
-    .notes-evaluation {
+    .list-notes {
+      margin: 0px 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .info-notation {
+      align-items: center;
+      margin: 0px 10px;
+      justify-content: space-between;
+      .paragraphe {
+        margin-top: 0;
+      }
+    }
+    .notes-evaluation,.notes-evaluation-phone {
       background-color: $white;
       border-radius: 50%;
       padding: 8px 14px 9px 14px;
       margin: 0 8px;
+    }
+    .notes-evaluation {
       &:hover {
         background-color: $hover-blue;
       }
@@ -130,12 +157,6 @@
     padding: 20px 30px;
     .evaluation-help-div {
       padding: 35px 20px;
-      .evaluation-text {
-        white-space: nowrap;
-        .notes-evaluation {
-          margin: 3px;
-        }
-      }
     }
     .sub-div-review {
       margin-bottom: 24px;
@@ -157,6 +178,7 @@
       }
     }
   }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -164,14 +186,22 @@
     padding: 20px 15px;
     .evaluation-help-div {
       padding: 35px 10px;
-      .evaluation-text {
-        .notes-evaluation {
-          padding: 6px 12px 7px 12px;
-        }
-      }
     }
     .form-review,.display-reviews {
       padding: 35px 20px;
+    }
+  }
+  .evaluation-help-div {
+    .evaluation-text {
+      display: none;
+    }
+    .evaluation-text-phone {
+      display: block;
+      margin: 13px 0;
+      white-space: nowrap;
+      .notes-evaluation-phone {
+        padding: 11px 17px 12px 17px;
+      }
     }
   }
 }

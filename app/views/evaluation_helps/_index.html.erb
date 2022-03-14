@@ -3,18 +3,21 @@
   <% if @dossier_grade.nil? %>
     <p class="paragraphe-small">0 votes</p>
   <% else %>
+  <div class="d-flex">
     <div class="progress-bar">
-      <% if @dossier_grade == 1 %>
-        <div class="progress1"></div>
-      <% elsif @dossier_grade == 2 %>
-        <div class="progress2"></div>
-      <% elsif @dossier_grade == 3 %>
-        <div class="progress3"></div>
-      <% elsif @dossier_grade == 4 %>
-        <div class="progress4"></div>
-      <% elsif @dossier_grade == 5 %>
-        <div class="progress5"></div>
-      <% end %>
+        <% if @dossier_grade == 1 %>
+          <div class="progress1"></div>
+        <% elsif @dossier_grade == 2 %>
+          <div class="progress2"></div>
+        <% elsif @dossier_grade == 3 %>
+          <div class="progress3"></div>
+        <% elsif @dossier_grade == 4 %>
+          <div class="progress4"></div>
+        <% elsif @dossier_grade == 5 %>
+          <div class="progress5"></div>
+        <% end %>
+      </div>
+      <p class="paragraphe"><%= @dossier_grade %>/5</p>
     </div>
     <p class="paragraphe-small"><%= @dossier_grades_count %> votes</p>
   <% end %>
@@ -22,18 +25,21 @@
   <% if @dispositif_grade.nil? %>
     <p class="paragraphe-small">0 votes</p>
   <% else %>
-    <div class="progress-bar">
-      <% if @dispositif_grade == 1 %>
-        <div class="progress1"></div>
-      <% elsif @dispositif_grade == 2 %>
-        <div class="progress2"></div>
-      <% elsif @dispositif_grade == 3 %>
-        <div class="progress3"></div>
-      <% elsif @dispositif_grade == 4 %>
-        <div class="progress4"></div>
-      <% elsif @dispositif_grade == 5 %>
-        <div class="progress5"></div>
-      <% end %>
+    <div class="d-flex">
+      <div class="progress-bar">
+        <% if @dispositif_grade == 1 %>
+          <div class="progress1"></div>
+        <% elsif @dispositif_grade == 2 %>
+          <div class="progress2"></div>
+        <% elsif @dispositif_grade == 3 %>
+          <div class="progress3"></div>
+        <% elsif @dispositif_grade == 4 %>
+          <div class="progress4"></div>
+        <% elsif @dispositif_grade == 5 %>
+          <div class="progress5"></div>
+        <% end %>
+      </div>
+      <p class="paragraphe"><%= @dispositif_grade %>/5</p>
     </div>
     <p class="paragraphe-small"><%= @dispositif_grades_count %> votes</p>
   <% end %>

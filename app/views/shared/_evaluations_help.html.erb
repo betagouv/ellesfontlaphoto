@@ -5,7 +5,7 @@
 <div class="sub-div-review">
   <div class="display-reviews">
     <p class="paragraphe-title mt0">Avis et commentaires</p>
-    <%= render "evaluation_helps/index", reviews: @reviews %>
+    <%= render "evaluation_helps/index", reviews: @reviews, dispositif_grade: @dispositif_grade, dossier_grade: @dossier_grade  %>
     <%= render "reviews/index", reviews: @reviews %>
   </div>
 </div>

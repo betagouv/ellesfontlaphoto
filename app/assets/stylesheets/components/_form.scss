@@ -23,12 +23,25 @@
       border-radius: 0px 24px 24px 24px;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 14px;
-      line-height: 16px;
+      line-height: 20px;
       color: $grey;
       width: 90%;
-      padding-top: 20px;
-      padding-left: 20px;
+      padding: 20px 10px 0px 20px;
       max-width: 550px;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .form-review {
+    position: relative;
+    .review-button {
+      position: absolute;
+      top: 75%;
+      right: 10%;
+    }
+    .review_comment {
+      height: 200px;
     }
   }
 }
