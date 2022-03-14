@@ -29,9 +29,8 @@ class HelpsController < ApplicationController
   def show
     @help = Help.find(params[:id])
     @review = Review.new
-    @evaluation_help = EvaluationHelp.new
     @reviews = @help.reviews
-    # raise
+    @evaluation_help = EvaluationHelp.new
     @dossier_grades_count = @help.evaluation_helps.where.not(eval_dossier: nil).count
     @dossier_grade = @dossier_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count.to_f).round()
     @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count

@@ -2,7 +2,7 @@ import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ['listDossier', 'listDispositif', 'inputDossier', 'inputDispositif', 'form'];
+  static targets = ['listDossier', 'listDispositif', 'inputDossier', 'inputDispositif', 'form', 'url', 'formIndex'];
 
   setDossier(event) {
     if (this.listDossierTarget.querySelector(".active")) {
@@ -51,6 +51,16 @@ export default class extends Controller {
         }
         this.inputDossierTarget.value = ""
         this.inputDispositifTarget.value = ""
+        this.refreshData()
+      })
+  }
+
+  refreshData() {
+    fetch(this.formIndexTarget.action, { headers: { 'Accept': 'text/plain' } })
+      .then(response => response.text())
+      .then((data) => {
+        console.log(data)
+        document.querySelector(".evaluations_helps_index").outerHTML = data;
       })
   }
 }

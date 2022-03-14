@@ -8,8 +8,20 @@ class EvaluationHelpsController < ApplicationController
       @error = true
     end
     respond_to do |format|
-      format.html { render redirect_to help_path(@help) }
+      format.html { redirect_to help_path(@help) }
       format.json
+    end
+  end
+
+  def index
+    @help = Help.find(params[:help_id])
+    @dossier_grades_count = @help.evaluation_helps.where.not(eval_dossier: nil).count
+    @dossier_grade = @dossier_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count.to_f).round()
+    @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count
+    @dispositif_grade = @dispositif_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count.to_f).round()
+    respond_to do |format|
+      format.html { redirect_to help_path(@help) }
+      format.text { render partial: 'evaluation_helps/index', locals: { reviews: @reviews, dossier_grade: @dossier_grade, dispositif_grade: @dispositif_grade }, formats: [:html] }
     end
   end
 
