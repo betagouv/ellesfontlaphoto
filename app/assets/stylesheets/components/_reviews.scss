@@ -12,7 +12,7 @@
       font-family: Marianne-Regular;
       color: $white;
       padding: 12px 20px;
-      margin: 10px;
+      margin: 10px 0px;
     .comment-help {
       font-size: 14px;
       line-height: 20px;
@@ -103,6 +103,75 @@
       &:hover {
         background-color: $hover-blue;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .div-review {
+    .evaluation-help-div {
+      padding: 46px 40px;
+      .evaluation-text {
+        white-space: nowrap;
+        .notes-evaluation {
+          margin: 3px;
+        }
+      }
+    }
+    .form-review,.display-reviews {
+      padding: 46px 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .div-review {
+    display: block;
+    padding: 20px 30px;
+    .evaluation-help-div {
+      padding: 35px 20px;
+      .evaluation-text {
+        white-space: nowrap;
+        .notes-evaluation {
+          margin: 3px;
+        }
+      }
+    }
+    .sub-div-review {
+      margin-bottom: 24px;
+      .paragraphe {
+        text-align: center;
+      }
+      .button {
+        justify-content: center;
+      }
+    }
+    .form-review,.display-reviews {
+      padding: 35px 40px;
+      .progress-bar {
+        width: 80%;
+        text-align: center;
+      }
+      .simple_form.new_review {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .div-review {
+    padding: 20px 15px;
+    .evaluation-help-div {
+      padding: 35px 10px;
+      .evaluation-text {
+        .notes-evaluation {
+          padding: 6px 12px 7px 12px;
+        }
+      }
+    }
+    .form-review,.display-reviews {
+      padding: 35px 20px;
     }
   }
 }
