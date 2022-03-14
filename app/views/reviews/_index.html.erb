@@ -1,6 +1,7 @@
-<div class="display-reviews">
-  <p class="paragraphe-title mt0">Avis et commentaires</p>
-  <% reviews.each do |review| %>
-    <p class="comment-help"><%= review.comment.gsub(/\n/, '<br/>').html_safe %></p>
-  <% end %>
-</div>
+<% reviews.each do |review| %>
+  <div class="comment">
+    <p class="comment-help mt5 mb0"><%= review.comment.gsub(/\n/, '<br/>').html_safe %></p>
+    <p class="comment-date mt0"><%= review.created_at.strftime("%d.%m.%y")  %></p>
+  </div>
+<% end %>
+

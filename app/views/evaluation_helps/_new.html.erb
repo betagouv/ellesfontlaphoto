@@ -1,5 +1,8 @@
 <div class="evaluation-help-div" id="review-div" data-controller="evaluation-helps">
   <p class="paragraphe-title mt0">Vous connaissez ce dispositif, évaluez-le !</p>
+  <% if @error %>
+    <p class="paragraphe-bold" style="color: red; font-weight: 900;">Une erreur est survenue pouvez vous réessayez</p>
+  <% end %>
   <p class="paragraphe">Dossier de candidature :</p>
   <p class="paragraphe evaluation-text" data-evaluation-helps-target="listDossier">difficile
     <span class="notes-evaluation" data-action="click->evaluation-helps#setDossier">1</span>

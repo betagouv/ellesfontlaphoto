@@ -99,6 +99,18 @@ p {
   }
 }
 
+.paragraphe-small {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 14px;
+  color: $black;
+  p {
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 16px;
+    color: $black;
+    margin-bottom:0;
+  }
+}
+
 .paragraphe.card {
   font-size: 16px;
   p {
@@ -381,7 +393,8 @@ a {
     padding-bottom: 10px;
   }
   .paragraphe-bold
-  .paragraphe {
+  .paragraphe
+  .paragraphe-small {
     text-align: left !important;
   }
   .subtitle {

@@ -25,12 +25,24 @@ export default class extends Controller {
 
     fetch(this.formTarget.action, {
       method: 'POST',
-      headers: { 'Accept': 'text/plain', 'X-CSRF-Token': csrfToken() },
+      headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
       body: new FormData(this.formTarget)
     })
-      .then(response => response.text())
+      .then(response => response.json())
       .then((data) => {
-        this.contentTarget.outerHTML = data
+        if (data.inserted_item) {
+          if (this.inputDossierTarget.value != "" && this.inputDispositifTarget.value != "") {
+            this.listDossierTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+            this.listDispositifTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+          }
+          else if (this.inputDossierTarget.value != "") {
+            this.listDossierTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+          } else if (this.inputDispositifTarget.value != "") {
+            this.listDispositifTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+          }
+        }
+        this.inputDossierTarget.value = ""
+        this.inputDispositifTarget.value = ""
       })
   }
 }
