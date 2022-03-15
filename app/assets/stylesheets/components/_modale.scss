@@ -238,9 +238,11 @@ $ease: ease;
         justify-content: flex-end;
         .btn-purple {
           background-color: $purple;
+          -webkit-appearance: none;
         }
         .btn-green {
           background-color: $green;
+          -webkit-appearance: none;
         }
         .btn {
           margin-top: 10px;
@@ -258,6 +260,7 @@ $ease: ease;
           color: $black;
           text-shadow: none;
           font-weight: normal;
+          -webkit-appearance: none;
         }
       }
     }
