@@ -15,6 +15,10 @@
     text-decoration: none;
     margin-top: 12px;
     cursor: pointer;
+    -webkit-appearance: none;
+    &:hover {
+      background-color: $hover-blue-purple;
+    }
   }
   .review_comment {
     .text {
@@ -27,7 +31,6 @@
       color: $grey;
       width: 90%;
       padding: 20px 10px 0px 20px;
-      max-width: 550px;
     }
   }
 }
@@ -37,11 +40,8 @@
     position: relative;
     .review-button {
       position: absolute;
-      top: 75%;
+      top: 70%;
       right: 10%;
-    }
-    .review_comment {
-      height: 200px;
     }
   }
 }

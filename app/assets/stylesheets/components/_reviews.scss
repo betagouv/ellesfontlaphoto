@@ -5,6 +5,7 @@
 }
 
 .display-reviews {
+
   .comment {
       background-color: $purple-blue;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
@@ -14,7 +15,7 @@
       padding: 12px 20px;
       margin: 10px 0px;
     .comment-help {
-      font-size: 14px;
+      font-size: 12px;
       line-height: 20px;
     }
     .comment-date {
@@ -31,14 +32,14 @@
         margin: 0;
       }
     }
-    .paragraphe-small {
+    .paragraphe-x-small {
       margin-top: 0;
     }
     .progress-bar {
       background: $white;
       border-radius: 8px;
       height: 9px;
-      width: 200px;
+      width: 90%;
       .progress1 {
         background: $purple-blue;
         height: 9px;
@@ -76,13 +77,20 @@
 .evaluation-help-div {
   height: fit-content;
   margin-bottom: 24px;
+  position: relative;
+  .cross {
+    position: absolute;
+    top: -4%;
+    right: 4%;
+    cursor: pointer;
+    font-size: 19px;
+  }
   form {
     display: none;
   }
   .button {
     width: 100%;
     display: flex;
-    justify-content: right;
     .button-evaluation {
       border-radius: 40px;
       border: none;
@@ -95,17 +103,22 @@
       font-size: 16px;
       text-decoration: none;
       margin-top: 12px;
+      -webkit-appearance: none;
+      &:hover {
+        background-color: $hover-blue-purple;
+      }
     }
   }
   .evaluation-text-phone {
     display: none;
   }
   .evaluation-text,.evaluation-text-phone {
-    font-size: 14px;
+    font-size: 12px;
     margin: 25px 0;
     cursor: pointer;
     .notes-evaluation.active,.notes-evaluation-phone.active {
       background-color: $purple-blue !important;
+      color: $white;
     }
     .list-notes {
       margin: 0px 10px;
@@ -156,24 +169,15 @@
     display: block;
     padding: 20px 30px;
     .evaluation-help-div {
-      padding: 35px 20px;
+      padding: 35px 30px;
     }
     .sub-div-review {
       margin-bottom: 24px;
-      .paragraphe {
-        text-align: center;
-      }
-      .button {
-        justify-content: center;
-      }
     }
     .form-review,.display-reviews {
       padding: 35px 40px;
       .progress-bar {
         width: 80%;
-        text-align: center;
-      }
-      .simple_form.new_review {
         text-align: center;
       }
     }
@@ -184,11 +188,8 @@
 @media only screen and (max-width: 550px) {
   .div-review {
     padding: 20px 15px;
-    .evaluation-help-div {
-      padding: 35px 10px;
-    }
-    .form-review,.display-reviews {
-      padding: 35px 20px;
+    .form-review,.display-reviews,.evaluation-help-div {
+      padding: 24px;
     }
   }
   .evaluation-help-div {

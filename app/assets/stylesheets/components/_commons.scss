@@ -34,7 +34,6 @@ h2 {
 .paragraphe-title {
   font-family: 'Marianne-Bold', sans-serif;
   font-size: 28px;
-  text-align: center;
   color: $black;
 }
 
@@ -111,6 +110,12 @@ p {
   }
 }
 
+.paragraphe-x-small {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 12px;
+  color: $black;
+}
+
 .paragraphe.card {
   font-size: 16px;
   p {
@@ -182,11 +187,13 @@ b, strong {
 
 .emojis-eflc-extra-small {
   width: 12px;
+  height: 14px;
   margin-right: 3px;
 }
 
 .emojis-eflc-small {
   width: 18px;
+  height: 20px;
   margin-right: 3px;
 }
 
@@ -394,10 +401,12 @@ a {
   }
   .paragraphe-title {
     font-size: 18px;
+    text-align: left;
   }
   .paragraphe-bold
   .paragraphe
-  .paragraphe-small {
+  .paragraphe-small
+  .paragraphe-x-small {
     text-align: left;
   }
   .subtitle {
