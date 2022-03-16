@@ -2,7 +2,17 @@ import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ['listDossier', 'listDispositif', 'inputDossier', 'inputDispositif', 'form', 'formIndex', 'divEval', 'divNewEval', 'cross'];
+  static targets = ['listDossier',
+  'listDispositif',
+  'inputDossier',
+  'inputDispositif',
+  'form',
+  'formIndex',
+  'divEval',
+  'divNewEval',
+  'cross',
+  'buttonDossier',
+  'buttonDispositif'];
 
   setDossier(event) {
     if (this.listDossierTarget.querySelector(".active")) {
@@ -33,7 +43,7 @@ export default class extends Controller {
     this.divNewEvalTarget.style.display = "none"
   }
 
-  send() {
+  sendDossier(event) {
     event.preventDefault();
 
     fetch(this.formTarget.action, {
@@ -54,13 +64,37 @@ export default class extends Controller {
               this.crossTarget.style.display = "block"
             } else {
               this.listDossierTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.buttonDossierTarget.style.display = "none"
             }
+          }
+        }
+        this.inputDossierTarget.value = ""
+        this.inputDispositifTarget.value = ""
+        this.refreshData()
+      })
+  }
+
+  sendDispositif(event) {
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        if (data.inserted_item) {
+          if (this.inputDossierTarget.value != "" && this.inputDispositifTarget.value != "") {
+            this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+            this.crossTarget.style.display = "block"
           } else if (this.inputDispositifTarget.value != "") {
             if (this.listDossierTarget.innerHTML == "Merci, nous avons intégré votre avis !") {
               this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
               this.crossTarget.style.display = "block"
             } else {
               this.listDispositifTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.buttonDispositifTarget.style.display = "none"
             }
           }
         }

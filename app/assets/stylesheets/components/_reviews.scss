@@ -89,9 +89,7 @@
     display: none;
   }
   .button {
-    width: 100%;
-    display: flex;
-    .button-evaluation {
+    .button-evaluation-dossier,.button-evaluation-dispositif {
       border-radius: 40px;
       border: none;
       cursor: pointer;
