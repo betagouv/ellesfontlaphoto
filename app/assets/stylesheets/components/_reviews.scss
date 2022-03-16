@@ -175,7 +175,6 @@
     .form-review,.display-reviews {
       padding: 35px 40px;
       .progress-bar {
-        width: 80%;
         text-align: center;
       }
     }
@@ -191,6 +190,12 @@
     }
   }
   .evaluation-help-div {
+    .d-flex.justify-between {
+      display: block;
+      .button-evaluation-dossier,.button-evaluation-dispositif {
+        margin:0;
+      }
+    }
     .evaluation-text {
       display: none;
     }
