@@ -43,9 +43,12 @@
         font-size: 14px;
         white-space: nowrap;
       }
-      .flottante-pink {
-        background-color: $background-pink !important;
+      .flottante-red {
+        background-color: $red !important;
         border: none;
+      }
+      .flottante-ouverte {
+        background-color: $purple;
       }
     }
   }

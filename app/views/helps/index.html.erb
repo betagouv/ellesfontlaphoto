@@ -1,64 +1,4 @@
 <%= render "shared/notation_catalogue_helps" %>
-
-<div class="url-image" style="display: none;">
-  <p id="img-Matériel"><%= asset_path "emojis/appareil-photo.png" %></p>
-  <p id="img-Production"><%= asset_path "emojis/outils.png" %></p>
-  <p id="img-Aide-Sociale"><%= asset_path "emojis/boule-de-cristal.png" %></p>
-  <p id="img-Résidence"><%= asset_path "emojis/maison.png" %></p>
-  <p id="img-Diffusion"><%= asset_path "emojis/haut-parleur.png" %></p>
-  <p id="img-arrow-down"><%= asset_path "arrow-search.svg" %></p>
-</div>
-<div class="search-div-type" id="index-helps">
-  <p class="text-search">je veux</p>
-  <div class="dropdown">
-    <% if @selected_type.present? %>
-      <div id="select-search-type" class="choosen"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-large", alt: "émoji #{Help::HELP_TYPE[@selected_type.to_sym]}" %> <%= Help::HELP_TYPE[@selected_type.to_sym][:text] %><%= image_tag "arrow-search.svg", class: "arrow-search", alt: "icône flèche", width: "25px" %></div>
-    <% else %>
-      <% @sample = Help::HELP_TYPE.values.sample %>
-      <div id="select-search-type"><span id="text-to-change-type"><%= image_tag "emojis/#{@sample[:image]}", class: "emojis-eflc-large", alt: "émoji #{@sample[:image]}" %><%= @sample[:text] %></span><%= image_tag "arrow-search.svg", class: "arrow-search", width: "25px", alt: "icône flèche" %></div>
-    <% end %>
-    <div id="dropdown-elements-type">
-      <% Help::HELP_TYPE.each do |type| %>
-        <div class="dropdown-content-type" data-filter="<%= type.first.to_s %>"><%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-medium", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %></div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="search-div-residence">
-  <p class="text-search text-search-residence">je réside en</p>
-  <div class="dropdown">
-    <% if @selected.present? %>
-      <div id="select-search-residence" class="choosen"><%= @selected %><%= image_tag "arrow-search.svg", class: "arrow-search", alt: "icône flèche", width: "25px" %></div>
-    <% else %>
-        <% @sample = Help::HELP_RESIDENCE.reject{|i| i == ""}.sample %>
-        <% if @sample == "Française ou résidant en France" %>
-          <div id="select-search-residence"><span id="text-to-change-residence">France</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
-        <% elsif @sample == "Française résidant en outre-mer" %>
-          <div id="select-search-residence"><span id="text-to-change-residence">Outre-mer</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
-        <% elsif @sample == "Française ou résidant à l'étranger" %>
-          <div id="select-search-residence"><span id="text-to-change-residence">À l'étranger</span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
-        <% else %>
-          <div id="select-search-residence"><span id="text-to-change-residence"><%= @sample %></span><%= image_tag "arrow-search.svg", alt: "icône flèche", class: "arrow-search", width: "25px" %></div>
-        <% end %>
-    <% end %>
-    <div id="dropdown-elements-residence">
-      <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
-        <% if residence == "Française ou résidant en France" %>
-          <div class="dropdown-content-residence">France</div>
-        <% elsif residence == "Française résidant en outre-mer" %>
-          <div class="dropdown-content-residence">Outre-mer</div>
-        <% elsif residence == "Française résidant à l'étranger"%>
-          <div class="dropdown-content-residence">À l'étranger</div>
-        <% else %>
-          <div class="dropdown-content-residence"><%= residence %></div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="button-search-helps">
-  <%= image_tag "emojis/cible.png", class: "emojis-eflc-small", alt: "émoji cible" %> Filtrer les aides
-</div>
 <%= form_tag helps_path, method: :get, id: "search-form" do %>
   <% if @selected.present? %>
     <%= text_field_tag :residence, params[:residence], value: @selected %>
@@ -72,59 +12,8 @@
   <% end %>
   <%= submit_tag "Search" %>
 <% end %>
-<div class="progress-container">
-  <div class="progress-help"></div>
-</div>
 <div class="main-index">
-  <% if @selected.present? || @selected_type.present? %>
-    <div class="index-direction-helps tag-present">
-      <div class="result-search-mobile">
-        <p class="main-bold-paragraphe result-search-mobile text-align-left"><%= image_tag "emojis/scintillement.png", class: "emojis-eflc-small", alt: "émoji scintillement" %> <%= @helps.count %> résultats pour :</p>
-        <% if @selected.present? %>
-          <p class="button-criteria-selected-help residence" data-category="<%= @selected %>"><%= @selected %> <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
-        <% end %>
-        <% if @selected_type.present? %>
-          <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", alt: "émoji #{Help::HELP_TYPE[@selected_type.to_sym][:text]}", class: "emojis-eflc-extra-small" %><%= Help::HELP_TYPE[@selected_type.to_sym][:text] %> <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-  <% if @selected.present? || @selected_type.present? %>
-    <div class="arrow-down-mobile with-filter">
-  <% else %>
-    <div class="arrow-down-mobile">
-  <% end %>
-      <a href="#cards-anchor"><%= image_tag "arrow-down-purple.svg", alt: "icône flèche" %></a>
-    </div>
   <div class="cards cards-help" id="cards-anchor">
-    <div class="index-direction-tablet-help">
-      <% if @selected.present? || @selected_type.present? %>
-        <div class="result-search-mobile-div">
-          <p class="main-bold-paragraphe result-search-mobile text-align-left"><%= image_tag "emojis/scintillement.png", alt:"émoji scintillement", class: "emojis-eflc-small" %> <%= @helps.count %> résultats pour :</p>
-          <% if @selected.present? %>
-            <p class="button-criteria-selected-help residence" data-category="<%= @selected %>"><%= @selected %> <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
-          <% end %>
-          <% if @selected_type.present? %>
-            <p class="button-criteria-selected-help" data-category="<%= @selected_type %>"><%= image_tag "emojis/#{Help::HELP_TYPE[@selected_type.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{Help::HELP_TYPE[@selected_type.to_sym][:text]}" %><%= Help::HELP_TYPE[@selected_type.to_sym][:text] %> <%= image_tag "cross-criteria.svg", alt: "icône supprimer" %></p>
-          <% end %>
-        </div>
-      <% else %>
-        <p class="info-result main-bold-paragraphe text-align-center"><%= @helps.count %> aides recensées</p>
-        <div class="info-notification">
-          <%= image_tag "emojis/cloche.png", alt: "émoji cloche", class: "emojis-eflc-medium" %>
-          <p class="lh28 mt0 paragraphe text-align-center">Nouvelle fonctionnalités!
-            <strong>Inscrivez-vous sur l’aide qui vous intéresse pour obtenir un rappel à l’ouverture des candidatures !</strong>
-          </p>
-        </div>
-        <p class="paragraphe info-result">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
-      <% end %>
-    </div>
-    <div class="info-notification-mobile">
-      <%= image_tag "emojis/cloche.png", alt: "émoji cloche", class: "emojis-eflc-medium" %>
-      <p class="mt0 lh28 paragraphe text-align-center">Nouvelle fonctionnalités !
-        <strong>Inscrivez-vous sur l’aide qui vous intéresse pour obtenir un rappel à l’ouverture des candidatures !</strong>
-      </p>
-    </div>
     <div class="info-contenu-div-help">
       <p class="info-contenu-help lh35 main-bold-paragraphe text-align-center">Vous connaissez une autre aide ? Soumettez la, et contribuez à cette initiative !</p>
       <div class="text-align-center">
