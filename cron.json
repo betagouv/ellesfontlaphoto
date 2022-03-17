@@ -1,0 +1,7 @@
+{
+  "jobs": [
+    {
+      "command": "0 7 * * * rails candidature_dates:update"
+    }
+  ]
+}
