@@ -1,0 +1,37 @@
+<div class="sticky" data-controller="filter-helps" data-filter-helps-target="divNewEval">
+  <p class="main-bold-paragraphe text-align-center">Filtrer</p>
+  <p class="paragraphe text-align-center">Votre besoin</p>
+  <% Help::HELP_TYPE.each do |type| %>
+    <div class="button-criteria-helps" data-action="click->filter-helps#selectCriteria"><%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %></div>
+  <% end %>
+
+  <hr class="line-filter">
+
+  <p class="paragraphe text-align-center">Aide ouverte</p>
+  <div class="d-flex justify-center">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <hr class="line-filter">
+
+  <p class="paragraphe text-align-center">Lieu</p>
+  <select name="residence" class="button-criteria-helps">
+      <option value="">où résidez vous ?</option>
+      <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
+        <option value="<%= residence %>"><%= residence %></option>
+      <% end %>
+  </select>
+
+  <hr class="line-filter">
+
+  <p class="paragraphe text-align-center">Parité</p>
+  <div class="d-flex justify-center">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>

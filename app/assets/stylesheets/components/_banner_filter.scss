@@ -1,0 +1,33 @@
+.div-filters {
+  .sticky {
+    padding-top: 40px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    .button-criteria-helps {
+      background-color: $white;
+      border-radius: 40px;
+      border: 1px solid $black;
+      display: table !important;
+      padding: 5px 10px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 14px;
+      display: flex;
+      cursor: pointer;
+      margin: 10px auto;
+      &:hover {
+        border: 1px solid $filter-purple;
+      }
+    }
+
+    .button-criteria-helps.selected {
+      border: 1px solid $filter-purple;
+    }
+
+    .line-filter {
+      border-top: 0.1px solid #DEDEDE;
+      border-style: outset;
+      margin: 10% 0;
+    }
+  }
+}

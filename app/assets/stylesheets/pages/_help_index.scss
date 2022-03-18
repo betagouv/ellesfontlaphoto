@@ -1,3 +1,32 @@
+.div-index-helps {
+  display: flex;
+  .div-filters {
+    width: 60%;
+    background-color: $filter-grey;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  .sub-div-index {
+    .header-index {
+      width: 50%;
+      margin: 5% auto;
+      position: relative;
+      h1 {
+        width: 100%
+      }
+      .paragraphe-small {
+        width: 50%;
+        margin: 10px auto;
+      }
+      img {
+        position: absolute;
+        right: -45%;
+        top: -35%;
+      }
+    }
+  }
+}
 .progress-container {
   height: 0.15rem;
   width: 100%;
@@ -129,7 +158,7 @@
     }
     .info-contenu-div-help {
       margin:0;
-      grid-column-start: 4;
+      grid-column-start: 3;
       grid-row-start: 2;
       background-color: $pink;
       margin-bottom: 20px;
