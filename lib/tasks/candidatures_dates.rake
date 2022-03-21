@@ -18,6 +18,17 @@ namespace :candidature_dates do
       else
         help.update(start_date: next_date.start_date, end_date: next_date.end_date)
       end
+      if help.permanent
+        help.update(open: true)
+      elsif next_date.nil? || (next_date.start_date - Date.today).to_i > 15
+        help.update(open: false)
+      elsif next_date.end_date == Date.today
+        help.update(open: true)
+      elsif next_date.start_date <= Date.today && Date.today < next_date.end_date
+        help.update(open: true)
+      elsif (next_date.start_date - Date.today).to_i < 15
+        help.update(open: true)
+      end
     end
   end
 end

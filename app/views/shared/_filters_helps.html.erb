@@ -2,7 +2,10 @@
   <p class="main-bold-paragraphe text-align-center">Filtrer</p>
   <p class="paragraphe text-align-center">Votre besoin</p>
   <% Help::HELP_TYPE.each do |type| %>
-    <div class="button-criteria-helps" data-action="click->filter-helps#selectCriteria"><%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %></div>
+    <div class="d-flex button-criteria-helps" data-action="click->filter-helps#selectCriteria" data-text="<%= type.first %>">
+      <%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %>
+      <span class="cross-criteria-helps">&times;</span>
+    </div>
   <% end %>
 
   <hr class="line-filter">
@@ -10,7 +13,7 @@
   <p class="paragraphe text-align-center">Aide ouverte</p>
   <div class="d-flex justify-center">
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" data-action="change->filter-helps#selectOpenHelp">
       <span class="slider round"></span>
     </label>
   </div>
@@ -34,4 +37,17 @@
       <span class="slider round"></span>
     </label>
   </div>
+  <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
+    <% if @selected.present? %>
+      <%= text_field_tag :residence, params[:residence], value: @selected %>
+    <% else %>
+      <%= text_field_tag :residence, params[:residence] %>
+    <% end %>
+    <% if @selected_type.present? %>
+      <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" } %>
+    <% else %>
+      <%= text_field_tag :type_list, params[:type_list], data: { filter_helps_target: "inputType" } %>
+    <% end %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </div>
