@@ -22,12 +22,10 @@ namespace :candidature_dates do
         help.update(open: true)
       elsif next_date.nil? || (next_date.start_date - Date.today).to_i > 15
         help.update(open: false)
-      elsif next_date.end_date == Date.today
+      elsif next_date.start_date <= Date.today && Date.today <= next_date.end_date
         help.update(open: true)
-      elsif next_date.start_date <= Date.today && Date.today < next_date.end_date
-        help.update(open: true)
-      elsif (next_date.start_date - Date.today).to_i < 15
-        help.update(open: true)
+      else
+        help.update(open: false)
       end
     end
   end

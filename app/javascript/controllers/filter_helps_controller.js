@@ -2,7 +2,7 @@ import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ["form", "inputType"];
+  static targets = ["form", "inputType", "switchButton", "inputLieu"];
 
   selectCriteria(event) {
     event.currentTarget.classList.toggle("selected")
@@ -12,16 +12,23 @@ export default class extends Controller {
     } else {
       this.inputTypeTarget.value += event.currentTarget.dataset.text + ","
     }
-    this.refreshHelps(false);
+    this.refreshHelps();
   }
 
-  selectOpenHelp(event) {
-    console.log(event.currentTarget);
-    this.refreshHelps(true);
+  selectLieu() {
+    this.refreshHelps()
   }
 
-  refreshHelps(open) {
-    fetch(`${this.formTarget.action}?type_list=${this.inputTypeTarget.value}&open=${open}`, { headers: { 'Accept': 'text/plain' } })
+  selectOpenHelp() {
+    this.refreshHelps();
+  }
+
+  selectParity() {
+
+  }
+
+  refreshHelps() {
+    fetch(`${this.formTarget.action}?type_list=${this.inputTypeTarget.value}&open=${this.switchButtonTarget.checked}&residence=${this.inputLieuTarget.value}`, { headers: { 'Accept': 'text/plain' } })
     .then(response => response.text())
     .then((data) => {
       document.querySelector("#main-index-helps").outerHTML = data;

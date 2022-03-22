@@ -15,7 +15,7 @@ ActiveAdmin.register Help do
   after_update do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
     if help.permanent?
-      help.update(start_date: Date.tonday, end_date: Date.today)
+      help.update(start_date: Date.today, end_date: Date.today)
     elsif next_date.nil?
       help.update(start_date: nil, end_date: nil)
     else

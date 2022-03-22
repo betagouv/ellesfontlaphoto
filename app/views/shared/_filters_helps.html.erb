@@ -13,7 +13,7 @@
   <p class="paragraphe text-align-center">Aide ouverte</p>
   <div class="d-flex justify-center">
     <label class="switch">
-      <input type="checkbox" data-action="change->filter-helps#selectOpenHelp">
+      <input type="checkbox" data-action="change->filter-helps#selectOpenHelp" data-filter-helps-target="switchButton">
       <span class="slider round"></span>
     </label>
   </div>
@@ -21,7 +21,7 @@
   <hr class="line-filter">
 
   <p class="paragraphe text-align-center">Lieu</p>
-  <select name="residence" class="button-criteria-helps">
+  <select name="residence" class="button-criteria-helps" data-action="change->filter-helps#selectLieu" data-filter-helps-target="inputLieu">
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
         <option value="<%= residence %>"><%= residence %></option>
