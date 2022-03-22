@@ -6,7 +6,8 @@ export default class extends Controller {
   'listDispositif',
   'inputDossier',
   'inputDispositif',
-  'form',
+  'formDossier',
+  'formDispositif',
   'formIndex',
   'divEval',
   'divNewEval',
@@ -45,11 +46,10 @@ export default class extends Controller {
 
   sendDossier(event) {
     event.preventDefault();
-
-    fetch(this.formTarget.action, {
+    fetch(this.formDossierTarget.action, {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
+      body: new FormData(this.formDossierTarget)
     })
       .then(response => response.json())
       .then((data) => {
@@ -73,8 +73,7 @@ export default class extends Controller {
             }
           }
         }
-        this.inputDossierTarget.value = ""
-        this.inputDispositifTarget.value = ""
+         this.inputDossierTarget.value = ""
         this.refreshData()
       })
   }
@@ -82,10 +81,10 @@ export default class extends Controller {
   sendDispositif(event) {
     event.preventDefault();
 
-    fetch(this.formTarget.action, {
+    fetch(this.formDispositifTarget.action, {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
+      body: new FormData(this.formDispositifTarget)
     })
       .then(response => response.json())
       .then((data) => {
@@ -108,7 +107,6 @@ export default class extends Controller {
             }
           }
         }
-        this.inputDossierTarget.value = ""
         this.inputDispositifTarget.value = ""
         this.refreshData()
       })

@@ -62,13 +62,19 @@
       </div>
     </div>
   </div>
-  <%= simple_form_for [help, evaluation_help], html: { data: { evaluation_helps_target: "form" } } do |f| %>
+
+  <%= simple_form_for [help, evaluation_help], html: { data: { evaluation_helps_target: "formDossier" } } do |f| %>
     <%= f.input :eval_dossier, input_html: { "data-evaluation-helps-target" => "inputDossier" } %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= simple_form_for [help, evaluation_help], html: { data: { evaluation_helps_target: "formDispositif" } } do |f| %>
     <%= f.input :eval_dispositif, input_html: { "data-evaluation-helps-target" => "inputDispositif" } %>
     <%= f.submit %>
   <% end %>
-    <%= form_with url: help_evaluation_helps_path(help), method: :get, html: { class:
-      'mb-4', data: { evaluation_helps_target: 'formIndex' } } do |f| %>
-      <%= f.text_field :id, value: help.id %>
-    <% end %>
+
+  <%= form_with url: help_evaluation_helps_path(help), method: :get, html: { class:
+    'mb-4', data: { evaluation_helps_target: 'formIndex' } } do |f| %>
+    <%= f.text_field :id, value: help.id %>
+  <% end %>
 </div>

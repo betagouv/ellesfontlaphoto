@@ -2,13 +2,13 @@ class EvaluationHelpsController < ApplicationController
   def create
     @help = Help.find(params[:help_id])
     @evaluation_help = EvaluationHelp.new(evaluation_params)
-    # if (EvaluationHelp::NOTES.include?(@evaluation_help.eval_dossier) && @evaluation_help.eval_dispositif == nil) || (EvaluationHelp::NOTES.include?(@evaluation_help.eval_dispositif) && @evaluation_help.eval_dossier == nil)
+    if (EvaluationHelp::NOTES.include?(@evaluation_help.eval_dossier) && @evaluation_help.eval_dispositif == nil) || (EvaluationHelp::NOTES.include?(@evaluation_help.eval_dispositif) && @evaluation_help.eval_dossier == nil) || (EvaluationHelp::NOTES.include?(@evaluation_help.eval_dispositif) && EvaluationHelp::NOTES.include?(@evaluation_help.eval_dossier))
       @evaluation_help.help = @help
       if @evaluation_help.save
       else
         @error = true
       end
-    # end
+    end
     respond_to do |format|
       format.html { redirect_to help_path(@help) }
       format.json
