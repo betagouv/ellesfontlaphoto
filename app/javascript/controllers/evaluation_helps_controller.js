@@ -55,8 +55,13 @@ export default class extends Controller {
       .then((data) => {
         if (data.inserted_item) {
           if (this.inputDossierTarget.value != "" && this.inputDispositifTarget.value != "") {
-            this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
-            this.crossTarget.style.display = "block"
+            if (this.inputDispositifTarget.value != "") {
+              this.listDossierTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.buttonDossierTarget.style.display = "none"
+            } else {
+              this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.crossTarget.style.display = "block"
+            }
           }
           else if (this.inputDossierTarget.value != "") {
             if(this.listDispositifTarget.innerHTML == "Merci, nous avons intégré votre avis !") {
@@ -86,8 +91,13 @@ export default class extends Controller {
       .then((data) => {
         if (data.inserted_item) {
           if (this.inputDossierTarget.value != "" && this.inputDispositifTarget.value != "") {
-            this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
-            this.crossTarget.style.display = "block"
+            if (this.inputDossierTarget.value != "") {
+              this.listDispositifTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.buttonDispositifTarget.style.display = "none"
+            } else {
+              this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
+              this.crossTarget.style.display = "block"
+            }
           } else if (this.inputDispositifTarget.value != "") {
             if (this.listDossierTarget.innerHTML == "Merci, nous avons intégré votre avis !") {
               this.divEvalTarget.innerHTML = "Merci, nous avons intégré votre avis !";
@@ -108,7 +118,6 @@ export default class extends Controller {
     fetch(this.formIndexTarget.action, { headers: { 'Accept': 'text/plain' } })
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
         document.querySelector(".evaluations_helps_index").outerHTML = data;
       })
   }

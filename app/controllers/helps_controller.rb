@@ -20,7 +20,7 @@ class HelpsController < ApplicationController
     if params[:open] == "true"
       @helps = @helps.where(open: true)
     end
-    @helps = @helps.order(:end_date)
+    @helps = @helps.order('end_date')
     @helps_count = @helps.count
 
     respond_to do |format|
