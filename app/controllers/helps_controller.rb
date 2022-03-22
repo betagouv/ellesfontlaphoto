@@ -17,8 +17,11 @@ class HelpsController < ApplicationController
     if params[:type_list].present? && params[:type_list].split(",").length != 0
       @helps = @helps.tagged_with(params[:type_list].split(","), :any => true)
     end
-    if params[:open] == "true"
+    if params[:open].present? && params[:open] == "true"
       @helps = @helps.where(open: true)
+    end
+    if params[:parite].present? && params[:parite] == "true"
+      @helps = @helps.where(old_laureats_parite: "respectée")
     end
     @helps = @helps.order('end_date')
     @helps_count = @helps.count
