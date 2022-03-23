@@ -2,7 +2,7 @@
   <div class="header-index">
     <% if @selected %>
       <% if @helps.count == 0 %>
-        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span><br> mais nous en ajoutons<br>régulièrement, n’hésitez pas <br>à revenir.</h1>
+        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
       <% else %>
         <h1 class="spectral-title"><span class="color-purple"><%= @helps.count %></span>/<%= @total_count %> aides<br> pour les photographes</h1>
       <% end %>
