@@ -59,6 +59,15 @@ a {
   color: $black;
 }
 
+.spectral-title {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+}
+
 .subtitle-spectral {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -225,6 +234,10 @@ b, strong {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .flex-div-left {

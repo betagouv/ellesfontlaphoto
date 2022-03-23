@@ -1,8 +1,10 @@
 class HelpsController < ApplicationController
   def index
     @helps = Help.all.where(visible: true)
-    @searched = false
+    @selected = false
+    @total_count = @helps.count
     if params[:residence].present?
+      @selected = true
       if params[:residence] == "Outre-mer"
         @helps = Help.where(residence_condition: ["Guadeloupe", "Guyane", "Martinique", "Mayotte", "Réunion", "Française résidant en outre-mer", "Française ou résidant en France", ""])
       elsif params[:residence] == "Guadeloupe" || params[:residence] == "Guyane" || params[:residence] == "Martinique" || params[:residence] == "Mayotte" || params[:residence] == "Réunion"
@@ -14,16 +16,26 @@ class HelpsController < ApplicationController
       else
         @helps = Help.where(residence_condition: [params[:residence], "Française ou résidant en France", ""])
       end
-      @selected = params[:residence] == "Française résidant en outre-mer" ? "en Outre-mer" : params[:residence]
-      @searched = true
     end
-    if params[:type_list].present?
-      @helps = @helps.tagged_with(params[:type_list])
-      @selected_type = params[:type_list]
-      @searched = true
+    if params[:type_list].present? && params[:type_list].split(",").length != 0
+      @selected = true
+      @helps = @helps.tagged_with(params[:type_list].split(","), :any => true)
+    end
+    if params[:open].present? && params[:open] == "true"
+      @selected = true
+      @helps = @helps.where(open: true)
+    end
+    if params[:parite].present? && params[:parite] == "true"
+      @selected = true
+      @helps = @helps.where(old_laureats_parite: "respectée")
     end
     @helps = @helps.order('end_date')
     @helps_count = @helps.count
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'shared/main_index_helps', locals: { helps: @helps }, formats: [:html] }
+    end
   end
 
   def show

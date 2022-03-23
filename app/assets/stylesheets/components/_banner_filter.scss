@@ -1,0 +1,47 @@
+.div-filters {
+  .sticky {
+    padding-top: 40px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    .button-criteria-helps {
+      background-color: $white;
+      border-radius: 40px;
+      border: 1px solid $black;
+      display: table !important;
+      padding: 5px 10px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 14px;
+      display: flex;
+      cursor: pointer;
+      margin: 10px auto;
+      position: relative;
+      &:hover {
+        border: 1px solid $filter-purple;
+      }
+      .cross-criteria-helps {
+        display: none;
+      }
+      .cross-criteria-helps.display-inline {
+        display: inline;
+        position: absolute;
+        right: 4%;
+        top: 2%;
+      }
+    }
+    select {
+      margin: 10px !important;
+    }
+
+    .button-criteria-helps.selected {
+      border: 1px solid $filter-purple;
+      padding-right: 20px;
+    }
+
+    .line-filter {
+      border-top: 0.1px solid #DEDEDE;
+      border-style: outset;
+      margin: 10% 0;
+    }
+  }
+}
