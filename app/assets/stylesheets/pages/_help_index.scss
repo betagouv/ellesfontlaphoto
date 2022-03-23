@@ -1,7 +1,8 @@
 .div-index-helps {
   display: flex;
   .div-filters {
-    width: 400px;
+    max-width: 500px;
+    min-height: 100vh;
     background-color: $filter-grey;
   }
   .sub-div-index {
@@ -23,6 +24,7 @@
         position: absolute;
         right: -45%;
         top: -35%;
+        z-index: -1;
       }
     }
   }
