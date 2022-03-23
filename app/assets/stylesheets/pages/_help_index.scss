@@ -236,7 +236,7 @@
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 14px;
       cursor: pointer;
-      margin: 10px auto;
+      margin: 0 auto;
       position: absolute;
       top: 80vh;
       z-index: 1;
@@ -339,7 +339,14 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 550px) {
+  .header-index {
+    width: 100% !important;
+    margin: 0 auto 5% !important;
+    img {
+      position: static !important;
+    }
+  }
   .main-index {
     padding: 5% 5% 3% 5%;
   }

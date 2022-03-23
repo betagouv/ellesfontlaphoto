@@ -3,6 +3,7 @@
     Filtrer
   </div>
   <div class="header-index">
+    <%= image_tag "illu-index.svg" %>
     <% if @selected %>
       <% if @helps.count == 0 %>
         <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
@@ -15,7 +16,6 @@
     <% if @helps.count > 0 %>
       <p class="paragraphe-small info-result text-align-center">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
     <% end %>
-    <%= image_tag "illu-index.svg" %>
   </div>
   <div class="main-index">
     <div class="cards cards-help" id="cards-anchor">
