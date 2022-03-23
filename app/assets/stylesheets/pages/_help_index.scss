@@ -1,11 +1,8 @@
 .div-index-helps {
   display: flex;
   .div-filters {
-    width: 280px;
+    width: 400px;
     background-color: $filter-grey;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
   }
   .sub-div-index {
     .header-index {

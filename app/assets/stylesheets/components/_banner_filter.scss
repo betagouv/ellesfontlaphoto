@@ -29,6 +29,9 @@
         top: 2%;
       }
     }
+    select {
+      margin: 10px !important;
+    }
 
     .button-criteria-helps.selected {
       border: 1px solid $filter-purple;
