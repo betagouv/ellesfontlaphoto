@@ -1,5 +1,8 @@
 .div-index-helps {
   display: flex;
+  .btn-filter {
+    display: none;
+  }
   .div-filters {
     max-width: 500px;
     min-height: 100vh;
@@ -29,6 +32,7 @@
     }
   }
 }
+
 .progress-container {
   height: 0.15rem;
   width: 100%;
@@ -162,7 +166,7 @@
       margin:0;
       grid-column-start: 3;
       grid-row-start: 2;
-      background-color: $pink;
+      background-color: $orange;
       margin-bottom: 20px;
       padding: 22px 22px 35px 22px;
       border-radius: 4px;
@@ -223,6 +227,26 @@
 }
 
 @media only screen and (max-width: 1250px) {
+  #main-index-helps {
+    position: relative;
+    .btn-filter {
+      background-color: $black;
+      border-radius: 40px;
+      color: $white;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 10px auto;
+      position: absolute;
+      top: 80vh;
+      z-index: 1;
+      position: sticky;
+      width: 46px;
+      padding: 11px 24px;
+      display: flex;
+      justify-content: center;
+    }
+  }
   .search-div-type {
     margin: 4% 0 0 5%;
     justify-content: center;

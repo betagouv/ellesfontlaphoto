@@ -15,32 +15,18 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import { searchIndex } from '../plugins/search-index';
-import { updateInput } from '../plugins/search-index';
-import { changeResidence } from '../plugins/search-index';
 import { searchIndexConseils } from '../plugins/search-conseils';
 import { updateInputCategories } from '../plugins/search-conseils';
 import { unSelectFilter } from '../plugins/filter-conseils'
 import { selectFilter } from '../plugins/filter-conseils'
-import { unSelectFilterHelp } from '../plugins/filter-helps'
 
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
-  const index_helps = document.querySelector("#index-helps")
-  if (index_helps) {
-    searchIndex();
-    updateInput();
-  }
 
   const index_conseils = document.querySelector("#index-conseils")
   if (index_conseils) {
     searchIndexConseils();
     updateInputCategories();
-  }
-
-  const buttonsUnSelectedHelps = document.querySelectorAll(".button-criteria-selected-help")
-  if (buttonsUnSelectedHelps) {
-    unSelectFilterHelp(buttonsUnSelectedHelps);
   }
 
   const buttonsUnSelected = document.querySelectorAll(".button-criteria-selected")

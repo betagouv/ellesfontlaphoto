@@ -5,6 +5,9 @@
     position: sticky;
     padding: 40px 0;
     top: 0;
+    .cross {
+      display: none
+    }
     .button-criteria-helps {
       background-color: $white;
       border-radius: 40px;
@@ -45,4 +48,34 @@
       margin: 10% 0;
     }
   }
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .div-filters {
+    display: none;
+    .cross {
+      display: block !important;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: -3px;
+      font-size: 20px;
+    }
+  }
+
+  .div-filters.show {
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+
 }
