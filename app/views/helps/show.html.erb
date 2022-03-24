@@ -105,63 +105,67 @@
       <div class="paragraphe lh28"><%= @help.description_longue.html_safe %></div>
     </div>
   <% end %>
-  <hr class="bhl">
-  <div class="block-fiche-aide">
-    <p class="subtitle">Sélection des lauréates et lauréats</p>
-    <div class="paragraphe lh28"><%= @help.selection.html_safe %></div>
+  <% if @help.selection.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="subtitle">Sélection des lauréates et lauréats</p>
+      <div class="paragraphe lh28"><%= @help.selection.html_safe %></div>
 
-    <% if @help.example_enrollment_url.present? %>
-      <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
-      <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> C'est ici</a>
-    <% end %>
-      <% if @help.compo_commission.present? %>
+      <% if @help.example_enrollment_url.present? %>
+        <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
+        <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> C'est ici</a>
+      <% end %>
+        <% if @help.compo_commission.present? %>
+          <div class="div-parite mt30">
+            <div class="div-parite-sub">
+              <p class="paragraphe-bold mb0">Composition de la commission</p>
+              <div class="paragraphe lh28 mb0 mt0"><%= @help.compo_commission.html_safe %></div>
+        <% else %>
+          <div class="div-parite">
+            <div class="div-parite-sub">
+        <% end %>
+        <% if @help.url_commission.present? %>
+            <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Membres de la commission</a>
+        <% end %>
+          </div>
+        <% if @help.commission_parite.present? %>
+          <%= render "shared/parite_pastille", commission_parite: @help.commission_parite %>
+        <% end %>
+        </div>
+      <% if @help.old_laureat.present? %>
         <div class="div-parite mt30">
           <div class="div-parite-sub">
-            <p class="paragraphe-bold mb0">Composition de la commission</p>
-            <div class="paragraphe lh28 mb0 mt0"><%= @help.compo_commission.html_safe %></div>
-      <% else %>
-        <div class="div-parite">
-          <div class="div-parite-sub">
-      <% end %>
-      <% if @help.url_commission.present? %>
-          <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Membres de la commission</a>
-      <% end %>
-        </div>
-      <% if @help.commission_parite.present? %>
-        <%= render "shared/parite_pastille", commission_parite: @help.commission_parite %>
-      <% end %>
-      </div>
-    <% if @help.old_laureat.present? %>
-      <div class="div-parite mt30">
-        <div class="div-parite-sub">
-          <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
-          <div class="paragraphe lh28 mb0 mt0"><%= @help.old_laureat.html_safe %></div>
-          <% if @help.old_laureat_url.present? %>
-            <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Voir les lauréats</a>
+            <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
+            <div class="paragraphe lh28 mb0 mt0"><%= @help.old_laureat.html_safe %></div>
+            <% if @help.old_laureat_url.present? %>
+              <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Voir les lauréats</a>
+            <% end %>
+          </div>
+          <% if @help.old_laureats_parite.present? %>
+            <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
           <% end %>
         </div>
-        <% if @help.old_laureats_parite.present? %>
-          <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-  <hr class="bhl">
-  <div class="block-fiche-aide flex-div">
-    <div class="flex-div-div">
-      <p class="subtitle">Pièces à fournir</p>
-      <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
-      <%= @help.admin_attachment.html_safe %>
-      <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
-      <%= @help.artistic_attachment.html_safe %>
-    </div>
-    <div class="flex-div-div">
-      <% if @help.other_attachment.present? %>
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", alt:"émoji Pièces spécifiques", class: "emojis-eflc-small" %> Pièces spécifiques</p>
-        <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>
       <% end %>
     </div>
-  </div>
+  <% end %>
+  <% if @help.admin_attachment.present? || @help.other_attachment.present? || @help.artistic_attachment.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide flex-div">
+      <div class="flex-div-div">
+        <p class="subtitle">Pièces à fournir</p>
+        <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
+        <%= @help.admin_attachment.html_safe %>
+        <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
+        <%= @help.artistic_attachment.html_safe %>
+      </div>
+      <div class="flex-div-div">
+        <% if @help.other_attachment.present? %>
+          <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", alt:"émoji Pièces spécifiques", class: "emojis-eflc-small" %> Pièces spécifiques</p>
+          <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <% if @help.parentality.present? || @help.accessibility.present? || @help.specific_condition.present? %>
     <hr class="bhl">
     <% if @help.specific_condition.present? %>
@@ -184,34 +188,36 @@
       </div>
     <% end %>
   <% end %>
-  <hr class="bhl">
-  <div class="block-fiche-aide">
-    <p class="subtitle">Contact</p>
-    <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'institution</a><% end %></p>
-    <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
-      <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
-      <% if @help.contact_institution.present? %>
-        <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
+  <% if @help.institution_name.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="subtitle">Contact</p>
+      <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'institution</a><% end %></p>
+      <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
+        <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
+        <% if @help.contact_institution.present? %>
+          <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
+        <% end %>
+        <% if @help.contact_intitution_email.present? %>
+          <p class="paragraphe lh28 mb0 mt0">
+          <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
+          </p>
+        <% end %>
       <% end %>
-      <% if @help.contact_intitution_email.present? %>
-        <p class="paragraphe lh28 mb0 mt0">
-        <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
+      <% if @help.contact_intitution_partenaire.present? || @help.institution_partenaire.present? %>
+        <p class="paragraphe lh28 mb0">Partenaire participant à la sélection :
+        <% if @help.institution_partenaire.present? %>
+          <div class="paragraphe"><%= @help.institution_partenaire.html_safe %></div>
+        <% end %>
+        <% if @help.contact_intitution_partenaire.present? %>
+          <div class="link-blue mb0"><%= @help.contact_intitution_partenaire.html_safe %></div>
+        <% end %>
         </p>
       <% end %>
-    <% end %>
-    <% if @help.contact_intitution_partenaire.present? || @help.institution_partenaire.present? %>
-      <p class="paragraphe lh28 mb0">Partenaire participant à la sélection :
-      <% if @help.institution_partenaire.present? %>
-        <div class="paragraphe"><%= @help.institution_partenaire.html_safe %></div>
+      <% if @help.faq_url.present? %>
+        <a class="btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
       <% end %>
-      <% if @help.contact_intitution_partenaire.present? %>
-        <div class="link-blue mb0"><%= @help.contact_intitution_partenaire.html_safe %></div>
-      <% end %>
-      </p>
-    <% end %>
-    <% if @help.faq_url.present? %>
-      <a class="btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
-    <% end %>
+  <% end %>
   </div>
   <hr class="bhl">
   <p class="link-blue cursor-normal" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
