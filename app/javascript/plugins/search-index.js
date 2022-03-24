@@ -30,7 +30,7 @@ const updateInput = () => {
   "financer du matériel" : "Matériel",
   "financer une production": "Production",
   "un secours exceptionnel": "Aide Sociale",
-  "une résidence (artistique)": "Résidence",
+  "une résidence": "Résidence",
   "financer une diffusion": "Diffusion"
   }
   const element = document.getElementById("text-to-change-type");

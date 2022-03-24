@@ -26,7 +26,7 @@ class Help < ApplicationRecord
     "Matériel": {image: "appareil-photo.png", text: " financer du matériel"},
     "Production": {image: "outils.png", text: " financer une production"},
     "Aide Sociale": {image: "boule-de-cristal.png", text: " un secours exceptionnel"},
-    "Résidence": {image: "maison.png", text: " une résidence (artistique)"},
+    "Résidence": {image: "maison.png", text: " une résidence"},
     "Diffusion": {image: "haut-parleur.png", text: " financer une diffusion"},
   }
 
