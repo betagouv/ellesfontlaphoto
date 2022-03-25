@@ -27,9 +27,9 @@ class HelpsController < ApplicationController
     end
     if params[:parite].present? && params[:parite] == "true"
       @selected = true
-      @helps = @helps.where(old_laureats_parite: "respectée")
+      @helps = @helps.where(old_laureats_parite: "respectée").or(@helps.where(commission_parite: "respectée"))
     end
-    @helps = @helps.order('end_date')
+    @helps = @helps.order(:end_date)
     @helps_count = @helps.count
 
     respond_to do |format|

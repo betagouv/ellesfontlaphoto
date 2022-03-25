@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "application.js": "/packs/js/application-538fb9372c0b896455b5.js",
   "application.js.map": "/packs/js/application-538fb9372c0b896455b5.js.map",
   "entrypoints": {
@@ -8,6 +9,17 @@
       ],
       "js.map": [
         "/packs/js/application-538fb9372c0b896455b5.js.map"
+=======
+  "application.js": "/packs/js/application-2fd2538be5a4a3ae0993.js",
+  "application.js.map": "/packs/js/application-2fd2538be5a4a3ae0993.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-2fd2538be5a4a3ae0993.js"
+      ],
+      "js.map": [
+        "/packs/js/application-2fd2538be5a4a3ae0993.js.map"
+>>>>>>> staging
       ]
     }
   }
