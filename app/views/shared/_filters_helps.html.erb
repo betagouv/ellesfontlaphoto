@@ -24,7 +24,15 @@
   <select name="residence" class="button-criteria-helps" data-action="change->filter-helps#selectLieu" data-filter-helps-target="inputLieu">
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
-        <option value="<%= residence %>"><%= residence %></option>
+        <% if residence == "Française ou résidant en France" %>
+          <option value="<%= residence %>">France</option>
+        <% elsif residence == "Française résidant en outre-mer" %>
+          <option value="<%= residence %>">Outre-mer</option>
+        <% elsif residence == "Française résidant à l'étranger" %>
+          <option value="<%= residence %>">À l'étranger</option>
+        <% else %>
+          <option value="<%= residence %>"><%= residence %></option>
+        <% end %>
       <% end %>
   </select>
 
@@ -38,7 +46,7 @@
     </label>
   </div>
 
-  <div class="line-filter-mb0"></div>
+  <div class="line-filter"></div>
 
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
