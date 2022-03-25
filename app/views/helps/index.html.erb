@@ -1,9 +1,9 @@
-<div class="div-index-helps">
+<div class="div-index-helps" data-controller="show-filters">
   <div class="sub-div-index">
     <%= render "shared/main_index_helps", helps: @helps %>
     <%= render "shared/notation_catalogue_helps" %>
   </div>
-  <div class="div-filters">
+  <div class="div-filters" data-show-filters-target="divFilters">
     <%= render "shared/filters_helps", selected: @selected, selected_type: @selected_type %>
   </div>
 </div>
