@@ -1,6 +1,6 @@
 <div class="sticky" data-controller="filter-helps" data-filter-helps-target="divNewEval">
   <p class="main-bold-paragraphe text-align-center">Filtrer</p>
-  <p class="paragraphe text-align-center">Votre besoin</p>
+  <p class="paragraphe text-align-center mb20 mt10">Votre besoin</p>
   <% Help::HELP_TYPE.each do |type| %>
     <div class="d-flex button-criteria-helps" data-action="click->filter-helps#selectCriteria" data-text="<%= type.first %>">
       <%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %>
@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-  <hr class="line-filter">
+  <div class="line-filter"></div>
 
   <p class="paragraphe text-align-center">Aide ouverte</p>
   <div class="d-flex justify-center">
@@ -18,25 +18,37 @@
     </label>
   </div>
 
-  <hr class="line-filter">
+  <div class="line-filter"></div>
 
   <p class="paragraphe text-align-center">Lieu</p>
   <select name="residence" class="button-criteria-helps" data-action="change->filter-helps#selectLieu" data-filter-helps-target="inputLieu">
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
-        <option value="<%= residence %>"><%= residence %></option>
+        <% if residence == "Française ou résidant en France" %>
+          <option value="<%= residence %>">France</option>
+        <% elsif residence == "Française résidant en outre-mer" %>
+          <option value="<%= residence %>">Outre-mer</option>
+        <% elsif residence == "Française résidant à l'étranger" %>
+          <option value="<%= residence %>">À l'étranger</option>
+        <% else %>
+          <option value="<%= residence %>"><%= residence %></option>
+        <% end %>
       <% end %>
   </select>
 
-  <hr class="line-filter">
+  <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Parité</p>
-  <div class="d-flex justify-center">
+  <p class="paragraphe text-align-center">Parité respéctée</p>
+  <div class="d-flex justify-center mb40">
     <label class="switch">
       <input type="checkbox" data-action="change->filter-helps#selectParitaireHelp" data-filter-helps-target="switchParite">
       <span class="slider round"></span>
     </label>
   </div>
+
+  <div class="line-filter"></div>
+
+
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
     <% if @selected.present? %>
       <%= text_field_tag :residence, params[:residence], value: @selected %>
@@ -51,3 +63,4 @@
     <%= submit_tag "Search" %>
   <% end %>
 </div>
+
