@@ -10,7 +10,7 @@
       border-radius: 40px;
       border: 1px solid $black;
       display: table !important;
-      padding: 5px 10px;
+      padding: 4px 12px 7px 12px;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 14px;
       display: flex;
@@ -27,22 +27,32 @@
         display: inline;
         position: absolute;
         right: 4%;
-        top: 2%;
+        top: 11%;
       }
     }
     select {
-      margin: 10px !important;
+      margin: 10px 46px !important;
+      height: 40px;
+      width: 227px;
+      &:focus {
+        outline: none;
+        border: 2px solid $filter-purple;
+      }
+      &:after {
+        position: absolute;
+        right: 13px;
+      }
     }
 
+
     .button-criteria-helps.selected {
-      border: 1px solid $filter-purple;
-      padding-right: 20px;
+      border: 2px solid $filter-purple;
+      padding-right: 24px;
     }
 
     .line-filter {
       border-top: 0.1px solid #DEDEDE;
-      border-style: outset;
-      margin: 10% 0;
+      margin: 10% 0 10% 0;
     }
   }
 }
