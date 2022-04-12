@@ -26,7 +26,7 @@ application.yml
 /config/application.yml
 
 
-
+public/packs/manifest.json
 /public/packs
 /public/packs-test
 /node_modules/*
