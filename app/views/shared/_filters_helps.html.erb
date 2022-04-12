@@ -2,12 +2,14 @@
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center">Filtrer</p>
   <p class="paragraphe text-align-center mb20 mt10">Votre besoin</p>
-  <% Help::HELP_TYPE.each do |type| %>
-    <div class="d-flex button-criteria-helps" data-action="click->filter-helps#selectCriteria" data-text="<%= type.first %>">
-      <%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %>
-      <span class="cross-criteria-helps">&times;</span>
-    </div>
-  <% end %>
+  <p class="button-criteria-helps">
+    <% Help::HELP_TYPE.each do |type| %>
+      <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type %>">
+        <%= type %>
+        <span class="cross-criteria-helps">&times;</span>
+      </span>
+    <% end %>
+  </p>
 
   <div class="line-filter"></div>
 

@@ -137,7 +137,7 @@ ActiveAdmin.register Help do
     f.inputs "Bandeau" do
       f.input :visible, as: :boolean, label: "Vibilité"
       f.input :title, label: "Titre"
-      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE.keys, label: "Type"
+      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE, label: "Type"
       f.input :description, label: "Description"
       f.input :description_url, label: "Url de description"
       f.input :permanent

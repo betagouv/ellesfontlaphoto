@@ -1,6 +1,5 @@
 .div-filters {
   .sticky {
-    padding-top: 40px;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     padding: 40px 0;
@@ -9,48 +8,55 @@
       display: none
     }
     .button-criteria-helps {
-      background-color: $white;
-      border-radius: 40px;
-      border: 1px solid $black;
-      display: table !important;
-      padding: 4px 12px 7px 12px;
-      font-family: 'Marianne-Regular', sans-serif;
-      font-size: 14px;
-      display: flex;
-      cursor: pointer;
-      margin: 10px auto;
-      position: relative;
-      &:hover {
-        border: 1px solid $filter-purple;
-      }
-      .cross-criteria-helps {
-        display: none;
-      }
-      .cross-criteria-helps.display-inline {
-        display: inline;
-        position: absolute;
-        right: 4%;
-        top: 11%;
+      margin: 20px;
+      .button-criteria-helps-elements {
+        background-color: $white;
+        border-radius: 40px;
+        border: 1px solid $black;
+        padding: 4px 12px 7px 12px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 5px 0px;
+        position: relative;
+        display: inline-block;
+        &:hover {
+          border: 1px solid $filter-purple;
+        }
+        .cross-criteria-helps {
+          display: none;
+        }
+        .cross-criteria-helps.display-inline {
+          display: inline;
+          position: absolute;
+          right: 3%;
+          top: 11%;
+        }
       }
     }
     select {
       margin: 10px 46px !important;
       height: 40px;
       width: 227px;
+      border-radius: 40px;
+      font-family: 'Marianne-Regular', sans-serif;
+      color: $grey-input;
+      padding: 0px 10px;
       &:focus {
         outline: none;
         border: 2px solid $filter-purple;
+        color: $black;
       }
       &:after {
         position: absolute;
-        right: 13px;
+        right: 20px;
       }
     }
 
 
-    .button-criteria-helps.selected {
+    .button-criteria-helps-elements.selected {
       border: 2px solid $filter-purple;
-      padding-right: 24px;
+      padding-right: 16px;
     }
 
     .line-filter {
@@ -79,6 +85,20 @@
     position: absolute;
     right: 0;
     z-index: 1;
+    max-width: 50%;
+    .sticky {
+      select {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto !important;
+      }
+      .button-criteria-helps {
+        span {
+          margin: 10px auto;
+          display: table;
+        }
+      }
+    }
   }
 }
 
@@ -87,5 +107,8 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .div-filters.show {
+    min-width: 100%;
+  }
 
 }
