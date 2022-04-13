@@ -13,12 +13,15 @@
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Aide ouverte</p>
-  <div class="d-flex justify-center">
-    <label class="switch">
-      <input type="checkbox" data-action="change->filter-helps#selectOpenHelp" data-filter-helps-target="switchButton">
-      <span class="slider round"></span>
-    </label>
+  <div class="filter-switch">
+
+    <div class="d-flex justify-center">
+      <label class="switch">
+        <input type="checkbox" data-action="change->filter-helps#selectOpenHelp" data-filter-helps-target="switchButton">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <p class="paragraphe text-align-center">Aide ouverte</p>
   </div>
 
   <div class="line-filter"></div>
@@ -39,14 +42,17 @@
       <% end %>
   </select>
 
+
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Parité respéctée</p>
-  <div class="d-flex justify-center mb40">
-    <label class="switch">
-      <input type="checkbox" data-action="change->filter-helps#selectParitaireHelp" data-filter-helps-target="switchParite">
-      <span class="slider round"></span>
-    </label>
+  <div class="filter-switch">
+    <div class="d-flex justify-center">
+      <label class="switch">
+        <input type="checkbox" data-action="change->filter-helps#selectParitaireHelp" data-filter-helps-target="switchParite">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <p class="paragraphe text-align-center">Parité respéctée</p>
   </div>
 
   <div class="line-filter"></div>

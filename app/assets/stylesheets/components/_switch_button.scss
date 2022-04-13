@@ -24,6 +24,9 @@
   background-color: #161616;
   -webkit-transition: .4s;
   transition: .4s;
+  &:hover {
+    background-color: $filter-purple;
+  }
 }
 
 .slider:before {

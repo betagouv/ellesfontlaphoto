@@ -34,6 +34,15 @@
         }
       }
     }
+    .filter-switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        margin-left: 15px;
+      }
+    }
+
     select {
       margin: 10px 46px !important;
       height: 40px;
@@ -61,7 +70,7 @@
 
     .line-filter {
       border-top: 0.1px solid #DEDEDE;
-      margin: 10% 0 10% 0;
+      margin: 5% 0 5% 0;
     }
   }
 }
