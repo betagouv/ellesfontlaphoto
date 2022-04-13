@@ -1,5 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
+  permit_params :title, :description, :sector, :institution_name, :type_list, :type_photo_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   after_create do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
@@ -41,6 +41,7 @@ ActiveAdmin.register Help do
       end
       row :sector
       row :type_list
+      row :type_photo_list
       row :institution_name
       row :permanent
       row :help_amount
@@ -82,13 +83,16 @@ ActiveAdmin.register Help do
 
   before_create do |help|
     help.type_list = params["help"]["type_list"]
+    help.type_photo_list = params["help"]["type_photo_list"]
   end
 
   before_update do |help|
     help.type_list = params["help"]["type_list"]
+    help.type_photo_list = params["help"]["type_photo_list"]
   end
 
-  filter :type
+  filter :type_list
+  filter :type_photo_list
   filter :title
   filter :sector
   filter :objectif
@@ -107,6 +111,7 @@ ActiveAdmin.register Help do
     column :residence_condition
     column :sector
     column :type_list
+    column :type_photo
     column :description
     column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
@@ -138,6 +143,7 @@ ActiveAdmin.register Help do
       f.input :visible, as: :boolean, label: "Vibilité"
       f.input :title, label: "Titre"
       f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE, label: "Type"
+      f.input :type_photo_list, :as => :check_boxes, :collection => Help::PHOTO_TYPE, label: "Type de photo"
       f.input :description, label: "Description"
       f.input :description_url, label: "Url de description"
       f.input :permanent

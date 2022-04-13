@@ -3,7 +3,7 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     padding: 40px 0;
-    top: 0;
+    top: 40px;
     .cross {
       display: none
     }
@@ -55,10 +55,6 @@
         outline: none;
         border: 2px solid $filter-purple;
         color: $black;
-      }
-      &:after {
-        position: absolute;
-        right: 20px;
       }
     }
 

@@ -7,7 +7,7 @@ class Help < ApplicationRecord
   has_many :evaluation_helps
   accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
-  acts_as_taggable_on :type
+  acts_as_taggable_on :type, :type_photo
   validates :title, presence: true
   validates :description, presence: true
 
@@ -23,6 +23,8 @@ class Help < ApplicationRecord
   }
 
   HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
+
+  PHOTO_TYPE = ["photo journalisme", "photo artistique"]
 
   HELP_RESIDENCE = [
     "Auvergne-Rhône Alpes",
@@ -50,4 +52,5 @@ class Help < ApplicationRecord
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
   validates :type_list, inclusion: { in: HELP_TYPE }
+  validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
 end

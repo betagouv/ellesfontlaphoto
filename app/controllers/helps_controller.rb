@@ -19,7 +19,12 @@ class HelpsController < ApplicationController
     end
     if params[:type_list].present? && params[:type_list].split(",").length != 0
       @selected = true
-      @helps = @helps.tagged_with(params[:type_list].split(","), :any => true)
+      params[:type_list] = params[:type_list].split(",").map { |x| x == "exposition festival" ? "exposition & festival" : x }
+      @helps = @helps.tagged_with(params[:type_list], :any => true)
+    end
+    if params[:type_photo_list].present?
+      @selected_photo_type = true
+      @helps = @helps.tagged_with(params[:type_photo_list].split(","), :any => true)
     end
     if params[:open].present? && params[:open] == "true"
       @selected = true
