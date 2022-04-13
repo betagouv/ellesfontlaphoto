@@ -1,28 +1,33 @@
 <div class="sticky" data-controller="filter-helps" data-filter-helps-target="divNewEval">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
-  <p class="main-bold-paragraphe text-align-center">Filtrer</p>
+  <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
   <p class="paragraphe text-align-center mb20 mt10">Votre besoin</p>
-  <% Help::HELP_TYPE.each do |type| %>
-    <div class="d-flex button-criteria-helps" data-action="click->filter-helps#selectCriteria" data-text="<%= type.first %>">
-      <%= image_tag "emojis/#{type.second[:image]}", class: "emojis-eflc-extra-small", alt: "émoji #{type.second[:text]}" %><%= type.second[:text] %>
-      <span class="cross-criteria-helps">&times;</span>
-    </div>
-  <% end %>
+  <p class="button-criteria-helps">
+    <% Help::HELP_TYPE.each do |type| %>
+      <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
+        <%= type %>
+        <span class="cross-criteria-helps">&times;</span>
+      </span>
+    <% end %>
+  </p>
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Aide ouverte</p>
-  <div class="d-flex justify-center">
-    <label class="switch">
-      <input type="checkbox" data-action="change->filter-helps#selectOpenHelp" data-filter-helps-target="switchButton">
-      <span class="slider round"></span>
-    </label>
+  <div class="filter-switch">
+
+    <div class="d-flex justify-center">
+      <label class="switch">
+        <input type="checkbox" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="switchButton">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <p class="paragraphe text-align-center">Aide ouverte</p>
   </div>
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Lieu</p>
-  <select name="residence" class="button-criteria-helps" data-action="change->filter-helps#selectLieu" data-filter-helps-target="inputLieu">
+  <p class="paragraphe text-align-center mb0">Lieu</p>
+  <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputLieu">
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
         <% if residence == "Française ou résidant en France" %>
@@ -39,12 +44,24 @@
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center">Parité respéctée</p>
-  <div class="d-flex justify-center mb40">
-    <label class="switch">
-      <input type="checkbox" data-action="change->filter-helps#selectParitaireHelp" data-filter-helps-target="switchParite">
-      <span class="slider round"></span>
-    </label>
+  <p class="paragraphe text-align-center mb0">Type de photo</p>
+  <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
+      <option value="">photo artistique, journalisme ?</option>
+      <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
+        <option value="<%= photo_type %>"><%= photo_type %></option>
+      <% end %>
+  </select>
+
+  <div class="line-filter"></div>
+
+  <div class="filter-switch">
+    <div class="d-flex justify-center">
+      <label class="switch">
+        <input type="checkbox" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="switchParite">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <p class="paragraphe text-align-center">Parité respéctée</p>
   </div>
 
   <div class="line-filter"></div>
@@ -55,6 +72,11 @@
       <%= text_field_tag :residence, params[:residence], value: @selected %>
     <% else %>
       <%= text_field_tag :residence, params[:residence] %>
+    <% end %>
+    <% if @selected_photo_type.present? %>
+      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type %>
+    <% else %>
+      <%= text_field_tag :type_photo, params[:type_photo] %>
     <% end %>
     <% if @selected_type.present? %>
       <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" } %>

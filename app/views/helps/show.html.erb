@@ -7,21 +7,9 @@
   <div class="flex-div-left">
     <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @help.type_list.each do |type| %>
-      <% if type == "Matériel" %>
-        <a href="/helps?residence=&type_list=Matériel"><p class="fiche-tag"> <%= image_tag "emojis/argent-volant.png", alt: "émoji #{Help::HELP_TYPE[type.to_sym][:text]}", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-      <% end %>
-      <% if type == "Production" %>
-        <a href="/helps?residence=&type_list=Production"><p class="fiche-tag"> <%= image_tag "emojis/argent-volant.png", alt: "émoji #{Help::HELP_TYPE[type.to_sym][:text]}", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-      <% end %>
-      <% if type == "Aide Sociale" %>
-        <a href="/helps?residence=&type_list=Aide+Sociale"><p class="fiche-tag"> <%= image_tag "emojis/argent-volant.png", alt: "émoji #{Help::HELP_TYPE[type.to_sym][:text]}", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-      <% end %>
-      <% if type == "Diffusion" %>
-        <a href="/helps?residence=&type_list=Diffusion"><p class="fiche-tag"> <%= image_tag "emojis/argent-volant.png", alt: "émoji #{Help::HELP_TYPE[type.to_sym][:text]}", class: "emojis-eflc-small" %> <%= Help::HELP_TYPE[type.to_sym][:text] %></p></a>
-      <% end %>
-      <% if type == "Résidence" %>
-        <a href="/helps?residence=&type_list=Résidence"><p class="fiche-tag"> <%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small" %> <%= image_tag "emojis/maison.png", alt: "émoji résidence", class: "emojis-eflc-small" %> résidence</p></a>
-      <% end %>
+      <a href="/helps">
+        <p class="fiche-tag"> <%= type %></p>
+      </a>
     <% end %>
   </div>
   <div class="banner-show">
