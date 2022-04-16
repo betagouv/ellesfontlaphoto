@@ -29,7 +29,7 @@
         .cross-criteria-helps.display-inline {
           display: inline;
           position: absolute;
-          right: 3%;
+          right:7px;
           top: 11%;
         }
       }
@@ -61,7 +61,8 @@
 
     .button-criteria-helps-elements.selected {
       border: 2px solid $filter-purple;
-      padding-right: 16px;
+      padding-right: 20px;
+      position: relative;
     }
 
     .line-filter {
@@ -98,7 +99,7 @@
         margin: 0 auto !important;
       }
       .button-criteria-helps {
-        span {
+        .button-criteria-helps-elements {
           margin: 10px auto;
           display: table;
         }
