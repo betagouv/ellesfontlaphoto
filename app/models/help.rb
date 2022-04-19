@@ -24,7 +24,7 @@ class Help < ApplicationRecord
 
   HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
 
-  PHOTO_TYPE = ["photo journalisme", "photo artistique"]
+  PHOTO_TYPE = ["photojournalisme", "photo artistique"]
 
   HELP_RESIDENCE = [
     "Auvergne-Rhône Alpes",

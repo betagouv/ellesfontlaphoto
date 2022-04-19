@@ -46,7 +46,7 @@
 
   <p class="paragraphe text-align-center mb0">Type de photo</p>
   <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
-      <option value="">photo artistique, journalisme ?</option>
+      <option value="">photo artistique, journalistique ?</option>
       <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
         <option value="<%= photo_type %>"><%= photo_type %></option>
       <% end %>
