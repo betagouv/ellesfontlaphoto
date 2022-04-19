@@ -27,6 +27,7 @@
       }
       img {
         position: absolute;
+        max-width: 35%;
         right: -45%;
         top: -10%;
         z-index: -1;
@@ -234,7 +235,7 @@
     pointer-events: none;
     opacity: 0.4;
   }
-  #main-index-helps {
+  #main-index-helps,.main-index-conseils {
     position: relative;
     .btn-filter {
       background-color: $black;

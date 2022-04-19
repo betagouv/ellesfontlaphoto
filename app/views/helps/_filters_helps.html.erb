@@ -2,11 +2,11 @@
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
   <p class="paragraphe text-align-center mb20 mt10">Votre besoin</p>
-  <p class="button-criteria-helps">
+  <p class="button-criteria">
     <% Help::HELP_TYPE.each do |type| %>
       <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
         <%= type %>
-        <span class="cross-criteria-helps">&times;</span>
+        <span class="cross-criteria">&times;</span>
       </span>
     <% end %>
   </p>
@@ -46,7 +46,7 @@
 
   <p class="paragraphe text-align-center mb0">Type de photo</p>
   <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
-      <option value="">photo artistique, journalistique ?</option>
+      <option value="">photo artistique, journalisme ?</option>
       <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
         <option value="<%= photo_type %>"><%= photo_type %></option>
       <% end %>

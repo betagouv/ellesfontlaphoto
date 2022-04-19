@@ -8,6 +8,7 @@ class ConseilsPratiquesController < ApplicationController
     end
     @conseils = @conseil_articles + @conseil_videos
     @searched = false
+    # raise
     if params[:category_list].present?
       @conseil_articles = @conseil_articles.tagged_with(params[:category_list])
       @conseil_videos = @conseil_videos.tagged_with(params[:category_list])
@@ -15,13 +16,17 @@ class ConseilsPratiquesController < ApplicationController
       @selected = params[:category_list]
       @searched = true
     end
-    if params[:tag_list].present?
-      @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
-      @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
-      @conseils = @conseil_articles + @conseil_videos
-      @selected_tag = params[:tag_list]
-      @searched = true
-    end
+    # if params[:tag_list].present?
+    #   @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
+    #   @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
+    #   @conseils = @conseil_articles + @conseil_videos
+    #   @selected_tag = params[:tag_list]
+    #   @searched = true
+    # end
     @conseils_count = @conseils.count
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'main_index_conseils', locals: { conseils: @conseils, last_date_updated: @last_date_updated }, formats: [:html] }
+    end
   end
 end

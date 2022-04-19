@@ -7,10 +7,20 @@
     .cross {
       display: none
     }
-    .button-criteria-helps {
+    .button-criteria {
       margin: 20px;
       text-align: center;
       .button-criteria-helps-elements {
+        &:hover {
+          border: 1px solid $filter-purple;
+        }
+      }
+      .button-criteria-conseils-elements {
+        &:hover {
+          border: 1px solid $orange;
+        }
+      }
+      .button-criteria-helps-elements,.button-criteria-conseils-elements {
         background-color: $white;
         border-radius: 40px;
         border: 1px solid $black;
@@ -21,13 +31,10 @@
         margin: 5px 0px;
         position: relative;
         display: inline-block;
-        &:hover {
-          border: 1px solid $filter-purple;
-        }
-        .cross-criteria-helps {
+        .cross-criteria {
           display: none;
         }
-        .cross-criteria-helps.display-inline {
+        .cross-criteria.display-inline {
           display: inline;
           position: absolute;
           right:7px;
@@ -66,6 +73,12 @@
       position: relative;
     }
 
+    .button-criteria-conseils-elements.selected {
+      border: 2px solid $orange;
+      padding-right: 20px;
+      position: relative;
+    }
+
     .line-filter {
       border-top: 0.1px solid #DEDEDE;
       margin: 5% 0 5% 0;
@@ -99,8 +112,8 @@
         justify-content: center;
         margin: 0 auto !important;
       }
-      .button-criteria-helps {
-        .button-criteria-helps-elements {
+      .button-criteria {
+        .button-criteria-helps-elements,.button-criteria-conseils-elements {
           margin: 10px auto;
           display: table;
         }

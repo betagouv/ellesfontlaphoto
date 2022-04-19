@@ -39,7 +39,7 @@ class HelpsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: 'shared/main_index_helps', locals: { helps: @helps }, formats: [:html] }
+      format.text { render partial: 'main_index_helps', locals: { helps: @helps }, formats: [:html] }
     end
   end
 

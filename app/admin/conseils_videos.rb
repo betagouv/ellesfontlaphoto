@@ -100,7 +100,7 @@ ActiveAdmin.register ConseilsVideo do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys, label: "Categorie List"
+        :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
       f.input :tag_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_TAGS
       f.input :title, label: "Titre"
