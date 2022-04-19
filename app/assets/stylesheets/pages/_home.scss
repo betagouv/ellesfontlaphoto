@@ -25,18 +25,18 @@
         box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $purple !important;
       }
     }
-    .underline-pink {
+    .underline-orange {
       font-family: 'Spectral', serif !important;
       font-style: italic !important;
       font-weight: normal !important;
       font-size: 60px !important;
       border: 0;
-      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $rouille !important;
+      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $orange !important;
       background-color: transparent;
       cursor: pointer;
       color: $black !important;
       &:hover {
-        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $rouille !important;
+        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $orange !important;
       }
     }
 
@@ -579,8 +579,8 @@
       font-size: 38px;
       line-height: 48px;
       padding: 0em 1em 0em 1em;
-      .underline-pink {
-        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $rouille !important;
+      .underline-orange {
+        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $orange !important;
         font-size: 38px !important;
       }
       .underline-purple {
