@@ -9,6 +9,28 @@
     &:hover {
       box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
     }
+
+    .flottante-div {
+      display: flex;
+      position: absolute;
+      top: -15px;
+      left: 10%;
+      .flottante {
+        color: $black !important;
+        border-radius: 40px;
+        display: table !important;
+        padding: 4px 12px 8px 12px;
+        background-color: white;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .flottante-orange {
+        background-color: $orange !important;
+      }
+    }
+
     a {
       color: $black;
       div {

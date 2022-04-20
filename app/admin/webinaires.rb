@@ -5,7 +5,7 @@ ActiveAdmin.register Webinaire do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :date, :place, :description
+  permit_params :title, :date, :place, :description
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Webinaire do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
