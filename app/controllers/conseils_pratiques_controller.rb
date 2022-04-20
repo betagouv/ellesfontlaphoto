@@ -2,16 +2,17 @@ class ConseilsPratiquesController < ApplicationController
   def index
     @conseil_articles = ConseilsArticle.all
     @conseil_videos = ConseilsVideo.all
+    @webinaires = Webinaire.all
     @contact = Contact.new
     unless @conseil_articles.empty? || @conseil_videos.empty?
       @last_date_updated = [@conseil_articles.all.order(:created_at).last.created_at, @conseil_videos.all.order(:created_at).last.created_at].max.strftime("%d/%m/%Y")
     end
-    @conseils = @conseil_articles + @conseil_videos
+    @conseils = @conseil_articles + @conseil_videos + @webinaires
     @searched = false
-    # raise
     if params[:category_list].present?
       @conseil_articles = @conseil_articles.tagged_with(params[:category_list])
       @conseil_videos = @conseil_videos.tagged_with(params[:category_list])
+      @webinaires = @webinaires.tagged_with(params[:category_list])
       @conseils = @conseil_articles + @conseil_videos
       @selected = params[:category_list]
       @searched = true
