@@ -1,103 +1,3 @@
-.progress-container {
-  height: 0.15rem;
-  width: 100%;
-  border-radius: 0.4rem;
-  background: transparent;
-  .progress {
-    height: 100%;
-    width: 0;
-    margin-top: 2%;
-    background: $rouille;
-    transition: width 0.4s ease;
-  }
-}
-
-.search-div-category {
-  padding-top: 3%;
-  height: 80px;
-}
-
-.arrow-search {
-  margin-left: 20px;
-}
-
-.search-div-category {
-  display: flex;
-  align-items: center;
-  padding-left: 25%;
-  .text-search {
-    font-family: 'Marianne-Bold', sans-serif;
-    font-size: 48px;
-    line-height: 30px;
-    margin-right: 10px;
-  }
-  #select-search-category {
-    font-family: 'Marianne-Bold', sans-serif;
-    font-size: 48px;
-    line-height: 30px;
-    border: 0;
-    display: inline;
-    white-space: pre-wrap;
-    box-shadow: $rouille 0px -1.2rem 0px inset;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .choosen {
-    box-shadow: $rouille 0px -3rem 0px inset !important;
-    img {
-      width: 36px !important;
-    }
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    #dropdown-elements-category {
-      display: none;
-      position: absolute;
-      background-color: $white;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      width: 100%;
-      border: 1px solid $rouille;
-      max-height: 335px;
-      overflow:auto;
-      div {
-        color: $black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 20px;
-        line-height: 40px;
-        cursor: pointer;
-        width: 100%;
-      }
-      div:hover {background-color: $hover-pink;}
-    }
-    .show {display: block !important;}
-  }
-}
-
-.button-search {
-  background-color: $rouille;
-  border-radius: 40px;
-  display: table !important;
-  padding: 10px 20px;
-  font-family: 'Marianne-Regular', sans-serif;
-  font-size: 16px;
-  display: flex;
-  margin-left: 25%;
-  margin-top: 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: $hover-pink;
-  }
-}
-
 #search-form {
   display: none;
 }
@@ -107,49 +7,21 @@
   color: $black;
   padding: 3% 5%;
   column-gap: 2rem;
-  .index-direction {
-    max-width: 23%;
-    .dropdown {
-      display: none;
-    }
-    .box-criteria {
-      border: 1px solid $black;
-      padding: 3%;
-      .button-criteria-selected,.button-criteria {
-        background-color: $white;
-        border-radius: 40px;
-        border: 1px solid $rouille;
-        display: table !important;
-        padding: 5px 10px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 14px;
-        display: flex;
-        cursor: pointer;
-        &:hover {
-          background-color: $rouille;
-        }
-      }
-    }
-    .conseils-sum {
-      border: solid 1px $black;
-      padding: 10% 5%;
-      margin:0 auto;
-    }
+  .cards {
     .contact-index-conseils-div {
+      min-height: 340px;
+      background-color: $orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
       .contact-index-conseils {
-        background-color: $rouille;
-        padding: 4%;
-        margin-top: 30px;
-        .img-div {
-          display: flex;
-          justify-content: center;
-          img {
-            max-width: 180px;
-            max-height: 180px;
-          }
-        }
-        .paragraphe-bold {
-          color: $white;
+        margin: 30px;
+        border-radius: 16px;
+        .main-bold-paragraphe {
+          margin-bottom: 45px;
+          color: $black;
+          text-align: center;
         }
         .button-contact-index {
           background-color: $white;
@@ -161,48 +33,45 @@
           display: flex;
           margin: 20px auto;
           cursor: pointer;
+
           &:hover {
-            background-color: $hover-pink;
+            opacity: 0.7;
           }
         }
       }
+
       .small-paragraphe {
         margin-top: 10px;
       }
-    }
-  }
-  .cards {
-    .index-direction-tablet-conseils {
-      display: none;
     }
     .info-contenu-div-conseil {
       margin:0;
       grid-column-start: 3;
       grid-row-start: 2;
-      background-color: $black;
+      background-color: $purple;
       padding: 22px 22px 35px 22px;
-      border-radius: 4px;
+      border-radius: 16px;
       .info-contenu-conseil {
-        color: $rouille;
+        color: $black;
         text-align: center !important;
         margin-bottom: 40px;
       }
-      .button-contenu-conseil {
-        margin: 0 auto !important;
-        background-color: $rouille;
-        padding: 11px 19.5px;
-        border-radius: 50px;
-        font-size: 14px;
-        color: $black !important;
-        white-space: nowrap;
-        &:hover {
-          opacity: 80%;
+      div {
+        margin-bottom: 30px;
+        .button-contenu-conseil {
+          margin: 0 auto !important;
+          background-color: $white;
+          padding: 11px 19.5px;
+          border-radius: 50px;
+          font-size: 14px;
+          color: $black !important;
+          white-space: nowrap;
+          &:hover {
+            opacity: 80%;
+          }
         }
       }
     }
-  }
-  .contact-index-conseils-div-responsive {
-    display: none;
   }
 }
 
@@ -249,42 +118,6 @@
     display: block;
     .index-direction {
       display: none
-    }
-    .contact-index-conseils-div-responsive {
-      display: block;
-      grid-row-start: 2;
-      .contact-index-conseils {
-        background-color: $rouille;
-        padding: 4%;
-        margin-top:0;
-        .img-div {
-          display: flex;
-          justify-content: center;
-          img {
-            max-width: 70%;
-          }
-        }
-        .paragraphe-bold {
-          color: $white;
-        }
-        .button-contact-index {
-          background-color: $white;
-          border-radius: 40px;
-          display: table !important;
-          padding: 10px 20px;
-          font-family: 'Marianne-Regular', sans-serif;
-          font-size: 16px;
-          display: flex;
-          margin: 20px auto;
-          cursor: pointer;
-          &:hover {
-            background-color: $hover-pink;
-          }
-        }
-      }
-      .small-paragraphe {
-        margin-top: 10px;
-      }
     }
   }
   .cards {

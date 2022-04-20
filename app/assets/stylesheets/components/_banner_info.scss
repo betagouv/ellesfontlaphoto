@@ -14,13 +14,13 @@
     margin: 0;
   }
 }
-.banner-yellow {
-  background-color: $yellow;
+.banner-home {
+  background-color: $light-green;
 }
 
 
 @media only screen and (max-width: 750px) {
-  .banner-yellow a {
+  .banner-home a {
       text-align: center !important;
   }
   .banner-green a {

@@ -1,0 +1,27 @@
+<div class="sticky" data-controller="filter-conseils">
+  <p class="cross" data-action="click->show-filters#close">&times;</p>
+  <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
+  <p class="paragraphe text-align-center mb20 mt10">Quel conseil ou ressource avez-vous besoin ? </p>
+  <p class="button-criteria">
+    <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
+      <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
+        <%= category %>
+        <span class="cross-criteria">&times;</span>
+      </span>
+    <% end %>
+  </p>
+  <%= form_tag conseils_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
+    <% if @selected.present? %>
+      <%= text_field_tag :category_list, params[:category_list], value: selected, data: { filter_conseils_target: "inputCategory" } %>
+    <% else %>
+      <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" } %>
+    <% end %>
+    <% if @selected_tag.present? %>
+      <%= text_field_tag :tag_list, selected_tag %>
+    <% else %>
+      <%= text_field_tag :tag_list %>
+    <% end %>
+    <%= submit_tag "Search"%>
+  <% end %>
+</div>
+

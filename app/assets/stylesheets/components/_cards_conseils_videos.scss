@@ -4,19 +4,32 @@
     background-color: white;
     height: auto;
     position: relative;
-    border: 1px solid $rouille;
-    border-radius: 2%;
+    border: 1px solid $orange;
+    border-radius: 16px;
     &:hover {
-      background-color: $hover-purple;
+      box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
     }
     a {
       color: $black;
       div {
+        position: relative;
         .image-conseil {
-          height: 200px;
-          height: 200px;
-          width: 100%;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          margin: 20px auto;
           object-fit: cover;
+        }
+        .flottante-play {
+          bottom: -20px;
+          right: 45%;
+          position: absolute;
+
+          img {
+            height: 40px;
+          }
         }
       }
     }
@@ -24,25 +37,16 @@
       .main-bold-paragraphe {
         text-align: left;
       }
-
-      .arrow {
-        margin-bottom:0;
-        margin-top: 15%;
-      }
       .cards-videos-info {
-        padding: 5% 3%;
+        padding: 5% 7%;
         .cards-tags {
           font-family: 'Marianne-Regular_Italic', sans-serif;
           font-size: 14px;
           color: $black !important;
+          text-align: center;
         }
-      }
-      .flottante-play {
-        top: 185px;
-        right: 13px;
-        position: absolute;
-        img {
-          height: 30px;
+        .main-bold-paragraphe {
+          text-align: center;
         }
       }
     }

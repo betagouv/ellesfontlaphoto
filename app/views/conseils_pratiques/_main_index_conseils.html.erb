@@ -1,0 +1,31 @@
+<div id="main-index-conseils">
+  <div class="btn-filter" data-show-filters-target="btnFilter" data-action="click->show-filters#show">
+    Filtrer
+  </div>
+  <div class="header-index">
+    <%= image_tag "illu-index-conseils.png" %>
+    <% if @selected || @selected_type || @selected_photo_type %>
+      <% if @conseils.count == 0 %>
+        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
+      <% else %>
+        <h1 class="spectral-title"><span class="color-purple"><%= @conseils.count %></span> / <%= @total_count %> aides<br> pour les photographes</h1>
+      <% end %>
+    <% else %>
+      <h1 class="spectral-title"><%= @conseils_count %> resources et conseils<br> pour les photographes</h1>
+    <% end %>
+    <% if @conseils.count > 0 %>
+      <p class="paragraphe-small info-result text-align-center">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= last_date_updated %></p>
+    <% end %>
+  </div>
+  <div class="main-index">
+    <div class="cards">
+      <%= render "conseils_cards", conseils: @sorted_conseils %>
+      <div class="contact-index-conseils-div">
+        <div class="contact-index-conseils">
+          <p class="main-bold-paragraphe">Vous avez beaucoup scrollé... dîtes nous ce que vous cherchez !</p>
+          <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small", alt: "émoji stylo" %> Bavardons</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

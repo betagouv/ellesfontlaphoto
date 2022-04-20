@@ -4,23 +4,19 @@
     background-color: white;
     height: auto;
     position: relative;
-    border-radius: 2%;
-    border: solid 1px $rouille;
+    border-radius: 16px;
+    border: solid 1px $orange;
     &:hover {
-      background-color: $hover-pink;
+      box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
     }
     .card-index-conseils-articles-div {
-      padding: 4% 5% 10% 5%;
-      .main-bold-paragraphe {
-        text-align: left;
+      padding: 6% 5% 10% 5%;
+      .paragraphe,.main-bold-paragraphe {
+        text-align: center;
       }
 
       a{
         color: $black;
-      }
-      .arrow {
-        margin-bottom:0;
-        margin-top: 15%;
       }
     }
   }

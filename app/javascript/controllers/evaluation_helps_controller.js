@@ -40,7 +40,6 @@ export default class extends Controller {
   }
 
   close() {
-    console.log("ici")
     this.divNewEvalTarget.style.display = "none"
   }
 
