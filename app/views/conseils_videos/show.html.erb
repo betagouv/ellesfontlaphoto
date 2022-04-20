@@ -10,25 +10,20 @@
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @conseil_video.category_list.each do |category| %>
       <% if category == "Administratif & Financier" %>
-        <a href="/conseils?category_list=Administratif+%26+Financier&tag_list=">
+        <a href="/conseils">
       <% end %>
       <% if category == "Artistique & Technique" %>
-        <a href="/conseils?category_list=Artistique+%26+Technique&tag_list=">
+        <a href="/conseils">
       <% end %>
       <% if category == "Egalite & inclusion" %>
-        <a href="/conseils?category_list=Egalite+%26+inclusion&tag_list=">
+        <a href="/conseils">
       <% end %>
-        <p class="fiche-tag"><%= image_tag "emojis/#{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:image]}", class: "emojis-eflc-extra-small", alt: "icône #{ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text]}" %><%= ConseilsVideo::CONSEIL_CATEGORIES[category.to_sym][:text] %></p>
+        <p class="fiche-tag"><%= category %></p>
       </a>
     <% end %>
     <div class="d-none">
       <% @conseil_video.tag_list.each do |tag| %>
-        <% if tag == "Commencer mon activité" %>
-          <a href="/conseils?category_list=&tag_list=%2CCommencer+mon+activité"><p class="fiche-tag"> Commencer mon activité</p></a>
-        <% end %>
-        <% if tag == "Me former" %>
-          <a href="/conseils?category_list=&tag_list=%2CMe+former"><p class="fiche-tag"> Me former</p></a>
-        <% end %>
+        <a href="/conseils"><p class="fiche-tag"> tag</p></a>
       <% end %>
     </div>
   </div>
