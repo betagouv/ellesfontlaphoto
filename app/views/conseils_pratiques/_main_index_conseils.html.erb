@@ -22,13 +22,9 @@
       <%= render "conseils_cards", conseils: @sorted_conseils %>
       <div class="contact-index-conseils-div">
         <div class="contact-index-conseils">
-          <div class="img-div">
-            <%= image_tag "illu-contact-index.png", alt: "illustration contact"%>
-          </div>
-          <p class="paragraphe-bold">Une idée, un besoin d’article ou de témoignage que vous souhaiteriez partager avec nous ?</p>
-          <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small", alt: "émoji stylo" %> Nous écrire</p>
+          <p class="main-bold-paragraphe">Vous avez beaucoup scrollé... dîtes nous ce que vous cherchez !</p>
+          <p class="js-modal button-contact-index" data-modal="modal-contact"><%= image_tag "emojis/stylo.png", class: "emojis-eflc-small", alt: "émoji stylo" %> Bavardons</p>
         </div>
-        <p class="paragraphe card">Nous ajoutons régulièrement des articles, dernière mise à jour le <%= @last_date_updated %></p>
       </div>
     </div>
   </div>

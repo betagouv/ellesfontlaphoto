@@ -9,25 +9,20 @@
   column-gap: 2rem;
   .cards {
     .contact-index-conseils-div {
+      min-height: 340px;
+      background-color: $orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
       .contact-index-conseils {
-        background-color: $rouille;
-        padding: 4%;
-        margin-top: 30px;
-
-        .img-div {
-          display: flex;
-          justify-content: center;
-
-          img {
-            max-width: 180px;
-            max-height: 180px;
-          }
+        margin: 30px;
+        border-radius: 16px;
+        .main-bold-paragraphe {
+          margin-bottom: 45px;
+          color: $black;
+          text-align: center;
         }
-
-        .paragraphe-bold {
-          color: $white;
-        }
-
         .button-contact-index {
           background-color: $white;
           border-radius: 40px;
@@ -40,7 +35,7 @@
           cursor: pointer;
 
           &:hover {
-            background-color: $hover-pink;
+            opacity: 0.7;
           }
         }
       }
@@ -53,24 +48,27 @@
       margin:0;
       grid-column-start: 3;
       grid-row-start: 2;
-      background-color: $black;
+      background-color: $purple;
       padding: 22px 22px 35px 22px;
-      border-radius: 4px;
+      border-radius: 16px;
       .info-contenu-conseil {
-        color: $rouille;
+        color: $black;
         text-align: center !important;
         margin-bottom: 40px;
       }
-      .button-contenu-conseil {
-        margin: 0 auto !important;
-        background-color: $rouille;
-        padding: 11px 19.5px;
-        border-radius: 50px;
-        font-size: 14px;
-        color: $black !important;
-        white-space: nowrap;
-        &:hover {
-          opacity: 80%;
+      div {
+        margin-bottom: 30px;
+        .button-contenu-conseil {
+          margin: 0 auto !important;
+          background-color: $white;
+          padding: 11px 19.5px;
+          border-radius: 50px;
+          font-size: 14px;
+          color: $black !important;
+          white-space: nowrap;
+          &:hover {
+            opacity: 80%;
+          }
         }
       }
     }
