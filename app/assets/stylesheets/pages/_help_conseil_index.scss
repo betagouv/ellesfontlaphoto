@@ -42,6 +42,7 @@
 #search-form {
   display: none;
 }
+
 .main-index {
   display: flex;
   color: $black;
@@ -239,7 +240,6 @@
   .main-index {
     display: block;
     padding: 5% 5% 3% 5%;
-
     .cards {
       .info-contenu-div-help {
         grid-column-start: 1;
