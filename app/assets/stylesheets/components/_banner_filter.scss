@@ -7,6 +7,7 @@
     .cross {
       display: none
     }
+
     .button-criteria {
       margin: 20px;
       text-align: center;
@@ -16,6 +17,10 @@
         }
       }
       .button-criteria-conseils-elements {
+        img {
+          float: left;
+          margin-right: 8px;
+        }
         &:hover {
           border: 1px solid $orange;
         }
@@ -42,6 +47,12 @@
         }
       }
     }
+
+    .button-criteria.inline {
+      display: inline-grid;
+      margin: 0px 24%;
+    }
+
     .filter-switch {
       display: flex;
       align-items: center;

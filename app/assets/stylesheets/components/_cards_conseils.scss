@@ -1,14 +1,63 @@
 .cards {
   width: 100%;
-  .card-index-conseils-videos {
+  .card-index-conseils-articles,.card-index-conseils-videos {
     background-color: white;
     height: auto;
     position: relative;
-    border: 1px solid $orange;
     border-radius: 16px;
+    border: solid 1px $orange;
+    position: relative;
     &:hover {
       box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
     }
+    .card-index-conseils-articles-div {
+      padding: 6% 5% 10% 5%;
+      .paragraphe,.main-bold-paragraphe {
+        text-align: center;
+      }
+    }
+
+    .pastille-conseils {
+      border-radius: 40px;
+      color: $black;
+      padding: 4px 12px 7px 12px;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 14px;
+      margin: 5px auto 30px auto;
+      display: table;
+    }
+    .pastille-conseils.green {
+      background-color: $green-temoignage;
+    }
+
+    .pastille-conseils.purple {
+      background-color: $purple-webinaire;
+    }
+    .pastille-conseils.pink {
+      background-color: $pink-fiche;
+    }
+
+    .flottante-div {
+      display: flex;
+      position: absolute;
+      top: -15px;
+
+      .flottante {
+        color: $black !important;
+        border-radius: 40px;
+        display: table !important;
+        padding: 4px 12px 8px 12px;
+        background-color: white;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .flottante-orange {
+        background-color: $orange !important;
+      }
+    }
+
     a {
       color: $black;
       div {
@@ -33,18 +82,22 @@
         }
       }
     }
+
     .card-index-conseils-videos-div {
       .main-bold-paragraphe {
         text-align: left;
       }
+
       .cards-videos-info {
         padding: 5% 7%;
+
         .cards-tags {
           font-family: 'Marianne-Regular_Italic', sans-serif;
           font-size: 14px;
           color: $black !important;
           text-align: center;
         }
+
         .main-bold-paragraphe {
           text-align: center;
         }
