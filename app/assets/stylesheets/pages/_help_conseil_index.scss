@@ -209,15 +209,6 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
-  .cards {
-    .info-contenu-div-conseil {
-      grid-column-start: 1;
-      grid-row-start: 6;
-    }
-  }
-}
-
 @media only screen and (max-width: 550px) {
   .header-index {
     width: 100% !important;
@@ -242,6 +233,10 @@
     padding: 5% 5% 3% 5%;
     .cards {
       .info-contenu-div-help {
+        grid-column-start: 1;
+        grid-row-start: 6;
+      }
+      .info-contenu-div-conseil {
         grid-column-start: 1;
         grid-row-start: 6;
       }
