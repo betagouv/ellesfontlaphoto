@@ -19,6 +19,9 @@
             <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
           <% end %>
         </div>
+        <div class="pastille-conseils pink">
+          <%= image_tag "icone-fiche.svg", alt: "icône play noir" %> fiche
+        </div>
       <% end %>
     </div>
   <% elsif conseil.class == ConseilsVideo %>
@@ -40,8 +43,11 @@
             <p class="cards-tags mb0">
               <%= ConseilsVideo::VIDEO_FORMAT[conseil.format.to_sym] %>
             </p>
-            <p class="main-bold-paragraphe mt5 mb30"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
+            <p class="main-bold-paragraphe mt5"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
           </div>
+        </div>
+        <div class="pastille-conseils green">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
         </div>
       <% end %>
     </div>
@@ -63,6 +69,9 @@
         </div>
         <div class="cards-videos-info">
           <p class="main-bold-paragraphe mt5 mb30"><%= conseil.title %></p>
+        </div>
+        <div class="pastille-conseils purple">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire
         </div>
       <% end %>
     </div>
