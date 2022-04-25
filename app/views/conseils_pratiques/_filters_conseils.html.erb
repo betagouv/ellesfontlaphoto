@@ -1,7 +1,7 @@
 <div class="sticky" data-controller="filter-conseils">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
-  <p class="paragraphe-small text-align-center mb20 mt10">Quel conseil ou ressource avez-vous besoin ? </p>
+  <p class="paragraphe-small text-align-center mb20 mt10">De quels conseils ou ressources avez-vous besoin ? </p>
   <p class="button-criteria">
     <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
       <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
