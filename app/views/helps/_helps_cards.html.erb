@@ -14,7 +14,7 @@
       <% elsif next_date.nil? %>
         <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Fermée</p>
       <% else %>
-        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.start_date, format: :long %> - <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></p>
+        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></p>
       <% end %>
       <% if help.general_condition.present? %>
         <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %> Conditions :</span>
@@ -33,7 +33,7 @@
         ,
       <% end %>
         <% if help.general_condition.present? %>
-          <%= help.general_condition %>
+          <%= help.general_condition.html_safe %>
         <% end %>
       </p>
       <% unless next_date.nil? %>
