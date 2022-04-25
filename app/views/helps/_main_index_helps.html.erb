@@ -6,7 +6,7 @@
     <%= image_tag "illu-index-helps.png" %>
     <% if @selected || @selected_type || @selected_photo_type %>
       <% if @helps.count == 0 %>
-        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
+        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvée,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
       <% else %>
         <h1 class="spectral-title"><span class="color-purple"><%= @helps.count %></span> / <%= @total_count %> aides<br> pour les photographes</h1>
       <% end %>
