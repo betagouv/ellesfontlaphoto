@@ -1,7 +1,7 @@
 <div class="sticky" data-controller="filter-helps" data-filter-helps-target="divNewEval">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
-  <p class="paragraphe text-align-center mb20 mt10">Votre besoin</p>
+  <p class="paragraphe text-align-center mt10">Votre besoin</p>
   <p class="button-criteria">
     <% Help::HELP_TYPE.each do |type| %>
       <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
@@ -26,7 +26,7 @@
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center mb0">Lieu</p>
+  <p class="paragraphe text-align-center title-filtre">Lieu</p>
   <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputLieu">
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
@@ -44,8 +44,8 @@
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe text-align-center mb0">Type de photo</p>
-  <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
+  <p class="paragraphe text-align-center title-filtre">Type de photo</p>
+  <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
       <option value="">photo artistique, journalisme ?</option>
       <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
         <option value="<%= photo_type %>"><%= photo_type %></option>

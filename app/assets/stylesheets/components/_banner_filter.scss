@@ -4,12 +4,15 @@
     position: sticky;
     padding: 40px 0;
     top: 40px;
+    .title-filtre {
+      margin-bottom: 3px;
+    }
     .cross {
       display: none
     }
 
     .button-criteria {
-      margin: 20px;
+      margin: 0 20px 10px 20px;
       text-align: center;
       .button-criteria-helps-elements {
         &:hover {
@@ -69,7 +72,16 @@
       border-radius: 40px;
       font-family: 'Marianne-Regular', sans-serif;
       color: $grey-input;
-      padding: 0px 10px;
+      padding: 0px 15px;
+      background-position: calc(100% - 0.75rem) center !important;
+      -moz-appearance:none !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      background-repeat: no-repeat;
+      padding-right: 2rem !important;
+      border: 1px solid $black;
+      cursor: pointer;
+      background-image: url(chevron.svg);
       &:focus {
         outline: none;
         border: 2px solid $filter-purple;
@@ -120,22 +132,32 @@
     position: absolute;
     right: 0;
     z-index: 1;
+    min-width: 35%;
     max-width: 50%;
     .sticky {
+      .title-filtre {
+        margin-bottom: 15px;
+      }
       select {
         display: flex;
         justify-content: center;
         margin: 0 auto !important;
+        &:focus {
+          border: 2px solid $filter-purple;
+        }
       }
       .button-criteria {
         display: table;
-        margin: 20px auto 0 auto;
+        margin: 0 auto;
         .button-criteria-helps-elements,.button-criteria-conseils-elements {
-          margin: 10px auto;
+          margin: 0 auto 10px auto;
           display: table;
           &:hover {
             border: 1px solid $black;
           }
+        }
+        .button-criteria-helps-elements.selected, .button-criteria-conseils-elements.selected {
+          border: 2px solid $filter-purple;
         }
       }
       .btn-validate-filter {
