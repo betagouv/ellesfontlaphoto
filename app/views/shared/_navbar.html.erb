@@ -14,7 +14,7 @@
         </li>
         <li>
           <%= link_to conseils_path, class: "link-menu conseils-link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "conseils-link-selected" : "" }" do  %>
-            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %></span> Conseils et témoignages
+            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %></span> Ressources et conseils
           <% end %>
         </li>
       </ul>
@@ -29,7 +29,7 @@
   <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
   <ul class="menu">
     <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small" %> Aides</li></a>
-    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-small" %> Conseils et témoignages</li></a>
+    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-small" %> Ressources et conseils</li></a>
     <a href="/a_propos"><li>À propos</li></a>
   </ul>
 </header>

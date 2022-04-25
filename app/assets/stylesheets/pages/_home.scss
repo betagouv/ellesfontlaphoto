@@ -148,6 +148,11 @@
     .exemple-helps {
       width: 70%;
       justify-content: center;
+      .cards {
+        .flottante-ouverte {
+          background-color: $white;
+        }
+      }
     }
   }
 }
