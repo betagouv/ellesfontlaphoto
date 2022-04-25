@@ -61,7 +61,7 @@
         <% end %></p>
       <% end %>
       <% if @help.general_condition.present? %>
-          <p class="paragraphe mt0 mb40"><%= @help.general_condition %></p>
+          <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
       <% end %>
     </div>
   </div>

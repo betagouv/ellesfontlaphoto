@@ -159,7 +159,7 @@ ActiveAdmin.register Help do
       f.input :help_advantage, label: "Avantage de l'aide"
       f.input :residence_time, label: "Temps de résidence"
       f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
-      f.input :general_condition, label: "Conditions générales"
+      f.input :general_condition, as: :quill_editor, label: "Conditions générales"
     end
     f.inputs "Candidatez" do
       f.input :candidate_url, label: "Url de candidature"
