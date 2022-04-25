@@ -4,7 +4,6 @@ class CandidatureDate < ApplicationRecord
   validates :start_date, presence: true
   validate :end_date_is_after_start_date
 
-
   private
 
   def end_date_is_after_start_date

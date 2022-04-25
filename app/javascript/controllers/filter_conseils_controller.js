@@ -11,7 +11,7 @@ export default class extends Controller {
     } else {
       this.inputCategoryTarget.value += event.currentTarget.dataset.text + ","
     }
-    this.refreshHelps();
+    this.refreshConseils();
   }
 
   selectDocument(event) {
@@ -22,14 +22,15 @@ export default class extends Controller {
     } else {
       this.inputDocumentTypeTarget.value += event.currentTarget.dataset.text + ","
     }
-    this.refreshHelps();
+    this.refreshConseils();
   }
 
-  refreshHelps() {
+  refreshConseils() {
     fetch(`${this.formTarget.action}?category_list=${this.inputCategoryTarget.value}&document_type=${this.inputDocumentTypeTarget.value}`, { headers: { 'Accept': 'text/plain' } })
       .then(response => response.text())
       .then((data) => {
         document.querySelector("#main-index-conseils").outerHTML = data;
       })
+
   }
 }
