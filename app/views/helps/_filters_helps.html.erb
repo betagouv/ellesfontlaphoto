@@ -66,6 +66,7 @@
 
   <div class="line-filter"></div>
 
+  <div class="btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
     <% if @selected.present? %>

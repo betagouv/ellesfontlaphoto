@@ -91,15 +91,19 @@
 
 
     .button-criteria-helps-elements.selected {
-      border: 2px solid $filter-purple;
+      border: 2px solid $filter-purple !important;
       padding-right: 20px;
       position: relative;
     }
 
     .button-criteria-conseils-elements.selected {
-      border: 2px solid $orange;
+      border: 2px solid $orange !important;
       padding-right: 20px;
       position: relative;
+    }
+
+    .btn-validate-filter {
+      display: none;
     }
 
     .line-filter {
@@ -148,11 +152,20 @@
         .button-criteria-helps-elements,.button-criteria-conseils-elements {
           margin: 0 auto 10px auto;
           display: table;
+          &:hover {
+            border: 1px solid $black;
+          }
         }
         .button-criteria-helps-elements.selected, .button-criteria-conseils-elements.selected {
           border: 2px solid $filter-purple;
         }
       }
+      .btn-validate-filter {
+        display: block;
+        width: 80px;
+        margin: 0 auto;
+      }
+
     }
   }
 }
@@ -164,6 +177,20 @@
 @media only screen and (max-width: 550px) {
   .div-filters.show {
     min-width: 100%;
+    .cross {
+      right: 23px;
+      top: -24px;
+      font-size: 28px;
+    }
+    // .sticky {
+    //   .button-criteria {
+    //     display: block;
+    //     .button-criteria-helps-elements,.button-criteria-conseils-elements {
+    //       margin: 10px auto;
+    //       display: inline-table;
+    //     }
+    //   }
+    // }
   }
 
 }
