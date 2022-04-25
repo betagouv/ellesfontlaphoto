@@ -31,11 +31,11 @@
       <option value="">où résidez vous ?</option>
       <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
         <% if residence == "Française ou résidant en France" %>
-          <option value="<%= residence %>">France</option>
+          <option value="France">France</option>
         <% elsif residence == "Française résidant en outre-mer" %>
-          <option value="<%= residence %>">Outre-mer</option>
+          <option value="Outre-mer">Outre-mer</option>
         <% elsif residence == "Française résidant à l'étranger" %>
-          <option value="<%= residence %>">À l'étranger</option>
+          <option value="À l'étranger">À l'étranger</option>
         <% else %>
           <option value="<%= residence %>"><%= residence %></option>
         <% end %>
@@ -46,7 +46,7 @@
 
   <p class="paragraphe text-align-center title-filtre">Type de photo</p>
   <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
-      <option value="">photo artistique, journalisme ?</option>
+      <option value="">secteurs</option>
       <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
         <option value="<%= photo_type %>"><%= photo_type %></option>
       <% end %>
