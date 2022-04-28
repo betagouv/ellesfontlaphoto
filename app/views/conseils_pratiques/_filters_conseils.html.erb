@@ -1,7 +1,7 @@
 <div class="sticky" data-controller="filter-conseils">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
-  <p class="paragraphe-small text-align-center mb20 mt10">De quels conseils ou ressources avez-vous besoin ? </p>
+  <p class="paragraphe-small text-align-center mb20 mt10" style="padding: 0 25px;">De quels conseils ou ressources avez-vous besoin ? </p>
   <p class="button-criteria">
     <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
       <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
@@ -15,7 +15,7 @@
 
   <p class="paragraphe-small text-align-center mb20 mt30">Type de document </p>
   <div class="button-criteria inline">
-    <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="fichepratique">
+    <span class="button-criteria-conseils-elements" style="padding-left:7px;" data-action="click->filter-conseils#selectDocument" data-text="fichepratique">
       <%= image_tag "fiche_pratique.svg" %> fiche pratique
       <span class="cross-criteria">&times;</span>
     </span>
@@ -23,7 +23,7 @@
       <%#= image_tag "webinaire.svg" %> webinaire
       <span class="cross-criteria">&times;</span>
     </span> -->
-    <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
+    <span class="button-criteria-conseils-elements" style="padding-left:7px;" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
       <%= image_tag "temoignage.svg" %> témoignage
       <span class="cross-criteria">&times;</span>
     </span>
