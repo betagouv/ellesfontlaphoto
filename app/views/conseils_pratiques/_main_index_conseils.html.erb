@@ -1,0 +1,28 @@
+<div id="main-index-conseils">
+  <div class="btn-filter btn-black" data-show-filters-target="btnFilter" data-action="click->show-filters#show">
+    Filtrer
+  </div>
+  <div class="header-index">
+    <%= image_tag "illu-index-conseils.png" %>
+    <% if @selected || @selected_type || @selected_photo_type %>
+      <% if @conseils.count == 0 %>
+        <h1 class="spectral-title"><span class="color-orange">aucune ressources trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
+      <% else %>
+        <h1 class="spectral-title"><span class="color-orange"><%= @conseils.count %></span> / <%= @total_count %> ressources et conseils<br> pour les photographes</h1>
+      <% end %>
+    <% else %>
+      <h1 class="spectral-title"><%= @total_count %> ressources et conseils<br> pour les photographes</h1>
+    <% end %>
+  </div>
+  <div class="main-index">
+    <div class="cards">
+      <%= render "conseils_cards", conseils: @sorted_conseils %>
+      <div class="contact-index-conseils-div">
+        <div class="contact-index-conseils">
+          <p class="main-bold-paragraphe">Vous avez beaucoup scrollé... dîtes nous ce que vous cherchez !</p>
+          <p data-action="click->show-filters#openModal" class="js-modal button-contact-index" data-modal="modal-contact">Bavardons</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

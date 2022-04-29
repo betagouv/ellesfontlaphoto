@@ -89,7 +89,7 @@ ActiveAdmin.register ConseilsArticle do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_CATEGORIES.keys, label: "Categorie List"
+        :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
       f.input :tag_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_TAGS, label: "List Tags"
       f.input :title, label: "Titre"
@@ -115,7 +115,7 @@ ActiveAdmin.register ConseilsArticle do
     end
     f.inputs "Sources et Autrices/Auteurs" do
       f.input :sources
-      f.input :auteur
+      f.input :auteur, as: :quill_editor
     end
     f.actions
   end

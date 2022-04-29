@@ -1,0 +1,79 @@
+<div class="info-contenu-div-conseil">
+  <p class="info-contenu-conseil lh35 main-bold-paragraphe text-align-center">
+      Une ressource utile pour les femmes photographes ? Site, livre, asso... Soumettez-les !</p>
+  <div class="text-align-center">
+    <a href="/proposer_conseil" class="button-contenu-conseil">Recensez une ressource</a>
+  </div>
+</div>
+<% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
+  <% if conseil.class == ConseilsArticle %>
+    <div class="card-index-conseils-articles">
+      <%= link_to conseils_article_path(conseil) do %>
+        <% if (Time.now - conseil.created_at)/1.day < 15  %>
+          <%= render "conseils_pratiques/flottante_conseils" %>
+        <% end %>
+        <div class="card-index-conseils-articles-div">
+          <p class="main-bold-paragraphe mt0 mb20"><%= conseil.title %></p>
+          <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-extra-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+          <% if conseil.objectif.present? %>
+            <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
+          <% end %>
+        </div>
+        <div class="pastille-conseils pink">
+          <%= image_tag "icone-fiche.svg", alt: "icône play noir" %> fiche
+        </div>
+      <% end %>
+    </div>
+  <% elsif conseil.class == ConseilsVideo %>
+    <div class="card-index-conseils-videos">
+      <%= link_to conseils_video_path(conseil) do %>
+        <% if (Time.now - conseil.created_at)/1.day < 15  %>
+          <%= render "conseils_pratiques/flottante_conseils" %>
+        <% end %>
+        <div class="card-index-conseils-videos-div">
+          <% if conseil.image.attached? %>
+            <div>
+              <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
+              <div class="flottante-play">
+                <%= image_tag "play.svg", alt: "icône play vidéo" %>
+              </div>
+            </div>
+          <% end %>
+          <div class="cards-videos-info">
+            <p class="cards-tags mb0">
+              <%= ConseilsVideo::VIDEO_FORMAT[conseil.format.to_sym] %>
+            </p>
+            <p class="main-bold-paragraphe mt0"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
+          </div>
+        </div>
+        <div class="pastille-conseils green">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
+        </div>
+      <% end %>
+    </div>
+  <% elsif conseil.class == Webinaire %>
+    <div class="card-index-conseils-videos">
+      <%= link_to "#" do %>
+        <% if (Time.now - conseil.created_at)/1.day < 15  %>
+          <%= render "conseils_pratiques/flottante_conseils" %>
+        <% end %>
+        <div class="card-index-conseils-videos-div">
+          <% if conseil.image.attached? %>
+            <div>
+              <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
+              <div class="flottante-play">
+                <%= image_tag "play.svg", alt: "icône play vidéo" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="cards-videos-info">
+          <p class="main-bold-paragraphe mt30 mb30"><%= conseil.title %></p>
+        </div>
+        <div class="pastille-conseils purple">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

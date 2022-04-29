@@ -1,0 +1,210 @@
+.evaluation-help-div,.display-reviews{
+  background-color: $purple-comment;
+  padding: 46px 72px;
+  border-radius: 4px;
+}
+
+.display-reviews {
+
+  .comment {
+      background-color: $purple-blue;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+      border-radius: 0px 24px 24px 24px;
+      font-family: Marianne-Regular;
+      color: $white;
+      padding: 12px 20px;
+      margin: 10px 0px;
+    .comment-help {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .comment-date {
+      font-size: 10px;
+      line-height: 20px;
+    }
+  }
+  .evaluations_helps_index {
+    margin-bottom: 30px;
+    .d-flex {
+      align-items: center;
+      justify-content: space-between;
+      .paragraphe {
+        margin: 0;
+      }
+    }
+    .paragraphe-x-small {
+      margin-top: 0;
+    }
+    .progress-bar {
+      background: $white;
+      border-radius: 8px;
+      height: 9px;
+      width: 90%;
+      .progress1 {
+        background: $purple-blue;
+        height: 9px;
+        width: 20%;
+        border-radius: 8px;
+      }
+      .progress2 {
+        background: $purple-blue;
+        height: 9px;
+        width: 40%;
+        border-radius: 8px;
+      }
+      .progress3 {
+        background: $purple-blue;
+        height: 9px;
+        width: 60%;
+        border-radius: 8px;
+      }
+      .progress4 {
+        background: $purple-blue;
+        height: 9px;
+        width: 80%;
+        border-radius: 8px;
+      }
+      .progress5 {
+        background: $purple-blue;
+        height: 9px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.evaluation-help-div {
+  height: fit-content;
+  margin-bottom: 24px;
+  position: relative;
+  .cross {
+    position: absolute;
+    top: -4%;
+    right: 4%;
+    cursor: pointer;
+    font-size: 19px;
+  }
+  form {
+    display: none;
+  }
+  .button {
+    .button-evaluation-dossier,.button-evaluation-dispositif {
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      padding: 12px 25px;
+      font-family: 'Marianne-Regular', sans-serif;
+      background-color: $purple-blue;
+      transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+      color: $white;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 12px;
+      -webkit-appearance: none;
+      &:hover {
+        background-color: $hover-blue-purple;
+      }
+    }
+  }
+  .evaluation-text-phone {
+    display: none;
+  }
+  .evaluation-text,.evaluation-text-phone {
+    font-size: 12px;
+    margin: 25px 0;
+    cursor: pointer;
+    .notes-evaluation.active,.notes-evaluation-phone.active {
+      background-color: $purple-blue !important;
+      color: $white;
+    }
+    .list-notes {
+      margin: 0px 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .info-notation {
+      align-items: center;
+      justify-content: space-between;
+      .paragraphe {
+        margin-top: 0;
+      }
+    }
+    .notes-evaluation,.notes-evaluation-phone {
+      background-color: $white;
+      border-radius: 50%;
+      padding: 8px 14px 9px 14px;
+      margin: 0 8px;
+    }
+    .notes-evaluation {
+      &:hover {
+        background-color: $hover-blue;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .div-review {
+    .evaluation-help-div {
+      padding: 46px 40px;
+      .evaluation-text {
+        white-space: nowrap;
+        .notes-evaluation {
+          margin: 3px;
+        }
+      }
+    }
+    .form-review,.display-reviews {
+      padding: 46px 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .div-review {
+    display: block;
+    padding: 20px 30px;
+    .evaluation-help-div {
+      padding: 35px 30px;
+    }
+    .sub-div-review {
+      margin-bottom: 24px;
+    }
+    .form-review,.display-reviews {
+      padding: 35px 40px;
+      .progress-bar {
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+  .div-review {
+    padding: 20px 15px;
+    .form-review,.display-reviews,.evaluation-help-div {
+      padding: 24px;
+    }
+  }
+  .evaluation-help-div {
+    .d-flex.justify-between {
+      display: block;
+      .button-evaluation-dossier,.button-evaluation-dispositif {
+        margin:0;
+      }
+    }
+    .evaluation-text {
+      display: none;
+    }
+    .evaluation-text-phone {
+      display: block;
+      margin: 13px 0;
+      white-space: nowrap;
+      .notes-evaluation-phone {
+        padding: 11px 17px 12px 17px;
+      }
+    }
+  }
+}

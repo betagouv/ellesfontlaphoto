@@ -1,0 +1,33 @@
+<div id="main-index-helps">
+  <div class="btn-filter btn-black" data-show-filters-target="btnFilter" data-action="click->show-filters#show">
+    Filtrer
+  </div>
+  <div class="header-index">
+    <%= image_tag "illu-index-helps.png" %>
+    <% if @selected || @selected_type || @selected_photo_type %>
+      <% if @helps.count == 0 %>
+        <h1 class="spectral-title"><span class="color-purple">aucune aide trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
+      <% else %>
+        <h1 class="spectral-title"><span class="color-purple"><%= @helps.count %></span> / <%= @total_count %> aides<br> pour les photographes</h1>
+      <% end %>
+    <% else %>
+      <h1 class="spectral-title"><%= @total_count %> aides<br> pour les photographes</h1>
+    <% end %>
+    <% if @helps.count > 0 %>
+      <p class="paragraphe-small info-result text-align-center">Nous ajoutons régulièrement des aides. Dernière mise à jour le <%= Help.all.order(:created_at).last.created_at.strftime("%d/%m/%Y") %></p>
+    <% end %>
+  </div>
+  <div class="main-index">
+    <div class="cards cards-help" id="cards-anchor">
+      <% if @helps.count > 5 %>
+        <div class="info-contenu-div-help">
+          <p class="info-contenu-help lh35 main-bold-paragraphe text-align-center">Vous connaissez une autre aide ? Soumettez la, et contribuez à cette initiative !</p>
+          <div class="text-align-center">
+            <a href="/proposer_aide" class="button-contenu-help">Recensez une aide</a>
+          </div>
+        </div>
+      <% end %>
+      <%= render "helps_cards", helps: @helps %>
+    </div>
+  </div>
+</div>

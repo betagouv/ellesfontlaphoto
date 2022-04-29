@@ -31,6 +31,12 @@ h2 {
   padding-bottom: 20px;
 }
 
+.paragraphe-title {
+  font-family: 'Marianne-Bold', sans-serif;
+  font-size: 28px;
+  color: $black;
+}
+
 h4 {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 20px;
@@ -43,6 +49,16 @@ a {
   text-decoration: none !important;
 }
 
+.btn-black {
+  background-color: $black;
+  border-radius: 40px;
+  color: $white;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
+}
+
 .subtitle {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -51,6 +67,15 @@ a {
   font-size: 36px;
   line-height: 50px;
   color: $black;
+}
+
+.spectral-title {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
 }
 
 .subtitle-spectral {
@@ -92,12 +117,33 @@ p {
   }
 }
 
-.paragraphe.card {
-  font-size: 16px;
+.paragraphe-small {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 14px;
+  color: $black;
   p {
+    font-family: 'Marianne-Regular', sans-serif;
     font-size: 16px;
+    color: $black;
+    margin-bottom:0;
+  }
+}
+
+.paragraphe-x-small {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 12px;
+  color: $black;
+}
+
+.paragraphe.card {
+  font-size: 14px;
+  line-height: 18px;
+  p {
+    font-size: 14px;
+    line-height: 18px;
     a {
-      font-size: 16px !important;
+      font-size: 14px !important;
+      line-height: 18px;
     }
   }
 }
@@ -115,12 +161,11 @@ p {
 }
 
 .paragraphe-bold.card {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 b, strong {
   font-family: 'Marianne-Bold', sans-serif;
-  // font-size: 14px;
   color: $black;
 }
 
@@ -163,12 +208,14 @@ b, strong {
 }
 
 .emojis-eflc-extra-small {
-  width: 12px;
+  width: 14px;
+  height: 14px;
   margin-right: 3px;
 }
 
 .emojis-eflc-small {
   width: 18px;
+  height: 20px;
   margin-right: 3px;
 }
 
@@ -196,6 +243,14 @@ b, strong {
 
 .d-flex {
   display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .flex-div-left {
@@ -279,6 +334,10 @@ a {
   margin-top: 5px;
 }
 
+.mt10 {
+  margin-top: 10px;
+}
+
 .mt20 {
   margin-top: 20px;
 }
@@ -319,6 +378,10 @@ a {
   margin-bottom: 30px
 }
 
+.d-none {
+  display: none;
+}
+
 .mb40 {
   margin-bottom: 40px
 }
@@ -353,10 +416,10 @@ a {
     padding-bottom: 20px;
   }
   .paragraphe {
-    text-align: left !important;
+    text-align: left;
   }
   .subtitle {
-    text-align: left !important;
+    text-align: left;
   }
 }
 
@@ -370,12 +433,18 @@ a {
     line-height: 43px;
     padding-bottom: 10px;
   }
+  .paragraphe-title {
+    font-size: 18px;
+    text-align: left;
+  }
   .paragraphe-bold
-  .paragraphe {
-    text-align: left !important;
+  .paragraphe
+  .paragraphe-small
+  .paragraphe-x-small {
+    text-align: left;
   }
   .subtitle {
-    text-align: left !important;
+    text-align: left;
   }
 }
 

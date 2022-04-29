@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_091014) do
+ActiveRecord::Schema.define(version: 2022_04_20_115358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,15 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.text "message"
   end
 
+  create_table "evaluation_helps", force: :cascade do |t|
+    t.bigint "help_id", null: false
+    t.integer "eval_dossier"
+    t.integer "eval_dispositif"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_evaluation_helps_on_help_id"
+  end
+
   create_table "helps", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -146,8 +155,6 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.string "faq_url"
     t.string "issue_contact"
     t.text "statistic"
-    t.date "end_date"
-    t.date "start_date"
     t.string "identifiant"
     t.string "institution_partenaire"
     t.string "regularity"
@@ -164,6 +171,9 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.boolean "visible", default: true
     t.text "description_longue"
     t.boolean "permanent", default: false
+    t.date "end_date"
+    t.date "start_date"
+    t.boolean "open"
   end
 
   create_table "notation_catalogues", force: :cascade do |t|
@@ -217,6 +227,14 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.index ["help_id"], name: "index_notification_helps_on_help_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "help_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["help_id"], name: "index_reviews_on_help_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -246,7 +264,18 @@ ActiveRecord::Schema.define(version: 2022_02_15_091014) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "webinaires", force: :cascade do |t|
+    t.string "title"
+    t.datetime "date"
+    t.string "place"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "evaluation_helps", "helps"
+  add_foreign_key "reviews", "helps"
   add_foreign_key "taggings", "tags"
 end

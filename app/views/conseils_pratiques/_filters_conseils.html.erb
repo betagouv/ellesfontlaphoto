@@ -1,0 +1,55 @@
+<div class="sticky" data-controller="filter-conseils">
+  <p class="cross" data-action="click->show-filters#close">&times;</p>
+  <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
+  <p class="paragraphe-small text-align-center mb20 mt10" style="padding: 0 25px;">De quels conseils ou ressources avez-vous besoin ? </p>
+  <p class="button-criteria">
+    <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
+      <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
+        <%= category %>
+        <span class="cross-criteria">&times;</span>
+      </span>
+    <% end %>
+  </p>
+
+  <div class="line-filter"></div>
+
+  <p class="paragraphe-small text-align-center mb20 mt30">Type de document </p>
+  <div class="button-criteria inline">
+    <span class="button-criteria-conseils-elements" style="padding-left:7px;" data-action="click->filter-conseils#selectDocument" data-text="fichepratique">
+      <%= image_tag "fiche_pratique.svg" %> fiche pratique
+      <span class="cross-criteria">&times;</span>
+    </span>
+<!--     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
+      <%#= image_tag "webinaire.svg" %> webinaire
+      <span class="cross-criteria">&times;</span>
+    </span> -->
+    <span class="button-criteria-conseils-elements" style="padding-left:7px;" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
+      <%= image_tag "temoignage.svg" %> témoignage
+      <span class="cross-criteria">&times;</span>
+    </span>
+  </div>
+
+  <div class="line-filter"></div>
+
+  <div class="btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
+
+  <%= form_tag conseils_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
+    <% if @selected.present? %>
+      <%= text_field_tag :category_list, params[:category_list], value: selected, data: { filter_conseils_target: "inputCategory" } %>
+    <% else %>
+      <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" } %>
+    <% end %>
+    <% if @selected_document.present? %>
+      <%= text_field_tag :document_type, params[:document_type], value: selected_document, data: { filter_conseils_target: "inputDocumentType" } %>
+    <% else %>
+      <%= text_field_tag :document_type, params[:document_type], data: { filter_conseils_target: "inputDocumentType" } %>
+    <% end %>
+    <% if @selected_tag.present? %>
+      <%= text_field_tag :tag_list, selected_tag %>
+    <% else %>
+      <%= text_field_tag :tag_list %>
+    <% end %>
+    <%= submit_tag "Search"%>
+  <% end %>
+</div>
+

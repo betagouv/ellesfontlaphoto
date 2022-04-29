@@ -3,13 +3,21 @@
   .card-index-helps {
     background-color: white;
     margin-bottom: 20px;
-    border-radius: 2%;
+    border-radius: 16px;
     border: 1px solid $purple;
-    height: auto;
-    padding: 8% 5% 10% 5%;
+    padding: 12% 10% 10% 10%;
     position: relative;
+    height: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    height: -moz-max-content;    /* Firefox/Gecko */
+    height: -webkit-max-content;
     .main-bold-paragraphe {
       text-align: left;
+    }
+
+    ul {
+      margin-top: 0;
+      font-size: 14px;
+      line-height: 18px;
     }
 
     .paragrahe-gains {
@@ -37,17 +45,24 @@
         border: 1px solid $purple;
         border-radius: 40px;
         display: table !important;
-        padding: 5px 10px 5px;
+        padding: 4px 12px 8px 12px;
         background-color: white;
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 14px;
         white-space: nowrap;
       }
-      .flottante-pink {
-        background-color: $background-pink !important;
+      .flottante-orange {
+        background-color: $orange !important;
         border: none;
       }
+      .flottante-ouverte {
+        background-color: $purple;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
     }
+  }
+  .card-index-helps.border-orange {
+    border: 1px solid $orange;
   }
 }
 

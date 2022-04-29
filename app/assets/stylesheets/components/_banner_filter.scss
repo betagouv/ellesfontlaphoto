@@ -1,0 +1,197 @@
+.div-filters {
+  .sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    padding: 40px 0;
+    top: 40px;
+    .title-filtre {
+      margin-bottom: 3px;
+    }
+    .cross {
+      display: none
+    }
+
+    .button-criteria {
+      margin: 0 20px 10px 20px;
+      text-align: center;
+      .button-criteria-helps-elements {
+        &:hover {
+          border: 1px solid $filter-purple;
+        }
+      }
+      .button-criteria-conseils-elements {
+        img {
+          float: left;
+          margin-right: 8px;
+        }
+        &:hover {
+          border: 1px solid $orange;
+        }
+      }
+      .button-criteria-helps-elements,.button-criteria-conseils-elements {
+        background-color: $white;
+        border-radius: 40px;
+        border: 1px solid $black;
+        padding: 6px 12px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 5px 0px;
+        position: relative;
+        display: inline-block;
+        .cross-criteria {
+          display: none;
+        }
+        .cross-criteria.display-inline {
+          display: inline;
+          position: absolute;
+          right:7px;
+          top: 11%;
+        }
+      }
+    }
+
+    .button-criteria.inline {
+      text-align: center;
+      margin: 0px 24%;
+    }
+
+    .filter-switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        margin-left: 15px;
+      }
+    }
+
+    select {
+      margin: 10px auto;
+      display: table;
+      height: 40px;
+      width: 227px;
+      border-radius: 40px;
+      font-family: 'Marianne-Regular', sans-serif;
+      color: $grey-input;
+      padding: 0px 15px;
+      background-position: calc(100% - 0.75rem) center !important;
+      -moz-appearance:none !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      background-repeat: no-repeat;
+      padding-right: 2rem !important;
+      border: 1px solid $black;
+      cursor: pointer;
+      background-image: url(chevron.svg);
+      &:focus {
+        outline: none;
+        border: 2px solid $filter-purple;
+        color: $black;
+      }
+    }
+
+
+    .button-criteria-helps-elements.selected {
+      border: 2px solid $filter-purple !important;
+      padding-right: 20px;
+      position: relative;
+    }
+
+    .button-criteria-conseils-elements.selected {
+      border: 2px solid $orange !important;
+      padding-right: 20px;
+      position: relative;
+    }
+
+    .btn-validate-filter {
+      display: none;
+    }
+
+    .line-filter {
+      border-top: 0.1px solid #DEDEDE;
+      margin: 5% 0 5% 0;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .div-filters {
+    display: none;
+    .cross {
+      display: block !important;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: -3px;
+      font-size: 20px;
+    }
+  }
+
+  .div-filters.show {
+    display: block;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    min-width: 35%;
+    max-width: 50%;
+    .sticky {
+      .title-filtre {
+        margin-bottom: 15px;
+      }
+      select {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto !important;
+        &:focus {
+          border: 2px solid $filter-purple;
+        }
+      }
+      .button-criteria {
+        display: table;
+        margin: 0 auto;
+        .button-criteria-helps-elements,.button-criteria-conseils-elements {
+          margin: 0 auto 10px auto;
+          display: table;
+          &:hover {
+            border: 1px solid $black;
+          }
+        }
+        .button-criteria-helps-elements.selected, .button-criteria-conseils-elements.selected {
+          border: 2px solid $filter-purple;
+        }
+      }
+      .btn-validate-filter {
+        display: block;
+        width: 80px;
+        margin: 0 auto;
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+  .div-filters.show {
+    min-width: 100%;
+    .cross {
+      right: 23px;
+      top: -24px;
+      font-size: 28px;
+    }
+    // .sticky {
+    //   .button-criteria {
+    //     display: block;
+    //     .button-criteria-helps-elements,.button-criteria-conseils-elements {
+    //       margin: 10px auto;
+    //       display: inline-table;
+    //     }
+    //   }
+    // }
+  }
+
+}

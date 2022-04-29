@@ -5,16 +5,17 @@
   </div>
   <div class="div-link-footer">
     <div class="links-footer">
-      <%= link_to "Accessibilité", "#" %>
+      <%= link_to "Accessibilité", accessibilite_path(anchor: "top") %>
       <hr class="vl">
       <%= link_to "Mentions Legales", mentions_legales_path(anchor: "top") %>
       <hr class="vl">
       <%= link_to "Données personnelles", "#" %>
       <hr class="vl">
-      <%= link_to "Gestion des cookies", "#" %>
+      <%= link_to "Conditions générales", conditions_generales_path %>
       <hr class="vl">
       <%= link_to "Statistiques", stats_path %>
     </div>
     <p>Sauf mention contraire, tous les textes de ce site sont sous <a href="https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf" class="license">licence etatlab-2.0</a> <%= image_tag "icone-download.svg" %></p>
+    <p>Site partiellement accessible</p>
   </div>
 </div>

@@ -2,12 +2,16 @@ class Help < ApplicationRecord
 
   has_one :notation_help
   has_many :candidature_dates, dependent: :destroy
-  has_many :notificationhelp
+  has_many :notification_helps
+  has_many :reviews
+  has_many :evaluation_helps
   accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
-  acts_as_taggable_on :type
+  acts_as_taggable_on :type, :type_photo
   validates :title, presence: true
   validates :description, presence: true
+  validates :help_amount, presence: true
+  validates :candidate_url, presence: true
 
   PARITE = [
     "respectée",
@@ -20,13 +24,9 @@ class Help < ApplicationRecord
     "Secours exceptionnel": "Secours exceptionnel"
   }
 
-  HELP_TYPE = {
-    "Matériel": {image: "appareil-photo.png", text: " financer du matériel"},
-    "Production": {image: "outils.png", text: " financer une production"},
-    "Aide Sociale": {image: "boule-de-cristal.png", text: " un secours exceptionnel"},
-    "Résidence": {image: "maison.png", text: " une résidence (artistique)"},
-    "Diffusion": {image: "haut-parleur.png", text: " financer une diffusion"},
-  }
+  HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
+
+  PHOTO_TYPE = ["photojournalisme", "photo artistique"]
 
   HELP_RESIDENCE = [
     "Auvergne-Rhône Alpes",
@@ -53,5 +53,6 @@ class Help < ApplicationRecord
   ]
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
-  validates :type_list, inclusion: { in: ["Matériel", "Production", "Aide Sociale", "Diffusion", "Résidence"] }
+  validates :type_list, inclusion: { in: HELP_TYPE }
+  validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
 end

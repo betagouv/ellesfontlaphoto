@@ -1,0 +1,7 @@
+<% reviews.each do |review| %>
+  <div class="comment">
+    <p class="comment-help mt5 mb0"><%= review.comment.gsub(/\n/, '<br/>').html_safe %></p>
+    <p class="comment-date mt0"><%= review.created_at.strftime("%d.%m.%y")  %></p>
+  </div>
+<% end %>
+
