@@ -42,7 +42,7 @@
         </p>
         <p class="paragraphe lh28 mt0 mb40">
           <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
-            Du <%= I18n.l candidature_date.start_date, format: :long %> au <%= I18n.l candidature_date.end_date, format: :long %><br>
+            Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
           <% end %>
         </p>
       <% end %>
@@ -61,7 +61,7 @@
         <% end %></p>
       <% end %>
       <% if @help.general_condition.present? %>
-          <p class="paragraphe mt0 mb40"><%= @help.general_condition %></p>
+          <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
       <% end %>
     </div>
   </div>
