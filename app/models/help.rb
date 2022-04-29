@@ -10,8 +10,8 @@ class Help < ApplicationRecord
   acts_as_taggable_on :type, :type_photo
   validates :title, presence: true
   validates :description, presence: true
-  validates :help_amount, presence: true
-  validates :candidate_url, presence: true
+  # validates :help_amount, presence: true
+  # validates :candidate_url, presence: true
 
   PARITE = [
     "respectée",
