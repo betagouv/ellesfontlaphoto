@@ -13,7 +13,7 @@ namespace :candidature_dates do
       next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
       if help.permanent?
         help.update(start_date: Date.today + 31.days, end_date: Date.today + 31.days)
-      elsif next_date.nil? || next_date.end_date < Date.today
+      elsif next_date.nil? || next_date.end_date < Date.today || help.end_date < Date.today
         help.candidature_dates.destroy_all
         help.update(start_date: nil, end_date: nil)
       else
