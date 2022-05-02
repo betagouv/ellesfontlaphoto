@@ -120,4 +120,25 @@ ActiveAdmin.register ConseilsArticle do
     f.actions
   end
 
+
+  csv do
+    column :title
+    column :subtitle
+    column(:tag_list) { |conseils_article| conseils_article.tags.map { |c| c.name } }
+    column(:category_list) { |conseils_article| conseils_article.category.map { |c| c.name } }
+    column :objectif
+    column :lecture_time
+    column :introduction
+    column :explication
+    column :perspective
+    column :citation
+    column :a_retenir
+    column :auteur
+    column :created_at
+    column :updated_at
+    column :citation_auteur
+    column :sources
+    column :liens_utiles
+    column :iframe_url
+  end
 end

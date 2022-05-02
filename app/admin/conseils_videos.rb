@@ -133,4 +133,19 @@ ActiveAdmin.register ConseilsVideo do
     f.actions
   end
 
+  csv do
+    column :title
+    column :subtitle
+    column(:tag_list) { |conseils_video| conseils_video.tags.map { |c| c.name } }
+    column(:category_list) { |conseils_video| conseils_video.category.map { |c| c.name } }
+    column :format
+    column :objectif
+    column :lecture_time
+    column :contenu_explication
+    column :protagoniste
+    column :created_at
+    column :updated_at
+    column :liens_utiles
+  end
 end
+

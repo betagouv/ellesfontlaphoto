@@ -112,7 +112,6 @@ ActiveAdmin.register Help do
     column :sector
     column :type_list
     column :type_photo
-    column :description
     column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui
@@ -200,6 +199,58 @@ ActiveAdmin.register Help do
       f.input :faq_url, label: "FAQ url"
     end
     f.actions
+  end
+
+  csv do
+    column :title
+    column :description
+    column :sector
+    column(:type_list) { |help| help.type_list.map { |e| e } }
+    column(:type_photo) { |help| help.type_photo.map { |e| e.name } }
+    column :institution_name
+    column(:start_date) { |help| help.candidature_dates.map { |c| c.start_date } }
+    column(:end_date) { |help| help.candidature_dates.map { |c| c.end_date } }
+    column :help_amount
+    column :residence_condition
+    column :general_condition
+    column :specific_condition
+    column :candidate_url
+    column :institution_url
+    column :selection
+    column :compo_commission
+    column :url_commission
+    column :old_laureat
+    column :old_laureat_url
+    column :admin_attachment
+    column :artistic_attachment
+    column :other_attachment
+    column :contact_institution
+    column :contact_institution_url
+    column :created_at
+    column :updated_at
+    column :example_enrollment_url
+    column :faq_url
+    column :issue_contact
+    column :statistic
+    column :end_date
+    column :start_date
+    column :identifiant
+    column :institution_partenaire
+    column :regularity
+    column :description_url
+    column :residence_time
+    column :help_advantage
+    column :old_laureats_case_url
+    column :parentality
+    column :accessibility
+    column :contact_intitution_email
+    column :contact_intitution_partenaire
+    column :commission_parite
+    column :old_laureats_parite
+    column :visible
+    column :description_longue
+    column :permanent
+    column :open
   end
 
 end
