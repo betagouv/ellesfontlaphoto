@@ -27,30 +27,40 @@
   <div class="line-filter"></div>
 
   <p class="paragraphe-small text-align-center title-filtre">Lieu</p>
-  <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputLieu">
-      <option value="">où résidez vous ?</option>
-      <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
-        <% if residence == "Française ou résidant en France" %>
-          <option value="France">France</option>
-        <% elsif residence == "Française résidant en outre-mer" %>
-          <option value="Outre-mer">Outre-mer</option>
-        <% elsif residence == "Française résidant à l'étranger" %>
-          <option value="À l'étranger">À l'étranger</option>
-        <% else %>
-          <option value="<%= residence %>"><%= residence %></option>
+  <div class="div-select">
+    <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshLieu" data-filter-helps-target="inputLieu">
+        <option value="">où résidez vous ?</option>
+        <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
+          <% if residence == "Française ou résidant en France" %>
+            <option value="France">France</option>
+          <% elsif residence == "Française résidant en outre-mer" %>
+            <option value="Outre-mer">Outre-mer</option>
+          <% elsif residence == "Française résidant à l'étranger" %>
+            <option value="À l'étranger">À l'étranger</option>
+          <% else %>
+            <option value="<%= residence %>"><%= residence %></option>
+          <% end %>
         <% end %>
-      <% end %>
-  </select>
+    </select>
+    <span class="cross-select" data-action="click->filter-helps#clearSelectedLieu" data-filter-helps-target="crossLieu">
+      <%= image_tag "cross-criteria.svg" %>
+    </span>
+  </div>
 
   <div class="line-filter"></div>
 
   <p class="paragraphe-small text-align-center title-filtre">Type de photo</p>
-  <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
-      <option value="">secteurs</option>
-      <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
-        <option value="<%= photo_type %>"><%= photo_type %></option>
-      <% end %>
-  </select>
+  <div class="div-select">
+    <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshTypePhoto" data-filter-helps-target="inputTypePhoto">
+        <option value="">secteurs</option>
+        <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
+          <option value="<%= photo_type %>"><%= photo_type %></option>
+        <% end %>
+    </select>
+    <span class="cross-select" data-action="click->filter-helps#clearSelectedTypePhoto" data-filter-helps-target="crossTypePhoto">
+      <%= image_tag "cross-criteria.svg" %>
+    </span>
+  </div>
 
   <div class="line-filter"></div>
 

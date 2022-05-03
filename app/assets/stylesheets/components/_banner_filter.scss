@@ -64,29 +64,43 @@
         margin-left: 15px;
       }
     }
+    .div-select {
+      position: relative;
+      select {
+        margin: 10px auto;
+        display: table;
+        height: 40px;
+        width: 227px;
+        border-radius: 40px;
+        font-family: 'Marianne-Regular', sans-serif;
+        color: $grey-input;
+        padding: 0px 15px;
+        background-position: calc(100% - 0.75rem) center !important;
+        -moz-appearance:none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        background-repeat: no-repeat;
+        padding-right: 2rem !important;
+        border: 1px solid $black;
+        cursor: pointer;
+        background-image: url(chevron.svg);
+        &:focus {
+          outline: none;
+          border: 2px solid $filter-purple;
+          color: $black;
+        }
+      }
 
-    select {
-      margin: 10px auto;
-      display: table;
-      height: 40px;
-      width: 227px;
-      border-radius: 40px;
-      font-family: 'Marianne-Regular', sans-serif;
-      color: $grey-input;
-      padding: 0px 15px;
-      background-position: calc(100% - 0.75rem) center !important;
-      -moz-appearance:none !important;
-      -webkit-appearance: none !important;
-      appearance: none !important;
-      background-repeat: no-repeat;
-      padding-right: 2rem !important;
-      border: 1px solid $black;
-      cursor: pointer;
-      background-image: url(chevron.svg);
-      &:focus {
-        outline: none;
-        border: 2px solid $filter-purple;
-        color: $black;
+      select.hide-arrow {
+        background-image: none;
+      }
+
+      .cross-select {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        right: 18%;
+        top: 15%;
       }
     }
 
