@@ -7,7 +7,7 @@
   <div class="flex-div-left">
     <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @help.type_list.each do |type| %>
-      <a href="/helps">
+      <a href="/helps?type_list=<%= type %>">
         <p class="fiche-tag"> <%= type %></p>
       </a>
     <% end %>

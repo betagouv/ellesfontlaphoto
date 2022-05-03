@@ -8,7 +8,7 @@
 <% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
   <% if conseil.class == ConseilsArticle %>
     <div class="card-index-conseils-articles">
-      <%= link_to conseils_article_path(conseil) do %>
+      <%= link_to conseils_article_path(conseil), target: :_blank do %>
         <% if (Time.now - conseil.created_at)/1.day < 15  %>
           <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>
@@ -26,7 +26,7 @@
     </div>
   <% elsif conseil.class == ConseilsVideo %>
     <div class="card-index-conseils-videos">
-      <%= link_to conseils_video_path(conseil) do %>
+      <%= link_to conseils_video_path(conseil), target: :_blank do %>
         <% if (Time.now - conseil.created_at)/1.day < 15  %>
           <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>
@@ -53,7 +53,7 @@
     </div>
   <% elsif conseil.class == Webinaire %>
     <div class="card-index-conseils-videos">
-      <%= link_to "#" do %>
+      <%= link_to "#", target: :_blank do %>
         <% if (Time.now - conseil.created_at)/1.day < 15  %>
           <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>

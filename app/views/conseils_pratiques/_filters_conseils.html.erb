@@ -4,9 +4,9 @@
   <p class="paragraphe-small text-align-center mb20 mt10" style="padding: 0 25px;">De quels conseils ou ressources avez-vous besoin ? </p>
   <p class="button-criteria">
     <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
-      <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
+      <span class="button-criteria-conseils-elements <%= @selected == category ? "selected" : "" %>" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
         <%= category %>
-        <span class="cross-criteria">&times;</span>
+        <span class="cross-criteria <%= @selected == category ? "display-inline" : "" %>">&times;</span>
       </span>
     <% end %>
   </p>

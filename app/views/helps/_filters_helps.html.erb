@@ -4,9 +4,9 @@
   <p class="paragraphe-small text-align-center mt10">Votre besoin</p>
   <p class="button-criteria">
     <% Help::HELP_TYPE.each do |type| %>
-      <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
+      <span class="button-criteria-helps-elements <%= @selected_type == type ? "selected" : "" %>" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
         <%= type %>
-        <span class="cross-criteria">&times;</span>
+        <span class="cross-criteria <%= @selected_type == type ? "display-inline" : "" %>">&times;</span>
       </span>
     <% end %>
   </p>
