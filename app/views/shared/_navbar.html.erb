@@ -14,7 +14,12 @@
         </li>
         <li>
           <%= link_to conseils_path, class: "link-menu conseils-link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "conseils-link-selected" : "" }" do  %>
-            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %></span> Ressources et conseils
+            <span class="links-icones"> <%= image_tag "emojis/diamant.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %></span> Ressources
+          <% end %>
+        </li>
+        <li>
+          <%= link_to rencontre_path, class: "link-menu conseils-link-menu #{params[:controller] == "pages" && params[:action] == "rencontre" ? "conseils-link-selected" : "" }" do  %>
+            <span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium", style: "width: 52px;" %></span> Rencontre
           <% end %>
         </li>
       </ul>
