@@ -1,1 +1,45 @@
-rencontre.html.erb
+<div class="rencontre">
+  <div class="div-liens-rencontre">
+    <h2>Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h2>
+    <div class="liens-rencontre">
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="" target="_blank">Webinaires</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="https://www.facebook.com/groups/1891143867759342" target="_blank">Communauté facebook</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="" target="_blank">Proposer votre expertise</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a class="js-modal" data-modal="modal-newsletter">S’abonner à l’infolettre</a></p>
+    </div>
+  </div>
+  <div class="webinaire-coming">
+    <p class="spectral-title title-webinaire-coming">Webinaires à venir</p>
+    <p class="paragraphe">Expertes et experts de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
+    <% @webinaires.each do |webinaire| %>
+      <div class="card-webinaire-coming">
+        <div class="images-webinaire">
+          <% webinaire.images.each do |image| %>
+            <%= cl_image_tag image.key, class: "img-webinaire" %>
+          <% end %>
+        </div>
+        <p class="subtitle-marianne"><%= webinaire.titre %><br><span class="spectral-italic">avec <%= webinaire.participant %></span></p>
+        <p class="webinaire-description"><%= webinaire.description %></p>
+        <div class="info-webinaire">
+          <p class="date-webinaire"><%= I18n.l webinaire.date, format: :long %></p>
+          <p class="lieu-webinaire"><%= image_tag "map-pin.png" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
+          <div class="btn-black">Je m'inscris</div>
+        </div>
+      </div>
+    <% end %>
+    <div class="old-webinaires">
+      <p class="paragraphe-bold">Précédent webinaire à revoir</p>
+      <p class="paragraphe-small mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois retrouver les replays via notre chaine YouTube !</p>
+      <a href="conseils?document_type=webinaire" class="btn-black"><%= image_tag "youtube.png" %> replay webinaires</a>
+    </div>
+    <div class="join-community d-flex">
+      <div>
+        <p class="spectral-title">Rejoindre la communauté Elles font la culture</p>
+        <p class="paragraphe">Vous êtes photographe professionnelle et souhaitez vous appuyer sur une communauté de paires pour élargir votre réseau, relire un dossier de candidature, partager des opportunités, demander des conseils... Rejoignez le groupe Facebook de rencontre, d'entraide et d'échange <em>Elles font la culture - photographie</em></p>
+        <a href="" class="btn-purple"><%= image_tag "facebook.svg" %>  Rejoindre le groupe </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+<%= render "shared/modales_contact" %>

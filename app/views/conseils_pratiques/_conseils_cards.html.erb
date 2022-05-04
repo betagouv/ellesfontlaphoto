@@ -58,9 +58,9 @@
           <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>
         <div class="card-index-conseils-videos-div">
-          <% if conseil.image.attached? %>
+          <% if conseil.images.attached? %>
             <div>
-              <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
+              <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
               <div class="flottante-play">
                 <%= image_tag "play.svg", alt: "icône play vidéo" %>
               </div>
@@ -68,7 +68,7 @@
           <% end %>
         </div>
         <div class="cards-videos-info">
-          <p class="main-bold-paragraphe mt30 mb30"><%= conseil.title %></p>
+          <p class="main-bold-paragraphe mt30 mb30"><%= conseil.titre %></p>
         </div>
         <div class="pastille-conseils purple">
           <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire

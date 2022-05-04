@@ -1,18 +1,56 @@
 ActiveAdmin.register Webinaire do
+  permit_params :titre, :date, :lieu, :description, :sous_titre, :participant, :url, :page_rencontre, images: []
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :title, :date, :place, :description
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :date, :place, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  show do
+    attributes_table do
+      row :id
+      row :page_rencontre
+      row :titre
+      row :sous_titre
+      row :date
+      row :url
+      row "Images" do |m|
+        m.images.each do |img|
+          span do
+            image_tag img, style: 'max-width: 450px; max-height:450px;'
+          end
+        end
+      end
+      row :participant
+      row :description
+    end
+  end
 
+  index do
+    column :id
+    column :page_rencontre
+    column :titre
+    column :sous_titre
+    column :date
+    column :url
+    column :participant
+    column :description
+    actions
+  end
+
+  form do |f|
+    f.semantic_errors # shows errors on :base
+    f.inputs "Webinaire" do
+      f.input :page_rencontre, as: :boolean
+      f.input :titre
+      f.input :sous_titre
+      f.input :date
+      f.input :url
+      if f.object.images.attached?
+        f.object.images.each do |i|
+          f.input :images, as: :file, :hint => image_tag(i), style: 'max-width: 450px; max-height:450px;', input_html: { multiple: true }
+        end
+      else
+        f.input :images, as: :file, input_html: { multiple: true }
+      end
+      f.input :participant
+      f.input :description
+    end
+    f.actions
+  end
 end

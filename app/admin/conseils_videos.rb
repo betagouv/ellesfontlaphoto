@@ -1,14 +1,6 @@
 ActiveAdmin.register ConseilsVideo do
 
   permit_params :title, :subtitle, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :video, :image, :category_list, :type_list
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :subtitle, :category, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :tag_list]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
 
   before_create do |conseils_video|
     categories = []

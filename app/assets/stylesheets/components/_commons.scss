@@ -37,7 +37,7 @@ h2 {
   color: $black;
 }
 
-h4 {
+h4,.subtitle-marianne {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -103,6 +103,16 @@ p {
   a {
     text-decoration: underline !important;
   }
+}
+
+.btn-purple {
+  background-color: $purple !important;
+  border-radius: 40px;
+  color: $black !important;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
 }
 
 .paragraphe {
