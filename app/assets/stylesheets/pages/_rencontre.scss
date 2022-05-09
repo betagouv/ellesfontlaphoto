@@ -282,10 +282,15 @@
     }
     .div-liens-rencontre {
       display: block;
-      h2,.liens-rencontre {
+      h1,.liens-rencontre {
         min-width: 100%;
+        line-height: 45px;
+        .spectral-title {
+          // line-height: 38px;
+        }
         p {
           justify-content: center;
+          margin: 0px;
         }
       }
     }
