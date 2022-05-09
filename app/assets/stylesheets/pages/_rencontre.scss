@@ -1,7 +1,7 @@
 .rencontre {
   .div-liens-rencontre {
     padding: 5% 7%;
-    h2 {
+    h1 {
       max-width: 50%;
     }
     display: flex;
@@ -13,6 +13,7 @@
         margin-right: 5px;
       }
       a {
+        white-space: nowrap;
         color: #666666 !important;
         font-size: 20px;
         text-decoration: none !important;
@@ -167,7 +168,12 @@
     .img-community {
       width: 40%;
     }
-
+    .img-community.desk {
+      display: block;
+    }
+    .img-community.mob {
+      display: none;
+    }
   }
   .join-community.bck {
     background-image: url(background-shadow.png);
@@ -197,6 +203,9 @@
 
 @media only screen and (max-width: 1250px) {
   .rencontre {
+    h1 {
+      min-width: 60%;
+    }
     .webinaire-coming {
       .card-webinaire-coming {
         .images-webinaire {
@@ -227,13 +236,63 @@
           }
         }
       }
+      .old-webinaires {
+        padding: 7% 10%;
+        text-align: center;
+      }
+    }
+    .join-community {
+      display: block;
+      padding: 10% 7%;
+      div {
+        width: 100%;
+        .spectral-title {
+          margin-bottom: 15px;
+        }
+      }
+      .img-community {
+        width: 100%;
+      }
+      .img-community.desk {
+        display: none;
+      }
+      .img-community.mob {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    .join-community.bck {
+      padding-top: 20%;
+    }
+    .rencontre-inscription {
+      div {
+        padding: 10% 5%;
+      }
+      .btn-black {
+        margin-bottom: 20px;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 750px) {
   .rencontre {
+    .spectral-title {
+      font-size: 34px;
+    }
+    .div-liens-rencontre {
+      display: block;
+      h2,.liens-rencontre {
+        min-width: 100%;
+        p {
+          justify-content: center;
+        }
+      }
+    }
     .webinaire-coming {
+      .paragraphe {
+        min-width: 100%;
+      }
       .card-webinaire-coming {
         display: block;
         padding: 40px 0px;
@@ -248,17 +307,19 @@
           .subtitle-marianne,.spectral-italic,.webinaire-description,.info-webinaire {
             text-align: center;
           }
-          .subtitle-marianne {
-          }
           .info-webinaire {
             display: block;
             .lieu-webinaire {
               text-align: center;
               margin-bottom: 20px;
             }
-            .btn-black {
-            }
           }
+        }
+      }
+      .old-webinaires {
+        padding: 7% 0;
+        .paragraphe-small {
+          text-align: center;
         }
       }
     }

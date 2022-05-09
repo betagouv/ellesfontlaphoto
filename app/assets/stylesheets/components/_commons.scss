@@ -441,6 +441,9 @@ a {
   .subtitle {
     text-align: left;
   }
+  .spectral-title {
+    font-size: 40px;
+  }
 }
 
 
@@ -448,10 +451,16 @@ a {
   h1 {
     padding-bottom: 20px;
   }
-  h2 {
+  h2,.subtitle {
     font-size: 30px;
     line-height: 43px;
     padding-bottom: 10px;
+  }
+  .spectral-title {
+    font-size: 40px;
+  }
+  .subtitle-spectral {
+    font-size: 34px;
   }
   .paragraphe-title {
     font-size: 18px;
