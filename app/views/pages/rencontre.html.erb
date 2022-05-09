@@ -1,4 +1,4 @@
-<div class="rencontre">
+<div class="rencontre" id="rencontre-page">
   <div class="div-liens-rencontre">
     <h2>Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h2>
     <div class="liens-rencontre">
@@ -18,12 +18,16 @@
             <%= cl_image_tag image.key, class: "img-webinaire" %>
           <% end %>
         </div>
-        <p class="subtitle-marianne"><%= webinaire.titre %><br><span class="spectral-italic">avec <%= webinaire.participant %></span></p>
-        <p class="webinaire-description"><%= webinaire.description %></p>
-        <div class="info-webinaire">
-          <p class="date-webinaire"><%= I18n.l webinaire.date, format: :long %></p>
-          <p class="lieu-webinaire"><%= image_tag "map-pin.png" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
-          <div class="btn-black">Je m'inscris</div>
+        <div class="sub-div-webinaire-coming">
+          <p class="subtitle-marianne"><%= webinaire.titre %><br><span class="spectral-italic">avec <%= webinaire.participant %></span></p>
+          <p class="webinaire-description"><%= webinaire.description %></p>
+          <div class="info-webinaire">
+            <div>
+              <p class="date-webinaire"><%= I18n.l webinaire.date, format: :long %></p>
+              <p class="lieu-webinaire"><%= image_tag "map-pin.png" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
+            </div>
+            <%= link_to webinaire.url_inscription, "Je m'inscris", class: "btn-black" %>
+          </div>
         </div>
       </div>
     <% end %>
@@ -32,13 +36,27 @@
       <p class="paragraphe-small mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois retrouver les replays via notre chaine YouTube !</p>
       <a href="conseils?document_type=webinaire" class="btn-black"><%= image_tag "youtube.png" %> replay webinaires</a>
     </div>
-    <div class="join-community d-flex">
-      <div>
-        <p class="spectral-title">Rejoindre la communauté Elles font la culture</p>
-        <p class="paragraphe">Vous êtes photographe professionnelle et souhaitez vous appuyer sur une communauté de paires pour élargir votre réseau, relire un dossier de candidature, partager des opportunités, demander des conseils... Rejoignez le groupe Facebook de rencontre, d'entraide et d'échange <em>Elles font la culture - photographie</em></p>
-        <a href="" class="btn-purple"><%= image_tag "facebook.svg" %>  Rejoindre le groupe </a>
-      </div>
-
+  </div>
+  <div class="join-community">
+    <div>
+      <p class="spectral-title">Rejoindre la communauté Elles font la culture</p>
+      <p class="paragraphe">Vous êtes photographe professionnelle et souhaitez vous appuyer sur une communauté de paires pour élargir votre réseau, relire un dossier de candidature, partager des opportunités, demander des conseils... Rejoignez le groupe Facebook de rencontre, d'entraide et d'échange <em>Elles font la culture - photographie</em></p>
+      <a href="https://www.facebook.com/groups/1891143867759342" target="_blank" class="btn-purple"><%= image_tag "facebook.svg" %>  Rejoindre le groupe </a>
+    </div>
+    <%= image_tag "group.png", alt: "image communauté", class: "img-community" %>
+  </div>
+  <div class="join-community bck">
+    <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck" %>
+    <div>
+      <p class="spectral-title">Collaborer en partageant votre expertise</p>
+      <p class="paragraphe">Proposez-nous votre expertise pour rédiger une fiche pratique, animer un webinaire, un atelier, témoigner... Pour que les membres de cette communauté s'enrichissent mutuellement grâce à des partages d'expérience et conseils. Nous sommes ouvertes à la discussion !</p>
+      <a class="js-modal btn-orange" data-modal="modal-contact">Collaborons ! </a>
+    </div>
+  </div>
+  <div class="rencontre-inscription">
+    <div>
+      <p class="subtitle">Et pour ne manquer aucun événement, abonnez-vous à <span class="subtitle-spectral">notre infolettre</span></p>
+      <a class="js-modal btn-black" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", style: "width: 20px; height: 15px; margin-right: 5px;" %> inscription</a>
     </div>
   </div>
 </div>
