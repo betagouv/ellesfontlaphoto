@@ -1,5 +1,5 @@
 ActiveAdmin.register Webinaire do
-  permit_params :titre, :date, :lieu, :description, :sous_titre, :participant, :url, :page_rencontre, images: []
+  permit_params :titre, :date, :lieu, :description, :sous_titre, :participant, :url, :page_rencontre, :url_inscription, images: []
 
   show do
     attributes_table do
@@ -9,6 +9,7 @@ ActiveAdmin.register Webinaire do
       row :sous_titre
       row :date
       row :url
+      row :url_inscription
       row "Images" do |m|
         m.images.each do |img|
           span do
@@ -28,6 +29,7 @@ ActiveAdmin.register Webinaire do
     column :sous_titre
     column :date
     column :url
+    column :url_inscription
     column :participant
     column :description
     actions
@@ -41,6 +43,7 @@ ActiveAdmin.register Webinaire do
       f.input :sous_titre
       f.input :date
       f.input :url
+      f.input :url_inscription
       if f.object.images.attached?
         f.object.images.each do |i|
           f.input :images, as: :file, :hint => image_tag(i), style: 'max-width: 450px; max-height:450px;', input_html: { multiple: true }
