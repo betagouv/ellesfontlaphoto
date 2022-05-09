@@ -37,7 +37,7 @@ h2 {
   color: $black;
 }
 
-h4 {
+h4,.subtitle-marianne {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -103,6 +103,26 @@ p {
   a {
     text-decoration: underline !important;
   }
+}
+
+.btn-purple {
+  background-color: $purple !important;
+  border-radius: 40px;
+  color: $black !important;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
+}
+
+.btn-orange {
+  background-color: $orange !important;
+  border-radius: 40px;
+  color: $black !important;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
 }
 
 .paragraphe {
@@ -421,6 +441,9 @@ a {
   .subtitle {
     text-align: left;
   }
+  .spectral-title {
+    font-size: 40px;
+  }
 }
 
 
@@ -428,10 +451,16 @@ a {
   h1 {
     padding-bottom: 20px;
   }
-  h2 {
+  h2,.subtitle {
     font-size: 30px;
     line-height: 43px;
     padding-bottom: 10px;
+  }
+  .spectral-title {
+    font-size: 40px;
+  }
+  .subtitle-spectral {
+    font-size: 34px;
   }
   .paragraphe-title {
     font-size: 18px;

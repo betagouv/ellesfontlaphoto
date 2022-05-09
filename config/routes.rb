@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "mentions_legales", to: 'pages#mentions_legales'
   get "proposer_conseil", to: 'pages#proposer_conseil'
   get "proposer_aide", to: 'pages#proposer_aide'
+  get "rencontre", to: 'pages#rencontre'
 
   resources :contacts, only: :create
   resources :helps, only: [:show, :index] do

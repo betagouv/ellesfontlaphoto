@@ -23,6 +23,16 @@ ActiveAdmin.register Help do
     end
   end
 
+  before_create do |help|
+    help.type_list = params["help"]["type_list"]
+    help.type_photo_list = params["help"]["type_photo_list"]
+  end
+
+  before_update do |help|
+    help.type_list = params["help"]["type_list"]
+    help.type_photo_list = params["help"]["type_photo_list"]
+  end
+
   show do
     attributes_table do
       row :id
@@ -79,16 +89,6 @@ ActiveAdmin.register Help do
       row :parentality
       row :accessibility
     end
-  end
-
-  before_create do |help|
-    help.type_list = params["help"]["type_list"]
-    help.type_photo_list = params["help"]["type_photo_list"]
-  end
-
-  before_update do |help|
-    help.type_list = params["help"]["type_list"]
-    help.type_photo_list = params["help"]["type_photo_list"]
   end
 
   filter :type_list

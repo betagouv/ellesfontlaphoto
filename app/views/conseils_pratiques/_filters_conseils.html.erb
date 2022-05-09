@@ -19,13 +19,13 @@
       <%= image_tag "fiche_pratique.svg" %> fiche pratique
       <span class="cross-criteria">&times;</span>
     </span>
-<!--     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
-      <%#= image_tag "webinaire.svg" %> webinaire
-      <span class="cross-criteria">&times;</span>
-    </span> -->
+    <span class="button-criteria-conseils-elements <%= @selected_document == "webinaire" ? "selected" : "" %>" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
+      <%= image_tag "webinaire.svg" %> webinaire
+      <span class="cross-criteria <%= @selected_document == "webinaire" ? "display-inline" : "" %>">&times;</span>
+    </span>
     <span class="button-criteria-conseils-elements" style="padding-left:7px;" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
       <%= image_tag "temoignage.svg" %> témoignage
-      <span class="cross-criteria">&times;</span>
+      <span class="cross-criteria ">&times;</span>
     </span>
   </div>
 
@@ -40,7 +40,7 @@
       <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" } %>
     <% end %>
     <% if @selected_document.present? %>
-      <%= text_field_tag :document_type, params[:document_type], value: selected_document, data: { filter_conseils_target: "inputDocumentType" } %>
+      <%= text_field_tag :document_type, params[:document_type], value: @selected_document, data: { filter_conseils_target: "inputDocumentType" } %>
     <% else %>
       <%= text_field_tag :document_type, params[:document_type], data: { filter_conseils_target: "inputDocumentType" } %>
     <% end %>
