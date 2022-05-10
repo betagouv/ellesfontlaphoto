@@ -5,41 +5,17 @@
     margin-bottom: 20px;
     border-radius: 16px;
     border: 1px solid $purple;
-    padding: 12% 10% 10% 10%;
     position: relative;
     height: intrinsic;           /* Safari/WebKit uses a non-standard name */
     height: -moz-max-content;    /* Firefox/Gecko */
     height: -webkit-max-content;
-    .main-bold-paragraphe {
-      text-align: left;
-    }
-
-    ul {
-      margin-top: 0;
-      font-size: 14px;
-      line-height: 18px;
-    }
-
-    .paragrahe-gains {
-      p {
-        margin: 0;
-      }
-    }
-
     &:hover {
       box-shadow: 0 0 6px rgba(1,1,1,0.5);
     }
-    a{
-      color: $black !important;
-    }
-    .arrow {
-      margin-bottom:0;
-      margin-top: 15%;
-    }
     .flottante-div {
-        display: flex;
-        position: absolute;
-        top: -15px;
+      display: flex;
+      position: absolute;
+      top: -15px;
       .flottante {
         color: $black !important;
         border: 1px solid $purple;
@@ -58,6 +34,36 @@
       .flottante-ouverte {
         background-color: $purple;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+    }
+    .image-card-helps {
+      border-top-right-radius: 16px;
+      border-top-left-radius: 16px;
+      width: 100%;
+    }
+    .sub-card-index-helps {
+      padding: 12% 10% 10% 10%;
+      .main-bold-paragraphe {
+        text-align: left;
+      }
+
+      ul {
+        margin-top: 0;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .paragrahe-gains {
+        p {
+          margin: 0;
+        }
+      }
+      a{
+        color: $black !important;
+      }
+      .arrow {
+        margin-bottom:0;
+        margin-top: 15%;
       }
     }
   }
