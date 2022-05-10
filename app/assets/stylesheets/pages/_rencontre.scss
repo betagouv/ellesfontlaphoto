@@ -2,7 +2,8 @@
   .div-liens-rencontre {
     padding: 5% 7%;
     h1 {
-      max-width: 50%;
+      max-width: 43%;
+      text-align:left;
     }
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,7 @@
         text-decoration: none !important;
         cursor: pointer;
         &:hover {
-          text-decoration: underline !important;
+          color: $purple-blue !important;
         }
       }
     }
@@ -28,7 +29,7 @@
     background-color: $orange;
     padding: 3% 7%;
     .title-webinaire-coming {
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
     .paragraphe {
       max-width: 60%;
@@ -98,7 +99,7 @@
           text-align: left;
           .spectral-italic {
             font-size: 20px;
-            line-height: 0;
+            margin-bottom: 20px;
           }
         }
         .btn-black {
@@ -110,7 +111,7 @@
           margin: 0 auto;
         }
       }
-      }
+    }
 
     .old-webinaires {
       padding: 7% 25%;
@@ -153,6 +154,10 @@
         justify-content: space-between;
         width: -webkit-fill-available;
         width: fit-content;
+        margin-top: 30px;
+        &:hover {
+          background-color: $hover-purple !important;
+        }
         img {
           margin-right: 10px;
         }
@@ -163,6 +168,10 @@
         justify-content: space-between;
         width: -webkit-fill-available;
         width: fit-content;
+        margin-top: 30px;
+        &:hover {
+          background-color: $hover-orange !important;
+        }
       }
     }
     .img-community {
@@ -183,11 +192,11 @@
   .rencontre-inscription {
     padding: 3% 7%;
     div {
-      border-radius: 16px;
-      padding: 5% 20%;
       background-image: url(background-shadow2.png);
       background-size: cover;
       background-repeat: no-repeat;
+      border-radius: 16px;
+      padding: 5% 20%;
       text-align: center;
       margin: 0 auto;
       p {
