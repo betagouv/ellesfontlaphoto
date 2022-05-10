@@ -6,8 +6,8 @@
     border-radius: 16px;
     border: 1px solid $purple;
     position: relative;
-    height: intrinsic;           /* Safari/WebKit uses a non-standard name */
-    height: -moz-max-content;    /* Firefox/Gecko */
+    height: intrinsic;
+    height: -moz-max-content;
     height: -webkit-max-content;
     &:hover {
       box-shadow: 0 0 6px rgba(1,1,1,0.5);
