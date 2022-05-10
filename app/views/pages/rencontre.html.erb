@@ -24,8 +24,9 @@
           <div class="info-webinaire">
             <div>
               <p class="date-webinaire"><%= I18n.l webinaire.date, format: :long %></p>
-              <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
+              <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %>Visio conférence</p>
             </div>
+            <div></div>
             <%= link_to webinaire.url_inscription, "Je m'inscris", class: "btn-black" %>
           </div>
         </div>
@@ -46,18 +47,18 @@
     </div>
     <%= image_tag "group.png", alt: "image communauté", class: "img-community desk" %>
   </div>
-  <div class="join-community bck">
+  <div class="join-community">
     <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck desk" %>
     <div>
       <p class="spectral-title">Collaborer en partageant votre expertise</p>
-      <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck mob" %>
+      <%= image_tag "actor-community-mob.png", alt: "image communauté", class: "img-community bck mob" %>
       <p class="paragraphe">Proposez-nous votre expertise pour rédiger une fiche pratique, animer un webinaire, un atelier, témoigner... Pour que les membres de cette communauté s'enrichissent mutuellement grâce à des partages d'expérience et conseils. Nous sommes ouvertes à la discussion !</p>
       <a class="js-modal btn-orange" data-modal="modal-contact">Collaborons ! </a>
     </div>
   </div>
   <div class="rencontre-inscription">
     <div>
-      <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre</span></p>
+      <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre</span></p>
       <a class="js-modal btn-black" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", style: "width: 20px; height: 15px; margin-right: 5px;" %> inscription</a>
     </div>
   </div>

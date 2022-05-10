@@ -73,16 +73,13 @@
             color: $black;
           }
           .lieu-webinaire {
+            display: flex;
+            align-items: center;
             img {
               margin-right: 5px;
             }
-            a {
-              color: $dark-orange !important;
-              text-decoration: none !important;
-            }
-            &:hover {
-              text-decoration: underline !important;
-            }
+            color: $dark-orange !important;
+            text-decoration: none !important;
           }
         }
         .webinaire-description {
@@ -292,8 +289,11 @@
     .div-liens-rencontre {
       display: block;
       h1,.liens-rencontre {
+        margin-top: 7%;
+        text-align: center;
         min-width: 100%;
         line-height: 45px;
+        font-size: 32px;
         .spectral-title {
           // line-height: 38px;
         }
@@ -324,7 +324,7 @@
           .info-webinaire {
             display: block;
             .lieu-webinaire {
-              text-align: center;
+              justify-content: center;
               margin-bottom: 20px;
             }
           }
@@ -335,6 +335,16 @@
         .paragraphe-small {
           text-align: center;
         }
+      }
+    }
+    .join-community {
+      .spectral-title {
+        font-size: 38px;
+      }
+    }
+    .rencontre-inscription {
+      .subtitle {
+        font-size: 28px;
       }
     }
   }
