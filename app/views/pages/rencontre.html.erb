@@ -8,7 +8,7 @@
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a class="js-modal" data-modal="modal-newsletter">S’abonner à l’infolettre</a></p>
     </div>
   </div>
-  <div class="webinaire-coming">
+  <div class="webinaire-coming" id="webinaire">
     <p class="spectral-title title-webinaire-coming">Webinaires à venir</p>
     <p class="paragraphe">Expertes et experts de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
     <% @webinaires.each do |webinaire| %>
@@ -51,7 +51,7 @@
     <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck desk" %>
     <div>
       <p class="spectral-title">Collaborer en partageant votre expertise</p>
-      <%= image_tag "actor-community-mob.png", alt: "image communauté", class: "img-community bck mob" %>
+      <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck mob" %>
       <p class="paragraphe">Proposez-nous votre expertise pour rédiger une fiche pratique, animer un webinaire, un atelier, témoigner... Pour que les membres de cette communauté s'enrichissent mutuellement grâce à des partages d'expérience et conseils. Nous sommes ouvertes à la discussion !</p>
       <a class="js-modal btn-orange" data-modal="modal-contact">Collaborons ! </a>
     </div>
@@ -60,6 +60,7 @@
     <div>
       <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre</span></p>
       <a class="js-modal btn-black" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", style: "width: 20px; height: 15px; margin-right: 5px;" %> inscription</a>
+      <a href="https://www.instagram.com/ellesfontlaculture_/" class="btn-black" style="margin-left: 3%;"><%= image_tag "instagram.svg", alt:"instagram", style: "width: 20px; height: 22px; margin-right: 5px; margin-bottom: 6px; vertical-align: middle;" %> instagram</a>
     </div>
   </div>
 </div>
