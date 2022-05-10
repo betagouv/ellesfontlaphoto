@@ -1,6 +1,6 @@
 <div class="rencontre" id="rencontre-page">
   <div class="div-liens-rencontre">
-    <h1 class="subtitle">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h1>
+    <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h1>
     <div class="liens-rencontre">
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="/conseils?document_type=webinaire" target="_blank">Webinaires</a></p>
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="https://www.facebook.com/groups/1891143867759342" target="_blank">Communauté facebook</a></p>
@@ -24,7 +24,7 @@
           <div class="info-webinaire">
             <div>
               <p class="date-webinaire"><%= I18n.l webinaire.date, format: :long %></p>
-              <p class="lieu-webinaire"><%= image_tag "map-pin.png" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
+              <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %><a href="<%= webinaire.url %>">Visio conférence</a></p>
             </div>
             <%= link_to webinaire.url_inscription, "Je m'inscris", class: "btn-black" %>
           </div>
@@ -33,7 +33,7 @@
     <% end %>
     <div class="old-webinaires">
       <p class="paragraphe-bold">Précédents webinaires à revoir</p>
-      <p class="paragraphe-small mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois retrouver les replays via notre chaine YouTube !</p>
+      <p class="paragraphe-small text-align-center mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois retrouver les replays via notre chaine YouTube !</p>
       <a href="conseils?document_type=webinaire" class="btn-black"><%= image_tag "youtube.png" %> replay webinaires</a>
     </div>
   </div>
@@ -57,7 +57,7 @@
   </div>
   <div class="rencontre-inscription">
     <div>
-      <p class="subtitle">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre</span></p>
+      <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre</span></p>
       <a class="js-modal btn-black" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", style: "width: 20px; height: 15px; margin-right: 5px;" %> inscription</a>
     </div>
   </div>
