@@ -90,15 +90,18 @@
 
   .link-menu.manifeste-link-menu {
     white-space: nowrap;
-    margin-right: 3rem;
-    margin-top: 0.4rem;
-    padding: 5px 15px 7px;
+    margin: 0 3rem 0 15px;
+    padding: 1.05rem 0 1.05rem 0;
     margin-bottom: 0;
     &:hover {
-      border-radius: 40px;
-      display: table !important;
-      background-color: $hover-black;
+      box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
+  }
+
+  .manifeste-link-menu-selected {
+    white-space: nowrap;
+    box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    border-radius: 0;
   }
 
   .link-menu:after {
