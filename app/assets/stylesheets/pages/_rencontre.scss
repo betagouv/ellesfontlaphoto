@@ -294,12 +294,19 @@
 
 @media only screen and (max-width: 750px) {
   .rencontre {
+    .title-marianne {
+      margin-top: 7%;
+      text-align: center !important;
+      min-width: 100%;
+      line-height: 45px;
+      font-size: 30px;
+    }
     .spectral-title {
       font-size: 34px;
     }
     .div-liens-rencontre {
       display: block;
-      h1,.liens-rencontre {
+      .liens-rencontre {
         margin-top: 7%;
         text-align: center;
         min-width: 100%;
@@ -351,6 +358,13 @@
       }
     }
     .rencontre-inscription {
+      .btn-black {
+        display: block;
+        width: -webkit-fill-available;
+        width: fit-content;
+        height: 23px;
+        margin: 20px auto !important;
+      }
       .subtitle {
         font-size: 28px;
       }
