@@ -4,6 +4,7 @@
     background-color: white;
     margin-bottom: 20px;
     border-radius: 16px;
+    padding-bottom: 3%;
     border: 1px solid $purple;
     position: relative;
     height: intrinsic;
@@ -11,10 +12,33 @@
     height: -webkit-max-content;
     &:hover {
       box-shadow: 0 0 6px rgba(1,1,1,0.5);
+      height: fit-content;
+      .image-card-helps {
+      }
+      .sub-card-index-helps {
+        z-index: 10;
+        transform: translateY(-40px);
+        transition: transform .6s ease-out;
+        -webkit-transition: .6s ease-out;
+        -moz-transition: .6s ease-out;
+        -o-transition: .6s ease-out;
+        .sub-card-index-helps-infos {
+          opacity: 1;
+          z-index: 10;
+          .arrow {
+            opacity: 1;
+            transition: all .6s ease-out;
+            -webkit-transition: all .6s ease-out;
+            -moz-transition: all .6s ease-out;
+            -o-transition: all .6s ease-out;
+          }
+        }
+      }
     }
     .flottante-div {
       display: flex;
       position: absolute;
+      z-index: 5;
       top: -15px;
       left: 20px;
       .flottante {
@@ -38,33 +62,43 @@
       }
     }
     .image-card-helps {
+      opacity: 1;
       border-top-right-radius: 16px;
       border-top-left-radius: 16px;
       width: 100%;
     }
     .sub-card-index-helps {
-      padding: 12% 10% 10% 10%;
+      transition: transform .3s ease-out;
+      background-color: $white;
       .main-bold-paragraphe {
         text-align: left;
+        padding: 12% 12%;
+        margin-bottom: 0;
       }
-
-      ul {
-        margin-top: 0;
-        font-size: 14px;
-        line-height: 18px;
-      }
-
-      .paragrahe-gains {
-        p {
-          margin: 0;
+      .sub-card-index-helps-infos {
+        padding: 0 12%;
+        transition: transform .3s ease-out;
+        background-color: $white;
+        ul {
+          margin-top: 0;
+          font-size: 14px;
+          line-height: 18px;
         }
-      }
-      a{
-        color: $black !important;
-      }
-      .arrow {
-        margin-bottom:0;
-        margin-top: 15%;
+
+        .paragrahe-gains {
+          p {
+            margin: 0;
+            text-overflow: ellipsis;
+          }
+        }
+        a{
+          color: $black !important;
+        }
+        .arrow {
+          margin-bottom:0;
+          margin-top: 15%;
+          opacity: 0;
+        }
       }
     }
   }
