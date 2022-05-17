@@ -13,7 +13,6 @@
     max-height: 600px;
     position: relative;
     &:hover {
-      box-shadow: 0 0 6px rgba(1,1,1,0.5);
       .sub-card-index-helps {
         z-index: 10;
         transform: translateY(-60px);
@@ -36,7 +35,7 @@
         -webkit-transition: all .6s ease-out;
         -moz-transition: all .6s ease-out;
         -o-transition: all .6s ease-out;
-        left: 20px;
+        left: 12%;
         bottom: 0;
       }
     }
