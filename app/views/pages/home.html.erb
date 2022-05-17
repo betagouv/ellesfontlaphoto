@@ -58,7 +58,7 @@
     <p class="subtitle-spectral">Derniers contenus ajoutés</p>
     <div class="cards-carousel">
       <% @contenus.each do |item| %>
-        <% if item.class == "help" %>
+        <% if item.class == Help %>
           <%= render "helps/helps_cards", help: item %>
         <% else %>
           <%= render "conseils_pratiques/conseils_cards", conseil: item %>

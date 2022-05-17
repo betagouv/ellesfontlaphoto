@@ -117,19 +117,24 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 0 2%;
-  text-align:center;
+  padding: 3% 7%;
+  text-align: center;
+  border-radius: 16px;
   .third-block-div {
-    background-image: url(background-shadow.png);
+    background-image: url(background-shadow2.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding: 3%;
     .cards-carousel {
       display: flex;
-      overflow-x: scroll-behavior;
-      .card-index-helps,.card-index-conseils-articles,.card-index-conseils-videos {
-        width: 25%;
-        max-height: 350px;
+      overflow-x: scroll;
+      gap: 40px;
+      .card-index-helps {
+        min-width: 25%;
+      }
+      .card-index-conseils-articles,.card-index-conseils-videos {
+        min-width: 20%;
+        padding: 4%;
       }
     }
   }
