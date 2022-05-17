@@ -85,7 +85,7 @@
         transition: transform .3s ease-out;
         background-color: $white;
         overflow: hidden;
-        max-height: 207px;
+        max-height: 210px;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 7;
@@ -96,10 +96,11 @@
           line-height: 20px;
         }
 
-        .paragrahe-gains {
+        .paragrahe-gains, .paragrahe-general-condition {
           p {
             margin: 0;
-            text-overflow: ellipsis;
+            font-size: 14px;
+            color: $black;
           }
         }
         a{
