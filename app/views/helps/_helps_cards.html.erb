@@ -39,13 +39,9 @@
               <%= help.general_condition.html_safe %>
             <% end %>
           </p>
-          <% unless next_date.nil? %>
-            <p class="arrow text-align-right"><%= image_tag ((next_date.end_date - Date.today).to_i < 30) ? 'arrow-orange.svg' : 'arrow-purple.svg', alt: "icône flèche" %></p>
-          <% else %>
-            <p class="arrow text-align-right"><%= image_tag "arrow-purple.svg", alt: "icône flèche" %></p>
-          <% end %>
         </div>
       </div>
     <% end %>
+    <p class="arrow text-align-right"><%= image_tag 'arrow-line.svg', alt: "icône flèche" %></p>
   </div>
 <% end %>
