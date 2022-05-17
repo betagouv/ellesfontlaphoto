@@ -1,31 +1,48 @@
 <div id="banner-contact" class="banner-info banner-home">
-  <a href="#contact" class="paragraphe show">Vous consultez une page en construction, écrivez nous pour l'améliorer !</a>
+  <a href="#contact" class="paragraphe show">Vous consultez une page en construction, <u>écrivez nous</u> pour l'améliorer !</a>
 </div>
 <div class="banner">
-  <%= image_tag "illu-home-1.png", class: "illu-home-1", alt: "illustration femme levant la main" %>
-  <%= image_tag "illu-home-2.png", class: "illu-home-2", alt: "illustration interrogation" %>
-  <h1><a href="/helps" class="underline-purple">Aides financières</a> et <a href="/conseils" class="underline-orange">conseils pratiques</a> pour les photographes femmes</h1>
-  <%= image_tag "illu-home-3_1440.png", class: "illu-home-3-1440", alt: "illustration femme photographe" %>
-  <%= image_tag "illu-home-3_320_768.png", class: "illu-home-3-320-768", alt: "illustration femme photographe" %>
-  <%= image_tag "illu-home-3_768_1024.png", class: "illu-home-3-768-1024", alt: "illustration femme photographe" %>
+  <h1>Développer la carrière des photographes femmes et minorités de genre.</h1>
 </div>
 
 <div class="first-block">
-  <div class="first-block-left">
-    <p class="paragraphe-bold">Notre mission :</p>
-    <p class="subtitle">Accompagner les femmes et minorités de genre à poursuivre leur carrière</p>
-    <p class="paragraphe-spectral-italic">Car encore aujourd’hui, 35% de femmes sont dans la vie professionnelle contre 58% sur les bancs de l'école.</p>
-  </div>
-  <div class="first-block-right">
-    <p class="paragraphe-bold">Notre service a vocation à :</p>
-      <p class="paragraphe-icones"> <span class="icones"><%= image_tag "emojis/etoile.png", style: "width: 65%;" %></span>
-      <span class="paragraphe">Améliorer la connaissance des aides et ressources financières, techniques...</span></p>
-      <p class="paragraphe-icones"> <span class="icones"><%= image_tag "emojis/poignee-main.png",  style: "width: 73%;" %></span>
-      <span class="paragraphe">Faciliter l'entraide par le partage d’expériences</span></p>
-      <p class="paragraphe-icones"><span class="icones"><%= image_tag "emojis/arc.png", style: "width: 65%;" %></span>
-      <span class="paragraphe">S’armer pour lutter contre les inégalités de genre et sensibiliser autour de soi</span></p>
+  <div class="first-block-cards">
+    <%= link_to helps_path do %>
+      <div class="first-block-card purple">
+        <%= image_tag 'aides/dotation-financiere.png', class: "image-first-block-card", alt: 'Aides financières' %>
+        <div class="first-block-card-infos purple">
+          <%= image_tag 'money.svg' %>
+          <p class="first-block-card-infos-title">Aides financières</p>
+          <p class="paragraphe first-block-card-infos-text">Résidences, bourses, prix, appels à candidatures...</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
+      </div>
+    <% end %>
+    <%= link_to conseils_path do %>
+      <div class="first-block-card orange">
+        <%= image_tag 'aides/conseils.png', class: "image-first-block-card", alt: 'Ressources et conseils' %>
+        <div class="first-block-card-infos orange">
+          <%= image_tag 'book.svg' %>
+          <p class="first-block-card-infos-title">Ressources et conseils</p>
+          <p class="paragraphe first-block-card-infos-text">Construire son portfolio ? Que faire en cas de contrefaçons ? <br>Protéger ses droits d’autrices...</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
+      </div>
+    <% end %>
+    <%= link_to rencontre_path do %>
+      <div class="first-block-card light-orange">
+        <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraides et rencontres' %>
+        <div class="first-block-card-infos light-orange">
+          <%= image_tag 'community.svg' %>
+          <p class="first-block-card-infos-title">Entraides et rencontres</p>
+          <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses paires</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "flèche" %>
+      </div>
+    <% end %>
   </div>
 </div>
+
 <div class="second-block" id="comment">
   <p class="subtitle-spectral">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
   <div class="flex-div">
@@ -50,7 +67,6 @@
       <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small", alt: "émoji crayon" %> artistiques et techniques</a href="">
     </p>
   </div>
-  <%= image_tag "illu-home-5.png", class: "illu-home-5", alt: "illustration femmes qui discutent"%>
 </div>
 <!-- DECOMMENTER LORSQUE LE TYPEFORM SERA FAIT -->
 <!-- <div class="third-bis-block">
@@ -98,7 +114,6 @@
     <p class="paragraphe lh28">On parle de “nous”, mais on ne vous a toujours pas dit qui l’on est. Nous sommes <a class="link-blue-underlined" href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target=”_blank”>une petite équipe</a> d’agentes du ministère de la Culture et d’expertes numérique rassemblées grâce à betagouv.</p>
     <div class="btn-manifesto-mobile">
       <a href="/a_propos" class="btn-manifesto"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
-      <%= image_tag "illu-home-4.png", alt:"illustration contact", class: "illu-home-4" %>
     </div>
   </div>
 </div>
@@ -117,7 +132,6 @@
     <a class="btn-manifesto" href="/a_propos">
       <%= image_tag "emojis/carnet-noir.png", alt: "émoji carnet", class: "emojis-eflc-small" %> À propos
     </a>
-    <%= image_tag "illu-home-4.png", alt:"illustration contact", class: "illu-home-4" %>
   </div>
 </div>
 

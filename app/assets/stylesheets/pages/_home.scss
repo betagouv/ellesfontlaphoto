@@ -2,113 +2,91 @@
 /*BANNER*/
 
 .banner {
-  padding: 10vw 23vw 8vw 9.5vw;
-  position: relative;
+  padding: 8vh 23vw;
   h1 {
+    text-align: center !important;
+    line-height: 60px;
     font-family: 'Spectral', serif;
     font-style: italic;
     font-weight: normal;
-    font-size: 60px;
+    font-size: 34px;
     display: inline-block;
     text-align: left;
-    .underline-purple {
-      font-family: 'Spectral', serif !important;
-      font-style: italic !important;
-      font-weight: normal !important;
-      font-size: 60px !important;
-      color: $black !important;
-      border: 0 !important;
-      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $purple !important;
-      background-color: transparent;
-      cursor: pointer;
-      &:hover {
-        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $purple !important;
-      }
-    }
-    .underline-orange {
-      font-family: 'Spectral', serif !important;
-      font-style: italic !important;
-      font-weight: normal !important;
-      font-size: 60px !important;
-      border: 0;
-      box-shadow: $white 0px -1.3rem 0px inset, inset 0 -2.7rem 0 $orange !important;
-      background-color: transparent;
-      cursor: pointer;
-      color: $black !important;
-      &:hover {
-        box-shadow: $white 0px -1rem 0px inset, inset 0 -4.2rem 0 $orange !important;
-      }
-    }
-
-  }
-
-  .illu-home-1 {
-    position: absolute;
-    width: 15%;
-    top: 0;
-    left: 2%;
-    z-index: -1;
-    color: $orange;
-  }
-  .illu-home-3-1440 {
-    position: absolute;
-    width: 100%;
-    right: 0;
-    bottom: -34%;
-    z-index: -1;
-  }
-  .illu-home-3-320-768 {
-    display: none;
-  }
-  .illu-home-3-768-1024 {
-    display: none;
-  }
-  .illu-home-2 {
-    position: absolute;
-    top: 0;
-    width: 7%;
-    left: 20%;
-    z-index: -1;
   }
 }
-
-  .bhl.home {
-    width: 80%;
-    position: absolute;
-    margin: 0 auto;
-    border-top: 0.1px solid $purple;
-  }
 
 /*----------------------------------------*/
 /*FIRST BLOCKS*/
 
 .first-block{
-  display: flex;
-  justify-content: space-between;
-  padding: 5% 10%;
-  .first-block-left{
-    max-width: 35%;
-  }
-  .first-block-right {
-    max-width: 50%;
-    .paragraphe-icones {
-      display: flex;
-      align-items: center;
-      .icones {
-        font-size: 30px;
-        width: 10%;
-        max-width: 38px;
+  .first-block-cards {
+    padding-bottom: 4vh;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    text-align: center;
+    a {
+      width: 25%;
+      .first-block-card.purple {
+        background-color: $purple-home;
+      }
+      .first-block-card.orange {
+        background-color: $orange;
+      }
+      .first-block-card.light-orange {
+        background-color: $orange-home;
+      }
+      .first-block-card {
+        border-radius: 16px;
+        min-height: 466px;
+        .image-first-block-card {
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          width: 360px;
+          height: 200px;
+        }
+        .first-block-card-infos.purple {
+          background-color: $purple-home;
+        }
+        .first-block-card-infos.orange {
+          background-color: $orange;
+        }
+        .first-block-card-infos.light-orange {
+          background-color: $orange-home;
+        }
+        .first-block-card-infos {
+          border-radius: 16px;
+          padding: 5% 0;
+          .first-block-card-infos-title {
+            font-size: 20px;
+            color: $black;
+          }
+          .first-block-card-infos-text {
+            color: $black;
+            opacity: 0;
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 6px rgba(1,1,1,0.5);
+          .first-block-card-infos {
+            z-index: 10;
+            transform: translateY(-40px);
+            transition: transform .6s ease-out;
+            -webkit-transition: .6s ease-out;
+            -moz-transition: .6s ease-out;
+            -o-transition: .6s ease-out;
+            .first-block-card-infos-text {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }
-}
-
-.know-more {
-  margin-top: 30px;
-}
-
-.camera-img {
-  max-width: 100%;
+  .arrow-first-block-card {
+    position: absolute;
+    bottom: 12%;
+  }
 }
 
 /*----------------------------------------*/
@@ -219,10 +197,6 @@
         opacity: 80%;
       }
     }
-  }
-  .illu-home-5 {
-    max-width: 55%;
-    margin-left: 5%;
   }
 }
 
@@ -338,12 +312,6 @@
         opacity: 80%;
       }
     }
-    .illu-home-4{
-      width: 40%;
-      position: absolute;
-      bottom: -10%;
-      right: 0;
-    }
   }
 }
 /*----------------------------------------*/
@@ -352,26 +320,6 @@
 @media only screen and (max-width: 1250px) {
   .banner {
     padding: 10em 10em 10em 10em;
-    .illu-home-1 {
-      width: 20%;
-    }
-    .illu-home-3-1440 {
-      display: none;
-    }
-    .illu-home-3-320-768 {
-      display: none;
-    }
-    .illu-home-3-768-1024 {
-      display: block;
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      left: 0;
-    }
-    .illu-home-2 {
-      width: 13%;
-      top: 2%;
-    }
     h1 {
       text-align: center;
       line-height: 65px;
@@ -475,9 +423,6 @@
         margin: 0 auto 30px auto;
       }
     }
-    .illu-home-5 {
-      max-width: 90%;
-    }
     .p-conseil-tag-home {
       text-align: center !important;
       line-height: 30px;
@@ -541,10 +486,6 @@
         margin-bottom: 20px !important;
         padding: 10px 15px;
       }
-      .illu-home-4 {
-        bottom: -3%;
-        width: 60%;
-      }
     }
     .btn-contact-mobile {
       display: block;
@@ -563,36 +504,10 @@
 @media only screen and (max-width: 750px) {
   .banner {
     padding: 12em 0 10em 0;
-    .illu-home-1 {
-      width: 120px;
-    }
-    .illu-home-3-1440 {
-      display: none;
-    }
-    .illu-home-3-768-1024 {
-      display: none;
-    }
-    .illu-home-3-320-768 {
-      display: block;
-      position: absolute;
-      width: 100%;
-      top: 65%;
-    }
-    .illu-home-2 {
-      width: 70px;
-    }
     h1 {
       font-size: 38px;
       line-height: 48px;
       padding: 0em 1em 0em 1em;
-      .underline-orange {
-        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $orange !important;
-        font-size: 38px !important;
-      }
-      .underline-purple {
-        box-shadow: $white 0px -0.6rem 0px inset, inset 0 -1.3rem 0 $purple !important;
-        font-size: 38px !important;
-      }
     }
     .bhl.home {
       display: none;
@@ -749,9 +664,6 @@
         margin: 0 6%;
         .btn-manifesto {
           padding: 10px 15px;
-        }
-        .illu-home-4 {
-          width: 48%;
         }
       }
     }
