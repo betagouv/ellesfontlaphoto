@@ -25,6 +25,7 @@
     justify-content: space-evenly;
     position: relative;
     text-align: center;
+    cursor: pointer;
     a {
       width: 25%;
       .first-block-card.purple {
@@ -93,108 +94,42 @@
 // SECOND BLOCK
 
 .second-block {
-  padding: 5% 7%;
-  background-color: $purple;
-  .subtitle-spectral {
-    width: 65%;
+  padding: 6vh 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  img {
+    max-width: 20%;
   }
-  .flex-div {
-    align-items: flex-start;
-    justify-content: space-between;
-    .button-helps {
-      margin: 0;
-      max-width: 15%;
-      background-color: $black;
-      align-items: center;
-      border-radius: 40px;
-      padding: 10px 20px;
-      font-family: 'Marianne-Regular', sans-serif;
-      font-size: 16px;
-      display: flex;
-      justify-content: center;
-      cursor: pointer;
-      color: $white !important;
-      margin-right: 30px;
-      white-space: nowrap;
-      &:hover {
-        opacity: 80%;
-      }
-    }
-    .button-helps-mobile {
-      display:none;
-    }
-    .exemple-helps {
-      width: 70%;
-      justify-content: center;
-      .cards {
-        .flottante-ouverte {
-          background-color: $white;
-        }
-      }
+  .second-block-div {
+    width: 50%;
+    .btn-orange {
+      width: 200px;
+      margin: 0 auto;
     }
   }
 }
 
-.align-titles {
-  text-align:center;
-}
-
-.entretien-img {
-  width: 50%;
-}
-
-.vl {
-  border-left: 1px solid $black;
-  margin: 0 15px;
-  height: 120px;
-  opacity:0.5;
-}
-
-.entretien-paragraphe {
-  margin-left: 40px;
-}
 
 /*----------------------------------------*/
 // THIRD BLOCK
 
 .third-block {
-  padding: 2% 10%;
+  padding: 0 2%;
+  text-align:center;
   .third-block-div {
-    min-width: 50%;
-    .button-conseils {
-      width: max-content;
-      background-color: $black;
-      border-radius: 40px;
-      padding: 10px 20px;
-      font-family: 'Marianne-Regular', sans-serif;
-      font-size: 16px;
+    background-image: url(background-shadow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 3%;
+    .cards-carousel {
       display: flex;
-      cursor: pointer;
-      color: $white !important;
-      margin: 0 30px 40px 0;
-      &:hover {
-        opacity: 80%;
-      }
-    }
-    .button-conseils-mobile {
-      display: none;
-    }
-    .thematique-span {
-      line-height: 80px;
-    }
-    .conseil-tag-home {
-      font-family: 'Marianne-Regular', sans-serif;
-      background-color: $white;
-      padding: 5px 17px;
-      border-radius: 50px;
-      font-size: 14px;
-      margin-right: 10px;
-      border: 1px solid $orange;
-      color: $black !important;
-      white-space: nowrap;
-      text-decoration: none !important;
-      &:hover {
-        opacity: 80%;
+      overflow-x: scroll-behavior;
+      .card-index-helps,.card-index-conseils-articles,.card-index-conseils-videos {
+        width: 25%;
+        max-height: 350px;
       }
     }
   }
@@ -203,27 +138,27 @@
 /*----------------------------------------*/
 // THIRD BLOCK
 
-.third-bis-block {
-  background-color: $black;
-  color: $purple;
-  font-family: Marianne-Bold;
-  font-size: 28px;
-  line-height: 32.81px;
-  text-align: center;
-  padding: 73px;
-  .button-contenu {
-    background-color: $white;
-    padding: 11px 19.5px;
-    border-radius: 50px;
-    font-size: 14px;
-    margin-right: 10px;
-    color: $black !important;
-    white-space: nowrap;
-    &:hover {
-      opacity: 80%;
-    }
-  }
-}
+// .third-bis-block {
+//   background-color: $black;
+//   color: $purple;
+//   font-family: Marianne-Bold;
+//   font-size: 28px;
+//   line-height: 32.81px;
+//   text-align: center;
+//   padding: 73px;
+//   .button-contenu {
+//     background-color: $white;
+//     padding: 11px 19.5px;
+//     border-radius: 50px;
+//     font-size: 14px;
+//     margin-right: 10px;
+//     color: $black !important;
+//     white-space: nowrap;
+//     &:hover {
+//       opacity: 80%;
+//     }
+//   }
+// }
 
 /*----------------------------------------*/
 // FOURTH BLOCK

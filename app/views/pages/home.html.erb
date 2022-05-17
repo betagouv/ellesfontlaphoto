@@ -43,31 +43,31 @@
   </div>
 </div>
 
-<div class="second-block" id="comment">
-  <p class="subtitle-spectral">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
-  <div class="flex-div">
-    <a class="button-helps" href="/helps"> <%= image_tag "emojis/argent-volant.png", alt:"émoji aides", style: "width: 10%; margin-right: 5px;" %> Trouver mes aides</a>
-    <div class="exemple-helps">
-      <div class="cards">
-        <%= render "helps/helps_cards", helps: @helps %>
-      </div>
-    </div>
-    <a class="button-helps-mobile" href="/helps"> <%= image_tag "emojis/argent-volant.png", alt:"émoji aides", class: "emojis-eflc-small" %> Trouver mes aides</a>
+<div class="second-block">
+  <%= image_tag 'illu-femme-photo.png' %>
+  <div class="second-block-div text-align-center">
+    <p class="paragraphe-title">Car encore aujourd’hui, 60% de femmes sont sur les bancs des écoles, contre 35% dans la vie professionnelle.</p>
+    <div class="btn-orange">les chiffres des inégalités</div>
   </div>
+  <%= image_tag 'illu-femme-debout.png' %>
 </div>
-<div class="third-block flex-div">
+
+
+<div class="third-block">
   <div class="third-block-div">
-    <a class="button-conseils" href="/conseils"> <%= image_tag "emojis/poignee-main.png", alt:"émoji conseils et témoignages", style: "margin-right: 5px; height: 19px; width: 26px; margin-top: 5px;" %> Ressources et conseils</a>
-    <p class="subtitle-spectral">Pour présenter son portfolio, estimer ses cotisations d’artiste-autrice, s’inspirer d’expériences…</p>
-    <a class="button-conseils-mobile" href="/conseils"> <%= image_tag "emojis/poignee-main.png", alt:"émoji conseils et témoignages", class: "emojis-eflc-small" %> Ressources et conseils</a>
-    <p class="paragraphe p-conseil-tag-home"><span class="thematique-span">Thématiques :</span>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/etoile.png", class: "emojis-eflc-small", alt: "émoji étoile" %> égalité et inclusion</a href="">
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/livre-rouge.png", class: "emojis-eflc-small", alt: "émoji livre" %> administratifs et financiers</a>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small", alt: "émoji argent" %> promotion et commercial</a>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small", alt: "émoji crayon" %> artistiques et techniques</a href="">
-    </p>
+    <p class="subtitle-spectral">Derniers contenus ajoutés</p>
+    <div class="cards-carousel">
+      <% @contenus.each do |item| %>
+        <% if item.class == "help" %>
+          <%= render "helps/helps_cards", help: item %>
+        <% else %>
+          <%= render "conseils_pratiques/conseils_cards", conseil: item %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
 <!-- DECOMMENTER LORSQUE LE TYPEFORM SERA FAIT -->
 <!-- <div class="third-bis-block">
   <p class="mt0 mb10">Contribuer à cette initiative !</p>
