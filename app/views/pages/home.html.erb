@@ -54,9 +54,9 @@
 
 
 <div class="third-block">
-  <div class="third-block-div">
+  <div class="third-block-div" data-controller="home-carousel">
     <p class="subtitle-spectral">Derniers contenus ajoutés</p>
-    <div class="cards-carousel">
+    <div class="cards-carousel" data-home-carousel-target="carousel">
       <% @contenus.each do |item| %>
         <% if item.class == Help %>
           <%= render "helps/helps_cards", help: item %>
@@ -64,6 +64,9 @@
           <%= render "conseils_pratiques/conseils_cards", conseil: item %>
         <% end %>
       <% end %>
+      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight"} %>
+      <%= image_tag "arrow-carousel-left.svg", class: "arrow-carousel-left", alt: "flèche carousel gauche", data: { action: "click->home-carousel#slideCarouselLeft", home_carousel_target: "buttonLeft"} %>
+
     </div>
   </div>
 </div>
@@ -76,49 +79,17 @@
   <a href="#" class="button-contenu">Proposer un contenu</a>
 </div> -->
 <div class="fourth-block">
-  <div class="title-chiffre-mobile">
-    <p class="paragraphe-bold">Nos chiffres :
-    </p>
-  </div>
-  <div class="flex-div">
-    <div class="title-chiffre">
-      <p class="paragraphe-bold">Nos chiffres :
-      </p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0">340</p>
-      <p class="paragraphe-spectral-italic mb0">testeuses pour une amélioration continue</p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0"><%= Help.all.count %></p>
-      <p class="paragraphe-spectral-italic mb0">aides financières</p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0"><%= ConseilsVideo.all.count + ConseilsArticle.all.count %></p>
-      <p class="paragraphe-spectral-italic mb0">fiches pratiques</p>
-    </div>
-  </div>
+  <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
+  <div class="btn-black">Proposer du contenu</div>
+  <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
 </div>
+
 <div class="contact-block" id="contact">
-  <div class="contact-div">
-    <p class="subtitle">Contact</p>
-    <p class="paragraphe lh28">Vous êtes une institution, une professionnelle du secteur, une journaliste… Écrivez-nous pour faire évoluer cette boîte à outils d’empouvoirement !</p>
-    <p class="paragraphe lh28">Et pour simplement suivre l’évolution du service, abonnez-vous à l’infolettre. À bientôt !</p>
-    <div class="btn-contact-mobile">
-      <a class="js-modal btn-contact" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", alt:"emoji crayon", class: "emojis-eflc-small" %> Nous écrire</a>
-      <a class="js-modal btn-contact" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
+  <div class="contact-div purple">
+    <div>
+      <p class="subtitle">Qui sommes nous ? <span class="subtitle-spectral">Quelles sont les prochaines étapes ?</span></p>
+      <p class="paragraphe lh28 pb50">Nous sommes <a href="https://beta.gouv.fr/startups/ellesfontlaculture.html#equipe" target="_blank">une petite équipe</a> d’agents du ministère de la Culture et d’experts numériques indépendants rassemblés grâce aux méthodes <a href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target="_blank">beta.gouv.fr</a>.</p>
     </div>
-  </div>
-  <div class="manifesto-div pb0">
-    <p class="subtitle">Qui sommes-nous ?</p>
-    <p class="paragraphe lh28">On parle de “nous”, mais on ne vous a toujours pas dit qui l’on est. Nous sommes <a class="link-blue-underlined" href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target=”_blank”>une petite équipe</a> d’agentes du ministère de la Culture et d’expertes numérique rassemblées grâce à betagouv.</p>
-    <div class="btn-manifesto-mobile">
-      <a href="/a_propos" class="btn-manifesto"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
-    </div>
-  </div>
-</div>
-<div class="contact-block last">
-  <div class="contact-div">
     <% if alert %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= alert %></p>
     <% end %>
@@ -126,12 +97,15 @@
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
     <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
-    <a class="js-modal btn-contact" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
+    <a href="/a_propos" class="btn-contact"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
   </div>
-  <div class="manifesto-div">
-    <a class="btn-manifesto" href="/a_propos">
-      <%= image_tag "emojis/carnet-noir.png", alt: "émoji carnet", class: "emojis-eflc-small" %> À propos
-    </a>
+  <div class="contact-div">
+    <div>
+      <p class="subtitle pb50">On reste en contact ? <span class="subtitle-spectral">Suivez l’évolution du service et nos événements</span></p>
+      <%= image_tag "Group 215.png" %>
+    </div>
+    <a class="js-modal btn-orange" data-modal="modal-manifesto" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
+    <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange"><%= image_tag "instagram.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
   </div>
 </div>
 
