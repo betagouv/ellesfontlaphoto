@@ -190,6 +190,9 @@
     border-radius: 16px;
     div {
       height: 420px;
+      img {
+        width: 100%;
+      }
     }
     .btn-contact {
       padding: 10px;
@@ -239,90 +242,82 @@
   }
 
   .first-block {
+    padding: 5% 2%;
     .first-block-cards {
-      display: block;
+      justify-content: space-between;
+      a {
+        width: 30%;
+        .first-block-card {
+          .image-first-block-card {
+            max-width: 100%;
+          }
+          .first-block-card-infos {
+            padding: 2%;
+            .first-block-card-infos-text {
+              color: $black;
+              opacity: 1;
+              text-align: center;
+            }
+          }
+        }
+      }
     }
   }
 
   .second-block {
-    padding: 5% 2%;
-    .subtitle-spectral {
-      text-align: center;
-      width: 100%;
-    }
-  }
-
-  .third-block.flex-div {
-    margin: 0;
-    display: block;
+    padding: 0% 2%;
   }
 
   .third-block {
-    text-align: center;
-    padding: 5% 2%;
-
     .third-block-div {
-      .button-conseils {
-        display:none !important;
-      }
-      .button-conseils-mobile {
-        display: block !important;
-        width: max-content;
-        background-color: $black;
-        border-radius: 40px;
-        padding: 10px 20px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 16px;
-        display: flex;
-        cursor: pointer;
-        color: $white !important;
-        margin: 0 auto 30px auto;
-      }
-    }
-    .p-conseil-tag-home {
-      text-align: center !important;
-      line-height: 30px;
-      .conseil-tag-home {
-        margin:0;
-        padding: 5px 12px;
-        margin-bottom: 20px !important;
+      .cards-carousel {
+        gap: 20px;
+        .card-index-helps {
+          min-width: 38%;
+          padding-bottom: 4%;
+          a .sub-card-index-helps .sub-card-index-helps-infos {
+            -webkit-line-clamp: 4;
+          }
+        }
+        .card-index-conseils-articles,.card-index-conseils-videos {
+          min-width: 28%;
+          padding: 4%;
+        }
       }
     }
   }
 
   .fourth-block {
-    padding: 10% 6% 6% 6%;
+    padding: 6% 6% 15% 6%;
+    .illu-femme-stylo {
+      position: absolute;
+      right: 0;
+      width: 250px;
+      top: 55px;
+    }
   }
 
   .contact-block {
     .contact-div {
-      border-bottom: 1px solid $dark-blue;
-      .manifesto-div {
-        width: 100%;
-        padding:0;
-      }
-    }
+      padding: 3%;
+      div {
+        height: 320px;
+        .subtitle {
+          font-size: 24px;
+          line-height: 30px;
+        }
+        .subtitle-spectral {
+          font-size: 26px;
+          line-height: 30px;
+        }
+        img {
 
-    .manifesto-div {
-      border-bottom: 1px solid $dark-blue;
-      padding-bottom: 60px !important;
-      .paragraphe {
-        padding: 0 2%;
+        }
       }
-    }
-    .btn-manifesto-mobile {
-      display: block;
-      .btn-manifesto {
-        margin-bottom: 20px !important;
-        padding: 10px 15px;
-      }
-    }
-    .btn-contact-mobile {
-      display: block;
-      .btn-contact {
-        display: inline-table;
+      .btn-orange,.btn-contact {
         white-space: nowrap;
-        padding: 8px 15px 12px 15px;
+        display: table;
+        margin: 0;
         margin-bottom: 20px;
       }
     }
