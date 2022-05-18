@@ -66,18 +66,10 @@
       <% end %>
       <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight"} %>
       <%= image_tag "arrow-carousel-left.svg", class: "arrow-carousel-left", alt: "flèche carousel gauche", data: { action: "click->home-carousel#slideCarouselLeft", home_carousel_target: "buttonLeft"} %>
-
     </div>
   </div>
 </div>
 
-<!-- DECOMMENTER LORSQUE LE TYPEFORM SERA FAIT -->
-<!-- <div class="third-bis-block">
-  <p class="mt0 mb10">Contribuer à cette initiative !</p>
-  <p class="mt0 mb10">Recensez une nouvelle aide financière ou partager une ressource utile</p>
-  <p class="mt0 mb30">avec la communauté de femmes photographes</p>
-  <a href="#" class="button-contenu">Proposer un contenu</a>
-</div> -->
 <div class="fourth-block">
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
   <div class="btn-black">Proposer du contenu</div>
@@ -96,15 +88,15 @@
     <% if notice %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
     <a href="/a_propos" class="btn-contact"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
+    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
   </div>
   <div class="contact-div">
     <div>
       <p class="subtitle pb50">On reste en contact ? <span class="subtitle-spectral">Suivez l’évolution du service et nos événements</span></p>
       <%= image_tag "Group 215.png" %>
     </div>
-    <a class="js-modal btn-orange" data-modal="modal-manifesto" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
+    <a class="js-modal btn-orange" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
     <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange"><%= image_tag "instagram.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
   </div>
 </div>

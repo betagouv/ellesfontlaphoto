@@ -94,7 +94,7 @@
 // SECOND BLOCK
 
 .second-block {
-  padding: 6vh 80px;
+  padding: 3% 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,24 +117,26 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 7%;
+  padding: 3% 5%;
   text-align: center;
-  border-radius: 16px;
   .third-block-div {
+    border-radius: 16px;
     background-image: url(background-shadow2.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding: 3%;
     position: relative;
+    background-size: 100% 100%;
     .cards-carousel {
       display: flex;
       overflow-x: scroll;
       gap: 40px;
+      text-align: left;
       .card-index-helps {
-        min-width: 25%;
+        min-width: 24%;
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
-        min-width: 20%;
+        min-width: 18%;
         padding: 4%;
       }
       .arrow-carousel-right {
@@ -151,31 +153,6 @@
     }
   }
 }
-
-/*----------------------------------------*/
-// THIRD BLOCK
-
-// .third-bis-block {
-//   background-color: $black;
-//   color: $purple;
-//   font-family: Marianne-Bold;
-//   font-size: 28px;
-//   line-height: 32.81px;
-//   text-align: center;
-//   padding: 73px;
-//   .button-contenu {
-//     background-color: $white;
-//     padding: 11px 19.5px;
-//     border-radius: 50px;
-//     font-size: 14px;
-//     margin-right: 10px;
-//     color: $black !important;
-//     white-space: nowrap;
-//     &:hover {
-//       opacity: 80%;
-//     }
-//   }
-// }
 
 /*----------------------------------------*/
 // FOURTH BLOCK
@@ -205,7 +182,7 @@
 .contact-block {
   display: flex;
   gap: 20px;
-  padding: 0 7%;
+  padding: 0 5% 5% 5%;
   .contact-div {
     width: 50%;
     padding: 3% 7% 9%;
@@ -361,9 +338,6 @@
       font-size: 38px;
       line-height: 48px;
       padding: 0em 1em 0em 1em;
-    }
-    .bhl.home {
-      display: none;
     }
   }
 
