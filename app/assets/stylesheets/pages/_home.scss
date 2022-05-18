@@ -226,7 +226,7 @@
 
 @media only screen and (max-width: 1250px) {
   .banner {
-    padding: 4em;
+    padding: 4em 2em 1em 2em;
     h1 {
       text-align: center;
       line-height: 65px;
@@ -248,6 +248,9 @@
       a {
         width: 30%;
         .first-block-card {
+          img {
+            object-fit: cover;
+          }
           .image-first-block-card {
             max-width: 100%;
           }
@@ -309,9 +312,6 @@
         .subtitle-spectral {
           font-size: 26px;
           line-height: 30px;
-        }
-        img {
-
         }
       }
       .btn-orange,.btn-contact {
