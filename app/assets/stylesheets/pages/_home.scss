@@ -268,15 +268,18 @@
   }
 
   .second-block {
-    padding: 0% 2%;
+    padding: 0% 2% 9%
   }
 
   .third-block {
     .third-block-div {
+      .subtitle-spectral {
+        margin: 30px 0 50px 0;
+      }
       .cards-carousel {
         gap: 20px;
         .card-index-helps {
-          min-width: 38%;
+          min-width: 36%;
           padding-bottom: 4%;
           a .sub-card-index-helps .sub-card-index-helps-infos {
             -webkit-line-clamp: 4;
@@ -328,9 +331,9 @@
 
 @media only screen and (max-width: 750px) {
   .banner {
-    padding: 12em 0 10em 0;
+    padding: 2em 0;
     h1 {
-      font-size: 38px;
+      font-size: 28px;
       line-height: 48px;
       padding: 0em 1em 0em 1em;
     }
@@ -345,120 +348,38 @@
   }
 
   .first-block {
-    display: block;
-    padding: 10% 10% 5% 10%;
-    .first-block-left {
-      min-width: 100%;
-      .paragraphe-bold,.subtitle,.paragraphe-spectral-italic {
-        text-align: center;
-      }
-      .subtitle {
-        line-height: 38px;
-        font-size: 26px;
-        text-align:center !important;
-      }
-    }
-    .paragraphe-spectral-italic {
-      border-bottom: 1px solid $purple;
-      padding-bottom: 10%;
-    }
-    .first-block-right {
-      text-align: center;
-      .paragraphe-icones {
-        display: grid;
-        .icones {
-          margin: 0 auto;
-        }
-        .paragraphe {
-          text-align: center !important;
-        }
-      }
-      .paragraphe {
-        text-align: center !important;
-      }
-    }
-    div {
-      min-width: 100%;
-    }
-  }
-
-  .second-block {
-    padding: 16% 6% 5% 6%;
-    .subtitle-spectral {
-      font-size: 26px;
-      line-height: 40px;
-    }
-    .flex-div {
-      justify-content: center;
-      .button-helps-mobile {
-        display : block;
-        margin: 30px auto 60px auto;
-        max-width: 50%;
-        justify-content: center;
-        background-color: $black;
-        border-radius: 40px;
-        padding: 10px 20px;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 16px;
-        cursor: pointer;
-        color: $white !important;
-        text-align: center;
-      }
-      .button-helps {
-        display:none;
-      }
-      .exemple-helps {
-        display: block;
-        .cards,.card-index-helps {
-          a  {
-            .main-bold-paragraphe.mb30 {
-              margin-bottom: 10px;
-              text-align: center;
-            }
-            .arrow {
-              margin-top: 7%;
-            }
+    .first-block-cards {
+      padding: 0 5%;
+      display: block;
+      a {
+        .first-block-card {
+          margin-bottom: 8%;
+          .first-block-card-infos {
+          }
+          .arrow-first-block-card {
+            bottom: auto;
           }
         }
       }
     }
+
+  }
+
+  .second-block {
+    display: block;
   }
 
   .third-block, .fourth-block {
-    text-align: center;
-    .subtitle-spectral {
-      margin-top: 60px;
-    }
-    // .flex-div {
-    //   display:block !important;
-    // }
-    .paragraphe {
-      .conseil-tag-home {
-        margin:0;
-        padding: 5px 12px;
-        display: inline-flex;
-      }
-    }
-    .div-chiffre {
-      min-width: 100%;
-      margin-bottom: 20px;
-    }
+
   }
 
-  .flex-div {
-    display:block !important;
-  }
-
-  .contact-block.last {
-    display: none
-  }
 
   .contact-block {
     display: block;
     .contact-div {
       border-bottom: 1px solid $purple;
     }
-    .contact-div, .manifesto-div {
+    .contact-div {
       width: 100%;
       padding: 0;
       border-right: 0;
@@ -476,23 +397,6 @@
     }
     .contact-div {
       padding: 14% 0;
-    }
-
-    .manifesto-div {
-      border-bottom: 1px solid $dark-blue;
-      padding-bottom: 10em !important;
-      .btn-manifesto-mobile {
-        text-align: left;
-        margin: 0 6%;
-        .btn-manifesto {
-          padding: 10px 15px;
-        }
-      }
-    }
-    .btn-contact-mobile {
-      margin-left: 20px;
-      display: block;
-      text-align: left;
     }
   }
 }
