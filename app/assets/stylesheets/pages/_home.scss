@@ -103,6 +103,9 @@
   img {
     max-width: 20%;
   }
+  .second-block-img-mobile {
+    display: none;
+  }
   .second-block-div {
     width: 50%;
     .btn-orange {
@@ -268,7 +271,7 @@
   }
 
   .second-block {
-    padding: 0% 2% 9%
+    padding: 0% 2%;
   }
 
   .third-block {
@@ -367,36 +370,77 @@
 
   .second-block {
     display: block;
+    .second-block-div {
+      margin: 0 auto;
+      width: 80%;
+      .paragraphe-title {
+        text-align: center;
+      }
+      .btn-orange {
+        margin-bottom: 15%;
+      }
+    }
+    .second-block-img {
+      display: none;
+    }
+    .second-block-img-mobile {
+      display: flex;
+      justify-content: center;
+      img {
+        min-width: 40%;
+      }
+    }
   }
 
-  .third-block, .fourth-block {
-
+  .third-block {
+    .third-block-div {
+      .subtitle-spectral {
+        margin: 30px 0 20px 0;
+      }
+      .cards-carousel {
+        padding-top: 30px;
+        gap: 20px;
+        .card-index-helps {
+          min-width: 78%;
+          padding-bottom: 4%;
+          a .sub-card-index-helps .sub-card-index-helps-infos {
+            -webkit-line-clamp: 4;
+          }
+        }
+        .card-index-conseils-articles,.card-index-conseils-videos {
+          min-width: 70%;
+          padding: 4%;
+        }
+      }
+    }
   }
 
-
+  .fourth-block {
+    position: initial;
+    padding-top: 0;
+    .title-marianne {
+      padding-bottom: 10%;
+    }
+    .illu-femme-stylo {
+      position: initial;
+    }
+  }
   .contact-block {
     display: block;
     .contact-div {
-      border-bottom: 1px solid $purple;
-    }
-    .contact-div {
-      width: 100%;
-      padding: 0;
-      border-right: 0;
-      .subtitle {
-        text-align: left;
-        padding: 0 6%;
+      width: 80%;
+      margin-bottom: 20px;
+      padding: 10%;
+      div {
+        height: 300px;
+        p {
+          text-align: center;
+        }
       }
-      .paragraphe {
-        text-align: left;
-        padding: 0 6%;
+      .btn-contact,.btn-orange {
+        margin: 0 auto 20px auto;
+        padding: 4% 8% 5% 8%;
       }
-    }
-    .manifesto-div {
-      padding: 14% 0 0 0;
-    }
-    .contact-div {
-      padding: 14% 0;
     }
   }
 }

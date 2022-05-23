@@ -1,5 +1,5 @@
 <div id="banner-contact" class="banner-info banner-home">
-  <a href="#contact" class="paragraphe show">Vous consultez une page en construction, <u>écrivez nous</u> pour l'améliorer !</a>
+  <a class="js-modal" data-modal="modal-contact" class="paragraphe show">Vous consultez une page en construction, <u>écrivez nous</u> pour l'améliorer !</a>
 </div>
 <div class="banner">
   <h1>Développer la carrière des photographes femmes et minorités de genre.</h1>
@@ -44,12 +44,16 @@
 </div>
 
 <div class="second-block">
-  <%= image_tag 'illu-femme-photo.png' %>
+  <%= image_tag 'illu-femme-photo.png', class: "second-block-img" %>
+  <div class="second-block-img-mobile">
+    <%= image_tag 'illu-femme-photo.png' %>
+    <%= image_tag 'illu-femme-debout.png' %>
+  </div>
   <div class="second-block-div text-align-center">
     <p class="paragraphe-title">Car encore aujourd’hui, 60% de femmes sont sur les bancs des écoles, contre 35% dans la vie professionnelle.</p>
     <div class="btn-orange">les chiffres des inégalités</div>
   </div>
-  <%= image_tag 'illu-femme-debout.png' %>
+  <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
 </div>
 
 
@@ -71,9 +75,9 @@
 </div>
 
 <div class="fourth-block">
+  <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
   <div class="btn-black">Proposer du contenu</div>
-  <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
 </div>
 
 <div class="contact-block" id="contact">
