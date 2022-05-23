@@ -131,16 +131,18 @@
     position: relative;
     background-size: 100% 100%;
     .cards-carousel {
+      padding-top: 30px;
       display: flex;
       overflow-x: scroll;
-      margin-right: 40px;
       text-align: left;
       .card-index-helps {
         min-width: 24%;
+        margin-right: 40px;
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
         min-width: 18%;
         padding: 4%;
+        margin-right: 40px;
       }
       .arrow-carousel-right {
         top: 50%;
@@ -279,13 +281,14 @@
   .third-block {
     .third-block-div {
       .subtitle-spectral {
-        margin: 30px 0 50px 0;
+        margin: 30px 0 0 0;
       }
       .cards-carousel {
-        margin-right: 20px;
+        padding-top: 50px;
         .card-index-helps {
           min-width: 36%;
           padding-bottom: 4%;
+          margin-right: 20px;
           a .sub-card-index-helps .sub-card-index-helps-infos {
             -webkit-line-clamp: 4;
           }
@@ -293,6 +296,7 @@
         .card-index-conseils-articles,.card-index-conseils-videos {
           min-width: 28%;
           padding: 4%;
+          margin-right: 20px;
         }
       }
     }
