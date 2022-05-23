@@ -400,11 +400,14 @@
       .cards-carousel {
         padding-top: 30px;
         gap: 20px;
+        .arrow-carousel-right,.arrow-carousel-left {
+          display: none;
+        }
         .card-index-helps {
           min-width: 78%;
           padding-bottom: 4%;
           a .sub-card-index-helps .sub-card-index-helps-infos {
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 3;
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
