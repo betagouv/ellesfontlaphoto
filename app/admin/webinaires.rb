@@ -46,7 +46,7 @@ ActiveAdmin.register Webinaire do
       f.input :url_inscription
       if f.object.images.attached?
         f.object.images.each do |i|
-          f.input :images, as: :file, :hint => image_tag(i), style: 'max-width: 450px; max-height:450px;', input_html: { multiple: true }
+          f.input :images, as: :file, :hint => image_tag(i), input_html: { multiple: true }
         end
       else
         f.input :images, as: :file, input_html: { multiple: true }
