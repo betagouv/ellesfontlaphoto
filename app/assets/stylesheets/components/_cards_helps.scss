@@ -1,5 +1,35 @@
 .cards {
   width: 100%;
+}
+.card-index-helps {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  padding-bottom: 7%;
+  border: 1px solid $purple;
+  position: relative;
+  height: intrinsic;
+  height: -moz-max-content;
+  height: -webkit-max-content;
+  max-height: 600px;
+  position: relative;
+  &:hover {
+    box-shadow: 0 0 6px rgba(1,1,1,0.5);
+    .sub-card-index-helps {
+      z-index: 10;
+      transform: translateY(-60px);
+      transition: transform .6s ease-out;
+      -webkit-transition: .6s ease-out;
+      -moz-transition: .6s ease-out;
+      -o-transition: .6s ease-out;
+      .sub-card-index-helps-infos {
+        opacity: 1;
+        z-index: 10;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+=======
   .card-index-helps {
     background-color: white;
     margin-bottom: 20px;
@@ -39,92 +69,100 @@
         bottom: 0;
       }
     }
-    .flottante-div {
-      display: flex;
-      position: absolute;
-      z-index: 5;
-      top: -15px;
-      left: 20px;
-      .flottante {
-        color: $black !important;
-        border: 1px solid $purple;
-        border-radius: 40px;
-        display: table !important;
-        padding: 4px 12px 8px 12px;
-        background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
-        font-size: 14px;
-        white-space: nowrap;
-      }
-      .flottante-orange {
-        background-color: $orange !important;
-        border: none;
-      }
-      .flottante-ouverte {
-        background-color: $purple;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      }
-    }
-    .image-card-helps {
+    .arrow {
       opacity: 1;
-      border-top-right-radius: 16px;
-      border-top-left-radius: 16px;
-      width: 100%;
+      transition: all .6s ease-out;
+      -webkit-transition: all .6s ease-out;
+      -moz-transition: all .6s ease-out;
+      -o-transition: all .6s ease-out;
+      left: 20px;
+      bottom: 0;
     }
-    .sub-card-index-helps {
+  }
+  .flottante-div {
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: -15px;
+    left: 20px;
+    .flottante {
+      color: $black !important;
+      border: 1px solid $purple;
+      border-radius: 40px;
+      display: table !important;
+      padding: 4px 12px 8px 12px;
+      background-color: white;
+      font-family: 'Marianne-Regular', sans-serif;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .flottante-orange {
+      background-color: $orange !important;
+      border: none;
+    }
+    .flottante-ouverte {
+      background-color: $purple;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+  }
+  .image-card-helps {
+    opacity: 1;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    width: 100%;
+  }
+  .sub-card-index-helps {
+    transition: transform .3s ease-out;
+    background-color: $white;
+    .main-bold-paragraphe {
+      text-align: left;
+      padding: 12% 12%;
+      margin-bottom: 0;
+    }
+    .sub-card-index-helps-infos {
+      padding: 0 12%;
       transition: transform .3s ease-out;
       background-color: $white;
-      .main-bold-paragraphe {
-        text-align: left;
-        padding: 12% 12%;
-        margin-bottom: 0;
+      overflow: hidden;
+      max-height: 210px;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      ul {
+        margin-top: 0;
+        font-size: 14px;
+        line-height: 20px;
       }
-      .sub-card-index-helps-infos {
-        padding: 0 12%;
-        transition: transform .3s ease-out;
-        background-color: $white;
-        overflow: hidden;
-        max-height: 210px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        -webkit-box-orient: vertical;
-        ul {
-          margin-top: 0;
-          font-size: 14px;
-          line-height: 20px;
-        }
 
-        .paragrahe-gains, .paragrahe-general-condition {
-          p {
+      .paragrahe-gains, .paragrahe-general-condition {
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: $black;
+          display: inline-block;;
+          span {
+            display: inline-block;
             margin: 0;
             font-size: 14px;
             color: $black;
-            display: inline-block;;
-            span {
-              display: inline-block;
-              margin: 0;
-              font-size: 14px;
-              color: $black;
-            }
           }
         }
-        a{
-          color: $black !important;
-        }
       }
-    }
-    .arrow {
-      opacity: 0;
-      position: absolute;
-      img {
-        width: 25px;
+      a{
+        color: $black !important;
       }
     }
   }
-  .card-index-helps.border-orange {
-    border: 1px solid $orange;
+  .arrow {
+    opacity: 0;
+    position: absolute;
+    img {
+      width: 25px;
+    }
   }
+}
+.card-index-helps.border-orange {
+  border: 1px solid $orange;
 }
 
 @media only screen and (max-width: 1250px) {
