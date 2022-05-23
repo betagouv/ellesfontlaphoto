@@ -29,44 +29,6 @@
         display: -webkit-box;
         -webkit-line-clamp: 10;
         -webkit-box-orient: vertical;
-=======
-  .card-index-helps {
-    background-color: white;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    padding-bottom: 7%;
-    border: 1px solid $purple;
-    position: relative;
-    height: intrinsic;
-    height: -moz-max-content;
-    height: -webkit-max-content;
-    max-height: 600px;
-    position: relative;
-    &:hover {
-      .sub-card-index-helps {
-        z-index: 10;
-        transform: translateY(-60px);
-        transition: transform .6s ease-out;
-        -webkit-transition: .6s ease-out;
-        -moz-transition: .6s ease-out;
-        -o-transition: .6s ease-out;
-        .sub-card-index-helps-infos {
-          opacity: 1;
-          z-index: 10;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 10;
-          -webkit-box-orient: vertical;
-        }
-      }
-      .arrow {
-        opacity: 1;
-        transition: all .6s ease-out;
-        -webkit-transition: all .6s ease-out;
-        -moz-transition: all .6s ease-out;
-        -o-transition: all .6s ease-out;
-        left: 12%;
-        bottom: 0;
       }
     }
     .arrow {
