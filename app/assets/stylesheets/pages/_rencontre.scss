@@ -99,7 +99,8 @@
           width: 30%;
           text-align: left;
           .spectral-italic {
-            font-size: 20px;
+            font-size: 22px;
+            line-height : 26px;
             margin-bottom: 20px;
           }
         }
@@ -117,6 +118,8 @@
 
     .old-webinaires {
       padding: 7% 25%;
+      padding-top : 50px;
+      paddding-bottom : 80px;
       .paragraphe-bold {
         font-size: 20px;
         text-align: center;
