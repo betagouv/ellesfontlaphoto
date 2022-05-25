@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  u {
+    cursor: pointer;
+  }
   a {
     color: $black !important;
     margin: 0;

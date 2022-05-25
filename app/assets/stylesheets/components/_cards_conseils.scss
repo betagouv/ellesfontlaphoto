@@ -1,110 +1,110 @@
 .cards {
   width: 100%;
-  .card-index-conseils-articles,.card-index-conseils-videos {
-    padding: 10% 4% 10% 7%;
-    background-color: white;
-    height: auto;
-    position: relative;
-    border-radius: 16px;
-    border: solid 1px $orange;
-    position: relative;
-    height: intrinsic;
-    height: -moz-max-content;
-    height: -webkit-max-content;
-    &:hover {
-      box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
+}
+.card-index-conseils-articles,.card-index-conseils-videos {
+  padding: 10% 4% 10% 7%;
+  background-color: white;
+  height: auto;
+  position: relative;
+  border-radius: 16px;
+  border: solid 1px $orange;
+  position: relative;
+  height: intrinsic;
+  height: -moz-max-content;
+  height: -webkit-max-content;
+  &:hover {
+    box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
+  }
+  .card-index-conseils-articles-div {
+    padding: 6% 5% 10% 5%;
+    .paragraphe,.main-bold-paragraphe {
+      text-align: center;
     }
-    .card-index-conseils-articles-div {
-      padding: 6% 5% 10% 5%;
-      .paragraphe,.main-bold-paragraphe {
-        text-align: center;
-      }
-    }
+  }
 
-    .pastille-conseils {
+  .pastille-conseils {
+    border-radius: 40px;
+    color: $black;
+    padding: 4px 12px 7px 12px;
+    font-family: 'Marianne-Regular', sans-serif;
+    font-size: 14px;
+    margin: 5px auto 30px auto;
+    display: table;
+  }
+  .pastille-conseils.green {
+    background-color: $green-temoignage;
+  }
+
+  .pastille-conseils.purple {
+    background-color: $purple-webinaire;
+  }
+  .pastille-conseils.pink {
+    background-color: $pink-fiche;
+  }
+
+  .flottante-div {
+    display: flex;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    z-index: 5;
+    .flottante {
+      color: $black !important;
       border-radius: 40px;
-      color: $black;
-      padding: 4px 12px 7px 12px;
+      display: table !important;
+      padding: 4px 12px 8px 12px;
+      background-color: white;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 14px;
-      margin: 5px auto 30px auto;
-      display: table;
-    }
-    .pastille-conseils.green {
-      background-color: $green-temoignage;
+      white-space: nowrap;
     }
 
-    .pastille-conseils.purple {
-      background-color: $purple-webinaire;
+    .flottante-orange {
+      background-color: $orange !important;
     }
-    .pastille-conseils.pink {
-      background-color: $pink-fiche;
+  }
+
+  a {
+    color: $black;
+    div {
+      position: relative;
+      .image-conseil {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin: 10% auto 20px auto;
+        object-fit: cover;
+      }
+      .flottante-play {
+        bottom: -20px;
+        right: 44%;
+        position: absolute;
+
+        img {
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .card-index-conseils-videos-div {
+    .main-bold-paragraphe {
+      text-align: left;
     }
 
-    .flottante-div {
-      display: flex;
-      position: absolute;
-      top: -15px;
-      left: 20px;
-      z-index: 5;
-      .flottante {
-        color: $black !important;
-        border-radius: 40px;
-        display: table !important;
-        padding: 4px 12px 8px 12px;
-        background-color: white;
-        font-family: 'Marianne-Regular', sans-serif;
+    .cards-videos-info {
+      margin: 2% 7% 2% 7%;
+      .cards-tags {
+        font-family: 'Marianne-Regular_Italic', sans-serif;
         font-size: 14px;
-        white-space: nowrap;
+        color: $black !important;
+        text-align: center;
       }
 
-      .flottante-orange {
-        background-color: $orange !important;
-      }
-    }
-
-    a {
-      color: $black;
-      div {
-        position: relative;
-        .image-conseil {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          margin: 10% auto 20px auto;
-          object-fit: cover;
-        }
-        .flottante-play {
-          bottom: -20px;
-          right: 44%;
-          position: absolute;
-
-          img {
-            height: 40px;
-          }
-        }
-      }
-    }
-
-    .card-index-conseils-videos-div {
       .main-bold-paragraphe {
-        text-align: left;
-      }
-
-      .cards-videos-info {
-        margin: 2% 7% 2% 7%;
-        .cards-tags {
-          font-family: 'Marianne-Regular_Italic', sans-serif;
-          font-size: 14px;
-          color: $black !important;
-          text-align: center;
-        }
-
-        .main-bold-paragraphe {
-          text-align: center;
-        }
+        text-align: center;
       }
     }
   }
