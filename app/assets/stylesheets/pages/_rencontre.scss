@@ -67,7 +67,7 @@
         justify-content: space-around;
         align-items: center;
         .info-webinaire {
-          width: 20%;
+          width: 23%;
           .date-webinaire {
             white-space: nowrap;
             font-family: 'Marianne-Bold', sans-serif;
@@ -77,7 +77,7 @@
           .lieu-webinaire {
             display: flex;
             align-items: center;
-            line-height: 60px;
+            padding: 8% 0 9%;
             margin:0;
             img {
               margin-right: 5px;
@@ -193,8 +193,8 @@
     background-repeat: no-repeat;
   }
   .rencontre-inscription {
-    padding: 3% 7%;
-    div {
+    padding: 3% 7% 8%;
+    .rencontre-inscription-div {
       background-image: url(background-shadow2.png);
       background-size: cover;
       background-repeat: no-repeat;
@@ -205,9 +205,17 @@
       p {
         margin: 0 auto 30px auto;
       }
-      .btn-black {
-        cursor: pointer;
-        color: $white !important;
+      .btns-black {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn-black {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          cursor: pointer;
+          color: $white !important;
+        }
       }
     }
   }
@@ -283,7 +291,7 @@
       padding-top: 20%;
     }
     .rencontre-inscription {
-      div {
+      .rencontre-inscription-div {
         padding: 10% 5%;
       }
       .btn-black {
@@ -331,7 +339,7 @@
           max-width: 100%;
           margin: 0;
           margin-bottom: 20px;
-          display: inline-grid;
+          display: flex;
         }
         .sub-div-webinaire-coming {
           .subtitle-marianne,.spectral-italic,.webinaire-description,.info-webinaire {
@@ -359,12 +367,16 @@
       }
     }
     .rencontre-inscription {
-      .btn-black {
-        display: block;
-        width: -webkit-fill-available;
-        width: fit-content;
-        height: 23px;
-        margin: 20px auto !important;
+      .rencontre-inscription-div {
+        .btns-black {
+          display: block;
+          .btn-black {
+            width: -webkit-fill-available;
+            width: fit-content;
+            height: 23px;
+            margin: 20px auto !important;
+          }
+        }
       }
       .subtitle {
         font-size: 28px;

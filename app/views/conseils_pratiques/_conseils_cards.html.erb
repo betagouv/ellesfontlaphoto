@@ -30,6 +30,17 @@
               <%= image_tag "play.svg", alt: "icône play vidéo" %>
             </div>
           </div>
+        </div>
+        <div class="pastille-conseils green">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
+        </div>
+      <% end %>
+    </div>
+  <% elsif conseil.class == Webinaire %>
+    <div class="card-index-conseils-videos">
+      <%= link_to conseil.url, target: :_blank do %>
+        <% if (Time.now - conseil.created_at)/1.day < 15  %>
+          <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>
         <div class="cards-videos-info">
           <p class="cards-tags mt0 mb0">
