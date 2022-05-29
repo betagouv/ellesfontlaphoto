@@ -1,28 +1,32 @@
 .cards {
   width: 100%;
-}
-.card-index-helps {
-  background-color: white;
-  margin-bottom: 20px;
-  border-radius: 16px;
-  padding-bottom: 7%;
-  border: 1px solid $purple;
-  position: relative;
-  height: intrinsic;
-  height: -moz-max-content;
-  height: -webkit-max-content;
-  max-height: 600px;
-  position: relative;
-  &:hover {
-    box-shadow: 0 0 6px rgba(1,1,1,0.5);
-    .sub-card-index-helps {
-      z-index: 10;
-      transform: translateY(-60px);
-      transition: transform .6s ease-out;
-      -webkit-transition: .6s ease-out;
-      -moz-transition: .6s ease-out;
-      -o-transition: .6s ease-out;
-      .sub-card-index-helps-infos {
+  .card-index-helps {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    padding-bottom: 10%;
+    border: 1px solid $purple;
+    position: relative;
+    height: intrinsic;
+    height: -moz-max-content;
+    height: -webkit-max-content;
+    position: relative;
+    &:hover {
+      .sub-card-index-helps {
+        z-index: 10;
+        transform: translateY(-60px);
+        transition: transform .6s ease-out;
+        -webkit-transition: .6s ease-out;
+        -moz-transition: .6s ease-out;
+        -o-transition: .6s ease-out;
+        .sub-card-index-helps-infos {
+          opacity: 1;
+          z-index: 10;
+          max-height: 240px;
+          overflow: hidden;
+        }
+      }
+      .arrow {
         opacity: 1;
         z-index: 10;
         overflow: hidden;
@@ -32,7 +36,7 @@
       }
     }
     .arrow {
-      opacity: 1;
+      opacity: 0;
       transition: all .6s ease-out;
       -webkit-transition: all .6s ease-out;
       -moz-transition: all .6s ease-out;
@@ -95,6 +99,18 @@
         font-size: 14px;
         line-height: 20px;
       }
+      .sub-card-index-helps-infos {
+        padding: 0 12%;
+        transition: transform .3s ease-out;
+        background-color: $white;
+        overflow: hidden;
+        max-height: 205px;
+        overflow: hidden;
+        ul {
+          margin-top: 0;
+          font-size: 14px;
+          line-height: 20px;
+        }
 
       .paragrahe-gains, .paragrahe-general-condition {
         p {
@@ -122,9 +138,10 @@
       width: 25px;
     }
   }
-}
-.card-index-helps.border-orange {
-  border: 1px solid $orange;
+  }
+  .card-index-helps.border-orange {
+    border: 1px solid $orange;
+  }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -155,9 +172,6 @@
           opacity: 1;
           z-index: 10;
           overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 10;
-          -webkit-box-orient: vertical;
         }
       }
       .arrow {
