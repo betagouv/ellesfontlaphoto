@@ -4,13 +4,12 @@
     background-color: white;
     margin-bottom: 20px;
     border-radius: 16px;
-    padding-bottom: 7%;
+    padding-bottom: 10%;
     border: 1px solid $purple;
     position: relative;
     height: intrinsic;
     height: -moz-max-content;
     height: -webkit-max-content;
-    max-height: 600px;
     position: relative;
     &:hover {
       .sub-card-index-helps {
@@ -23,10 +22,8 @@
         .sub-card-index-helps-infos {
           opacity: 1;
           z-index: 10;
+          max-height: 240px;
           overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 10;
-          -webkit-box-orient: vertical;
         }
       }
       .arrow {
@@ -84,11 +81,8 @@
         transition: transform .3s ease-out;
         background-color: $white;
         overflow: hidden;
-        max-height: 210px;
+        max-height: 205px;
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        -webkit-box-orient: vertical;
         ul {
           margin-top: 0;
           font-size: 14px;
@@ -155,9 +149,6 @@
           opacity: 1;
           z-index: 10;
           overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 10;
-          -webkit-box-orient: vertical;
         }
       }
       .arrow {
