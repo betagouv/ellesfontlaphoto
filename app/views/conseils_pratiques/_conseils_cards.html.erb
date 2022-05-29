@@ -30,20 +30,6 @@
               <%= image_tag "play.svg", alt: "icône play vidéo" %>
             </div>
           </div>
-<<<<<<< HEAD
-=======
-        </div>
-        <div class="pastille-conseils green">
-          <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
-        </div>
-      <% end %>
-    </div>
-  <% elsif conseil.class == Webinaire %>
-    <div class="card-index-conseils-videos">
-      <%= link_to conseil.url, target: :_blank do %>
-        <% if (Time.now - conseil.created_at)/1.day < 15  %>
-          <%= render "conseils_pratiques/flottante_conseils" %>
->>>>>>> master
         <% end %>
         <div class="cards-videos-info">
           <p class="cards-tags mt0 mb0">
@@ -59,7 +45,7 @@
   </div>
 <% elsif conseil.class == Webinaire %>
   <div class="card-index-conseils-videos">
-    <%= link_to "#", target: :_blank do %>
+    <%= link_to conseil.url, target: :_blank do %>
       <% if (Time.now - conseil.created_at)/1.day < 15  %>
         <%= render "conseils_pratiques/flottante_conseils" %>
       <% end %>
@@ -74,7 +60,7 @@
         <% end %>
       </div>
       <div class="cards-videos-info">
-        <p class="main-bold-paragraphe mt30 mb30"><%= conseil.titre %></p>
+        <p class="main-bold-paragraphe mt30 mb30"><%= conseil.titre %> <span class="spectral-italic">avec <%= conseil.participant %></span></p>
       </div>
       <div class="pastille-conseils purple">
         <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire

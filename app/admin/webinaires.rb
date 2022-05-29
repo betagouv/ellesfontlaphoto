@@ -51,7 +51,7 @@ ActiveAdmin.register Webinaire do
       else
         f.input :images, as: :file, input_html: { multiple: true }
       end
-      f.input :participant
+      f.input :participant, label: "Participant.e.s ⚠️ Ne pas préciser 'avec'"
       f.input :description
     end
     f.actions
