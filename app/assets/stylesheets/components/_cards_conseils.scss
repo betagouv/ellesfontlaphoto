@@ -1,24 +1,23 @@
 .cards {
   width: 100%;
-}
-.card-index-conseils-articles,.card-index-conseils-videos {
-  padding: 10% 4% 10% 7%;
-  background-color: white;
-  height: auto;
-  position: relative;
-  border-radius: 16px;
-  border: solid 1px $orange;
-  position: relative;
-  height: intrinsic;
-  height: -moz-max-content;
-  height: -webkit-max-content;
-  &:hover {
-    box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
-  }
-  .card-index-conseils-articles-div {
-    padding: 6% 5% 10% 5%;
-    .paragraphe,.main-bold-paragraphe {
-      text-align: center;
+  .card-index-conseils-articles,.card-index-conseils-videos {
+    padding: 10% 4% 10% 7%;
+    background-color: white;
+    height: -webkit-max-content;
+    position: relative;
+    border-radius: 16px;
+    border: solid 1px $orange;
+    height: intrinsic;
+    height: -moz-max-content;
+    height: -webkit-max-content;
+    &:hover {
+      box-shadow: 0 0 6px rgba(1, 1, 1, 0.5);
+    }
+    .card-index-conseils-articles-div {
+      padding: 10% 5% 5% 5%;
+      .paragraphe,.main-bold-paragraphe {
+        text-align: center;
+      }
     }
   }
 
