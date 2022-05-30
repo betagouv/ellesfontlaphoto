@@ -43,8 +43,9 @@
         .image-first-block-card {
           border-top-left-radius: 16px;
           border-top-right-radius: 16px;
-          width: 360px;
-          height: 200px;
+          width: 100%;
+          height: 210px;
+          object-fit: cover;
         }
         .first-block-card-infos.purple {
           background-color: $purple-home;
@@ -86,7 +87,7 @@
   }
   .arrow-first-block-card {
     position: absolute;
-    bottom: 12%;
+    bottom: 8%;
   }
 }
 
@@ -94,7 +95,7 @@
 // SECOND BLOCK
 
 .second-block {
-  padding: 3% 5%;
+  padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,26 +134,34 @@
     .cards-carousel {
       padding-top: 30px;
       display: flex;
-      overflow-x: scroll;
+      overflow: hidden;
       text-align: left;
       .card-index-helps {
-        min-width: 24%;
+        min-width: 22%;
         margin-right: 40px;
+        padding-bottom: 3%;
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
-        min-width: 18%;
+        min-width: 14%;
         padding: 4%;
         margin-right: 40px;
+        max-height: 500px;
+        .cards-videos-info {
+          p {
+            max-height: 250px;
+            overflow: hidden;
+          }
+        }
       }
       .arrow-carousel-right {
         top: 50%;
-        right: 0;
+        right: -2%;
         position: absolute;
         cursor: pointer;
       }
       .arrow-carousel-left {
         top: 50%;
-        left: 0;
+        left: -2%;
         position: absolute;
         display: none;
         cursor: pointer;
@@ -188,17 +197,21 @@
 // CONTACT BLOCK
 .contact-block {
   display: flex;
+  justify-content: space-around;
   gap: 20px;
   padding: 0 5% 5% 5%;
   .contact-div {
-    width: 50%;
-    padding: 3% 7% 9%;
+    width: 33%;
+    padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
-    div {
+    .description-contact-div {
       height: 420px;
       img {
         width: 100%;
+      }
+      .paragraphe {
+        font-size: 18px;
       }
     }
     .btn-contact {
@@ -220,6 +233,11 @@
         opacity: 80%;
       }
     }
+  }
+  .btn-insta-home {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
   }
   .contact-div.purple {
     border: 1px solid $purple;
@@ -284,6 +302,7 @@
         margin: 30px 0 0 0;
       }
       .cards-carousel {
+        overflow-x: scroll;
         padding-top: 50px;
         .card-index-helps {
           min-width: 36%;
@@ -404,21 +423,32 @@
         margin: 30px 0 20px 0;
       }
       .cards-carousel {
+        overflow-x: scroll;
         padding-top: 30px;
         gap: 20px;
-        .arrow-carousel-right,.arrow-carousel-left {
+        .arrow-carousel-right, .arrow-carousel-left {
           display: none;
         }
         .card-index-helps {
-          min-width: 78%;
+          min-width: 74%;
           padding-bottom: 4%;
-          a .sub-card-index-helps .sub-card-index-helps-infos {
-            -webkit-line-clamp: 3;
+          margin-right: 0;
+          .arrow {
+            left: 3%;
+          }
+          a .sub-card-index-helps {
+            .sub-card-index-helps-infos {
+              max-height: 120px;
+            }
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 70%;
+          min-width: 66%;
           padding: 4%;
+          margin-right: 0;
+          .cards-videos-info,p {
+            max-height: 220px !important;
+          }
         }
       }
     }
