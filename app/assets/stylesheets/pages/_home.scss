@@ -205,6 +205,10 @@
     padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
+    .div-btn-orange-home {
+      display: flex;
+      justify-content: space-between;
+    }
     .description-contact-div {
       height: 420px;
       img {
@@ -334,7 +338,8 @@
   .contact-block {
     .contact-div {
       padding: 3%;
-      div {
+      width: 50%;
+      .description-contact-div {
         height: 320px;
         .subtitle {
           font-size: 24px;
@@ -344,6 +349,9 @@
           font-size: 26px;
           line-height: 30px;
         }
+      }
+      .div-btn-orange-home {
+        display: block;
       }
       .btn-orange,.btn-contact {
         white-space: nowrap;
@@ -470,8 +478,8 @@
       width: 80%;
       margin-bottom: 20px;
       padding: 10%;
-      div {
-        height: 300px;
+      .description-contact-div {
+        height: 280px !important;
         p {
           text-align: center;
         }
