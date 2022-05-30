@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_09_091130) do
+ActiveRecord::Schema.define(version: 2022_05_30_161146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 2022_05_09_091130) do
     t.text "description_longue"
     t.boolean "permanent", default: false
     t.boolean "open"
+    t.integer "api_id"
   end
 
   create_table "notation_catalogues", force: :cascade do |t|
