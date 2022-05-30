@@ -96,12 +96,14 @@
     <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
   </div>
   <div class="contact-div">
-    <div>
+    <div class="description-contact-div">
       <p class="subtitle pb50">On reste en contact ? <span class="subtitle-spectral">Suivez l’évolution du service et nos événements</span></p>
       <%= image_tag "Group 215.png" %>
     </div>
-    <a class="js-modal btn-orange" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
-    <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange"><%= image_tag "instagram.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
+    <div class="d-flex justify-between">
+      <a class="js-modal btn-orange" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
+      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home"><%= image_tag "instagram.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
+    </div>
   </div>
 </div>
 
