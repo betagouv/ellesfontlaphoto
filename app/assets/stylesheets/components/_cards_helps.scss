@@ -1,58 +1,56 @@
 .cards {
   width: 100%;
-  .card-index-helps {
-    background-color: white;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    padding-bottom: 10%;
-    border: 1px solid $purple;
-    position: relative;
-    height: intrinsic;
-    height: -moz-max-content;
-    height: -webkit-max-content;
-    position: relative;
-    &:hover {
-      .sub-card-index-helps {
-        z-index: 10;
-        transform: translateY(-60px);
-        transition: transform .6s ease-out;
-        -webkit-transition: .6s ease-out;
-        -moz-transition: .6s ease-out;
-        -o-transition: .6s ease-out;
-        .sub-card-index-helps-infos {
-          opacity: 1;
-          z-index: 10;
-          max-height: 240px;
-          overflow: hidden;
-        }
-      }
-      .arrow {
+}
+
+.card-index-helps {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  padding-bottom: 10%;
+  border: 1px solid $purple;
+  position: relative;
+  height: intrinsic;
+  height: -moz-max-content;
+  height: -webkit-max-content;
+  position: relative;
+
+  &:hover {
+    .sub-card-index-helps {
+      z-index: 10;
+      transform: translateY(-60px);
+      transition: transform .6s ease-out;
+      -webkit-transition: .6s ease-out;
+      -moz-transition: .6s ease-out;
+      -o-transition: .6s ease-out;
+
+      .sub-card-index-helps-infos {
         opacity: 1;
         z-index: 10;
+        max-height: 240px;
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 10;
-        -webkit-box-orient: vertical;
       }
     }
+
     .arrow {
-      opacity: 0;
+      opacity: 1;
       transition: all .6s ease-out;
       -webkit-transition: all .6s ease-out;
       -moz-transition: all .6s ease-out;
       -o-transition: all .6s ease-out;
-      left: 20px;
+      left: 12%;
       bottom: 0;
     }
   }
+
   .flottante-div {
     display: flex;
     position: absolute;
     z-index: 5;
     top: -15px;
     left: 20px;
+
     .flottante {
-      color: $black !important;
+      color: $black  !important;
       border: 1px solid $purple;
       border-radius: 40px;
       display: table !important;
@@ -62,62 +60,58 @@
       font-size: 14px;
       white-space: nowrap;
     }
+
     .flottante-orange {
-      background-color: $orange !important;
+      background-color: $orange  !important;
       border: none;
     }
+
     .flottante-ouverte {
       background-color: $purple;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
   }
+
   .image-card-helps {
     opacity: 1;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
     width: 100%;
   }
+
   .sub-card-index-helps {
     transition: transform .3s ease-out;
     background-color: $white;
+
     .main-bold-paragraphe {
       text-align: left;
       padding: 12% 12%;
       margin-bottom: 0;
     }
+
     .sub-card-index-helps-infos {
       padding: 0 12%;
       transition: transform .3s ease-out;
       background-color: $white;
       overflow: hidden;
-      max-height: 210px;
-      display: -webkit-box;
-      -webkit-line-clamp: 7;
-      -webkit-box-orient: vertical;
+      max-height: 205px;
+      overflow: hidden;
+
       ul {
         margin-top: 0;
         font-size: 14px;
         line-height: 20px;
       }
-      .sub-card-index-helps-infos {
-        padding: 0 12%;
-        transition: transform .3s ease-out;
-        background-color: $white;
-        overflow: hidden;
-        max-height: 205px;
-        overflow: hidden;
-        ul {
-          margin-top: 0;
-          font-size: 14px;
-          line-height: 20px;
-        }
 
-      .paragrahe-gains, .paragrahe-general-condition {
+      .paragrahe-gains,
+      .paragrahe-general-condition {
         p {
           margin: 0;
           font-size: 14px;
           color: $black;
-          display: inline-block;;
+          display: inline-block;
+          ;
+
           span {
             display: inline-block;
             margin: 0;
@@ -126,41 +120,49 @@
           }
         }
       }
-      a{
-        color: $black !important;
+
+      a {
+        color: $black  !important;
       }
     }
   }
+
   .arrow {
     opacity: 0;
     position: absolute;
+
     img {
       width: 25px;
     }
   }
-  }
-  .card-index-helps.border-orange {
+
+  .border-orange {
     border: 1px solid $orange;
   }
 }
+
 
 @media only screen and (max-width: 1250px) {
   .cards .card-index a {
     .paragraphe {
       text-align: left;
     }
+
     .arrow {
       margin-top: 7%;
     }
   }
+
   .card-index-helps {
     .arrow {
       opacity: 1 !important;
       position: inherit !important;
       padding-right: 25px;
     }
+
     &:hover {
       box-shadow: none !important;
+
       .sub-card-index-helps {
         z-index: 10;
         transform: none !important;
@@ -168,12 +170,14 @@
         -webkit-transition: transform none !important;
         -moz-transition: none !important;
         -o-transition: none !important;
+
         .sub-card-index-helps-infos {
           opacity: 1;
           z-index: 10;
           overflow: hidden;
         }
       }
+
       .arrow {
         transition: none !important;
         -webkit-transition: none !important;
@@ -187,17 +191,20 @@
 @media only screen and (max-width: 750px) {
   .card-index-helps {
     padding: 0;
+
     a .sub-card-index-helps .main-bold-paragraphe {
       .paragraphe {
         padding-bottom: 0;
         margin-top: 0px;
       }
+
       .main-bold-paragraphe {
-        padding-bottom:0;
+        padding-bottom: 0;
         margin-top: 10px;
         margin-bottom: 10px;
         text-align: left !important;
       }
+
       .arrow {
         margin-top: 8% !important;
       }
