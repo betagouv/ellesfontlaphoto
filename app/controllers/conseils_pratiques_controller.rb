@@ -21,6 +21,13 @@ class ConseilsPratiquesController < ApplicationController
       @selected_document = params[:document_type]
     end
     @conseils = @conseil_articles + @conseil_videos + @webinaires
+    @conseils.sort! do |e|
+      if e.class == Webinaire
+        e.date
+      else
+        e.created_at
+      end
+    end
     # if params[:tag_list].present?
     #   @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
     #   @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])

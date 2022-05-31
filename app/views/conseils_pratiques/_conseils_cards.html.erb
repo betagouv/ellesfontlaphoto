@@ -5,7 +5,7 @@
     <a href="/proposer_conseil" class="button-contenu-conseil">Recensez une ressource</a>
   </div>
 </div>
-<% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
+<% @conseils.each do |conseil| %>
   <% if conseil.class == ConseilsArticle %>
     <div class="card-index-conseils-articles">
       <%= link_to conseils_article_path(conseil), target: :_blank do %>
