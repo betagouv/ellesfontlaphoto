@@ -6,6 +6,6 @@ class PagesController < ApplicationController
 
   def rencontre
     @contact = Contact.new
-    @webinaires = Webinaire.where("page_rencontre = ? OR date > ?", true, Date.today).order(:date)
+    @webinaires = Webinaire.where("page_rencontre = ?", true).order(:date)
   end
 end
