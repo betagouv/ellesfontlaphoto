@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_161146) do
+ActiveRecord::Schema.define(version: 2022_05_31_100603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,12 @@ ActiveRecord::Schema.define(version: 2022_05_30_161146) do
     t.index ["help_id"], name: "index_evaluation_helps_on_help_id"
   end
 
+  create_table "help_apis", force: :cascade do |t|
+    t.integer "api_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "helps", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -174,7 +180,6 @@ ActiveRecord::Schema.define(version: 2022_05_30_161146) do
     t.text "description_longue"
     t.boolean "permanent", default: false
     t.boolean "open"
-    t.integer "api_id"
   end
 
   create_table "notation_catalogues", force: :cascade do |t|

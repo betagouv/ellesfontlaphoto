@@ -30,12 +30,12 @@ require "open-uri"
   "Saint-Pierre-et-Miquelon": "Saint-Pierre-et-Miquelon"
 }
 
-url = "https://gouv.pr-744-ht2yqea-dkyixqmx5apwo.eu-2.platformsh.site/api/appel-a-projet"
+url = "https://www.culture.gouv.fr/Aides-demarches/Appels-a-projets"
 appel_projet_serialized = URI.open(url).read
 appel_projet = JSON.parse(appel_projet_serialized)
 
 appel_projet["results"].each do |appel|
-  if (appel["eztag_theme"].include? "Photographie") && (Help.where(api_id: appel["id"]).empty?)
+  if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?)
     new_help = Help.new(
       visible: false,
       title: appel["title"],
@@ -46,8 +46,8 @@ appel_projet["results"].each do |appel|
       end_date: Date.parse(appel["deadline"]),
       description: "À définir",
       help_amount: "À définir",
-      api_id: appel["id"]
     )
+    HelpApi.create(api_id: appel["id"])
     new_help.save
     new_candidature_date = CandidatureDate.new(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
   end
