@@ -54,7 +54,7 @@
   <% elsif conseil.class == Webinaire %>
     <div class="card-index-conseils-videos">
       <%= link_to conseil.url, target: :_blank do %>
-        <% if (Time.now - conseil.created_at)/1.day < 15  %>
+        <% if (Time.now - conseil.date)/1.day < 15  %>
           <%= render "conseils_pratiques/flottante_conseils" %>
         <% end %>
         <div class="card-index-conseils-videos-div">
