@@ -35,7 +35,7 @@ appel_projet_serialized = URI.open(url).read
 appel_projet = JSON.parse(appel_projet_serialized)
 
 appel_projet["results"].each do |appel|
-  if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?)
+  if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
     new_help = Help.new(
       visible: false,
       title: appel["title"],
