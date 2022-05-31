@@ -22,12 +22,13 @@
   .first-block-cards {
     padding-bottom: 4vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
     text-align: center;
     cursor: pointer;
     a {
-      width: 25%;
+      width: 27%;
+      margin: 0 11px;
       .first-block-card.purple {
         background-color: $purple-home;
       }
@@ -39,7 +40,7 @@
       }
       .first-block-card {
         border-radius: 16px;
-        min-height: 466px;
+        min-height: 440px;
         .image-first-block-card {
           border-top-left-radius: 16px;
           border-top-right-radius: 16px;
@@ -57,22 +58,27 @@
           background-color: $orange-home;
         }
         .first-block-card-infos {
-          border-radius: 16px;
-          padding: 5% 0;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          padding: 5% 0 0 0;
           .first-block-card-infos-title {
-            font-size: 20px;
+            font-family: "Marianne-Medium";
+            font-size: 28px;
             color: $black;
+            margin-bottom: 0;
+            margin-top: 5px;
           }
           .first-block-card-infos-text {
             color: $black;
             opacity: 0;
+            margin-top: 0;
+            padding: 0 20px;
           }
         }
         &:hover {
-          box-shadow: 0 0 6px rgba(1,1,1,0.5);
           .first-block-card-infos {
             z-index: 10;
-            transform: translateY(-40px);
+            transform: translateY(-30px);
             transition: transform .6s ease-out;
             -webkit-transition: .6s ease-out;
             -moz-transition: .6s ease-out;
