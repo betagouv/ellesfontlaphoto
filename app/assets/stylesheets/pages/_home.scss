@@ -232,7 +232,12 @@
     border-radius: 16px;
     .div-btn-orange-home {
       display: flex;
-      justify-content: space-between;
+      .btn-orange {
+        margin-left: 20px;
+        &:hover {
+          opacity: 80%;
+        }
+      }
     }
     .description-contact-div {
       height: 420px;
@@ -255,13 +260,11 @@
       height: auto;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 16px;
-      margin-left: 25%;
       cursor: pointer;
       color: $black !important;
-      margin: 0 auto;
-      margin-right: 30px;
       border : none;
       max-width: 50%;
+      margin-right: 20px;
       &:hover {
         opacity: 80%;
       }

@@ -76,6 +76,7 @@
 
 <div class="fourth-block">
   <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
+  <div class="d-flex"></div>
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
   <div class="btn-black">Proposer du contenu</div>
 </div>
@@ -92,8 +93,10 @@
     <% if notice %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <a href="/a_propos" class="btn-contact"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
-    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
+    <div class="d-flex">
+      <a href="/a_propos" class="btn-contact btn"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
+      <a class="js-modal btn-contact btn" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
+    </div>
   </div>
   <div class="contact-div">
     <div class="description-contact-div">
@@ -101,8 +104,8 @@
       <%= image_tag "Group 215.svg" %>
     </div>
     <div class="div-btn-orange-home">
-      <a class="js-modal btn-orange" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
-      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home"><%= image_tag "instagram-black.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
+      <a class="js-modal btn-orange btn" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 28px;" %> S'abonner à l'infolettre</a>
+      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home btn"><%= image_tag "instagram-black.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
     </div>
   </div>
 </div>
