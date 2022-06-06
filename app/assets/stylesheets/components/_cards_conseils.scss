@@ -17,7 +17,7 @@
       transform: translateY(-40px);
     }
     .card-index-conseils-videos-div {
-      transform: translateY(-100px);
+      transform: translateY(-120px);
     }
     .card-index-conseils-articles-div,.card-index-conseils-videos-div {
       z-index: 10;
@@ -29,6 +29,10 @@
         opacity: 1;
         max-height: 120px;
         overflow: hidden;
+      }
+
+      .image-conseil {
+        opacity: 0;
       }
 
       .div-img-conseils-videos {

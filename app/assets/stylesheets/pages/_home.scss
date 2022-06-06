@@ -135,7 +135,7 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 5%;
+  padding: 3% 7% 0 7%;
   text-align: center;
   .third-block-div {
     border-radius: 16px;
@@ -156,14 +156,17 @@
         padding-bottom: 3%;
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
-        min-width: 14%;
-        padding: 4%;
+        min-width: 22%;
+        padding: 2% 0%;
         margin-right: 40px;
         max-height: 500px;
-        .cards-videos-info {
-          p {
-            max-height: 250px;
-            overflow: hidden;
+        .card-index-conseils-videos-div {
+          padding: 5% 0;
+          .cards-videos-info {
+            p {
+              max-height: 250px;
+              overflow: hidden;
+            }
           }
         }
       }
@@ -194,12 +197,12 @@
 // FOURTH BLOCK
 
 .fourth-block {
-  padding: 1% 10% 6% 10%;
+  padding: 140px 10% 130px 10%;
   text-align: center;
   position: relative;
   .title-marianne {
     padding-bottom: 3%;
-    font-size: 30px;
+    font-size: 28px;
   }
   .btn-black {
     width: 200px;
@@ -210,9 +213,8 @@
   }
   .illu-femme-stylo {
     position: absolute;
-    right: 40px;
-    width: 280px;
-    top: -24px;
+    right: 3%;
+    bottom: -20%;
   }
 }
 
@@ -222,9 +224,9 @@
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  padding: 0 5% 5% 5%;
+  padding: 0 7% 5% 7%;
   .contact-div {
-    width: 33%;
+    width: 40%;
     padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
@@ -234,6 +236,10 @@
     }
     .description-contact-div {
       height: 420px;
+      .subtitle,.subtitle-spectral {
+        font-size: 28px;
+        line-height: 38px;
+      }
       img {
         width: 100%;
       }
@@ -327,6 +333,7 @@
     .third-block-div {
       .subtitle-spectral {
         margin: 30px 0 0 0;
+        font-size: 34px;
       }
       .cards-carousel {
         overflow-x: scroll;
@@ -350,6 +357,9 @@
 
   .fourth-block {
     padding: 6% 6% 15% 6%;
+    .subtitle-spectral {
+      font-size: 34px;
+    }
     .illu-femme-stylo {
       position: absolute;
       right: 0;
@@ -366,11 +376,12 @@
         height: 320px;
         .subtitle {
           font-size: 24px;
-          line-height: 30px;
+          line-height: 28px;
+          color: red;
         }
         .subtitle-spectral {
-          font-size: 26px;
-          line-height: 30px;
+          font-size: 34px;
+          line-height: 28px;
         }
       }
       .div-btn-orange-home {
