@@ -160,6 +160,53 @@ a {
   }
 }
 @media only screen and (max-width: 1250px) {
+
+  .card-index-conseils-articles,.card-index-conseils-videos {
+    &:hover {
+      .card-index-conseils-articles-div {
+        transform: translateY(-40px);
+      }
+
+      .card-index-conseils-videos-div {
+        transform: translateY(-120px);
+      }
+
+      a div .image-conseil,
+      .flottante-play {
+        transition: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        opacity: 0;
+      }
+
+      .card-index-conseils-articles-div,
+      .card-index-conseils-videos-div {
+        z-index: 10;
+        transition: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+
+        .div-img-conseils-videos {
+          opacity: 0;
+          transition: none !important;
+          -webkit-transition: none !important;
+          -moz-transition: none !important;
+          -o-transition: none !important;
+        }
+      }
+
+      .pastille-conseils.pink,
+      .pastille-conseils.green {
+        opacity: 0;
+        transition: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+      }
+    }
+  }
   .cards .card-index a {
     .paragraphe {
       text-align: left;
