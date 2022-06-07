@@ -287,19 +287,11 @@
 
 @media only screen and (max-width: 1250px) {
   .banner {
-    padding: 4em 2em 1em 2em;
+    padding: 4em 10em 1em 10em;
     h1 {
-      text-align: center;
-      line-height: 65px;
+      line-height: 40px;
+      font-size: 24px;
     }
-  }
-
-  .paragraphe {
-    color: #1a1b1f;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    text-align: center;
   }
 
   .first-block {
@@ -307,7 +299,8 @@
     .first-block-cards {
       justify-content: space-between;
       a {
-        width: 30%;
+        width: 35%;
+        margin: 0 5px;
         .first-block-card {
           img {
             object-fit: cover;
@@ -317,12 +310,17 @@
           }
           .first-block-card-infos {
             padding: 2%;
-            .first-block-card-infos-text {
+            .first-block-card-infos-title,.first-block-card-infos-text {
               color: $black;
+              padding: 0 8px;
               opacity: 1;
               text-align: center;
+              font-size: 18px;
             }
           }
+        }
+        .arrow-first-block-card {
+          bottom: 5%;
         }
       }
     }
@@ -330,10 +328,16 @@
 
   .second-block {
     padding: 0% 2%;
+    .paragraphe-title {
+      font-size: 20px;
+      line-height: 29.7px;
+    }
   }
 
   .third-block {
+    padding: 3% 0 0;
     .third-block-div {
+      border-radius: 0;
       .subtitle-spectral {
         margin: 30px 0 0 0;
         font-size: 34px;
@@ -341,15 +345,24 @@
       .cards-carousel {
         overflow-x: scroll;
         padding-top: 50px;
+        .arrow-carousel-right, .arrow-carousel-left {
+            display: none;
+          }
         .card-index-helps {
           min-width: 36%;
           padding-bottom: 4%;
           margin-right: 20px;
+          .arrow {
+            display: none;
+          }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
           min-width: 28%;
           padding: 4%;
           margin-right: 20px;
+          .arrow {
+              display: none;
+          }
         }
       }
     }
@@ -362,9 +375,9 @@
     }
     .illu-femme-stylo {
       position: absolute;
-      right: 0;
-      width: 250px;
-      top: 55px;
+      right: 20px;
+      width: 200px;
+      bottom: 0;
     }
   }
 
@@ -374,12 +387,8 @@
       width: 50%;
       .description-contact-div {
         height: 320px;
-        .subtitle {
+        .subtitle,.subtitle-spectral {
           font-size: 24px;
-          line-height: 28px;
-        }
-        .subtitle-spectral {
-          font-size: 34px;
           line-height: 28px;
         }
       }
@@ -388,9 +397,12 @@
       }
       .btn-orange,.btn-contact {
         white-space: nowrap;
-        display: table;
+        display: flex;
         margin: 0;
         margin-bottom: 20px;
+      }
+      .d-flex {
+        justify-content: space-around;
       }
     }
   }
@@ -477,18 +489,12 @@
         overflow-x: scroll;
         padding-top: 30px;
         gap: 20px;
-        .arrow-carousel-right, .arrow-carousel-left {
-          display: none;
-        }
         .card-index-helps {
           min-width: 43%;
           padding-bottom: 4%;
           margin-right: 0;
           .flottante-div .flottante {
             font-size: 11px;
-          }
-          .arrow {
-            display: none;
           }
           .main-bold-paragraphe {
             padding: 5%;

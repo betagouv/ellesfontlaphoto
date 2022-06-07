@@ -136,6 +136,7 @@
     margin: 10px 0 30px;
     display: table;
     background-color: $purple;
+    margin: 20px 7% 10px;
   }
 
   .arrow {
@@ -170,6 +171,10 @@
       padding-right: 25px;
     }
 
+    .pastille-aides {
+      font-size: 14px;
+    }
+
     &:hover {
       box-shadow: none !important;
 
@@ -202,6 +207,10 @@
   .card-index-helps {
     padding: 0;
 
+    .pastille-aides {
+      font-size: 11px;
+    }
+
     a .sub-card-index-helps .main-bold-paragraphe {
       .paragraphe {
         padding-bottom: 0;
@@ -217,10 +226,6 @@
       .arrow {
         margin-top: 8% !important;
       }
-    }
-    .pastille-aides {
-      font-size: 11px;
-      margin: 20px 7% 10px;
     }
   }
 }
