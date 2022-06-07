@@ -10,6 +10,7 @@
         <% if conseil.objectif.present? %>
           <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
         <% end %>
+        <div class="paragraphe card mb0 card-intro"><%= conseil.introduction.html_safe %></div>
       </div>
       <div class="pastille-conseils pink">
         <%= image_tag "icone-fiche.svg", alt: "icône play noir" %> fiche
@@ -24,7 +25,7 @@
       <% end %>
       <div class="card-index-conseils-videos-div">
         <% if conseil.image.attached? %>
-          <div>
+          <div class="div-img-conseils-videos">
             <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
             <div class="flottante-play">
               <%= image_tag "play.svg", alt: "icône play vidéo" %>
@@ -36,10 +37,11 @@
             <%= ConseilsVideo::VIDEO_FORMAT[conseil.format.to_sym] %>
           </p>
           <p class="main-bold-paragraphe mt0"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
+          <div class="paragraphe card mb0 card-intro"><%= conseil.subtitle %></div>
         </div>
-      </div>
-      <div class="pastille-conseils green">
-        <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
+        <div class="pastille-conseils green">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
+        </div>
       </div>
     <% end %>
   </div>
@@ -49,21 +51,21 @@
       <% if (Time.now - conseil.created_at)/1.day < 15  %>
         <%= render "conseils_pratiques/flottante_conseils" %>
       <% end %>
-      <div class="card-index-conseils-videos-div">
-        <% if conseil.images.attached? %>
-          <div>
-            <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
-            <div class="flottante-play">
-              <%= image_tag "play.svg", alt: "icône play vidéo" %>
-            </div>
+      <% if conseil.images.attached? %>
+        <div>
+          <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
+          <div class="flottante-play">
+            <%= image_tag "play.svg", alt: "icône play vidéo" %>
           </div>
-        <% end %>
-      </div>
-      <div class="cards-videos-info">
-        <p class="main-bold-paragraphe mt30 mb30"><%= conseil.titre %> <span class="spectral-italic">avec <%= conseil.participant %></span></p>
-      </div>
-      <div class="pastille-conseils purple">
-        <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire
+        </div>
+      <% end %>
+      <div class="card-index-conseils-videos-div">
+        <div class="cards-videos-info">
+          <p class="main-bold-paragraphe mb20"><%= conseil.titre %> <span class="spectral-italic">avec <%= conseil.participant %></span></p>
+        </div>
+        <div class="pastille-conseils purple">
+          <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire
+        </div>
       </div>
     <% end %>
   </div>

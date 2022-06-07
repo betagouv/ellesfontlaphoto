@@ -61,6 +61,12 @@ a {
   text-decoration: none !important;
 }
 
+.btn {
+  display: flex;
+  width: -webkit-fill-available;
+  width: fit-content;
+}
+
 .btn-black {
   background-color: $black;
   border-radius: 40px;
@@ -261,7 +267,7 @@ b, strong {
 .emojis-eflc-small {
   width: 18px;
   height: 20px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .emojis-eflc-medium {

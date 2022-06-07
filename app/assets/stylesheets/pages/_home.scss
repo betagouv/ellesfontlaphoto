@@ -22,12 +22,13 @@
   .first-block-cards {
     padding-bottom: 4vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
     text-align: center;
     cursor: pointer;
     a {
-      width: 25%;
+      width: 27%;
+      margin: 0 11px;
       .first-block-card.purple {
         background-color: $purple-home;
       }
@@ -39,7 +40,7 @@
       }
       .first-block-card {
         border-radius: 16px;
-        min-height: 466px;
+        min-height: 440px;
         .image-first-block-card {
           border-top-left-radius: 16px;
           border-top-right-radius: 16px;
@@ -57,22 +58,28 @@
           background-color: $orange-home;
         }
         .first-block-card-infos {
-          border-radius: 16px;
-          padding: 5% 0;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          padding: 5% 0 0 0;
           .first-block-card-infos-title {
-            font-size: 20px;
+            font-family: "Marianne-Medium";
+            font-size: 28px;
             color: $black;
+            margin-bottom: 0;
+            margin-top: 5px;
           }
           .first-block-card-infos-text {
             color: $black;
             opacity: 0;
+            margin-top: 0;
+            padding: 0 22px;
+            font-size: 18px;
           }
         }
         &:hover {
-          box-shadow: 0 0 6px rgba(1,1,1,0.5);
           .first-block-card-infos {
             z-index: 10;
-            transform: translateY(-40px);
+            transform: translateY(-30px);
             transition: transform .6s ease-out;
             -webkit-transition: .6s ease-out;
             -moz-transition: .6s ease-out;
@@ -101,6 +108,9 @@
   align-items: center;
   position: relative;
   text-align: center;
+  .paragraphe-title {
+    font-family: "Marianne-Medium";
+  }
   img {
     max-width: 20%;
   }
@@ -112,6 +122,10 @@
     .btn-orange {
       width: 200px;
       margin: 0 auto;
+      background-color: $orange;
+      &:hover{
+        background-color: $hover-orange !important;
+      }
     }
   }
 }
@@ -121,7 +135,7 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 5%;
+  padding: 3% 7% 0 7%;
   text-align: center;
   .third-block-div {
     border-radius: 16px;
@@ -142,14 +156,17 @@
         padding-bottom: 3%;
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
-        min-width: 14%;
-        padding: 4%;
+        min-width: 22%;
+        padding: 2% 0%;
         margin-right: 40px;
         max-height: 500px;
-        .cards-videos-info {
-          p {
-            max-height: 250px;
-            overflow: hidden;
+        .card-index-conseils-videos-div {
+          padding: 5% 0;
+          .cards-videos-info {
+            p {
+              max-height: 220px;
+              overflow: hidden;
+            }
           }
         }
       }
@@ -158,6 +175,9 @@
         right: -2%;
         position: absolute;
         cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
       }
       .arrow-carousel-left {
         top: 50%;
@@ -165,6 +185,9 @@
         position: absolute;
         display: none;
         cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
   }
@@ -174,22 +197,24 @@
 // FOURTH BLOCK
 
 .fourth-block {
-  padding: 1% 10% 6% 10%;
+  padding: 140px 10% 130px 10%;
   text-align: center;
   position: relative;
   .title-marianne {
     padding-bottom: 3%;
-    font-size: 30px;
+    font-size: 28px;
   }
   .btn-black {
-    width: 300px;
+    width: 200px;
     margin: 0 auto;
+    &:hover {
+      background-color: $hover-black;
+    }
   }
   .illu-femme-stylo {
     position: absolute;
-    right: 40px;
-    width: 280px;
-    top: -24px;
+    right: 3%;
+    bottom: -20%;
   }
 }
 
@@ -199,18 +224,27 @@
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  padding: 0 5% 5% 5%;
+  padding: 0 7% 5% 7%;
   .contact-div {
-    width: 33%;
+    width: 40%;
     padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
     .div-btn-orange-home {
       display: flex;
-      justify-content: space-between;
+      .btn-orange {
+        margin-left: 20px;
+        &:hover {
+          opacity: 80%;
+        }
+      }
     }
     .description-contact-div {
       height: 420px;
+      .subtitle,.subtitle-spectral {
+        font-size: 28px;
+        line-height: 38px;
+      }
       img {
         width: 100%;
       }
@@ -226,13 +260,11 @@
       height: auto;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 16px;
-      margin-left: 25%;
       cursor: pointer;
       color: $black !important;
-      margin: 0 auto;
-      margin-right: 30px;
       border : none;
       max-width: 50%;
+      margin-right: 20px;
       &:hover {
         opacity: 80%;
       }
@@ -304,6 +336,7 @@
     .third-block-div {
       .subtitle-spectral {
         margin: 30px 0 0 0;
+        font-size: 34px;
       }
       .cards-carousel {
         overflow-x: scroll;
@@ -327,6 +360,9 @@
 
   .fourth-block {
     padding: 6% 6% 15% 6%;
+    .subtitle-spectral {
+      font-size: 34px;
+    }
     .illu-femme-stylo {
       position: absolute;
       right: 0;
@@ -343,11 +379,12 @@
         height: 320px;
         .subtitle {
           font-size: 24px;
-          line-height: 30px;
+          line-height: 28px;
+          color: red;
         }
         .subtitle-spectral {
-          font-size: 26px;
-          line-height: 30px;
+          font-size: 34px;
+          line-height: 28px;
         }
       }
       .div-btn-orange-home {
