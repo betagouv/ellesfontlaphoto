@@ -17,15 +17,7 @@ ActiveStorage.start()
 
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
-
-  if (document.querySelector("#check01")) {
-    document.querySelector("#check01").addEventListener("click", () =>{
-      document.querySelector(".plus").classList.toggle("display");
-      document.querySelector(".moins").classList.toggle("display");
-    })
-  }
-
-  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils") || document.querySelector(".notation-button") || document.querySelector("#notification-help")){
+  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils") || document.querySelector(".notation-button") || document.querySelector("#notification-help") || document.getElementById("rencontre-page")) {
     new Modal();
   }
 

@@ -32,7 +32,7 @@
         background-color: $white;
         border-radius: 40px;
         border: 1px solid $black;
-        padding: 4px 12px 7px 12px;
+        padding: 6px 12px;
         font-family: 'Marianne-Regular', sans-serif;
         font-size: 14px;
         cursor: pointer;
@@ -46,7 +46,7 @@
           display: inline;
           position: absolute;
           right:7px;
-          top: 11%;
+          top: 15%;
         }
       }
     }
@@ -64,29 +64,47 @@
         margin-left: 15px;
       }
     }
+    .div-select {
+      display: flex;
+      justify-content: center;
+      div {
+        position: relative;
+        select {
+          margin-top: 10px;
+          display: table;
+          height: 40px;
+          width: 227px;
+          border-radius: 40px;
+          font-family: 'Marianne-Regular', sans-serif;
+          color: $grey-input;
+          padding: 0px 15px;
+          background-position: calc(100% - 0.75rem) center !important;
+          -moz-appearance:none !important;
+          -webkit-appearance: none !important;
+          appearance: none !important;
+          background-repeat: no-repeat;
+          padding-right: 2rem !important;
+          border: 1px solid $black;
+          cursor: pointer;
+          background-image: url(chevron.svg);
+          &:focus {
+            outline: none;
+            border: 2px solid $filter-purple;
+            color: $black;
+          }
+        }
 
-    select {
-      margin: 10px auto;
-      display: table;
-      height: 40px;
-      width: 227px;
-      border-radius: 40px;
-      font-family: 'Marianne-Regular', sans-serif;
-      color: $grey-input;
-      padding: 0px 15px;
-      background-position: calc(100% - 0.75rem) center !important;
-      -moz-appearance:none !important;
-      -webkit-appearance: none !important;
-      appearance: none !important;
-      background-repeat: no-repeat;
-      padding-right: 2rem !important;
-      border: 1px solid $black;
-      cursor: pointer;
-      background-image: url(chevron.svg);
-      &:focus {
-        outline: none;
-        border: 2px solid $filter-purple;
-        color: $black;
+        select.hide-arrow {
+          background-image: none;
+        }
+
+        .cross-select {
+          display: none;
+          cursor: pointer;
+          position: absolute;
+          top: 16px;
+          right: 12px;
+        }
       }
     }
 
@@ -115,6 +133,17 @@
 }
 
 
+@media only screen and (min-width: 1250px) {
+  .div-select {
+    display: flex;
+    justify-content: center;
+    div {
+      .cross-select {
+        top: 30%;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 1250px) {
   .div-filters {
     display: none;
@@ -139,12 +168,17 @@
       .title-filtre {
         margin-bottom: 15px;
       }
-      select {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto !important;
-        &:focus {
-          border: 2px solid $filter-purple;
+      div {
+        select {
+          display: flex;
+          justify-content: center;
+          margin: 0 auto !important;
+          &:focus {
+            border: 2px solid $filter-purple;
+          }
+        }
+        .cross-select {
+          top: 7px;
         }
       }
       .button-criteria {
@@ -183,15 +217,6 @@
       top: -24px;
       font-size: 28px;
     }
-    // .sticky {
-    //   .button-criteria {
-    //     display: block;
-    //     .button-criteria-helps-elements,.button-criteria-conseils-elements {
-    //       margin: 10px auto;
-    //       display: inline-table;
-    //     }
-    //   }
-    // }
   }
 
 }

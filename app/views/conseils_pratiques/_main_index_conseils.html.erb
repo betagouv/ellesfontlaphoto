@@ -3,10 +3,10 @@
     Filtrer
   </div>
   <div class="header-index">
-    <%= image_tag "illu-index-conseils.png" %>
+    <%= image_tag "illu-femme-debout.png" %>
     <% if @selected || @selected_type || @selected_photo_type %>
       <% if @conseils.count == 0 %>
-        <h1 class="spectral-title"><span class="color-orange">aucune ressources trouvées,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
+        <h1 class="spectral-title"><span class="color-orange">aucune ressource trouvée,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
       <% else %>
         <h1 class="spectral-title"><span class="color-orange"><%= @conseils.count %></span> / <%= @total_count %> ressources et conseils<br> pour les photographes</h1>
       <% end %>
@@ -16,7 +16,16 @@
   </div>
   <div class="main-index">
     <div class="cards">
-      <%= render "conseils_cards", conseils: @sorted_conseils %>
+      <div class="info-contenu-div-conseil">
+        <p class="info-contenu-conseil lh35 main-bold-paragraphe text-align-center">
+            Une ressource utile pour les femmes photographes ? Site, livre, asso... Soumettez-les !</p>
+        <div class="text-align-center">
+          <a href="/proposer_conseil" class="button-contenu-conseil">Recensez une ressource</a>
+        </div>
+      </div>
+      <% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
+        <%= render "conseils_cards", conseil: conseil %>
+      <% end %>
       <div class="contact-index-conseils-div">
         <div class="contact-index-conseils">
           <p class="main-bold-paragraphe">Vous avez beaucoup scrollé... dîtes nous ce que vous cherchez !</p>

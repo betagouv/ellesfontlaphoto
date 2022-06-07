@@ -4,9 +4,9 @@
   <p class="paragraphe-small text-align-center mt10">Votre besoin</p>
   <p class="button-criteria">
     <% Help::HELP_TYPE.each do |type| %>
-      <span class="button-criteria-helps-elements" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
+      <span class="button-criteria-helps-elements <%= @selected_type == type ? "selected" : "" %>" data-action="click->filter-helps#selectCriteria" data-text="<%= type == "exposition & festival" ? "exposition festival" : type %>">
         <%= type %>
-        <span class="cross-criteria">&times;</span>
+        <span class="cross-criteria <%= @selected_type == type ? "display-inline" : "" %>">&times;</span>
       </span>
     <% end %>
   </p>
@@ -27,30 +27,44 @@
   <div class="line-filter"></div>
 
   <p class="paragraphe-small text-align-center title-filtre">Lieu</p>
-  <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputLieu">
-      <option value="">où résidez vous ?</option>
-      <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
-        <% if residence == "Française ou résidant en France" %>
-          <option value="France">France</option>
-        <% elsif residence == "Française résidant en outre-mer" %>
-          <option value="Outre-mer">Outre-mer</option>
-        <% elsif residence == "Française résidant à l'étranger" %>
-          <option value="À l'étranger">À l'étranger</option>
-        <% else %>
-          <option value="<%= residence %>"><%= residence %></option>
-        <% end %>
-      <% end %>
-  </select>
+  <div class="div-select">
+    <div>
+      <select name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshLieu" data-filter-helps-target="inputLieu">
+          <option value="">où résidez vous ?</option>
+          <% Help::HELP_RESIDENCE.reject{|i| i == ""}.each do |residence| %>
+            <% if residence == "Française ou résidant en France" %>
+              <option value="France">France</option>
+            <% elsif residence == "Française résidant en outre-mer" %>
+              <option value="Outre-mer">Outre-mer</option>
+            <% elsif residence == "Française résidant à l'étranger" %>
+              <option value="À l'étranger">À l'étranger</option>
+            <% else %>
+              <option value="<%= residence %>"><%= residence %></option>
+            <% end %>
+          <% end %>
+      </select>
+      <span class="cross-select" data-action="click->filter-helps#clearSelectedLieu" data-filter-helps-target="crossLieu">
+        <%= image_tag "cross-criteria.svg" %>
+      </span>
+    </div>
+  </div>
 
   <div class="line-filter"></div>
 
   <p class="paragraphe-small text-align-center title-filtre">Type de photo</p>
-  <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="inputTypePhoto">
-      <option value="">secteurs</option>
-      <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
-        <option value="<%= photo_type %>"><%= photo_type %></option>
-      <% end %>
-  </select>
+  <div class="div-select">
+    <div>
+      <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshTypePhoto" data-filter-helps-target="inputTypePhoto">
+          <option value="">secteurs</option>
+          <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
+            <option value="<%= photo_type %>"><%= photo_type %></option>
+          <% end %>
+      </select>
+      <span class="cross-select" data-action="click->filter-helps#clearSelectedTypePhoto" data-filter-helps-target="crossTypePhoto">
+        <%= image_tag "cross-criteria.svg" %>
+      </span>
+    </div>
+  </div>
 
   <div class="line-filter"></div>
 
@@ -61,7 +75,7 @@
         <span class="slider round"></span>
       </label>
     </div>
-    <p class="paragraphe-small text-align-center">Parité respéctée</p>
+    <p class="paragraphe-small text-align-center">Parité respectée</p>
   </div>
 
   <div class="line-filter"></div>

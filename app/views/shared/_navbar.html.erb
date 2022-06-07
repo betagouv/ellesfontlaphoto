@@ -14,12 +14,17 @@
         </li>
         <li>
           <%= link_to conseils_path, class: "link-menu conseils-link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "conseils-link-selected" : "" }" do  %>
-            <span class="links-icones"> <%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-medium" %></span> Ressources et conseils
+            <span class="links-icones"> <%= image_tag "emojis/diamant.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium" %></span> Ressources
+          <% end %>
+        </li>
+        <li>
+          <%= link_to rencontre_path, class: "link-menu conseils-link-menu #{params[:controller] == "pages" && params[:action] == "rencontre" ? "conseils-link-selected" : "" }" do  %>
+            <span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 52px;" %></span> Rencontre
           <% end %>
         </li>
       </ul>
     </div>
-    <a class="link-menu manifeste-link-menu" href="/a_propos">À propos</a>
+    <a class="link-menu manifeste-link-menu <%= params[:controller] == "pages" && params[:action] == "a_propos" ? "manifeste-link-menu-selected" : "" %>" href="/a_propos">À propos</a>
   </div>
 </header>
 
@@ -28,8 +33,9 @@
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
   <ul class="menu">
-    <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small" %> Aides</li></a>
-    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji conseils et témoignages", class: "emojis-eflc-small" %> Ressources et conseils</li></a>
+    <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small", style: "width: 26px;" %> Aides</li></a>
+    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji ressources et conseils", class: "emojis-eflc-small", style: "width: 28px;" %> Ressources et conseils</li></a>
+    <a href="/rencontre"><li><%= image_tag "emojis/femmes.png", alt: "émoji rencontre", class: "emojis-eflc-small", style: "width: 65px; height: 24px;" %> Rencontre</li></a>
     <a href="/a_propos"><li>À propos</li></a>
   </ul>
 </header>

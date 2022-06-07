@@ -1,0 +1,11 @@
+<% if help.type_list.first == "dotation financière" %>
+  <%= image_tag "aides/dotation-financiere.png", alt: "dotation financière", class: "image-card-helps" %>
+<% elsif help.type_list.first == "résidence" || help.type_list.first == "Résidence" %>
+  <%= image_tag "aides/residence.png", alt: "résidence", class: "image-card-helps" %>
+<% elsif help.type_list.first == "édition" %>
+  <%= image_tag "aides/edition.png", alt: "édition", class: "image-card-helps" %>
+<% elsif help.type_list.first == "exposition & festival" %>
+  <%= image_tag "aides/expo-festival.png", alt: "exposition & festival", class: "image-card-helps" %>
+<% elsif help.type_list.first == "accompagnement d'expert(e)" %>
+  <%= image_tag "aides/accompagnement.png", alt: "accompagnement d'expert(e)", class: "image-card-helps" %>
+<% end %>

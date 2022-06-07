@@ -1,12 +1,12 @@
 <div class="sticky" data-controller="filter-conseils">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
   <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
-  <p class="paragraphe-small text-align-center mb20 mt10">De quels conseils ou ressources avez-vous besoin ? </p>
+  <p class="paragraphe-small text-align-center mb20 mt10" style="padding: 0 25px;">De quels conseils ou ressources avez-vous besoin ? </p>
   <p class="button-criteria">
     <% ConseilsArticle::CONSEIL_CATEGORIES.each do |category| %>
-      <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
+      <span class="button-criteria-conseils-elements <%= @selected == category ? "selected" : "" %>" data-action="click->filter-conseils#selectCategory" data-text="<%= category %>">
         <%= category %>
-        <span class="cross-criteria">&times;</span>
+        <span class="cross-criteria <%= @selected == category ? "display-inline" : "" %>">&times;</span>
       </span>
     <% end %>
   </p>
@@ -19,13 +19,13 @@
       <%= image_tag "fiche_pratique.svg" %> fiche pratique
       <span class="cross-criteria">&times;</span>
     </span>
-<!--     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
-      <%#= image_tag "webinaire.svg" %> webinaire
-      <span class="cross-criteria">&times;</span>
-    </span> -->
+    <span class="button-criteria-conseils-elements <%= @selected_document == "webinaire" ? "selected" : "" %>" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
+      <%= image_tag "webinaire.svg" %> webinaire
+      <span class="cross-criteria <%= @selected_document == "webinaire" ? "display-inline" : "" %>">&times;</span>
+    </span>
     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
       <%= image_tag "temoignage.svg" %> témoignage
-      <span class="cross-criteria">&times;</span>
+      <span class="cross-criteria ">&times;</span>
     </span>
   </div>
 
@@ -40,7 +40,7 @@
       <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" } %>
     <% end %>
     <% if @selected_document.present? %>
-      <%= text_field_tag :document_type, params[:document_type], value: selected_document, data: { filter_conseils_target: "inputDocumentType" } %>
+      <%= text_field_tag :document_type, params[:document_type], value: @selected_document, data: { filter_conseils_target: "inputDocumentType" } %>
     <% else %>
       <%= text_field_tag :document_type, params[:document_type], data: { filter_conseils_target: "inputDocumentType" } %>
     <% end %>

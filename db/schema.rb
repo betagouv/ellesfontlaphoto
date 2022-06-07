@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_20_115358) do
+ActiveRecord::Schema.define(version: 2022_05_09_091130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,8 @@ ActiveRecord::Schema.define(version: 2022_04_20_115358) do
     t.string "faq_url"
     t.string "issue_contact"
     t.text "statistic"
+    t.date "end_date"
+    t.date "start_date"
     t.string "identifiant"
     t.string "institution_partenaire"
     t.string "regularity"
@@ -171,8 +173,6 @@ ActiveRecord::Schema.define(version: 2022_04_20_115358) do
     t.boolean "visible", default: true
     t.text "description_longue"
     t.boolean "permanent", default: false
-    t.date "end_date"
-    t.date "start_date"
     t.boolean "open"
   end
 
@@ -265,12 +265,16 @@ ActiveRecord::Schema.define(version: 2022_04_20_115358) do
   end
 
   create_table "webinaires", force: :cascade do |t|
-    t.string "title"
+    t.string "titre"
     t.datetime "date"
-    t.string "place"
+    t.string "url"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sous_titre"
+    t.boolean "page_rencontre"
+    t.string "participant"
+    t.string "url_inscription"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

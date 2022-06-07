@@ -5,13 +5,24 @@
   </div>
   <div class="div-link-footer">
     <div class="links-footer">
-      <%= link_to "Accessibilité", "#" %>
+      <%= link_to "Accessibilité", accessibilite_path(anchor: "top") %>
       <hr class="vl">
       <%= link_to "Mentions Legales", mentions_legales_path(anchor: "top") %>
       <hr class="vl">
       <%= link_to "Données personnelles", "#" %>
       <hr class="vl">
-      <%= link_to "Gestion des cookies", "#" %>
+      <%= link_to "Conditions générales", conditions_generales_path %>
+      <hr class="vl">
+      <%= link_to "Statistiques", stats_path %>
+    </div>
+    <div class="links-footer">
+      <%= link_to "Aides", helps_path %>
+      <hr class="vl">
+      <%= link_to "Ressources", conseils_path %>
+      <hr class="vl">
+      <%= link_to "Rencontre", rencontre_path %>
+      <hr class="vl">
+      <%= link_to "À propos", a_propos_path %>
       <hr class="vl">
       <%= link_to "Statistiques", stats_path %>
     </div>

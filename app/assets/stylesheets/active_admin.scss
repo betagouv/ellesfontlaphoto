@@ -36,3 +36,9 @@ textarea[disabled] {
 #header ul.tabs > li#comments {
   display: none;
 }
+
+form fieldset > ol > li p.inline-hints {
+  img {
+    max-width: 400px !important;
+  }
+}

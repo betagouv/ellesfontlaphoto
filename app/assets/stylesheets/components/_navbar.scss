@@ -60,7 +60,8 @@
     line-height: 24px;
     opacity: 1;
     display: table !important;
-    padding: 1.05rem 15px 1.05rem 15px;
+    margin: 0 15px 0 15px;
+    padding: 1.05rem 0 1.05rem 0;
     background-color: transparent;
   }
   .link-menu.helps-link-menu {
@@ -89,15 +90,18 @@
 
   .link-menu.manifeste-link-menu {
     white-space: nowrap;
-    margin-right: 3rem;
-    margin-top: 0.4rem;
-    padding: 5px 15px 7px;
+    margin: 0 3rem 0 15px;
+    padding: 1.05rem 0 1.1rem 0;
     margin-bottom: 0;
     &:hover {
-      border-radius: 40px;
-      display: table !important;
-      background-color: $hover-black;
+      box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
+  }
+
+  .manifeste-link-menu-selected {
+    white-space: nowrap;
+    box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    border-radius: 0;
   }
 
   .link-menu:after {
@@ -127,7 +131,7 @@
 @media only screen and (max-width: 1250px) {
   .header .header_body-row {
     .header_brand {
-      padding-left: 2rem;
+      padding-left: 1rem;
       min-width: 27%;
       .header_logo {
         padding: 0;
@@ -141,7 +145,7 @@
       }
     }
     .manifeste-link-menu {
-      margin-right: 1rem;
+      margin-right: 0.5rem;
     }
   }
 }
@@ -182,6 +186,12 @@
       text-align:center;
       background-color: $hover-purple;
       border-top: 0.1px solid $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-right: 10px;
+      }
     }
   }
 

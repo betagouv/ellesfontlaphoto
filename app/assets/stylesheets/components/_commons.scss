@@ -19,6 +19,18 @@ h1 {
   color: $black;
 }
 
+.title-marianne {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 36px;
+  line-height:55px;
+  color: $black;
+}
+
+
 h2 {
   display: inline-block;
   margin-top: 0px;
@@ -37,7 +49,7 @@ h2 {
   color: $black;
 }
 
-h4 {
+h4,.subtitle-marianne {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -49,6 +61,12 @@ a {
   text-decoration: none !important;
 }
 
+.btn {
+  display: flex;
+  width: -webkit-fill-available;
+  width: fit-content;
+}
+
 .btn-black {
   background-color: $black;
   border-radius: 40px;
@@ -57,6 +75,9 @@ a {
   font-size: 16px;
   cursor: pointer;
   padding: 11px 24px;
+  &:hover {
+    background-color: $hover-black;
+  }
 }
 
 .subtitle {
@@ -69,12 +90,22 @@ a {
   color: $black;
 }
 
+.subtitle-regular {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Marianne-Regular', sans-serif;
+  white-space: normal;
+  font-size: 36px;
+  line-height: 50px;
+  color: $black;
+}
+
 .spectral-title {
   font-family: 'Spectral', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 60px;
+  font-size: 44px;
+  line-height: 50px;
   text-align: center;
 }
 
@@ -103,6 +134,26 @@ p {
   a {
     text-decoration: underline !important;
   }
+}
+
+.btn-purple {
+  background-color: $purple !important;
+  border-radius: 40px;
+  color: $black !important;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
+}
+
+.btn-orange {
+  background-color: $orange !important;
+  border-radius: 40px;
+  color: $black !important;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 11px 24px;
 }
 
 .paragraphe {
@@ -216,7 +267,7 @@ b, strong {
 .emojis-eflc-small {
   width: 18px;
   height: 20px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .emojis-eflc-medium {
@@ -363,6 +414,10 @@ a {
   padding-top: 30px;
 }
 
+.pb30 {
+  padding-bottom: 30px;
+}
+
 .pb50 {
   padding-bottom: 50px;
 }
@@ -422,6 +477,9 @@ a {
   .subtitle {
     text-align: left;
   }
+  .spectral-title {
+    font-size: 40px;
+  }
 }
 
 
@@ -429,10 +487,16 @@ a {
   h1 {
     padding-bottom: 20px;
   }
-  h2 {
+  h2,.subtitle,.subtitle-regular {
     font-size: 30px;
     line-height: 43px;
     padding-bottom: 10px;
+  }
+  .spectral-title {
+    font-size: 40px;
+  }
+  .subtitle-spectral {
+    font-size: 34px;
   }
   .paragraphe-title {
     font-size: 18px;

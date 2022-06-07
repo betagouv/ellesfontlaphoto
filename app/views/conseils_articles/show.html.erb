@@ -7,7 +7,7 @@
   <div class="flex-div-left">
     <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @conseil_article.category_list.each do |category| %>
-      <a href="/conseils"><p class="fiche-tag"><%= category %></p></a>
+      <a href="/conseils?category_list=<%= category %>"><p class="fiche-tag"><%= category %></p></a>
     <% end %>
     <div class="d-none">
       <% @conseil_article.tag_list.each do |tag| %>

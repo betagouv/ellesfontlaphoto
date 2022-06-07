@@ -7,7 +7,7 @@
   <div class="flex-div-left">
     <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
     <% @help.type_list.each do |type| %>
-      <a href="/helps">
+      <a href="/helps?type_list=<%= type %>">
         <p class="fiche-tag"> <%= type %></p>
       </a>
     <% end %>
@@ -42,7 +42,7 @@
         </p>
         <p class="paragraphe lh28 mt0 mb40">
           <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
-            Du <%= I18n.l candidature_date.start_date, format: :long %> au <%= I18n.l candidature_date.end_date, format: :long %><br>
+            Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
           <% end %>
         </p>
       <% end %>
@@ -61,7 +61,7 @@
         <% end %></p>
       <% end %>
       <% if @help.general_condition.present? %>
-          <p class="paragraphe mt0 mb40"><%= @help.general_condition %></p>
+          <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
       <% end %>
     </div>
   </div>

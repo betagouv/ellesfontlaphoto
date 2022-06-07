@@ -10,6 +10,8 @@ class Help < ApplicationRecord
   acts_as_taggable_on :type, :type_photo
   validates :title, presence: true
   validates :description, presence: true
+  validates :help_amount, presence: true
+  validates :candidate_url, presence: true
 
   PARITE = [
     "respectée",
@@ -51,6 +53,6 @@ class Help < ApplicationRecord
   ]
 
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
-  validates :type_list, inclusion: { in: HELP_TYPE }
-  validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
+  # validates :type_list, inclusion: { in: HELP_TYPE }
+  # validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
 end

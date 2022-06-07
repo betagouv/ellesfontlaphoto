@@ -19,12 +19,9 @@ class HelpsController < ApplicationController
     end
     if params[:type_list].present? && params[:type_list].split(",").length != 0
       @selected = true
+      @selected_type = params[:type_list]
       params[:type_list] = params[:type_list].split(",").map { |x| x == "exposition festival" ? "exposition & festival" : x }
       @helps = @helps.tagged_with(params[:type_list], :any => true)
-    end
-    if params[:type_photo_list].present?
-      @selected_photo_type = true
-      @helps = @helps.tagged_with(params[:type_photo_list].split(","), :any => true)
     end
     if params[:open].present? && params[:open] == "true"
       @selected = true
@@ -35,6 +32,10 @@ class HelpsController < ApplicationController
       @helps = @helps.where(old_laureats_parite: "respectée").or(@helps.where(commission_parite: "respectée"))
     end
     @helps = @helps.order(:end_date)
+    if params[:type_photo_list].present?
+      @selected_photo_type = true
+      @helps = @helps.tagged_with(params[:type_photo_list].split(","), :any => true) | @helps.tagged_with(Help::PHOTO_TYPE.excluding(params[:type_photo_list].split(",")), :exclude => true)
+    end
     @helps_count = @helps.count
 
     respond_to do |format|

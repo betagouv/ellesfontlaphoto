@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'pages#home'
-  get "mentions_legales", to: 'pages#mentions_legales'
-  get "donnees_personelles", to: 'pages#donnees_personelles'
+  get "stats", to: 'pages#stats'
+  get "accessibilite", to: 'pages#accessibilite'
+  get "conditions_generales", to: 'pages#conditions_generales'
   get "a_propos", to: 'pages#a_propos'
-  get "stats", to: 'pages#stats'
-  get "stats", to: 'pages#stats'
+  get "mentions_legales", to: 'pages#mentions_legales'
   get "proposer_conseil", to: 'pages#proposer_conseil'
   get "proposer_aide", to: 'pages#proposer_aide'
+  get "rencontre", to: 'pages#rencontre'
 
   resources :contacts, only: :create
   resources :helps, only: [:show, :index] do
