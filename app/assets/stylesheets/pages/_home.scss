@@ -345,9 +345,6 @@
           min-width: 36%;
           padding-bottom: 4%;
           margin-right: 20px;
-          a .sub-card-index-helps .sub-card-index-helps-infos {
-            -webkit-line-clamp: 4;
-          }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
           min-width: 28%;
@@ -380,7 +377,6 @@
         .subtitle {
           font-size: 24px;
           line-height: 28px;
-          color: red;
         }
         .subtitle-spectral {
           font-size: 34px;
@@ -404,10 +400,10 @@
 
 @media only screen and (max-width: 750px) {
   .banner {
-    padding: 2em 0;
+    padding: 2em 0 0;
     h1 {
-      font-size: 28px;
-      line-height: 48px;
+      font-size: 24px;
+      line-height: 29.7px;
       padding: 0em 1em 0em 1em;
     }
   }
@@ -428,6 +424,14 @@
         .first-block-card {
           margin-bottom: 8%;
           .first-block-card-infos {
+            img {
+              width: 45px;
+              height: 45px;
+            }
+            .first-block-card-infos-title {
+              font-size: 18px;
+              font-family: 'Marianne-Bold'
+            }
           }
           .arrow-first-block-card {
             bottom: auto;
@@ -441,10 +445,11 @@
   .second-block {
     display: block;
     .second-block-div {
-      margin: 0 auto;
+      margin: 8% auto 0 auto;
       width: 80%;
       .paragraphe-title {
         text-align: center;
+        font-size: 20px;
       }
       .btn-orange {
         margin-bottom: 15%;
@@ -457,12 +462,13 @@
       display: flex;
       justify-content: center;
       img {
-        min-width: 40%;
+        min-width: 70%;
       }
     }
   }
 
   .third-block {
+    padding: 0;
     .third-block-div {
       .subtitle-spectral {
         margin: 30px 0 20px 0;
@@ -475,24 +481,76 @@
           display: none;
         }
         .card-index-helps {
-          min-width: 74%;
+          min-width: 43%;
           padding-bottom: 4%;
           margin-right: 0;
+          .flottante-div .flottante {
+            font-size: 11px;
+          }
           .arrow {
-            left: 3%;
+            display: none;
+          }
+          .main-bold-paragraphe {
+            padding: 5%;
+            text-align: center;
           }
           a .sub-card-index-helps {
+            .paragraphe.card,p,span {
+              font-size: 11px;
+              line-height: 15px;
+              .emojis-eflc-small {
+                width: 14px;
+                height: 15px;
+                margin-right: 0;
+              }
+            }
             .sub-card-index-helps-infos {
-              max-height: 120px;
+              padding: 0 7%;
+              max-height: 200px;
+              p,span {
+                font-size: 11px;
+              }
+              ul {
+                padding: 0 20px;
+                line-height: 15px;
+              }
             }
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 66%;
+          min-width: 35%;
           padding: 4%;
           margin-right: 0;
-          .cards-videos-info,p {
-            max-height: 220px !important;
+          a div {
+            .image-conseil {
+              width: 100px;
+              height: 100px;
+            }
+            .flottante-play {
+              img {
+                width: 30px;
+                right: 40%;
+              }
+            }
+          }
+          .card-index-conseils-videos-div,.card-index-conseils-articles-div {
+            padding: 5%;
+            .cards-videos-info,p {
+              max-height: 200px !important;
+              font-size: 11px;
+              line-height: 15px;
+              span {
+                font-size: 12px;
+                .emojis-eflc-extra-small {
+                  width: 12px !important;
+                  height: 12px;
+                }
+              }
+            }
+          }
+          .pastille-conseils {
+            font-size: 11px;
+            margin: 5px auto;
           }
         }
       }
@@ -503,10 +561,18 @@
     position: initial;
     padding-top: 0;
     .title-marianne {
-      padding-bottom: 10%;
+      padding-bottom: 5%;
+      font-size: 20px;
+      line-height: 33px;
+      span {
+        font-size: 24px;
+        line-height: 33px;
+      }
     }
     .illu-femme-stylo {
       position: initial;
+      width: 180px;
+      margin: 50px 0 20px;
     }
   }
   .contact-block {
@@ -516,10 +582,28 @@
       margin-bottom: 20px;
       padding: 10%;
       .description-contact-div {
-        height: 300px;
-        p {
-          text-align: center;
+        height: 250px;
+        .subtitle {
+          font-size: 20px;
+          line-height: 26px;
         }
+
+        .subtitle-spectral {
+          font-size: 24px;
+          line-height: 26px;
+        }
+
+        .paragraphe {
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+
+      .div-btn-orange-home .btn-orange {
+        margin: 20px auto;
+      }
+      .d-flex {
+        display: block;
       }
       .btn-contact,.btn-orange {
         margin: 0 auto 20px auto;
