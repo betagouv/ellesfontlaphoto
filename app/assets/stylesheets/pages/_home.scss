@@ -278,7 +278,7 @@
   .contact-div.purple {
     border: 1px solid $purple;
     .paragraphe a {
-      color: $purple !important;
+      color: $purple-blue !important;
     }
   }
 }
@@ -302,10 +302,9 @@
         width: 35%;
         margin: 0 5px;
         .first-block-card {
-          img {
-            object-fit: cover;
-          }
           .image-first-block-card {
+            object-fit: cover;
+            height: 160px;
             max-width: 100%;
           }
           .first-block-card-infos {
@@ -321,6 +320,7 @@
         }
         .arrow-first-block-card {
           bottom: 5%;
+          right: 47%;
         }
       }
     }
@@ -435,6 +435,10 @@
       a {
         .first-block-card {
           margin-bottom: 8%;
+          min-height: 420px;
+          .image-first-block-card {
+            height: 210px;
+          }
           .first-block-card-infos {
             img {
               width: 45px;
@@ -488,9 +492,9 @@
       .cards-carousel {
         overflow-x: scroll;
         padding-top: 30px;
-        gap: 20px;
+        gap: 10px;
         .card-index-helps {
-          min-width: 43%;
+          min-width: 40%;
           padding-bottom: 4%;
           margin-right: 0;
           .flottante-div .flottante {
@@ -524,7 +528,7 @@
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 35%;
+          min-width: 32%;
           padding: 4%;
           margin-right: 0;
           a div {

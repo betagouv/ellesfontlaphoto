@@ -31,7 +31,6 @@ ActiveAdmin.register Webinaire do
     column :url
     column :url_inscription
     column :participant
-    column :description
     actions
   end
 

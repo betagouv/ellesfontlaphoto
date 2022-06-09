@@ -16,6 +16,7 @@
         <%= image_tag "icone-fiche.svg", alt: "icône play noir" %> fiche
       </div>
     <% end %>
+    <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
   </div>
 <% elsif conseil.class == ConseilsVideo %>
   <div class="card-index-conseils-videos">
@@ -44,6 +45,7 @@
         </div>
       </div>
     <% end %>
+    <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
   </div>
 <% elsif conseil.class == Webinaire %>
   <div class="card-index-conseils-videos">
@@ -59,14 +61,16 @@
           </div>
         </div>
       <% end %>
-      <div class="card-index-conseils-videos-div">
+      <div class="card-index-conseils-videos-div webinaire">
         <div class="cards-videos-info">
           <p class="main-bold-paragraphe mb20"><%= conseil.titre %> <span class="spectral-italic">avec <%= conseil.participant %></span></p>
+          <div class="paragraphe card mb0 card-intro-webinaire"><%= conseil.description %></div>
         </div>
         <div class="pastille-conseils purple">
           <%= image_tag "icone-play.svg", alt: "icône play noir" %> webinaire
         </div>
       </div>
     <% end %>
+    <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
   </div>
 <% end %>
