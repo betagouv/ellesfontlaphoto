@@ -30,6 +30,17 @@
         }
       }
     }
+    .footer-social-media {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+      .footer-social-media-img {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
     p {
       font-family: 'Marianne', sans-serif;
       font-size: 12px;
