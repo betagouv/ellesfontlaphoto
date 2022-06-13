@@ -8,7 +8,10 @@
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#abonnement">Être informée des événements</a></p>
     </div>
   </div>
+
+
   <div class="webinaire-coming" id="webinaire">
+  <% unless @webinaires.empty? %>
     <p class="spectral-title title-webinaire-coming">Webinaires à venir</p>
     <p class="paragraphe">Expertes et experts de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
     <% @webinaires.each do |webinaire| %>
@@ -30,6 +33,7 @@
           </div>
         </div>
       </div>
+    <% end %>
     <% end %>
     <div class="old-webinaires">
       <p class="paragraphe-bold">Précédents webinaires à revoir</p>

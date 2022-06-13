@@ -2,7 +2,7 @@ class ConseilsPratiquesController < ApplicationController
   def index
     @conseil_articles = ConseilsArticle.all
     @conseil_videos = ConseilsVideo.all
-    @webinaires = Webinaire.where("date < ?", Date.today)
+    @webinaires = Webinaire.where("date <= ? OR page_rencontre = ?", Date.today, false).order(:date)
     @contact = Contact.new
     @total_count = @conseil_articles.length + @conseil_videos.length + @webinaires.length
     unless @conseil_articles.empty? || @conseil_videos.empty?
@@ -21,6 +21,13 @@ class ConseilsPratiquesController < ApplicationController
       @selected_document = params[:document_type]
     end
     @conseils = @conseil_articles + @conseil_videos + @webinaires
+    @conseils.sort! do |a, b|
+      if b.class == Webinaire
+        b.date <=> a.created_at
+      else
+        b.created_at <=> a.created_at
+      end
+    end
     # if params[:tag_list].present?
     #   @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
     #   @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
