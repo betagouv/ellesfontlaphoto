@@ -55,12 +55,17 @@
       <% end %>
       <% if conseil.images.attached? %>
         <div>
-          <div class="imgs-webinaire">
-            <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
-            <% if conseil.images.second %>
+          <% if conseil.images.second %>
+            <div class="imgs-webinaire">
+              <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
               <%= cl_image_tag conseil.images.second.key, class: "image-conseil", alt: "image conseil" %>
-            <% end %>
-          </div>
+            </div>
+          <% else %>
+            <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
+            <div class="flottante-play">
+              <%= image_tag "play.svg", alt: "icône play vidéo" %>
+            </div>
+          <% end %>
         </div>
       <% end %>
       <div class="card-index-conseils-videos-div webinaire">
