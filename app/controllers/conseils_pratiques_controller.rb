@@ -21,11 +21,11 @@ class ConseilsPratiquesController < ApplicationController
       @selected_document = params[:document_type]
     end
     @conseils = @conseil_articles + @conseil_videos + @webinaires
-    @conseils.sort! do |e|
-      if e.class == Webinaire
-        e.date
+    @conseils.sort! do |a, b|
+      if b.class == Webinaire
+        b.date <=> a.created_at
       else
-        e.created_at
+        b.created_at <=> a.created_at
       end
     end
     # if params[:tag_list].present?

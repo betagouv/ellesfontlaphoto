@@ -1,10 +1,11 @@
 ActiveAdmin.register Webinaire do
-  permit_params :titre, :date, :lieu, :description, :sous_titre, :participant, :url, :page_rencontre, :url_inscription, images: []
+  permit_params :titre, :date, :lieu, :category_list, :type_list, :description, :sous_titre, :participant, :url, :page_rencontre, :url_inscription, images: []
 
   show do
     attributes_table do
       row :id
       row :page_rencontre
+      row :category_list
       row :titre
       row :sous_titre
       row :date
@@ -28,6 +29,7 @@ ActiveAdmin.register Webinaire do
     column :titre
     column :sous_titre
     column :date
+    column :category_list
     column :url
     column :url_inscription
     column :participant
@@ -39,6 +41,8 @@ ActiveAdmin.register Webinaire do
     f.semantic_errors # shows errors on :base
     f.inputs "Webinaire" do
       f.input :page_rencontre, as: :boolean
+      f.input :category_list, :as => :check_boxes, \
+        :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
       f.input :titre
       f.input :sous_titre
       f.input :date
