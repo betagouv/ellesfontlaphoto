@@ -6,7 +6,8 @@
   min-height: 330px;
 }
 
-.card-index-conseils-articles,.card-index-conseils-videos {
+.card-index-conseils-articles,
+.card-index-conseils-videos {
   padding: 10% 4% 10% 7%;
   background-color: white;
   height: -webkit-max-content;
@@ -16,6 +17,7 @@
   height: intrinsic;
   height: -moz-max-content;
   height: -webkit-max-content;
+
   &:hover {
     .arrow {
       opacity: 1;
@@ -26,9 +28,11 @@
       left: 47%;
       bottom: 0;
     }
+
     .card-index-conseils-articles-div {
       transform: translateY(-40px);
     }
+
     .card-index-conseils-videos-div {
       transform: translateY(-120px);
     }
@@ -36,14 +40,18 @@
     .card-index-conseils-videos-div.webinaire {
       transform: translateY(-190px);
     }
-    a div .image-conseil,.flottante-play {
+
+    a div .image-conseil,
+    .flottante-play {
       transition: transform .6s ease-out;
       -webkit-transition: .6s ease-out;
       -moz-transition: .6s ease-out;
       -o-transition: .6s ease-out;
       opacity: 0;
     }
-    .card-index-conseils-articles-div,.card-index-conseils-videos-div {
+
+    .card-index-conseils-articles-div,
+    .card-index-conseils-videos-div {
       z-index: 10;
       transition: transform .6s ease-out;
       -webkit-transition: .6s ease-out;
@@ -55,9 +63,9 @@
         max-height: 120px;
         overflow: hidden;
         transition: transform .6s ease-out;
-          -webkit-transition: .6s ease-out;
-          -moz-transition: .6s ease-out;
-          -o-transition: .6s ease-out;
+        -webkit-transition: .6s ease-out;
+        -moz-transition: .6s ease-out;
+        -o-transition: .6s ease-out;
       }
 
       .card-intro-webinaire {
@@ -78,6 +86,7 @@
         -o-transition: .6s ease-out;
       }
     }
+
     .pastille-conseils {
       opacity: 0;
       transition: transform .3s ease-out;
@@ -86,17 +95,25 @@
       -o-transition: .3s ease-out;
     }
   }
+
   .card-index-conseils-videos-div {
     padding: 5% 5% 5% 5%;
   }
+
   .card-index-conseils-articles-div {
     padding: 10% 5% 5% 5%;
   }
-  .card-index-conseils-articles-div,.card-index-conseils-videos-div {
-    .paragraphe,.main-bold-paragraphe {
+
+  .card-index-conseils-articles-div,
+  .card-index-conseils-videos-div {
+
+    .paragraphe,
+    .main-bold-paragraphe {
       text-align: center;
     }
-    .card-intro,.card-intro-webinaire {
+
+    .card-intro,
+    .card-intro-webinaire {
       opacity: 0;
       position: absolute;
       padding: 0 4%;
@@ -121,18 +138,20 @@
 .pastille-conseils.purple {
   background-color: $purple-webinaire;
 }
+
 .pastille-conseils.pink {
   background-color: $pink-fiche;
 }
 
-  .arrow {
-    opacity: 0;
-    position: absolute;
-    right: 47%;
-    img {
-      width: 25px;
-    }
+.arrow {
+  opacity: 0;
+  position: absolute;
+  right: 47%;
+
+  img {
+    width: 25px;
   }
+}
 
 .flottante-div {
   display: flex;
@@ -140,8 +159,9 @@
   top: -15px;
   left: 20px;
   z-index: 5;
+
   .flottante {
-    color: $black !important;
+    color: $black  !important;
     border-radius: 40px;
     display: table !important;
     padding: 4px 12px 8px 12px;
@@ -152,14 +172,16 @@
   }
 
   .flottante-orange {
-    background-color: $orange !important;
+    background-color: $orange  !important;
   }
 }
 
 a {
   color: $black;
+
   div {
     position: relative;
+
     .image-conseil {
       width: 150px;
       height: 150px;
@@ -169,6 +191,7 @@ a {
       margin: 10% auto 20px auto;
       object-fit: cover;
     }
+
     .flottante-play {
       bottom: -20px;
       right: 44%;
@@ -188,10 +211,11 @@ a {
 
   .cards-videos-info {
     margin: 2% 7% 2% 7%;
+
     .cards-tags {
       font-family: 'Marianne-Regular_Italic', sans-serif;
       font-size: 14px;
-      color: $black !important;
+      color: $black  !important;
       text-align: center;
     }
 
@@ -200,9 +224,11 @@ a {
     }
   }
 }
+
 @media only screen and (max-width: 1250px) {
 
-  .card-index-conseils-articles,.card-index-conseils-videos {
+  .card-index-conseils-articles,
+  .card-index-conseils-videos {
     &:hover {
       .card-index-conseils-articles-div {
         transform: translateY(0px);
@@ -238,7 +264,9 @@ a {
           -moz-transition: none !important;
           -o-transition: none !important;
         }
-        .card-intro,.card-intro-webinaire {
+
+        .card-intro,
+        .card-intro-webinaire {
           opacity: 0;
           transition: none !important;
           -webkit-transition: none !important;
@@ -257,10 +285,12 @@ a {
       }
     }
   }
+
   .cards .card-index a {
     .paragraphe {
       text-align: left;
     }
+
     .arrow {
       margin-top: 7%;
     }

@@ -16,7 +16,16 @@
   </div>
   <div class="main-index">
     <div class="cards">
-      <%= render "conseils_cards", conseils: @conseils %>
+      <div class="info-contenu-div-conseil">
+        <p class="info-contenu-conseil lh35 main-bold-paragraphe text-align-center">
+            Une ressource utile pour les femmes photographes ? Site, livre, asso... Soumettez-les !</p>
+        <div class="text-align-center">
+          <a href="/proposer_conseil" class="button-contenu-conseil">Recensez une ressource</a>
+        </div>
+      </div>
+      <% @conseils.sort_by(&:created_at).reverse.each do |conseil| %>
+        <%= render "conseils_cards", conseil: conseil %>
+      <% end %>
       <div class="contact-index-conseils-div">
         <div class="contact-index-conseils">
           <p class="main-bold-paragraphe">Vous avez beaucoup scrollé... dîtes nous ce que vous cherchez !</p>
