@@ -60,10 +60,17 @@
         <div class="card-index-conseils-videos-div">
           <% if conseil.images.attached? %>
             <div>
-              <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
-              <div class="flottante-play">
-                <%= image_tag "play.svg", alt: "icône play vidéo" %>
+              <div class="imgs-webinaire">
+                <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
+                <% if conseil.images.second %>
+                  <%= cl_image_tag conseil.images.second.key, class: "image-conseil", alt: "image conseil" %>
+                <% end %>
               </div>
+              <% unless conseil.images.second %>
+                <div class="flottante-play">
+                  <%= image_tag "play.svg", alt: "icône play vidéo" %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
