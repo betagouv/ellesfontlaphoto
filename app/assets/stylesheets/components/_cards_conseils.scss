@@ -18,6 +18,16 @@
   height: -moz-max-content;
   height: -webkit-max-content;
 
+  a div .imgs-webinaire {
+      display: flex;
+
+      .image-conseil-double {
+        width: 43%;
+        height: 43%;
+        margin: 5px auto;
+      }
+    }
+
   &:hover {
     .arrow {
       opacity: 1;
@@ -189,9 +199,6 @@ a {
 
   div {
     position: relative;
-    .imgs-webinaire {
-      display: flex;
-    }
     .image-conseil {
       width: 150px;
       height: 150px;
@@ -314,13 +321,10 @@ a {
     }
   }
 
-  a div .imgs-webinaire {
-    display: block;
-    .image-conseil-double {
-      width: 70px;
-      height: 70px;
-      margin: 5px auto;
-    }
+  a div .imgs-webinaire .image-conseil-double {
+    width: 90px;
+    height: 90px;
+    margin: 5px auto;
   }
 
   .cards .card-index a {
@@ -332,4 +336,22 @@ a {
       margin-top: 7%;
     }
   }
+}
+
+@media only screen and (max-width: 750px) {
+
+    .card-index-conseils-articles,
+      .card-index-conseils-videos {
+        min-height: 250px;
+        padding-top: 7%;
+        a div .imgs-webinaire {
+          display: block;
+
+          .image-conseil-double {
+            width: 70px;
+            height: 70px;
+            margin: 5px auto;
+          }
+        }
+      }
 }
