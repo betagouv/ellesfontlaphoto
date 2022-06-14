@@ -7,6 +7,7 @@ ActiveAdmin.register Webinaire do
       categories << category
     end
     webinaire.category_list = categories
+    webinaire.type_list = params["webinaire"]["type_list"]
   end
 
   before_update do |webinaire|
@@ -15,12 +16,14 @@ ActiveAdmin.register Webinaire do
       categories << category
     end
     webinaire.category_list = categories
+    webinaire.type_list = params["webinaire"]["type_list"]
   end
 
   show do
     attributes_table do
       row :id
       row :page_rencontre
+      row :type_list
       row :category_list
       row :titre
       row :sous_titre
@@ -45,6 +48,7 @@ ActiveAdmin.register Webinaire do
     column :titre
     column :sous_titre
     column :date
+    column :type_list
     column :category_list
     column :url
     column :url_inscription
@@ -56,6 +60,8 @@ ActiveAdmin.register Webinaire do
     f.semantic_errors # shows errors on :base
     f.inputs "Webinaire" do
       f.input :page_rencontre, as: :boolean
+      f.input :type_list, :as => :radio, \
+      :collection => Webinaire::TYPE_RENCONTRE, label: "Type de Rencontre"
       f.input :category_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
       f.input :titre
@@ -75,4 +81,5 @@ ActiveAdmin.register Webinaire do
     end
     f.actions
   end
+
 end
