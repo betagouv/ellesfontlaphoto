@@ -40,6 +40,7 @@
     }
     .card-webinaire-coming {
       display: flex;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
@@ -49,6 +50,19 @@
       background-image: url(background-shadow.png);
       background-size: contain;
       background-repeat: no-repeat;
+      .pastille-rencontre {
+        top: -8%;
+        left: 2%;
+        border-radius: 40px;
+        color: $black;
+        padding: 4px 12px 7px 12px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        margin: 5px auto 30px auto;
+        display: table;
+        position: absolute;
+        background-color: $light-purple;
+      }
       .images-webinaire {
         min-width: 20%;
         max-width: 20%;

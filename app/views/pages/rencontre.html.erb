@@ -16,6 +16,15 @@
     <p class="paragraphe">Membres de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
     <% @webinaires.each do |webinaire| %>
       <div class="card-webinaire-coming">
+        <div class="pastille-rencontre">
+          <% if webinaire.type_list.include?("outil d'entraide") %>
+            outil d'entraide
+          <% elsif webinaire.type_list.include?("webinaire") %>
+            webinaire
+          <% elsif webinaire.type_list.include?("atelier") %>
+            atelier
+          <% end %>
+        </div>
         <div class="images-webinaire">
           <% webinaire.images.each do |image| %>
             <%= cl_image_tag image.key, class: "img-webinaire" %>
@@ -26,8 +35,12 @@
           <p class="webinaire-description"><%= webinaire.description %></p>
           <div class="info-webinaire">
             <div>
-              <p class="date-webinaire"><%= I18n.l webinaire.date, format: "%A %d %B %Y, %Hh%M" %></p>
-              <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %>Visio conférence</p>
+              <% if webinaire.show_date %>
+                <p class="date-webinaire"><%= I18n.l webinaire.date, format: "%A %d %B %Y, %Hh%M" %></p>
+              <% end %>
+              <% if webinaire.show_visio %>
+                <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %>Visio conférence</p>
+              <% end %>
             </div>
             <%= link_to "Je m'inscris", webinaire.url_inscription, target: :_blank, class: "btn-black" %>
           </div>
