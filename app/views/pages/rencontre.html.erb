@@ -1,6 +1,6 @@
 <div class="rencontre" id="rencontre-page">
   <div class="div-liens-rencontre">
-    <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre à venir</span>, participez !</h1>
+    <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h1>
     <div class="liens-rencontre">
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#webinaire">Rencontres à venir</a></p>
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#facebook-group">Communauté facebook</a></p>
@@ -12,7 +12,7 @@
 
   <div class="webinaire-coming" id="webinaire">
   <% unless @webinaires.empty? %>
-    <p class="spectral-title title-webinaire-coming">Webinaires à venir</p>
+    <p class="spectral-title title-webinaire-coming">Rencontres à venir</p>
     <p class="paragraphe">Membres de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
     <% @webinaires.each do |webinaire| %>
       <div class="card-webinaire-coming">
