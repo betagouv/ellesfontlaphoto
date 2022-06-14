@@ -30,7 +30,7 @@
     }
 
     .card-index-conseils-articles-div {
-      transform: translateY(-40px);
+      transform: translateY(-30px);
     }
 
     .card-index-conseils-videos-div {
@@ -47,6 +47,14 @@
       -webkit-transition: .6s ease-out;
       -moz-transition: .6s ease-out;
       -o-transition: .6s ease-out;
+      opacity: 0;
+    }
+
+    a div .imgs-webinaire {
+      transition: transform .3s ease-out;
+      -webkit-transition: .3s ease-out;
+      -moz-transition: .3s ease-out;
+      -o-transition: .3s ease-out;
       opacity: 0;
     }
 
@@ -80,10 +88,10 @@
 
       .div-img-conseils-videos {
         opacity: 0;
-        transition: transform .6s ease-out;
-        -webkit-transition: .6s ease-out;
-        -moz-transition: .6s ease-out;
-        -o-transition: .6s ease-out;
+        transition: transform .3s ease-out;
+        -webkit-transition: .3s ease-out;
+        -moz-transition: .3s ease-out;
+        -o-transition: .3s ease-out;
       }
     }
 
@@ -185,8 +193,18 @@ a {
       display: flex;
     }
     .image-conseil {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      margin: 10% auto 20px auto;
+      object-fit: cover;
+    }
+
+    .image-conseil-double {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -242,6 +260,14 @@ a {
 
       a div .image-conseil,
       .flottante-play {
+        transition: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        opacity: 1;
+      }
+
+      a div .imgs-webinaire {
         transition: none !important;
         -webkit-transition: none !important;
         -moz-transition: none !important;

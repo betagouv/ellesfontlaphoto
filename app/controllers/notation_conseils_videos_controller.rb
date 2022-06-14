@@ -1,7 +1,7 @@
 class NotationConseilsVideosController < ApplicationController
   def create
-    if NotationConseilsVideo::ANSWERS.include?(params[:answer])
-     @conseil = ConseilsVideo.find(params[:conseil_id])
+    if NotationConseilsArticle::ANSWERS.include?(params[:answer])
+      @conseil = ConseilsVideo.find(params[:conseil_id])
       @notation_conseil_video = NotationConseilsVideo.new(conseils_video: @conseil, comment: params[:comment])
       @notation_conseil_video.suggestion = params[:sugg].join(", ") if params[:sugg]
       @notation_conseil_video.comment = params[:comment] if params[:comment]
