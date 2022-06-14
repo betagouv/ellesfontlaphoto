@@ -207,6 +207,7 @@
   .btn-black {
     width: 200px;
     margin: 0 auto;
+    color: $white !important;
     &:hover {
       background-color: $hover-black;
     }
