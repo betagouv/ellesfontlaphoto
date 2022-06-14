@@ -38,7 +38,11 @@
             <%= ConseilsVideo::VIDEO_FORMAT[conseil.format.to_sym] %>
           </p>
           <p class="main-bold-paragraphe mt0"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
-          <div class="paragraphe card mb0 card-intro"><%= conseil.subtitle %></div>
+          <% if conseil.subtitle == "" %>
+            <div class="paragraphe card mb0 card-intro"><%= conseil.objectif %></div>
+          <% else %>
+            <div class="paragraphe card mb0 card-intro"><%= conseil.subtitle %></div>
+          <% end %>
         </div>
         <div class="pastille-conseils green">
           <%= image_tag "icone-play.svg", alt: "icône play noir" %> témoignage
