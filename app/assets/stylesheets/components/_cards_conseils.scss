@@ -314,6 +314,15 @@ a {
     }
   }
 
+  a div .imgs-webinaire {
+    display: block;
+    .image-conseil-double {
+      width: 70px;
+      height: 70px;
+      margin: 5px auto;
+    }
+  }
+
   .cards .card-index a {
     .paragraphe {
       text-align: left;
