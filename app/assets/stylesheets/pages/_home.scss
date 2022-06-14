@@ -341,6 +341,7 @@
       .subtitle-spectral {
         margin: 30px 0 0 0;
         font-size: 34px;
+        line-height: 38px;
       }
       .cards-carousel {
         overflow-x: scroll;
@@ -494,15 +495,19 @@
           padding-bottom: 4%;
           margin-right: 0;
           .flottante-div .flottante {
-            font-size: 11px;
+            font-size: 12px;
+            line-height : 15px;
           }
           .main-bold-paragraphe {
             padding: 5%;
             text-align: center;
+            font-size: 12px;
+            line-height : 15px;
+
           }
           a .sub-card-index-helps {
             .paragraphe.card,p,span {
-              font-size: 11px;
+              font-size: 12px;
               line-height: 15px;
               .emojis-eflc-small {
                 width: 14px;
@@ -514,7 +519,8 @@
               padding: 0 7%;
               max-height: 200px;
               p,span {
-                font-size: 11px;
+                font-size: 12px;
+                line-height : 15px;
               }
               ul {
                 padding: 0 20px;
@@ -540,13 +546,14 @@
             }
           }
           .card-index-conseils-videos-div,.card-index-conseils-articles-div {
-            padding: 5%;
+            padding: 2%;
             .cards-videos-info,p {
               max-height: 200px !important;
-              font-size: 11px;
+              font-size: 12px;
               line-height: 15px;
               span {
                 font-size: 12px;
+                line-height; 15px;
                 .emojis-eflc-extra-small {
                   width: 12px !important;
                   height: 12px;
