@@ -31,6 +31,6 @@ export default class extends Controller {
       .then((data) => {
         document.querySelector("#main-index-conseils").outerHTML = data;
       })
-
+    window.scrollTo(0, 0);
   }
 }

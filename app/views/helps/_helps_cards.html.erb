@@ -1,57 +1,60 @@
-<% helps.each do |help| %>
-  <% next_date = CandidatureDate.where(help: help).where("end_date >= ?", Date.today).order("end_date ASC").first %>
-  <% unless next_date.nil? %>
-    <div class="card-index-helps <%= ((next_date.end_date - Date.today).to_i < 30) ? "border-orange" : "" %>">
-  <% else %>
-    <div class="card-index-helps">
-  <% end %>
-    <%= link_to help_path(help), target: :_blank do %>
-      <%= render "helps/flottante_help", help: help, next_date: next_date %>
-      <%= render "helps/image_card", help: help %>
-      <div class="sub-card-index-helps">
-        <p class="main-bold-paragraphe card mt0"><%= help.title.to_sym %></p>
-        <div class="sub-card-index-helps-infos">
-          <div class="paragraphe paragrahe-gains card mb0">
-            <span class="paragraphe-bold card">
-              <%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %>
-              Gains :
-            </span>
-            <%= help.help_amount.html_safe %>
-          </div>
-          <% if help.permanent %>
-            <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Toute l'année</span>
-          <% elsif next_date.nil? %>
-            <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Fermée</span>
-          <% else %>
-            <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></span>
-          <% end %>
-          <% if help.general_condition.present? || help.residence_condition.present? %>
-            <div class="paragraphe paragrahe-general-condition card mb0">
-              <span class="paragraphe-bold card">
-                <%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %>
-                Conditions :
-              </span>
-              <% if help.residence_condition.present? %>
-                résidence
-                <% if help.residence_condition == "Française ou résidant en France" %>
-                  en France
-                <% elsif help.residence_condition == "Française résidant en outre-mer" %>
-                  en Outre-mer
-                <% elsif help.residence_condition == "Française résidant à l'étranger" %>
-                  à l'étranger
-                <% else %>
-                  en <%= help.residence_condition %>
-                <% end %>
-                ,
-              <% end %>
-              <% if help.general_condition.present? %>
-                <%= help.general_condition.html_safe %></p>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-    <p class="arrow text-align-right"><%= image_tag 'arrow-line.svg', alt: "icône flèche" %></p>
-  </div>
+<% next_date = CandidatureDate.where(help: help).where("end_date >= ?", Date.today).order("end_date ASC").first %>
+<% unless next_date.nil? %>
+  <div class="card-index-helps <%= ((next_date.end_date - Date.today).to_i < 30) ? "border-orange" : "" %>">
+<% else %>
+  <div class="card-index-helps">
 <% end %>
+  <%= link_to help_path(help), target: :_blank do %>
+    <%= render "helps/flottante_help", help: help, next_date: next_date %>
+    <%= render "helps/image_card", help: help %>
+    <div class="sub-card-index-helps">
+      <p class="main-bold-paragraphe card mt0"><%= help.title.to_sym %></p>
+      <div class="sub-card-index-helps-infos">
+        <div class="paragraphe paragrahe-gains card mb0">
+          <span class="paragraphe-bold card">
+            <%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %>
+            Gains :
+          </span>
+          <%= help.help_amount.html_safe %>
+        </div>
+        <% if help.permanent %>
+          <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Toute l'année</span>
+        <% elsif next_date.nil? %>
+          <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Fermée</span>
+        <% else %>
+          <span class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></span>
+        <% end %>
+        <% if help.general_condition.present? || help.residence_condition.present? %>
+          <div class="paragraphe paragrahe-general-condition card mb0">
+            <span class="paragraphe-bold card">
+              <%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %>
+              Conditions :
+            </span>
+            <% if help.residence_condition.present? %>
+              résidence
+              <% if help.residence_condition == "Française ou résidant en France" %>
+                en France
+              <% elsif help.residence_condition == "Française résidant en outre-mer" %>
+                en Outre-mer
+              <% elsif help.residence_condition == "Française résidant à l'étranger" %>
+                à l'étranger
+              <% else %>
+                en <%= help.residence_condition %>
+              <% end %>
+              ,
+            <% end %>
+            <% if help.general_condition.present? %>
+              <%= help.general_condition.html_safe %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <% if controller_name == "pages" %>
+        <div class="pastille-aides purple">
+          aides financières
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
+</div>

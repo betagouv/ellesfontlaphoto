@@ -60,6 +60,7 @@ export default class extends Controller {
     .then((data) => {
       document.querySelector("#main-index-helps").outerHTML = data;
     })
+    window.scrollTo(0, 0);
   }
 
 }

@@ -26,6 +26,7 @@ h1 {
   padding-left: 0px;
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 36px;
+  line-height:38px;
   color: $black;
 }
 
@@ -60,6 +61,12 @@ a {
   text-decoration: none !important;
 }
 
+.btn {
+  display: flex;
+  width: -webkit-fill-available;
+  width: fit-content;
+}
+
 .btn-black {
   background-color: $black;
   border-radius: 40px;
@@ -67,7 +74,7 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 16px;
   cursor: pointer;
-  padding: 11px 24px;
+  padding: 11px 10px;
   &:hover {
     background-color: $hover-black;
   }
@@ -76,7 +83,7 @@ a {
 .subtitle {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-family: 'Marianne-Bold', sans-serif;
+  font-family: 'Marianne-Medium', sans-serif;
   white-space: normal;
   font-size: 36px;
   line-height: 50px;
@@ -108,7 +115,7 @@ a {
   font-family: 'Spectral', serif;
   font-style: italic;
   white-space: normal;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 50px;
   color: $black;
 }
@@ -260,7 +267,7 @@ b, strong {
 .emojis-eflc-small {
   width: 18px;
   height: 20px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .emojis-eflc-medium {
@@ -391,7 +398,8 @@ a {
 }
 
 .mb0 {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+  margin-top : 0px;
 }
 
 .mr20 {
@@ -404,6 +412,10 @@ a {
 
 .pt30 {
   padding-top: 30px;
+}
+
+.pb30 {
+  padding-bottom: 30px;
 }
 
 .pb50 {

@@ -3,9 +3,9 @@
     <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h1>
     <div class="liens-rencontre">
       <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#webinaire">Webinaires</a></p>
-      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="https://www.facebook.com/groups/1891143867759342" target="_blank">Communauté facebook</a></p>
-      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a class="js-modal" data-modal="modal-contact">Proposer votre expertise</a></p>
-      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a class="js-modal" data-modal="modal-newsletter">S’abonner à l’infolettre</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#facebook-group">Communauté facebook</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#collaboration">Proposer votre expertise</a></p>
+      <p style="display:flex; align-items: center;"><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#abonnement">Être informée des événements</a></p>
     </div>
   </div>
 
@@ -38,10 +38,10 @@
     <div class="old-webinaires">
       <p class="paragraphe-bold">Précédents webinaires à revoir</p>
       <p class="paragraphe-small text-align-center mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois regarder les replays !</p>
-      <a href="conseils?document_type=webinaire" class="btn-black"><%= image_tag "youtube.png" %> replay webinaires</a>
+      <a href="conseils?document_type=webinaire" class="btn-black"><%= image_tag "youtube.svg" %> replay webinaires</a>
     </div>
   </div>
-  <div class="join-community">
+  <div id="facebook-group" class="join-community">
     <div>
       <p class="spectral-title">Rejoindre la communauté Elles font la culture</p>
       <%= image_tag "group.png", alt: "image communauté", class: "img-community mob" %>
@@ -50,7 +50,7 @@
     </div>
     <%= image_tag "group.png", alt: "image communauté", class: "img-community desk" %>
   </div>
-  <div class="join-community">
+  <div id="collaboration" class="join-community">
     <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck desk" %>
     <div>
       <p class="spectral-title">Collaborer en partageant votre expertise</p>
@@ -59,11 +59,16 @@
       <a class="js-modal btn-orange" data-modal="modal-contact">Collaborons ! </a>
     </div>
   </div>
-  <div class="rencontre-inscription">
-    <div>
+  <div id="abonnement" class="rencontre-inscription">
+    <div class="rencontre-inscription-div">
       <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre et instagram</span></p>
-      <a class="js-modal btn-black" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", style: "width: 20px; height: 15px; margin-right: 5px;" %> inscription</a>
-      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-black" style="margin-left: 3%;"><%= image_tag "instagram.svg", alt:"instagram", style: "width: 20px; height: 22px; margin-right: 5px; margin-bottom: 6px; vertical-align: middle;" %> instagram</a>
+      <div class="btns-black">
+        <a class="js-modal btn-black" data-modal="modal-newsletter">
+          <%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 15px; margin-right: 6px;" %>
+          <span>inscription</span>
+        </a>
+        <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-black" style="margin-left: 3%;"><%= image_tag "instagram.svg", alt:"instagram", style: "margin-right: 6px;" %> <span>instagram</span></a>
+      </div>
     </div>
   </div>
 </div>

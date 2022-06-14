@@ -49,7 +49,6 @@ ActiveAdmin.register Webinaire do
     column :url
     column :url_inscription
     column :participant
-    column :description
     actions
   end
 
@@ -66,12 +65,12 @@ ActiveAdmin.register Webinaire do
       f.input :url_inscription
       if f.object.images.attached?
         f.object.images.each do |i|
-          f.input :images, as: :file, :hint => image_tag(i), style: 'max-width: 450px; max-height:450px;', input_html: { multiple: true }
+          f.input :images, as: :file, :hint => image_tag(i), input_html: { multiple: true }
         end
       else
         f.input :images, as: :file, input_html: { multiple: true }
       end
-      f.input :participant
+      f.input :participant, label: "Participant.e.s ⚠️ Ne pas préciser 'avec'"
       f.input :description
     end
     f.actions

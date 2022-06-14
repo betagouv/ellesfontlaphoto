@@ -1,123 +1,110 @@
 <div id="banner-contact" class="banner-info banner-home">
-  <a href="#contact" class="paragraphe show">Vous consultez une page en construction, écrivez nous pour l'améliorer !</a>
+  <a class="js-modal" data-modal="modal-contact" class="paragraphe show">Vous consultez une page en construction, <u>écrivez nous</u> pour l'améliorer !</a>
 </div>
 <div class="banner">
-  <%= image_tag "illu-home-1.png", class: "illu-home-1", alt: "illustration femme levant la main" %>
-  <%= image_tag "illu-home-2.png", class: "illu-home-2", alt: "illustration interrogation" %>
-  <h1><a href="/helps" class="underline-purple">Aides financières</a> et <a href="/conseils" class="underline-orange">conseils pratiques</a> pour les photographes femmes</h1>
-  <%= image_tag "illu-home-3_1440.png", class: "illu-home-3-1440", alt: "illustration femme photographe" %>
-  <%= image_tag "illu-home-3_320_768.png", class: "illu-home-3-320-768", alt: "illustration femme photographe" %>
-  <%= image_tag "illu-home-3_768_1024.png", class: "illu-home-3-768-1024", alt: "illustration femme photographe" %>
+  <h1>Développer la carrière des photographes femmes et minorités de genre.</h1>
 </div>
 
 <div class="first-block">
-  <div class="first-block-left">
-    <p class="paragraphe-bold">Notre mission :</p>
-    <p class="subtitle">Accompagner les femmes et minorités de genre à poursuivre leur carrière</p>
-    <p class="paragraphe-spectral-italic">Car encore aujourd’hui, 35% de femmes sont dans la vie professionnelle contre 58% sur les bancs de l'école.</p>
-  </div>
-  <div class="first-block-right">
-    <p class="paragraphe-bold">Notre service a vocation à :</p>
-      <p class="paragraphe-icones"> <span class="icones"><%= image_tag "emojis/etoile.png", style: "width: 65%;" %></span>
-      <span class="paragraphe">Améliorer la connaissance des aides et ressources financières, techniques...</span></p>
-      <p class="paragraphe-icones"> <span class="icones"><%= image_tag "emojis/poignee-main.png",  style: "width: 73%;" %></span>
-      <span class="paragraphe">Faciliter l'entraide par le partage d’expériences</span></p>
-      <p class="paragraphe-icones"><span class="icones"><%= image_tag "emojis/arc.png", style: "width: 65%;" %></span>
-      <span class="paragraphe">S’armer pour lutter contre les inégalités de genre et sensibiliser autour de soi</span></p>
-  </div>
-</div>
-<div class="second-block" id="comment">
-  <p class="subtitle-spectral">Un catalogue d'aides financières, matérielles, et de résidences pour simplifier vos candidatures</p>
-  <div class="flex-div">
-    <a class="button-helps" href="/helps"> <%= image_tag "emojis/argent-volant.png", alt:"émoji aides", style: "width: 10%; margin-right: 5px;" %> Trouver mes aides</a>
-    <div class="exemple-helps">
-      <div class="cards">
-        <%= render "helps/helps_cards", helps: @helps %>
+  <div class="first-block-cards">
+    <%= link_to helps_path do %>
+      <div class="first-block-card purple">
+        <%= image_tag 'aides/dotation-financiere.png', class: "image-first-block-card", alt: 'Aides financières' %>
+        <div class="first-block-card-infos purple">
+          <%= image_tag 'money.svg' %>
+          <p class="first-block-card-infos-title">Aides financières</p>
+          <p class="paragraphe first-block-card-infos-text">Résidences, bourses, prix, appels à candidatures...</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
       </div>
+    <% end %>
+    <%= link_to conseils_path do %>
+      <div class="first-block-card orange">
+        <%= image_tag 'aides/conseils.png', class: "image-first-block-card", alt: 'Ressources et conseils' %>
+        <div class="first-block-card-infos orange">
+          <%= image_tag 'book.svg' %>
+          <p class="first-block-card-infos-title">Ressources et conseils</p>
+          <p class="paragraphe first-block-card-infos-text">Construire son portfolio ? <br>Protéger ses droits d’autrices...</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
+      </div>
+    <% end %>
+    <%= link_to rencontre_path do %>
+      <div class="first-block-card light-orange">
+        <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraides et rencontres' %>
+        <div class="first-block-card-infos light-orange">
+          <%= image_tag 'community.svg' %>
+          <p class="first-block-card-infos-title">Entraides et rencontres</p>
+          <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses paires</p>
+        </div>
+        <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "flèche" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="second-block">
+  <%= image_tag 'illu-femme-photo.png', class: "second-block-img" %>
+  <div class="second-block-img-mobile">
+    <%= image_tag 'illu-femmes-debout-mobile.png' %>
+  </div>
+  <div class="second-block-div text-align-center">
+    <p class="paragraphe-title">Car encore aujourd'hui, 60% de femmes sont sur les bancs des écoles, contre 35% dans la vie professionnelle.</p>
+    <div class="d-none btn-orange">les chiffres des inégalités</div>
+  </div>
+  <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
+</div>
+
+
+<div class="third-block">
+  <div class="third-block-div" data-controller="home-carousel">
+    <p class="subtitle-spectral">Derniers contenus ajoutés</p>
+    <div class="cards-carousel" data-home-carousel-target="carousel">
+      <% @contenus.each do |item| %>
+        <% if item.class == Help %>
+          <%= render "helps/helps_cards", help: item %>
+        <% else %>
+          <%= render "conseils_pratiques/conseils_cards", conseil: item %>
+        <% end %>
+      <% end %>
+      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight"} %>
+      <%= image_tag "arrow-carousel-left.svg", class: "arrow-carousel-left", alt: "flèche carousel gauche", data: { action: "click->home-carousel#slideCarouselLeft", home_carousel_target: "buttonLeft"} %>
     </div>
-    <a class="button-helps-mobile" href="/helps"> <%= image_tag "emojis/argent-volant.png", alt:"émoji aides", class: "emojis-eflc-small" %> Trouver mes aides</a>
   </div>
 </div>
-<div class="third-block flex-div">
-  <div class="third-block-div">
-    <a class="button-conseils" href="/conseils"> <%= image_tag "emojis/poignee-main.png", alt:"émoji conseils et témoignages", style: "margin-right: 5px; height: 19px; width: 26px; margin-top: 5px;" %> Ressources et conseils</a>
-    <p class="subtitle-spectral">Pour présenter son portfolio, estimer ses cotisations d’artiste-autrice, s’inspirer d’expériences…</p>
-    <a class="button-conseils-mobile" href="/conseils"> <%= image_tag "emojis/poignee-main.png", alt:"émoji conseils et témoignages", class: "emojis-eflc-small" %> Ressources et conseils</a>
-    <p class="paragraphe p-conseil-tag-home"><span class="thematique-span">Thématiques :</span>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/etoile.png", class: "emojis-eflc-small", alt: "émoji étoile" %> égalité et inclusion</a href="">
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/livre-rouge.png", class: "emojis-eflc-small", alt: "émoji livre" %> administratifs et financiers</a>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/argent-volant.png", class: "emojis-eflc-small", alt: "émoji argent" %> promotion et commercial</a>
-      <a href="/conseils" class="conseil-tag-home"><%= image_tag "emojis/crayon.png", class: "emojis-eflc-small", alt: "émoji crayon" %> artistiques et techniques</a href="">
-    </p>
-  </div>
-  <%= image_tag "illu-home-5.png", class: "illu-home-5", alt: "illustration femmes qui discutent"%>
-</div>
-<!-- DECOMMENTER LORSQUE LE TYPEFORM SERA FAIT -->
-<!-- <div class="third-bis-block">
-  <p class="mt0 mb10">Contribuer à cette initiative !</p>
-  <p class="mt0 mb10">Recensez une nouvelle aide financière ou partager une ressource utile</p>
-  <p class="mt0 mb30">avec la communauté de femmes photographes</p>
-  <a href="#" class="button-contenu">Proposer un contenu</a>
-</div> -->
+
 <div class="fourth-block">
-  <div class="title-chiffre-mobile">
-    <p class="paragraphe-bold">Nos chiffres :
-    </p>
-  </div>
-  <div class="flex-div">
-    <div class="title-chiffre">
-      <p class="paragraphe-bold">Nos chiffres :
-      </p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0">340</p>
-      <p class="paragraphe-spectral-italic mb0">testeuses pour une amélioration continue</p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0"><%= Help.all.count %></p>
-      <p class="paragraphe-spectral-italic mb0">aides financières</p>
-    </div>
-    <div class="div-chiffre">
-      <p class="chiffre mb0"><%= ConseilsVideo.all.count + ConseilsArticle.all.count %></p>
-      <p class="paragraphe-spectral-italic mb0">fiches pratiques</p>
-    </div>
-  </div>
+  <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
+  <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
+  <a href="https://startupdetat.typeform.com/to/I2kjqMwI" target="blank" class="btn-black">Proposer du contenu</a>
 </div>
+
 <div class="contact-block" id="contact">
-  <div class="contact-div">
-    <p class="subtitle">Contact</p>
-    <p class="paragraphe lh28">Vous êtes une institution, une professionnelle du secteur, une journaliste… Écrivez-nous pour faire évoluer cette boîte à outils d’empouvoirement !</p>
-    <p class="paragraphe lh28">Et pour simplement suivre l’évolution du service, abonnez-vous à l’infolettre. À bientôt !</p>
-    <div class="btn-contact-mobile">
-      <a class="js-modal btn-contact" data-modal="modal-contact" class="btn-modale-contact"><%= image_tag "emojis/crayon.png", alt:"emoji crayon", class: "emojis-eflc-small" %> Nous écrire</a>
-      <a class="js-modal btn-contact" data-modal="modal-newsletter" class="btn-modale-contact"><%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small" %> S'abonner à l'infolettre</a>
-    </div>
+  <div class="contact-div purple">
+  <div class="description-contact-div">
+    <p class="subtitle pb30">Qui sommes nous ? <span class="subtitle-spectral">Quelles sont les prochaines étapes ?</span></p>
+    <p class="paragraphe lh28">Nous sommes <a href="https://beta.gouv.fr/startups/ellesfontlaculture.html#equipe" target="_blank">une petite équipe</a> d’agents du ministère de la Culture et d’experts numériques indépendants rassemblés grâce aux méthodes <a href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target="_blank">beta.gouv.fr</a>.</p>
   </div>
-  <div class="manifesto-div pb0">
-    <p class="subtitle">Qui sommes-nous ?</p>
-    <p class="paragraphe lh28">On parle de “nous”, mais on ne vous a toujours pas dit qui l’on est. Nous sommes <a class="link-blue-underlined" href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target=”_blank”>une petite équipe</a> d’agentes du ministère de la Culture et d’expertes numérique rassemblées grâce à betagouv.</p>
-    <div class="btn-manifesto-mobile">
-      <a href="/a_propos" class="btn-manifesto"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
-      <%= image_tag "illu-home-4.png", alt:"illustration contact", class: "illu-home-4" %>
-    </div>
-  </div>
-</div>
-<div class="contact-block last">
-  <div class="contact-div">
     <% if alert %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= alert %></p>
     <% end %>
     <% if notice %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
-    <a class="js-modal btn-contact" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
+    <div class="d-flex">
+      <a href="/a_propos" class="btn-contact btn"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
+      <a class="js-modal btn-contact btn" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
+    </div>
   </div>
-  <div class="manifesto-div">
-    <a class="btn-manifesto" href="/a_propos">
-      <%= image_tag "emojis/carnet-noir.png", alt: "émoji carnet", class: "emojis-eflc-small" %> À propos
-    </a>
-    <%= image_tag "illu-home-4.png", alt:"illustration contact", class: "illu-home-4" %>
+  <div class="contact-div">
+    <div class="description-contact-div">
+      <p class="subtitle pb30">On reste en contact ? <span class="subtitle-spectral">Suivez l’évolution du service et nos événements</span></p>
+      <%= image_tag "Group 215.svg" %>
+    </div>
+    <div class="div-btn-orange-home">
+      <a class="js-modal btn-orange btn" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 28px;" %> S'abonner à l'infolettre</a>
+      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home btn"><%= image_tag "instagram-black.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
+    </div>
   </div>
 </div>
 
