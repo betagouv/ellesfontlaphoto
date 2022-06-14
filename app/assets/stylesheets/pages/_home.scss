@@ -242,7 +242,7 @@
     .description-contact-div {
       height: 420px;
       .subtitle,.subtitle-spectral {
-        font-size: 28px;
+        font-size: 34px;
         line-height: 38px;
       }
       img {
@@ -253,7 +253,7 @@
       }
     }
     .btn-contact {
-      padding: 10px;
+      padding: 9px 20px 11px 15px;
       white-space: nowrap;
       background-color: $purple;
       border-radius: 40px;
@@ -341,6 +341,7 @@
       .subtitle-spectral {
         margin: 30px 0 0 0;
         font-size: 34px;
+        line-height: 38px;
       }
       .cards-carousel {
         overflow-x: scroll;
@@ -499,15 +500,19 @@
           padding-bottom: 4%;
           margin-right: 0;
           .flottante-div .flottante {
-            font-size: 11px;
+            font-size: 12px;
+            line-height : 15px;
           }
           .main-bold-paragraphe {
             padding: 5%;
             text-align: center;
+            font-size: 12px;
+            line-height : 15px;
+
           }
           a .sub-card-index-helps {
             .paragraphe.card,p,span {
-              font-size: 11px;
+              font-size: 12px;
               line-height: 15px;
               .emojis-eflc-small {
                 width: 14px;
@@ -519,7 +524,8 @@
               padding: 0 7%;
               max-height: 200px;
               p,span {
-                font-size: 11px;
+                font-size: 12px;
+                line-height : 15px;
               }
               ul {
                 padding: 0 20px;
@@ -545,13 +551,14 @@
             }
           }
           .card-index-conseils-videos-div,.card-index-conseils-articles-div {
-            padding: 5%;
+            padding: 2%;
             .cards-videos-info,p {
               max-height: 200px !important;
-              font-size: 11px;
+              font-size: 12px;
               line-height: 15px;
               span {
                 font-size: 12px;
+                line-height; 15px;
                 .emojis-eflc-extra-small {
                   width: 12px !important;
                   height: 12px;
@@ -574,10 +581,10 @@
     .title-marianne {
       padding-bottom: 5%;
       font-size: 20px;
-      line-height: 33px;
+      line-height: 26px;
       span {
         font-size: 24px;
-        line-height: 33px;
+        line-height: 26px;
       }
     }
     .illu-femme-stylo {
@@ -597,9 +604,13 @@
         .subtitle {
           font-size: 20px;
           line-height: 26px;
+          text-align: center;
+  
+
         }
 
         .subtitle-spectral {
+          text-align: center;
           font-size: 24px;
           line-height: 26px;
         }
@@ -607,6 +618,7 @@
         .paragraphe {
           text-align: center;
           font-size: 14px;
+          line-height : 22px; 
         }
       }
 
