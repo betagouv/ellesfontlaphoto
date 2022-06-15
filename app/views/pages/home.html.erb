@@ -67,7 +67,7 @@
           <%= render "conseils_pratiques/conseils_cards", conseil: item %>
         <% end %>
       <% end %>
-      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight"} %>
+      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight", home_carousel_target: "buttonRight"} %>
       <%= image_tag "arrow-carousel-left.svg", class: "arrow-carousel-left", alt: "flèche carousel gauche", data: { action: "click->home-carousel#slideCarouselLeft", home_carousel_target: "buttonLeft"} %>
     </div>
   </div>

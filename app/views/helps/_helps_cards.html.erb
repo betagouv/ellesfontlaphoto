@@ -1,8 +1,8 @@
 <% next_date = CandidatureDate.where(help: help).where("end_date >= ?", Date.today).order("end_date ASC").first %>
 <% unless next_date.nil? %>
-  <div class="card-index-helps <%= ((next_date.end_date - Date.today).to_i < 30) ? "border-orange" : "" %>">
+  <div class="card-index-helps <%= ((next_date.end_date - Date.today).to_i < 30) ? "border-orange" : "" %> <%= controller_name == "pages" ? "" : "border" %>">
 <% else %>
-  <div class="card-index-helps">
+  <div class="card-index-helps <%= controller_name == "pages" ? "" : "border" %>">
 <% end %>
   <%= link_to help_path(help), target: :_blank do %>
     <%= render "helps/flottante_help", help: help, next_date: next_date %>

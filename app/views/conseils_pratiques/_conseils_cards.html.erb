@@ -1,5 +1,5 @@
 <% if conseil.class == ConseilsArticle %>
-  <div class="card-index-conseils-articles">
+  <div class="card-index-conseils-articles <%= controller_name == "pages" ? "" : "border" %>">
     <%= link_to conseils_article_path(conseil), target: :_blank do %>
       <% if (Time.now - conseil.created_at)/1.day < 15  %>
         <%= render "conseils_pratiques/flottante_conseils" %>
@@ -19,7 +19,7 @@
     <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
   </div>
 <% elsif conseil.class == ConseilsVideo %>
-  <div class="card-index-conseils-videos">
+  <div class="card-index-conseils-videos <%= controller_name == "pages" ? "" : "border" %>">
     <%= link_to conseils_video_path(conseil), target: :_blank do %>
       <% if (Time.now - conseil.created_at)/1.day < 15  %>
         <%= render "conseils_pratiques/flottante_conseils" %>
@@ -52,7 +52,7 @@
     <p class="arrow"><%= image_tag 'arrow-line.svg', alt: "icône flèche"%></p>
   </div>
 <% elsif conseil.class == Webinaire %>
-  <div class="card-index-conseils-videos">
+  <div class="card-index-conseils-videos <%= controller_name == "pages" ? "" : "border" %>">
     <%= link_to conseil.url, target: :_blank do %>
       <% if (Time.now - conseil.created_at)/1.day < 15  %>
         <%= render "conseils_pratiques/flottante_conseils" %>

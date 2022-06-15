@@ -5,29 +5,37 @@ let scrollX = 0;
 export default class extends Controller {
   static targets = [
     "carousel",
-    "buttonLeft"
+    "buttonLeft",
+    "buttonRight"
     ];
 
   slideCarouselRight(event) {
     scrollX += 1000
-    console.log(scrollX);
     this.carouselTarget.scroll({
       top: 0,
       left: scrollX,
       behavior: 'smooth'
     });
+    console.log(scrollX)
     if (scrollX >= 1000) {
       this.buttonLeftTarget.style.display = "block"
+      console.log("la")
+    }
+    if (scrollX >= 3000) {
+      this.buttonRightTarget.style.display = "none"
     }
   }
 
   slideCarouselLeft(event) {
     scrollX -= 1000
-    console.log(scrollX);
     this.carouselTarget.scroll({
       top: 0,
       left: scrollX,
       behavior: 'smooth'
     });
+    if (scrollX < 1000) {
+      this.buttonLeftTarget.style.display = "none"
+      console.log("ici")
+    }
   }
 }
