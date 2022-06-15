@@ -647,25 +647,12 @@
 @media only screen and (min-width: 1600px) {
   .third-block .third-block-div .cards-carousel {
     .card-index-helps {
-      min-width: 58vh;
+      min-width: 23%;
     }
 
     .card-index-conseils-articles,
     .card-index-conseils-videos {
-      min-width: 58vh;
-    }
-  }
-}
-
-@media only screen and (min-width: 2200px) {
-  .third-block .third-block-div .cards-carousel {
-    .card-index-helps {
-      min-width: 60vh ;
-    }
-
-    .card-index-conseils-articles,
-    .card-index-conseils-videos {
-      min-width: 60vh ;
+      min-width: 23%;
     }
   }
 }
