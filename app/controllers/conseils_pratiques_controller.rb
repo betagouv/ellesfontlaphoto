@@ -2,7 +2,7 @@ class ConseilsPratiquesController < ApplicationController
   def index
     @conseil_articles = ConseilsArticle.all
     @conseil_videos = ConseilsVideo.all
-    @webinaires = Webinaire.where("date <= ? OR page_rencontre = ?", Date.today, false).order(:date)
+    @webinaires = Webinaire.tagged_with("webinaire").where("date <= ? OR page_rencontre = ?", Date.today, false).order(:date)
     @contact = Contact.new
     @total_count = @conseil_articles.length + @conseil_videos.length + @webinaires.length
     unless @conseil_articles.empty? || @conseil_videos.empty?
