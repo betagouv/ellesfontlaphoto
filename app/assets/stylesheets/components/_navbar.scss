@@ -130,6 +130,9 @@
 /*RESPONSIVE*/
 @media only screen and (max-width: 1250px) {
   .header .header_body-row {
+    .link-menu {
+      font-size: 12px;
+    }
     .header_brand {
       padding-left: 1rem;
       min-width: 20%;
@@ -137,19 +140,19 @@
         padding: 0;
       }
       .logo {
-        font-size: 20px;
+        font-size: 14px;
       }
     }
     .header_tools-links {
       .links-group {
         li {
           margin:0;
-          font-size: 14px;
         }
       }
     }
     .manifeste-link-menu {
       margin-right: 0.5rem;
+      padding: 1.05rem 0 1.2rem 0;
     }
   }
 }
