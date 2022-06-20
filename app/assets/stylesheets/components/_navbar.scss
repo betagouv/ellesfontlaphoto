@@ -132,15 +132,19 @@
   .header .header_body-row {
     .header_brand {
       padding-left: 1rem;
-      min-width: 27%;
+      min-width: 20%;
       .header_logo {
         padding: 0;
+      }
+      .logo {
+        font-size: 20px;
       }
     }
     .header_tools-links {
       .links-group {
         li {
           margin:0;
+          font-size: 14px;
         }
       }
     }
@@ -281,7 +285,7 @@
   }
 
   .header-mobile .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 260px;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon {
