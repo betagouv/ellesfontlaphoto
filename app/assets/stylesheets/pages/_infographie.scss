@@ -73,6 +73,48 @@
   background-color: $very-light-orange;
 }
 
+@media only screen and (max-width: 1200px) {
+  .infographie-title {
+    font-size: 18px;
+  }
+
+  .infographie-source {
+    font-size: 10px;
+  }
+
+  .infographie-title-spectral {
+    font-size: 22px;
+  }
+
+  .img-desktop {
+    max-width: 100%;
+  }
+
+  .img-desktop.small {
+    max-width: 60%;
+  }
+
+  .infographie-div {
+    .infographie-subdiv.left {
+      width: 30%;
+    }
+    .infographie-subdiv.right {
+      width: 55%;
+    }
+    .infographie-subdiv {
+      .infographie-chiffre.orange {
+        font-size: 21px;
+      }
+      .infographie-chiffre.purple {
+        font-size: 21px;
+      }
+      .paragraphe {
+        font-size: 12.6px;
+      }
+    }
+  }
+
+}
 
 @media only screen and (max-width: 750px) {
   .banner-title {
@@ -89,17 +131,11 @@
     }
   }
 
-  .infographie-title {
-    font-size: 18px;
-  }
-
-  .infographie-title-spectral {
-    font-size: 22px;
-  }
   .infographie-source-mobile {
     display: block;
     text-align: center;
     font-size: 10px;
+    margin: 20px 0;
   }
 
   .infographie-source {
@@ -109,15 +145,23 @@
   .infographie-div {
     display: block;
     margin: 5%;
-    padding: 3%;
+    padding: 5%;
     .infographie-subdiv.d-flex {
+      display: block;
+    }
+    .infographie-subdiv.d-flex.first-card {
       justify-content: center;
+      display: flex;
     }
     .infographie-subdiv {
       width: 100%;
       padding: 0;
       .infographie-chiffre.purple,.infographie-chiffre.orange {
         font-size: 22px;
+      }
+      .infographie-chiffre.first-card {
+        font-size: 30px;
+        line-height: 25px;
       }
       .infographie-title {
         font-size: 18px;
@@ -127,6 +171,10 @@
         font-size: 12px;
         line-height: 25px;
         text-align: center;
+      }
+      .paragraphe.first-card {
+        text-align: left;
+        line-height: 20px;
       }
     }
     .infographie-source-mobile.purple {
@@ -143,6 +191,7 @@
     .img-mobile {
       display: block;
       margin: 10px auto;
+      max-width: 100%;
     }
   }
 }
