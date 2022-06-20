@@ -1,0 +1,67 @@
+.infographie-title {
+  font-size: 24px;
+  font-family: "Marianne-Medium";
+}
+
+.infographie-title-spectral {
+  font-size: 29px;
+  font-family: 'Spectral', serif;
+  line-height: 34px;
+}
+
+.infographie-source {
+  font-size: 14px;
+  font-family: "Marianne-Regular";
+}
+
+.infographie-div-text {
+  margin: 5% 20%;
+  text-align: center;
+}
+
+.infographie-div {
+  margin: 5% 10%;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-around;
+  .paragraphe.orange {
+    color: $dark-orange;
+  }
+  .paragraphe.purple {
+    color: $filter-purple;
+  }
+  .infographie-subdiv {
+    width: 45%;
+    padding: 4%;
+    margin: auto 0;
+
+    .infographie-chiffre.purple {
+      margin: 0;
+      font-size: 30px;
+      color: $filter-purple;
+      font-family: 'Spectral', serif;
+    }
+
+    .infographie-chiffre.orange {
+      margin: 0;
+      line-height: 0;
+      font-size: 30px;
+      color: $dark-orange;
+      font-family: 'Spectral', serif;
+    }
+
+    .infographie-source.purple {
+      color: $filter-purple;
+    }
+    .infographie-source.orange {
+      color: $dark-orange;
+    }
+  }
+}
+.infographie-div.purple {
+  background-color: $very-light-purple;
+}
+
+.infographie-div.orange {
+  background-color: $very-light-orange;
+}
