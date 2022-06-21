@@ -113,7 +113,14 @@
       }
       .paragraphe {
         font-size: 12.6px;
+        line-height: 25px;
       }
+    }
+  }
+
+  .infographie-div-text {
+    .paragraphe {
+      text-align: center;
     }
   }
 
@@ -179,6 +186,13 @@
         text-align: left;
         line-height: 20px;
       }
+    }
+    .infographie-subdiv.left {
+      width: 100%;
+    }
+
+    .infographie-subdiv.right {
+      width: 100%;
     }
     .infographie-source-mobile.purple {
       color: $filter-purple;
