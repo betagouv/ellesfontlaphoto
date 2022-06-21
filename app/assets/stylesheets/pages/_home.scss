@@ -1,20 +1,4 @@
 /*----------------------------------------*/
-/*BANNER*/
-
-.banner {
-  padding: 8vh 23vw;
-  text-align: center;
-  h1 {
-    line-height: 60px;
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 34px;
-    display: inline-block;
-  }
-}
-
-/*----------------------------------------*/
 /*FIRST BLOCKS*/
 
 .first-block{
@@ -414,15 +398,6 @@
 // RESPONSIVE PHONE
 
 @media only screen and (max-width: 750px) {
-  .banner {
-    padding: 2em 0 0;
-    h1 {
-      font-size: 24px;
-      line-height: 29.7px;
-      padding: 0em 1em 0em 1em;
-    }
-  }
-
   .paragraphe {
     color: #1a1b1f;
     font-size: 16px;
