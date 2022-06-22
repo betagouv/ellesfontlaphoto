@@ -130,11 +130,17 @@
 /*RESPONSIVE*/
 @media only screen and (max-width: 1250px) {
   .header .header_body-row {
+    .link-menu {
+      font-size: 12px;
+    }
     .header_brand {
       padding-left: 1rem;
-      min-width: 27%;
+      min-width: 20%;
       .header_logo {
         padding: 0;
+      }
+      .logo {
+        font-size: 14px;
       }
     }
     .header_tools-links {
@@ -146,6 +152,7 @@
     }
     .manifeste-link-menu {
       margin-right: 0.5rem;
+      padding: 1.05rem 0 1.2rem 0;
     }
   }
 }
@@ -281,7 +288,7 @@
   }
 
   .header-mobile .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 260px;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon {

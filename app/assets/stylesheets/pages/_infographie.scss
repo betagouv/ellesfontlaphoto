@@ -1,0 +1,232 @@
+.banner-title-infographie {
+  h1 {
+    line-height: 46px !important;
+  }
+}
+.infographie-title {
+  font-size: 24px;
+  font-family: "Marianne-Medium";
+  margin-top: 0;
+}
+
+.infographie-title-spectral {
+  font-size: 29px;
+  font-family: 'Spectral', serif;
+  line-height: 34px;
+}
+
+.infographie-source {
+  font-size: 14px;
+  font-family: "Marianne-Regular";
+}
+
+.infographie-source-mobile {
+  display: none;
+}
+
+.infographie-div-text {
+  margin: 5% 20%;
+  text-align: center;
+}
+
+.infographie-div-text.btn-download {
+  margin-bottom: 150px;
+  margin-top: 80px;
+}
+
+.infographie-div {
+  margin: 3% 10%;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-around;
+  .paragraphe {
+    line-height: 22px;
+  }
+  .paragraphe.orange {
+    color: $dark-orange;
+  }
+  .paragraphe.purple {
+    color: $filter-purple;
+  }
+  .infographie-subdiv {
+    width: 45%;
+    padding: 4%;
+    margin: auto 0;
+
+    .infographie-chiffre.purple {
+      margin: 0;
+      font-size: 26px;
+      color: $filter-purple;
+      font-family: 'Spectral', serif;
+    }
+
+    .infographie-chiffre.orange {
+      margin: 0;
+      line-height: 0;
+      font-size: 26px;
+      color: $dark-orange;
+      font-family: 'Spectral', serif;
+    }
+
+    .infographie-source.purple {
+      color: $filter-purple;
+    }
+    .infographie-source.orange {
+      color: $dark-orange;
+    }
+  }
+  .img-mobile {
+    display:none;
+  }
+}
+.infographie-div.purple {
+  background-color: $very-light-purple;
+}
+
+.infographie-div.orange {
+  background-color: $very-light-orange;
+}
+
+@media only screen and (max-width: 1200px) {
+  .banner-title {
+    padding: 6vh 8vw 3vh !important;
+    .paragraphe {
+      text-align: center;
+    }
+  }
+  .infographie-title {
+    font-size: 18px;
+  }
+
+  .infographie-source {
+    font-size: 10px;
+  }
+
+  .infographie-title-spectral {
+    font-size: 22px;
+  }
+
+  .img-desktop {
+    max-width: 100%;
+  }
+
+  .img-desktop.small {
+    max-width: 60%;
+  }
+
+  .infographie-div {
+    .infographie-subdiv.left {
+      width: 30%;
+    }
+    .infographie-subdiv.right {
+      width: 55%;
+    }
+    .infographie-subdiv {
+      .infographie-chiffre.orange {
+        font-size: 21px;
+      }
+      .infographie-chiffre.purple {
+        font-size: 21px;
+      }
+      .paragraphe {
+        font-size: 12.6px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  .infographie-div-text {
+    .paragraphe {
+      text-align: center;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 750px) {
+  .banner-title {
+    padding: 3vh 3vw;
+    text-align: center;
+  }
+
+  .infographie-div-text {
+    margin: 10% 5%;
+    .paragraphe {
+      font-size: 12px;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+
+  .infographie-source-mobile {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    margin: 20px 0;
+  }
+
+  .infographie-source {
+    display: none;
+  }
+
+  .infographie-div {
+    display: block;
+    margin: 5%;
+    padding: 5%;
+    .infographie-subdiv.d-flex {
+      display: block;
+    }
+    .infographie-subdiv.d-flex.first-card {
+      justify-content: center;
+      display: flex;
+    }
+    .infographie-subdiv {
+      width: 100%;
+      padding: 0;
+      .infographie-chiffre.purple,.infographie-chiffre.orange {
+        font-size: 22px;
+      }
+      .infographie-chiffre.first-card {
+        font-size: 30px;
+        line-height: 25px;
+      }
+      .infographie-title {
+        font-size: 18px;
+        text-align: center;
+      }
+      .paragraphe {
+        font-size: 12px;
+        line-height: 25px;
+        text-align: center;
+      }
+      .paragraphe.first-card {
+        text-align: left;
+        line-height: 20px;
+      }
+    }
+    .infographie-subdiv.left {
+      width: 100%;
+    }
+
+    .infographie-subdiv.right {
+      width: 100%;
+    }
+    .infographie-source-mobile.purple {
+      color: $filter-purple;
+    }
+
+    .infographie-source-mobile.orange {
+      color: $dark-orange;
+    }
+
+    .img-desktop {
+      display: none;
+    }
+    .img-mobile {
+      display: block;
+      margin: 10px auto;
+      max-width: 100%;
+    }
+  }
+}
+

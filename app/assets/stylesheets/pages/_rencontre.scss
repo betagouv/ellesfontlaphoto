@@ -87,12 +87,13 @@
             white-space: nowrap;
             font-family: 'Marianne-Bold', sans-serif;
             color: $black;
+            padding: 0 0 9%;
             margin: 0;
           }
           .lieu-webinaire {
             display: flex;
             align-items: center;
-            padding: 8% 0 9%;
+            padding: 0 0 9%;
             margin:0;
             img {
               margin-right: 5px;
@@ -245,6 +246,10 @@
     .webinaire-coming {
       .card-webinaire-coming {
         padding: 40px 20px 20px 20px;
+        .pastille-rencontre {
+          top: -5%;
+          left: 3%;
+        }
         .images-webinaire {
           display: block;
           .img-webinaire {
@@ -350,6 +355,10 @@
       .card-webinaire-coming {
         display: block;
         padding: 40px 0px;
+        .pastille-rencontre {
+          top: -3%;
+          left: 3%;
+        }
         .images-webinaire {
           min-width: 100%;
           max-width: 100%;

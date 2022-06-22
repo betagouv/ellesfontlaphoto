@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "proposer_conseil", to: 'pages#proposer_conseil'
   get "proposer_aide", to: 'pages#proposer_aide'
   get "rencontre", to: 'pages#rencontre'
+  get "infographie", to: 'pages#infographie'
 
   resources :contacts, only: :create
   resources :helps, only: [:show, :index] do
