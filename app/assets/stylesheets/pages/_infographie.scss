@@ -1,6 +1,12 @@
+.banner-title-infographie {
+  h1 {
+    line-height: 46px !important;
+  }
+}
 .infographie-title {
   font-size: 24px;
   font-family: "Marianne-Medium";
+  margin-top: 0;
 }
 
 .infographie-title-spectral {
@@ -23,11 +29,19 @@
   text-align: center;
 }
 
+.infographie-div-text.btn-download {
+  margin-bottom: 150px;
+  margin-top: 80px;
+}
+
 .infographie-div {
-  margin: 5% 10%;
+  margin: 3% 10%;
   border-radius: 16px;
   display: flex;
   justify-content: space-around;
+  .paragraphe {
+    line-height: 22px;
+  }
   .paragraphe.orange {
     color: $dark-orange;
   }
@@ -41,7 +55,7 @@
 
     .infographie-chiffre.purple {
       margin: 0;
-      font-size: 30px;
+      font-size: 26px;
       color: $filter-purple;
       font-family: 'Spectral', serif;
     }
@@ -49,7 +63,7 @@
     .infographie-chiffre.orange {
       margin: 0;
       line-height: 0;
-      font-size: 30px;
+      font-size: 26px;
       color: $dark-orange;
       font-family: 'Spectral', serif;
     }
@@ -76,6 +90,9 @@
 @media only screen and (max-width: 1200px) {
   .banner-title {
     padding: 6vh 8vw 3vh !important;
+    .paragraphe {
+      text-align: center;
+    }
   }
   .infographie-title {
     font-size: 18px;
@@ -213,6 +230,3 @@
   }
 }
 
-@media only screen and (min-width: 1600px) {
-
-}
