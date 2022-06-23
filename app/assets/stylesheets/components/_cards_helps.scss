@@ -17,7 +17,7 @@
   height: -webkit-max-content;
   &:hover {
     .sub-card-index-helps {
-      z-index: 10;
+      z-index: 6;
       transform: translateY(-60px);
       transition: transform .6s ease-out;
       -webkit-transition: .6s ease-out;
@@ -26,7 +26,7 @@
 
       .sub-card-index-helps-infos {
         opacity: 1;
-        z-index: 10;
+        z-index: 6;
       }
     }
 
