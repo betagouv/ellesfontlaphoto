@@ -232,6 +232,7 @@
           justify-content: space-around;
           align-items: center;
           cursor: pointer;
+          padding : 12px 22px;
           color: $white !important;
         }
       }
@@ -275,6 +276,7 @@
             }
             .btn-black {
               margin: 0 0 0 auto;
+              padding : 12px 22px;
               position: initial;
             }
           }
@@ -314,6 +316,7 @@
       }
       .btn-black {
         margin-bottom: 20px;
+        padding : 12px 22px;
       }
     }
   }
@@ -392,6 +395,7 @@
             width: -webkit-fill-available;
             width: fit-content;
             height: 23px;
+            padding : 12px 22px;
             margin: 20px auto !important;
           }
         }
