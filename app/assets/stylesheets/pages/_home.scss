@@ -137,12 +137,18 @@
         min-width: 22%;
         margin-right: 40px;
         padding-bottom: 3%;
+        .flottante-div .flottante {
+          display: none !important;
+        }
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
         min-width: 22%;
         padding: 2% 0%;
         margin-right: 40px;
         max-height: 500px;
+        a .flottante-div {
+          display: none;
+        }
         .card-index-conseils-videos-div {
           padding: 5% 0;
           .cards-videos-info {
@@ -345,7 +351,7 @@
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
           min-width: 21%;
-          padding: 4%;
+          padding: 2%;
           margin-right: 20px;
           .arrow {
               display: none;
@@ -477,16 +483,11 @@
           min-width: 40%;
           padding-bottom: 2%;
           margin-right: 0;
-          .flottante-div .flottante {
-            font-size: 12px;
-            line-height : 15px;
-          }
           .main-bold-paragraphe {
             padding: 5% 2%;
             text-align: center;
             font-size: 12px;
             line-height : 15px;
-
           }
           a .sub-card-index-helps {
             .paragraphe.card,p,span {

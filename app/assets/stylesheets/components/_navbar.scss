@@ -132,6 +132,7 @@
   .header .header_body-row {
     .link-menu {
       font-size: 12px;
+      margin: 0 8px;
     }
     .header_brand {
       padding-left: 1rem;
@@ -144,6 +145,7 @@
       }
     }
     .header_tools-links {
+      width: 45%;
       .links-group {
         li {
           margin:0;
