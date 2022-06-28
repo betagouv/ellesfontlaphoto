@@ -1,6 +1,6 @@
 <% if help.type_list.first == "dotation financière" %>
   <%= image_tag "aides/dotation-financiere.png", alt: "dotation financière", class: "image-card-helps" %>
-<% elsif help.type_list.first == "résidence" || help.type_list.first == "Résidence" %>
+<% elsif help.type_list.first.downcase == "résidence" %>
   <%= image_tag "aides/residence.png", alt: "résidence", class: "image-card-helps" %>
 <% elsif help.type_list.first == "édition" %>
   <%= image_tag "aides/edition.png", alt: "édition", class: "image-card-helps" %>
