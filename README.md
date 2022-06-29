@@ -1,17 +1,45 @@
 # Elles font la Culture
-Rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais sous-représentées dans le secteur, en commençant par la photographie
+L'objectif est de rendre visible les femmes de l'art et de la culture; aujourd'hui présentes mais sous-représentées dans le secteur, en commençant par la photographie.
 
 
-## Lancer ce site localement
+## SETUP
 
-```bash
-git clone https://github.com/betagouv/ellesfontlaphoto.git
-cd ellesfontlaphoto
-get the .env file and application.yml files
+Ruby Version : 2.6.6
+Rails Version : 6.1.4
+Base de données : Postgresql
+
+Commencer par: ```bash
 bundle install
 yarn install
-rails db:create
-rails s
-# http://localhost:3000 is ready
 ```
+
+Création base de donnée en local:
+```bash
+rails db:create db:migrate db:seed
+```
+
+Lancer serveur en local:
+```bash
+rails s
+```
+# http://localhost:3000 is ready
+
+## ADMIN
+
+Espace d'administration accessible à l'url /admin,
+Un compte admin est créé avec l'execution de la seed en local.
+identifiant : admin@example.fr
+mot de passe : password
+
+## STATISTIQUES
+
+Page statistiques accessible à l'url /stats,
+
+## DEPLOIEMENT
+
+Lorsqu'une PR est mergé sur la branche staging, les changements sont automatiquements déployés sur l'environnement de [staging](https://www.ellesfontlaculture.incubateur.net/).
+
+Lorsqu'une PR est mergé sur la branche master, les changements sont automatiquements déployés sur l'environnement de [production](https://www.ellesfontlaculture.beta.gouv.fr/).
+
+
 
