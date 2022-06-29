@@ -8,21 +8,19 @@ Ruby Version : 2.6.6
 Rails Version : 6.1.4
 Base de données : Postgresql
 
-Commencer par: ```bash
+Commencer par: ```
 bundle install
-yarn install
-```
+yarn install ```
 
 Création base de donnée en local:
-```bash
-rails db:create db:migrate db:seed
-```
+``` rails db:create db:migrate db:seed ```
 
 Lancer serveur en local:
-```bash
-rails s
-```
-# http://localhost:3000 is ready
+``` rails s ```
+
+#### http://localhost:3000 is ready
+
+
 
 ## ADMIN
 
@@ -31,9 +29,13 @@ Un compte admin est créé avec l'execution de la seed en local.
 identifiant : admin@example.fr
 mot de passe : password
 
+
+
 ## STATISTIQUES
 
 Page statistiques accessible à l'url /stats,
+
+
 
 ## DEPLOIEMENT
 
