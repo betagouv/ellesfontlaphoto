@@ -4,6 +4,7 @@
     h1 {
       max-width: 43%;
       text-align:left;
+      line-height: 50px;
     }
     display: flex;
     justify-content: space-between;
@@ -39,6 +40,7 @@
     }
     .card-webinaire-coming {
       display: flex;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
@@ -48,6 +50,19 @@
       background-image: url(background-shadow.png);
       background-size: contain;
       background-repeat: no-repeat;
+      .pastille-rencontre {
+        top: -8%;
+        left: 2%;
+        border-radius: 40px;
+        color: $black;
+        padding: 4px 12px 7px 12px;
+        font-family: 'Marianne-Regular', sans-serif;
+        font-size: 14px;
+        margin: 5px auto 30px auto;
+        display: table;
+        position: absolute;
+        background-color: $light-purple;
+      }
       .images-webinaire {
         min-width: 20%;
         max-width: 20%;
@@ -72,12 +87,13 @@
             white-space: nowrap;
             font-family: 'Marianne-Bold', sans-serif;
             color: $black;
+            padding: 0 0 9%;
             margin: 0;
           }
           .lieu-webinaire {
             display: flex;
             align-items: center;
-            padding: 8% 0 9%;
+            padding: 0 0 9%;
             margin:0;
             img {
               margin-right: 5px;
@@ -117,9 +133,7 @@
     }
 
     .old-webinaires {
-      padding: 7% 25%;
-      padding-top : 50px;
-      paddding-bottom : 80px;
+      padding: 4% 25%;
       .paragraphe-bold {
         font-size: 20px;
         text-align: center;
@@ -232,6 +246,10 @@
     .webinaire-coming {
       .card-webinaire-coming {
         padding: 40px 20px 20px 20px;
+        .pastille-rencontre {
+          top: -5%;
+          left: 3%;
+        }
         .images-webinaire {
           display: block;
           .img-webinaire {
@@ -337,6 +355,10 @@
       .card-webinaire-coming {
         display: block;
         padding: 40px 0px;
+        .pastille-rencontre {
+          top: -3%;
+          left: 3%;
+        }
         .images-webinaire {
           min-width: 100%;
           max-width: 100%;

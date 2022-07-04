@@ -1,33 +1,17 @@
 /*----------------------------------------*/
-/*BANNER*/
-
-.banner {
-  padding: 8vh 23vw;
-  h1 {
-    text-align: center !important;
-    line-height: 60px;
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 34px;
-    display: inline-block;
-    text-align: left;
-  }
-}
-
-/*----------------------------------------*/
 /*FIRST BLOCKS*/
 
 .first-block{
   .first-block-cards {
     padding-bottom: 4vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
     text-align: center;
     cursor: pointer;
     a {
-      width: 25%;
+      width: 27%;
+      margin: 0 11px;
       .first-block-card.purple {
         background-color: $purple-home;
       }
@@ -39,7 +23,7 @@
       }
       .first-block-card {
         border-radius: 16px;
-        min-height: 466px;
+        min-height: 440px;
         .image-first-block-card {
           border-top-left-radius: 16px;
           border-top-right-radius: 16px;
@@ -57,22 +41,28 @@
           background-color: $orange-home;
         }
         .first-block-card-infos {
-          border-radius: 16px;
-          padding: 5% 0;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          padding: 5% 0 0 0;
           .first-block-card-infos-title {
-            font-size: 20px;
+            font-family: "Marianne-Medium";
+            font-size: 28px;
             color: $black;
+            margin-bottom: 0;
+            margin-top: 5px;
           }
           .first-block-card-infos-text {
             color: $black;
             opacity: 0;
+            margin-top: 0;
+            padding: 0 22px;
+            font-size: 18px;
           }
         }
         &:hover {
-          box-shadow: 0 0 6px rgba(1,1,1,0.5);
           .first-block-card-infos {
             z-index: 10;
-            transform: translateY(-40px);
+            transform: translateY(-30px);
             transition: transform .6s ease-out;
             -webkit-transition: .6s ease-out;
             -moz-transition: .6s ease-out;
@@ -101,6 +91,9 @@
   align-items: center;
   position: relative;
   text-align: center;
+  .paragraphe-title {
+    font-family: "Marianne-Medium";
+  }
   img {
     max-width: 20%;
   }
@@ -112,6 +105,10 @@
     .btn-orange {
       width: 200px;
       margin: 0 auto;
+      background-color: $orange;
+      &:hover{
+        background-color: $hover-orange !important;
+      }
     }
   }
 }
@@ -121,7 +118,7 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 5%;
+  padding: 3% 7% 0 7%;
   text-align: center;
   .third-block-div {
     border-radius: 16px;
@@ -140,16 +137,25 @@
         min-width: 22%;
         margin-right: 40px;
         padding-bottom: 3%;
+        .flottante-div .flottante {
+          display: none !important;
+        }
       }
       .card-index-conseils-articles,.card-index-conseils-videos {
-        min-width: 14%;
-        padding: 4%;
+        min-width: 22%;
+        padding: 2% 0%;
         margin-right: 40px;
         max-height: 500px;
-        .cards-videos-info {
-          p {
-            max-height: 250px;
-            overflow: hidden;
+        a .flottante-div {
+          display: none;
+        }
+        .card-index-conseils-videos-div {
+          padding: 5% 0;
+          .cards-videos-info {
+            p {
+              max-height: 220px;
+              overflow: hidden;
+            }
           }
         }
       }
@@ -158,6 +164,9 @@
         right: -2%;
         position: absolute;
         cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
       }
       .arrow-carousel-left {
         top: 50%;
@@ -165,6 +174,9 @@
         position: absolute;
         display: none;
         cursor: pointer;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
   }
@@ -174,22 +186,26 @@
 // FOURTH BLOCK
 
 .fourth-block {
-  padding: 1% 10% 6% 10%;
+  padding: 140px 10% 130px 10%;
   text-align: center;
   position: relative;
   .title-marianne {
     padding-bottom: 3%;
-    font-size: 30px;
+    font-size: 28px;
   }
   .btn-black {
-    width: 300px;
+    width: 200px;
     margin: 0 auto;
+    display: table;
+    color: $white !important;
+    &:hover {
+      background-color: $hover-black;
+    }
   }
   .illu-femme-stylo {
     position: absolute;
-    right: 40px;
-    width: 280px;
-    top: -24px;
+    right: 3%;
+    bottom: 0;
   }
 }
 
@@ -199,18 +215,27 @@
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  padding: 0 5% 5% 5%;
+  padding: 0 7% 5% 7%;
   .contact-div {
-    width: 33%;
+    width: 40%;
     padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
     .div-btn-orange-home {
       display: flex;
-      justify-content: space-between;
+      .btn-orange {
+        margin-left: 20px;
+        &:hover {
+          opacity: 80%;
+        }
+      }
     }
     .description-contact-div {
       height: 420px;
+      .subtitle,.subtitle-spectral {
+        font-size: 34px;
+        line-height: 38px;
+      }
       img {
         width: 100%;
       }
@@ -219,20 +244,18 @@
       }
     }
     .btn-contact {
-      padding: 10px;
+      padding: 9px 20px 11px 15px;
       white-space: nowrap;
       background-color: $purple;
       border-radius: 40px;
       height: auto;
       font-family: 'Marianne-Regular', sans-serif;
       font-size: 16px;
-      margin-left: 25%;
       cursor: pointer;
       color: $black !important;
-      margin: 0 auto;
-      margin-right: 30px;
       border : none;
       max-width: 50%;
+      margin-right: 20px;
       &:hover {
         opacity: 80%;
       }
@@ -246,28 +269,21 @@
   .contact-div.purple {
     border: 1px solid $purple;
     .paragraphe a {
-      color: $purple !important;
+      color: $purple-blue !important;
     }
   }
 }
+
 /*----------------------------------------*/
 // RESPONSIVE IPAD
 
 @media only screen and (max-width: 1250px) {
   .banner {
-    padding: 4em 2em 1em 2em;
+    padding: 4em 10em 1em 10em;
     h1 {
-      text-align: center;
-      line-height: 65px;
+      line-height: 40px;
+      font-size: 24px;
     }
-  }
-
-  .paragraphe {
-    color: #1a1b1f;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    text-align: center;
   }
 
   .first-block {
@@ -275,22 +291,28 @@
     .first-block-cards {
       justify-content: space-between;
       a {
-        width: 30%;
+        width: 35%;
+        margin: 0 5px;
         .first-block-card {
-          img {
-            object-fit: cover;
-          }
           .image-first-block-card {
+            object-fit: cover;
+            height: 160px;
             max-width: 100%;
           }
           .first-block-card-infos {
             padding: 2%;
-            .first-block-card-infos-text {
+            .first-block-card-infos-title,.first-block-card-infos-text {
               color: $black;
+              padding: 0 8px;
               opacity: 1;
               text-align: center;
+              font-size: 18px;
             }
           }
+        }
+        .arrow-first-block-card {
+          bottom: 5%;
+          right: 47%;
         }
       }
     }
@@ -298,28 +320,42 @@
 
   .second-block {
     padding: 0% 2%;
+    .paragraphe-title {
+      font-size: 20px;
+      line-height: 29.7px;
+    }
   }
 
   .third-block {
+    padding: 3% 0 0;
     .third-block-div {
+      border-radius: 0;
       .subtitle-spectral {
         margin: 30px 0 0 0;
+        font-size: 34px;
+        line-height: 38px;
       }
       .cards-carousel {
         overflow-x: scroll;
         padding-top: 50px;
+        .arrow-carousel-right, .arrow-carousel-left {
+            display: none;
+          }
         .card-index-helps {
-          min-width: 36%;
+          min-width: 37%;
           padding-bottom: 4%;
           margin-right: 20px;
-          a .sub-card-index-helps .sub-card-index-helps-infos {
-            -webkit-line-clamp: 4;
+          .arrow {
+            display: none;
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 28%;
-          padding: 4%;
+          min-width: 21%;
+          padding: 2%;
           margin-right: 20px;
+          .arrow {
+              display: none;
+          }
         }
       }
     }
@@ -327,11 +363,14 @@
 
   .fourth-block {
     padding: 6% 6% 15% 6%;
+    .subtitle-spectral {
+      font-size: 34px;
+    }
     .illu-femme-stylo {
       position: absolute;
-      right: 0;
-      width: 250px;
-      top: 55px;
+      right: 20px;
+      width: 200px;
+      bottom: 0;
     }
   }
 
@@ -341,13 +380,9 @@
       width: 50%;
       .description-contact-div {
         height: 320px;
-        .subtitle {
+        .subtitle,.subtitle-spectral {
           font-size: 24px;
-          line-height: 30px;
-        }
-        .subtitle-spectral {
-          font-size: 26px;
-          line-height: 30px;
+          line-height: 28px;
         }
       }
       .div-btn-orange-home {
@@ -355,9 +390,12 @@
       }
       .btn-orange,.btn-contact {
         white-space: nowrap;
-        display: table;
+        display: flex;
         margin: 0;
         margin-bottom: 20px;
+      }
+      .d-flex {
+        justify-content: space-around;
       }
     }
   }
@@ -366,15 +404,6 @@
 // RESPONSIVE PHONE
 
 @media only screen and (max-width: 750px) {
-  .banner {
-    padding: 2em 0;
-    h1 {
-      font-size: 28px;
-      line-height: 48px;
-      padding: 0em 1em 0em 1em;
-    }
-  }
-
   .paragraphe {
     color: #1a1b1f;
     font-size: 16px;
@@ -390,7 +419,19 @@
       a {
         .first-block-card {
           margin-bottom: 8%;
+          min-height: 420px;
+          .image-first-block-card {
+            height: 210px;
+          }
           .first-block-card-infos {
+            img {
+              width: 45px;
+              height: 45px;
+            }
+            .first-block-card-infos-title {
+              font-size: 18px;
+              font-family: 'Marianne-Bold'
+            }
           }
           .arrow-first-block-card {
             bottom: auto;
@@ -404,10 +445,12 @@
   .second-block {
     display: block;
     .second-block-div {
-      margin: 0 auto;
+      margin: 8% auto 0 auto;
       width: 80%;
       .paragraphe-title {
         text-align: center;
+        font-size: 20px;
+        margin-bottom: 40px;
       }
       .btn-orange {
         margin-bottom: 15%;
@@ -420,42 +463,92 @@
       display: flex;
       justify-content: center;
       img {
-        min-width: 40%;
+        min-width: 70%;
       }
     }
   }
 
   .third-block {
+    padding: 0;
     .third-block-div {
+      background-image: url(background-shadow2-mobile.png);
       .subtitle-spectral {
         margin: 30px 0 20px 0;
       }
       .cards-carousel {
         overflow-x: scroll;
         padding-top: 30px;
-        gap: 20px;
-        .arrow-carousel-right, .arrow-carousel-left {
-          display: none;
-        }
+        gap: 10px;
         .card-index-helps {
-          min-width: 74%;
-          padding-bottom: 4%;
+          min-width: 40%;
+          padding-bottom: 2%;
           margin-right: 0;
-          .arrow {
-            left: 3%;
+          .main-bold-paragraphe {
+            padding: 5% 2%;
+            text-align: center;
+            font-size: 12px;
+            line-height : 15px;
           }
           a .sub-card-index-helps {
+            .paragraphe.card,p,span {
+              font-size: 12px;
+              line-height: 15px;
+              .emojis-eflc-small {
+                width: 14px;
+                height: 15px;
+                margin-right: 0;
+              }
+            }
             .sub-card-index-helps-infos {
-              max-height: 120px;
+              padding: 3% 5%;
+              max-height: 200px;
+              line-height: 15px;
+              p,span {
+                font-size: 12px;
+                line-height : 15px;
+              }
+              ul {
+                padding: 0 20px;
+                line-height: 15px;
+              }
             }
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 66%;
-          padding: 4%;
+          min-width: 32%;
+          padding: 2%;
           margin-right: 0;
-          .cards-videos-info,p {
-            max-height: 220px !important;
+          a div {
+            .image-conseil {
+              width: 100px;
+              height: 100px;
+            }
+            .flottante-play {
+              img {
+                width: 30px;
+                right: 40%;
+              }
+            }
+          }
+          .card-index-conseils-videos-div,.card-index-conseils-articles-div {
+            padding: 2%;
+            .cards-videos-info,p {
+              max-height: 194px !important;
+              font-size: 12px;
+              line-height: 15px;
+              span {
+                font-size: 12px;
+                line-height: 15px;
+                .emojis-eflc-extra-small {
+                  width: 12px !important;
+                  height: 12px;
+                }
+              }
+            }
+          }
+          .pastille-conseils {
+            font-size: 11px;
+            margin: 10px auto;
           }
         }
       }
@@ -466,10 +559,19 @@
     position: initial;
     padding-top: 0;
     .title-marianne {
-      padding-bottom: 10%;
+      margin-bottom: 20px;
+      padding-bottom: 5%;
+      font-size: 20px;
+      line-height: 26px;
+      span {
+        font-size: 24px;
+        line-height: 26px;
+      }
     }
     .illu-femme-stylo {
       position: initial;
+      width: 180px;
+      margin: 50px 0 20px;
     }
   }
   .contact-block {
@@ -479,15 +581,54 @@
       margin-bottom: 20px;
       padding: 10%;
       .description-contact-div {
-        height: 300px;
-        p {
+        height: 250px;
+        .subtitle {
+          font-size: 20px;
+          line-height: 26px;
           text-align: center;
+
+
         }
+
+        .subtitle-spectral {
+          text-align: center;
+          font-size: 24px;
+          line-height: 26px;
+        }
+
+        .paragraphe {
+          text-align: center;
+          font-size: 14px;
+          line-height : 22px;
+        }
+      }
+
+      .div-btn-orange-home .btn-orange {
+        margin: 20px auto;
+      }
+      .d-flex {
+        display: block;
       }
       .btn-contact,.btn-orange {
         margin: 0 auto 20px auto;
         padding: 4% 8% 5% 8%;
       }
+    }
+  }
+}
+
+
+// RESPOSIVE GRANDS ECRANS CAROUSEL
+
+@media only screen and (min-width: 1600px) {
+  .third-block .third-block-div .cards-carousel {
+    .card-index-helps {
+      min-width: 23%;
+    }
+
+    .card-index-conseils-articles,
+    .card-index-conseils-videos {
+      min-width: 23%;
     }
   }
 }

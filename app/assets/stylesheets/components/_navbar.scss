@@ -91,7 +91,7 @@
   .link-menu.manifeste-link-menu {
     white-space: nowrap;
     margin: 0 3rem 0 15px;
-    padding: 1.05rem 0 1.05rem 0;
+    padding: 1.05rem 0 1.1rem 0;
     margin-bottom: 0;
     &:hover {
       box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
@@ -130,14 +130,22 @@
 /*RESPONSIVE*/
 @media only screen and (max-width: 1250px) {
   .header .header_body-row {
+    .link-menu {
+      font-size: 12px;
+      margin: 0 8px;
+    }
     .header_brand {
       padding-left: 1rem;
-      min-width: 27%;
+      min-width: 20%;
       .header_logo {
         padding: 0;
       }
+      .logo {
+        font-size: 14px;
+      }
     }
     .header_tools-links {
+      width: 45%;
       .links-group {
         li {
           margin:0;
@@ -146,6 +154,7 @@
     }
     .manifeste-link-menu {
       margin-right: 0.5rem;
+      padding: 1.05rem 0 1.2rem 0;
     }
   }
 }
@@ -177,7 +186,6 @@
     text-decoration:none;
     color: $black !important;
     font-size: 14px;
-    opacity: 0.6;
     line-height: 20px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -281,7 +289,7 @@
   }
 
   .header-mobile .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 260px;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon {

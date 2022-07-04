@@ -1,7 +1,7 @@
 <div id="banner-contact" class="banner-info banner-home">
   <a class="js-modal" data-modal="modal-contact" class="paragraphe show">Vous consultez une page en construction, <u>écrivez nous</u> pour l'améliorer !</a>
 </div>
-<div class="banner">
+<div class="banner-title">
   <h1>Développer la carrière des photographes femmes et minorités de genre.</h1>
 </div>
 
@@ -46,12 +46,11 @@
 <div class="second-block">
   <%= image_tag 'illu-femme-photo.png', class: "second-block-img" %>
   <div class="second-block-img-mobile">
-    <%= image_tag 'illu-femme-photo.png' %>
-    <%= image_tag 'illu-femme-debout.png' %>
+    <%= image_tag 'illu-femmes-debout-mobile.png' %>
   </div>
   <div class="second-block-div text-align-center">
     <p class="paragraphe-title">Car encore aujourd'hui, 60% de femmes sont sur les bancs des écoles, contre 35% dans la vie professionnelle.</p>
-    <div class="btn-orange">les chiffres des inégalités</div>
+    <a class="btn-orange" href="/infographie">les chiffres des inégalités</a>
   </div>
   <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
 </div>
@@ -68,7 +67,7 @@
           <%= render "conseils_pratiques/conseils_cards", conseil: item %>
         <% end %>
       <% end %>
-      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight"} %>
+      <%= image_tag "arrow-carousel-right.svg", class: "arrow-carousel-right", alt: "flèche carousel droite", data: { action: "click->home-carousel#slideCarouselRight", home_carousel_target: "buttonRight"} %>
       <%= image_tag "arrow-carousel-left.svg", class: "arrow-carousel-left", alt: "flèche carousel gauche", data: { action: "click->home-carousel#slideCarouselLeft", home_carousel_target: "buttonLeft"} %>
     </div>
   </div>
@@ -77,7 +76,7 @@
 <div class="fourth-block">
   <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Recensez une aide ou ressource utile pour la communauté de femmes photographes ! </p>
-  <div class="btn-black">Proposer du contenu</div>
+  <a href="https://startupdetat.typeform.com/to/I2kjqMwI" target="blank" class="btn-black">Proposer du contenu</a>
 </div>
 
 <div class="contact-block" id="contact">
@@ -92,17 +91,19 @@
     <% if notice %>
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
-    <a href="/a_propos" class="btn-contact"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
-    <a class="js-modal btn-contact" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
+    <div class="d-flex">
+      <a href="/a_propos" class="btn-contact btn"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
+      <a class="js-modal btn-contact btn" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
+    </div>
   </div>
   <div class="contact-div">
     <div class="description-contact-div">
       <p class="subtitle pb30">On reste en contact ? <span class="subtitle-spectral">Suivez l’évolution du service et nos événements</span></p>
-      <%= image_tag "Group 215.png" %>
+      <%= image_tag "Group 215.svg" %>
     </div>
     <div class="div-btn-orange-home">
-      <a class="js-modal btn-orange" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 17px;" %> S'abonner à l'infolettre</a>
-      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home"><%= image_tag "instagram.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
+      <a class="js-modal btn-orange btn" data-modal="modal-newsletter"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-small", style: "width: 28px;" %> S'abonner à l'infolettre</a>
+      <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn-orange btn-insta-home btn"><%= image_tag "instagram-black.svg", alt:"émoji instagram", class: "emojis-eflc-small" %> instagram</a>
     </div>
   </div>
 </div>
