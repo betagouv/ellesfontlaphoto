@@ -12,6 +12,7 @@ class Help < ApplicationRecord
   validates :description, presence: true
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
+  validates :type_list, presence: true
 
   PARITE = [
     "respectée",
