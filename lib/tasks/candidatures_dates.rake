@@ -14,7 +14,6 @@ namespace :candidature_dates do
       if help.permanent?
         help.update(start_date: Date.today + 31.days, end_date: Date.today + 31.days)
       elsif next_date.nil? || next_date.end_date < Date.today || help.end_date < Date.today
-        help.candidature_dates.destroy_all
         help.update(start_date: nil, end_date: nil)
       else
         help.update(start_date: next_date.start_date, end_date: next_date.end_date)
