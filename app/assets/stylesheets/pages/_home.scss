@@ -232,7 +232,11 @@
     }
     .description-contact-div {
       height: 420px;
-      .subtitle,.subtitle-spectral {
+      .subtitle {
+    font-size: 28px;
+      line-height: 38px 
+    }
+      .subtitle-spectral {
         font-size: 34px;
         line-height: 38px;
       }
