@@ -21,5 +21,6 @@ class PagesController < ApplicationController
   end
 
   def chiffres_inegalites
+    @organizations = Organization.first(8)
   end
 end

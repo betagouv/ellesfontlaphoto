@@ -1,1 +1,34 @@
-<h1>Chiffres inegalites</h1>
+<div class="chiffres-inegalites">
+  <div class="flex-div">
+    <div class="sub-div-chiffres-inegalites">
+      <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
+      <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
+      <div class="btn-black"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</div>
+    </div>
+    <div class="sub-div-chiffres-inegalites">
+      <div class="flex-div">
+        <%= image_tag "carousel-chiffres/carousel-chiffres-1.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+        <%= image_tag "carousel-chiffres/carousel-chiffres-2.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites"%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="div-index-parite">
+  <div class="div-title-index-parite">
+    <h1 class="title-marianne">Index parité : <span class="spectral-title"> structures et festivals photo</span></h1>
+    <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuit sur les données collectées par le ministère de la Culture dans le cadre de l'Observatoire 2022 de l'égalité dans la culture et la communication.</p>
+  </div>
+  <div class="btn-purple">voir toutes les structures</div>
+  <div class="cards-organizations">
+    <% @organizations.each do |organization| %>
+      <div class="card-organization">
+        <p class="paragraphe-bold"><%= organization.name %>, <span class="paragraphe"><%= organization.city %></span></p>
+        <% if organization.logo.attached? %>
+          <div class="flex-div">
+            <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}", width: 100 %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
