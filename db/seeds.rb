@@ -2,6 +2,7 @@
 
 require "csv"
 filepath = File.join(Rails.root, 'db', 'organizations_data.csv')
+Organization.destroy_all
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   p row["organization_type"]
@@ -16,11 +17,11 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   )
 
   if orga.nb_women_dir && orga.total_nb_dir
-    orga.dir_parity = ( orga.nb_women_dir / orga.total_nb_dir ) >= 0.5
+    orga.dir_parity = orga.nb_women_dir.fdiv(orga.total_nb_dir) >= 0.5
   end
 
   if orga.nb_women_expos && orga.total_nb_expos
-    orga.expos_parity = ( orga.nb_women_expos / orga.total_nb_expos ) >= 0.5
+    orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) >= 0.5
   end
 
 
