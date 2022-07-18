@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization_type: MyString
+  name: MyString
+  city: MyString
+  nb_women_dir: 1
+  total_nb_dir: 1
+  dir_parity: false
+  nb_women_expos: 1
+  total_nb_expos: 1
+  expos_parity: false
+
+two:
+  organization_type: MyString
+  name: MyString
+  city: MyString
+  nb_women_dir: 1
+  total_nb_dir: 1
+  dir_parity: false
+  nb_women_expos: 1
+  total_nb_expos: 1
+  expos_parity: false
