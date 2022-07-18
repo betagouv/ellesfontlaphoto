@@ -1,5 +1,9 @@
 ActiveAdmin.register Organization do
-  permit_params :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity
+  permit_params :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo
+
+  before_destroy do |organization|
+    organization.logo.purge
+  end
 
   after_create do |organization|
     organization.organization_type = params["organization"]["organization_type"].second
@@ -58,6 +62,11 @@ ActiveAdmin.register Organization do
       f.input :organization_type, :as => :check_boxes, :collection => Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
+      if f.object.logo.attached?
+        f.input :logo, as: :file, :hint => image_tag(f.object.logo)
+      else
+        f.input :logo, as: :file
+      end
       f.input :nb_women_dir, label: "Nombre de femmes à la direction"
       f.input :total_nb_dir, label: "Nombre total de personnes à la direction"
       f.input :nb_women_expos, label: "Nombre de femmes exposées"
