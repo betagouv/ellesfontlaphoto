@@ -23,30 +23,90 @@
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
+  .arrow-back {
+    position: relative;
+  }
   .div-title-index-parite {
-    width: 30%;
-    .title-marianne,.title-spectral,.paragraphe {
+    margin: 0 auto;
+    width: 50%;
+    .title-marianne,.spectral-title,.paragraphe {
       color: $white;
       text-align: center;
     }
   }
   .btn-purple {
-    width: 200px;
+    width: 220px;
+    margin: 3% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+      background-color: #8F73FF !important;
+    }
   }
   .cards-organizations {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
     .card-organization {
       background-color: $white;
       border-radius: 16px;
-      .paragraphe-bold {
-        margin-bottom: 0;
-        text-align: center;
+      padding: 7%;
+      .card-organization-name {
+        height: 200px;
+
+        .paragraphe-bold {
+          margin-bottom: 0;
+          text-align: center;
+        }
+        .flex-div {
+          justify-content: space-around;
+          align-items: center;
+          img {
+            max-height: 80px;
+            max-width: 100px;
+            padding: 20px;
+          }
+        }
       }
-      .flex-div {
-        justify-content: space-around;
-        margin: 10px 0 30px 0;
+      .weather-bubble {
+        border-radius: 50%;
+        width: 84px;
+        height: 84px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .emoji-weather {
+          max-height: 80%;
+          max-width: 80%;
+        }
+      }
+      .weather-bubble.orange {
+        background-color: $dark-orange;
+      }
+      .weather-bubble.purple {
+        background-color: $filter-purple;
+      }
+      .weather-bubble.half-half {
+        background: linear-gradient(90deg, $dark-orange 50%, $filter-purple 50%);
+      }
+      .card-organization-numbers {
+        text-align: center;
+        padding: 10% 0 20% 0;
+        .paragraphe {
+          white-space: pre-wrap;
+          padding: 0;
+          margin: 0;
+        }
+        .paragraphe.line-orange {
+          display: inline;
+          box-shadow: rgba(244, 88, 0, 0.3) 0px -0.75rem 0px inset;
+        }
+        .paragraphe.line-purple {
+          display: inline;
+          box-shadow: rgba(107, 72, 244, 0.3) 0px -0.75rem 0px inset;
+        }
       }
     }
   }

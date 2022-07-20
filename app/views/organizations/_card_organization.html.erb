@@ -1,0 +1,29 @@
+
+<div class="card-organization">
+  <div class="card-organization-name">
+    <p class="paragraphe-bold"><%= organization.name %>, <span class="paragraphe"><%= organization.city %></span></p>
+    <% if organization.logo.attached? %>
+      <div class="flex-div">
+        <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+      </div>
+    <% end %>
+  </div>
+  <% if organization.score_parity == 0 %>
+    <div class="weather-bubble orange">
+      <%= image_tag "emojis/RAIN-EMOJI.svg", alt: "emoji pluvieux", class: "emoji-weather" %>
+    </div>
+  <% elsif organization.score_parity == 1 %>
+    <div class="weather-bubble half-half">
+      <%= image_tag "emojis/CLOUD-EMOJI.svg", alt: "emoji nuageux", class: "emoji-weather" %>
+    </div>
+  <% elsif organization.score_parity == 2 %>
+    <div class="weather-bubble purple">
+      <%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "emoji-weather" %>
+    </div>
+  <% end %>
+  <div class="card-organization-numbers">
+    <p class="paragraphe line-orange">dirigeante : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
+    <p class="paragraphe line-purple">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
+  </div>
+</div>
+
