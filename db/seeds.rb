@@ -38,9 +38,9 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   end
 
   logo = File.join(Rails.root, 'db', "logoNB/#{i}NB.png").to_s
-  # p orga.logo
   i += 1
-  orga.logo.attach(io: File.open(logo), filename: "logo.png", content_type: "image/png")
+  if File.exists?(logo)
+    orga.logo.attach(io: File.open(logo), filename: "logo.png", content_type: "image/png")
+  end
   orga.save
-  p "I AM SAVED"
 end
