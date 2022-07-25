@@ -1,6 +1,6 @@
 .chiffres-inegalites {
   background-color: $purple;
-  padding: 3% 10%;
+  padding: 3% 7%;
   .title-marianne {
     text-align: left;
     font-family:'Marianne-Bold';
@@ -17,6 +17,25 @@
       justify-content: space-between;
       align-items: center;
       color: white !important;
+    }
+    #carousel-chiffres-inegalites {
+      .carousel-item .carousel-item-sub-div {
+        display: flex;
+        justify-content: space-around;
+      }
+      .carousel-control-next,.carousel-control-prev {
+        opacity: 1;
+        position: absolute;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .carousel-control-prev {
+        left: -7%;
+      }
+      .carousel-control-next {
+        right: -7%;
+      }
     }
   }
 }

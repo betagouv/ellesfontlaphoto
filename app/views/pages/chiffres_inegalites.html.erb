@@ -6,10 +6,25 @@
       <a class="btn-black" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
     </div>
     <div class="sub-div-chiffres-inegalites">
-      <div class="flex-div">
-        <% for i in 1..6 do %>
-          <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
-        <% end %>
+      <div id="carousel-chiffres-inegalites" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <% i = 1 %>
+          <% while i < 6 do %>
+            <div class="carousel-item <%= "active" if i == 1  %>">
+              <div class="carousel-item-sub-div">
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+              </div>
+            </div>
+            <% i += 2 %>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="prev">
+          <%= image_tag "arrow-carousel-chiffres-left.svg", alt: "flèche carousel droite" %>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="next">
+          <%= image_tag "arrow-carousel-chiffres-right.svg", alt: "flèche carousel droite" %>
+        </button>
       </div>
     </div>
   </div>
@@ -28,4 +43,3 @@
   </div>
   <a href="/organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
 </div>
-
