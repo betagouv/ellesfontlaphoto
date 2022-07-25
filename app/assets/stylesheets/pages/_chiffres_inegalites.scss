@@ -16,6 +16,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: white !important;
     }
   }
 }
@@ -24,10 +25,11 @@
   background-color: $black;
   padding: 3% 10%;
   .arrow-back {
-    position: relative;
+    position: absolute;
+    top: 25%;
   }
   .div-title-index-parite {
-    margin: 0 auto;
+    margin: 3% auto 5%;
     width: 50%;
     .title-marianne,.spectral-title,.paragraphe {
       color: $white;

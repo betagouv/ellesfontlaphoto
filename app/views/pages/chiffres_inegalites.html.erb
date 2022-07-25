@@ -3,12 +3,13 @@
     <div class="sub-div-chiffres-inegalites">
       <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
       <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
-      <div class="btn-black"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</div>
+      <a class="btn-black" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
     </div>
     <div class="sub-div-chiffres-inegalites">
       <div class="flex-div">
-        <%= image_tag "carousel-chiffres/carousel-chiffres-1.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
-        <%= image_tag "carousel-chiffres/carousel-chiffres-2.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites"%>
+        <% for i in 1..6 do %>
+          <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+        <% end %>
       </div>
     </div>
   </div>
