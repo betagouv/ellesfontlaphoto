@@ -80,15 +80,15 @@
       border-radius: 16px;
       padding: 7%;
       .card-organization-name {
-        height: 200px;
-
         .paragraphe-bold {
           margin-bottom: 0;
           text-align: center;
+          height: 60px;
         }
         .flex-div {
           justify-content: space-around;
           align-items: center;
+          margin: 20px 0;
           img {
             max-height: 80px;
             max-width: 100px;
