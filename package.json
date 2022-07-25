@@ -3,11 +3,13 @@
   "private": true,
   "dependencies": {
     "@gouvfr/dsfr": "^1.1.0",
+    "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
     "activeadmin_quill_editor": "blocknotes/activeadmin_quill_editor",
+    "bootstrap": "^5.2.0",
     "chart.js": "^3.7.0",
     "chartkick": "^4.1.1",
     "stimulus": "^3.0.1",

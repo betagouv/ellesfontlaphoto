@@ -1,11 +1,11 @@
 # AdminUser.create!(email: "admin@example.fr", password: "password")
-
 require "csv"
 filepath = File.join(Rails.root, 'db', 'organizations_data.csv')
 Organization.destroy_all
 
+i = 1
+
 CSV.foreach(filepath, headers: :first_row) do |row|
-  p row["organization_type"]
   orga = Organization.new(
     organization_type: row["organization_type"],
     name: row["name"],
@@ -36,5 +36,11 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   else
     orga.score_parity = 0
   end
+
+  logo = File.join(Rails.root, 'db', "logoNB/#{i}NB.png").to_s
+  # p orga.logo
+  i += 1
+  orga.logo.attach(io: File.open(logo), filename: "logo.png", content_type: "image/png")
   orga.save
+  p "I AM SAVED"
 end

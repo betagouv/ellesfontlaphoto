@@ -19,4 +19,8 @@ class PagesController < ApplicationController
     @contact = Contact.new
     @webinaires = Webinaire.where("page_rencontre = ?", true).order(:date)
   end
+
+  def chiffres_inegalites
+    @organizations = Organization.first(8)
+  end
 end

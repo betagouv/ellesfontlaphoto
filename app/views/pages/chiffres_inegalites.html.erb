@@ -1,0 +1,46 @@
+<div class="chiffres-inegalites">
+  <div class="flex-div">
+    <div class="sub-div-chiffres-inegalites">
+      <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
+      <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
+      <a class="btn-black" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
+    </div>
+    <div class="sub-div-chiffres-inegalites">
+      <div id="carousel-chiffres-inegalites" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <% i = 1 %>
+          <% while i < 6 do %>
+            <div class="carousel-item <%= "active" if i == 1  %>">
+              <div class="carousel-item-sub-div">
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i}.svg")}'", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i + 1}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i + 1}.svg")}'", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+              </div>
+            </div>
+            <% i += 2 %>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="prev">
+          <%= image_tag "arrow-carousel-chiffres-left.svg", alt: "flèche carousel droite" %>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="next">
+          <%= image_tag "arrow-carousel-chiffres-right.svg", alt: "flèche carousel droite" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div-index-parite">
+  <div class="div-title-index-parite">
+    <h1 class="title-marianne">Index parité : <span class="spectral-title"> structures et festivals photo</span></h1>
+    <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuit sur les données collectées par le ministère de la Culture dans le cadre de l'Observatoire 2022 de l'égalité dans la culture et la communication.</p>
+  </div>
+  <a href="organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
+  <div class="cards-organizations">
+    <% @organizations.each do |organization| %>
+      <%= render "organizations/card_organization", organization: organization %>
+    <% end %>
+  </div>
+  <a href="/organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
+  <p class="paragraphe-small">Source : Ministère de la Culture, Secrétariat général, Deps-doc/dgca, Département de la photographie, 2022. Dernières données communiquées pour la période 2020-2021 (31/12/2021 pour les directions de structures de festivals, année 2020 pour le nombre de femmes exposées dans les structures et année 2021 pour le nombre de femmes exposées dans les festivals)</p>
+</div>
