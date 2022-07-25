@@ -6,11 +6,11 @@
       <% end %>
       <div class="card-index-conseils-articles-div">
         <p class="main-bold-paragraphe mt0 mb20"><%= conseil.title %></p>
-        <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-extra-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+        <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-extra-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
         <% if conseil.objectif.present? %>
-          <p class="paragraphe card mb0"><span class="paragraphe-bold card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
+          <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
         <% end %>
-        <div class="paragraphe card mb0 card-intro"><%= conseil.introduction.html_safe %></div>
+        <div class="paragraphe p-card mb0 card-intro"><%= conseil.introduction.html_safe %></div>
       </div>
       <div class="pastille-conseils pink">
         <%= image_tag "icone-fiche.svg", alt: "icône play noir" %> fiche
@@ -39,9 +39,9 @@
           </p>
           <p class="main-bold-paragraphe mt0"><%= conseil.title %> | <span class="spectral-italic">avec <%= conseil.protagoniste %></span></p>
           <% if conseil.subtitle == "" %>
-            <div class="paragraphe card mb0 card-intro"><%= conseil.objectif %></div>
+            <div class="paragraphe p-card mb0 card-intro"><%= conseil.objectif %></div>
           <% else %>
-            <div class="paragraphe card mb0 card-intro"><%= conseil.subtitle %></div>
+            <div class="paragraphe p-card mb0 card-intro"><%= conseil.subtitle %></div>
           <% end %>
         </div>
         <div class="pastille-conseils green">
@@ -76,7 +76,7 @@
       <div class="card-index-conseils-videos-div webinaire">
         <div class="cards-videos-info">
           <p class="main-bold-paragraphe mb20"><%= conseil.titre %> <span class="spectral-italic">avec <%= conseil.participant %></span></p>
-          <div class="paragraphe card mb0 card-intro-webinaire"><%= conseil.description %></div>
+          <div class="paragraphe p-card mb0 card-intro-webinaire"><%= conseil.description %></div>
           <div style="float: right; margin-top: -100px;"></div>
         </div>
         <% if conseil.type_list.include?("webinaire") %>

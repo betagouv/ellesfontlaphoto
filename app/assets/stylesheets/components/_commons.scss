@@ -61,10 +61,11 @@ a {
   text-decoration: none !important;
 }
 
-.btn {
+.btn-flex {
   display: flex;
   width: -webkit-fill-available;
   width: fit-content;
+  align-items: center;
 }
 
 .btn-black {
@@ -146,7 +147,7 @@ p {
   padding: 11px 24px;
 }
 
-.btn-orange {
+.btn-orange-home {
   background-color: $orange !important;
   border-radius: 40px;
   color: $black !important;
@@ -189,7 +190,7 @@ p {
   color: $black;
 }
 
-.paragraphe.card {
+.paragraphe.p-card {
   font-size: 14px;
   line-height: 18px;
   p {
@@ -214,7 +215,7 @@ p {
   color: $black;
 }
 
-.paragraphe-bold.card {
+.paragraphe-bold.p-card {
   font-size: 14px;
 }
 
@@ -351,7 +352,7 @@ a {
   }
 }
 
-.link-blue.card {
+.link-blue.p-card {
   font-size: 14px !important;
   ul li a {
     font-size: 14px !important;

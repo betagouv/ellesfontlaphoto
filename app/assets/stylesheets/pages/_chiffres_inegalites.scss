@@ -12,10 +12,10 @@
     max-width: 45%;
     justify-content: space-between;
     .btn-black {
-      width: 150px;
+      width: 183px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      align-items: center !important;
+      justify-content: space-around;
       color: white !important;
     }
     #carousel-chiffres-inegalites {
@@ -47,6 +47,12 @@
     position: absolute;
     top: 25%;
   }
+  .paragraphe-small {
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 10% auto 5%;
+  }
   .div-title-index-parite {
     margin: 3% auto 5%;
     width: 50%;
@@ -56,11 +62,11 @@
     }
   }
   .btn-purple {
-    width: 220px;
+    width: 288px;
     margin: 3% auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     &:hover {
       background-color: #8F73FF !important;
     }
