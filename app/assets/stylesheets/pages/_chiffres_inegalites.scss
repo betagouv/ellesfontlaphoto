@@ -1,0 +1,176 @@
+.chiffres-inegalites {
+  background-color: $purple;
+  padding: 3% 7%;
+  .title-marianne {
+    text-align: left;
+    font-family:'Marianne-Bold';
+  }
+  .flex-div {
+    justify-content: space-between;
+  }
+  .sub-div-chiffres-inegalites {
+    max-width: 45%;
+    justify-content: space-between;
+    .btn-black {
+      width: 183px;
+      display: flex;
+      align-items: center !important;
+      justify-content: space-around;
+      color: white !important;
+    }
+    #carousel-chiffres-inegalites {
+      .carousel-item .carousel-item-sub-div {
+        display: flex;
+        justify-content: space-around;
+      }
+      .carousel-control-next,.carousel-control-prev {
+        opacity: 1;
+        position: absolute;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .carousel-control-prev {
+        left: -7%;
+      }
+      .carousel-control-next {
+        right: -7%;
+      }
+    }
+  }
+}
+
+.div-index-parite {
+  background-color: $black;
+  padding: 3% 10%;
+  .arrow-back {
+    position: absolute;
+    top: 25%;
+  }
+  .paragraphe-small {
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 10% auto 5%;
+  }
+  .div-title-index-parite {
+    margin: 3% auto 5%;
+    width: 50%;
+    .title-marianne,.spectral-title,.paragraphe {
+      color: $white;
+      text-align: center;
+    }
+  }
+  .btn-purple {
+    width: 288px;
+    margin: 3% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &:hover {
+      background-color: #8F73FF !important;
+    }
+  }
+  .cards-organizations {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+    .card-organization {
+      background-color: $white;
+      border-radius: 16px;
+      padding: 7%;
+      .card-organization-name {
+        .paragraphe-bold {
+          margin-bottom: 0;
+          text-align: center;
+          height: 60px;
+        }
+        .flex-div {
+          justify-content: space-around;
+          align-items: center;
+          margin: 20px 0;
+          img {
+            max-height: 80px;
+            max-width: 100px;
+            padding: 20px;
+          }
+        }
+      }
+      .weather-bubble {
+        border-radius: 50%;
+        width: 84px;
+        height: 84px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .emoji-weather {
+          max-height: 80%;
+          max-width: 80%;
+        }
+      }
+      .weather-bubble.orange {
+        background-color: $dark-orange;
+      }
+      .weather-bubble.purple {
+        background-color: $filter-purple;
+      }
+      .weather-bubble.half-half {
+        background: linear-gradient(90deg, $dark-orange 50%, $filter-purple 50%);
+      }
+      .card-organization-numbers {
+        text-align: center;
+        padding: 10% 0 20% 0;
+        .paragraphe {
+          white-space: pre-wrap;
+          padding: 0;
+          margin: 0;
+        }
+        .paragraphe.line-orange {
+          display: inline;
+          box-shadow: rgba(244, 88, 0, 0.3) 0px -0.75rem 0px inset;
+        }
+        .paragraphe.line-purple {
+          display: inline;
+          box-shadow: rgba(107, 72, 244, 0.3) 0px -0.75rem 0px inset;
+        }
+      }
+    }
+  }
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-organizations {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-organizations {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-organizations {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-organizations {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-organizations {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

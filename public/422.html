@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>L'action a été rejetée.</title>
+  <title>Cette page n'existe pas</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
@@ -34,6 +34,13 @@
       font-size: 35px;
       text-align: center;
     }
+    .main-error {
+      background-color: #BCABFF;
+      margin: 0;
+    }
+    .div-error {
+      padding: 10% 17%;
+    }
     .emojis-eflc-small {
       width: 18px;
       margin-right: 3px;
@@ -42,13 +49,6 @@
     .emojis-eflc-medium {
       width: 22px;
       margin-right: 3px;
-    }
-    .main-error {
-      background-color: #BCABFF;
-      margin: 0;
-    }
-    .div-error {
-      padding: 10% 17%;
     }
     .subtitle-error {
       font-family: Spectral;
@@ -83,7 +83,7 @@
       z-index: 11111;
       position: sticky;
       top: 0;
-      height: 60px;
+      height: 59px;
       display:flex;
       justify-content: space-between;
       align-items: center;
@@ -97,18 +97,10 @@
       margin-bottom: 0;
     }
     .manifeste-link-menu:hover {
-      border-radius: 40px;
-      display: table !important;
-      background-color: #E5E5E5;
-      line-height: 6px;
+      box-shadow: #161616 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
     .link-menu.conseils-link-menu:hover {
-      border-radius: 40px;
-      display: table !important;
-      margin-top: 0.7rem;
-      padding: 5px 15px 7px;
-      background-color: #F5E6E6;
-      box-shadow: none;
+      box-shadow: #FFB648 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
     .link-menu {
       font-family: 'Marianne-Regular', sans-serif;
@@ -117,8 +109,6 @@
       font-size: 16px;
       line-height: 24px;
       opacity: 1;
-      white-space: nowrap;
-      border-radius: 40px;
       display: table !important;
       margin: 0 15px 0 15px;
       padding: 1.05rem 0 1.05rem 0;
@@ -142,20 +132,10 @@
       font-size: 18px;
     }
     .link-menu.helps-link-menu:hover {
-      border-radius: 40px;
-      display: table !important;
-      margin-top: 0.7rem;
-      padding: 5px 15px 7px;
-      background-color: #F2EEFF;
-      box-shadow: none;
+      box-shadow: #BCABFF 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
     .conseils-link-menu:hover {
-      border-radius: 40px;
-      display: table !important;
-      margin-top: 0.7rem;
-      padding: 5px 15px 7px;
-      background-color: #F5E6E6;
-      box-shadow: none;
+      box-shadow: #FFB648 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
     .header_brand {
       max-width:20%;
@@ -171,14 +151,6 @@
       padding-top: 8px;
       color: black;
       text-decoration: none;
-    }
-    .link-menu.helps-link-menu:hover {
-      border-radius: 40px;
-      display: table !important;
-      margin-top: 0.7rem;
-      padding: 5px 15px 7px;
-      background-color: #F2EEFF;
-      box-shadow: none;
     }
     .header_logo {
       text-decoration: none;
@@ -389,8 +361,12 @@
           <li>
             <a class="link-menu conseils-link-menu" href="/conseils"><span class="links-icones"><img src="images/poignee-main.png" class="emojis-eflc-medium" alt="émoji conseils"></span> Conseils et témoignages</a>
           </li>
+          <li>
+            <a class="link-menu conseils-link-menu" href="/rencontre"><span class="links-icones"><img src="images/femmes.png" class="emojis-eflc-medium" alt="émoji conseils" style="width: 52px;"></span> Conseils et témoignages</a>
+          </li>
         </ul>
       </div>
+      <a class="link-menu conseils-link-menu" href="/infographie">Chiffres inégalités</a>
       <a class="link-menu manifeste-link-menu" href="/a_propos">À propos</a>
     </div>
   </header>
@@ -405,7 +381,7 @@
     </ul>
   </header>
   <div class="div-error">
-    <p class="subtitle-error">Page 422</p>
+    <p class="subtitle-error">Page 402</p>
     <p class="title-error">Tout comme les femmes dans l'histoire de l'art, cette page a disparu !</p>
     <p class="subtitle-error">Nous allons tout faire pour résoudre ces problèmes mais en attendant nous vous invitons à retourner à l'accueil.</p>
   </div>

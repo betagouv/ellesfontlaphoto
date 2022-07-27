@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_200254) do
+ActiveRecord::Schema.define(version: 2022_07_13_135249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -231,6 +231,21 @@ ActiveRecord::Schema.define(version: 2022_06_14_200254) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["help_id"], name: "index_notification_helps_on_help_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "organization_type"
+    t.string "name"
+    t.string "city"
+    t.integer "nb_women_dir"
+    t.integer "total_nb_dir"
+    t.boolean "dir_parity"
+    t.integer "nb_women_expos"
+    t.integer "total_nb_expos"
+    t.boolean "expos_parity"
+    t.integer "score_parity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|

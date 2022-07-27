@@ -138,15 +138,15 @@
   <% end %>
   <% if @help.admin_attachment.present? || @help.other_attachment.present? || @help.artistic_attachment.present? %>
     <hr class="bhl">
-    <div class="block-fiche-aide flex-div">
-      <div class="flex-div-div">
+    <div class="block-fiche-aide block-fiche-aide-piece">
+      <div>
         <p class="subtitle">Pièces à fournir</p>
         <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
         <%= @help.admin_attachment.html_safe %>
         <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
         <%= @help.artistic_attachment.html_safe %>
       </div>
-      <div class="flex-div-div">
+      <div>
         <% if @help.other_attachment.present? %>
           <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", alt:"émoji Pièces spécifiques", class: "emojis-eflc-small" %> Pièces spécifiques</p>
           <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>

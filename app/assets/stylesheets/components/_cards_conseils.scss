@@ -8,7 +8,7 @@
 
 .card-index-conseils-articles.border,
 .card-index-conseils-videos.border{
-  border: solid 1px $orange;
+  border: solid 1px $orange !important;
 }
 
 .card-index-conseils-articles,
@@ -54,7 +54,7 @@
       }
 
       .card-index-conseils-videos-div.webinaire {
-        transform: translateY(-130px);
+        transform: translateY(-180px);
       }
 
       div .image-conseil,
@@ -106,10 +106,11 @@
           opacity: 1;
           max-height: 145px;
           overflow: hidden;
-          transition: transform .9s ease-out;
-          -webkit-transition: .9s ease-out;
-          -moz-transition: .9s ease-out;
-          -o-transition: .9s ease-out;
+          transition: all 1s;
+          transition: transform 1s ease-in;
+          -webkit-transition: 1s ease-in;
+          -moz-transition: 1s ease-in;
+          -o-transition: 1s ease-in;
         }
 
         .div-img-conseils-videos {

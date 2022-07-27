@@ -102,10 +102,11 @@
   }
   .second-block-div {
     width: 50%;
-    .btn-orange {
+    .btn-orange-home {
       width: 200px;
       margin: 0 auto;
       background-color: $orange;
+      align-items: center;
       &:hover{
         background-color: $hover-orange !important;
       }
@@ -217,13 +218,13 @@
   gap: 20px;
   padding: 0 7% 5% 7%;
   .contact-div {
-    width: 40%;
+    width: 50%;
     padding: 3% 5% 7%;
     border: 1px solid $orange;
     border-radius: 16px;
     .div-btn-orange-home {
       display: flex;
-      .btn-orange {
+      .btn-orange-home {
         margin-left: 20px;
         &:hover {
           opacity: 80%;
@@ -232,7 +233,11 @@
     }
     .description-contact-div {
       height: 420px;
-      .subtitle,.subtitle-spectral {
+      .subtitle {
+    font-size: 28px;
+      line-height: 38px
+    }
+      .subtitle-spectral {
         font-size: 34px;
         line-height: 38px;
       }
@@ -264,7 +269,7 @@
   .btn-insta-home {
     display: flex;
     justify-content: space-around;
-    width: 100px;
+    width: 130px;
   }
   .contact-div.purple {
     border: 1px solid $purple;
@@ -350,7 +355,7 @@
           }
         }
         .card-index-conseils-articles,.card-index-conseils-videos {
-          min-width: 21%;
+          min-width: 29%;
           padding: 2%;
           margin-right: 20px;
           .arrow {
@@ -388,7 +393,7 @@
       .div-btn-orange-home {
         display: block;
       }
-      .btn-orange,.btn-contact {
+      .btn-orange-home,.btn-contact {
         white-space: nowrap;
         display: flex;
         margin: 0;
@@ -452,7 +457,7 @@
         font-size: 20px;
         margin-bottom: 40px;
       }
-      .btn-orange {
+      .btn-orange-home {
         margin-bottom: 15%;
       }
     }
@@ -603,13 +608,13 @@
         }
       }
 
-      .div-btn-orange-home .btn-orange {
+      .div-btn-orange-home .btn-orange-home {
         margin: 20px auto;
       }
       .d-flex {
         display: block;
       }
-      .btn-contact,.btn-orange {
+      .btn-contact,.btn-orange-home {
         margin: 0 auto 20px auto;
         padding: 4% 8% 5% 8%;
       }
