@@ -18,6 +18,10 @@
       justify-content: space-around;
       color: white !important;
     }
+    .scrollable-carousel {
+      display: none;
+      overflow-x: scroll;
+    }
     #carousel-chiffres-inegalites {
       .carousel-item .carousel-item-sub-div {
         display: flex;
@@ -140,13 +144,42 @@
 }
 
 @media only screen and (max-width: 1250px) {
+  .chiffres-inegalites {
+
+    .flex-div {
+      display: block;
+    }
+    .sub-div-chiffres-inegalites {
+      min-width: 100%;
+      margin-bottom: 7%;
+      .title-marianne, .paragraphe {
+        text-align: center;
+        margin: 0 auto;
+      }
+      .btn-black {
+        margin: 20px auto;
+      }
+      #carousel-chiffres-inegalites {
+       display: none;
+     }
+
+     .scrollable-carousel {
+       display: flex;
+       gap: 15px
+     }
+    }
+  }
   .div-index-parite {
+    .div-title-index-parite {
+      width: 80%;
+    }
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
       .card-organization .card-organization-name {
         height: 150px;
         .flex-div img {
           padding: 5px;
+          max-height: 60px;
         }
       }
     }
