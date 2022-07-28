@@ -148,7 +148,10 @@
 
 @media only screen and (max-width: 1250px) {
   .chiffres-inegalites {
-
+    padding: 5% 0;
+    .title-div-chiffres-inegalites {
+      padding: 0% 4%;
+    }
     .flex-div {
       display: block;
     }
@@ -168,7 +171,14 @@
 
      .scrollable-carousel {
        display: flex;
-       gap: 15px
+       gap: 15px;
+      .img-carousel-chiffres-inegalites:first-child {
+        margin-left: 40px;
+      }
+
+      .img-carousel-chiffres-inegalites:last-child {
+        margin-right: 40px;
+      }
      }
     }
   }
@@ -190,9 +200,61 @@
 }
 
 @media only screen and (max-width: 750px) {
+  .chiffres-inegalites {
+    padding: 3% 0;
+    .sub-div-chiffres-inegalites .scrollable-carousel {
+      .img-carousel-chiffres-inegalites:first-child {
+        margin-left: 20px;
+      }
+
+      .img-carousel-chiffres-inegalites:last-child {
+        margin-right: 20px;
+      }
+    }
+  }
   .div-index-parite {
+    padding: 3%;
+    .div-title-index-parite {
+      .title-marianne {
+        font-size: 32px;
+        .spectral-title {
+          font-size: 36px;
+          line-height: 32px;
+        }
+        .paragraphe {
+          line-height: 24px;
+        }
+      }
+    }
+    .btn-purple {
+      margin: 10% auto;
+    }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
+      .card-organization {
+        .weather-bubble {
+          width: 40px;
+          height: 40px;
+        }
+        .card-organization-numbers {
+          padding: 5% 0;
+          .paragraphe {
+            font-size: 9px;
+            line-height: 10px;
+          }
+        }
+        .card-organization-name {
+          height: 120px;
+          .paragraphe-bold {
+            font-size: 11px;
+            height: 40px;
+          }
+          .flex-div img {
+            padding: 5px;
+            max-height: 50px;
+          }
+        }
+      }
     }
   }
 }
