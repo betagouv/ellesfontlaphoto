@@ -30,25 +30,26 @@ require "open-uri"
   "Saint-Pierre-et-Miquelon": "Saint-Pierre-et-Miquelon"
 }
 
-url = "https://www.culture.gouv.fr/Aides-demarches/Appels-a-projets"
+url = "https://www.culture.gouv.fr/api/appel-a-projet"
 appel_projet_serialized = URI.open(url).read
 appel_projet = JSON.parse(appel_projet_serialized)
+p appel_projet
 
-appel_projet["results"].each do |appel|
-  if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
-    new_help = Help.new(
-      visible: false,
-      title: appel["title"],
-      description_longue: appel["body"],
-      candidate_url: appel["url"],
-      residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
-      start_date: Date.parse(appel["creationDate"]),
-      end_date: Date.parse(appel["deadline"]),
-      description: "À définir",
-      help_amount: "À définir",
-    )
-    HelpApi.create(api_id: appel["id"])
-    new_help.save
-    new_candidature_date = CandidatureDate.new(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
-  end
-end
+# appel_projet["results"].each do |appel|
+#   if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
+#     new_help = Help.new(
+#       visible: false,
+#       title: appel["title"],
+#       description_longue: appel["body"],
+#       candidate_url: appel["url"],
+#       residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
+#       start_date: Date.parse(appel["creationDate"]),
+#       end_date: Date.parse(appel["deadline"]),
+#       description: "À définir",
+#       help_amount: "À définir",
+#     )
+#     HelpApi.create(api_id: appel["id"])
+#     new_help.save
+#     new_candidature_date = CandidatureDate.new(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
+#   end
+# end
