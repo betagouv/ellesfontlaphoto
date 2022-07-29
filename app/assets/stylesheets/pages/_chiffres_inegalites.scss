@@ -18,10 +18,17 @@
       justify-content: space-around;
       color: white !important;
     }
+    .scrollable-carousel {
+      display: none;
+      overflow-x: scroll;
+    }
     #carousel-chiffres-inegalites {
       .carousel-item .carousel-item-sub-div {
         display: flex;
         justify-content: space-around;
+        .img-carousel-chiffres-inegalites {
+          max-width: 45%;
+        }
       }
       .carousel-control-next,.carousel-control-prev {
         opacity: 1;
@@ -139,38 +146,119 @@
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  .chiffres-inegalites {
+    padding: 5% 0;
+    .title-div-chiffres-inegalites {
+      padding: 0% 4%;
+    }
+    .flex-div {
+      display: block;
+    }
+    .sub-div-chiffres-inegalites {
+      min-width: 100%;
+      margin-bottom: 7%;
+      .title-marianne, .paragraphe {
+        text-align: center;
+        margin: 0 auto;
+      }
+      .btn-black {
+        margin: 20px auto;
+      }
+      #carousel-chiffres-inegalites {
+       display: none;
+     }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards-organizations {
-    grid-template-columns: 1fr;
+     .scrollable-carousel {
+       display: flex;
+       gap: 15px;
+      .img-carousel-chiffres-inegalites:first-child {
+        margin-left: 40px;
+      }
+
+      .img-carousel-chiffres-inegalites:last-child {
+        margin-right: 40px;
+      }
+     }
+    }
+  }
+  .div-index-parite {
+    .div-title-index-parite {
+      width: 80%;
+    }
+    .cards-organizations {
+      grid-template-columns: 1fr 1fr 1fr;
+      .card-organization .card-organization-name {
+        height: 150px;
+        .flex-div img {
+          padding: 5px;
+          max-height: 60px;
+        }
+      }
+    }
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards-organizations {
-    grid-template-columns: 1fr;
+@media only screen and (max-width: 750px) {
+  .chiffres-inegalites {
+    padding: 3% 0;
+    .sub-div-chiffres-inegalites .scrollable-carousel {
+      .img-carousel-chiffres-inegalites:first-child {
+        margin-left: 20px;
+      }
+
+      .img-carousel-chiffres-inegalites:last-child {
+        margin-right: 20px;
+      }
+    }
+  }
+  .div-index-parite {
+    padding: 3%;
+    .div-title-index-parite {
+      .title-marianne {
+        font-size: 32px;
+        .spectral-title {
+          font-size: 36px;
+          line-height: 32px;
+        }
+        .paragraphe {
+          line-height: 24px;
+        }
+      }
+    }
+    .btn-purple {
+      margin: 10% auto;
+    }
+    .cards-organizations {
+      grid-template-columns: 1fr 1fr;
+      .card-organization {
+        .weather-bubble {
+          width: 40px;
+          height: 40px;
+        }
+        .card-organization-numbers {
+          padding: 5% 0;
+          .paragraphe {
+            font-size: 9px;
+            line-height: 10px;
+          }
+        }
+        .card-organization-name {
+          height: 120px;
+          .paragraphe-bold {
+            font-size: 11px;
+            height: 40px;
+          }
+          .flex-div img {
+            padding: 5px;
+            max-height: 50px;
+          }
+        }
+      }
+    }
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards-organizations {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+@media only screen and (min-width: 1600px) {
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards-organizations {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards-organizations {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }

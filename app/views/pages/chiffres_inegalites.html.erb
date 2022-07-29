@@ -1,6 +1,6 @@
 <div class="chiffres-inegalites">
   <div class="flex-div">
-    <div class="sub-div-chiffres-inegalites">
+    <div class="sub-div-chiffres-inegalites title-div-chiffres-inegalites">
       <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
       <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
       <a class="btn-black" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
@@ -12,8 +12,8 @@
           <% while i < 6 do %>
             <div class="carousel-item <%= "active" if i == 1  %>">
               <div class="carousel-item-sub-div">
-              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i}.svg")}'", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
-              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i + 1}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i + 1}.svg")}'", alt: "chiffres inegalités", class: "sub-div-chiffres-inegalites" %>
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i + 1}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i + 1}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
               </div>
             </div>
             <% i += 2 %>
@@ -25,6 +25,13 @@
         <button class="carousel-control-next" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="next">
           <%= image_tag "arrow-carousel-chiffres-right.svg", alt: "flèche carousel droite" %>
         </button>
+      </div>
+      <div class="scrollable-carousel">
+      <% i = 1 %>
+      <% while i < 6 do %>
+        <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+        <% i += 1 %>
+      <% end %>
       </div>
     </div>
   </div>
