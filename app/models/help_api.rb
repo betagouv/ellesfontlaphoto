@@ -1,0 +1,2 @@
+class HelpApi < ApplicationRecord
+end
