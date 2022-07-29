@@ -186,6 +186,9 @@
     .div-title-index-parite {
       width: 80%;
     }
+    .arrow-back {
+      display: none;
+    }
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
       .card-organization .card-organization-name {
