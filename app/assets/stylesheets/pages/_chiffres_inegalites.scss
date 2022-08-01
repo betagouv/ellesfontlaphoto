@@ -4,6 +4,7 @@
   .title-marianne {
     text-align: left;
     font-family:'Marianne-Bold';
+    margin-bottom: 30px;
   }
   .flex-div {
     justify-content: space-between;
@@ -87,6 +88,7 @@
       border-radius: 16px;
       padding: 7%;
       .card-organization-name {
+        height: 160px;
         .paragraphe-bold {
           margin-bottom: 0;
           text-align: center;
