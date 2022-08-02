@@ -27,7 +27,15 @@
           </div>
         </div>
       <% end %>
-      <% helps.each do |help| %>
+      <% helps.each_with_index do |help, index| %>
+        <% if index == 4 %>
+          <div class="card-index-helps card-ajout-aides">
+            <p class="main-bold-paragraphe lh35">Une aide pour les femmes photographes ? Soumettez-les !</p>
+            <div class="text-align-center">
+              <a href="/ajout_aide" class="button-ajout-aide">Recensez une aide</a>
+            </div>
+          </div>
+        <% end %>
         <%= render "helps_cards", help: help %>
       <% end %>
     </div>

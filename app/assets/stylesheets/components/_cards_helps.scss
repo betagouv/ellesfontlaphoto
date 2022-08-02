@@ -154,6 +154,27 @@
   }
 }
 
+.card-index-helps.card-ajout-aides {
+  background-color: $purple;
+  padding: 30px 30px 50px 30px;
+  .main-bold-paragraphe {
+    color: $black;
+    margin-bottom: 30px;
+  }
+  .button-ajout-aide {
+    margin: 0 auto !important;
+    background-color: $white;
+    padding: 11px 19.5px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: $black  !important;
+    white-space: nowrap;
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
+
 
 @media only screen and (max-width: 1250px) {
   .cards .card-index a {

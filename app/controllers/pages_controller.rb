@@ -23,4 +23,9 @@ class PagesController < ApplicationController
   def chiffres_inegalites
     @organizations = Organization.first(8)
   end
+
+  def ajout_aide
+    @help = Help.new
+    @help.candidature_dates.build
+  end
 end
