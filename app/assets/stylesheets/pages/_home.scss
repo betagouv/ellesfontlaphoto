@@ -418,6 +418,7 @@
   }
 
   .first-block {
+    padding: 0 2% 5% 2%;
     .first-block-cards {
       padding: 0 5%;
       display: block;
@@ -449,6 +450,7 @@
 
   .second-block {
     display: block;
+    padding-bottom: 60px;
     .second-block-div {
       margin: 8% auto 0 auto;
       width: 80%;
@@ -553,6 +555,7 @@
           }
           .pastille-conseils {
             font-size: 11px;
+            white-space: nowrap;
             margin: 10px auto;
           }
         }
@@ -582,7 +585,7 @@
   .contact-block {
     display: block;
     .contact-div {
-      width: 80%;
+      width: 100%;
       margin-bottom: 20px;
       padding: 10%;
       .description-contact-div {
@@ -614,9 +617,12 @@
       .d-flex {
         display: block;
       }
-      .btn-contact,.btn-orange-home {
-        margin: 0 auto 20px auto;
-        padding: 4% 8% 5% 8%;
+      .btn-contact {
+        font-size: 14px;
+        .btn-orange-home {
+          margin: 0 auto 20px auto;
+          padding: 4% 4% 5% 4%;
+        }
       }
     }
   }
