@@ -1,0 +1,36 @@
+<div class="ajout_aide_page">
+  <div class="ajout_aide_title">
+    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Ajoutez une aide pour les femmes photographes ! </span></p>
+    <p class="paragraphe">Texte précisant que l’on est le ministère et sue l’on invite chaque structure à recenser une aide pour leur donner de la visibilité</p>
+  </div>
+  <div class="ajout-aide-form">
+    <%= simple_form_for(@help) do |f| %>
+      <%= f.input :title, label: "Nom de votre aide" %>
+      <%= f.input :description, label: "Description (si résidence, indiquer les dates de la résidence ici)" %>
+      <%= f.input :type, collection: Help::HELP_TYPE, label: "Type d’aide", as: :check_boxes %>
+      <%= f.input :type_photo, collection: Help::PHOTO_TYPE, label: "Type de photo" %>
+      <%= f.input :institution_name, label: "Nom de votre organisation" %>
+      <%= f.input :institution_url, label: "Lien vers votre organisation" %>
+      <%= f.input :contact_intitution_email, label: "Email public de votre organisation" %>
+      <%= f.input :permanent, label: "Cette aide est elle permanente ?" %>
+      <%= f.input :help_amount, label: "Montant de l’aide" %>
+      <%= f.input :residence_condition, label: "Conditions de résidence" %>
+      <%= f.input :general_condition, label: "Conditions générales" %>
+      <%= f.input :specific_condition, label: "Conditions spécifiques" %>
+      <%= f.input :residence_time, label: "Durée de la résidence (si résidence)" %>
+      <%= f.simple_fields_for :candidature_dates do |fa| %>
+        <%= fa.input :start_date, as: :date, html5: true %>
+        <%= fa.input :end_date, as: :date, html5: true %>
+      <% end %>
+      <%= f.input :admin_attachment, label: "Pièces jointes administratives" %>
+      <%= f.input :artistic_attachment, label: "Pièces jointes artistiques" %>
+      <%= f.input :candidate_url, label: "Url de candidature" %>
+      <%= f.input :selection, label: "Processus de sélection" %>
+      <%= f.input :parentality, label: "Accueille les familles (si résidence)" %>
+      <%= f.input :accessibility, label: "Accessible aux personnes à mobilité réduite (si résidence)" %>
+      <div class="btn-submit">
+        <%= f.submit "Soumettre" %>
+      </div>
+    <% end %>
+  </div>
+</div>

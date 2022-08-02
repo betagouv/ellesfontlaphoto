@@ -19,7 +19,6 @@ export default class extends Controller {
     console.log(scrollX)
     if (scrollX >= 1000) {
       this.buttonLeftTarget.style.display = "block"
-      console.log("la")
     }
     if (scrollX >= 3000) {
       this.buttonRightTarget.style.display = "none"
@@ -35,7 +34,6 @@ export default class extends Controller {
     });
     if (scrollX < 1000) {
       this.buttonLeftTarget.style.display = "none"
-      console.log("ici")
     }
   }
 }

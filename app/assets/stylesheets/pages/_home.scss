@@ -397,8 +397,8 @@
       .btn-orange-home,.btn-contact {
         white-space: nowrap;
         display: flex;
-        margin: 0;
         margin-bottom: 20px;
+        margin-left: 0 !important;
       }
       .d-flex {
         justify-content: space-around;
