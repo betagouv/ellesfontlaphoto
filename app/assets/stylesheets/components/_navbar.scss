@@ -293,9 +293,11 @@
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon {
-    height: 16px;
-    padding-right: 9px;
-    padding-left: 0;
+    height: 30px;
+    width: 38px;
+    margin-right: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon .navicon {
