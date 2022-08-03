@@ -61,4 +61,26 @@ class HelpsController < ApplicationController
     end
     @notation_helps = NotationHelp.new
   end
+
+  def new
+    @help = Help.new
+    @help.candidature_dates.build
+  end
+
+  def create
+    @help = Help.new(help_params)
+    @help.type_list = params["help"]["type_list"]
+    @help.type_photo_list = params["help"]["type_photo_list"]
+    if @help.save
+      redirect_to helps_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def help_params
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :candidature_dates_attributes => [:start_date, :end_date])
+  end
 end

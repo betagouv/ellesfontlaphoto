@@ -88,6 +88,7 @@ ActiveAdmin.register Help do
       row :old_laureats_case_url
       row :parentality
       row :accessibility
+      row :author_email
     end
   end
 
@@ -197,6 +198,7 @@ ActiveAdmin.register Help do
       f.input :contact_intitution_partenaire, as: :quill_editor, label: "Contact institution partenaires"
       f.input :issue_contact, label: "Contact problèmes"
       f.input :faq_url, label: "FAQ url"
+      f.input :author_email, label: "Email de l'auteur (Si l'aide est proposée)"
     end
     f.actions
   end

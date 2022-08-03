@@ -169,7 +169,7 @@
     .btn-filter {
       top: 80vh;
       z-index: 1;
-      width: 46px;
+      width: auto;
       position: fixed;
       display: block;
       left: 50%;
@@ -215,6 +215,7 @@
     position: relative;
     .btn-filter {
       top: 75%;
+      width: auto;
     }
   }
   .header-index {
@@ -239,7 +240,7 @@
   #main-index-helps,#main-index-conseils {
     .btn-filter {
       top: 77%;
-      width: 100px;
+      width: auto;
       padding: 15px 29px;
     }
   }
