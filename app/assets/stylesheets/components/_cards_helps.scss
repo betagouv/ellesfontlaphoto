@@ -247,9 +247,11 @@
         margin-bottom: 10px;
         text-align: left !important;
       }
-      .arrow {
-        margin-top: 8% !important;
-      }
+    }
+    .arrow {
+      margin: 8% 0 !important;
+      display: flex;
+      justify-content: end;
     }
   }
 }

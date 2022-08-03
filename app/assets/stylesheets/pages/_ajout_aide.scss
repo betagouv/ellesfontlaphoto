@@ -114,7 +114,7 @@
       }
     }
 
-    .help_type {
+    .help_type_list, .help_type_photo_list {
       display: grid;
       .form-check label {
         margin-left: 10px;
@@ -151,5 +151,34 @@
         -webkit-appearance: none;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .ajout_aide_page {
+    .ajout_aide_title {
+      width: 90%;
+      .paragraphe {
+        width: 90%;
+      }
+    }
+    #new_help {
+      width: 80%;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 750px) {
+  .ajout_aide_page {
+    .ajout_aide_title {
+      width: 90%;
+    }
+    .paragraphe {
+      width: 90%;
+    }
+  }
+  #new_help {
+    width: 90%;
   }
 }

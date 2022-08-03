@@ -15,10 +15,9 @@ Rails.application.routes.draw do
   get "rencontre", to: 'pages#rencontre'
   get "infographie", to: 'pages#infographie'
   get "chiffres_inegalites", to: 'pages#chiffres_inegalites'
-  get "ajout_aide", to: "pages#ajout_aide"
 
   resources :contacts, only: :create
-  resources :helps, only: [:show, :index] do
+  resources :helps, only: [:show, :index, :new, :create] do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end

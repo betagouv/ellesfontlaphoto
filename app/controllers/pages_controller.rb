@@ -24,8 +24,4 @@ class PagesController < ApplicationController
     @organizations = Organization.first(8)
   end
 
-  def ajout_aide
-    @help = Help.new
-    @help.candidature_dates.build
-  end
 end
