@@ -1,7 +1,7 @@
 
 <div class="card-organization">
   <div class="card-organization-name">
-    <p class="paragraphe-bold"><%= organization.name %>, <span class="paragraphe"><%= organization.city %></span></p>
+    <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
     <% if organization.logo.attached? %>
       <div class="flex-div">
         <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
@@ -22,8 +22,8 @@
     </div>
   <% end %>
   <div class="card-organization-numbers">
-    <p class="paragraphe line-orange">dirigeante : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
-    <p class="paragraphe line-purple">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
+    <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeante : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
+    <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
   </div>
 </div>
 
