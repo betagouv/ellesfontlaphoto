@@ -20,21 +20,21 @@
   <div class="main-index">
     <div class="cards cards-help" id="cards-anchor">
       <% if @helps.count > 5 %>
-        <div class="info-contenu-div-help">
+        <%# <div class="info-contenu-div-help">
           <p class="info-contenu-help lh35 main-bold-paragraphe text-align-center">Vous connaissez une autre aide ? Soumettez la, et contribuez à cette initiative !</p>
           <div class="text-align-center">
             <a href="/proposer_aide" class="button-contenu-help">Recensez une aide</a>
           </div>
-        </div>
+        </div> %>
       <% end %>
       <% helps.each_with_index do |help, index| %>
         <% if index == 4 %>
-          <div class="card-index-helps card-ajout-aides">
+          <%# <div class="card-index-helps card-ajout-aides">
             <p class="main-bold-paragraphe lh35">Une aide pour les femmes photographes ? Soumettez-les !</p>
             <div class="text-align-center">
-              <%= link_to "Recensez une aide", new_help_path, class: "button-ajout-aide" %>
-            </div>
-          </div>
+              <%#= link_to "Recensez une aide", new_help_path, class: "button-ajout-aide" %>
+            <%# </div>
+          </div> %>
         <% end %>
         <%= render "helps_cards", help: help %>
       <% end %>
