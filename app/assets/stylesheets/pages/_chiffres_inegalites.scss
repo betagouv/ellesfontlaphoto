@@ -67,6 +67,7 @@
     .title-marianne {
       line-height: 50px;
       margin-bottom: 30px;
+      width: 100%;
     }
     .title-marianne,.spectral-title,.paragraphe {
       color: $white;
@@ -74,8 +75,7 @@
     }
   }
   .btn-purple {
-    padding: 5px 7px 5px 5px;
-    width: 240px;
+    width: 288px;
     margin: 3% auto;
     display: flex;
     align-items: center;
@@ -95,16 +95,18 @@
       border-radius: 16px;
       padding: 7%;
       .card-organization-name {
-        min-height: 140px;
+        min-height: 120px;
         .paragraphe-bold {
           margin-bottom: 0;
           text-align: center;
           height: auto;
         }
         .flex-div {
+          display: flex;
           justify-content: space-around;
           align-items: center;
-          margin: 10px 0 0;
+          margin: 10px 0 15px;
+          min-height: 60px;
           img {
             max-height: 80px;
             max-width: 120px;
@@ -120,6 +122,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        white-space: nowrap;
         .emoji-weather {
           max-height: 80%;
           max-width: 80%;
