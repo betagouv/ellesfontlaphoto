@@ -20,25 +20,24 @@
       <!--   <div class="ajout_aide_title">
   <span class="subtitle-regular">Candidature </span>
   </div> -->
-      <%= f.input :general_condition, label: "Conditions principales" %>
-      <%= f.input :specific_condition, label: "Conditions spécifiques" %>
+      <%= f.input :general_condition, label: "Conditions de participation" %>
       <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence" %>
-      <%= f.input :permanent, label: "Cette aide est elle permanente ?" %>
+      <%= f.input :permanent, label: "Candidatures possibles toute l'année" %>
       <%= f.simple_fields_for :candidature_dates do |fa| %>
-        <%= fa.input :start_date, as: :date, html5: true %>
-        <%= fa.input :end_date, as: :date, html5: true %>
+        <%= fa.input :start_date, as: :date, html5: true, label: "Date de début de candidature" %>
+        <%= fa.input :end_date, as: :date, html5: true, label: "Date de fin de candidature" %>
       <% end %>
-      <%= f.input :admin_attachment, label: "Pièces jointes administratives" %>
-      <%= f.input :artistic_attachment, label: "Pièces jointes artistiques" %>
-      <%= f.input :candidate_url, label: "Url de candidature" %>
+      <%= f.input :admin_attachment, label: "Pièces administratives à fournir" %>
+      <%= f.input :artistic_attachment, label: "Pièces artistiques à fournir" %>
+      <%= f.input :candidate_url, label: "Lien de l'appel à candidatures" %>
       <%= f.input :selection, label: "Processus de sélection" %>
       <!--   <div class="ajout_aide_title">
   <span class="subtitle-regular">Votre organisation </span>
   </div> -->
       <%= f.input :institution_name, label: "Nom de votre organisation" %>
-      <%= f.input :institution_url, label: "Lien vers votre organisation" %>
+      <%= f.input :institution_url, label: "Site web de votre organisation" %>
       <%= f.input :contact_intitution_email, label: "Email public de votre organisation" %>
-      <%= f.input :author_email, label: "Votre email" %>
+      <%= f.input :author_email, label: "Votre email" %> 
       <div class="btn-submit">
         <%= f.submit "Soumettre" %>
       </div>
