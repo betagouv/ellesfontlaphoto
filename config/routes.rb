@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   get "chiffres_inegalites", to: 'pages#chiffres_inegalites'
 
   resources :contacts, only: :create
-  resources :helps, only: [:show, :index] do
-  # resources :helps, only: [:show, :index, :new, :create] do
+  resources :helps, only: [:show, :index, :new, :create] do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end

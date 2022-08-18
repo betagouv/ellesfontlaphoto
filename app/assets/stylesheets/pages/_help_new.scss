@@ -5,8 +5,9 @@
     text-align: center;
     .subtitle-spectral {
       margin: 5% 0 3% 0;
+      font-size: 44px;
       .subtitle-regular {
-        font-size: 28px;
+        font-size: 36px;
       }
     }
     .paragraphe {
@@ -14,6 +15,10 @@
       width: 50%;
       margin: 0 auto 5% auto;
     }
+  }
+  .subtitle-marianne {
+    margin-top: 10%;
+    text-align: left;
   }
   #new_help {
     width: 42%;
@@ -39,11 +44,10 @@
     }
 
     label, .col-form-label {
-      font-family: "Marianne", sans-serif;
+      font-family: 'Marianne-Regular', sans-serif;
       font-size: 14px;
       line-height: 20px;
       font-weight: 500;
-      letter-spacing: 1px;
     }
 
     abbr {
@@ -57,7 +61,7 @@
     select {
       border: none;
       border-bottom: 1px solid $black;
-      font-family: "Marianne", sans-serif;
+      font-family: 'Marianne-Regular', sans-serif;
       display: block;
       box-sizing: border-box;
       width: 100%;
@@ -71,15 +75,23 @@
       vertical-align: middle;
       border-radius: 0;
     }
+    select.select {
+      background-image: url("chevron.svg");
+      background-repeat: no-repeat;
+      background-position: right 3% bottom 45%;
+    }
 
     input[type=checkbox] {
-      border-radius: 0;
+      border-radius: 4px;
       background-color: #F0F0F0;
       border: solid 1px #000;
       width: 25px;
       height: 25px;
       &:checked {
-         background-image: url("validate-black.svg");
+        background-color: $purple-blue;
+         background-image: url("validate-white.svg");
+         background-size: 60%;
+         border: none;
       }
     }
 
@@ -125,7 +137,7 @@
       border: none;
       border-bottom: 1px solid $black;
       min-height: 150px;
-      font-family: "Marianne", sans-serif;
+      font-family: 'Marianne-Regular', sans-serif;
       box-sizing: border-box;
       background-color: $very-light-grey;
       width: 100%;
@@ -135,6 +147,7 @@
     }
 
     .btn-submit {
+      margin-top: 5%;
       text-align: center;
       input[type=submit] {
         margin-top: 10px;

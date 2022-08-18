@@ -3,41 +3,35 @@
     <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Ajoutez une aide pour les femmes photographes ! </span></p>
     <p class="paragraphe">Renseignez ce formulaire pour ajouter tous types d'appels à candidatures (prix, bourses, résidences, etc.) à notre catalogue et gagner ainsi en visibilité. </p>
   </div>
-  <div class="ajout-aide-form">
-    <%= simple_form_for(@help) do |f| %>
+  <div class="ajout-aide-form" data-controller="new-help">
+    <%= simple_form_for @help do |f| %>
       <%= f.hidden_field :visible, value: 0 %>
-    <!--   <div class="ajout_aide_title">
-  <span class="subtitle-regular">Description de l'aide </span>
-  </div> -->
-      <%= f.input :title, label: "Nom de votre aide" %>
-      <%= f.input :description, label: "Description (si résidence, indiquer les dates de la résidence ici)" %>
-      <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type d’aide", as: :check_boxes %>
+      <p class="subtitle-marianne">Description de l'aide </p>
+      <%= f.input :title, label: "* Nom de votre aide" %>
+      <%= f.input :description, label: "* Description (si résidence, indiquer les dates de la résidence ici)" %>
+      <%= f.input :type_list, collection: Help::HELP_TYPE, label: "* Type d’aide", as: :check_boxes %>
       <%= f.input :type_photo_list, collection: Help::PHOTO_TYPE, label: "Type de photo", as: :check_boxes %>
-      <%= f.input :help_amount, label: "Gains pour les lauréates" %>
+      <%= f.input :help_amount, label: "* Gains pour les lauréates" %>
       <%= f.input :residence_time, label: "Durée de la résidence (si résidence)" %>
       <%= f.input :parentality, label: "Précisez les conditions d'accueil des familles (si résidence)" %>
       <%= f.input :accessibility, label: "Précisez les conditions d'accès aux personnes à mobilité réduite (si résidence)" %>
-      <!--   <div class="ajout_aide_title">
-  <span class="subtitle-regular">Candidature </span>
-  </div> -->
-      <%= f.input :general_condition, label: "Conditions de participation" %>
-      <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence" %>
-      <%= f.input :permanent, label: "Candidatures possibles toute l'année" %>
+      <p class="subtitle-marianne">Candidature </p>
+      <%= f.input :general_condition, label: "* Conditions de participation" %>
+      <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence", prompt: "Sélectionnez une option" %>
+      <%= f.input :permanent, label: "Candidatures possibles toute l'année", data: { newhelp_target: "permanent", action: "click->newhelp#selected" } %>
       <%= f.simple_fields_for :candidature_dates do |fa| %>
-        <%= fa.input :start_date, as: :date, html5: true, label: "Date de début de candidature" %>
-        <%= fa.input :end_date, as: :date, html5: true, label: "Date de fin de candidature" %>
+        <%= fa.input :start_date, as: :date, html5: true, label: "Date de début de candidature", data: { newhelp_target: "start_candidatures_date" }  %>
+        <%= fa.input :end_date, as: :date, html5: true, label: "Date de fin de candidature", data: {new_help_target: "input"}   %>
       <% end %>
-      <%= f.input :admin_attachment, label: "Pièces administratives à fournir" %>
+      <%= f.input :admin_attachment, label: "* Pièces administratives à fournir" %>
       <%= f.input :artistic_attachment, label: "Pièces artistiques à fournir" %>
-      <%= f.input :candidate_url, label: "Lien de l'appel à candidatures" %>
+      <%= f.input :candidate_url, label: "* Lien de l'appel à candidatures" %>
       <%= f.input :selection, label: "Processus de sélection" %>
-      <!--   <div class="ajout_aide_title">
-  <span class="subtitle-regular">Votre organisation </span>
-  </div> -->
+      <p class="subtitle-marianne">Votre organisation </p>
       <%= f.input :institution_name, label: "Nom de votre organisation" %>
-      <%= f.input :institution_url, label: "Site web de votre organisation" %>
+      <%= f.input :institution_url, label: "* Site web de votre organisation" %>
       <%= f.input :contact_intitution_email, label: "Email public de votre organisation" %>
-      <%= f.input :author_email, label: "Votre email" %> 
+      <%= f.input :author_email, label: "* Votre email", required: true %>
       <div class="btn-submit">
         <%= f.submit "Soumettre" %>
       </div>

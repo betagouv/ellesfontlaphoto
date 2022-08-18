@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_03_145846) do
+ActiveRecord::Schema.define(version: 2022_08_17_100534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,7 +141,7 @@ ActiveRecord::Schema.define(version: 2022_08_03_145846) do
     t.string "institution_name"
     t.string "help_amount"
     t.string "residence_condition"
-    t.string "general_condition"
+    t.text "general_condition"
     t.text "specific_condition"
     t.string "candidate_url"
     t.string "institution_url"
