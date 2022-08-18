@@ -26,6 +26,15 @@
     .form-group {
       margin: 20px 0;
     }
+    .help_author_email {
+      margin-bottom: 0px;
+      #help_author_email {
+        margin-bottom: 0px;
+      }
+    }
+    .paragraphe-small {
+      font-size: 11px;
+    }
     .input {
       text-align: left;
     }
@@ -48,10 +57,6 @@
       font-size: 14px;
       line-height: 20px;
       font-weight: 500;
-    }
-
-    abbr {
-      display: none;
     }
 
     input[type=text],
