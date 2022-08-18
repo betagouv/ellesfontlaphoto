@@ -1,16 +1,19 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["div", "input", "permanent", "candidaturesdate"];
+  static targets = ["permanent", "candidaturesdates"];
 
   connect() {
-    console.log("ici");
-    console.log(this.inputTarget)
     console.log(this.permanentTarget);
-    console.log(this.candidaturesdateTarget)
+    console.log(this.candidaturesdatesTarget)
   }
 
-  selected(event) {
-    console.log(event);
+  selected() {
+    console.log(this.permanentTarget.checked);
+    if (this.permanentTarget.checked) {
+      this.candidaturesdatesTarget.classList.add("d-none")
+    } else {
+      this.candidaturesdatesTarget.classList.remove("d-none")
+    }
   }
 }
