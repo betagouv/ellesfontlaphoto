@@ -4,7 +4,7 @@
     <p class="paragraphe">Renseignez ce formulaire pour ajouter tous types d'appels à candidatures (prix, bourses, résidences, etc.) à notre catalogue et gagner ainsi en visibilité. </p>
   </div>
   <div class="ajout-aide-form" data-controller="new-help">
-    <%= simple_form_for @help do |f| %>
+    <%= simple_form_for @help, data: {new_help_target: "form", action: "submit->new-help#submit"} do |f| %>
       <%= f.hidden_field :visible, value: 0 %>
       <p class="subtitle-marianne">Description de l'aide </p>
       <%= f.input :title, label: "Nom de votre aide" %>
@@ -33,10 +33,12 @@
       <%= f.input :institution_name, label: "Nom de votre organisation" %>
       <%= f.input :institution_url, label: "Site web de votre organisation" %>
       <%= f.input :contact_intitution_email, label: "Email public de votre organisation" %>
-      <%= f.input :author_email, label: "Votre email", input_html: { class: "form-control", required: true } %>
+      <%= f.input :author_email, label: "Votre email",required: "required", input_html: { data: { new_help_target: "email" } }, class: "input-error" %>
+      <p class="paragraphe-small undisplay-error" data-new-help-target= "emailerror">Votre email doit être remplit</p>
       <p class="paragraphe-small">Ne sera pas rendu public, vous serez contacté(e) pour d'éventuels ajouts d'informations</p>
       <div class="btn-submit">
-        <%= f.submit "Soumettre" %>
+        <%= f.submit "Soumettre"%>
+        <%# <%= f.submit "Soumettre", data: { new_help_target: "button" } %>
       </div>
     <% end %>
   </div>

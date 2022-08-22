@@ -75,7 +75,7 @@ class HelpsController < ApplicationController
     end
     @help.type_list = params["help"]["type_list"]
     @help.type_photo_list = params["help"]["type_photo_list"]
-    if @help.save
+    if @help.save && !@help.author_email.empty?
       redirect_to helps_path
     else
       render :new

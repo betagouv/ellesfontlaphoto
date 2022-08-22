@@ -1,15 +1,21 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["permanent", "candidaturesdates"];
+  static targets = ["form", "permanent", "candidaturesdates", "email", "emailerror", "button"];
 
-  connect() {
-    console.log(this.permanentTarget);
-    console.log(this.candidaturesdatesTarget)
-  }
+  // submit(event) {
+  //   if (this.emailTarget.value == "") {
+  //     event.preventDefault();
+  //     this.emailerrorTarget.classList.remove("undisplay-error")
+  //     this.emailerrorTarget.classList.add("display-error")
+  //     this.buttonTarget.removeAttribute('disabled');
+  //     console.log(this.buttonTarget)
+  //   } else {
+  //     this.formTarget.submit()
+  //   }
+  // }
 
   selected() {
-    console.log(this.permanentTarget.checked);
     if (this.permanentTarget.checked) {
       this.candidaturesdatesTarget.classList.add("d-none")
     } else {
