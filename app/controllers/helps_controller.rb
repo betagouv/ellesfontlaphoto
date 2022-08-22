@@ -90,13 +90,13 @@ class HelpsController < ApplicationController
   private
 
   def help_params
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
       help_param.require(:author_email)
     end
   end
 
   def help_params_permanent
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested) do |help_param|
       help_param.require(:author_email)
     end
   end

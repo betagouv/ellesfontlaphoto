@@ -13,6 +13,11 @@ class Help < ApplicationRecord
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
   validates :type_list, presence: true
+  validates :author_email, presence: true, if: :suggested
+
+  def some_validation_check
+      raise
+  end
 
   PARITE = [
     "respectée",
