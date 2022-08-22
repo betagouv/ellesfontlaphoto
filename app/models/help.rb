@@ -13,7 +13,6 @@ class Help < ApplicationRecord
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
   validates :type_list, presence: true
-  # validates :author_email, presence: true, if: :some_validation_check
 
   PARITE = [
     "respectée",
@@ -57,4 +56,5 @@ class Help < ApplicationRecord
   validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
   # validates :type_list, inclusion: { in: HELP_TYPE }
   # validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
+
 end

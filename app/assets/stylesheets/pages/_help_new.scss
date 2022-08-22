@@ -1,4 +1,5 @@
 .ajout_aide_page {
+  min-height: calc(100vh - 310px );
   .ajout_aide_title {
     width: 60%;
     margin: 0 auto;
@@ -19,6 +20,9 @@
   .subtitle-marianne {
     margin-top: 10%;
     text-align: left;
+  }
+  .btn-black {
+    color: $white !important;
   }
   #new_help {
     width: 42%;

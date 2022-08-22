@@ -33,8 +33,8 @@
       <%= f.input :institution_name, label: "Nom de votre organisation" %>
       <%= f.input :institution_url, label: "Site web de votre organisation" %>
       <%= f.input :contact_intitution_email, label: "Email public de votre organisation" %>
-      <%= f.input :author_email, label: "Votre email",required: "required", input_html: { data: { new_help_target: "email" } }, class: "input-error" %>
-      <p class="paragraphe-small undisplay-error" data-new-help-target= "emailerror">Votre email doit être remplit</p>
+      <%= f.input :author_email, label: "Votre email" %>
+      <%# <p class="paragraphe-small undisplay-error" data-new-help-target= "emailerror">Votre email doit être remplit</p> %>
       <p class="paragraphe-small">Ne sera pas rendu public, vous serez contacté(e) pour d'éventuels ajouts d'informations</p>
       <div class="btn-submit">
         <%= f.submit "Soumettre"%>
