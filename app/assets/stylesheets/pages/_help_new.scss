@@ -29,6 +29,9 @@
     margin: 0 auto;
     .form-group {
       margin: 20px 0;
+      small {
+        font-size: 11px;
+      }
     }
     .help_author_email {
       margin-bottom: 0px;
