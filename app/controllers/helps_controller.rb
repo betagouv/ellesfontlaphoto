@@ -68,19 +68,36 @@ class HelpsController < ApplicationController
   end
 
   def create
-    @help = Help.new(help_params)
+    @help = Help.new(params.require(:help).permit(:permanent))
+    if @help.permanent?
+      @help = Help.new(help_params_permanent)
+    else
+      @help = Help.new(help_params)
+    end
     @help.type_list = params["help"]["type_list"]
     @help.type_photo_list = params["help"]["type_photo_list"]
     if @help.save
-      redirect_to helps_path
+      redirect_to helps_confirm_path
     else
+      # @help.candidature_dates.build unless @help.permanent?
       render :new
     end
+  end
+
+  def confirm
   end
 
   private
 
   def help_params
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :candidature_dates_attributes => [:start_date, :end_date])
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
+      help_param.require(:author_email)
+    end
+  end
+
+  def help_params_permanent
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested) do |help_param|
+      help_param.require(:author_email)
+    end
   end
 end
