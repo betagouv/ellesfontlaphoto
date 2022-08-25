@@ -3,7 +3,7 @@
     <div class="sub-div-chiffres-inegalites title-div-chiffres-inegalites">
       <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
       <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
-      <a class="btn-black" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
+      <a class="btn-black mt30" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
     </div>
     <div class="sub-div-chiffres-inegalites">
       <div id="carousel-chiffres-inegalites" class="carousel slide" data-bs-interval="false">
@@ -20,10 +20,12 @@
           <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="prev">
-          <%= image_tag "arrow-carousel-chiffres-left.svg", alt: "flèche carousel droite" %>
+          <%= image_tag "arrow-carousel-chiffres-left.svg", alt: "flèche carousel droite", class: "main-arrow-carousel-left" %>
+          <%= image_tag "arrow-carousel-chiffres-left-hover.svg", alt: "flèche carousel droite", class: "hover-arrow-carousel-left" %>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carousel-chiffres-inegalites" data-bs-slide="next">
-          <%= image_tag "arrow-carousel-chiffres-right.svg", alt: "flèche carousel droite" %>
+          <%= image_tag "arrow-carousel-chiffres-right.svg", alt: "flèche carousel droite", class: "main-arrow-carousel-right" %>
+          <%= image_tag "arrow-carousel-chiffres-right-hover.svg", alt: "flèche carousel droite", class: "hover-arrow-carousel-right" %>
         </button>
       </div>
       <div class="scrollable-carousel">
@@ -45,7 +47,9 @@
   <a href="organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
   <div class="cards-organizations">
     <% @organizations.each do |organization| %>
-      <%= render "organizations/card_organization", organization: organization %>
+      <%= link_to organizations_path do %>
+        <%= render "organizations/card_organization", organization: organization %>
+      <% end %>
     <% end %>
   </div>
   <a href="/organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>

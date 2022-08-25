@@ -5,6 +5,7 @@
     text-align: left;
     font-family:'Marianne-Bold';
     margin-bottom: 30px;
+    font-size: 40px;
   }
   .flex-div {
     justify-content: space-between;
@@ -12,6 +13,9 @@
   .sub-div-chiffres-inegalites {
     max-width: 45%;
     justify-content: space-between;
+    .paragraphe {
+      font-size: 18px;
+    }
     .btn-black {
       width: 183px;
       display: flex;
@@ -34,8 +38,17 @@
       .carousel-control-next,.carousel-control-prev {
         opacity: 1;
         position: absolute;
+        .hover-arrow-carousel-left, .hover-arrow-carousel-right {
+          display: none;
+        }
         &:hover {
-          opacity: 0.8;
+          .main-arrow-carousel-left, .main-arrow-carousel-right {
+            display: none;
+          }
+          .hover-arrow-carousel-left,
+            .hover-arrow-carousel-right {
+              display: block;
+            }
         }
       }
       .carousel-control-prev {
@@ -51,10 +64,6 @@
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
-  .arrow-back {
-    position: absolute;
-    top: 25%;
-  }
   .paragraphe-small {
     color: white;
     text-align: center;
@@ -65,25 +74,33 @@
     margin: 3% auto;
     width: 60%;
     .title-marianne {
+      font-family: 'Marianne-Bold';
       line-height: 50px;
       margin-bottom: 30px;
       width: 100%;
+      font-size: 40px;
+    }
+    .spectral-title {
+      font-size: 47px;
     }
     .title-marianne,.spectral-title,.paragraphe {
       color: $white;
       text-align: center;
     }
+    .paragraphe {
+      margin-bottom: 60px;
+    }
   }
   .btn-purple {
     width: 288px;
-    margin: 3% auto;
+    margin: 3% auto 6% auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #8F73FF !important;
+    background-color: $filter-purple !important;
     color: $white !important;
     &:hover {
-      background-color: $purple  !important;
+      background-color: #8F73FF !important;
     }
   }
   .cards-organizations {
@@ -97,20 +114,23 @@
       .card-organization-name {
         min-height: 120px;
         .paragraphe-bold {
+          font-size: 22px;
           margin-bottom: 0;
           text-align: center;
           height: auto;
+          .paragraphe {
+            font-size: 22px;
+          }
         }
         .flex-div {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          margin: 10px 0 15px;
-          min-height: 60px;
+          margin: 25px 0 15px;
+          min-height: 50px;
           img {
-            max-height: 80px;
+            max-height: 50px;
             max-width: 120px;
-            padding: 10px;
           }
         }
       }
@@ -118,7 +138,7 @@
         border-radius: 50%;
         width: 84px;
         height: 84px;
-        margin: 0 auto;
+        margin: 25px auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -175,7 +195,7 @@
         margin: 0 auto;
       }
       .btn-black {
-        margin: 20px auto;
+        margin: 30px auto;
       }
       #carousel-chiffres-inegalites {
        display: none;
@@ -195,11 +215,11 @@
     }
   }
   .div-index-parite {
+    .btn-purple {
+      margin: 5% auto;
+    }
     .div-title-index-parite {
       width: 80%;
-    }
-    .arrow-back {
-      display: none;
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
@@ -232,6 +252,7 @@
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
+        margin-top: 40px;
         .spectral-title {
           font-size: 36px;
           line-height: 32px;
@@ -242,7 +263,7 @@
       }
     }
     .btn-purple {
-      margin: 10% auto;
+      margin: 6% auto 18% auto;
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
@@ -254,8 +275,15 @@
         .card-organization-numbers {
           padding: 5% 0;
           .paragraphe {
-            font-size: 9px;
+            font-size: 12px;
             line-height: 10px;
+            .line-orange {
+              box-shadow: rgba(244, 88, 0, 0.3) 0px -0.45rem 0px inset;
+            }
+
+            .line-purple {
+              box-shadow: rgba(107, 72, 244, 0.3) 0px -0.45rem 0px inset;
+            }
           }
         }
         .card-organization-name {
@@ -263,12 +291,15 @@
           min-height: 80px;
           .paragraphe-bold {
             font-size: 14px;
+            line-height: 18px;
             .paragraphe {
               font-size: 14px;
+              line-height: 18px;
             }
           }
           .flex-div {
             min-height: 40px;
+            margin: 15px 0;
             img {
               padding: 5px;
               max-height: 40px;

@@ -22,8 +22,18 @@
     </div>
   <% end %>
   <div class="card-organization-numbers">
-    <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeantes : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
-    <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
+    <%# <div style="background-color: red; height: 9px; z-index: 0;"></div>
+    <p style="z-index: 1; margin-top: -20px!important">Lorem ipsum dolor sit amet, consectetuer</p> %>
+    <% if organization.nb_women_dir.blank? ||organization.total_nb_dir.blank? %>
+      <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeantes : inconnu </p><br>
+    <% else %>
+      <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeantes : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
+    <% end %>
+    <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
+      <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : inconnu</p>
+    <% else %>
+      <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
+    <% end %>
   </div>
 </div>
 
