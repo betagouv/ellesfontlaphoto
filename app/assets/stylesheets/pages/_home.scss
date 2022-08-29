@@ -494,8 +494,8 @@
           .main-bold-paragraphe {
             padding: 5% 2%;
             text-align: center;
-            font-size: 12px;
-            line-height : 15px;
+            font-size: 14px !important;
+            line-height: 20px !important;
           }
           a .sub-card-index-helps {
             .paragraphe.card,p,span {
@@ -511,7 +511,7 @@
               padding: 3% 5%;
               max-height: 200px;
               line-height: 15px;
-              p,span {
+              p,span,.paragraphe {
                 font-size: 12px;
                 line-height : 15px;
               }
