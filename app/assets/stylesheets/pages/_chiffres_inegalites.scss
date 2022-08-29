@@ -277,13 +277,13 @@
           .paragraphe {
             font-size: 12px;
             line-height: 10px;
-            .line-orange {
-              box-shadow: rgba(244, 88, 0, 0.3) 0px -0.45rem 0px inset;
-            }
+          }
+          .paragraphe.line-orange {
+            box-shadow: rgba(244, 88, 0, 0.3) 0px -0.50rem 0px inset;
+          }
 
-            .line-purple {
-              box-shadow: rgba(107, 72, 244, 0.3) 0px -0.45rem 0px inset;
-            }
+          .paragraphe.line-purple {
+            box-shadow: rgba(107, 72, 244, 0.3) 0px -0.50rem 0px inset;
           }
         }
         .card-organization-name {
