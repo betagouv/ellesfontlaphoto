@@ -34,8 +34,11 @@
         .carousel-item .carousel-item-sub-div {
           display: flex;
           justify-content: space-around;
-          .img-carousel-chiffres-inegalites {
+          a {
             max-width: 45%;
+            .img-carousel-chiffres-inegalites {
+              max-width: 100%;
+            }
           }
         }
       }
