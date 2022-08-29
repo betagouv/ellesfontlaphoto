@@ -12,8 +12,12 @@
           <% while i < 6 do %>
             <div class="carousel-item <%= "active" if i == 1  %>">
               <div class="carousel-item-sub-div">
-              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
-              <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i + 1}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i + 1}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+              <%= link_to "/infographie" do %>
+                <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+              <% end %>
+              <%= link_to "/infographie" do %>
+                <%= image_tag "carousel-chiffres/carousel-chiffres-#{i + 1}.svg", onmouseover: "this.src='#{asset_path("carousel-chiffres/hover/carousel-chiffres-#{i + 1}-hover.svg")}'", onmouseout: "this.src='#{asset_path("carousel-chiffres/carousel-chiffres-#{i + 1}.svg")}'", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+              <% end %>
               </div>
             </div>
             <% i += 2 %>

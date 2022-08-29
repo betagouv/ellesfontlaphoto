@@ -28,11 +28,19 @@
       overflow-x: scroll;
     }
     #carousel-chiffres-inegalites {
-      .carousel-item .carousel-item-sub-div {
-        display: flex;
-        justify-content: space-around;
-        .img-carousel-chiffres-inegalites {
-          max-width: 45%;
+      .carousel-inner {
+        max-height: 378px;
+        max-width: 564px;
+        .carousel-item .carousel-item-sub-div {
+          display: flex;
+          justify-content: space-around;
+          a {
+            max-width: 45%;
+            .img-carousel-chiffres-inegalites {
+              max-width: 100%;
+            }
+
+          }
         }
       }
       .carousel-control-next,.carousel-control-prev {
