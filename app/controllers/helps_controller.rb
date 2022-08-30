@@ -79,7 +79,6 @@ class HelpsController < ApplicationController
     if @help.save
       redirect_to helps_confirm_path
     else
-      # @help.candidature_dates.build unless @help.permanent?
       render :new
     end
   end

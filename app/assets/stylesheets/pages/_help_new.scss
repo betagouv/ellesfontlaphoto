@@ -27,6 +27,9 @@
     #new_help {
       width: 42%;
       margin: 0 auto;
+      .flex-div {
+        align-items: unset;
+      }
       .subtitle-medium {
         font-size: 28px;
         text-align: center;
@@ -186,31 +189,52 @@
   }
 }
 
+.ajout-aide-page.confirm {
+  padding-bottom: 100px;
+  .ajout-aide-title {
+    img {
+      width: 30%;
+      display: block;
+      margin: 5% auto;
+    }
+    .paragraphe {
+      text-align: center;
+    }
+  }
+}
+
 @media only screen and (max-width: 1250px) {
-  .ajout_aide_page {
-    .ajout_aide_title {
+  .ajout-aide-page {
+    .ajout-aide-title {
       width: 90%;
       .paragraphe {
         width: 90%;
       }
     }
-    #new_help {
-      width: 80%;
+    .ajout-aide-form #new_help {
+      width: 70%;
     }
   }
-
+  .ajout-aide-page.confirm {
+    img {
+      width: 50%;
+    }
+  }
 }
 
 @media only screen and (max-width: 750px) {
-  .ajout_aide_page {
-    .ajout_aide_title {
+  .ajout-aide-page {
+    .ajout-aide-title {
       width: 90%;
     }
     .paragraphe {
       width: 90%;
     }
   }
-  #new_help {
+  .ajout-aide-form #new_help {
     width: 90%;
+    .flex-div {
+      display: block;
+    }
   }
 }
