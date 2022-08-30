@@ -167,10 +167,10 @@
         <p class="paragraphe-bold mb0">Accueil</p>
         <ul>
           <% if @help.parentality.present? %>
-            <li><p class="paragraphe lh28 mb0"><%= @help.parentality %></p></li>
+            <li><p class="paragraphe lh28 mb0">Conditions d'accueil des familles : <%= @help.parentality %></p></li>
           <% end %>
           <% if @help.accessibility.present? %>
-            <li><p class="paragraphe"><%= @help.accessibility %></p></li>
+            <li><p class="paragraphe">Conditions d'accès aux personnes à mobilité réduite : <%= @help.accessibility %></p></li>
           <% end %>
         </ul>
       </div>

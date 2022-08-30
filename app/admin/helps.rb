@@ -12,6 +12,12 @@ ActiveAdmin.register Help do
     end
   end
 
+  before_update do |help|
+    if params[:help][:visible] == "1" && params[:help][:author_email]
+      # Ici ajouter l'envoie d'email
+    end
+  end
+
   after_update do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
     if help.permanent?
