@@ -172,28 +172,23 @@
           padding: 0;
           margin: 0;
         }
-        .line-orange, .line-purple {
-          height: 9px;
-          z-index: 0;
-          width: 130px;
+        .div-line {
+          z-index: 1;
           margin: 0 auto;
-        }
-        .line-orange {
-          background-color: rgba(244, 88, 0, 0.3);
-        }
-        .line-purple {
-          background-color: rgba(107, 72, 244, 0.3);
-        }
-        .line-purple.inconnu,
-        .line-orange.inconnu {
-          width: 160px;
-        }
-        .line-purple.orga, .line-orange.orga {
-          width: 135px;
-        }
-        .line-purple.orga.inconnu,
-        .line-orange.orga.inconnu {
-          width: 160px;
+          color: black;
+          width: fit-content;
+          .line-orange, .line-purple {
+            height: 9px;
+            z-index: 0;
+            margin: -13px auto 4px;
+            color: transparent;
+          }
+          .line-orange {
+            background-color: rgba(244, 88, 0, 0.3);
+          }
+          .line-purple {
+            background-color: rgba(107, 72, 244, 0.3);
+          }
         }
       }
     }
