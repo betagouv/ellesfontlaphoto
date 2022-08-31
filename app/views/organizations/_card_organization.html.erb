@@ -22,17 +22,19 @@
     </div>
   <% end %>
   <div class="card-organization-numbers">
-    <%# <div style="background-color: red; height: 9px; z-index: 0;"></div>
-    <p style="z-index: 1; margin-top: -20px!important">Lorem ipsum dolor sit amet, consectetuer</p> %>
     <% if organization.nb_women_dir.blank? ||organization.total_nb_dir.blank? %>
-      <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeantes : inconnu </p><br>
+      <div class="<%= organization.dir_parity ? "line-purple inconnu" : "line-orange inconnu" %>"></div>
+      <p style="z-index: 1; margin-top: -20px!important">dirigeantes : inconnu </p>
     <% else %>
-      <p class="paragraphe <%= organization.dir_parity ? "line-purple" : "line-orange" %>">dirigeantes : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p><br>
+      <div class="<%= organization.dir_parity ? "line-purple" : "line-orange" %>"></div>
+      <p style="z-index: 1; margin-top: -20px!important">dirigeantes : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p>
     <% end %>
     <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
-      <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : inconnu</p>
+      <div class="<%= organization.expos_parity ? "line-purple orga inconnu" : "line-orange orga inconnu" %>"></div>
+      <p style="z-index: 1; margin-top: -20px!important">exposantes : inconnu</p>
     <% else %>
-      <p class="paragraphe <%= organization.expos_parity ? "line-purple" : "line-orange" %>">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
+      <div class="<%= organization.expos_parity ? "line-purple orga" : "line-orange orga" %>"></div>
+      <p style="z-index: 1; margin-top: -20px!important">exposantes : <%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></p>
     <% end %>
   </div>
 </div>

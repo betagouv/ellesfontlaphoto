@@ -166,19 +166,34 @@
       }
       .card-organization-numbers {
         text-align: center;
-        padding: 10% 0;
+        padding: 10% 0 0;
         .paragraphe {
           white-space: pre-wrap;
           padding: 0;
           margin: 0;
         }
-        .paragraphe.line-orange {
-          display: inline;
-          box-shadow: rgba(244, 88, 0, 0.3) 0px -0.75rem 0px inset;
+        .line-orange, .line-purple {
+          height: 9px;
+          z-index: 0;
+          width: 130px;
+          margin: 0 auto;
         }
-        .paragraphe.line-purple {
-          display: inline;
-          box-shadow: rgba(107, 72, 244, 0.3) 0px -0.75rem 0px inset;
+        .line-orange {
+          background-color: rgba(244, 88, 0, 0.3);
+        }
+        .line-purple {
+          background-color: rgba(107, 72, 244, 0.3);
+        }
+        .line-purple.inconnu,
+        .line-orange.inconnu {
+          width: 160px;
+        }
+        .line-purple.orga, .line-orange.orga {
+          width: 135px;
+        }
+        .line-purple.orga.inconnu,
+        .line-orange.orga.inconnu {
+          width: 160px;
         }
       }
     }
