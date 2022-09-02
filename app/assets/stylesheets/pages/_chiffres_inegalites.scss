@@ -220,13 +220,13 @@
 
      .scrollable-carousel {
        display: flex;
-       gap: 15px;
+       gap: 0px;
       .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 40px;
+        margin-left: 20px;
       }
 
       .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 40px;
+        margin-right: 20px;
       }
      }
     }
@@ -263,11 +263,11 @@
     padding: 3% 0;
     .sub-div-chiffres-inegalites .scrollable-carousel {
       .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 20px;
+        margin-left: 10px;
       }
 
       .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 20px;
+        margin-right: 10px;
       }
     }
   }

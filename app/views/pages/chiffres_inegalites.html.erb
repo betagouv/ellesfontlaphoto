@@ -35,7 +35,9 @@
       <div class="scrollable-carousel">
       <% i = 1 %>
       <% while i < 6 do %>
-        <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+        <%= link_to "/infographie" do %>
+          <%= image_tag "carousel-chiffres/carousel-chiffres-#{i}.svg", alt: "chiffres inegalités", class: "img-carousel-chiffres-inegalites" %>
+        <% end %>
         <% i += 1 %>
       <% end %>
       </div>
