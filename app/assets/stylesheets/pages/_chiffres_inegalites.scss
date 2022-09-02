@@ -232,6 +232,7 @@
     }
   }
   .div-index-parite {
+    padding: 3% 5%;
     .btn-purple {
       margin: 5% auto;
     }
@@ -241,7 +242,13 @@
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
       .card-organization .card-organization-name {
-        height: 150px;
+        min-height: 150px;
+        .paragraphe-bold {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 200px;
+          white-space: nowrap;
+        }
         .flex-div img {
           padding: 5px;
           max-height: 60px;
