@@ -1,7 +1,7 @@
-.ajout-aide-page {
+.ajout-aide-page, .ajout-organization-page {
   min-height: calc(100vh - 310px );
   padding-bottom: 40px;
-  .ajout-aide-title {
+  .ajout-aide-title, .ajout-organization-title{
     width: 60%;
     margin: 0 auto;
     text-align: center;
@@ -24,8 +24,8 @@
   .btn-black {
     color: $white !important;
   }
-  .ajout-aide-form {
-    #new_help {
+  .ajout-aide-form, .ajout-organization-form {
+    #new_help, #new_organization {
       width: 42%;
       margin: 0 auto;
       .flex-div {
@@ -80,6 +80,7 @@
       input[type=url],
       input[type=date],
       input[type=email],
+      input[type=number],
       select {
         border: none;
         border-bottom: 1px solid $black;
@@ -205,18 +206,18 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  .ajout-aide-page {
-    .ajout-aide-title {
+  .ajout-aide-page, .ajout-organization-page {
+    .ajout-aide-title, .ajout-organization-title {
       width: 90%;
       .paragraphe {
         width: 90%;
       }
     }
-    .ajout-aide-form #new_help {
+    .ajout-aide-form #new_help, .ajout-organization-form #new_help {
       width: 70%;
     }
   }
-  .ajout-aide-page.confirm {
+  .ajout-aide-page.confirm, .ajout-organization-page.confirm {
     img {
       width: 50%;
     }
@@ -224,15 +225,15 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .ajout-aide-page {
-    .ajout-aide-title {
+  .ajout-aide-page, .ajout-organization-page {
+    .ajout-aide-title, .ajout-organization-title {
       width: 90%;
     }
     .paragraphe {
       width: 90%;
     }
   }
-  .ajout-aide-form #new_help {
+  .ajout-aide-form #new_help, .ajout-organization-form #new_help {
     width: 90%;
     .flex-div {
       display: block;
