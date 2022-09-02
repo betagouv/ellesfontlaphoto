@@ -50,7 +50,10 @@
     <h1 class="title-marianne">Index parité : <span class="spectral-title"> structures et festivals photo</span></h1>
     <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuit sur les données collectées par le ministère de la Culture pour la période 2020-2021 dans le cadre de l'Observatoire 2022 de l'égalité dans la culture et la communication.</p>
   </div>
-  <a href="organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
+  <div class="flex-div justify-center">
+    <a href="organizations" class="btn-purple"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", width: 30 %> voir toutes les structures</a>
+    <%= link_to "Renseigner des chiffres", new_organization_path, class: "btn-outlined-white" %>
+  </div>
   <div class="cards-organizations">
     <% @organizations.each do |organization| %>
       <%= link_to organizations_path do %>

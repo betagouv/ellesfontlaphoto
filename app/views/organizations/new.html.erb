@@ -1,0 +1,22 @@
+<div class="ajout-organization-page">
+  <div class="ajout-organization-title">
+    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
+    <p class="paragraphe">Renseignez ce formulaire pour ajouter ou mettre à jour vos chiffres pour apporter plus de transparence sur les inégalités de genre au sein de votre organisation. </p>
+
+  </div>
+  <div class="ajout-organization-form">
+    <%= simple_form_for @organization do |f| %>
+      <%= f.input :organization_type, label: "Sélectionnez le type de votre organisation", collection: Organization::ORGANIZATION_TYPE %>
+      <%= f.input :name, label: "Le nom de votre organisation" %>
+      <%= f.input :city, label: "Ville" %>
+      <%= f.input :nb_women_dir, label: "Nombre de femmes au sein de votre direction" %>
+      <%= f.input :total_nb_dir, label: "Nombre total de personne au de sein de votre direction" %>
+      <%= f.input :nb_women_expos, label: "Nombre de femmes exposée(s)" %>
+      <%= f.input :total_nb_expos, label: "Nombre total de personnes exposé(e)s" %>
+      <div class="btn-submit">
+        <%= f.submit "Soumettre"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
