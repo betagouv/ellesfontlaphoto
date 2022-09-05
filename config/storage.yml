@@ -10,6 +10,17 @@ cloudinary:
   service: Cloudinary
   folder: <%= Rails.env %>
 
+scaleway:
+  service: S3
+  # Scaleway API endpoint, depending on your region
+  endpoint: https://s3.fr-par.scw.cloud
+  # Do not forget to hide your secrets
+  access_key_id: <%= ENV['SCALEWAY_ACCESS_KEY_ID'] %>
+  # Do not forget to hide your secrets
+  secret_access_key: <%= ENV['SCALEWAY_SECRET_ACCESS_KEY_ID'] %>
+  region: fr-par # Your bucket region, here it's Paris
+  bucket: <%= ENV['SCALEWAY_BUCKET_NAME'] %> # Your bucket name
+
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3

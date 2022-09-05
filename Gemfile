@@ -73,6 +73,8 @@ gem 'invisible_captcha'
 
 gem 'activeadmin_quill_editor'
 
+gem "aws-sdk-s3", require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 

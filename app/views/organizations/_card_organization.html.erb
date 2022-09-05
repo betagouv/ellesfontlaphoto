@@ -4,7 +4,7 @@
     <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
     <% if organization.logo.attached? %>
       <div class="flex-div">
-        <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+        <%= image_tag url_for(organization.logo) %>
       </div>
     <% end %>
   </div>
