@@ -27,8 +27,8 @@
         </div>
         <div class="images-webinaire">
           <% webinaire.images.each do |image| %>
-            <%= image_tag url_for(image), class: "img-webinaire" %>
-            <%#= cl_image_tag image.key, class: "img-webinaire" %>
+            <%#= image_tag url_for(image), class: "img-webinaire" %>
+            <%= cl_image_tag image.key, class: "img-webinaire" %>
           <% end %>
         </div>
         <div class="sub-div-webinaire-coming">
