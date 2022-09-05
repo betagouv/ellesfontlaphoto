@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end
+  resources :case_reviews, only: [:new, :create]
+
   resources :organizations, only: [:index, :new, :create]
   resources :notation_helps, only: :create
   get "/conseils", to: "conseils_pratiques#index"
