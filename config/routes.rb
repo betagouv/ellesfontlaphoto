@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end
-  resources :organizations, only: [:index, :new, :create]
+  resources :organizations, only: [:index]
   resources :notation_helps, only: :create
   get "/conseils", to: "conseils_pratiques#index"
   resources :conseils_videos, only: [:show]
