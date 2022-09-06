@@ -245,9 +245,6 @@
   }
   .div-index-parite {
     padding: 3% 5%;
-    .btn-purple {
-      margin: 5% auto;
-    }
     .div-title-index-parite {
       width: 80%;
     }
@@ -256,10 +253,9 @@
       .card-organization .card-organization-name {
         min-height: 150px;
         .paragraphe-bold {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          width: 200px;
-          white-space: nowrap;
+          width: auto;
+          white-space: normal;
+          word-break: break-word;
         }
         .flex-div img {
           padding: 5px;
@@ -298,8 +294,17 @@
         }
       }
     }
+    .flex-div {
+      display: block;
+    }
+    .btn-outlined-white {
+      margin: 5% auto;
+      display: flex;
+      width: 230px;
+      text-align: center;
+    }
     .btn-purple {
-      margin: 6% auto 18% auto;
+      margin: 5% auto;
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
