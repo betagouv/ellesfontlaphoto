@@ -1,8 +1,29 @@
-<%= simple_form_for @case_review do |f| %>
-  <%= f.input :candidate_email %>
-  <%= f.input :case, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="case_review_new">
+  <div class="consignes">
+    <p class="title-marianne-bold">Besoin de retours sur votre dossier de candidature ? </p>
+    <p class="paragraphe">Par ici, on vous propose d’obtenir les retour de vos paire sur votre dossier. C’est très simple :</p>
+    <div class="sub-consignes">
+      <%= image_tag "arrow-revue-dossier.svg" %>
+      <ol>
+        <li>Je dépose mon dossier</li>
+        <li>Je reçois par mail le dossier de ma binôme photographe</li>
+        <li>Je partage mes retours</li>
+        <li>Je reçois les retours sur mon dossier par mail</li>
+      </ol>
+    </div>
 
-<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-<div><p class="count"></p></div>
+  </div>
+  <div class="form-new-case-reviews">
+    <%= image_tag "illu-femme-stylo.png", class:"illu" %>
+    <%= simple_form_for @case_review do |f| %>
+      <%#= f.input :case, as: :file, id: "actual-btn" %>
+      <input type="file" id="actual-btn" hidden/>
+      <label class="btn-black" for="actual-btn"><%= image_tag "download-white.svg" %> Chargez votre dossier</label>
+      <%= f.input :candidate_email %>
+      <%= f.submit "C'est parti !"%>
+    <% end %>
+
+    <div class="lds-ring d-none"><div></div><div></div><div></div><div></div></div>
+    <div><p class="count d-none"></p></div>
+  </div>
+</div>

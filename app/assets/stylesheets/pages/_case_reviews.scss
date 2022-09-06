@@ -1,0 +1,37 @@
+.case_review_new {
+  background-color: $orange;
+  display: flex;
+  justify-content: space-between;
+  padding: 6% 10%;
+  .consignes {
+    width: 50%;
+    .title-marianne-bold {
+      margin-bottom: 40px;
+    }
+    .sub-consignes {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+  }
+  .form-new-case-reviews {
+    width: 40%;
+    background-color: $white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 18, 0.32);
+    border-radius: 10px;
+    padding: 30px;
+    .illu {
+      display: flex;
+      margin: 7% auto;
+    }
+    form {
+      .btn-black {
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        height: 46px;
+        margin: 5% auto;
+      }
+    }
+  }
+}
