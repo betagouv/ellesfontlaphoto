@@ -98,8 +98,17 @@
       margin-bottom: 60px;
     }
   }
+  .btn-outlined-white {
+    font-size: 18px;
+    padding: 11px 13px;
+  }
   .btn-purple {
-    width: 288px;
+    .img-sun {
+      width:48px;
+    }
+    font-size: 18px;
+    padding: 2px 15px 2px 10px;
+    width: 290px;
     margin-right: 2%;
     display: flex;
     align-items: center;
@@ -109,6 +118,9 @@
     &:hover {
       background-color: #8F73FF !important;
     }
+  }
+  .btn-purple.centre {
+    margin: 8% auto 0;
   }
   .cards-organizations {
     display: grid;
