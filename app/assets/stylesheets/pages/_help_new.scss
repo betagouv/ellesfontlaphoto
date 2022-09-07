@@ -30,6 +30,9 @@
       margin: 0 auto;
       .flex-div {
         align-items: unset;
+        .help_admin_attachment, .help_artistic_attachment {
+          width: 46%;
+        }
       }
       .subtitle-medium {
         font-size: 28px;
@@ -38,7 +41,7 @@
       .form-group {
         margin: 20px 0;
         small {
-          font-size: 11px;
+          font-size: 13px;
         }
       }
       .help_author_email {
@@ -85,6 +88,7 @@
       input[type=date],
       input[type=email],
       input[type=number],
+      textarea,
       select {
         border: none;
         border-bottom: 1px solid $black;
@@ -235,11 +239,19 @@
     .paragraphe {
       width: 90%;
     }
-  }
-  .ajout-aide-form #new_help, .ajout-organization-form #new_help {
-    width: 90%;
-    .flex-div {
-      display: block;
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization {
+      width: 90%;
+      .flex-div {
+        display: block;
+          .help_admin_attachment,
+          .help_artistic_attachment {
+            width: 100%;
+          }
+      }
+      .help_type_list .form-check label,
+      .help_permanent .form-check label {
+        margin-left: 8px;
+      }
     }
   }
 }

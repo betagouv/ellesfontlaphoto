@@ -16,12 +16,12 @@
       <p class="subtitle-medium">Informations essentielles sur l’aide </p>
       <%= f.input :title, label: "Titre" %>
       <div class="flex-div">
-        <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type de récompense", as: :check_boxes %>
+        <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type de récompense", as: :check_boxes, hint: "Plusieurs réponses possibles" %>
         <%= f.input :type_photo_list, collection: Help::PHOTO_TYPE, label: "Type de photo", as: :check_boxes %>
       </div>
-      <%= f.input :help_amount, label: "Gains des lauréates", hint: "Décrivez synthétiquement les récompenses : montant des bourses, lieu ou matériel mis à disposition, exposition...", as: :text, :input_html => { :cols => 5, :rows => 10 }  %>
+      <%= f.input :help_amount, label: "Gains des lauréates", hint: "Décrivez synthétiquement les récompenses : montant des bourses, lieu ou matériel mis à disposition, exposition...", as: :text, :input_html => { :cols => 5, :rows => 6 }  %>
       <%= f.input :candidate_url, label: "Lien de l'appel à candidatures" %>
-      <%= f.input :description, label: "Présentation succinte" %>
+      <%= f.input :description, label: "Présentation succinte", as: :text, :input_html => { :cols => 5, :rows => 6 } %>
       <%= f.input :permanent, label: "Candidatures possibles toute l'année", input_html: { data: { new_help_target: "permanent", action: "change->new-help#selected" }} %>
       <div data-new-help-target = "candidaturesdates">
         <%= f.simple_fields_for :candidature_dates do |fa| %>
