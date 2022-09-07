@@ -19,7 +19,7 @@
         <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type de récompense", as: :check_boxes %>
         <%= f.input :type_photo_list, collection: Help::PHOTO_TYPE, label: "Type de photo", as: :check_boxes %>
       </div>
-      <%= f.input :help_amount, label: "Gains des lauréates", hint: "Décrivez synthétiquement les récompenses : montant des bourses, lieu ou matériel mis à disposition, exposition..." %>
+      <%= f.input :help_amount, label: "Gains des lauréates", hint: "Décrivez synthétiquement les récompenses : montant des bourses, lieu ou matériel mis à disposition, exposition...", as: :text, :input_html => { :cols => 5, :rows => 10 }  %>
       <%= f.input :candidate_url, label: "Lien de l'appel à candidatures" %>
       <%= f.input :description, label: "Présentation succinte" %>
       <%= f.input :permanent, label: "Candidatures possibles toute l'année", input_html: { data: { new_help_target: "permanent", action: "change->new-help#selected" }} %>
