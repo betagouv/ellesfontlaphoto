@@ -13,6 +13,7 @@ class Help < ApplicationRecord
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
   validates :type_list, presence: true
+  validates :institution_name, presence: true
   validates :author_email, presence: true, if: :suggested
 
   def some_validation_check
@@ -32,7 +33,7 @@ class Help < ApplicationRecord
 
   HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
 
-  PHOTO_TYPE = ["photojournalisme", "photo artistique"]
+  PHOTO_TYPE = ["photojournalisme", "photo artistique", "autre"]
 
   HELP_RESIDENCE = [
     "Auvergne-Rhône Alpes",
