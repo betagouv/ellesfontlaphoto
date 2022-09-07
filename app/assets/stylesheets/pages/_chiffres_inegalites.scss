@@ -98,9 +98,12 @@
       margin-bottom: 60px;
     }
   }
-  .btn-outlined-white {
-    font-size: 18px;
-    padding: 11px 13px;
+  .margin-btn {
+    margin: -20px 60px 90px 0px;
+    .btn-outlined-white {
+      font-size: 18px;
+      padding: 10px 18px 13px 18px;
+    }
   }
   .btn-purple {
     .img-sun {
@@ -281,6 +284,9 @@
   }
   .div-index-parite {
     padding: 3%;
+    .margin-btn {
+      margin: 5% auto 10% auto;
+    }
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
@@ -296,15 +302,15 @@
     }
     .flex-div {
       display: block;
-    }
-    .btn-outlined-white {
-      margin: 5% auto;
-      display: flex;
-      width: 230px;
-      text-align: center;
-    }
-    .btn-purple {
-      margin: 5% auto;
+      .btn-outlined-white {
+        margin: 5% auto;
+        display: flex;
+        width: 230px;
+        text-align: center;
+      }
+      .btn-purple {
+        margin: 5% auto;
+      }
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
