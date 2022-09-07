@@ -75,7 +75,8 @@ a {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 16px;
   cursor: pointer;
-  padding: 11px 10px;
+  padding: 11px 16px;
+  border: none;
   &:hover {
     background-color: $hover-black;
   }

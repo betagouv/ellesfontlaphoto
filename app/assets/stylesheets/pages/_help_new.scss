@@ -37,11 +37,14 @@
       .subtitle-medium {
         font-size: 28px;
         text-align: center;
+        line-height: 38px;
       }
       .form-group {
         margin: 20px 0;
         small {
           font-size: 13px;
+          display: block;
+          line-height: 20px;
         }
       }
       .help_author_email {
@@ -179,20 +182,6 @@
       .btn-submit {
         margin-top: 5%;
         text-align: center;
-        input[type=submit] {
-          margin-top: 10px;
-          font-family: Marianne, sans-serif;
-          font-size: 16px;
-          background-color: $black;
-          cursor: pointer;
-          border-radius: 40px;
-          padding: 10px 20px;
-          border: none;
-          color: $white;
-          text-shadow: none;
-          font-weight: normal;
-          -webkit-appearance: none;
-        }
       }
     }
   }
