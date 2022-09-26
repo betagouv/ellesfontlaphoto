@@ -98,8 +98,20 @@
       margin-bottom: 60px;
     }
   }
+  .margin-btn {
+    margin: -20px 60px 90px 0px;
+    .btn-outlined-white {
+      font-size: 18px;
+      padding: 10px 18px 13px 18px;
+    }
+  }
   .btn-purple {
-    width: 288px;
+    .img-sun {
+      width:48px;
+    }
+    font-size: 18px;
+    padding: 2px 15px 2px 10px;
+    width: 290px;
     margin-right: 2%;
     display: flex;
     align-items: center;
@@ -109,6 +121,9 @@
     &:hover {
       background-color: #8F73FF !important;
     }
+  }
+  .btn-purple.centre {
+    margin: 8% auto 0;
   }
   .cards-organizations {
     display: grid;
@@ -233,9 +248,6 @@
   }
   .div-index-parite {
     padding: 3% 5%;
-    .btn-purple {
-      margin: 5% auto;
-    }
     .div-title-index-parite {
       width: 80%;
     }
@@ -244,10 +256,9 @@
       .card-organization .card-organization-name {
         min-height: 150px;
         .paragraphe-bold {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          width: 200px;
-          white-space: nowrap;
+          width: auto;
+          white-space: normal;
+          word-break: break-word;
         }
         .flex-div img {
           padding: 5px;
@@ -273,6 +284,9 @@
   }
   .div-index-parite {
     padding: 3%;
+    .margin-btn {
+      margin: 5% auto 10% auto;
+    }
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
@@ -286,8 +300,19 @@
         }
       }
     }
-    .btn-purple {
-      margin: 6% auto 18% auto;
+    .flex-div {
+      display: block;
+      .btn-outlined-white {
+        margin: 5% auto;
+        display: flex;
+        width: 230px;
+        text-align: center;
+        justify-content: center;
+        white-space: nowrap;
+      }
+      .btn-purple {
+        margin: 5% auto;
+      }
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
@@ -308,6 +333,10 @@
 
           .paragraphe.line-purple {
             box-shadow: rgba(107, 72, 244, 0.3) 0px -0.50rem 0px inset;
+          }
+          .div-line {
+            font-size: 14px;
+            white-space: nowrap;
           }
         }
         .card-organization-name {
