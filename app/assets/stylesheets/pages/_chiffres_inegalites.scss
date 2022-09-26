@@ -307,6 +307,8 @@
         display: flex;
         width: 230px;
         text-align: center;
+        justify-content: center;
+        white-space: nowrap;
       }
       .btn-purple {
         margin: 5% auto;
