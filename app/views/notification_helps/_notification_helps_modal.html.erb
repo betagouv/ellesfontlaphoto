@@ -11,7 +11,7 @@
     <p class="<%= error_save ? 'display-error' : 'undisplay-error' %>">Veuillez renseigner votre email</p>
     <%= hidden_field_tag :help_id, help.id %>
     <div class="btn-div">
-      <%= submit_tag "S'inscrire", data: { action: "click->notificationhelp#create"}, class: "btn btn-modal" %>
+      <%= submit_tag "S'inscrire", data: { action: "click->notificationhelp#create"}, class: "btn btn-purple" %>
     </div>
   <% end %>
 </div>

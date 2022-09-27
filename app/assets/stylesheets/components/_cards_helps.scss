@@ -191,7 +191,7 @@
     .arrow {
       opacity: 1 !important;
       position: inherit !important;
-      padding-right: 25px;
+      margin: 10px 0 0 20px;
     }
 
     .pastille-aides {
@@ -217,11 +217,10 @@
       }
 
       .arrow {
-        opacity: 1;
-        transition: none !important;
-        -webkit-transition: none !important;
-        -moz-transition: none !important;
-        -o-transition: none !important;
+        transition: all .6s ease-out;
+        -webkit-transition: all .6s ease-out;
+        -moz-transition: all .6s ease-out;
+        -o-transition: all .6s ease-out;
       }
     }
   }
