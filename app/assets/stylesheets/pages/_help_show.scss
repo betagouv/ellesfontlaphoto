@@ -71,59 +71,21 @@
     p {
       margin-top:30px;
     }
-    .btn-modal {
-      cursor: pointer;
-      margin-right: 0;
-      background-color: $purple;
-      padding: 14px 20px !important;
-      height: 46px !important;
-      &:hover {
-        background-color: $hover-purple;
-      }
-    }
     .btn-candidate {
-      cursor: pointer;
-      margin: 0 auto;
-      font-family: 'Marianne-Regular', sans-serif;
+      margin: 0 auto 40px auto;
       display: table !important;
-      padding: 12px 26px;
-      border-radius: 50px;
       background-color: $purple;
       text-decoration: none;
       color: $black !important;
-      font-size: 18px;
-      margin-bottom: 40px;
       &:hover {
         background-color: $hover-purple;
       }
     }
     .btn-not-available {
-      margin: 0 auto;
-      font-family: 'Marianne-Regular', sans-serif;
-      display: table !important;
-      padding: 12px 26px;
-      border-radius: 50px;
+      margin: 0 auto 40px auto;
       background-color: $white;
       border: 1px solid $purple;
-      text-decoration: none;
       color: $black !important;
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-  }
-  .btn-faq {
-    font-family: 'Marianne-Regular', sans-serif;
-    display: table !important;
-    padding: 10px 22px;
-    border-radius: 50px;
-    background-color: $purple;
-    text-decoration: none;
-    color: $black !important;
-    font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    &:hover {
-      background-color: $hover-purple;
     }
   }
   .bhl {

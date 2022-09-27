@@ -31,7 +31,7 @@
 
   <div class="line-filter"></div>
 
-  <div class="btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
+  <div class="btn btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
 
   <%= form_tag conseils_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
     <% if @selected.present? %>

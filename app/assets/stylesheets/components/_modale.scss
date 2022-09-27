@@ -236,32 +236,6 @@ $ease: ease;
       .btn-div {
         display: flex;
         justify-content: flex-end;
-        .btn-purple {
-          background-color: $purple;
-          -webkit-appearance: none;
-        }
-        .btn-green {
-          background-color: $green;
-          -webkit-appearance: none;
-        }
-        .btn {
-          margin-top: 10px;
-          padding-top: 5px;
-          padding-bottom: 9px;
-          font-family: Marianne, sans-serif;
-          font-size: 16px;
-          width: 20%;
-          height: 38px;
-          cursor: pointer;
-          background-image: none;
-          border-radius: 40px;
-          padding: 10px 20px;
-          border: none;
-          color: $black;
-          text-shadow: none;
-          font-weight: normal;
-          -webkit-appearance: none;
-        }
       }
     }
   }
@@ -326,14 +300,6 @@ $ease: ease;
     select {
       width: 100%;
     }
-
-
-    .btn {
-      height: 45px !important;
-      margin: 0 auto;
-      color: $black;
-      font-weight: normal;
-    }
   }
 }
 
@@ -344,9 +310,6 @@ $ease: ease;
     }
     .subtitle {
       font-size: 28px;
-    }
-    .btn {
-      width: 45% !important;
     }
   }
 }

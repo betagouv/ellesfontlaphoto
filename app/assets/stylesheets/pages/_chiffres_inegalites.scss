@@ -16,13 +16,6 @@
     .paragraphe {
       font-size: 18px;
     }
-    .btn-black {
-      width: 183px;
-      display: flex;
-      align-items: center !important;
-      justify-content: space-around;
-      color: white !important;
-    }
     .scrollable-carousel {
       display: none;
       overflow-x: scroll;
@@ -109,7 +102,6 @@
     .img-sun {
       width:48px;
     }
-    font-size: 18px;
     padding: 2px 15px 2px 10px;
     width: 290px;
     margin-right: 2%;
@@ -304,10 +296,6 @@
       display: block;
       .btn-outlined-white {
         margin: 5% auto;
-        display: flex;
-        width: 230px;
-        text-align: center;
-        justify-content: center;
         white-space: nowrap;
       }
       .btn-purple {

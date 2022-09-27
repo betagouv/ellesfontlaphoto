@@ -103,10 +103,8 @@
   .second-block-div {
     width: 50%;
     .btn-orange-home {
-      width: 200px;
       margin: 0 auto;
       background-color: $orange;
-      align-items: center;
       &:hover{
         background-color: $hover-orange !important;
       }
@@ -196,9 +194,7 @@
     width: 70%;
   }
   .btn-black {
-    width: 200px;
     margin: 0 auto;
-    display: table;
     color: $white !important;
     &:hover {
       background-color: $hover-black;
@@ -247,23 +243,6 @@
       }
       .paragraphe {
         font-size: 18px;
-      }
-    }
-    .btn-contact {
-      padding: 9px 20px 11px 15px;
-      white-space: nowrap;
-      background-color: $purple;
-      border-radius: 40px;
-      height: auto;
-      font-family: 'Marianne-Regular', sans-serif;
-      font-size: 16px;
-      cursor: pointer;
-      color: $black !important;
-      border : none;
-      max-width: 50%;
-      margin-right: 20px;
-      &:hover {
-        opacity: 80%;
       }
     }
   }
@@ -396,7 +375,6 @@
       }
       .btn-orange-home,.btn-contact {
         white-space: nowrap;
-        display: flex;
         margin-bottom: 20px;
         margin-left: 0 !important;
       }
