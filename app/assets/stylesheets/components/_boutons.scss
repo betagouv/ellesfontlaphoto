@@ -8,6 +8,7 @@
   align-items: center;
   text-decoration: none;
   display: table;
+  border: none;
 }
 
 .btn-flex {
@@ -28,11 +29,11 @@
 .btn-contact {
   white-space: nowrap;
   background-color: $purple;
-  color: $black  !important;
+  color: $black !important;
   border: none;
   margin-right: 20px;
   &:hover {
-    opacity: 80%;
+    background-color: $hover-purple;
   }
 }
 
@@ -49,7 +50,7 @@
 .btn-outlined-white {
   background-color: transparent;
   border: 1px solid $white;
-  color: $white;
+  color: $white !important;
   &:hover {
     background-color: $hover-black;
   }
@@ -57,12 +58,15 @@
 
 .btn-purple {
   background-color: $purple  !important;
-  color: $black;
+  color: $black !important;
+  &:hover {
+    background-color: $hover-purple;
+  }
 }
 
 .btn-orange-home {
   background-color: $orange  !important;
-  color: $black;
+  color: $black !important;
   &:hover {
     background-color: $hover-orange  !important;
   }
@@ -71,6 +75,9 @@
 .btn-purple {
   background-color: $purple;
   color: $white;
+  &:hover {
+    background-color: $hover-purple;
+  }
 }
 
 .btn-green {
@@ -87,20 +94,5 @@
 
   &:hover {
     background-color: $hover-purple;
-  }
-}
-
-@media only screen and (max-width: 1250px) {
-  .btn {
-    height: 45px !important;
-    margin: 0 auto;
-    color: $black;
-    font-weight: normal;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .btn {
-    width: 45% !important;
   }
 }
