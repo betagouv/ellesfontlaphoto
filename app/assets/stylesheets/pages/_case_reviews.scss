@@ -24,6 +24,9 @@
       display: flex;
       margin: 7% auto;
     }
+    .lds-ring,.count {
+      display: none;
+    }
     form {
       .btn-black {
         width: 60%;
@@ -32,7 +35,8 @@
         height: 46px;
         margin: 5% auto;
       }
-      input[type=text] {
+      input[type=text],
+      input[type=email] {
         border: none;
         border-bottom: 1px solid $black;
         font-family: "Marianne",

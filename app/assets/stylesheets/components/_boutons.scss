@@ -72,6 +72,15 @@
   }
 }
 
+.btn-grey {
+  background-color: $very-light-grey !important;
+  color: $black  !important;
+
+  &:hover {
+    background-color: #efefef  !important;
+  }
+}
+
 .btn-purple {
   background-color: $purple;
   color: $white;
