@@ -16,12 +16,8 @@
     .paragraphe {
       font-size: 18px;
     }
-    .btn-black {
-      width: 183px;
-      display: flex;
-      align-items: center !important;
-      justify-content: space-around;
-      color: white !important;
+    .btn-black img {
+      margin: 0 4px 3px 0;
     }
     .scrollable-carousel {
       display: none;
@@ -98,23 +94,12 @@
       margin-bottom: 60px;
     }
   }
-  .margin-btn {
-    margin: -20px 60px 90px 0px;
-    .btn-outlined-white {
-      font-size: 18px;
-      padding: 10px 18px 13px 18px;
-    }
-  }
   .btn-purple {
     .img-sun {
       width:48px;
     }
-    font-size: 18px;
-    padding: 2px 15px 2px 10px;
-    width: 290px;
+    padding: 2px 15px 0 10px;
     margin-right: 2%;
-    display: flex;
-    align-items: center;
     justify-content: space-around;
     background-color: $filter-purple !important;
     color: $white !important;
@@ -284,9 +269,6 @@
   }
   .div-index-parite {
     padding: 3%;
-    .margin-btn {
-      margin: 5% auto 10% auto;
-    }
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
@@ -302,16 +284,9 @@
     }
     .flex-div {
       display: block;
-      .btn-outlined-white {
+      .btn-outlined-white,.btn-purple {
         margin: 5% auto;
-        display: flex;
-        width: 230px;
-        text-align: center;
-        justify-content: center;
         white-space: nowrap;
-      }
-      .btn-purple {
-        margin: 5% auto;
       }
     }
     .cards-organizations {

@@ -74,7 +74,7 @@
   <div class="div-btn">
     <% if @help.candidate_url.present? %>
       <% if @help_status == "open" || @help.permanent %>
-        <a class="btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help" onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
+        <a class="btn btn-candidate" href="<%= @help.candidate_url %>" target=”_blank” id="btn-candidate-help" onclick="_paq.push(['trackEvent', 'Candidatez', 'Candidat Click Lien', 'Nouveau Candidatez']);">🚀 Candidatez</a>
       <% end %>
     <% end %>
     <% if @help_status == "close" && !(@help.permanent) %>
@@ -203,7 +203,7 @@
         </p>
       <% end %>
       <% if @help.faq_url.present? %>
-        <a class="btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
+        <a class="btn btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
       <% end %>
     </div>
   <% end %>

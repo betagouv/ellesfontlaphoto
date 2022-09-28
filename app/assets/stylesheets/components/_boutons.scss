@@ -1,0 +1,98 @@
+.btn {
+  border-radius: 40px;
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 15px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: table;
+  border: none;
+}
+
+.btn-flex {
+  display: flex;
+  width: -webkit-fill-available;
+  width: fit-content;
+  align-items: center;
+}
+
+.btn-black {
+  background-color: $black;
+  color: $white !important;
+  &:hover {
+    background-color: $hover-black;
+  }
+}
+
+.btn-contact {
+  white-space: nowrap;
+  background-color: $purple;
+  color: $black !important;
+  border: none;
+  margin-right: 20px;
+  &:hover {
+    background-color: $hover-purple;
+  }
+}
+
+.btn-faq {
+  background-color: $purple;
+  color: $black  !important;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  &:hover {
+    background-color: $hover-purple;
+  }
+}
+
+.btn-outlined-white {
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white !important;
+  &:hover {
+    background-color: $hover-black;
+  }
+}
+
+.btn-purple {
+  background-color: $purple  !important;
+  color: $black !important;
+  &:hover {
+    background-color: $hover-purple;
+  }
+}
+
+.btn-orange-home {
+  background-color: $orange  !important;
+  color: $black !important;
+  &:hover {
+    background-color: $hover-orange  !important;
+  }
+}
+
+.btn-purple {
+  background-color: $purple;
+  color: $white;
+  &:hover {
+    background-color: $hover-purple;
+  }
+}
+
+.btn-green {
+  background-color: $green;
+  color: $white;
+}
+
+.btn-modal {
+  cursor: pointer;
+  margin-right: 0;
+  background-color: $purple;
+  padding: 14px 20px !important;
+  height: 46px !important;
+
+  &:hover {
+    background-color: $hover-purple;
+  }
+}
