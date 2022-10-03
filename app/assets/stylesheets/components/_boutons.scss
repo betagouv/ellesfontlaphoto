@@ -3,7 +3,7 @@
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 16px;
   cursor: pointer;
-  padding: 12px 15px;
+  padding: 10px 15px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -61,6 +61,15 @@
   color: $black !important;
   &:hover {
     background-color: $hover-purple;
+  }
+}
+
+.btn-white {
+  background-color: $white  !important;
+  color: $black  !important;
+
+  &:hover {
+    background-color: $white;
   }
 }
 

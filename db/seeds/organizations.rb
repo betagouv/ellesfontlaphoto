@@ -21,7 +21,7 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   end
 
   if orga.nb_women_expos && orga.total_nb_expos
-    orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) >= 0.5
+    orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) * 100
   end
 
 

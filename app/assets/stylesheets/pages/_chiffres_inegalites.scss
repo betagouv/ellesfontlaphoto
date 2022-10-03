@@ -94,20 +94,15 @@
       margin-bottom: 60px;
     }
   }
-  .btn-purple {
+  .btn-white {
     .img-sun {
-      width:48px;
+      width: 44px;
     }
     padding: 2px 15px 0 10px;
     margin-right: 2%;
     justify-content: space-around;
-    background-color: $filter-purple !important;
-    color: $white !important;
-    &:hover {
-      background-color: #8F73FF !important;
-    }
   }
-  .btn-purple.centre {
+  .btn-white.centre {
     margin: 8% auto 0;
   }
   .cards-organizations {
@@ -117,9 +112,10 @@
     .card-organization {
       background-color: $white;
       border-radius: 16px;
-      padding: 7%;
+      position: relative;
       .card-organization-name {
         min-height: 120px;
+        padding: 7% 7% 0 7%;
         .paragraphe-bold {
           font-size: 22px;
           margin-bottom: 0;
@@ -145,51 +141,56 @@
         border-radius: 50%;
         width: 84px;
         height: 84px;
-        margin: 25px auto;
+        margin: 25px auto 113px;
         display: flex;
         align-items: center;
         justify-content: center;
         white-space: nowrap;
+
         .emoji-weather {
           max-height: 80%;
           max-width: 80%;
         }
       }
-      .weather-bubble.orange {
+      .weather-bubble.rain {
         background-color: $dark-orange;
       }
-      .weather-bubble.purple {
+      .weather-bubble.sun {
         background-color: $filter-purple;
       }
-      .weather-bubble.half-half {
-        background: linear-gradient(90deg, $dark-orange 50%, $filter-purple 50%);
+      .weather-bubble.cloud {
+        background: #FFAB2D;
       }
+
+
       .card-organization-numbers {
         text-align: center;
-        padding: 0 0 30px;
+        padding: 20px 0 20px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         .paragraphe {
           white-space: pre-wrap;
           padding: 0;
           margin: 0;
         }
-        .div-line {
-          z-index: 1;
-          margin: 0 auto;
-          color: black;
-          width: fit-content;
-          .line-orange, .line-purple {
-            height: 9px;
-            z-index: 0;
-            margin: -13px auto 4px;
-            color: transparent;
-          }
-          .line-orange {
-            background-color: rgba(244, 88, 0, 0.3);
-          }
-          .line-purple {
-            background-color: rgba(107, 72, 244, 0.3);
-          }
+        .paragraphe-small {
+          color: $grey-input;
         }
+        .paragraphe-bold {
+          font-size: 16px;
+        }
+      }
+      .card-organization-numbers.rain {
+        background-color: rgba(244, 88, 0, 0.4);
+      }
+      .card-organization-numbers.cloud {
+        background-color: rgba(255, 171, 45, 0.4);
+      }
+      .card-organization-numbers.sun {
+        background-color: rgba(107, 72, 244, 0.4);
       }
     }
   }
@@ -301,17 +302,6 @@
           .paragraphe {
             font-size: 12px;
             line-height: 10px;
-          }
-          .paragraphe.line-orange {
-            box-shadow: rgba(244, 88, 0, 0.3) 0px -0.50rem 0px inset;
-          }
-
-          .paragraphe.line-purple {
-            box-shadow: rgba(107, 72, 244, 0.3) 0px -0.50rem 0px inset;
-          }
-          .div-line {
-            font-size: 14px;
-            white-space: nowrap;
           }
         }
         .card-organization-name {

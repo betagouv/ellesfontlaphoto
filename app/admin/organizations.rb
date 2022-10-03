@@ -13,7 +13,7 @@ ActiveAdmin.register Organization do
     end
 
     if organization.nb_women_expos && organization.total_nb_expos
-      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) >= 0.5
+      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) * 100
     end
 
     if organization.dir_parity == nil
@@ -35,10 +35,10 @@ ActiveAdmin.register Organization do
     organization.organization_type = params["organization"]["organization_type"].second
 
     if organization.nb_women_dir && organization.total_nb_dir
-      organization.dir_parity = organization.nb_women_dir.fdiv(organization.total_nb_dir ) >= 0.5
+      organization.dir_parity = organization.nb_women_dir.fdiv(organization.total_nb_dir) >= 0.5
     end
     if organization.nb_women_expos && organization.total_nb_expos
-      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos ) >= 0.5
+      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) * 100
     end
 
     if organization.dir_parity == nil
@@ -57,7 +57,7 @@ ActiveAdmin.register Organization do
   end
 
   form do |f|
-    f.semantic_errors # shows errors on :base
+    f.semantic_errors
     f.inputs "Organisation" do
       f.input :organization_type, :as => :check_boxes, :collection => Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
