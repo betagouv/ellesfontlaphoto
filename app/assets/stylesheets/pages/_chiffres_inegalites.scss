@@ -71,7 +71,7 @@
     color: white;
     text-align: center;
     width: 80%;
-    margin: 10% auto 5%;
+    margin: 7% auto 5%;
   }
   .div-title-index-parite {
     margin: 3% auto;
@@ -90,17 +90,20 @@
       color: $white;
       text-align: center;
     }
-    .paragraphe {
-      margin-bottom: 60px;
-    }
   }
-  .btn-white {
+  .div-btns {
+    margin: 40px auto 60px;
+  }
+  .btn-white.btn-sun {
     .img-sun {
-      width: 44px;
+      width: 36px;
+      margin-right: 8px;
     }
-    padding: 2px 15px 0 10px;
+    padding: 5px 15px 5px;
+    width: fit-content;
     margin-right: 2%;
     justify-content: space-around;
+    display: flex;
   }
   .btn-white.centre {
     margin: 8% auto 0;
@@ -151,7 +154,7 @@
         }
       }
       .card-organization-name {
-        min-height: 120px;
+        min-height: 200px;
         padding: 7% 7% 0 7%;
         .paragraphe-bold {
           font-size: 22px;
@@ -200,7 +203,7 @@
       }
       .card-organization-numbers {
         text-align: center;
-        padding: 20px 0 20px;
+        padding: 20px 0 24px;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         position: absolute;
@@ -226,6 +229,9 @@
       }
       .card-organization-numbers.sun {
         background-color: rgba(107, 72, 244, 0.4);
+      }
+      &:hover {
+        background-color: $very-light-grey;
       }
     }
   }
@@ -305,6 +311,11 @@
   }
   .div-index-parite {
     padding: 3%;
+    .div-btns {
+      .btn-white {
+        margin: 0 auto;
+      }
+    }
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
@@ -327,16 +338,36 @@
     }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
+      grid-gap: 8px;
       .card-organization {
+        .card__face--back {
+          padding: 0px 10px 10px 10px;
+          .cross {
+            font-size: 25px;
+          }
+          .main-paragraphe {
+            font-size: 14px;
+            margin-top: 0px;
+            line-height: 20px;
+          }
+          .btn-white {
+            font-size: 14px;
+            white-space: nowrap;
+          }
+        }
         .weather-bubble {
           width: 60px;
           height: 60px;
+          margin: 20px auto 80px;
         }
         .card-organization-numbers {
           padding: 5% 0;
-          .paragraphe {
+          font-size: 12px;
+          .paragraphe-bold {
             font-size: 12px;
-            line-height: 10px;
+          }
+          .paragraphe-small {
+            font-size: 10px;
           }
         }
         .card-organization-name {
