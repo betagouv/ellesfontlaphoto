@@ -42,9 +42,12 @@
       <% end %>
     </div>
   </div>
-  <div class="card__face card__face--back">
+  <div class="card__face card__face--back" data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
     <p class="cross" data-action="click->flip-card#flip">&times;</p>
-    <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
-    <div class="btn btn-white js-modal" data-modal="modal-contact">dîtes-le nous !</div>
+    <div data-orga-info-target="card">
+      <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
+      <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
+    </div>
+    <%# <a href="/organizations/= organization.id/add_request_info" class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</a> %>
   </div>
 </div>

@@ -1,5 +1,5 @@
 ActiveAdmin.register Organization do
-  permit_params :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo
+  permit_params :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo, :request_info_count
 
   before_destroy do |organization|
     organization.logo.purge
@@ -54,6 +54,15 @@ ActiveAdmin.register Organization do
     end
 
     organization.save
+  end
+
+  index do
+    column :id
+    column :organization_type
+    column :name
+    column :city
+    column :score_parity
+    column :request_info_count
   end
 
   form do |f|

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: :create
   get "/helps/confirm", to: "helps#confirm"
+  get "/organizations/:id/add_request_info", to: "organizations#add_request_info"
   resources :helps, only: [:show, :index, :new, :create] do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]

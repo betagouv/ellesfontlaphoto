@@ -14,6 +14,18 @@ class OrganizationsController < ApplicationController
     @organization.save
   end
 
+  def add_request_info
+    if params[:id]
+      @organization = Organization.find(params[:id])
+      @organization.request_info_count += 1
+      @organization.save
+    end
+    respond_to do |format|
+      format.html { render redirect_to organizations_path }
+      format.text { render partial: 'organizations/info_orga_validate', formats: [:html] }
+    end
+  end
+
   private
 
   def organization_params
