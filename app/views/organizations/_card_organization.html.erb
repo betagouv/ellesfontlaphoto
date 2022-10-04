@@ -1,45 +1,50 @@
-
-<div class="card-organization">
-  <div class="card-organization-name">
-    <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
-    <% if organization.logo.attached? %>
-      <div class="flex-div">
-        <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+<div class="card-organization" data-controller="flip-card" data-flip-card-target="card">
+  <div class="card__face card__face--front" data-action="click->flip-card#flip">
+    <div class="card-organization-name">
+      <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
+      <% if organization.logo.attached? %>
+        <div class="flex-div">
+          <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+        </div>
+      <% end %>
+    </div>
+    <% if organization.expos_parity <= 39 %>
+      <div class="weather-bubble rain">
+        <%= image_tag "emojis/RAIN-EMOJI.svg", alt: "emoji pluvieux", class: "emoji-weather" %>
+      </div>
+    <% elsif organization.expos_parity >= 40 && organization.expos_parity <= 49 %>
+      <div class="weather-bubble cloud">
+        <%= image_tag "emojis/CLOUD-EMOJI.svg", alt: "emoji nuageux", class: "emoji-weather" %>
+      </div>
+    <% elsif organization.expos_parity >= 50 %>
+      <div class="weather-bubble sun">
+        <%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "emoji-weather" %>
       </div>
     <% end %>
+    <% if organization.expos_parity <= 39 %>
+      <div class="card-organization-numbers rain">
+    <% elsif organization.expos_parity >= 40 && organization.expos_parity <= 49 %>
+      <div class="card-organization-numbers cloud">
+    <% elsif organization.expos_parity >= 50 %>
+      <div class="card-organization-numbers sun">
+    <% elsif organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
+      <div class="card-organization-numbers">
+    <% end %>
+      <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
+        <div>exposantes : inconnu</div>
+      <% else %>
+        <div>exposantes : <span class="paragraphe-bold"><%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></span> <span class= "paragraphe-small">(<%= organization.expos_parity.to_i %>%)</span></div>
+      <% end %>
+      <% if organization.nb_women_dir.blank? || organization.total_nb_dir.blank? %>
+        <div>dirigeantes : inconnu</div>
+      <% else %>
+        <div>dirigeantes : <span class="paragraphe-bold"><%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></span></div>
+      <% end %>
+    </div>
   </div>
-  <% if organization.expos_parity <= 39 %>
-    <div class="weather-bubble rain">
-      <%= image_tag "emojis/RAIN-EMOJI.svg", alt: "emoji pluvieux", class: "emoji-weather" %>
-    </div>
-  <% elsif organization.expos_parity >= 40 && organization.expos_parity <= 49 %>
-    <div class="weather-bubble cloud">
-      <%= image_tag "emojis/CLOUD-EMOJI.svg", alt: "emoji nuageux", class: "emoji-weather" %>
-    </div>
-  <% elsif organization.expos_parity >= 50 %>
-    <div class="weather-bubble sun">
-      <%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "emoji-weather" %>
-    </div>
-  <% end %>
-  <% if organization.expos_parity <= 39 %>
-    <div class="card-organization-numbers rain">
-  <% elsif organization.expos_parity >= 40 && organization.expos_parity <= 49 %>
-    <div class="card-organization-numbers cloud">
-  <% elsif organization.expos_parity >= 50 %>
-    <div class="card-organization-numbers sun">
-  <% elsif organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
-    <div class="card-organization-numbers">
-  <% end %>
-    <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
-      <div>exposantes : inconnu</div>
-    <% else %>
-      <div>exposantes : <span class="paragraphe-bold"><%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></span> <span class= "paragraphe-small">(<%= organization.expos_parity.to_i %>%)</span></div>
-    <% end %>
-    <% if organization.nb_women_dir.blank? || organization.total_nb_dir.blank? %>
-      <div>dirigeantes : inconnu</div>
-    <% else %>
-      <div>dirigeantes : <span class="paragraphe-bold"><%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></span></div>
-    <% end %>
+  <div class="card__face card__face--back">
+    <p class="cross" data-action="click->flip-card#flip">&times;</p>
+    <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
+    <div class="btn btn-white js-modal" data-modal="modal-contact">dîtes-le nous !</div>
   </div>
 </div>
-

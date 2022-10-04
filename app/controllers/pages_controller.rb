@@ -22,6 +22,7 @@ class PagesController < ApplicationController
 
   def chiffres_inegalites
     @organizations = Organization.first(8)
+    @contact = Contact.new
   end
 
 end

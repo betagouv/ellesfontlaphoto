@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
     @organizations = Organization.order("total_nb_expos DESC NULLS LAST")
+    @contact = Contact.new
   end
 
   def new

@@ -109,10 +109,44 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
+    .card-organization.is-flipped {
+      transform: translateX(-100%) rotateY(-180deg);
+    }
     .card-organization {
       background-color: $white;
       border-radius: 16px;
       position: relative;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform-origin: center right;
+      transition: transform 1s;
+      .card__face {
+        backface-visibility: hidden;
+      }
+      .card__face--back {
+        background: $dark-grey;
+        transform: rotateY(180deg);
+        position: absolute;
+        top:0;
+        height: 100%;
+        border-radius: 16px;
+        padding: 20px 30px;
+        .cross {
+          color: $white;
+          display: flex;
+          justify-content: end;
+          font-size: 26px;
+        }
+        .main-paragraphe {
+          color: $white;
+          font-size: 22px;
+          margin-top: 20px;
+        }
+        .btn-white {
+          padding: 10px 15px;
+          margin: 20px auto;
+        }
+      }
       .card-organization-name {
         min-height: 120px;
         padding: 7% 7% 0 7%;
