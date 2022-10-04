@@ -22,6 +22,9 @@ class PagesController < ApplicationController
 
   def chiffres_inegalites
     @organizations = Organization.first(8)
+    if request.user_agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+      @organizations = Organization.first(9)
+    end
     @contact = Contact.new
   end
 
