@@ -114,6 +114,8 @@
     grid-gap: 16px;
     .card-organization.is-flipped {
       transform: translateX(-100%) rotateY(-180deg);
+      background-color: $dark-grey !important;
+      transition: all 1.2s;
     }
     .card-organization {
       background-color: $white;
@@ -339,6 +341,10 @@
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
       grid-gap: 8px;
+      .card-organization.is-flipped {
+        background-color: $dark-grey  !important;
+        transition: all 1.2s;
+      }
       .card-organization {
         .card__face--back {
           padding: 0px 10px 10px 10px;
