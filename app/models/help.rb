@@ -16,10 +16,6 @@ class Help < ApplicationRecord
   validates :institution_name, presence: true
   validates :author_email, presence: true, if: :suggested
 
-  def some_validation_check
-      raise
-  end
-
   PARITE = [
     "respectée",
     "non-respectée"

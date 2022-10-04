@@ -9,8 +9,7 @@ class ContactsController < ApplicationController
           add_to_sendinblue_list(@contact.contact_email)
           redirect_to root_path(anchor: 'contact'), alert: 'Votre demande a bien été prise en compte.'
         else
-          # ContactMailer.new_contact(@contact).deliver_now
-          raise
+          ContactMailer.new_contact(@contact).deliver_now
           redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'
         end
       end
