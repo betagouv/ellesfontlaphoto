@@ -1,6 +1,6 @@
 <div class="card-organization" data-controller="flip-card" data-flip-card-target="card">
   <div class="card__face card__face--front" data-action="click->flip-card#flip">
-    <div class="card-organization-name" style="display: flex; align-items: center;">
+    <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
       <div>
         <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
         <% if organization.logo.attached? %>
