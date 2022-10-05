@@ -17,6 +17,9 @@
       width: 50%;
       margin: 0 auto 5% auto;
     }
+    .btn-black {
+      margin: 0 auto;
+    }
   }
   .subtitle-marianne {
     margin-top: 10%;
@@ -179,6 +182,9 @@
       .btn-submit {
         margin-top: 5%;
         text-align: center;
+        .btn-black {
+          margin: 20px auto;
+        }
       }
     }
   }

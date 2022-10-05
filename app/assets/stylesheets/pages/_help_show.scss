@@ -24,13 +24,16 @@
         .pastille-parite-respectee {
           font-size: 20px;
           background-color: $purple;
-          padding: 2px 5px 1px 7px;
+          padding: 5px 10px;
           border-radius: 50%;
           text-align: center;
           margin: 0 auto;
           height: fit-content;
           width: fit-content;
-          max-width: 20px;
+          .emojis-eflc-small {
+            width: 20px;
+            margin: 0;
+          }
         }
       }
       .pastille-parite-nr {
@@ -47,7 +50,7 @@
           margin-right: 10px;
         }
         .pastille-parite-non-respectee {
-          padding: 2px 5px 1px 7px;
+          padding: 5px 11px 8px 11px;
           border-radius: 50%;
           text-align: center;
           margin: 0 auto;
@@ -55,7 +58,10 @@
           background-color: $rouille;
           height: fit-content;
           width: fit-content;
-          max-width: 20px;
+          .emojis-eflc-small {
+            width: 20px;
+            margin: 0;
+          }
         }
       }
     }

@@ -13,8 +13,8 @@ ActiveAdmin.register Help do
   end
 
   before_update do |help|
-    if params[:help][:visible] == "1" && params[:help][:author_email]
-      # Ici ajouter l'envoie d'email
+    if params[:help][:visible] == "1" && params[:help][:author_email] != ""
+      HelpMailer.online_help(help).deliver_now
     end
   end
 
