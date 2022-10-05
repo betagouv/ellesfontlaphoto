@@ -154,6 +154,10 @@
             color: #D9D9D9;
           }
         }
+        .btn-white {
+          padding: 10px 15px;
+          margin: 20px auto;
+        }
         .main-paragraphe {
           color: $white;
           font-size: 22px;
@@ -188,7 +192,7 @@
         border-radius: 50%;
         width: 84px;
         height: 84px;
-        margin: 25px auto 113px;
+        margin: 25px auto 120px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -238,7 +242,10 @@
         background-color: rgba(107, 72, 244, 0.4);
       }
       &:hover {
-        opacity: 80%;
+        opacity: 60%;
+      }
+      &:active {
+        opacity: 1;
       }
     }
   }

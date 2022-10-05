@@ -1,12 +1,14 @@
 <div class="card-organization" data-controller="flip-card" data-flip-card-target="card">
   <div class="card__face card__face--front" data-action="click->flip-card#flip">
-    <div class="card-organization-name">
-      <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
-      <% if organization.logo.attached? %>
-        <div class="flex-div">
-          <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
-        </div>
-      <% end %>
+    <div class="card-organization-name" style="display: flex; align-items: center;">
+      <div>
+        <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
+        <% if organization.logo.attached? %>
+          <div class="flex-div">
+            <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+          </div>
+        <% end %>
+      </div>
     </div>
     <% if organization.expos_parity <= 39 %>
       <div class="weather-bubble rain">
