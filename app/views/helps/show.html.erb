@@ -1,5 +1,6 @@
 <% content_for :meta_title, "#{@help.title} sur #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @help.description %>
+<% next_date = CandidatureDate.where(help: @help).where("end_date >= ?", Date.today).order("end_date ASC").first %>
 
 <%= render "shared/notation_help", help_id: @help.id %>
 
@@ -29,22 +30,26 @@
           Durée résidence : <%= @help.residence_time %>
         <% end %>
       </div>
-      <hr class="hl">
+      <% unless next_date.nil? %>
+        <hr class="hl">
+      <% end %>
       <% if @help.permanent %>
       <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dépôt de candidatures :</p>
       <p class="paragraphe">Toute l'année</p>
       <% else %>
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates de candidature :</p>
-        <p class="paragraphe lh28 mt0 mb0">
-          <% if @help.regularity.present? %>
-            <%= @help.regularity %>
-          <% end %>
-        </p>
-        <p class="paragraphe lh28 mt0 mb40">
-          <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
-            Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
-          <% end %>
-        </p>
+        <% unless next_date.nil? %>
+          <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates de candidature :</p>
+          <p class="paragraphe lh28 mt0 mb0">
+            <% if @help.regularity.present? %>
+              <%= @help.regularity %>
+            <% end %>
+          </p>
+          <p class="paragraphe lh28 mt0 mb40">
+            <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
+              Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
+            <% end %>
+          </p>
+        <% end %>
       <% end %>
       <hr class="hl">
       <p class="paragraphe-bold mb0">Conditions de participation :</p>

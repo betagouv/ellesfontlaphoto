@@ -6,6 +6,9 @@
       background-color: $hover-pink;
       padding: 10px;
     }
+    img {
+      max-width: 100%;
+    }
     a {
       color: $black !important;
       &:hover {
