@@ -113,6 +113,7 @@ ActiveAdmin.register Help do
 
   index do
     column :id
+    column :from_api
     column :visible
     column :title
     column :residence_condition
