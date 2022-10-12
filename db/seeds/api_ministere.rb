@@ -1,5 +1,4 @@
-require "json"
-require "open-uri"
+require "http"
 
  EQUIVALENT_RESIDENCE = {
   "- France entière -": "Française ou résidant en France",
@@ -26,30 +25,46 @@ require "open-uri"
   "Occitanie": "Occitanie",
   "Outre-mer": "Française résidant en outre-mer",
   "Pays de la Loire": "Pays de la Loire",
-  "Provence-Alpes-Côte d'Azur": "Provence-Alpes-Côte-d'Azur",
+  "Provence-Alpes-Côte d’Azur": "Provence-Alpes-Côte-d'Azur",
   "Saint-Pierre-et-Miquelon": "Saint-Pierre-et-Miquelon"
 }
 
-url = "https://www.culture.gouv.fr/api/appel-a-projet"
-appel_projet_serialized = URI.open(url).read
-appel_projet = JSON.parse(appel_projet_serialized)
-p appel_projet
+offset = 0
+result = nil
 
-# appel_projet["results"].each do |appel|
-#   if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
-#     new_help = Help.new(
-#       visible: false,
-#       title: appel["title"],
-#       description_longue: appel["body"],
-#       candidate_url: appel["url"],
-#       residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
-#       start_date: Date.parse(appel["creationDate"]),
-#       end_date: Date.parse(appel["deadline"]),
-#       description: "À définir",
-#       help_amount: "À définir",
-#     )
-#     HelpApi.create(api_id: appel["id"])
-#     new_help.save
-#     new_candidature_date = CandidatureDate.new(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
-#   end
-# end
+while result != []
+  url = "https://www.culture.gouv.fr/api/appel-a-projet?offset=#{offset}"
+  response = HTTP.get(url)
+  appel_projet = JSON.parse(response)
+  offset += 1
+
+  result = appel_projet["results"]
+  result.each do |appel|
+    if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
+      p appel
+      p (Date.parse(appel["deadline"]) >= Date.today)
+      p appel["deadline"]
+      new_help = Help.new(
+        visible: false,
+        title: appel["title"],
+        description_longue: appel["body"],
+        candidate_url: appel["url"],
+        residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
+        start_date: Date.parse(appel["creationDate"]),
+        end_date: Date.parse(appel["deadline"]),
+        description: "À définir",
+        help_amount: "À définir",
+        institution_name: "À définir",
+        from_api: true
+      )
+      if new_help.save
+        HelpApi.create(api_id: appel["id"])
+      end
+      p new_help.save
+      p new_help.errors.messages
+      new_help.save
+      new_candidature_date = CandidatureDate.create(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
+    end
+  end
+end
+
