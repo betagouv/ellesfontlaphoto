@@ -12,7 +12,7 @@ class Help < ApplicationRecord
   validates :description, presence: true
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
-  validates :type_list, presence: true
+  validates :type_list, presence: true, unless: :from_api
   validates :institution_name, presence: true
   validates :author_email, presence: true, if: :suggested
 

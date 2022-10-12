@@ -25,7 +25,7 @@ require "http"
   "Occitanie": "Occitanie",
   "Outre-mer": "Française résidant en outre-mer",
   "Pays de la Loire": "Pays de la Loire",
-  "Provence-Alpes-Côte d'Azur": "Provence-Alpes-Côte-d'Azur",
+  "Provence-Alpes-Côte d’Azur": "Provence-Alpes-Côte-d'Azur",
   "Saint-Pierre-et-Miquelon": "Saint-Pierre-et-Miquelon"
 }
 
@@ -41,6 +41,9 @@ while result != []
   result = appel_projet["results"]
   result.each do |appel|
     if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
+      p appel
+      p (Date.parse(appel["deadline"]) >= Date.today)
+      p appel["deadline"]
       new_help = Help.new(
         visible: false,
         title: appel["title"],
@@ -51,10 +54,16 @@ while result != []
         end_date: Date.parse(appel["deadline"]),
         description: "À définir",
         help_amount: "À définir",
+        institution_name: "À définir",
+        from_api: true
       )
-      HelpApi.create(api_id: appel["id"])
+      if new_help.save
+        HelpApi.create(api_id: appel["id"])
+      end
+      p new_help.save
+      p new_help.errors.messages
       new_help.save
-      new_candidature_date = CandidatureDate.new(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
+      new_candidature_date = CandidatureDate.create(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
     end
   end
 end
