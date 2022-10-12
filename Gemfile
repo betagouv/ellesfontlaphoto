@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 
 gem 'devise'
 
+gem 'http'
+
 gem 'turbolinks_render'
 
 gem 'simple_form'
