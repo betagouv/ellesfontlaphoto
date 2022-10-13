@@ -1,8 +1,10 @@
 {
   "jobs": [
     {
-      "command1": "0 5 * * * rails candidature_dates:update",
-      "command2": "45 23 * * 6 rails db:seed:api_ministere"
+      "command": "0 5 * * * rails candidature_dates:update"
+    },
+    {
+      "command": "45 23 * * 6 rails db:seed:api_ministere"
     }
   ]
 }
