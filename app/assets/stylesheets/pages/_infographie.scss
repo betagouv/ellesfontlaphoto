@@ -51,6 +51,10 @@
   .paragraphe.purple {
     color: $filter-purple;
   }
+  .infographie-subdiv.d-flex.first-card {
+    align-items: center;
+  }
+
   .infographie-subdiv {
     width: 45%;
     padding: 4%;
@@ -186,6 +190,9 @@
       justify-content: center;
       display: flex;
       align-items: center;
+      .paragraphe {
+        text-align: left;
+      }
     }
     .infographie-subdiv {
       width: 100%;
