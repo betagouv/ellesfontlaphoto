@@ -31,7 +31,7 @@ class HelpsController < ApplicationController
       @selected = true
       @helps = @helps.where(old_laureats_parite: "respectée").or(@helps.where(commission_parite: "respectée"))
     end
-    @helps = @helps.order("end_date DESC NULLS LAST")
+    @helps = @helps.order("end_date ASC NULLS LAST")
     if params[:type_photo_list].present?
       @selected_photo_type = true
       @helps = @helps.tagged_with(params[:type_photo_list].split(","), :any => true) | @helps.tagged_with(Help::PHOTO_TYPE.excluding(params[:type_photo_list].split(",")), :exclude => true)
