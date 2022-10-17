@@ -65,8 +65,7 @@
           line-height: 24px;
           opacity: 1;
           display: table !important;
-          margin: 0 5px;
-          padding: 1.05rem 0 1.1rem 0;
+          padding: 1.05rem 5px 1.1rem 5px;
           background-color: transparent;
         }
         a .links-icones {
@@ -143,7 +142,11 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media (min-width:768px) and (max-width:1024px) {
+
+}
+
+@media only screen and (max-width: 768px) {
 
   .header {
     display: none;
