@@ -7,8 +7,17 @@
 }
 
 .banner-menu {
-  background-color: rgba(188, 171, 255, 0.5);
+  // background-color: rgba(188, 171, 255, 0.5);
   display: none;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  justify-content: left;
+  padding-left: 96px;
+  background-color: $purple-opacity;
+  p {
+    font-size: 14px;
+  }
 }
 
 .header_body-row {
@@ -21,13 +30,13 @@
   box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
   .header_brand {
     max-width:20%;
-    padding-left: 3rem;
+    padding-left: 6em;
     .header_logo,.logo {
       padding: 1rem 15px 0.7rem 0;
       font-family: 'Marianne-Bold', sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 28px;
       padding-top: 8px;
       color: $black;
@@ -52,11 +61,11 @@
           font-family: 'Marianne-Regular', sans-serif;
           text-decoration: none;
           color: $black  !important;
-          font-size: 16px;
+          font-size: 14px;
           line-height: 24px;
           opacity: 1;
           display: table !important;
-          margin: 0 15px;
+          margin: 0 5px;
           padding: 1.05rem 0 1.1rem 0;
           background-color: transparent;
         }

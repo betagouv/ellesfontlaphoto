@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["bannerHelp", "bannerConseils", "bannerEntraide", "bannerIndex", "bannerChiffres"]
 
   helpMouseOver() {
-    this.bannerHelpTarget.style.display = "block";
+    this.bannerHelpTarget.style.display = "flex";
   }
 
 
@@ -13,7 +13,7 @@ export default class extends Controller {
   }
 
   conseilsMouseOver() {
-    this.bannerConseilsTarget.style.display = "block";
+    this.bannerConseilsTarget.style.display = "flex";
   }
 
 
@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   entraideMouseOver() {
-    this.bannerEntraideTarget.style.display = "block";
+    this.bannerEntraideTarget.style.display = "flex";
   }
 
 
@@ -31,7 +31,7 @@ export default class extends Controller {
   }
 
   indexMouseOver() {
-    this.bannerIndexTarget.style.display = "block";
+    this.bannerIndexTarget.style.display = "flex";
   }
 
 
@@ -40,7 +40,7 @@ export default class extends Controller {
   }
 
   chiffresMouseOver() {
-    this.bannerChiffresTarget.style.display = "block";
+    this.bannerChiffresTarget.style.display = "flex";
   }
 
 
