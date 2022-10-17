@@ -116,34 +116,44 @@
 /*----------------------------------------*/
 /*RESPONSIVE*/
 @media only screen and (max-width: 1250px) {
-  .header .header_body-row {
-    .link-menu {
-      font-size: 12px;
-      margin: 0 8px;
-    }
-    .header_brand {
-      padding-left: 1rem;
-      min-width: 20%;
-      .header_logo {
-        padding: 0;
-      }
-      .logo {
-        font-size: 14px;
-      }
-    }
-    .header_tools-links {
-      width: 45%;
-      .links-group {
-        li {
-          margin:0;
-        }
-      }
-    }
-  }
+
 }
 
 @media (min-width:768px) and (max-width:1024px) {
+  .header .header_body-row {
+      .link-menu {
+        font-size: 12px;
+        margin: 0px;
+        white-space: nowrap;
+      }
 
+      .header_brand {
+        padding-left: 1rem;
+        min-width: 10%;
+
+        .header_logo {
+          padding: 0;
+        }
+
+        .logo {
+          font-size: 14px;
+        }
+      }
+
+      .header_tools-links {
+        width: 100%;
+
+        .links-group {
+          justify-content: space-around;
+          li {
+            margin: 0;
+            .link-menu .menu-name .links-icones .emojis-eflc-medium {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
 }
 
 @media only screen and (max-width: 768px) {

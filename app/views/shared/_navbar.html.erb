@@ -15,7 +15,7 @@
           </li>
           <li data-action="mouseover->menu#conseilsMouseOver mouseout->menu#conseilsMouseOut">
             <%= link_to conseils_path, class: "link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/diamant.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium" %></span> Ressources</div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/carnet-noir.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium" %></span> Ressources</div>
             <% end %>
           </li>
           <li data-action="mouseover->menu#entraideMouseOver mouseout->menu#entraideMouseOut">
@@ -25,12 +25,12 @@
           </li>
           <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut">
             <%= link_to organizations_path, class: "link-menu #{params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "height: 20px;" %></span> Index Parité</div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Index Parité</div>
             <% end %>
           </li>
           <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut">
             <%= link_to infographie_path, class: "link-menu #{params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "height: 20px;" %></span> Chiffres inégalités</div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Chiffres inégalités</div>
             <% end %>
           </li>
         </ul>
@@ -50,7 +50,7 @@
     <p>Info sur l'index</p>
   </div>
   <div class="banner-info banner-menu" data-menu-target="bannerChiffres">
-    <p>Info sur les chiffrs</p>
+    <p>Info sur les chiffres</p>
   </div>
 </div>
 
