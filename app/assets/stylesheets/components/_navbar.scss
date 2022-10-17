@@ -6,13 +6,17 @@
   display: contents;
 }
 
+.banner-menu {
+  background-color: rgba(188, 171, 255, 0.5);
+  display: none;
+}
+
 .header_body-row {
   background-color: white;
   z-index: 11111;
   position: sticky;
   top: 0;
   display:flex;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
   .header_brand {
@@ -44,63 +48,38 @@
       justify-content: flex-start;
       margin:0;
       li {
-        margin-right: 40px;
+      .link-menu {
+          font-family: 'Marianne-Regular', sans-serif;
+          text-decoration: none;
+          color: $black  !important;
+          font-size: 16px;
+          line-height: 24px;
+          opacity: 1;
+          display: table !important;
+          margin: 0 15px;
+          padding: 1.05rem 0 1.1rem 0;
+          background-color: transparent;
+        }
         a .links-icones {
           font-size: 18px;
+        }
+        .menu-name {
+          padding: 0 5px 5px 5px;
+        }
+        &:hover {
+          box-shadow: rgba(188, 171, 255, 0.5) 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+          .menu-name {
+            background-color: $white-grey;
+            border-radius: 5px;
+          }
         }
       }
     }
   }
 
-  .link-menu {
-    font-family: 'Marianne-Regular', sans-serif;
-    text-decoration:none;
-    color: $black !important;
-    font-size: 16px;
-    line-height: 24px;
-    opacity: 1;
-    display: table !important;
-    margin: 0 15px;
-    padding: 1.05rem 0 1.1rem 0;
-    background-color: transparent;
-  }
-  .link-menu.helps-link-menu {
-    &:hover {
-      box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    }
-  }
-
-  .helps-link-selected {
+  .link-selected {
     white-space: nowrap;
     box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    border-radius: 0;
-  }
-
-  .link-menu.conseils-link-menu {
-    &:hover {
-      box-shadow: $orange 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    }
-  }
-
-  .conseils-link-selected {
-    white-space: nowrap;
-    box-shadow: $orange 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    border-radius: 0;
-  }
-
-  .link-menu.manifeste-link-menu {
-    white-space: nowrap;
-    margin: 0 15px;
-    padding: 1.05rem 0 1.15rem 0;
-    margin-bottom: 0;
-    &:hover {
-      box-shadow: $hover-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    }
-  }
-
-  .manifeste-link-menu-selected {
-    white-space: nowrap;
-    box-shadow: $full-black 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     border-radius: 0;
   }
 
@@ -151,10 +130,6 @@
           margin:0;
         }
       }
-    }
-    .manifeste-link-menu {
-      margin-right: 0.5rem;
-      padding: 1.05rem 0 1.30rem 0;
     }
   }
 }
