@@ -189,7 +189,7 @@
     li {
       padding: 15px 0;
       text-align:center;
-      background-color: $hover-purple;
+      background-color: $purple-menu-mobile;
       border-top: 0.1px solid $white;
       display: flex;
       justify-content: center;
@@ -226,6 +226,21 @@
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
+    a {
+      .link-selected {
+        background-color: $purple-opacity;
+      }
+      li {
+        .paragraphe-bold {
+          font-size: 14px;
+          margin: 0;
+        }
+        .paragraphe-x-small {
+          color: $title-grey;
+          margin: 0;
+        }
+      }
+    }
   }
 
   /* menu icon */
@@ -242,7 +257,7 @@
     border-radius: 40px;
     margin: 12px 10px 12px 0 ;
     padding: 5px 15px 7px;
-    background-color: $hover-purple;
+    background-color: $purple-menu-mobile;
     .navicon {
       background: #333;
       display: block;
@@ -286,7 +301,7 @@
   }
 
   .header-mobile .menu-btn:checked ~ .menu {
-    max-height: 260px;
+    max-height: 370px;
   }
 
   .header-mobile .menu-btn:checked ~ .menu-icon {

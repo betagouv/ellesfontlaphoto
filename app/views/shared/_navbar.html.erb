@@ -8,28 +8,28 @@
       </div>
       <div class="header_tools-links">
         <ul class="menu links-group mb0">
-          <li data-action="mouseover->menu#helpMouseOver mouseout->menu#helpMouseOut">
-            <%= link_to helps_path, class: "link-menu #{params[:controller] == "helps" && params[:action] == "index" ? "link-selected" : "" }" do  %>
+          <li data-action="mouseover->menu#helpMouseOver mouseout->menu#helpMouseOut" class="<%= params[:controller] == "helps" && params[:action] == "index" ? "link-selected" : ""  %>">
+            <%= link_to helps_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-medium" %></span> Aides</div>
             <% end %>
           </li>
-          <li data-action="mouseover->menu#conseilsMouseOver mouseout->menu#conseilsMouseOut">
-            <%= link_to conseils_path, class: "link-menu #{params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "link-selected" : "" }" do  %>
+          <li data-action="mouseover->menu#conseilsMouseOver mouseout->menu#conseilsMouseOut" class= "<%= params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "link-selected" : ""  %>">
+            <%= link_to conseils_path, class: "link-menu " do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/carnet-noir.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium" %></span> Ressources</div>
             <% end %>
           </li>
-          <li data-action="mouseover->menu#entraideMouseOver mouseout->menu#entraideMouseOut">
-            <%= link_to rencontre_path, class: "link-menu #{params[:controller] == "pages" && params[:action] == "rencontre" ? "link-selected" : "" }" do  %>
+          <li data-action="mouseover->menu#entraideMouseOver mouseout->menu#entraideMouseOut" class="<%= params[:controller] == "pages" && params[:action] == "rencontre" ? "link-selected" : "" %>">
+            <%= link_to rencontre_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 52px;" %></span> Entraide</div>
             <% end %>
           </li>
-          <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut">
-            <%= link_to organizations_path, class: "link-menu #{params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" }" do  %>
+          <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut" class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : ""  %>">
+            <%= link_to organizations_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Index Parité</div>
             <% end %>
           </li>
-          <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut">
-            <%= link_to infographie_path, class: "link-menu #{params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" }" do  %>
+          <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut" class= "<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+            <%= link_to infographie_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Chiffres inégalités</div>
             <% end %>
           </li>
@@ -38,19 +38,19 @@
     </div>
   </header>
   <div class="banner-info banner-menu" data-menu-target="bannerHelp">
-    <p>Info sur les aides</p>
+    <p>Résidences, bourses, prix, appels à candidatures...</p>
   </div>
   <div class="banner-info banner-menu" data-menu-target="bannerConseils">
-    <p>Info sur les conseils</p>
+    <p>Quels tarifs pratiquer ? Comment construire un dossier de candidature ? Protéger ses droits d’autrice...</p>
   </div>
   <div class="banner-info banner-menu" data-menu-target="bannerEntraide">
-    <p>Info sur l'entraide</p>
+    <p>Être conseillée ou conseiller ses paires, obtenir un retour sur son travail </p>
   </div>
   <div class="banner-info banner-menu" data-menu-target="bannerIndex">
-    <p>Info sur l'index</p>
+    <p>Quelle parité dans les structures culturelles et festivals photo ?</p>
   </div>
   <div class="banner-info banner-menu" data-menu-target="bannerChiffres">
-    <p>Info sur les chiffres</p>
+    <p>Les chiffres des inégalités dans le secteur de la photographie</p>
   </div>
 </div>
 
@@ -59,10 +59,45 @@
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
   <ul class="menu">
-    <a href="/helps"><li><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small", style: "width: 26px;" %> Aides</li></a>
-    <a href="/conseils"><li><%= image_tag "emojis/poignee-main.png", alt: "émoji ressources et conseils", class: "emojis-eflc-small", style: "width: 28px;" %> Ressources et conseils</li></a>
-    <a href="/rencontre"><li><%= image_tag "emojis/femmes.png", alt: "émoji rencontre", class: "emojis-eflc-small", style: "width: 65px; height: 24px;" %> Rencontres</li></a>
-    <a href="/chiffres_inegalites"><li>Chiffres inégalités</li></a>
-    <a href="/a_propos"><li>À propos</li></a>
+    <%= link_to helps_path do %>
+      <li class= "<%= params[:controller] == 'helps' && params[:action] == 'index' ? 'link-selected' : '' %>">
+        <div>
+          <p class="paragraphe-bold"><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-small", style: "width: 26px;" %> Aides</p class="paragraphe-bold">
+          <p class="paragraphe-x-small">Résidences, bourses, prix, appels à candidatures...</p>
+        </div>
+      </li>
+    <% end %>
+    <%= link_to conseils_path do %>
+      <li class="<%= params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "link-selected" : "" %>">
+        <div>
+          <p class="paragraphe-bold"><%= image_tag "emojis/carnet-noir.png", alt: "émoji ressources et conseils", class: "emojis-eflc-small", style: "width: 24px;" %> Ressources</p class="paragraphe-bold">
+          <p class="paragraphe-x-small">Quels tarifs pratiquer ? Comment construire...</p>
+        </div>
+      </li>
+    <% end %>
+    <%= link_to rencontre_path do %>
+      <li class="<%= params[:controller] == "pages" && params[:action] == "rencontre" ? "link-selected" : "" %>">
+        <div>
+            <p class="paragraphe-bold"><%= image_tag "emojis/femmes.png", alt: "émoji rencontre", class: "emojis-eflc-small", style: "width: 65px; height: 24px;" %> Rencontres</p class="paragraphe-bold">
+            <p class="paragraphe-x-small">Être conseillée ou conseiller ses paires...</p>
+        </div>
+      </li>
+    <% end %>
+    <%= link_to organizations_path do %>
+      <li class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+        <div>
+          <p class="paragraphe-bold"><%= image_tag "emojis/balance.png", alt: "émoji index parité", class: "emojis-eflc-small", style: "width: 26px;" %>Index parité</p class="paragraphe-bold">
+          <p class="paragraphe-x-small">Quelle parité dans les structures culturelles...</p>
+        </div>
+      </li>
+    <% end %>
+    <%= link_to infographie_path do %>
+      <li class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+        <div>
+          <p class="paragraphe-bold"><%= image_tag "emojis/graphique.png", alt: "émoji infographie", class: "emojis-eflc-small", style: "width: 26px;" %>Infographie</p class="paragraphe-bold">
+          <p class="paragraphe-x-small">Les chiffres des inégalités dans le secteur...</p>
+        </div>
+      </li>
+    <% end %>
   </ul>
 </header>
