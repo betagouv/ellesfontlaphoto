@@ -23,12 +23,12 @@
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 52px;" %></span> Entraide</div>
             <% end %>
           </li>
-          <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut" class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : ""  %>">
+          <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut" class="<%= params[:controller] == "organizations" && params[:action] == "index" ? "link-selected" : ""  %>">
             <%= link_to organizations_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Index Parité</div>
             <% end %>
           </li>
-          <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut" class= "<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+          <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut" class= "<%= params[:controller] == "pages" && params[:action] == "infographie" ? "link-selected" : "" %>">
             <%= link_to infographie_path, class: "link-menu" do  %>
               <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Chiffres inégalités</div>
             <% end %>
@@ -84,7 +84,7 @@
       </li>
     <% end %>
     <%= link_to organizations_path do %>
-      <li class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+      <li class="<%= params[:controller] == "organizations" && params[:action] == "index" ? "link-selected" : "" %>">
         <div>
           <p class="paragraphe-bold"><%= image_tag "emojis/balance.png", alt: "émoji index parité", class: "emojis-eflc-small", style: "width: 26px;" %>Index parité</p class="paragraphe-bold">
           <p class="paragraphe-x-small">Quelle parité dans les structures culturelles...</p>
@@ -92,7 +92,7 @@
       </li>
     <% end %>
     <%= link_to infographie_path do %>
-      <li class="<%= params[:controller] == "pages" && params[:action] == "chiffres_inegalites" ? "link-selected" : "" %>">
+      <li class="<%= params[:controller] == "pages" && params[:action] == "infographie" ? "link-selected" : "" %>">
         <div>
           <p class="paragraphe-bold"><%= image_tag "emojis/graphique.png", alt: "émoji infographie", class: "emojis-eflc-small", style: "width: 26px;" %>Infographie</p class="paragraphe-bold">
           <p class="paragraphe-x-small">Les chiffres des inégalités dans le secteur...</p>
