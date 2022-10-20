@@ -8,13 +8,11 @@ Rails.application.routes.draw do
   get "stats", to: 'pages#stats'
   get "accessibilite", to: 'pages#accessibilite'
   get "conditions_generales", to: 'pages#conditions_generales'
-  # get "a_propos", to: 'pages#a_propos'
   get "mentions_legales", to: 'pages#mentions_legales'
   get "proposer_conseil", to: 'pages#proposer_conseil'
   get "proposer_aide", to: 'pages#proposer_aide'
   get "rencontre", to: 'pages#rencontre'
   get "infographie", to: 'pages#infographie'
-  get "chiffres_inegalites", to: 'pages#chiffres_inegalites'
 
   resources :contacts, only: :create
   get "/helps/confirm", to: "helps#confirm"

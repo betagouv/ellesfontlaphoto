@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_12_121929) do
+ActiveRecord::Schema.define(version: 2022_10_20_144352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -255,9 +255,9 @@ ActiveRecord::Schema.define(version: 2022_10_12_121929) do
     t.integer "score_parity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "visible"
     t.float "expos_parity"
     t.integer "request_info_count", default: 0
+    t.boolean "visible", default: true
   end
 
   create_table "reviews", force: :cascade do |t|
