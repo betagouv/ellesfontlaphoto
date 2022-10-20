@@ -4,6 +4,7 @@ class Organization < ApplicationRecord
   has_one_attached :logo
   validates :nb_women_expos, presence: true
   validates :total_nb_expos, presence: true
+  validates :name, uniqueness: true
 
   after_validation :calculate_parity
 
