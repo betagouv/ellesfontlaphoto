@@ -57,6 +57,7 @@
       justify-content: flex-start;
       margin:0;
       li {
+        padding: 0 10px;
       .link-menu {
           font-family: 'Marianne-Regular', sans-serif;
           text-decoration: none;
@@ -65,31 +66,32 @@
           line-height: 24px;
           opacity: 1;
           display: table !important;
-          padding: 1.05rem 10px 1.1rem 10px;
           background-color: transparent;
+          padding: 0.80rem 0 0.85rem 0;
+          .menu-name {
+            padding: 0 10px 3px 10px;
+            height: 30px;
+          }
+          &:hover {
+            box-shadow: rgba(188, 171, 255, 0.5) 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+            .menu-name {
+              background-color: $white-grey;
+              border-radius: 5px;
+            }
+          }
         }
         a .links-icones {
           font-size: 18px;
         }
-        .menu-name {
-          padding: 0 5px 0 5px;
-        }
-        &:hover {
-          box-shadow: rgba(188, 171, 255, 0.5) 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-          .menu-name {
-            background-color: $white-grey;
-            border-radius: 5px;
-          }
+        .link-menu.link-selected {
+          white-space: nowrap;
+          box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+          border-radius: 0;
         }
       }
     }
   }
 
-  .link-selected {
-    white-space: nowrap;
-    box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
-    border-radius: 0;
-  }
 
   .link-menu:after {
     display: none;
