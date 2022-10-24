@@ -14,7 +14,7 @@ class Help < ApplicationRecord
   validates :candidate_url, presence: true
   validates :type_list, presence: true, unless: :from_api
   validates :author_email, presence: true, if: :suggested
-  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
+  # validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
 
   PARITE = [
     "respectée",
