@@ -27,7 +27,7 @@ class Help < ApplicationRecord
     "Secours exceptionnel": "Secours exceptionnel"
   }
 
-  HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
+  HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)", "Résidence"]
 
   PHOTO_TYPE = ["photojournalisme", "photo artistique", "autre"]
 
