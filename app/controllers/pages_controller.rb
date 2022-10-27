@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def rencontre
+  def entraide
     @contact = Contact.new
     @webinaires = Webinaire.where("page_rencontre = ?", true).order(:date)
   end

@@ -5,13 +5,17 @@
 
 <div class="div-banner div-banner-conseil">
   <div class="flex-div-left">
-    <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
+    <%= link_to ressources_path, class:"mr20"  do %>
+      <%= image_tag "return-arrow.svg", alt: "icône retour" %>
+    <% end %>
     <% @conseil_article.category_list.each do |category| %>
-      <a href="/conseils?category_list=<%= category %>"><p class="fiche-tag"><%= category %></p></a>
+      <a href="/ressources?category_list=<%= category %>"><p class="fiche-tag"><%= category %></p></a>
     <% end %>
     <div class="d-none">
       <% @conseil_article.tag_list.each do |tag| %>
-        <a href="/conseils"><p class="fiche-tag"><%= tag %></p></a>
+        <%= link_to ressources_path do %>
+          <p class="fiche-tag"><%= tag %></p>
+        <% end %>
       <% end %>
     </div>
   </div>

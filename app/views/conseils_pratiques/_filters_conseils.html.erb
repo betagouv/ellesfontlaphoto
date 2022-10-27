@@ -33,7 +33,7 @@
 
   <div class="btn btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
 
-  <%= form_tag conseils_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
+  <%= form_tag ressources_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
     <% if @selected.present? %>
       <%= text_field_tag :category_list, params[:category_list], value: selected, data: { filter_conseils_target: "inputCategory" } %>
     <% else %>

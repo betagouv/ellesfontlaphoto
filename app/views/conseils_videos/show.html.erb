@@ -7,23 +7,14 @@
 
 <div class="div-banner div-banner-conseil div-banner-conseil-video">
   <div class="flex-div-left">
-    <a class="mr20" href="/conseils"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
-    <% @conseil_video.category_list.each do |category| %>
-      <% if category == "Administratif & Financier" %>
-        <a href="/conseils">
-      <% end %>
-      <% if category == "Artistique & Technique" %>
-        <a href="/conseils">
-      <% end %>
-      <% if category == "Egalite & inclusion" %>
-        <a href="/conseils">
-      <% end %>
-        <p class="fiche-tag"><%= category %></p>
-      </a>
+    <%= link_to ressources_path, class: "mr20" do %>
+      <%= image_tag "return-arrow.svg", alt: "icône retour" %>
     <% end %>
-    <div class="d-none">
+    <div>
       <% @conseil_video.tag_list.each do |tag| %>
-        <a href="/conseils"><p class="fiche-tag"> tag</p></a>
+        <%= link_to ressources_path do %>
+          <p class="fiche-tag"> <%= tag %></p>
+        <% end %>
       <% end %>
     </div>
   </div>

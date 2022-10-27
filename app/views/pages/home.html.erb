@@ -18,7 +18,7 @@
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
       </div>
     <% end %>
-    <%= link_to conseils_path do %>
+    <%= link_to ressources_path do %>
       <div class="first-block-card orange">
         <%= image_tag 'aides/conseils.png', class: "image-first-block-card", alt: 'Ressources et conseils' %>
         <div class="first-block-card-infos orange">
@@ -29,7 +29,7 @@
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
       </div>
     <% end %>
-    <%= link_to rencontre_path do %>
+    <%= link_to entraide_path do %>
       <div class="first-block-card light-orange">
         <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraide et rencontres' %>
         <div class="first-block-card-infos light-orange">
@@ -50,7 +50,9 @@
   </div>
   <div class="second-block-div text-align-center">
     <p class="paragraphe-title pb20">Car encore aujourd'hui, 54% de femmes sont sur les bancs des écoles, contre 38% dans la vie professionnelle.</p>
-    <a class="btn btn-orange-home" href="/infographie">les chiffres des inégalités</a>
+    <%= link_to infographie_path, class: "btn btn-orange-home" do %>
+      les chiffres des inégalités
+    <% end %>
   </div>
   <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
 </div>
@@ -76,7 +78,7 @@
 <div class="fourth-block">
   <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Ajoutez une aide pour les femmes photographes ! </p>
-  <a href="/helps/new" target="blank" class="btn btn-black">Proposer une aide</a>
+  <%= link_to "Proposer une aide", aides_ajouter_aide_path, target: "_blank", class: "btn btn-black" %>
 </div>
 
 <div class="contact-block" id="contact">
