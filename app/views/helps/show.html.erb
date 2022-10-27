@@ -6,9 +6,11 @@
 
 <div class="div-banner div-banner-help">
   <div class="flex-div-left">
-    <a class="mr20" href="/helps"> <%= image_tag "return-arrow.svg", alt: "icône retour" %></a>
+    <%= link_to helps_path, class: "mr20" do %>
+      <%= image_tag "return-arrow.svg", alt: "icône retour" %>
+    <% end %>
     <% @help.type_list.each do |type| %>
-      <a href="/helps?type_list=<%= type %>">
+      <a href="/aides?type_list=<%= type %>">
         <p class="fiche-tag"> <%= type %></p>
       </a>
     <% end %>

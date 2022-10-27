@@ -3,7 +3,9 @@
     <div class="sub-div-chiffres-inegalites title-div-chiffres-inegalites">
       <h1 class="title-marianne">Chiffrer les inégalités de genre dans le secteur de la photographie</h1>
       <p class="paragraphe">Les femmes sont majoritairement sur les bancs des écoles de photographie, elles représentent pourtant moins d’un tiers de la profession artistique. Zoom sur une inégalité protéïforme</p>
-      <a class="btn btn-black mt30" href="/infographie"><%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres</a>
+      <%= link_to infographie_path, class: "btn btn-black mt30" do  %>
+        <%= image_tag "arrow-white.svg", alt: "flèche blanche" %> Tous les chiffres
+      <% end %>
     </div>
     <div class="sub-div-chiffres-inegalites">
       <div id="carousel-chiffres-inegalites" class="carousel slide" data-bs-interval="false">
@@ -51,7 +53,9 @@
     <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuie sur les données collectées par le ministère de la Culture pour la<span style="color: #FFB648;"> période 2020-2021</span>.</p>
   </div>
   <div class="div-btns flex-div justify-center">
-    <a href="organizations" class="btn btn-white btn-sun"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "img-sun"%> voir toutes les structures</a>
+    <%= link_to organizations_path, class: "btn btn-white btn-sun" do %>
+      <%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "img-sun"%> voir toutes les structures
+    <% end %>
     <%= link_to "Renseigner des chiffres", " https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-outlined-white" %>
   </div>
   <div class="cards-organizations">
@@ -59,6 +63,8 @@
       <%= render "organizations/card_organization", organization: organization %>
     <% end %>
   </div>
-  <a href="/organizations" class="btn btn-white btn-sun centre"><%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "img-sun" %> voir toutes les structures</a>
+  <%= link_to organizations_path, class: "btn btn-white btn-sun centre" do %>
+    <%= image_tag "emojis/SUN-EMOJI.svg", alt: "emoji ensoleillé", class: "img-sun" %> voir toutes les structures
+  <% end %>
   <p class="paragraphe-small">Source : Ministère de la Culture, Secrétariat général, Deps-doc/dgca, Département de la photographie, 2022. Dernières données communiquées pour la période 2020-2021 (31/12/2021 pour les directions de structures et de festivals, année 2020 pour le nombre de femmes exposées dans les structures et année 2021 pour le nombre de femmes exposées dans les festivals). Le code couleur et la météo sont basés sur le pourcentage de femmes exposées : de 0 à 39% la vignette sera pluvieuse et rouge, de 40 à 49% orange et nuageuse; et au dessus de 50% violette et ensoleillée. La proportion de femmes dirigeantes n'est pas prise en compte dans ce calcul.</p>
 </div>
