@@ -10,27 +10,27 @@
         <ul class="menu links-group mb0">
           <li data-action="mouseover->menu#helpMouseOver mouseout->menu#helpMouseOut">
             <%= link_to helps_path, class: "link-menu #{ params[:controller] == "helps" && params[:action] == "index" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-medium" %> Aides </span></div>
+              <div class="menu-name"><span class="links-icones"><%= image_tag "emojis/argent-volant.png", alt: "émoji aides", class: "emojis-eflc-medium" %></span> Aides </div>
             <% end %>
           </li>
           <li data-action="mouseover->menu#conseilsMouseOver mouseout->menu#conseilsMouseOut">
             <%= link_to ressources_path, class: "link-menu #{ params[:controller] == "conseils_pratiques" && params[:action] == "index" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/carnet-noir.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium", style: "width: 18px" %> Ressources</span></div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/carnet-noir.png", alt: "émoji ressources et conseils", class: "emojis-eflc-medium", style: "width: 18px" %></span> Ressources</div>
             <% end %>
           </li>
           <li data-action="mouseover->menu#entraideMouseOver mouseout->menu#entraideMouseOut">
             <%= link_to entraide_path, class: "link-menu #{ params[:controller] == "pages" && params[:action] == "entraide" ? "link-selected" : "" }" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 52px;" %> Entraide </span></div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/femmes.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 52px;" %></span> Entraide </div>
             <% end %>
           </li>
           <li data-action= "mouseover->menu#indexMouseOver mouseout->menu#indexMouseOut">
             <%= link_to organizations_path, class: "link-menu #{ params[:controller] == "organizations" && params[:action] == "index" ? "link-selected" : ""}" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium" %> Index parité</span></div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/balance.png", alt: "émoji recontre", class: "emojis-eflc-medium" %></span> Index parité</div>
             <% end %>
           </li>
           <li data-action="mouseover->menu#chiffresMouseOver mouseout->menu#chiffresMouseOut">
             <%= link_to infographie_path, class: "link-menu #{ params[:controller] == "pages" && params[:action] == "infographie" ? "link-selected" : ""}" do  %>
-              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 18px" %> Infographie</span></div>
+              <div class="menu-name"><span class="links-icones"> <%= image_tag "emojis/graphique.png", alt: "émoji recontre", class: "emojis-eflc-medium", style: "width: 18px" %></span> Infographie</div>
             <% end %>
           </li>
         </ul>

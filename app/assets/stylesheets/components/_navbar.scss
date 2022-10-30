@@ -84,9 +84,6 @@
             }
           }
         }
-        a .links-icones {
-          font-size: 18px;
-        }
         .link-menu.link-selected {
           white-space: nowrap;
           box-shadow: $purple 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
@@ -163,6 +160,7 @@
     .banner-menu {
       .banner-menu {
         padding-left: 70px;
+        top: 60px
       }
     }
 }

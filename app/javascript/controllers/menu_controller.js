@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["bannerHelp", "bannerConseils", "bannerEntraide", "bannerIndex", "bannerChiffres"]
 
   helpMouseOver() {
+    console.log("ici")
     this.bannerHelpTarget.style.display = "flex";
   }
 
