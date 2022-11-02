@@ -9,15 +9,15 @@ Rails.application.routes.draw do
   get "accessibilite", to: 'pages#accessibilite'
   get "conditions_generales", to: 'pages#conditions_generales'
   get "mentions_legales", to: 'pages#mentions_legales'
-  get "ajouter_ressources", to: 'pages#ajouter_ressources'
-  get "proposer_aide", to: 'pages#proposer_aide'
+  get "ajouter-ressources", to: 'pages#ajouter_ressources'
+  get "proposer-aide", to: 'pages#proposer_aide'
   get "entraide", to: 'pages#entraide'
   get "infographie", to: 'pages#infographie'
 
   resources :contacts, only: :create
   get "/helps/confirm", to: "helps#confirm"
   get "/organizations/:id/add_request_info", to: "organizations#add_request_info"
-  get "aides/ajouter_aide", to: "helps#new"
+  get "aides/ajouter-aide", to: "helps#new"
   resources :helps, only: [:show, :index, :create], path: "aides" do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
@@ -31,4 +31,13 @@ Rails.application.routes.draw do
   resources :notation_conseils_articles, only: :create
   resources :notation_conseils_videos, only: :create
   resources :notation_catalogues, only: :create
+
+  # REDIRECTIONS
+  get '/helps', to: redirect('/aides')
+  get '/helps/new', to: redirect('/aides/ajouter-aide')
+  get '/helps/:id', to: redirect('/aides/%{id}')
+  get '/conseils', to: redirect('/ressources')
+  get '/proposer_conseil', to: redirect('/ajouter-ressources')
+  get '/rencontre', to: redirect('/entraide')
+  get '/organizations', to: redirect('/index-parite')
 end
