@@ -45,7 +45,7 @@
         <% end %>
       </div>
     </div>
-    <div class="flip-card-back">
+    <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
       <p class="cross" data-action="click->flip-card#close">&times;</p>
       <div data-orga-info-target="card">
         <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
