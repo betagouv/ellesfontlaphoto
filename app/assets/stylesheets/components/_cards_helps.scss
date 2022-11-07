@@ -27,6 +27,9 @@
       .sub-card-index-helps-infos {
         opacity: 1;
         z-index: 6;
+        .gains-text,.conditions-text {
+          -webkit-line-clamp: 7;
+        }
       }
     }
 
@@ -91,17 +94,19 @@
 
     .sub-card-index-helps-infos {
       padding: 0 12%;
-      max-height: 280px;
-      display: -webkit-box;
-      -webkit-line-clamp: 13;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
       transition: transform .3s ease-out;
       background-color: $white;
       ul {
         margin-top: 0;
         font-size: 14px;
         line-height: 20px;
+      }
+
+      .gains-text,.conditions-text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
 
       .paragrahe-gains,
