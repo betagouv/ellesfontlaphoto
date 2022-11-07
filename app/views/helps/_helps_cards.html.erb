@@ -15,7 +15,9 @@
             <%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %>
             Gains :
           </span>
-          <%= help.help_amount.html_safe %>
+          <div class="gains-text">
+            <%= help.help_amount.html_safe %>
+          </div>
         </div>
         <% if help.permanent %>
           <span class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> Toute l'année</span>
@@ -44,7 +46,9 @@
               ,
             <% end %>
             <% if help.general_condition.present? %>
+            <div class="conditions-text">
               <%= help.general_condition.html_safe %></p>
+            </div>
             <% end %>
           </div>
         <% end %>
