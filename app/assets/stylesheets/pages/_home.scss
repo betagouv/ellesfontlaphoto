@@ -95,18 +95,21 @@
     font-family: "Marianne-Medium";
   }
   img {
-    max-width: 20%;
+    max-width: 23%;
   }
   .second-block-img-mobile {
     display: none;
   }
   .second-block-div {
     width: 50%;
-    .btn-orange-home {
+    .p-second-block {
+      max-width: 90%;
+      margin: 20px auto 0;
+    }
+    .btn-black {
       margin: 0 auto;
-      background-color: $orange;
       &:hover{
-        background-color: $hover-orange !important;
+        background-color: $hover-black !important;
       }
     }
   }
@@ -438,8 +441,12 @@
         font-size: 20px;
         margin-bottom: 40px;
       }
-      .btn-orange-home {
-        margin-bottom: 15%;
+      .d-flex {
+        display: block !important;
+        .p-second-block {
+          width: 90%;
+          margin: 10px auto 20px;
+        }
       }
     }
     .second-block-img {
