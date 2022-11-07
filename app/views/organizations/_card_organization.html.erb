@@ -34,17 +34,17 @@
         <% elsif organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
           <div class="card-organization-numbers">
         <% end %>
-      </div>
-        <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
-          <div>exposantes : inconnu</div>
-        <% else %>
-          <div>exposantes : <span class="paragraphe-bold"><%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></span> <span class= "paragraphe-small">(<%= organization.expos_parity.to_i %>%)</span></div>
-        <% end %>
-        <% if organization.nb_women_dir.blank? || organization.total_nb_dir.blank? %>
-          <div>dirigeantes : inconnu</div>
-        <% else %>
-          <div>dirigeantes : <span class="paragraphe-bold"><%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></span></div>
-        <% end %>
+          <% if organization.nb_women_expos.blank? || organization.total_nb_expos.blank? %>
+            <div>exposantes : inconnu</div>
+          <% else %>
+            <div>exposantes : <span class="paragraphe-bold"><%= organization.nb_women_expos %> / <%= organization.total_nb_expos %></span> <span class= "paragraphe-small">(<%= organization.expos_parity.to_i %>%)</span></div>
+          <% end %>
+          <% if organization.nb_women_dir.blank? || organization.total_nb_dir.blank? %>
+            <div>dirigeantes : inconnu</div>
+          <% else %>
+            <div>dirigeantes : <span class="paragraphe-bold"><%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></span></div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="flip-card-back">

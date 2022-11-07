@@ -6,7 +6,7 @@
 .flip-card-inner {
   position: relative;
   width: 100%;
-  min-height: 28.7em;
+  min-height: 28.2em;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -31,13 +31,12 @@
 .flip-card-back {
   position: absolute;
   width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .flip-card-front {
-.card-organization-name {
+  .card-organization-name {
     min-height: 230px;
     padding: 7% 7% 0 7%;
 
@@ -46,7 +45,10 @@
       margin-bottom: 0;
       text-align: center;
       height: auto;
-
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
       .paragraphe {
         font-size: 22px;
       }
@@ -99,7 +101,7 @@
     padding: 20px 0 24px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    position: absolute;
+    position: inherit;
     bottom: 0;
     width: 100%;
 
@@ -134,9 +136,10 @@
 .flip-card-back {
   background: $dark-grey;
   transform: rotateY(180deg);
-  // position: absolute;
+  position: absolute;
   top: 0;
-  height: 100%;
+  bottom: 0;
+  height: auto;
   border-radius: 16px;
   padding: 10px 30px 20px 30px;
 
