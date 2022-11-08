@@ -95,7 +95,7 @@
   .paragraphe-title {
     font-family: "Marianne-Medium";
   }
-  img {
+  .second-block-img {
     max-width: 15%;
   }
   .second-block-img-mobile {
@@ -109,6 +109,16 @@
     }
     .btn-black {
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: fit-content;
+      padding: 5px 20px;
+      .emoticone-btn {
+        width: 46px;
+        height: 46px;
+        margin-right: 5px;
+      }
       &:hover{
         background-color: $hover-black !important;
       }
