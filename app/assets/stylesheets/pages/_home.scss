@@ -320,7 +320,7 @@
   .second-block {
     background-image: url('halo-home-tablet.png');
     padding: 6% 2%;
-    img {
+    .second-block-img {
       max-width: 18%;
     }
     .second-block-div {
@@ -476,7 +476,7 @@
       display: flex;
       justify-content: center;
       img {
-        min-width: 70%;
+        width: 70%;
       }
     }
   }
