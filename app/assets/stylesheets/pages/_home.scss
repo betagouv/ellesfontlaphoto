@@ -399,7 +399,7 @@
 
 // RESPONSIVE PHONE
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .paragraphe {
     color: #1a1b1f;
     font-size: 16px;
@@ -441,20 +441,21 @@
 
   .second-block {
     display: block;
-    padding-bottom: 60px;
+    background-image: url('halo-home.png');
     .second-block-div {
       margin: 8% auto 0 auto;
-      width: 80%;
-      .paragraphe-title {
-        text-align: center;
-        font-size: 20px;
+      width: 95%;
+      .title {
+        width: 90%;
+        font-size: 24px;
         margin-bottom: 40px;
       }
       .d-flex {
         display: block !important;
         .p-second-block {
           width: 90%;
-          margin: 10px auto 20px;
+          margin: 10px auto 30px;
+          font-size: 14px;
         }
       }
     }
