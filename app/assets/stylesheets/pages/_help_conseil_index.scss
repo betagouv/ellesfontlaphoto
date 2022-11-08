@@ -28,13 +28,19 @@
         width: 50%;
         margin: 10px auto;
       }
+      .img-aides {
+        max-width: 35%;
+        top: -10%;
+      }
+      .img-conseils {
+        max-width: 25%;
+        top: -5%;
+      }
       img {
         position: absolute;
-        max-width: 35%;
         right: -45%;
-        top: -20%;
         z-index: -1;
-        margin : 0px 40px 0px 0px;
+        margin: 0px 40px 0px 0px;
       }
     }
   }
@@ -183,10 +189,16 @@
         padding: 5% 0 5%;
         margin: 0;
       }
+      .img-aides {
+        max-width: 29%;
+        top: 4%;
+      }
+      .img-conseils {
+        max-width: 20%;
+        top: 15%;
+      }
       img {
-        max-width: 28%;
         right: -10%;
-        top: -7%;
         margin: 0 auto;
       }
       h1 {

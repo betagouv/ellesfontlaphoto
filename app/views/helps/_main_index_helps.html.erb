@@ -3,7 +3,7 @@
     Filtrer
   </div>
   <div class="header-index">
-    <%= image_tag "illu-femme-argent.png" %>
+    <%= image_tag "illu-femme-argent.png", alt: "femme recevant de l'argent", class:"img-aides" %>
     <% if @selected || @selected_type || @selected_photo_type %>
       <% if @helps.count == 0 %>
         <h1 class="spectral-title"><span class="color-purple">aucune aide trouvée,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>
