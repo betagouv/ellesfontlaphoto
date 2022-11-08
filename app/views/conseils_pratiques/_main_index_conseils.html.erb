@@ -3,7 +3,7 @@
     Filtrer
   </div>
   <div class="header-index">
-    <%= image_tag "illu-femme-debout.png" %>
+    <%= image_tag "illu-femme-debout.png", alt: "femme debout", class: "img-conseils" %>
     <% if @selected || @selected_type || @selected_photo_type %>
       <% if @conseils.count == 0 %>
         <h1 class="spectral-title"><span class="color-orange">aucune ressource trouvée,</span> mais nous en ajoutons régulièrement, n’hésitez pas à revenir.</h1>

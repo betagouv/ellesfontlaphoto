@@ -20,11 +20,24 @@
     margin: 0 auto;
   }
 }
+.title {
+  line-height: 45px;
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 34px;
+  display: inline-block;
+  padding: 5%;
+}
 
 @media only screen and (max-width: 750px) {
+  .title {
+    font-size: 24px;
+    line-height: 29.7px;
+    padding: 0em 1em 0em 1em;
+  }
   .banner-title {
     padding: 2em 0 1em;
-
     h1 {
       font-size: 24px;
       line-height: 29.7px;

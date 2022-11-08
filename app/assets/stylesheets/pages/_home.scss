@@ -3,7 +3,6 @@
 
 .first-block{
   .first-block-cards {
-    padding-bottom: 4vh;
     display: flex;
     justify-content: center;
     position: relative;
@@ -85,28 +84,33 @@
 // SECOND BLOCK
 
 .second-block {
-  padding: 0 5%;
+  padding: 6% 5% 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   text-align: center;
+  background-image: url('halo-home-desktop.png');
+  background-position: center;
   .paragraphe-title {
     font-family: "Marianne-Medium";
   }
   img {
-    max-width: 20%;
+    max-width: 15%;
   }
   .second-block-img-mobile {
     display: none;
   }
   .second-block-div {
     width: 50%;
-    .btn-orange-home {
+    .p-second-block {
+      max-width: 90%;
+      margin: 20px auto 0;
+    }
+    .btn-black {
       margin: 0 auto;
-      background-color: $orange;
       &:hover{
-        background-color: $hover-orange !important;
+        background-color: $hover-black !important;
       }
     }
   }
@@ -117,7 +121,7 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 7% 0 7%;
+  padding: 0 7%;
   text-align: center;
   .third-block-div {
     border-radius: 16px;
@@ -272,7 +276,7 @@
   }
 
   .first-block {
-    padding: 5% 2%;
+    padding: 5% 2% 0;
     .first-block-cards {
       justify-content: space-between;
       a {
@@ -304,15 +308,23 @@
   }
 
   .second-block {
-    padding: 0% 2%;
-    .paragraphe-title {
-      font-size: 20px;
-      line-height: 29.7px;
+    background-image: url('halo-home-tablet.png');
+    padding: 6% 2%;
+    img {
+      max-width: 18%;
+    }
+    .second-block-div {
+      width: 70%;
+      .title {
+        padding: 0;
+        width: 100%;
+        font-size: 27px;
+      }
     }
   }
 
   .third-block {
-    padding: 3% 0 0;
+    padding: 0;
     .third-block-div {
       border-radius: 0;
       .subtitle-spectral {
@@ -438,8 +450,12 @@
         font-size: 20px;
         margin-bottom: 40px;
       }
-      .btn-orange-home {
-        margin-bottom: 15%;
+      .d-flex {
+        display: block !important;
+        .p-second-block {
+          width: 90%;
+          margin: 10px auto 20px;
+        }
       }
     }
     .second-block-img {

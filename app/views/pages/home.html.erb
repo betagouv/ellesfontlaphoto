@@ -46,10 +46,21 @@
     <%= image_tag 'illu-femmes-debout-mobile.png' %>
   </div>
   <div class="second-block-div text-align-center">
-    <p class="paragraphe-title pb20">Car encore aujourd'hui, 54% de femmes sont sur les bancs des écoles, contre 38% dans la vie professionnelle.</p>
-    <%= link_to infographie_path, class: "btn btn-orange-home" do %>
-      les chiffres des inégalités
-    <% end %>
+    <p class="title">Chiffrer le secteur de la photographie <br> pour réduire ses inégalités</p>
+    <div class="d-flex justify-between">
+      <div>
+        <%= link_to organizations_path, class: "btn btn-black" do %>
+          <%= image_tag "emojis/data-visualization.svg", alt: "visualisation de données" %> Index parité
+        <% end %>
+        <p class="paragraphe p-second-block">Comparer le nombre d'exposantes et dirigeantes dans les structures photo</p>
+      </div>
+      <div>
+        <%= link_to infographie_path, class: "btn btn-black" do %>
+          <%= image_tag "emojis/justice-scales.svg", alt: "balance de justice" %> Infographie
+        <% end %>
+        <p class="paragraphe p-second-block">Visualiser les inégalités du secteur (rémunération, récompense, harcèlement...)</p>
+      </div>
+    </div>
   </div>
   <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
 </div>
