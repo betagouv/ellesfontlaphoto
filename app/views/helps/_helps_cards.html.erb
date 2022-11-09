@@ -10,7 +10,7 @@
     <div class="sub-card-index-helps">
       <p class="main-bold-paragraphe p-card mt0"><%= help.title.to_sym %></p>
       <div class="sub-card-index-helps-infos">
-        <div class="paragraphe paragrahe-gains p-card mb0">
+        <div class="paragraphe paragraphe-gains p-card mb0">
           <span class="paragraphe-bold p-card">
             <%= image_tag "emojis/gain.png", alt: "émoji gains", class: "emojis-eflc-small" %>
             Gains :
@@ -27,7 +27,7 @@
           <span class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/calendrier.png", alt: "émoji calendrier", class: "emojis-eflc-small" %> Dates de candidature :</span> <%= I18n.l help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date, format: :long %></span>
         <% end %>
         <% if help.general_condition.present? || help.residence_condition.present? %>
-          <div class="paragraphe paragrahe-general-condition p-card mb0">
+          <div class="paragraphe paragraphe-general-condition p-card mb0">
             <span class="paragraphe-bold p-card">
               <%= image_tag "emojis/epingle.png", alt: "émoji conditions", style: "width: 15px;" %>
               Conditions :

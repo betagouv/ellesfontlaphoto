@@ -27,9 +27,7 @@
       .sub-card-index-helps-infos {
         opacity: 1;
         z-index: 6;
-        .conditions-text {
-          -webkit-line-clamp: 7;
-        }
+        margin-bottom: 0;
       }
     }
 
@@ -108,16 +106,13 @@
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
       }
-
-      .paragrahe-gains,
-      .paragrahe-general-condition {
+      .paragraphe-gains,
+      .paragraphe-general-condition {
         p {
           margin: 0;
           font-size: 14px;
           color: $black;
           display: inline-block;
-          ;
-
           span {
             display: inline-block;
             margin: 0;
@@ -126,7 +121,6 @@
           }
         }
       }
-
       a {
         color: $black  !important;
       }
