@@ -154,6 +154,11 @@
       opacity: 0;
       position: absolute;
       padding: 0 4%;
+      height: auto;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
     }
   }
 }
