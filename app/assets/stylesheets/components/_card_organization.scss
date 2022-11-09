@@ -165,3 +165,10 @@
     margin-top: 20px;
   }
 }
+
+
+@media only screen and (max-width: 750px) {
+  .flip-card-inner {
+    min-height: 29.65em;
+  }
+}
