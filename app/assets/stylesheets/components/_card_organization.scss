@@ -169,6 +169,10 @@
 
 @media only screen and (max-width: 750px) {
   .flip-card-inner {
-    min-height: 29.65em;
+    min-height: 29.5em;
+    .flip-card-front .card-organization-numbers .paragraphe-small {
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
