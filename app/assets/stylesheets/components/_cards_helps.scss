@@ -106,6 +106,9 @@
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
       }
+      .paragraphe-general-condition {
+        margin-top: 15px;
+      }
       .paragraphe-gains,
       .paragraphe-general-condition {
         p {
@@ -238,24 +241,38 @@
       font-size: 11px;
     }
 
-    a .sub-card-index-helps .main-bold-paragraphe {
-      .paragraphe {
-        text-align: left;
-        padding-bottom: 0;
-        margin-top: 0px;
-      }
-
+    a .sub-card-index-helps {
       .main-bold-paragraphe {
-        padding-bottom: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: left !important;
+        .paragraphe {
+          text-align: left;
+          padding-bottom: 0;
+          margin-top: 0px;
+        }
+
+        .main-bold-paragraphe {
+          padding-bottom: 0;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-align: left !important;
+        }
+      }
+      .sub-card-index-helps-infos {
+        .paragraphe {
+          text-align: left;
+        }
       }
     }
     .arrow {
-      margin: 6% 0 6% 30px !important;
+      margin: 6% 30px 6% 0px !important;
       display: flex;
       justify-content: end;
     }
   }
 }
+
+@media not all and (min-resolution:.001dpcm) {
+  .card-index-helps .sub-card-index-helps .sub-card-index-helps-infos .gains-text,.conditions-text {
+    display: inline;
+  }
+}
+
