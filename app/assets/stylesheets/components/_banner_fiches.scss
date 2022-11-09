@@ -170,11 +170,17 @@
       display: block;
       .fiche-title {
         min-width: 100%;
+        .paragraphe {
+          text-align: left;
+        }
       }
       .fiche-description {
         min-width: 100%;
         p {
           white-space: normal;
+        }
+        .paragraphe {
+          text-align: left;
         }
       }
       .subtitle-protagoniste {

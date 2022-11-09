@@ -167,7 +167,14 @@
         width: 100%;
       }
     }
+    .block-fiche-aide.block-fiche-aide-piece {
+      width: 100%;
+      column-count: 1;
+    }
     .block-fiche-aide {
+      .paragraphe {
+        text-align: left;
+      }
       a,.link-blue {
         margin-left: 0;
       }

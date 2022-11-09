@@ -228,13 +228,19 @@
 @media only screen and (max-width: 750px) {
   .card-index-helps {
     padding: 0;
-
+    &:hover {
+      .arrow {
+        transition: none;
+        left: -30px;
+      }
+    }
     .pastille-aides {
       font-size: 11px;
     }
 
     a .sub-card-index-helps .main-bold-paragraphe {
       .paragraphe {
+        text-align: left;
         padding-bottom: 0;
         margin-top: 0px;
       }
@@ -247,7 +253,7 @@
       }
     }
     .arrow {
-      margin: 8% 0 !important;
+      margin: 6% 0 6% 30px !important;
       display: flex;
       justify-content: end;
     }
