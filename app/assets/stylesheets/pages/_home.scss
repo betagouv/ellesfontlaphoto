@@ -105,7 +105,7 @@
     width: 50%;
     .p-second-block {
       max-width: 90%;
-      margin: 20px auto 0;
+      margin: 20px auto;
     }
     .btn-black {
       margin: 0 auto;
@@ -122,6 +122,9 @@
       &:hover{
         background-color: $hover-black !important;
       }
+    }
+    .btn-black-balance {
+      padding: 3px 20px 7px 20px;
     }
   }
 }
@@ -329,6 +332,8 @@
         padding: 0;
         width: 100%;
         font-size: 27px;
+        line-height: 30px;
+        margin-bottom: 30px;
       }
     }
   }
@@ -380,7 +385,6 @@
       bottom: 0;
     }
   }
-
   .contact-block {
     .contact-div {
       padding: 3%;
@@ -394,11 +398,11 @@
       }
       .div-btn-orange-home {
         display: block;
-      }
-      .btn-orange-home,.btn-contact {
-        white-space: nowrap;
-        margin-bottom: 20px;
-        margin-left: 0 !important;
+        .btn-orange-home,.btn-contact {
+          white-space: nowrap;
+          margin-bottom: 20px;
+          margin-left: 0;
+        }
       }
       .d-flex {
         justify-content: space-around;
@@ -409,7 +413,7 @@
 
 // RESPONSIVE PHONE
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 750px) {
   .paragraphe {
     color: #1a1b1f;
     font-size: 16px;
@@ -466,6 +470,7 @@
           width: 90%;
           margin: 10px auto 30px;
           font-size: 14px;
+          line-height: 24px;
         }
       }
     }
@@ -588,20 +593,19 @@
       margin: 50px 0 20px;
     }
   }
+
   .contact-block {
     display: block;
     .contact-div {
       width: 100%;
       margin-bottom: 20px;
-      padding: 10%;
+      padding: 10% 10% 7% 10%;
       .description-contact-div {
-        height: 250px;
+        height: auto;
         .subtitle {
           font-size: 20px;
           line-height: 26px;
           text-align: center;
-
-
         }
 
         .subtitle-spectral {
@@ -616,14 +620,16 @@
           line-height : 22px;
         }
       }
-
-      .div-btn-orange-home .btn-orange-home {
-        margin: 10px auto;
-      }
       .d-flex {
-        display: block;
+        display: block !important;
+        margin-top: 30px;
+        .btn-contact {
+          margin: 20px auto;
+          padding: 4% 4% 5% 4%;
+        }
       }
-      .btn-contact {
+      .div-btn-orange-home {
+        margin-top: 30px;
         .btn-orange-home {
           margin: 0 auto 20px auto;
           padding: 4% 4% 5% 4%;
