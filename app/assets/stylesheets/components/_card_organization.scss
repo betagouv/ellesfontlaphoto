@@ -170,6 +170,11 @@
 @media only screen and (max-width: 750px) {
   .flip-card-inner {
     min-height: 29.5em;
+    .flip-card-front .card-organization-name .paragraphe-bold {
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 80%;
+    }
     .flip-card-front .card-organization-numbers .paragraphe-small {
       display: block;
       margin: 0 auto;
