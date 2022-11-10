@@ -17,7 +17,9 @@ ActiveStorage.start()
 
 // Internal imports, e.g:
 document.addEventListener('turbolinks:load', () => {
-  if (document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils") || document.querySelector(".notation-button") || document.querySelector("#notification-help") || document.getElementById("rencontre-page")) {
+  console.log("ici1")
+  if (document.querySelector("#contact") || document.querySelector("#banner-contact") || document.querySelector(".contact-index-conseils") || document.querySelector(".notation-button") || document.querySelector("#notification-help") || document.getElementById("rencontre-page")) {
+    console.log("ici")
     new Modal();
   }
 
