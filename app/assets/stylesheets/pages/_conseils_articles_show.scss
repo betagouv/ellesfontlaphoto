@@ -95,6 +95,9 @@
   .conseils-article-content {
     padding: 5%;
     .block-conseils-article {
+      .paragraphe,p {
+        text-align: left;
+      }
       .quote {
         p {
           margin-left: 0;
