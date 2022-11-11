@@ -1,5 +1,6 @@
-<div class="flip-card" data-controller="flip-card" data-flip-card-target="flipCard">
-  <div class="flip-card-inner" data-flip-card-target="card">
+
+<div class="box" data-controller="flip-card">
+  <div class="box-in box-front" data-flip-card-target="frontCard">
     <div class="flip-card-front" data-action="click->flip-card#flip">
       <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
         <div>
@@ -47,16 +48,17 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="box-in box-back" data-flip-card-target="backCard">
     <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
       <p class="cross" data-action="click->flip-card#close">&times;</p>
-      <div data-orga-info-target="card">
+      <div data-orga-info-target = "card">
         <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
         <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
