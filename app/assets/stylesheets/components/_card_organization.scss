@@ -171,7 +171,7 @@
   bottom: 0;
   height: 100%;
   border-radius: 16px;
-  padding: 10px 30px 20px 30px;
+  padding: 10px 20px 20px 20px;
 
   .cross {
     color: $white;
@@ -185,17 +185,22 @@
   }
 
   .btn-white {
-    padding: 10px 15px;
-    margin: 20px auto;
+    padding: 6px 15px;
+    margin: 15px auto 5px auto;
+    font-size: 14px;
   }
 
   .main-paragraphe {
     color: $white;
-    font-size: 22px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-bottom: 3px;
+    line-height: 20px;
+  }
+  .main-paragraphe.light {
+    opacity: 0.6;
+    margin-top: 0;
   }
 }
-
 
 @media only screen and (max-width: 750px) {
   .flip-card-inner {
@@ -209,6 +214,9 @@
       .paragraphe {
         font-size: 16px;
       }
+    }
+    .flip-card-back {
+      padding: 10px;
     }
     .flip-card-front .card-organization-numbers .paragraphe-small {
       display: block;
