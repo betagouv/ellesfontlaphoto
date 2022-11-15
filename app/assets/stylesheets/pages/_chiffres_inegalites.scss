@@ -239,6 +239,9 @@
   }
   .div-index-parite {
     padding: 3%;
+    .cards-organizations {
+      grid-template-columns: 1fr 1fr;
+    }
     .div-btns {
       .btn-white {
         margin: 0 auto;
@@ -262,66 +265,6 @@
       .btn-outlined-white,.btn-sun {
         margin: 5% auto;
         white-space: nowrap;
-      }
-    }
-    .cards-organizations {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 8px;
-      .card-organization.is-flipped {
-        background-color: $dark-grey  !important;
-        transition: all 1.2s;
-      }
-      .card-organization {
-        .card__face--back {
-          padding: 0px 10px 10px 10px;
-          .cross {
-            font-size: 25px;
-          }
-          .main-paragraphe {
-            font-size: 14px;
-            margin-top: 0px;
-            line-height: 20px;
-          }
-          .btn-white {
-            font-size: 14px;
-            white-space: nowrap;
-          }
-        }
-        .weather-bubble {
-          width: 60px;
-          height: 60px;
-          margin: 20px auto 80px;
-        }
-        .card-organization-numbers {
-          padding: 5% 0;
-          font-size: 12px;
-          .paragraphe-bold {
-            font-size: 12px;
-          }
-          .paragraphe-small {
-            font-size: 10px;
-          }
-        }
-        .card-organization-name {
-          height: auto;
-          min-height: 80px;
-          .paragraphe-bold {
-            font-size: 14px;
-            line-height: 18px;
-            .paragraphe {
-              font-size: 14px;
-              line-height: 18px;
-            }
-          }
-          .flex-div {
-            min-height: 40px;
-            margin: 15px 0;
-            img {
-              padding: 5px;
-              max-height: 40px;
-            }
-          }
-        }
       }
     }
   }
