@@ -3,17 +3,33 @@
   perspective: 1000px;
 }
 
-.flip-card-inner {
-  position: relative;
+.box {
   width: 100%;
   min-height: 28.2em;
   text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  background-color: $white;
-  border-radius: 16px;
+  background-color: transparent;
   cursor: pointer;
-  transition: transform 1s;
+}
+
+.box {
+  position: relative;
+  display: inline-block;
+}
+
+.box-in {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  position: absolute;
+  transition: all .8s;
+  background-color: transparent;
+}
+
+.box-front {
+  background-color: white;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   &:hover {
     opacity: 60%;
   }
@@ -23,16 +39,32 @@
   }
 }
 
-.flip-card.is-flipped .flip-card-inner.is-flipped {
+.box-back {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  line-height: 30px;
+}
+
+.box-front.is-flipped {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.box-back.is-flipped {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .flip-card-front {
@@ -135,13 +167,11 @@
 
 .flip-card-back {
   background: $dark-grey;
-  transform: rotateY(180deg);
-  position: absolute;
   top: 0;
   bottom: 0;
-  height: auto;
+  height: 100%;
   border-radius: 16px;
-  padding: 10px 30px 20px 30px;
+  padding: 10px 20px 20px 20px;
 
   .cross {
     color: $white;
@@ -155,21 +185,39 @@
   }
 
   .btn-white {
-    padding: 10px 15px;
-    margin: 20px auto;
+    padding: 6px 15px;
+    margin: 15px auto 5px auto;
+    font-size: 14px;
   }
 
   .main-paragraphe {
     color: $white;
-    font-size: 22px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-bottom: 3px;
+    line-height: 20px;
+  }
+  .main-paragraphe.light {
+    opacity: 0.6;
+    margin-top: 0;
   }
 }
-
 
 @media only screen and (max-width: 750px) {
   .box-in {
     min-height: 29.5em;
+    .flip-card-front .card-organization-name .paragraphe-bold {
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 80%;
+      max-height: 122px;
+      font-size: 16px;
+      .paragraphe {
+        font-size: 16px;
+      }
+    }
+    .flip-card-back {
+      padding: 10px;
+    }
     .flip-card-front .card-organization-numbers .paragraphe-small {
       display: block;
       margin: 0 auto;
