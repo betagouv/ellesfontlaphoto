@@ -51,13 +51,14 @@
   </div>
   <div class="box-in box-back" data-flip-card-target="backCard">
     <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
-      <p class="cross" data-action="click->flip-card#close">&times;</p>
-      <div data-orga-info-target="card">
-        <p class="main-paragraphe">Vous souhaitez en savoir plus sur cette structure ?</p>
-        <p class="main-paragraphe light">Si oui, dîtes le nous, nous prioriserons cette structure ! </p>
-        <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
-        <p class="main-paragraphe mt40">Vous souhaitez renseigner les chiffres de cette structure ?</p>
-        <%= link_to "préciser les chiffres", "https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-white" %>
+      <div class="div-cross">
+        <p class="cross" data-action="click->flip-card#close">&times;</p>
+      </div>
+      <div class="div-ensavoirplus" data-orga-info-target="card">
+        <div>
+          <p class="main-paragraphe">Vous souhaitez en savoir plus sur l’égalité dans cette organisation ?</p>
+          <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
+        </div>
       </div>
     </div>
   </div>
