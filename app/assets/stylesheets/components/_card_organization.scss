@@ -250,6 +250,20 @@
 
 @media only screen and (max-width: 320px) {
   .box {
-    min-height: 27.6em;
+    min-height: 26.2em;
+    .box-in {
+      .flip-card-front {
+        min-height: 25.2em;
+        .card-organization-numbers {
+          font-size: 14px;
+          .paragraphe-bold {
+            font-size: 14px;
+          }
+        }
+      }
+      .flip-card-back {
+        min-height: 25.2em;
+      }
+    }
   }
 }
