@@ -340,3 +340,16 @@
     top: 0;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .header-mobile .logo-mobile {
+    font-size: 16px !important;
+  }
+  .header-mobile .menu-icon {
+    padding: 2px 10px 4px;
+    margin-top: 18px;
+    .menu-span {
+      font-size: 14px;
+    }
+  }
+}
