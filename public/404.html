@@ -8,7 +8,6 @@
     @font-face {
       font-family:'Marianne-Bold';
       src: url("Marianne-Bold.woff");
-      font-url('Marianne-Bold.woff') format('woff');
       font-weight: 700;
       font-style: normal;
       font-stretch: normal;
@@ -18,7 +17,6 @@
     @font-face {
       font-family:'Marianne-Regular';
       src: url("Marianne-Regular.woff");
-      font-url('Marianne-Regular.woff') format('woff');
       font-weight: 700;
       font-style: normal;
       font-stretch: normal;
@@ -81,11 +79,10 @@
     .header_body-row {
       background-color: white;
       z-index: 11111;
-      position: sticky;
+      position: fixed;
+      width: 100%;
       top: 0;
-      height: 59px;
       display:flex;
-      justify-content: space-between;
       align-items: center;
       box-shadow: 0px 16px 16px -16px rgba(0, 0, 0, 0.32), 0px 8px 16px rgba(0, 0, 0, 0.1);
     }
@@ -106,16 +103,13 @@
       font-family: 'Marianne-Regular', sans-serif;
       text-decoration:none;
       color: black !important;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 24px;
       opacity: 1;
       display: table !important;
       margin: 0 15px 0 15px;
       padding: 1.05rem 0 1.05rem 0;
       background-color: transparent;
-    }
-    .header_tools-links {
-      width: 60%;
     }
     .links-group {
       list-style-type: none;
@@ -124,39 +118,46 @@
       width:100%;
       justify-content: flex-start;
       margin:0;
+      align-items: center;
     }
-    .links-group li {
-      margin-right: 40px;
+    .link-menu .links-icones {
+      padding: 5px;
+      display: flex;
+      align-items: center;
     }
-    .links-icones {
-      font-size: 18px;
+    .link-menu .links-icones:hover {
+      background-color: #EDEDED;
+      border-radius: 5px;
     }
     .link-menu.helps-link-menu:hover {
       box-shadow: #BCABFF 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
     }
-    .conseils-link-menu:hover {
-      box-shadow: #FFB648 0px -0.4rem 0px inset, inset 0 -2rem 0 #ffffff;
+    .menu-name:hover {
+      background-color: #EDEDED;
+      border-radius: 5px;
     }
     .header_brand {
       max-width:20%;
-      padding-left: 3rem;
+      margin-left: 6em;
+      margin-right: 20px;
     }
     .logo {
-      padding: 1rem 15px 0.7rem 0;
+      margin: 0.75rem 0 0.70rem 0;
       font-family: 'Marianne-Bold', sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 20px;
       line-height: 28px;
-      padding-top: 8px;
+      padding: 3px;
       color: black;
-      text-decoration: none;
+      white-space: nowrap;
+    }
+    .header-logo:hover {
+      background-color: #EDEDED;
+      border-radius: 5px;
     }
     .header_logo {
       text-decoration: none;
-    }
-    .header_logo:hover {
-      opacity: 0.7;
     }
     .header-mobile {
       display: none;
@@ -171,11 +172,29 @@
         margin-right: 1rem;
       }
       .link-menu {
+        font-family: 'Marianne-Regular', sans-serif;
+        text-decoration: none;
+        color: black  !important;
         font-size: 14px;
+        line-height: 24px;
+        opacity: 1;
+        display: table !important;
+        background-color: transparent;
+        padding: 0.95rem 0 0.95rem 0;
+        white-space: nowrap;
       }
 
       .links-group {
+        list-style-type: none;
+        display:flex;
+        padding:0;
+        width:100%;
+        justify-content: flex-start;
         margin:0;
+        align-items: center;
+      }
+      li {
+        padding: 0 10px;
       }
       .header_brand {
         padding-left: 2rem;
@@ -220,16 +239,21 @@
         text-decoration:none;
         color: black !important;
         font-size: 14px;
-        opacity: 0.6;
         line-height: 20px;
         font-weight: 500;
       }
       .header-mobile  li {
         padding: 15px 0;
         text-align:center;
-        background-color: #F2EEFF;
+        background-color: #E5DEFF;
         border-top: 0.1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 0px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.23);
+      }
+      .header-mobile  li img {
+        margin-right: 6px;
       }
 
       .header-mobile .logo-mobile {
@@ -239,6 +263,8 @@
         text-decoration: none;
         max-width: 50%;
         opacity: 1;
+        font-size: 20px;
+        font-family: 'Marianne-Bold', sans-serif;
       }
 
       .header-mobile .menu {
@@ -272,9 +298,12 @@
       }
       .menu-span {
         font-family: 'Marianne-Regular', sans-serif;
-        font-size: 10px;
+        font-size: 14px;
       }
-
+      .menu-name {
+        padding: 0 8px 3px 8px;
+        height: 30px;
+      }
       .header-mobile .menu-icon .navicon:before {
         background: #333;
         content: '';
@@ -309,7 +338,7 @@
       }
 
       .header-mobile .menu-btn:checked ~ .menu {
-        max-height: 240px;
+        max-height: 300px;
       }
 
       .header-mobile .menu-btn:checked ~ .menu-icon {
@@ -356,28 +385,46 @@
       <div class="header_tools-links">
         <ul class="menu links-group mb0">
           <li>
-            <a href="/helps" class="link-menu helps-link-menu"><span class="links-icones"></span> Aides</a>
+            <a href="/aides" class="link-menu helps-link-menu"><span class="links-icones">
+              <img src="argent-volant.png" alt="" class="emojis-eflc-medium"> Aides
+            </span></a>
           </li>
           <li>
-            <a class="link-menu conseils-link-menu" href="/conseils"><span class="links-icones"></span> Conseils et témoignages</a>
+            <a class="link-menu helps-link-menu" href="/ressources"><span class="links-icones">
+              <img src="carnet-noir.png" style="width: 18px" alt="" class="emojis-eflc-medium"> Ressources
+            </span></a>
           </li>
           <li>
-            <a class="link-menu conseils-link-menu" href="/rencontre"><span class="links-icones"></span> Conseils et témoignages</a>
+            <a class="link-menu helps-link-menu" href="/entraide"><span class="links-icones">
+              <img src="femmes.png" alt="" class="emojis-eflc-medium" style="width: 52px;"> Entraide
+            </span></a>
+          </li>
+          <li>
+            <a class="link-menu helps-link-menu" href="/index-parite"><span class="links-icones">
+              <img src="balance.png" alt="" class="emojis-eflc-medium"> Index Parité
+            </span></a>
+          </li>
+          <li>
+            <a class="link-menu helps-link-menu" href="/infographie"><span class="links-icones">
+              <img src="graphique.png" alt="" class="emojis-eflc-medium" style="width: 18px"> Infographie
+            </span></a>
           </li>
         </ul>
       </div>
-      <a class="link-menu conseils-link-menu" href="/infographie">Chiffres inégalités</a>
-      <a class="link-menu manifeste-link-menu" href="/a_propos">À propos</a>
     </div>
   </header>
   <header class="header-mobile">
     <a href="/" class="logo-mobile">Elles font la culture</a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="menu-span">MENU</span> <span class="navicon"></span></label>
+    <label class="menu-icon" for="menu-btn"><span class="menu-span">Menu</span> <span class="navicon"></span></label>
     <ul class="menu">
-      <a href="/helps"><li><img src="images/argent-volant.png" class="emojis-eflc-small" alt="émoji aides"> Aides</li></a>
-      <a href="/conseils"><li><img src="images/poignee-main.png" class="emojis-eflc-small" alt="émoji conseils"> Conseils et témoignages</li></a>
-      <a href="/a_propos"><li>À propos</li></a>
+      <a href="/aides"><li><img src="argent-volant.png" class="emojis-eflc-small" alt="émoji aides"> Aides</li></a>
+      <a href="/ressources"><li><img src="carnet-noir.png" class="emojis-eflc-small" alt="émoji conseils"> Ressources</li></a>
+      <a href="/entraide"><li><img src="femmes.png" class="emojis-eflc-small" alt="émoji aides" style="width: 32px; height: 18px;"> Entraide</li></a>
+      <a href="/index-parite"><li><img src="balance.png" class="emojis-eflc-small" alt="émoji conseils"> Ressources</li></a>
+      <a href="/infographie">
+        <li><img src="graphique.png" class="emojis-eflc-small" alt="émoji conseils"> Infographie</li>
+      </a>
     </ul>
   </header>
   <div class="div-error">

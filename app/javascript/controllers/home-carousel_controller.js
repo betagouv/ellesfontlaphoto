@@ -16,7 +16,6 @@ export default class extends Controller {
       left: scrollX,
       behavior: 'smooth'
     });
-    console.log(scrollX)
     if (scrollX >= 1000) {
       this.buttonLeftTarget.style.display = "block"
     }

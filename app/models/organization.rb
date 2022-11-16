@@ -2,6 +2,9 @@ class Organization < ApplicationRecord
   # validates :organization_type, presence: true
   validates :name, presence: true
   has_one_attached :logo
+  validates :nb_women_expos, presence: true
+  validates :total_nb_expos, presence: true
+  validates :name, uniqueness: true
 
   after_validation :calculate_parity
 
@@ -16,7 +19,7 @@ class Organization < ApplicationRecord
     end
 
     if nb_women_expos && total_nb_expos
-      self.expos_parity = nb_women_expos.fdiv(total_nb_expos) >= 0.5
+      self.expos_parity = nb_women_expos.fdiv(total_nb_expos) * 100
     end
 
     if dir_parity == nil

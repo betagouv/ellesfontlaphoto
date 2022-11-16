@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_05_154938) do
+ActiveRecord::Schema.define(version: 2022_10_20_144352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -189,6 +189,7 @@ ActiveRecord::Schema.define(version: 2022_09_05_154938) do
     t.boolean "open"
     t.string "author_email"
     t.boolean "suggested", default: false
+    t.boolean "from_api", default: false
   end
 
   create_table "notation_catalogues", force: :cascade do |t|
@@ -251,11 +252,12 @@ ActiveRecord::Schema.define(version: 2022_09_05_154938) do
     t.boolean "dir_parity"
     t.integer "nb_women_expos"
     t.integer "total_nb_expos"
-    t.boolean "expos_parity"
     t.integer "score_parity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "visible"
+    t.float "expos_parity"
+    t.integer "request_info_count", default: 0
+    t.boolean "visible", default: true
   end
 
   create_table "reviews", force: :cascade do |t|

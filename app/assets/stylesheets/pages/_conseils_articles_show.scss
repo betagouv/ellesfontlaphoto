@@ -6,6 +6,9 @@
       background-color: $hover-pink;
       padding: 10px;
     }
+    img {
+      max-width: 100%;
+    }
     a {
       color: $black !important;
       &:hover {
@@ -92,6 +95,9 @@
   .conseils-article-content {
     padding: 5%;
     .block-conseils-article {
+      .paragraphe,p {
+        text-align: left;
+      }
       .quote {
         p {
           margin-left: 0;

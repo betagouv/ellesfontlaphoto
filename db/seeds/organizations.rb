@@ -1,14 +1,14 @@
 # AdminUser.create!(email: "admin@example.fr", password: "password")
 require "csv"
-filepath = File.join(Rails.root, 'db', 'organizations_data.csv')
+filepath = File.join(Rails.root, 'db', 'organizations_data_2021.csv')
 Organization.destroy_all
 
 i = 1
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   orga = Organization.new(
-    organization_type: row["organization_type"],
-    name: row["name"],
+    organization_type: row["organization_type"].strip,
+    name: row["name"].strip,
     city: row["city"],
     nb_women_dir: row["nb_women_dir"],
     total_nb_dir: row["total_nb_dir"],
@@ -21,7 +21,7 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   end
 
   if orga.nb_women_expos && orga.total_nb_expos
-    orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) >= 0.5
+    orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) * 100
   end
 
 

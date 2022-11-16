@@ -5,14 +5,14 @@ class NotationHelp < ApplicationRecord
   ANSWERS = ["yes", "no", "yesbut"]
 
   def self.pourcentage_notation_help_utile
-    (NotationHelp.where(oui: 1).count * 100) / NotationHelp.count
+    (NotationHelp.where(oui: 1).count * 100).fdiv(NotationHelp.count)
   end
 
   def self.pourcentage_notation_help_inutile
-    (NotationHelp.where(non: 1).count * 100) / NotationHelp.count
+    (NotationHelp.where(non: 1).count * 100).fdiv(NotationHelp.count)
   end
 
   def self.pourcentage_notation_help_utile_mais_fermee
-    (NotationHelp.where(oui_mais_fermee: 1).count * 100) / NotationHelp.count
+    (NotationHelp.where(oui_mais_fermee: 1).count * 100).fdiv(NotationHelp.count)
   end
 end

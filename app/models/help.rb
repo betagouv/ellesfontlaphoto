@@ -12,13 +12,8 @@ class Help < ApplicationRecord
   validates :description, presence: true
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
-  validates :type_list, presence: true
-  validates :institution_name, presence: true
+  validates :type_list, presence: true, unless: :from_api
   validates :author_email, presence: true, if: :suggested
-
-  def some_validation_check
-      raise
-  end
 
   PARITE = [
     "respectée",
@@ -59,7 +54,7 @@ class Help < ApplicationRecord
     "Française résidant à l'étranger"
   ]
 
-  validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
+  # validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
   # validates :type_list, inclusion: { in: HELP_TYPE }
   # validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
 

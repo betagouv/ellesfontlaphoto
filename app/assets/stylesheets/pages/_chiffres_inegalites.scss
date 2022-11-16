@@ -1,69 +1,3 @@
-.chiffres-inegalites {
-  background-color: $purple;
-  padding: 3% 7%;
-  .title-marianne {
-    text-align: left;
-    font-family:'Marianne-Bold';
-    margin-bottom: 30px;
-    font-size: 40px;
-  }
-  .flex-div {
-    justify-content: space-between;
-  }
-  .sub-div-chiffres-inegalites {
-    max-width: 45%;
-    justify-content: space-between;
-    .paragraphe {
-      font-size: 18px;
-    }
-    .btn-black img {
-      margin: 0 4px 3px 0;
-    }
-    .scrollable-carousel {
-      display: none;
-      overflow-x: scroll;
-    }
-    #carousel-chiffres-inegalites {
-      .carousel-inner {
-        max-height: 378px;
-        max-width: 564px;
-        .carousel-item .carousel-item-sub-div {
-          display: flex;
-          justify-content: space-around;
-          a {
-            max-width: 45%;
-            .img-carousel-chiffres-inegalites {
-              max-width: 100%;
-            }
-          }
-        }
-      }
-      .carousel-control-next,.carousel-control-prev {
-        opacity: 1;
-        position: absolute;
-        .hover-arrow-carousel-left, .hover-arrow-carousel-right {
-          display: none;
-        }
-        &:hover {
-          .main-arrow-carousel-left, .main-arrow-carousel-right {
-            display: none;
-          }
-          .hover-arrow-carousel-left,
-            .hover-arrow-carousel-right {
-              display: block;
-            }
-        }
-      }
-      .carousel-control-prev {
-        left: -7%;
-      }
-      .carousel-control-next {
-        right: -7%;
-      }
-    }
-  }
-}
-
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
@@ -71,7 +5,7 @@
     color: white;
     text-align: center;
     width: 80%;
-    margin: 10% auto 5%;
+    margin: 7% auto 5%;
   }
   .div-title-index-parite {
     margin: 3% auto;
@@ -80,7 +14,7 @@
       font-family: 'Marianne-Bold';
       line-height: 50px;
       margin-bottom: 30px;
-      width: 100%;
+      min-width: 100%;
       font-size: 40px;
     }
     .spectral-title {
@@ -90,147 +24,54 @@
       color: $white;
       text-align: center;
     }
-    .paragraphe {
-      margin-bottom: 60px;
-    }
   }
-  .btn-purple {
-    .img-sun {
-      width:48px;
-    }
-    padding: 2px 15px 0 10px;
-    margin-right: 2%;
-    justify-content: space-around;
-    background-color: $filter-purple !important;
-    color: $white !important;
-    &:hover {
-      background-color: #8F73FF !important;
-    }
-  }
-  .btn-purple.centre {
-    margin: 8% auto 0;
+  .btn-outlined-white {
+    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
   .cards-organizations {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
-    .card-organization {
-      background-color: $white;
-      border-radius: 16px;
-      padding: 7%;
-      .card-organization-name {
-        min-height: 120px;
-        .paragraphe-bold {
-          font-size: 22px;
-          margin-bottom: 0;
-          text-align: center;
-          height: auto;
-          .paragraphe {
-            font-size: 22px;
-          }
-        }
-        .flex-div {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          margin: 25px 0 15px;
-          min-height: 50px;
-          img {
-            max-height: 50px;
-            max-width: 120px;
-          }
-        }
-      }
-      .weather-bubble {
-        border-radius: 50%;
-        width: 84px;
-        height: 84px;
-        margin: 25px auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        .emoji-weather {
-          max-height: 80%;
-          max-width: 80%;
-        }
-      }
-      .weather-bubble.orange {
-        background-color: $dark-orange;
-      }
-      .weather-bubble.purple {
-        background-color: $filter-purple;
-      }
-      .weather-bubble.half-half {
-        background: linear-gradient(90deg, $dark-orange 50%, $filter-purple 50%);
-      }
-      .card-organization-numbers {
-        text-align: center;
-        padding: 0 0 30px;
-        .paragraphe {
-          white-space: pre-wrap;
-          padding: 0;
-          margin: 0;
-        }
-        .div-line {
-          z-index: 1;
-          margin: 0 auto;
-          color: black;
-          width: fit-content;
-          .line-orange, .line-purple {
-            height: 9px;
-            z-index: 0;
-            margin: -13px auto 4px;
-            color: transparent;
-          }
-          .line-orange {
-            background-color: rgba(244, 88, 0, 0.3);
-          }
-          .line-purple {
-            background-color: rgba(107, 72, 244, 0.3);
-          }
-        }
-      }
+  }
+}
+
+.redirection-infographie {
+  background-color: #181818;
+  padding: 5% 0 7%;
+  .redirection-infographie-title {
+    margin: 0 auto;
+    width: 60%;
+    .title {
+      color: white;
+      text-align: center;
+      font-size: 47px;
+      line-height: 50px;
+    }
+  }
+  .btn-white {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    padding: 5px 20px;
+
+    .emoticone-btn {
+      width: 46px;
+      height: 46px;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background-color: $hover-white !important;
     }
   }
 }
 
 @media only screen and (max-width: 1250px) {
-  .chiffres-inegalites {
-    padding: 5% 0;
-    .title-div-chiffres-inegalites {
-      padding: 0% 4%;
-    }
-    .flex-div {
-      display: block;
-    }
-    .sub-div-chiffres-inegalites {
-      min-width: 100%;
-      margin-bottom: 7%;
-      .title-marianne, .paragraphe {
-        text-align: center;
-        margin: 0 auto;
-      }
-      .btn-black {
-        margin: 30px auto;
-      }
-      #carousel-chiffres-inegalites {
-       display: none;
-     }
-
-     .scrollable-carousel {
-       display: flex;
-       gap: 0px;
-      .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 20px;
-      }
-
-      .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 20px;
-      }
-     }
-    }
-  }
   .div-index-parite {
     padding: 3% 5%;
     .div-title-index-parite {
@@ -239,7 +80,7 @@
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
       .card-organization .card-organization-name {
-        min-height: 150px;
+        min-height: 130px;
         .paragraphe-bold {
           width: auto;
           white-space: normal;
@@ -252,23 +93,22 @@
       }
     }
   }
-}
-
-@media only screen and (max-width: 750px) {
-  .chiffres-inegalites {
-    padding: 3% 0;
-    .sub-div-chiffres-inegalites .scrollable-carousel {
-      .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 10px;
-      }
-
-      .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 10px;
+  .redirection-infographie {
+    .redirection-infographie-title {
+      width: 100%;
+      .title {
+        padding: 5% 2%;
       }
     }
   }
+}
+
+@media only screen and (max-width: 750px) {
   .div-index-parite {
     padding: 3%;
+    .cards-organizations {
+      grid-template-columns: 1fr 1fr;
+    }
     .div-title-index-parite {
       .title-marianne {
         font-size: 32px;
@@ -282,58 +122,16 @@
         }
       }
     }
-    .flex-div {
-      display: block;
-      .btn-outlined-white,.btn-purple {
-        margin: 5% auto;
-        white-space: nowrap;
-      }
-    }
-    .cards-organizations {
-      grid-template-columns: 1fr 1fr;
-      .card-organization {
-        .weather-bubble {
-          width: 60px;
-          height: 60px;
-        }
-        .card-organization-numbers {
-          padding: 5% 0;
-          .paragraphe {
-            font-size: 12px;
-            line-height: 10px;
-          }
-          .paragraphe.line-orange {
-            box-shadow: rgba(244, 88, 0, 0.3) 0px -0.50rem 0px inset;
-          }
+  }
+  .redirection-infographie {
+    padding: 6% 0 15%;
+    .redirection-infographie-title {
+      width: 100%;
 
-          .paragraphe.line-purple {
-            box-shadow: rgba(107, 72, 244, 0.3) 0px -0.50rem 0px inset;
-          }
-          .div-line {
-            font-size: 14px;
-            white-space: nowrap;
-          }
-        }
-        .card-organization-name {
-          height: auto;
-          min-height: 80px;
-          .paragraphe-bold {
-            font-size: 14px;
-            line-height: 18px;
-            .paragraphe {
-              font-size: 14px;
-              line-height: 18px;
-            }
-          }
-          .flex-div {
-            min-height: 40px;
-            margin: 15px 0;
-            img {
-              padding: 5px;
-              max-height: 40px;
-            }
-          }
-        }
+      .title {
+        font-size: 30px;
+        padding: 5% 2%;
+        line-height: 34px;
       }
     }
   }
@@ -342,3 +140,4 @@
 @media only screen and (min-width: 1600px) {
 
 }
+

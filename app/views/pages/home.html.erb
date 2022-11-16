@@ -15,23 +15,23 @@
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
       </div>
     <% end %>
-    <%= link_to conseils_path do %>
+    <%= link_to ressources_path do %>
       <div class="first-block-card orange">
         <%= image_tag 'aides/conseils.png', class: "image-first-block-card", alt: 'Ressources et conseils' %>
         <div class="first-block-card-infos orange">
           <%= image_tag 'book.svg' %>
           <p class="first-block-card-infos-title">Ressources et conseils</p>
-          <p class="paragraphe first-block-card-infos-text">Construire son portfolio ? <br>Protéger ses droits d’autrices...</p>
+          <p class="paragraphe first-block-card-infos-text">Construire son portfolio ? <br>Protéger ses droits d’autrice...</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
       </div>
     <% end %>
-    <%= link_to rencontre_path do %>
+    <%= link_to entraide_path do %>
       <div class="first-block-card light-orange">
-        <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraides et rencontres' %>
+        <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraide et rencontres' %>
         <div class="first-block-card-infos light-orange">
           <%= image_tag 'community.svg' %>
-          <p class="first-block-card-infos-title">Entraides et rencontres</p>
+          <p class="first-block-card-infos-title">Entraide et rencontres</p>
           <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses paires</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "flèche" %>
@@ -46,8 +46,21 @@
     <%= image_tag 'illu-femmes-debout-mobile.png' %>
   </div>
   <div class="second-block-div text-align-center">
-    <p class="paragraphe-title pb20">Car encore aujourd'hui, 60% de femmes sont sur les bancs des écoles, contre 35% dans la vie professionnelle.</p>
-    <a class="btn btn-orange-home" href="/chiffres_inegalites">les chiffres des inégalités</a>
+    <p class="title">Chiffrer le secteur de la photographie <br> pour réduire ses inégalités</p>
+    <div class="d-flex justify-between">
+      <div>
+        <%= link_to organizations_path, class: "btn btn-black btn-black-balance" do %>
+          <%= image_tag "emojis/justice-scales.svg", alt: "balance de justice", class: "emoticone-btn" %> <span>Index parité</span>
+        <% end %>
+        <p class="paragraphe p-second-block">Comparer le nombre d'exposantes et dirigeantes dans les structures photo</p>
+      </div>
+      <div>
+        <%= link_to infographie_path, class: "btn btn-black" do %>
+          <%= image_tag "emojis/data-visualization.svg", alt: "visualisation de données", class: "emoticone-btn" %> <span class="mb0">Infographie</span>
+        <% end %>
+        <p class="paragraphe p-second-block">Visualiser les inégalités du secteur (rémunération, récompense, harcèlement...)</p>
+      </div>
+    </div>
   </div>
   <%= image_tag 'illu-femme-debout.png', class: "second-block-img" %>
 </div>
@@ -73,7 +86,7 @@
 <div class="fourth-block">
   <%= image_tag "illu-femme-stylo.png", class: "illu-femme-stylo", alt: "illustration femme" %>
   <p class="title-marianne"><span class="subtitle-spectral">Participez à cette initiative !</span> Ajoutez une aide pour les femmes photographes ! </p>
-  <a href="/helps/new" target="blank" class="btn btn-black">Proposer une aide</a>
+  <%= link_to "Proposer une aide", aides_ajouter_aide_path, target: "_blank", class: "btn btn-black" %>
 </div>
 
 <div class="contact-block" id="contact">
@@ -89,7 +102,7 @@
       <p class="paragraphe-bold" style="font-weight: 900;"><%= notice %></p>
     <% end %>
     <div class="d-flex">
-      <a href="/a_propos" class="btn btn-contact btn-flex"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
+      <a href="https://beta.gouv.fr/startups/ellesfontlaculture.html" target="_blank" class="btn btn-contact btn-flex"><%= image_tag "emojis/carnet-noir.png", alt:"émoji carnet", class: "emojis-eflc-small" %> À propos</a>
       <a class="js-modal btn btn-contact btn-flex" data-modal="modal-contact"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-small", style: "width: 20px; height: 17px;" %> Nous écrire</a>
     </div>
   </div>

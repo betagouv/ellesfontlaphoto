@@ -70,6 +70,7 @@
       div {
         position: relative;
         select {
+          font-size: 14px;
           margin-top: 10px;
           display: table;
           height: 40px;
@@ -198,7 +199,7 @@
       }
       .btn-validate-filter {
         display: block;
-        width: 80px;
+        width: fit-content;
         margin: 0 auto;
       }
 
@@ -215,7 +216,7 @@
     min-width: 100%;
     .cross {
       right: 23px;
-      top: -24px;
+      top: 0px;
       font-size: 28px;
     }
   }

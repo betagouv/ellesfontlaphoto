@@ -13,8 +13,8 @@ ActiveAdmin.register Help do
   end
 
   before_update do |help|
-    if params[:help][:visible] == "1" && params[:help][:author_email]
-      # Ici ajouter l'envoie d'email
+    if params[:help][:visible] == "1" && params[:help][:author_email] != ""
+      HelpMailer.online_help(help).deliver_now
     end
   end
 
@@ -95,6 +95,8 @@ ActiveAdmin.register Help do
       row :parentality
       row :accessibility
       row :author_email
+      row :created_at
+      row :updated_at
     end
   end
 
@@ -113,6 +115,7 @@ ActiveAdmin.register Help do
 
   index do
     column :id
+    column :from_api
     column :visible
     column :title
     column :residence_condition
@@ -140,6 +143,7 @@ ActiveAdmin.register Help do
         0
       end
     end
+    column :created_at
     actions
   end
 

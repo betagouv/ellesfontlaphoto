@@ -3,7 +3,6 @@
 
 .first-block{
   .first-block-cards {
-    padding-bottom: 4vh;
     display: flex;
     justify-content: center;
     position: relative;
@@ -85,29 +84,47 @@
 // SECOND BLOCK
 
 .second-block {
-  padding: 0 5%;
+  padding: 6% 5% 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   text-align: center;
+  background-image: url('halo-home-desktop.png');
+  background-position: center;
   .paragraphe-title {
     font-family: "Marianne-Medium";
   }
-  img {
-    max-width: 20%;
+  .second-block-img {
+    max-width: 15%;
   }
   .second-block-img-mobile {
     display: none;
   }
   .second-block-div {
     width: 50%;
-    .btn-orange-home {
+    .p-second-block {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+    .btn-black {
       margin: 0 auto;
-      background-color: $orange;
-      &:hover{
-        background-color: $hover-orange !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: fit-content;
+      padding: 5px 20px;
+      .emoticone-btn {
+        width: 46px;
+        height: 46px;
+        margin-right: 5px;
       }
+      &:hover{
+        background-color: $hover-black !important;
+      }
+    }
+    .btn-black-balance {
+      padding: 3px 16px 7px 20px;
     }
   }
 }
@@ -117,7 +134,7 @@
 // THIRD BLOCK
 
 .third-block {
-  padding: 3% 7% 0 7%;
+  padding: 0 7%;
   text-align: center;
   .third-block-div {
     border-radius: 16px;
@@ -149,7 +166,7 @@
           display: none;
         }
         .card-index-conseils-videos-div {
-          padding: 5% 0;
+          padding: 2% 0;
           .cards-videos-info {
             p {
               max-height: 220px;
@@ -272,7 +289,7 @@
   }
 
   .first-block {
-    padding: 5% 2%;
+    padding: 5% 2% 0;
     .first-block-cards {
       justify-content: space-between;
       a {
@@ -304,15 +321,25 @@
   }
 
   .second-block {
-    padding: 0% 2%;
-    .paragraphe-title {
-      font-size: 20px;
-      line-height: 29.7px;
+    background-image: url('halo-home-tablet.png');
+    padding: 6% 2%;
+    .second-block-img {
+      max-width: 18%;
+    }
+    .second-block-div {
+      width: 70%;
+      .title {
+        padding: 0;
+        width: 100%;
+        font-size: 27px;
+        line-height: 30px;
+        margin-bottom: 30px;
+      }
     }
   }
 
   .third-block {
-    padding: 3% 0 0;
+    padding: 0;
     .third-block-div {
       border-radius: 0;
       .subtitle-spectral {
@@ -358,7 +385,6 @@
       bottom: 0;
     }
   }
-
   .contact-block {
     .contact-div {
       padding: 3%;
@@ -372,11 +398,11 @@
       }
       .div-btn-orange-home {
         display: block;
-      }
-      .btn-orange-home,.btn-contact {
-        white-space: nowrap;
-        margin-bottom: 20px;
-        margin-left: 0 !important;
+        .btn-orange-home,.btn-contact {
+          white-space: nowrap;
+          margin-bottom: 20px;
+          margin-left: 0;
+        }
       }
       .d-flex {
         justify-content: space-around;
@@ -429,17 +455,23 @@
 
   .second-block {
     display: block;
-    padding-bottom: 60px;
+    background-image: url('halo-home.png');
     .second-block-div {
       margin: 8% auto 0 auto;
-      width: 80%;
-      .paragraphe-title {
-        text-align: center;
-        font-size: 20px;
+      width: 95%;
+      .title {
+        width: 90%;
+        font-size: 24px;
         margin-bottom: 40px;
       }
-      .btn-orange-home {
-        margin-bottom: 15%;
+      .d-flex {
+        display: block !important;
+        .p-second-block {
+          width: 90%;
+          margin: 10px auto 30px;
+          font-size: 14px;
+          line-height: 24px;
+        }
       }
     }
     .second-block-img {
@@ -449,7 +481,7 @@
       display: flex;
       justify-content: center;
       img {
-        min-width: 70%;
+        width: 70%;
       }
     }
   }
@@ -561,20 +593,19 @@
       margin: 50px 0 20px;
     }
   }
+
   .contact-block {
     display: block;
     .contact-div {
       width: 100%;
       margin-bottom: 20px;
-      padding: 10%;
+      padding: 10% 10% 7% 10%;
       .description-contact-div {
-        height: 250px;
+        height: auto;
         .subtitle {
           font-size: 20px;
           line-height: 26px;
           text-align: center;
-
-
         }
 
         .subtitle-spectral {
@@ -589,14 +620,16 @@
           line-height : 22px;
         }
       }
-
-      .div-btn-orange-home .btn-orange-home {
-        margin: 10px auto;
-      }
       .d-flex {
-        display: block;
+        display: block !important;
+        margin-top: 30px;
+        .btn-contact {
+          margin: 20px auto;
+          padding: 4% 4% 5% 4%;
+        }
       }
-      .btn-contact {
+      .div-btn-orange-home {
+        margin-top: 30px;
         .btn-orange-home {
           margin: 0 auto 20px auto;
           padding: 4% 4% 5% 4%;

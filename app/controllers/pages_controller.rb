@@ -15,13 +15,17 @@ class PagesController < ApplicationController
     end
   end
 
-  def rencontre
+  def entraide
     @contact = Contact.new
     @webinaires = Webinaire.where("page_rencontre = ?", true).order(:date)
   end
 
   def chiffres_inegalites
-    @organizations = Organization.first(8)
+    @organizations = Organization.where(visible: true).first(8)
+    if request.user_agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+      @organizations = Organization.where(visible: true).first(9)
+    end
+    @contact = Contact.new
   end
 
 end

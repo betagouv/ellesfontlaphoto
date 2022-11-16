@@ -137,7 +137,7 @@
         margin: 0 auto;
         white-space: nowrap;
         img {
-          margin-right: 10px;
+          margin-right: 6px;
         }
       }
     }
@@ -213,6 +213,9 @@
         align-items: center;
         .btn-black {
           justify-content: space-around;
+          &:active {
+            background-color: $black;
+          }
         }
       }
     }
@@ -328,12 +331,12 @@
     .div-liens-rencontre {
       display: block;
       .liens-rencontre {
-        margin-top: 7%;
         text-align: center;
         min-width: 100%;
         line-height: 45px;
         font-size: 32px;
         min-width: 65%;
+        margin: 5% auto 5% auto;
         p {
           justify-content: center;
           margin: 0px;

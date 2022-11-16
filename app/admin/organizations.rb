@@ -1,5 +1,5 @@
 ActiveAdmin.register Organization do
-  permit_params :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo
+  permit_params :visible, :organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo, :request_info_count
 
   before_destroy do |organization|
     organization.logo.purge
@@ -13,7 +13,7 @@ ActiveAdmin.register Organization do
     end
 
     if organization.nb_women_expos && organization.total_nb_expos
-      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) >= 0.5
+      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) * 100
     end
 
     if organization.dir_parity == nil
@@ -35,10 +35,10 @@ ActiveAdmin.register Organization do
     organization.organization_type = params["organization"]["organization_type"].second
 
     if organization.nb_women_dir && organization.total_nb_dir
-      organization.dir_parity = organization.nb_women_dir.fdiv(organization.total_nb_dir ) >= 0.5
+      organization.dir_parity = organization.nb_women_dir.fdiv(organization.total_nb_dir) >= 0.5
     end
     if organization.nb_women_expos && organization.total_nb_expos
-      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos ) >= 0.5
+      organization.expos_parity = organization.nb_women_expos.fdiv(organization.total_nb_expos) * 100
     end
 
     if organization.dir_parity == nil
@@ -56,9 +56,21 @@ ActiveAdmin.register Organization do
     organization.save
   end
 
+  index do
+    column :visible
+    column :id
+    column :organization_type
+    column :name
+    column :city
+    column :score_parity
+    column :request_info_count
+    actions
+  end
+
   form do |f|
-    f.semantic_errors # shows errors on :base
+    f.semantic_errors
     f.inputs "Organisation" do
+      f.input :visible
       f.input :organization_type, :as => :check_boxes, :collection => Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"

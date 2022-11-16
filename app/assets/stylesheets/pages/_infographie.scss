@@ -1,6 +1,6 @@
 .banner-title-infographie {
   h1 {
-    line-height: 46px !important;
+    margin-bottom: 20px;
   }
 }
 .infographie-title {
@@ -32,6 +32,9 @@
 .infographie-div-text.btn-download {
   margin-bottom: 150px;
   margin-top: 80px;
+  .btn-orange-home {
+    margin: 0 auto;
+  }
 }
 
 .infographie-div {
@@ -40,7 +43,7 @@
   display: flex;
   justify-content: space-around;
   .paragraphe {
-    line-height: 22px;
+    line-height: 28px;
   }
   .paragraphe.orange {
     color: $dark-orange;
@@ -48,10 +51,17 @@
   .paragraphe.purple {
     color: $filter-purple;
   }
+  .infographie-subdiv.d-flex.first-card {
+    align-items: center;
+  }
+
   .infographie-subdiv {
     width: 45%;
     padding: 4%;
     margin: auto 0;
+    img {
+      max-width: 100%;
+    }
 
     .infographie-chiffre.purple {
       margin: 0;
@@ -179,6 +189,10 @@
     .infographie-subdiv.d-flex.first-card {
       justify-content: center;
       display: flex;
+      align-items: center;
+      .paragraphe {
+        text-align: left;
+      }
     }
     .infographie-subdiv {
       width: 100%;

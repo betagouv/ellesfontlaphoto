@@ -39,9 +39,7 @@
   .form-review {
     position: relative;
     .review-button {
-      position: absolute;
-      top: 70%;
-      right: 10%;
+      position: block;
     }
   }
 }

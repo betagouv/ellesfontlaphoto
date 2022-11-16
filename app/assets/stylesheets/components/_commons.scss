@@ -290,6 +290,10 @@ b, strong {
   display: flex;
 }
 
+.align-center {
+  align-items: center;
+}
+
 
 .dark-button {
   border-radius: 5px;
@@ -379,6 +383,10 @@ a {
   margin-top: 30px;
 }
 
+.mt40 {
+  margin-top: 40px;
+}
+
 .mb0 {
   margin-bottom: 5px;
   margin-top : 0px;
@@ -457,9 +465,6 @@ a {
     font-size: 30px;
     line-height: 43px;
     padding-bottom: 20px;
-  }
-  .paragraphe {
-    text-align: left;
   }
   .subtitle {
     text-align: left;

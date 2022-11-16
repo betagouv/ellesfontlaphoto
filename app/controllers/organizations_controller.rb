@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.order("total_nb_expos DESC NULLS LAST")
+    @organizations = Organization.where(visible: true).order("total_nb_expos DESC NULLS LAST")
+    @contact = Contact.new
   end
 
   def new
@@ -11,6 +12,18 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(organization_params)
     @organization.visible = false
     @organization.save
+  end
+
+  def add_request_info
+    if params[:id]
+      @organization = Organization.find(params[:id])
+      @organization.request_info_count += 1
+      @organization.save
+    end
+    respond_to do |format|
+      format.html { render redirect_to organizations_path }
+      format.text { render partial: 'organizations/info_orga_validate', formats: [:html] }
+    end
   end
 
   private
