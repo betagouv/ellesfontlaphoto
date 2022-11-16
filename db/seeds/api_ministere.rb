@@ -52,7 +52,6 @@ while result != []
         residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
         start_date: Date.parse(appel["creationDate"]),
         end_date: Date.parse(appel["deadline"]),
-        description: "À définir",
         help_amount: "À définir",
         institution_name: "À définir",
         from_api: true
