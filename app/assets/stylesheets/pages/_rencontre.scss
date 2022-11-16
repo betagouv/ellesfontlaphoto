@@ -213,6 +213,9 @@
         align-items: center;
         .btn-black {
           justify-content: space-around;
+          &:active {
+            background-color: $black;
+          }
         }
       }
     }

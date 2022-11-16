@@ -1,69 +1,3 @@
-.chiffres-inegalites {
-  background-color: $purple;
-  padding: 3% 7%;
-  .title-marianne {
-    text-align: left;
-    font-family:'Marianne-Bold';
-    margin-bottom: 30px;
-    font-size: 40px;
-  }
-  .flex-div {
-    justify-content: space-between;
-  }
-  .sub-div-chiffres-inegalites {
-    max-width: 45%;
-    justify-content: space-between;
-    .paragraphe {
-      font-size: 18px;
-    }
-    .btn-black img {
-      margin: 0 4px 3px 0;
-    }
-    .scrollable-carousel {
-      display: none;
-      overflow-x: scroll;
-    }
-    #carousel-chiffres-inegalites {
-      .carousel-inner {
-        max-height: 378px;
-        max-width: 564px;
-        .carousel-item .carousel-item-sub-div {
-          display: flex;
-          justify-content: space-around;
-          a {
-            max-width: 45%;
-            .img-carousel-chiffres-inegalites {
-              max-width: 100%;
-            }
-          }
-        }
-      }
-      .carousel-control-next,.carousel-control-prev {
-        opacity: 1;
-        position: absolute;
-        .hover-arrow-carousel-left, .hover-arrow-carousel-right {
-          display: none;
-        }
-        &:hover {
-          .main-arrow-carousel-left, .main-arrow-carousel-right {
-            display: none;
-          }
-          .hover-arrow-carousel-left,
-            .hover-arrow-carousel-right {
-              display: block;
-            }
-        }
-      }
-      .carousel-control-prev {
-        left: -7%;
-      }
-      .carousel-control-next {
-        right: -7%;
-      }
-    }
-  }
-}
-
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
@@ -91,31 +25,11 @@
       text-align: center;
     }
   }
-  .div-btns {
-    margin: 40px auto 60px;
-  }
   .btn-outlined-white {
     padding-bottom: 12px;
     padding-top: 8px;
     padding-left: 18px;
     padding-right: 18px;
-  }
-  .btn-white.btn-sun {
-    .img-sun {
-      width: 32px;
-      margin-right: 8px;
-    }
-    width: fit-content;
-    margin-right: 2%;
-    justify-content: space-around;
-    display: flex;
-    padding-right: 20px;
-    padding-left: 18px;
-    padding-bottom: 8px;
-    padding-top: 6px;
-  }
-  .btn-white.centre {
-    margin: 8% auto 0;
   }
   .cards-organizations {
     display: grid;
@@ -158,41 +72,6 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  .chiffres-inegalites {
-    padding: 5% 0;
-    .title-div-chiffres-inegalites {
-      padding: 0% 4%;
-    }
-    .flex-div {
-      display: block;
-    }
-    .sub-div-chiffres-inegalites {
-      min-width: 100%;
-      margin-bottom: 7%;
-      .title-marianne, .paragraphe {
-        text-align: center;
-        margin: 0 auto;
-      }
-      .btn-black {
-        margin: 30px auto;
-      }
-      #carousel-chiffres-inegalites {
-       display: none;
-     }
-
-     .scrollable-carousel {
-       display: flex;
-       gap: 0px;
-      .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 20px;
-      }
-
-      .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 20px;
-      }
-     }
-    }
-  }
   .div-index-parite {
     padding: 3% 5%;
     .div-title-index-parite {
@@ -225,27 +104,10 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .chiffres-inegalites {
-    padding: 3% 0;
-    .sub-div-chiffres-inegalites .scrollable-carousel {
-      .img-carousel-chiffres-inegalites:first-child {
-        margin-left: 10px;
-      }
-
-      .img-carousel-chiffres-inegalites:last-child {
-        margin-right: 10px;
-      }
-    }
-  }
   .div-index-parite {
     padding: 3%;
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
-    }
-    .div-btns {
-      .btn-white {
-        margin: 0 auto;
-      }
     }
     .div-title-index-parite {
       .title-marianne {
@@ -258,13 +120,6 @@
         .paragraphe {
           line-height: 24px;
         }
-      }
-    }
-    .div-btns {
-      display: block;
-      .btn-outlined-white,.btn-sun {
-        margin: 5% auto;
-        white-space: nowrap;
       }
     }
   }
