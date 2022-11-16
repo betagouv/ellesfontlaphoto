@@ -95,6 +95,8 @@ ActiveAdmin.register Help do
       row :parentality
       row :accessibility
       row :author_email
+      row :created_at
+      row :updated_at
     end
   end
 
@@ -141,6 +143,7 @@ ActiveAdmin.register Help do
         0
       end
     end
+    column :created_at
     actions
   end
 
