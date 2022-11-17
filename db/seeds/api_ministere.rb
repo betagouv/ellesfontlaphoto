@@ -47,12 +47,11 @@ while result != []
       new_help = Help.new(
         visible: false,
         title: appel["title"],
-        description_longue: appel["body"],
+        description: appel["body"],
         candidate_url: appel["url"],
         residence_condition: EQUIVALENT_RESIDENCE[appel["eztag_region"].first.to_sym],
         start_date: Date.parse(appel["creationDate"]),
         end_date: Date.parse(appel["deadline"]),
-        description: "À définir",
         help_amount: "À définir",
         institution_name: "À définir",
         from_api: true
@@ -60,8 +59,6 @@ while result != []
       if new_help.save
         HelpApi.create(api_id: appel["id"])
       end
-      p new_help.save
-      p new_help.errors.messages
       new_help.save
       new_candidature_date = CandidatureDate.create(start_date: Date.parse(appel["creationDate"]), end_date: Date.parse(appel["deadline"]), help: new_help)
     end

@@ -216,7 +216,7 @@
           .paragraphe-bold {
             text-overflow: ellipsis;
             display: inline-block;
-            width: 100%;
+            width: 80%;
             max-height: 122px;
             font-size: 16px;
             line-height: 20px;
@@ -224,6 +224,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            margin: 0 auto;
             .paragraphe {
               font-size: 16px;
               line-height: 20px;
@@ -257,21 +258,27 @@
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
   .box {
-    min-height: 26.2em;
+    min-height: 22.5em;
     .box-in {
-      .flip-card-front div {
-        min-height: 25.4em;
-        .card-organization-numbers {
-          font-size: 14px;
+      .flip-card-front {
+        min-height: 21.7em;
+        .card-organization-name {
+          min-height: 150px;
           .paragraphe-bold {
-            font-size: 14px;
+            max-width: 90%;
+          }
+        }
+        .card-organization-numbers {
+          font-size: 12px;
+          .paragraphe-bold {
+            font-size: 12px;
           }
         }
       }
       .flip-card-back {
-        min-height: 25.4em;
+        min-height: 22.5em;
       }
     }
   }
