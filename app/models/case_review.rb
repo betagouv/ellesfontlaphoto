@@ -1,10 +1,10 @@
 class CaseReview < ApplicationRecord
-  has_one_attached :case, service: :scaleway
-  validates :case, content_type: ['application/pdf']
+  has_one_attached :case_attachment, service: :scaleway
+  has_one_attached :review_comment, service: :scaleway
+  validates :case_attachment, content_type: ['application/pdf']
+  validates :points_faibles, presence: true, on: :update
+  validates :points_forts, presence: true, on: :update
+  validates :case_attachment, presence: true
 
-  def correct_type_attachment
-    if self.case.attached? && !self.case.content_type.in?(%w(application/pdf))
-      errors.add(:case, "Le dossier doit être au format pdf")
-    end
-  end
+  validates :candidate_email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 end

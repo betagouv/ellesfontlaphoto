@@ -16,11 +16,11 @@
   <div class="form-new-case-reviews" data-controller="upload-case">
     <%= image_tag "illu-femme-stylo.png", class:"illu" %>
     <%= simple_form_for @case_review, data: {upload_case_target: "form", action: "submit->upload-case#submit"}  do |f| %>
-      <%#= f.input :case, as: :file, id: "actual-btn" %>
-      <label for="file-upload" class="btn btn-black" data-upload-case-target="label">
+      <label for="case_review_case" class="btn btn-black" data-upload-case-target="label">
         <%= image_tag "download-white.svg" %></i> Chargez votre dossier
       </label>
-      <input id="file-upload" name='upload_cont_img' type="file" style="display:none;" data-action="change->upload-case#upload">
+      <%= f.input :case_attachment, as: :file, id: "actual-btn", data: {action: "change->upload-case#upload"} %>
+      <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
 
       <%= f.input :candidate_email, label: "Votre e-mail" %>
       <%= f.submit "C'est parti !", class: "btn btn-grey" %>

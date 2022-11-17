@@ -11,3 +11,8 @@ fr:
       candidature_date:
         end_date: "La date de fin de candidature"
         start_date: "La date de début de candidature"
+      case_review:
+        candidate_email: "Votre email"
+        points_forts: "Ce champ"
+        points_faibles: "Ce champ"
+        case_attachment: "Votre dossier doit être en format pdf actuellement il y"

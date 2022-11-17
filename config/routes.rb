@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end
-  resources :case_reviews, only: [:new, :create]
+  resources :case_reviews, only: [:new, :create, :update, :edit]
   resources :organizations, only: [:index], path: "index-parite"
   resources :notation_helps, only: :create
   get "/ressources", to: "conseils_pratiques#index"
