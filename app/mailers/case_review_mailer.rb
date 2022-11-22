@@ -1,3 +1,4 @@
+require 'open-uri'
 class CaseReviewMailer < ApplicationMailer
   default from: "Elles font la culture <ellesfontlaculture@beta.gouv.fr>"
 
@@ -12,9 +13,10 @@ class CaseReviewMailer < ApplicationMailer
   end
 
   def send_case_review(case_review)
+    @case_review = case_review
     @reviewer = case_review.reviewer_email
-    raise
-    attachments['dossier.pdf'] = File.read('path/to/file.pdf')
+    case_attachment = URI.open(case_review.case_attachment.url)
+    attachments['dossier.pdf'] = File.read(case_attachment)
     mail(to: @reviewer, subject: "Le dossier de votre binôme est là !")
   end
 

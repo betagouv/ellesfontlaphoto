@@ -2,14 +2,16 @@ class CaseReviewsController < ApplicationController
 
   def new
     @case_review = CaseReview.new()
+    CaseReviewMailer.send_case_review(CaseReview.first).deliver_now
   end
 
   def create
     @case_review = CaseReview.new(case_review_params)
     @case_review.status = "En attente de binôme"
     if @case_review.save
-      CaseReviewMailer.confirm(@case_review.candidate_email).deliver_now
-      unless CaseReview.where(status: "En attente de binôme").where.not(candidate_email: @case_review.candidate_email).empty?
+      if CaseReview.where(status: "En attente de binôme").where.not(candidate_email: @case_review.candidate_email).empty?
+        CaseReviewMailer.confirm(@case_review.candidate_email).deliver_now
+      else
         @reviewer_case = CaseReview.where(status: "En attente de binôme").where.not(candidate_email: @case_review.candidate_email).first
         @reviewer_case.update(reviewer_email: @case_review.candidate_email, status: "en attente de revue")
         @case_review.update(reviewer_email: @reviewer_case.candidate_email, status: "en attente de revue")
