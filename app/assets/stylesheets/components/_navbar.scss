@@ -5,14 +5,13 @@
 }
 
 .banner-menu {
-  // background-color: rgba(188, 171, 255, 0.5);
   display: none;
   position: fixed;
   width: 100%;
   align-items: center;
   justify-content: left;
   padding-left: 96px;
-  z-index: 11111;
+  z-index: 1111;
   background-color: $purple-opacity;
   height: 60px;
   top: 60px;
