@@ -7,9 +7,14 @@ class CaseReviewMailer < ApplicationMailer
     mail(to: candidate, subject: "Confirmation reception de dossier")
   end
 
-  def relance_j7(reviewer)
-    @reviewer = reviewer
-    mail(to: reviewer, subject: "Relance revue de dossier")
+  def relance_j2(case_review)
+    @case_review = case_review
+    mail(to: case_review.candidate_email, subject: "Relance revue de dossier")
+  end
+
+  def relance_j7(case_review)
+    @case_review = case_review
+    mail(to: case_review.candidate_email, subject: "Relance revue de dossier")
   end
 
   def send_case_review(case_review)
@@ -20,14 +25,14 @@ class CaseReviewMailer < ApplicationMailer
     mail(to: @reviewer, subject: "Le dossier de votre binôme est là !")
   end
 
-  def send_feedback_form(reviewer)
-    @reviewer = reviewer
-    mail(to: reviewer, subject: "Questionnaire de feedbacks")
+  def send_feedback_form(case_review)
+    @case_review = case_review
+    mail(to: @case_review.candidate_email, subject: "Les retours de votre binôme sont là !")
   end
 
-  def send_feedbacks(candidate)
-    @candidate = candidate
-    mail(to: candidate, subject: "Les retours de votre binôme sont là !")
+  def send_feedbacks(case_review)
+    @case_review = case_review
+    mail(to: case_review.candidate_email, subject: "Questionnaire de feedbacks")
   end
 
   def thank_you(candidate)

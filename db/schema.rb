@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_17_125354) do
+ActiveRecord::Schema.define(version: 2022_11_25_105016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_11_17_125354) do
     t.text "points_faibles"
     t.string "lien_video"
     t.text "autres"
+    t.date "creation_binome"
+    t.date "date_notation"
   end
 
   create_table "conseils_articles", force: :cascade do |t|
