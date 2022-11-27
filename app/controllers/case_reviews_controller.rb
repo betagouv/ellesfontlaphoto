@@ -17,7 +17,7 @@ class CaseReviewsController < ApplicationController
         CaseReviewMailer.send_case_review(@reviewer_case).deliver_now
         CaseReviewMailer.send_case_review(@case_review).deliver_now
       end
-      redirect_to case_reviews_confirmation
+      redirect_to case_reviews_confirmation_path
     else
       render :new
     end
@@ -38,7 +38,7 @@ class CaseReviewsController < ApplicationController
       CaseReviewMailer.send_feedback_form(@case_review).deliver_now
       CaseReviewMailer.send_feedback_form(@case_reviewer).deliver_now
     end
-    redirect_to case_reviews_confirmation
+    redirect_to case_reviews_confirmation_path
   end
 
   def case_review_params

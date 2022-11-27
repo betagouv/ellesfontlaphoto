@@ -25,9 +25,6 @@
       display: flex;
       margin: 7% auto;
     }
-    .lds-ring,.count {
-      display: none;
-    }
     form {
       .btn-black {
         width: 60%;
@@ -40,6 +37,9 @@
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
+      }
+      .btn-orange {
+        background-color: $orange; 
       }
       input[type=text],
       input[type=email] {

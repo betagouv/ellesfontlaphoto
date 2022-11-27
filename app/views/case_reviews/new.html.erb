@@ -14,22 +14,30 @@
 
   </div>
   <div class="form-new-case-reviews" data-controller="upload-case">
-    <%= image_tag "illu-femme-stylo.png", class:"illu" %>
-    <%= simple_form_for @case_review, data: {upload_case_target: "form", action: "submit->upload-case#submit"}  do |f| %>
-      <label for="case_review_case" class="btn btn-black" data-upload-case-target="label">
-        <%= image_tag "download-white.svg" %></i> Chargez votre dossier
-      </label>
-      <div class="d-none">
-        <%= f.input :case_attachment, as: :file, id: "actual-btn", data: {action: "change->upload-case#upload"} %>
+    <div data-upload-case-target="form",>
+      <%= image_tag "illu-femme-stylo.png", class:"illu" %>
+      <%= simple_form_for @case_review, data: { action: "submit->upload-case#submit"}  do |f| %>
+        <label for="case_review_case" class="btn btn-black" data-upload-case-target="label">
+          <%= image_tag "download-white.svg" %></i> Chargez votre dossier
+        </label>
+        <div class="d-none">
+          <%= f.input :case_attachment, as: :file, id: "actual-btn", data: {action: "change->upload-case#upload"} %>
+        </div>
+        <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
+
+        <%= f.input :candidate_email, label: "Votre e-mail" %>
+        <div class="d-flex justify-center mt30">
+          <%= f.submit "C'est parti !", class: "btn btn-orange" %>
+        </div>
+      <% end %>
+    </div>
+    <div data-upload-case-target="loader" class="loader-upload flex-div justify-center">
+      <div>
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
       </div>
-      <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
-
-      <%= f.input :candidate_email, label: "Votre e-mail" %>
-      <%= f.submit "C'est parti !", class: "btn btn-grey" %>
-    <% end %>
-
-    <div data-upload-case-target="loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
-    <div data-upload-case-target="count"><p class="count"></p></div>
+      <p class="paragraphe text-align-center">Dépôt en cours</p>
+    </div>
   </div>
 </div>
 <script>
