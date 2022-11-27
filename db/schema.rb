@@ -78,13 +78,6 @@ ActiveRecord::Schema.define(version: 2022_10_20_144352) do
     t.index ["help_id"], name: "index_candidature_dates_on_help_id"
   end
 
-  create_table "case_reviews", force: :cascade do |t|
-    t.string "candidate_email"
-    t.string "reviewer_email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "conseils_articles", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
