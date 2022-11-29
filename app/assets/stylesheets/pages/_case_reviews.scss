@@ -1,5 +1,5 @@
 .case_review_new {
-  background-color: $orange;
+  background-color: $hover-purple;
   display: flex;
   justify-content: space-between;
   padding: 6% 10%;
@@ -26,27 +26,41 @@
       margin: 7% auto;
     }
     form {
-      .btn-black {
-        width: 60%;
+      .div-telechargement {
         display: flex;
-        justify-content: space-around;
-        height: 46px;
-        margin: 5% auto;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
+        align-items: center;
+        margin-bottom: 30px;
+        .main-paragraphe-medium {
+          margin-left: 20px;
+        }
       }
-      .btn-orange {
-        background-color: $orange; 
+      .dossier-telechargement {
+        display: none;
+        background-color: $very-light-purple;
+        padding: 20px 40px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .dossier-name {
+          margin: 0 0 0 15px;
+          font-family: 'Marianne-Regular', sans-serif;
+          font-size: 16px;
+          color: $filter-purple;
+        }
+        .cross-dossier {
+          cursor: pointer;
+        }
+      }
+
+      .icone-ajout-dossier {
+        cursor: pointer;
       }
       input[type=text],
-      input[type=email] {
+      input[type=email],
+      textarea {
         border: none;
         border-bottom: 1px solid $black;
-        font-family: "Marianne",
-        sans-serif;
+        font-family: "Marianne", sans-serif;
         display: block;
         box-sizing: border-box;
         width: 100%;
@@ -57,10 +71,11 @@
         font-size: 14px;
         line-height: 1.42857143;
         background-color: $very-light-grey;
-        vertical-align: middle;
         border-radius: 0;
       }
-
+      textarea {
+        min-height: 150px;
+      }
     }
   }
 }

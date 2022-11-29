@@ -1,0 +1,29 @@
+<div class="case_review_new">
+  <div class="form-new-case-reviews" data-controller="upload-case" data-upload-case-target="div">
+    <div data-upload-case-target="divform">
+      <%= render "case_reviews/form" %>
+    </div>
+    <div data-upload-case-target="loader" class="loader-upload flex-div justify-center">
+      <div class="d-flex align-center">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+      </div>
+      <p class="paragraphe text-align-center">Dépôt en cours</p>
+    </div>
+  </div>
+
+  <div class="consignes">
+    <p class="title-marianne-bold">Besoin de retours sur votre dossier de candidature ? </p>
+    <p class="paragraphe">Par ici, on vous propose d’obtenir les retour de vos paire sur votre dossier. C’est très simple :</p>
+    <div class="sub-consignes">
+      <%= image_tag "arrow-revue-dossier.svg" %>
+      <ol>
+        <li>Je dépose mon dossier</li>
+        <li>Je reçois par mail le dossier de ma binôme photographe</li>
+        <li>Je partage mes retours</li>
+        <li>Je reçois les retours sur mon dossier par mail</li>
+      </ol>
+    </div>
+
+  </div>
+</div>

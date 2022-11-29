@@ -212,6 +212,16 @@ b, strong {
   color: $black;
 }
 
+.main-paragraphe-medium {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom:10px;
+  text-align: center;
+  color: $black;
+}
+
 .paragraphe-spectral-italic {
   font-family: 'Spectral', serif;
   font-style: italic;
@@ -504,4 +514,3 @@ a {
     text-align: left;
   }
 }
-

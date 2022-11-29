@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :evaluation_helps, only: [:index, :create, :new]
   end
 
-  resources :case_reviews, only: [:new, :create, :update, :edit]
+  resources :case_reviews, only: [:create, :update, :edit]
   get "case_reviews/confirmation", to: "case_reviews#confirmation"
   resources :organizations, only: [:index], path: "index-parite"
   resources :notation_helps, only: :create
