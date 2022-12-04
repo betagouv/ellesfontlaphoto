@@ -1,30 +1,33 @@
 <div class="case_review_new">
-  <div class="form-new-case-reviews" data-controller="upload-case" data-upload-case-target="div">
-    <div data-upload-case-target="divform">
-      <%= render "case_reviews/form" %>
-    </div>
-    <div data-upload-case-target="loader" class="loader-upload flex-div justify-center">
-      <div class="d-flex align-center">
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-        <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+  <p class="spectral-title responsive">Besoin de retours sur votre travail photographique ? </p>
+  <div class="div_case_review_new">
+    <div class="consignes">
+      <p class="spectral-title">Besoin de retours sur votre travail photographique ? </p>
+      <p class="paragraphe">Soumettez à vos paires un dossier de candidature, un portfolio ou une série.</p>
+      <div class="sub-consignes">
+        <%= image_tag "arrow-revue-dossier.svg" %>
+        <ol>
+          <li>Je dépose mon travail au format PDF</li>
+          <li>Je reçois par mail le dossier de ma binôme photographe à évaluer*</li>
+          <li>Je lui partage mes retours</li>
+          <li>Je reçois les retours sur mon travail par mail</li>
+        </ol>
       </div>
-      <p class="paragraphe text-align-center">Dépôt en cours</p>
+      <p class="paragraphe-x-small">*Les binômes sont constitués de manière aléatoires, indépendamment de l'expérience ou du type de photographie pratiqué.</p>
     </div>
-  </div>
 
-  <div class="consignes">
-    <p class="spectral-title">Besoin de retours sur votre travail photographique ? </p>
-    <p class="paragraphe">Soumettez à vos paires un dossier de candidature, un portfolio ou une série.</p>
-    <div class="sub-consignes">
-      <%= image_tag "arrow-revue-dossier.svg" %>
-      <ol>
-        <li>Je dépose mon travail au format PDF</li>
-        <li>Je reçois par mail le dossier de ma binôme photographe à évaluer*</li>
-        <li>Je lui partage mes retours</li>
-        <li>Je reçois les retours sur mon travail par mail</li>
-      </ol>
+    <div class="form-new-case-reviews" data-controller="upload-case" data-upload-case-target="div">
+      <div data-upload-case-target="divform">
+        <%= render "case_reviews/form" %>
+      </div>
+      <div data-upload-case-target="loader" class="loader-upload flex-div justify-center">
+        <div class="d-flex align-center">
+          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+        </div>
+        <p class="paragraphe text-align-center">Dépôt en cours</p>
+      </div>
     </div>
-    <p class="paragraphe-x-small">*Les binômes sont constitués de manière aléatoires, indépendamment de l'expérience ou du type de photographie pratiqué.</p>
     <%= image_tag "illu-femme-stylo.png", class: "illu-femme", alt: "Illustration femme portant un crayon" %>
   </div>
 </div>

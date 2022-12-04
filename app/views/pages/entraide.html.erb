@@ -19,19 +19,19 @@
     <div class="webinaires">
       <div class="cards-webinaire">
         <% @webinaires.each do |webinaire| %>
-        <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription, class: "card-webinaire" do %>
-          <%# <div class="card-webinaire"> %>
-            <% if webinaire.images %>
-            <div class="div-webinaire-img">
-              <%= cl_image_tag webinaire.images.first.key, class: "webinaire-img", alt: "Image du webinaire" %>
-              <%= image_tag "play.svg", alt: "Logo Play", class: "play" %>
+          <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription do %>
+            <div class="card-webinaire">
+              <div class="div-webinaire-img">
+                <% webinaire.images.each do |image| %>
+                    <%= cl_image_tag image.key, class: "webinaire-img", alt: "Image du webinaire" %>
+                <% end %>
+                <%= image_tag "play.svg", alt: "Logo Play", class: "play" %>
+              </div>
+              <div class="webinaire-info">
+                <p class="paragraphe-bold"><%= webinaire.titre %> <span class="spectral-italic"> avec <%= webinaire.participant %></span></p>
+              </div>
             </div>
-            <% end %>
-            <div class="webinaire-info">
-              <p class="paragraphe-bold"><%= webinaire.titre %> <span class="spectral-italic"> avec <%= webinaire.participant %></span></p>
-            </div>
-          <%# </div> %>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
