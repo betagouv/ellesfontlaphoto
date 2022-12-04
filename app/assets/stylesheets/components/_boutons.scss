@@ -82,11 +82,14 @@
 }
 
 .btn-grey {
-  background-color: $very-light-grey !important;
+  background-color: $very-light-grey;
   color: $black  !important;
-
-  &:hover {
-    background-color: #efefef  !important;
+  &:not(:disabled) {
+    background-color: $purple;
+    cursor: pointer;
+    &:hover {
+      background-color: $hover-purple;
+    }
   }
 }
 

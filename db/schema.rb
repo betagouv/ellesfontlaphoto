@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_29_222452) do
+ActiveRecord::Schema.define(version: 2022_12_01_110815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_222452) do
     t.date "creation_binome"
     t.date "date_notation"
     t.text "message"
+    t.boolean "engagement", default: false
   end
 
   create_table "conseils_articles", force: :cascade do |t|

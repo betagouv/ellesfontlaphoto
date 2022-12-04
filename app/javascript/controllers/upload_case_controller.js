@@ -13,7 +13,8 @@ export default class extends Controller {
   "cross",
   "emailinput",
   "messageinput",
-  "submit"
+  "submit",
+  "engagementinput"
   ]
 
   submit() {
@@ -35,9 +36,11 @@ export default class extends Controller {
   }
 
   upload(event) {
+    console.log("upload")
     this.divtelechargementTarget.style.display = "none"
     this.divdossierTarget.style.display = "flex"
     this.labelTarget.innerHTML = event.currentTarget.files[0].name
+    this.disableButton()
   }
 
   delete() {
@@ -47,10 +50,7 @@ export default class extends Controller {
   }
 
   disableButton() {
-    console.log(this.labelTarget.innerHTML)
-    console.log(this.emailinputTarget.value)
-    console.log(thismessageinputTarget.value)
-    if (this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" & this.messageinputTarget.value != "" ) {
+    if (this.engagementinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" ) {
       this.submitTarget.disabled = false;
     }
   }

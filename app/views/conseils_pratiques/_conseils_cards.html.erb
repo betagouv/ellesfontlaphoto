@@ -63,13 +63,10 @@
         <div>
           <% if conseil.images.second %>
             <div class="imgs-webinaire">
-              <%#= image_tag url_for(conseil.images.first), class: "image-conseil-double", alt: "image conseil" %>
-              <%#= image_tag url_for(conseil.images.second), class: "image-conseil-double", alt: "image conseil" %>
               <%= cl_image_tag conseil.images.first.key, class: "image-conseil-double", alt: "image conseil" %>
               <%= cl_image_tag conseil.images.second.key, class: "image-conseil-double", alt: "image conseil" %>
             </div>
           <% else %>
-            <%#= image_tag url_for(conseil.images.first), class: "image-conseil", alt: "image conseil" %>
             <%= cl_image_tag conseil.images.first.key, class: "image-conseil", alt: "image conseil" %>
             <div class="flottante-play">
               <%= image_tag "play.svg", alt: "icône play vidéo" %>

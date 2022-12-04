@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def entraide
     @contact = Contact.new
     @case_review = CaseReview.new
-    @webinaires = Webinaire.where("page_rencontre = ?", true).order(:date)
+    @webinaires = Webinaire.all
   end
 
   def chiffres_inegalites

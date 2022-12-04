@@ -1,3 +1,6 @@
+.validation-send-case {
+  padding: 20% 5% 5% 5%;
+}
 .case_review_new {
   background-color: $hover-purple;
   display: flex;
@@ -6,13 +9,23 @@
   min-height: calc(100vh - 55px);
   .consignes {
     width: 50%;
-    .title-marianne-bold {
+    position: relative;
+    .spectral-title {
       margin-bottom: 40px;
+      text-align: left;
     }
     .sub-consignes {
       display: flex;
       align-items: center;
       justify-content: start;
+      ol li::marker {
+        font-family: 'Marianne-Bold', sans-serif;
+      }
+    }
+    .illu-femme {
+      position: absolute;
+      left: -7em;
+      bottom: -6em;
     }
   }
   .form-new-case-reviews {
@@ -21,10 +34,6 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 18, 0.32);
     border-radius: 10px;
     padding: 30px;
-    .illu {
-      display: flex;
-      margin: 7% auto;
-    }
     form {
       .div-telechargement {
         display: flex;
@@ -55,6 +64,29 @@
       .icone-ajout-dossier {
         cursor: pointer;
       }
+      .form-check {
+
+        label {
+          font-size: 12px;
+          width: 90%;
+          margin-left: 20px;
+        }
+      }
+      input[type=checkbox] {
+        border-radius: 4px;
+        background-color: #F0F0F0;
+        border: solid 1px #000;
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+        &:checked {
+          background-color: $purple-blue;
+           background-image: url("validate-white.svg");
+           background-size: 60%;
+           border: none;
+        }
+      }
+
       input[type=text],
       input[type=email],
       textarea {
