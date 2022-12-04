@@ -43,6 +43,8 @@ class CaseReviewsController < ApplicationController
     redirect_to case_reviews_confirmation_path
   end
 
+  private
+
   def case_review_params
     params.require(:case_review).permit(:message, :candidate_email, :case_attachment)
   end
