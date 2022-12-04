@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     @contact = Contact.new
     @case_review = CaseReview.new
     @webinaires = Webinaire.all
+    # CaseReviewMailer.send_case_review(CaseReview.first).deliver_now
   end
 
   def chiffres_inegalites
