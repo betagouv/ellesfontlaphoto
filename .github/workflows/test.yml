@@ -27,23 +27,18 @@ jobs:
           --health-retries 5
     # END NEW
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up Ruby # An action to install Ruby and gems
-        uses: ruby/setup-ruby@v1 # short for https://github.com/ruby/setup-ruby
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
         with:
-          # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
-      - name: Set up Node
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: "14"
-      - name: Yarn install
-        run: yarn install --frozen-lockfile
-      - name: Prepare DB
-        run: | # Pipe is important, adds line breaks
-          cp config/database.github.yml config/database.yml
-          bundle exec rails db:create db:test:prepare
+          node-version: 18
+      - run: npm ci
+      - name: Set up database schema
+        run: bin/rails db:schema:load
       - name: Run model tests
         run: bundle exec rails test
       - name: Run system tests
