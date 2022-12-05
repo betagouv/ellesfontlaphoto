@@ -38,6 +38,7 @@ jobs:
           node-version: 18
       - run: yarn install
       - name: Set up database schema
+        run: sudo service postgresql start
         run: bin/rails db:schema:load
       - name: Run model tests
         run: bundle exec rails test
