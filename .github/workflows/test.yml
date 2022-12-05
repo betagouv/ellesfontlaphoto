@@ -18,7 +18,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgres
         ports:
-          - 5432
+          - 5432:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -42,8 +42,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Prepare DB
         run: | # Pipe is important, adds line breaks
-          cp config/database.github.yml config/database.yml
-          bundle exec rails db:create db:test:prepare
+          cp config/database.github.yml
+          bundle exec --privileged rails db:create db:test:prepare
       - name: Run model tests
         run: bundle exec rails test
       - name: Run system tests
