@@ -6,4 +6,3 @@ test:
   username: postgres
   password: postgres
   database: ellesfontlaphoto_test
-  pool: 5

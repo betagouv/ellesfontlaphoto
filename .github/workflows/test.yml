@@ -43,7 +43,6 @@ jobs:
       - name: Prepare DB
         run: | # Pipe is important, adds line breaks
           cp config/database.github.yml config/database.yml
-          pg_ctl -D /var/lib/postgresql/data -l logfile start
           bundle exec rails db:create db:test:prepare
       - name: Run model tests
         run: bundle exec rails test
