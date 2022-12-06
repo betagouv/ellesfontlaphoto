@@ -38,7 +38,7 @@ jobs:
           node-version: 18
       - run: yarn install
       - name: Set up database schema
-        run: bin/rails db:test:prepare
+        run: bin/rails db:create db:test:prepare
         env:
           DATABASE_URL: "postgres://postgres:postgres@localhost:5432"
       - name: Run model tests
