@@ -12,7 +12,6 @@ class CreateCaseReviews < ActiveRecord::Migration[6.1]
       t.text :points_faibles
       t.string :lien_video
       t.text :autres
-      t.timestamps
     end
   end
 end
