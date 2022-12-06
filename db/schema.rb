@@ -81,6 +81,15 @@ ActiveRecord::Schema.define(version: 2022_12_06_141802) do
   create_table "case_reviews", force: :cascade do |t|
     t.string "candidate_email"
     t.string "reviewer_email"
+    t.boolean "engagement"
+    t.text "message"
+    t.date "creation_binome"
+    t.date "date_notation"
+    t.string "status"
+    t.text "points_forts"
+    t.text "points_faibles"
+    t.string "lien_video"
+    t.text "autres"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
