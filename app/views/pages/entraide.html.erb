@@ -2,58 +2,41 @@
   <div class="div-liens-rencontre">
     <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d’entraide et rencontre</span>, participez !</h1>
     <div class="liens-rencontre">
-      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#webinaire">Rencontres à venir</a></p>
+      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#revue-dossier">Revue de dossier et portfolio</a></p>
+      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#webinaires">Webinaires</a></p>
       <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#facebook-group">Communauté facebook</a></p>
-      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#collaboration">Proposer votre expertise</a></p>
-      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#abonnement">Être informée des événements</a></p>
+      <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#abonnement">S’abonner à l’infolettre</a></p>
     </div>
   </div>
 
+  <div id="revue-dossier">
+    <%= render "case_reviews/new" %>
+  </div>
 
-  <div class="webinaire-coming" id="webinaire">
-  <% unless @webinaires.empty? %>
-    <p class="spectral-title title-webinaire-coming">Rencontres à venir</p>
-    <p class="paragraphe">Membres de la communauté partagent expériences et conseils pour développer votre carrière, inscrivez-vous pour y assister !</p>
-    <% @webinaires.each do |webinaire| %>
-      <div class="card-webinaire-coming">
-        <div class="pastille-rencontre">
-          <% if webinaire.type_list.include?("outil d'entraide") %>
-            outil d'entraide
-          <% elsif webinaire.type_list.include?("webinaire") %>
-            webinaire
-          <% elsif webinaire.type_list.include?("atelier") %>
-            atelier
-          <% end %>
-        </div>
-        <div class="images-webinaire">
-          <% webinaire.images.each do |image| %>
-            <%= cl_image_tag image.key, class: "img-webinaire" %>
-          <% end %>
-        </div>
-        <div class="sub-div-webinaire-coming">
-          <p class="subtitle-marianne"><%= webinaire.titre %><br><span class="spectral-italic">avec <%= webinaire.participant %></span></p>
-          <p class="webinaire-description"><%= webinaire.description %></p>
-          <div class="info-webinaire">
-            <div>
-              <% if webinaire.show_date %>
-                <p class="date-webinaire"><%= I18n.l webinaire.date, format: "%A %d %B %Y, %Hh%M" %></p>
-              <% end %>
-              <% if webinaire.show_visio %>
-                <p class="lieu-webinaire"><%= image_tag "map-pin.svg" %>Visio conférence</p>
-              <% end %>
+  <div id="webinaires" class="webinaires-rencontre">
+    <p class="spectral-title">Webinaires d’expert(e)s photo</p>
+    <p class="paragraphe text-align-center">Partages d’expériences et conseils pour développer votre carrière, consultez les replays</p>
+    <div class="webinaires">
+      <div class="cards-webinaire">
+        <% @webinaires.each do |webinaire| %>
+          <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription do %>
+            <div class="card-webinaire">
+              <div class="div-webinaire-img">
+                <% webinaire.images.each do |image| %>
+                    <%= cl_image_tag image.key, class: "webinaire-img", alt: "Image du webinaire" %>
+                <% end %>
+                <%= image_tag "play.svg", alt: "Logo Play", class: "play" %>
+              </div>
+              <div class="webinaire-info">
+                <p class="paragraphe-bold"><%= webinaire.titre %> <span class="spectral-italic"> avec <%= webinaire.participant %></span></p>
+              </div>
             </div>
-            <%= link_to "Je m'inscris", webinaire.url_inscription, target: :_blank, class: "btn btn-black" %>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
-    <% end %>
-    <div class="old-webinaires">
-      <p class="paragraphe-bold">Précédents webinaires à revoir</p>
-      <p class="paragraphe-small text-align-center mb20">Nos webinaires sont interactifs et permettent de poser vos questions aux intervenants. Vous pouvez toutefois regarder les replays !</p>
-      <a href="ressources?document_type=webinaire" class="btn btn-black"><%= image_tag "youtube.svg" %> replay webinaires</a>
     </div>
   </div>
+
   <div id="facebook-group" class="join-community">
     <div>
       <p class="spectral-title">Rejoindre la communauté Elles font la culture</p>
@@ -63,25 +46,14 @@
     </div>
     <%= image_tag "group.png", alt: "image communauté", class: "img-community desk" %>
   </div>
-  <div id="collaboration" class="join-community">
-    <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck desk" %>
-    <div>
-      <p class="spectral-title">Collaborer en partageant votre expertise</p>
-      <%= image_tag "actor-community.png", alt: "image communauté", class: "img-community bck mob" %>
-      <p class="paragraphe">Proposez-nous votre expertise pour rédiger une fiche pratique, animer un webinaire, un atelier, témoigner... Pour que les membres de cette communauté s'enrichissent mutuellement grâce à des partages d'expérience et conseils. Nous sommes ouvertes à la discussion !</p>
-      <a class="js-modal btn btn-orange-home" data-modal="modal-contact">Collaborons ! </a>
-    </div>
-  </div>
+
   <div id="abonnement" class="rencontre-inscription">
     <div class="rencontre-inscription-div">
       <p class="subtitle-regular">Et pour ne manquer aucun événement, abonnez-vous à <span class="spectral-title">notre infolettre et instagram</span></p>
-      <div class="btns-black">
-        <a class="js-modal btn btn-black" data-modal="modal-newsletter">
-          <%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 15px; margin-right: 6px;" %>
-          <span>inscription</span>
-        </a>
-        <a href="https://www.instagram.com/ellesfontlaculture_/" target="_blank" class="btn btn-black" style="margin-left: 3%;"><%= image_tag "instagram.svg", alt:"instagram", style: "margin-right: 6px;" %> <span>instagram</span></a>
-      </div>
+      <a class="js-modal btn-flex btn btn-black d-flex" data-modal="modal-newsletter">
+        <%= image_tag "emojis/enveloppe-coeur.png", alt:"emoji enveloppe", class: "emojis-eflc-small", style: "width: 22px; height: 15px; margin-right: 6px;" %>
+        <span> inscription</span>
+      </a>
     </div>
   </div>
 </div>
