@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 2022_12_06_144043) do
     t.text "points_faibles"
     t.string "lien_video"
     t.text "autres"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "conseils_articles", force: :cascade do |t|
