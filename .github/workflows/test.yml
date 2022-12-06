@@ -13,12 +13,12 @@ jobs:
     services:
       postgres:
         # Docker Hub image
-        image: postgres
+        image: postgres:13
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: postgres
         ports:
-          - 5432/tcp
+          - "5432:5432"
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -38,12 +38,13 @@ jobs:
           node-version: 18
       - run: yarn install
       - name: Set up database schema
-        run: | # Pipe is important, adds line breaks
-          cp config/database.github.yml config/database.yml
-          sudo service postgresql start
-          bin/rails db:schema:load
+        run: bin/rails db:test:prepare
+        env:
+          DATABASE_URL: "postgres://postgres:postgres@localhost:5432"
       - name: Run model tests
         run: bundle exec rails test
+        env:
+          DATABASE_URL: "postgres://postgres:postgres@localhost:5432"
       - name: Run system tests
         run: bundle exec rails test:system
       - name: Get Yarn cache directory path
