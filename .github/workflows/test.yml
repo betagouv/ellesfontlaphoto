@@ -13,12 +13,12 @@ jobs:
     services:
       postgres:
         # Docker Hub image
-        image: postgres:13
+        image: postgres
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: postgres
         ports:
-          - "5432:5432"
+          - 5432:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -27,24 +27,25 @@ jobs:
           --health-retries 5
     # END NEW
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Ruby # An action to install Ruby and gems
+        uses: ruby/setup-ruby@v1 # short for https://github.com/ruby/setup-ruby
         with:
+          # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
-      - uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v2
         with:
-          node-version: 18
-      - run: yarn install
-      - name: Set up database schema
-        run: bin/rails db:create db:test:prepare
-        env:
-          DATABASE_URL: "postgres://postgres:postgres@localhost:5432"
+          node-version: "14"
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+      - name: Prepare DB
+        run: | # Pipe is important, adds line breaks
+          cp config/database.github.yml config/database.yml
+          bundle exec rails db:test:prepare
       - name: Run model tests
         run: bundle exec rails test
-        env:
-          DATABASE_URL: "postgres://postgres:postgres@localhost:5432"
       - name: Run system tests
         run: bundle exec rails test:system
       - name: Get Yarn cache directory path
