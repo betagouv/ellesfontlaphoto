@@ -1,0 +1,23 @@
+<%= simple_form_for @case_review, data: { upload_case_target: "form", action: "submit->upload-case#submit"}  do |f| %>
+  <div class="div-telechargement" data-upload-case-target="divtelechargement">
+    <label for="case_review_case">
+      <%= image_tag "ajout-dossier.svg", class: "icone-ajout-dossier", alt: "bouton ajout de dossier", onmouseover: "this.src='#{asset_path('ajout-dossier-hover.svg')}'", onmouseout: "this.src='#{asset_path('ajout-dossier.svg')}'" %>
+    </label>
+    <p class="main-paragraphe-medium">Chargez votre dossier</p>
+  </div>
+  <div class="dossier-telechargement" data-upload-case-target="divdossier">
+    <div class="d-flex align-item-center">
+      <%= image_tag "link-line.svg", alt: "icône téléchargement" %>
+      <p class="dossier-name" data-upload-case-target="label"></p>
+    </div>
+    <%= image_tag "cross-dossier.svg", alt: "supprimer téléchargement", data: {upload_case_target:"cross", action: "click->upload-case#delete"}, class:"cross-dossier" %>
+  </div>
+  <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
+
+  <%= f.input :candidate_email, label: "Votre e-mail", input_html: { data: {upload_case_target: "emailinput", action: "change->upload-case#disableButton"}} %>
+  <%= f.input :message, label: "Message", as: :text, input_html: { :cols => 5, :rows => 6 }%>
+  <%= f.input :engagement, label: "Je m'engage à respecter la confidentialité du travail qui me sera transmis et partager mes retours sous 15 jours après réception du dossier.", input_html: { data: {upload_case_target: "engagementinput", action: "change->upload-case#disableButton"}} %>
+  <div class="d-flex justify-center mt30">
+    <%= f.submit "C'est parti !", class: "btn btn-grey", data: {upload_case_target: "submit"}, disabled: true %>
+  </div>
+<% end %>

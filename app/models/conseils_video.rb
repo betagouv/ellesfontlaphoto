@@ -7,7 +7,6 @@ class ConseilsVideo < ApplicationRecord
 
   has_one :notation_conseils_video
 
-  has_one_attached :video
   acts_as_taggable_on :tags, :category
 
   CONSEIL_CATEGORIES = [
