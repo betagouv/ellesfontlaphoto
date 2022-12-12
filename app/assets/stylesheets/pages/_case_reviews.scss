@@ -65,8 +65,10 @@
           }
         }
 
-        .icone-ajout-dossier {
+        .link-ajout-dossier {
           cursor: pointer;
+          display: flex;
+          align-items: center;
         }
         .form-check {
 
