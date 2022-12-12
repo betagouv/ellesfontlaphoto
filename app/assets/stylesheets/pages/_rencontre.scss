@@ -69,10 +69,20 @@
             object-fit: cover;
           }
           .play {
+            background-image: url("play-55.svg");
             position: absolute;
-            bottom: -1em;
+            bottom: -1.5em;
             right: 2em;
+            object-fit: cover;
             z-index: 1;
+            width: 55px;
+            height: 55px;
+            background-repeat: no-repeat;
+          }
+        }
+        &:hover {
+          .play {
+            background-image: url("play-hover.svg");
           }
         }
         .webinaire-info {

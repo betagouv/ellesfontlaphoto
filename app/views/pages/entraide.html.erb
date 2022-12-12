@@ -27,7 +27,8 @@
                   <%= cl_image_tag image.key, class: "#{webinaire.images.count == 2 ? "webinaire-img-#{i}" : "webinaire-img"}", alt: "Image du webinaire" %>
                   <% i += 1 %>
                 <% end %>
-                <%= image_tag "play.svg", alt: "Logo Play", class: "play" %>
+                <div class="play"></div>
+                <%#= image_tag "play.svg", alt: "Logo Play", class: "play" %>
               </div>
               <div class="webinaire-info">
                 <p class="paragraphe-bold"><%= webinaire.titre %> <span class="spectral-italic"> avec <%= webinaire.participant %></span></p>
