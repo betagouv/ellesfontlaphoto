@@ -65,8 +65,20 @@
           }
         }
 
-        .icone-ajout-dossier {
+        .link-ajout-dossier {
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          .icone-ajout-dossier {
+            background-image: url("ajout-dossier.svg");
+            width: 76px;
+            height: 76px;
+          }
+          &:hover {
+            .icone-ajout-dossier {
+              background-image: url("ajout-dossier-hover.svg");
+            }
+          }
         }
         .form-check {
 
