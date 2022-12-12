@@ -27,6 +27,10 @@ class CaseReviewMailer < ApplicationMailer
 
   def send_feedback_form(case_review)
     @case_review = case_review
+    if case_review.review_comment.attached?
+      attachment = URI.open(case_review.review_comment.url)
+      attachments['commentaire.mp3'] = File.read(attachment)
+    end
     mail(to: @case_review.candidate_email, subject: "Revue de dossiers - découvrez les retours de votre binôme !")
   end
 

@@ -1,5 +1,4 @@
 class CaseReviewsController < ApplicationController
-
   def create
     @case_review = CaseReview.new(case_review_params)
     @case_review.status = 'En attente de binôme'
@@ -27,26 +26,33 @@ class CaseReviewsController < ApplicationController
 
   def edit
     @case_review = CaseReview.find(params[:id])
+    unless @case_review.date_envoi_feedback.nil?
+      redirect_to revue_dossier_revue_path
+    end
   end
 
   def update
     @case_review = CaseReview.find(params[:id])
-    @case_review.update(case_review_params_edit)
-    @case_review.update(status: 'Revue')
-    @case_reviewer = CaseReview.where(reviewer_email: @case_review.candidate_email).first
-    if @case_reviewer.status == 'Revue'
-      @case_review.update(date_notation: Date.today)
-      @case_reviewer.update(date_notation: Date.today)
-      CaseReviewMailer.send_feedback_form(@case_review).deliver_now
-      CaseReviewMailer.send_feedback_form(@case_reviewer).deliver_now
-    end
-    redirect_to case_reviews_confirmation_path
+    add_feedbacks(@case_review)
+    redirect_to revue_dossier_confirmation_path
   end
 
   private
 
+  def add_feedbacks(case_review)
+    case_review.update(case_review_params_edit)
+    case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
+    case_reviewer = CaseReview.where(reviewer_email: case_review.candidate_email).first
+    if case_reviewer.status == 'Revue'
+      case_review.update(date_notation: Date.today)
+      case_reviewer.update(date_notation: Date.today)
+      CaseReviewMailer.send_feedback_form(case_review).deliver_now
+      CaseReviewMailer.send_feedback_form(case_reviewer).deliver_now
+    end
+  end
+
   def case_review_params
-    params.require(:case_review).permit(:message, :candidate_email, :case_attachment)
+    params.require(:case_review).permit(:message, :candidate_email, :case_attachment, :engagement)
   end
 
   def case_review_params_edit

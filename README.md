@@ -13,7 +13,7 @@ Commencer par:
 ``` yarn install ```
 
 Création base de donnée en local:
-``` rails db:create db:migrate db:seed ```
+``` rails db:setup ```
 
 Lancer serveur en local:
 ``` rails s ```
