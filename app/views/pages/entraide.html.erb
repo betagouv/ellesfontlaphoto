@@ -22,8 +22,10 @@
           <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription do %>
             <div class="card-webinaire">
               <div class="div-webinaire-img">
+                <% i = 1 %>
                 <% webinaire.images.each do |image| %>
-                    <%= cl_image_tag image.key, class: "webinaire-img", alt: "Image du webinaire" %>
+                  <%= cl_image_tag image.key, class: "#{webinaire.images.count == 2 ? "webinaire-img-#{i}" : "webinaire-img"}", alt: "Image du webinaire" %>
+                  <% i += 1 %>
                 <% end %>
                 <%= image_tag "play.svg", alt: "Logo Play", class: "play" %>
               </div>
