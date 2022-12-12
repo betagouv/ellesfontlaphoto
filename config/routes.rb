@@ -23,8 +23,9 @@ Rails.application.routes.draw do
     resources :evaluation_helps, only: [:index, :create, :new]
   end
 
-  resources :case_reviews, only: [:create, :update, :edit]
-  get "case_reviews/confirmation", to: "case_reviews#confirmation"
+  resources :case_reviews, only: [:create, :update, :edit], path: "revue-dossier"
+  get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
+  get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
   resources :organizations, only: [:index], path: "index-parite"
   resources :notation_helps, only: :create
   get "/ressources", to: "conseils_pratiques#index"
