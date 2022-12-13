@@ -209,6 +209,9 @@
         display: block;
         margin-bottom: 20px;
       }
+      div .paragraphe {
+        text-align: left;
+      }
     }
     .join-community.bck {
       padding-top: 20%;
@@ -255,6 +258,7 @@
     .webinaires-rencontre {
       padding: 10% 5%;
       .paragraphe {
+        max-width: 90%;
         margin-bottom: 8%;
       }
       .webinaires .cards-webinaire {

@@ -26,15 +26,19 @@ class CaseReviewsController < ApplicationController
 
   def edit
     @case_review = CaseReview.find(params[:id])
-    unless @case_review.date_envoi_feedback.nil?
-      redirect_to revue_dossier_revue_path
-    end
+    # unless @case_review.date_envoi_feedback.nil?
+    #   redirect_to revue_dossier_revue_path
+    # end
   end
 
   def update
     @case_review = CaseReview.find(params[:id])
     add_feedbacks(@case_review)
-    redirect_to revue_dossier_confirmation_path
+    if @case_review.valid?
+      redirect_to revue_dossier_confirmation_path
+    else
+      render :edit
+    end
   end
 
   private
