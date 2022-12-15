@@ -27,6 +27,7 @@
       <div class="card-index-conseils-videos-div">
         <% if conseil.image.attached? %>
           <div class="div-img-conseils-videos">
+            <%#= image_tag url_for(conseil.image), class: "image-conseil", alt: "image conseil" %>
             <%= cl_image_tag conseil.image.key, class: "image-conseil", alt: "image conseil" %>
             <div class="flottante-play">
               <%= image_tag "play.svg", alt: "icône play vidéo" %>

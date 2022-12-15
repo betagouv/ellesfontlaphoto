@@ -161,12 +161,12 @@
         min-width: 22%;
         padding: 2% 0%;
         margin-right: 40px;
-        max-height: 500px;
+        height: fit-content;
         a .flottante-div {
           display: none;
         }
         .card-index-conseils-videos-div {
-          padding: 5% 0;
+          padding: 2% 0;
           .cards-videos-info {
             p {
               max-height: 220px;

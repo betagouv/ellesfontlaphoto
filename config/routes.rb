@@ -23,6 +23,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :new]
     resources :evaluation_helps, only: [:index, :create, :new]
   end
+
+  resources :case_reviews, only: [:create, :edit], path: "revue-dossier"
+  patch "case_reviews/:id", to: "case_reviews#review_case", as: "case_review"
+  get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
+  get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
   resources :organizations, only: [:index], path: "index-parite"
   resources :notation_helps, only: :create
   get "/ressources", to: "conseils_pratiques#index"
@@ -36,6 +41,7 @@ Rails.application.routes.draw do
   # REDIRECTIONS
   get '/helps', to: redirect('/aides')
   get '/helps/new', to: redirect('/aides/ajouter-aide')
+  get '/helps/confirm', to: redirect('/aides/confirmation')
   get '/helps/:id', to: redirect('/aides/%{id}')
   get '/conseils', to: redirect('/ressources')
   get '/proposer_conseil', to: redirect('/ajouter-ressources')

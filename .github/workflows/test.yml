@@ -8,14 +8,25 @@ jobs:
     env:
       RAILS_ENV: test
       NODE_ENV: test
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/rails_test"
     runs-on: ubuntu-latest
     # NEW! Adds postgres service. Must come before `steps`.
     services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
       postgres:
         # Docker Hub image
         image: postgres
         # Provide the password for postgres
         env:
+          POSTGRES_DB: rails_test
           POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
@@ -28,26 +39,25 @@ jobs:
     # END NEW
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: Install curl headers
+        run: |
+          sudo apt-get update
+          sudo apt-get install libcurl4-openssl-dev
       - name: Set up Ruby # An action to install Ruby and gems
         uses: ruby/setup-ruby@v1 # short for https://github.com/ruby/setup-ruby
         with:
           # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "16"
+          cache: "yarn"
       - name: Yarn install
         run: yarn install --frozen-lockfile
       - name: Prepare DB
-        run: | # Pipe is important, adds line breaks
-          cp config/database.github.yml config/database.yml
-          bundle exec rails db:test:prepare
-      - name: Run model tests
-        run: bundle exec rails test
-      - name: Run system tests
-        run: bundle exec rails test:system
+        run: bin/rails db:create db:schema:load
       - name: Get Yarn cache directory path
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
