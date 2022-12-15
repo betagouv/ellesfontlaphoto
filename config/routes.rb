@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "stats", to: 'pages#stats'
   get "accessibilite", to: 'pages#accessibilite'
+  get "politique_confidentialite", to: 'pages#politique_confidentialite'
   get "conditions_generales", to: 'pages#conditions_generales'
   get "mentions_legales", to: 'pages#mentions_legales'
   get "ajouter-ressources", to: 'pages#ajouter_ressources'
