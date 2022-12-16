@@ -20,7 +20,7 @@ namespace :candidature_dates do
       end
       if help.permanent
         help.update(open: true)
-        Notificationhelp.where(help: help, sent: false).each do |notification|
+        NotificationHelp.where(help: help, sent: false).each do |notification|
           HelpMailer.send_notification(notification).deliver_now
           notification.update(sent: true)
         end
@@ -28,7 +28,7 @@ namespace :candidature_dates do
         help.update(open: false)
       elsif next_date.start_date <= Date.today && Date.today <= next_date.end_date
         help.update(open: true)
-        Notificationhelp.where(help: help, sent: false).each do |notification|
+        NotificationHelp.where(help: help, sent: false).each do |notification|
           HelpMailer.send_notification(notification).deliver_now
           notification.update(sent: true)
         end
