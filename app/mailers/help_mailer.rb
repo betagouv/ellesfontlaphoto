@@ -14,7 +14,6 @@ class HelpMailer < ApplicationMailer
     mail(to: mail_to_send, subject: "[ellesfontlaculture.beta.gouv.fr] Aide publiée")
   end
 
-
   def send_notification(help_notification)
     @help_notification = help_notification
     mail_to_send = help_notification.email
