@@ -158,13 +158,15 @@
       p {
         margin: 0 auto 30px auto;
       }
-      .btn-black {
-        margin: 0 auto;
-        span {
-          margin-left: 5px;
-        }
-        &:active {
-          background-color: $black;
+      .btns-black {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn-black {
+          justify-content: space-around;
+          &:active {
+            background-color: $black;
+          }
         }
       }
     }
