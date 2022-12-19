@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "first-deploy": "rails db:schema:load"
+  },
+  "env": {
+    "HOST": {
+      "generator": "url"
+    }
+  }
+}

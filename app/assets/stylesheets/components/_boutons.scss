@@ -81,6 +81,18 @@
   }
 }
 
+.btn-grey {
+  background-color: $very-light-grey;
+  color: $black  !important;
+  &:not(:disabled) {
+    background-color: $purple;
+    cursor: pointer;
+    &:hover {
+      background-color: $hover-purple;
+    }
+  }
+}
+
 .btn-purple {
   background-color: $purple;
   color: $white;

@@ -1,7 +1,10 @@
-.ajout-aide-page, .ajout-organization-page {
+.ajout-aide-page, .ajout-organization-page,
+.ajout-case-review-page {
   min-height: calc(100vh - 310px );
   padding-bottom: 40px;
-  .ajout-aide-title, .ajout-organization-title{
+  padding-top: 40px;
+  .ajout-aide-title, .ajout-organization-title,
+    .ajout-case-review-title{
     width: 60%;
     margin: 0 auto;
     text-align: center;
@@ -24,8 +27,8 @@
   .subtitle-marianne {
     margin-top: 10%;
   }
-  .ajout-aide-form, .ajout-organization-form {
-    #new_help, #new_organization {
+  .ajout-aide-form, .ajout-organization-form, .ajout-case-review-form {
+    #new_help, #new_organization, .edit_case_review {
       width: 42%;
       margin: 0 auto;
       .flex-div {
@@ -80,6 +83,13 @@
         font-size: 16px;
         line-height: 20px;
         font-weight: 500;
+        a {
+          color: $black !important;
+          text-decoration: underline !important;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
       }
 
       abbr[title] {
@@ -190,7 +200,7 @@
   }
 }
 
-.ajout-aide-page.confirm {
+.ajout-aide-page.confirm, .ajout-case-review-page.confirm {
   padding-bottom: 100px;
   .ajout-aide-title {
     img {
@@ -205,8 +215,10 @@
 }
 
 @media only screen and (max-width: 1250px) {
-  .ajout-aide-page, .ajout-organization-page {
-    .ajout-aide-title, .ajout-organization-title {
+  .ajout-aide-page, .ajout-organization-page,
+    .ajout-case-review-page {
+    .ajout-aide-title, .ajout-organization-title,
+      .ajout-case-review-title {
       width: 90%;
       .paragraphe {
         width: 90%;
@@ -216,7 +228,8 @@
       width: 70%;
     }
   }
-  .ajout-aide-page.confirm, .ajout-organization-page.confirm {
+  .ajout-aide-page.confirm, .ajout-organization-page.confirm,
+  .ajout-case-review-page.confirm {
     img {
       width: 50%;
     }
@@ -224,14 +237,16 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .ajout-aide-page, .ajout-organization-page {
+  .ajout-aide-page, .ajout-organization-page,
+    .ajout-case-review-page {
     .ajout-aide-title, .ajout-organization-title {
       width: 90%;
     }
     .paragraphe {
       width: 90%;
     }
-    .ajout-aide-form #new_help, .ajout-organization-form #new_organization {
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization,
+    .ajout-organization-form .edit_case_review {
       width: 90%;
       .flex-div {
         display: block;

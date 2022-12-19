@@ -7,6 +7,7 @@ ruby '3.0.3'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -16,8 +17,6 @@ gem 'webpacker', '~> 5.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-
-gem 'devise'
 
 gem 'http'
 
@@ -29,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
+
+gem 'active_storage_validations'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 
@@ -74,6 +75,8 @@ gem 'invisible_captcha'
 # gem 'image_processing', '~> 1.2'
 
 gem 'activeadmin_quill_editor'
+
+gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false

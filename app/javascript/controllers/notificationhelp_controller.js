@@ -12,9 +12,9 @@ export default class extends Controller {
       headers: { 'Accept': 'text/plain', 'X-CSRF-Token': csrfToken() },
       body: new FormData(this.formTarget)
     })
-      .then(response => response.text())
-      .then((data) => {
-        this.contentTarget.outerHTML = data
-      })
+    .then(response => response.text())
+    .then((data) => {
+      this.contentTarget.outerHTML = data
+    })
   }
 }
