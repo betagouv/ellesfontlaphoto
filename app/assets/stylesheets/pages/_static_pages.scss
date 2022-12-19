@@ -4,5 +4,30 @@
     margin: 0 auto;
     width: 100%;
     padding-bottom: 20px;
+    text-align: left;
+  }
+  h2 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .subtitle {
+    font-size: 21px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    padding-bottom: 0;
+    line-height: 28px;
+  }
+  .paragraphe {
+    text-align: left;
+  }
+  a {
+    color: black !important;
+  }
+  table {
+    margin-bottom: 20px;
+  }
+  thead, tbody, tfoot, tr, td, th {
+    border: 1px solid #333;
+    padding: 6px;
   }
 }
