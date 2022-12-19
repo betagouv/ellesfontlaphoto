@@ -54,7 +54,7 @@ class HelpsController < ApplicationController
     @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count
     @dispositif_grade = @dispositif_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count.to_f).round()
     next_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
-    if next_date.nil? || (next_date.start_date - Date.today).to_i > 15
+    if next_date.nil? || (next_date.start_date - Date.today).to_i > 2
       @help_status = "close"
     elsif next_date.end_date == Date.today || next_date.start_date == Date.today || next_date.start_date < Date.today && Date.today < next_date.end_date
       @help_status = "open"

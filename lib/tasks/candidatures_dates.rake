@@ -20,10 +20,6 @@ namespace :candidature_dates do
       end
       if help.permanent
         help.update(open: true)
-        NotificationHelp.where(help: help, sent: false).each do |notification|
-          HelpMailer.send_notification(notification).deliver_now
-          notification.update(sent: true)
-        end
       elsif next_date.nil? || next_date.start_date > Date.today
         help.update(open: false)
       elsif next_date.start_date <= Date.today && Date.today <= next_date.end_date
