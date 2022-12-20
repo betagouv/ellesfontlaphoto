@@ -52,6 +52,8 @@ export default class extends Controller {
   disableButton() {
     if (this.engagementinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" ) {
       this.submitTarget.disabled = false;
+    } else {
+      this.submitTarget.disabled = true;
     }
   }
 }

@@ -10,7 +10,7 @@
       <%= image_tag "link-line.svg", alt: "icône téléchargement" %>
       <p class="dossier-name" data-upload-case-target="label"></p>
     </div>
-    <%= image_tag "cross-dossier.svg", alt: "supprimer téléchargement", data: {upload_case_target:"cross", action: "click->upload-case#delete"}, class:"cross-dossier", onmouseover:"this.src='#{asset_path("cross-dossier-hover.svg")}'", onmouseout:"this.src='#{asset_path("cross-dossier.svg")}'" %>
+    <%= image_tag "cross-dossier.svg", alt: "supprimer téléchargement", data: {upload_case_target:"cross", action: "click->upload-case#delete click->upload-case#disableButton"}, class:"cross-dossier", onmouseover:"this.src='#{asset_path("cross-dossier-hover.svg")}'", onmouseout:"this.src='#{asset_path("cross-dossier.svg")}'" %>
   </div>
   <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
 
