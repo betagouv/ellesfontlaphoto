@@ -46,7 +46,7 @@ class CaseReviewsController < ApplicationController
   def add_feedbacks(case_review)
     case_review.update(case_review_params_edit)
     case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
-    case_reviewer = CaseReview.where(reviewer_email: case_review.candidate_email).first
+    case_reviewer = CaseReview.where(candidate_email: case_review.reviewer_email ,reviewer_email: case_review.candidate_email).first
     if case_reviewer.status == 'Revue'
       case_review.update(date_notation: Date.today)
       case_reviewer.update(date_notation: Date.today)
