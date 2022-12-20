@@ -46,6 +46,7 @@
         <%= f.input :email, as: :hidden %>
         <%= f.input :comment,
                       as: :text,
+                      label: "Votre message",
                       required: true %>
         <div class="btn-div">
           <%= f.button :submit, "Envoyer", class: "btn btn-purple" %>
