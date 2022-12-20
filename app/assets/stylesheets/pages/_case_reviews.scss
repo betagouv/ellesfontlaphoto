@@ -1,5 +1,5 @@
 .validation-send-case {
-  padding: 10% 5% 5% 5%;
+  padding: 5%;
 }
 .case_review_new {
   background-color: $hover-purple;
@@ -27,8 +27,12 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        ol li::marker {
-          font-family: 'Marianne-Bold', sans-serif;
+        margin-bottom: 10px;
+        ol {
+          margin: 0;
+          li::marker {
+            font-family: 'Marianne-Bold', sans-serif;
+          }
         }
       }
     }
