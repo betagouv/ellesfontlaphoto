@@ -4,16 +4,16 @@ L'objectif est de rendre visible les femmes de l'art et de la culture; aujourd'h
 
 ## SETUP
 
-Ruby Version : 2.6.6
+Ruby Version : 3.0.3
 Rails Version : 6.1.4
 Base de données : Postgresql
 
-Commencer par: ```
-bundle install
-yarn install ```
+Commencer par:
+```bundle install```
+``` yarn install ```
 
 Création base de donnée en local:
-``` rails db:create db:migrate db:seed ```
+``` rails db:setup ```
 
 Lancer serveur en local:
 ``` rails s ```
@@ -30,11 +30,9 @@ identifiant : admin@example.fr
 mot de passe : password
 
 
-
 ## STATISTIQUES
 
 Page statistiques accessible à l'url /stats,
-
 
 
 ## DEPLOIEMENT
@@ -42,6 +40,3 @@ Page statistiques accessible à l'url /stats,
 Lorsqu'une PR est mergé sur la branche staging, les changements sont automatiquements déployés sur l'environnement de [staging](https://www.ellesfontlaculture.incubateur.net/).
 
 Lorsqu'une PR est mergé sur la branche master, les changements sont automatiquements déployés sur l'environnement de [production](https://www.ellesfontlaculture.beta.gouv.fr/).
-
-
-

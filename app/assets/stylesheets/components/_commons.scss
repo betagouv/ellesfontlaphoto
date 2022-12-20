@@ -30,6 +30,16 @@ h1 {
   color: $black;
 }
 
+.title-marianne-bold {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  font-family: 'Marianne-Bold', sans-serif;
+  font-size: 40px;
+  line-height: 46px;
+  color: $black;
+}
 
 h2 {
   display: inline-block;
@@ -96,7 +106,7 @@ a {
   font-family: 'Spectral', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 44px;
+  font-size: 46px;
   line-height: 50px;
   text-align: center;
 }
@@ -118,7 +128,7 @@ a {
   font-family: 'Spectral', serif;
   font-style: italic;
   white-space: normal;
-  font-size: 22px;
+  font-size: 21px;
   color: $black;
 }
 
@@ -195,6 +205,16 @@ b, strong {
 .main-paragraphe {
   font-family: 'Marianne-Regular', sans-serif;
   font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom:10px;
+  text-align: center;
+  color: $black;
+}
+
+.main-paragraphe-medium {
+  font-family: 'Marianne-Regular', sans-serif;
+  font-size: 24px;
   line-height: 30px;
   font-weight: 400;
   margin-bottom:10px;
@@ -451,6 +471,9 @@ a {
   h1 {
     padding-bottom: 20px;
   }
+  .main-paragraphe-medium {
+    font-size: 22px;
+  }
   h2 {
     font-size: 30px;
     line-height: 43px;
@@ -474,6 +497,9 @@ a {
     line-height: 43px;
     padding-bottom: 10px;
   }
+  .main-paragraphe-medium {
+    font-size: 20px;
+  }
   .spectral-title {
     font-size: 40px;
   }
@@ -494,4 +520,3 @@ a {
     text-align: left;
   }
 }
-
