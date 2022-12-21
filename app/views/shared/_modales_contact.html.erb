@@ -10,7 +10,7 @@
       <%= simple_form_for [@contact], url: contacts_path, method: :post, class: "newsletter-form" do |f| %>
         <%= invisible_captcha %>
         <%= f.input :contact_email,
-                        label: "E-mail",
+                        label: "Votre e-mail",
                         required: true %>
         <%= f.input :email, as: :hidden %>
         <%= f.input :contact_type,
@@ -46,6 +46,7 @@
         <%= f.input :email, as: :hidden %>
         <%= f.input :comment,
                       as: :text,
+                      label: "Votre message",
                       required: true %>
         <div class="btn-div">
           <%= f.button :submit, "Envoyer", class: "btn btn-purple" %>

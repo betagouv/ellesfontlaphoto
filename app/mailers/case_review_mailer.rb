@@ -21,8 +21,8 @@ class CaseReviewMailer < ApplicationMailer
     @case_review = case_review
     @reviewer = case_review.reviewer_email
     case_attachment = URI.open(case_review.case_attachment.url)
-    attachments[case_review.case_attachment.filename.to_s] = File.read(case_attachment)
-    mail(to: @reviewer, cci: 'revue-dossiers@beta.gouv.fr', subject: 'Revue de dossiers - A vous de jouer !')
+    attachments['dossier.pdf'] = File.read(case_attachment)
+    mail(to: @reviewer, cci: 'revue-dossiers@beta.gouv.fr', subject: 'Revue de dossiers - À vous de jouer !')
   end
 
   def send_feedback_form(case_review)
