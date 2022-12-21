@@ -31,6 +31,9 @@
     #new_help, #new_organization, .edit_case_review {
       width: 42%;
       margin: 0 auto;
+      .paragraphe.label {
+        text-align: left;
+      }
       .flex-div {
         align-items: unset;
         .help_admin_attachment, .help_artistic_attachment {

@@ -14,7 +14,7 @@ ActiveAdmin.register Help do
 
   before_update do |help|
     if params[:help][:visible] == "1" && params[:help][:author_email] != ""
-      HelpMailer.online_help(help).deliver_now
+      HelpMailer.online_help(help).deliver_later
     end
   end
 

@@ -25,7 +25,7 @@ namespace :candidature_dates do
       elsif next_date.start_date <= Date.today && Date.today <= next_date.end_date
         help.update(open: true)
         NotificationHelp.where(help: help, sent: false).each do |notification|
-          HelpMailer.send_notification(notification).deliver_now
+          HelpMailer.send_notification(notification).deliver_later
           notification.update(sent: true)
         end
       else
