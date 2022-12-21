@@ -188,9 +188,6 @@
       .paragraphe {
         width: 100%;
       }
-      .cards-webinaire {
-        grid-template-columns: 1fr 1fr;
-      }
     }
     .join-community {
       display: block;
@@ -229,7 +226,11 @@
     }
   }
 }
-
+@media only screen and (max-width: 1024px) {
+  .rencontre .webinaires-rencontre .cards-webinaire {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media only screen and (max-width: 750px) {
   .rencontre {
     .title-marianne {

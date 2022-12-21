@@ -197,6 +197,40 @@
   }
 }
 
+@media only screen and (max-width: 1366px) {
+  .loader-upload-new {
+    .lds-ring {
+      width: 250px;
+      height: 250px;
+    }
+    .count {
+      font-size: 60px;
+      bottom: 80px;
+      left: 37%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1112px) {
+  .loader-upload-new .count {
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .loader-upload-new {
+    .lds-ring {
+      width: 220px;
+      height: 220px;
+    }
+    .count {
+      font-size: 53px;
+      bottom: 71px;
+      left: 37%;
+    }
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .loader-upload-new {
     .lds-ring {
@@ -204,7 +238,8 @@
       height: 190px;
     }
     .count {
-      font-size: 53px;
+      bottom: 62px;
+      left: 30%;
     }
   }
 }
