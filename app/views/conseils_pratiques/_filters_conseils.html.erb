@@ -16,15 +16,15 @@
   <p class="paragraphe-small text-align-center mb20 mt30">Type de document </p>
   <div class="button-criteria inline">
     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="fichepratique">
-      <%= image_tag "fiche_pratique.svg" %> fiche pratique
+      <%= image_tag "fiche_pratique.svg", alt "icône fiche pratique" %> fiche pratique
       <span class="cross-criteria">&times;</span>
     </span>
     <span class="button-criteria-conseils-elements <%= @selected_document == "webinaire" ? "selected" : "" %>" data-action="click->filter-conseils#selectDocument" data-text="webinaire">
-      <%= image_tag "webinaire.svg" %> webinaire
+      <%= image_tag "webinaire.svg", alt "icône webinaire" %> webinaire
       <span class="cross-criteria <%= @selected_document == "webinaire" ? "display-inline" : "" %>">&times;</span>
     </span>
     <span class="button-criteria-conseils-elements" data-action="click->filter-conseils#selectDocument" data-text="temoignage">
-      <%= image_tag "temoignage.svg" %> témoignage
+      <%= image_tag "temoignage.svg", alt "icône témoignage" %> témoignage
       <span class="cross-criteria ">&times;</span>
     </span>
   </div>
