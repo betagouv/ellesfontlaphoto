@@ -85,6 +85,12 @@
             }
           }
         }
+        .form-check.checkbox {
+          display: flex;
+          align-items: center;
+          padding:0;
+          margin:0;
+        }
         .form-check {
 
           label {

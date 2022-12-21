@@ -56,7 +56,7 @@ class CaseReviewsController < ApplicationController
   end
 
   def case_review_params
-    params.require(:case_review).permit(:message, :candidate_email, :case_attachment, :engagement)
+    params.require(:case_review).permit(:message, :candidate_email, :case_attachment, :valid_cgu, :valid_conditions)
   end
 
   def case_review_params_edit
