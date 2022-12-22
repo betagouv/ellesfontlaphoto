@@ -94,10 +94,7 @@ ActiveRecord::Schema.define(version: 2022_12_21_112343) do
     t.boolean "valid_cgu", default: false
     t.date "date_envoi_feedback"
     t.boolean "valid_conditions", default: false
-<<<<<<< HEAD
     t.boolean "accept_partage_email", default: false
-=======
->>>>>>> bc4e019a832804f267cc4f73374656620bdfbfca
   end
 
   create_table "conseils_articles", force: :cascade do |t|

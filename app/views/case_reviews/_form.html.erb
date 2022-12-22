@@ -15,7 +15,7 @@
   <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
 
   <%= f.input :candidate_email, label: "Votre e-mail", input_html: { data: {upload_case_target: "emailinput", action: "change->upload-case#disableButton"}} %>
-  <%= f.input :message, label: "Message", as: :text, input_html: { :cols => 5, :rows => 6 }, placeholder: "Description de votre travail, demande de retours en particulier, etc."%>
+  <%= f.input :message, label: "Message", as: :text, input_html: { :cols => 5, :rows => 6 }, placeholder: "Description de votre travail, demande de retours en particulier..."%>
   <%= f.input :valid_conditions, label: "Je m'engage à respecter la confidentialité du travail qui me sera transmis et partager mes retours sous 15 jours.", input_html: { data: {upload_case_target: "conditionsinput", action: "change->upload-case#disableButton"}} %>
   <div class="form-check checkbox">
     <%= f.input :valid_cgu, label: false, input_html: { data: {upload_case_target: "engagementinput", action: "change->upload-case#disableButton"}} %>

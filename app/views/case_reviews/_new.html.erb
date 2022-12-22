@@ -21,9 +21,11 @@
         <%= render "case_reviews/form" %>
       </div>
       <div data-upload-case-target="loader" class="loader-upload-new flex-div justify-center">
-        <div class="d-flex align-center">
-          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-          <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+        <div class="d-flex align-center justify-center">
+          <div style="position:relative;">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+          </div>
         </div>
         <p class="paragraphe text-align-center">Dépôt en cours</p>
       </div>
