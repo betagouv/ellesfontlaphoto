@@ -35,6 +35,7 @@ class CaseReviewsController < ApplicationController
     @case_review = CaseReview.find(params[:id])
     add_feedbacks(@case_review)
     if @case_review.valid?(:review_case)
+      @case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
       redirect_to revue_dossier_confirmation_path
     else
       render :edit
@@ -45,7 +46,8 @@ class CaseReviewsController < ApplicationController
 
   def add_feedbacks(case_review)
     case_review.update(case_review_params_edit)
-    case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
+    case_review.update(accept_partage_email: true) if params[:case_review][:accept_partage_email] == "oui"
+    case_review.update(accept_partage_email: false) if params[:case_review][:accept_partage_email] == "non"
     case_reviewer = CaseReview.where(candidate_email: case_review.reviewer_email ,reviewer_email: case_review.candidate_email).first
     if case_reviewer.status == 'Revue'
       case_review.update(date_notation: Date.today)

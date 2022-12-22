@@ -16,6 +16,8 @@
 
       <%= f.input :autres, label: "Avez-vous autre chose à partager ?" %>
 
+      <%= f.input :accept_partage_email, as: :radio_buttons, include_blank: false, collection: ['oui','non'], label: "Souhaitez vous partager votre adresse mail à votre binôme ?" %>
+
       <div class="btn-submit">
         <%= f.submit "Soumettre", class: "btn btn-black", data: { edit_case_target:"button" }%>
         <div data-edit-case-target="loader" class="loader-upload-edit flex-div justify-center">

@@ -44,6 +44,9 @@
       padding: 30px;
       min-height: 483px;
       form {
+        abbr {
+          text-decoration: none;
+        }
         .div-telechargement {
           display: flex;
           align-items: center;
@@ -92,7 +95,6 @@
           margin:0;
         }
         .form-check {
-
           label {
             font-size: 12px;
             width: 90%;
@@ -101,7 +103,7 @@
         }
         input[type=checkbox] {
           border-radius: 4px;
-          background-color: #F0F0F0;
+          background-color: #FFFFFF;
           border: solid 1px #000;
           width: 25px;
           height: 25px;

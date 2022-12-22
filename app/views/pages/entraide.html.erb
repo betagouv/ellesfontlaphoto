@@ -19,7 +19,7 @@
     <div class="webinaires">
       <div class="cards-webinaire">
         <% @webinaires.each do |webinaire| %>
-          <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription do %>
+          <%= link_to webinaire.url != "" ? webinaire.url : webinaire.url_inscription, target: "blank" do %>
             <div class="card-webinaire">
               <div class="div-webinaire-img">
                 <% i = 1 %>
@@ -28,7 +28,6 @@
                   <% i += 1 %>
                 <% end %>
                 <div class="play"></div>
-                <%#= image_tag "play.svg", alt: "Logo Play", class: "play" %>
               </div>
               <div class="webinaire-info">
                 <p class="paragraphe-bold"><%= webinaire.titre %> <span class="spectral-italic"> avec <%= webinaire.participant %></span></p>
