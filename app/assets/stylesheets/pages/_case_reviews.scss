@@ -1,5 +1,8 @@
-.validation-send-case {
-  padding: 5%;
+.validation-send-case-div {
+  padding: 15% 0;
+  .validation-send-case {
+    padding: 5%;
+  }
 }
 .case_review_new {
   background-color: $hover-purple;
@@ -20,8 +23,9 @@
     .consignes {
       width: 50%;
       .spectral-title {
-        margin-bottom: 40px;
+        margin: 40px 0 40px 0;
         text-align: left;
+        line-height: 45px;
       }
       .sub-consignes {
         display: flex;
@@ -136,6 +140,7 @@
         }
         textarea {
           min-height: 150px;
+          margin-bottom: 20px;
         }
       }
     }
@@ -152,7 +157,7 @@
     padding: 5% 0 0;
     .spectral-title.responsive {
       display: block;
-      padding: 0 5%;
+      padding: 5% 0 0%;
     }
     .div_case_review_new {
       padding: 5%;
@@ -170,7 +175,7 @@
           display: none;
         }
         .sub-consignes img {
-          height: 190px;
+          height: 180px;
         }
       }
       .illu-femme {
@@ -182,19 +187,43 @@
 }
 @media only screen and (max-width: 750px) {
   .case_review_new {
+    .spectral-title.responsive {
+      padding: 10% 0 0%;
+    }
     .div_case_review_new {
       display: block;
       padding: 8% 5% 0;
       .form-new-case-reviews {
         min-height: 586px;
+        padding: 10% 5%;
+        form {
+          .div-telechargement .main-paragraphe-medium {
+            width: 50%;
+            text-align: left;
+            white-space: normal;
+            margin-bottom: 0;
+          }
+          .link-ajout-dossier .icone-ajout-dossier {
+            background-image: url("ajout-dossier-responsive.svg");
+            width: 62px;
+            height: 62px;
+            &:hover {
+              background-image: url("ajout-dossier-responsive.svg");
+            }
+          }
+        }
       }
       .consignes {
         margin-bottom: 10%;
+        .paragraphe {
+          text-align: left;
+          line-height: 30px;
+        }
       }
       .form-new-case-reviews,.consignes {
         width: 100%;
         .sub-consignes img {
-          height: 130px;
+          height: 140px;
         }
         form .dossier-telechargement {
           padding: 20px;
