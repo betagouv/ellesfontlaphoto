@@ -84,19 +84,19 @@
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
     <% if @selected.present? %>
-      <%= text_field_tag :residence, params[:residence], value: @selected %>
+      <%= text_field_tag :residence, params[:residence], value: @selected, aria-label: "résidence" %>
     <% else %>
-      <%= text_field_tag :residence, params[:residence] %>
+      <%= text_field_tag :residence, params[:residence], aria-label: "résidence" %>
     <% end %>
     <% if @selected_photo_type.present? %>
-      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type %>
+      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type, aria-label: "type de photographie" %>
     <% else %>
-      <%= text_field_tag :type_photo, params[:type_photo] %>
+      <%= text_field_tag :type_photo, params[:type_photo], aria-label: "type de photographie" %>
     <% end %>
     <% if @selected_type.present? %>
-      <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" } %>
+      <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" }, aria-label: "type d'aide" %>
     <% else %>
-      <%= text_field_tag :type_list, params[:type_list], data: { filter_helps_target: "inputType" } %>
+      <%= text_field_tag :type_list, params[:type_list], data: { filter_helps_target: "inputType" }, aria-label: "type d'aide" %>
     <% end %>
     <%= submit_tag "Search" %>
   <% end %>
