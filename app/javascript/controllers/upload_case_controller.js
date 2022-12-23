@@ -14,7 +14,8 @@ export default class extends Controller {
   "emailinput",
   "messageinput",
   "submit",
-  "engagementinput"
+  "engagementinput",
+  "conditionsinput"
   ]
 
   submit() {
@@ -50,8 +51,10 @@ export default class extends Controller {
   }
 
   disableButton() {
-    if (this.engagementinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" ) {
+    if (this.engagementinputTarget.checked && this.conditionsinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" ) {
       this.submitTarget.disabled = false;
+    } else {
+      this.submitTarget.disabled = true;
     }
   }
 }

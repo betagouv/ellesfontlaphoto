@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  require "sidekiq/web"
+  if Rails.env.development?
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   root to: 'pages#home'
   get "stats", to: 'pages#stats'
   get "accessibilite", to: 'pages#accessibilite'

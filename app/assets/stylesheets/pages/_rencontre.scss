@@ -1,10 +1,10 @@
 .rencontre {
   .div-liens-rencontre {
-    padding: 5% 7%;
+    padding: 5% 10%;
     h1 {
-      max-width: 43%;
+      max-width: 35%;
       text-align:left;
-      line-height: 50px;
+      line-height: 52px;
     }
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@
 
   .webinaires-rencontre {
     background-color: $black;
-    padding: 7% 10%;
+    padding: 10%;
     .spectral-title,.paragraphe {
       color: $white;
     }
@@ -95,7 +95,7 @@
   }
 
   .join-community {
-    padding: 3% 7%;
+    padding: 6% 7%;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -140,11 +140,13 @@
       display: none;
     }
   }
+
   .join-community.bck {
     background-image: url(background-shadow.png);
     background-size: contain;
     background-repeat: no-repeat;
   }
+
   .rencontre-inscription {
     padding: 3% 7% 8%;
     .rencontre-inscription-div {
@@ -188,9 +190,6 @@
       .paragraphe {
         width: 100%;
       }
-      .cards-webinaire {
-        grid-template-columns: 1fr 1fr;
-      }
     }
     .join-community {
       display: block;
@@ -198,7 +197,7 @@
       div {
         width: 100%;
         .spectral-title {
-          margin-bottom: 15px;
+          margin-bottom: 40px;
         }
       }
       .img-community {
@@ -230,6 +229,12 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .rencontre .webinaires-rencontre .cards-webinaire {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .rencontre {
     .title-marianne {
@@ -241,6 +246,7 @@
     }
     .spectral-title {
       font-size: 34px;
+      line-height: 45px;
     }
     .div-liens-rencontre {
       display: block;
@@ -258,10 +264,11 @@
       }
     }
     .webinaires-rencontre {
-      padding: 10% 5%;
+      padding: 20% 5%;
       .paragraphe {
         max-width: 90%;
         margin-bottom: 8%;
+        line-height: 24px;
       }
       .webinaires .cards-webinaire {
         display: block;
@@ -274,6 +281,7 @@
       }
     }
     .join-community {
+      padding: 15% 7%;
       .spectral-title {
         font-size: 38px;
       }

@@ -1,5 +1,8 @@
-.validation-send-case {
-  padding: 20% 5% 5% 5%;
+.validation-send-case-div {
+  padding: 15% 0;
+  .validation-send-case {
+    padding: 5%;
+  }
 }
 .case_review_new {
   background-color: $hover-purple;
@@ -20,15 +23,20 @@
     .consignes {
       width: 50%;
       .spectral-title {
-        margin-bottom: 40px;
+        margin: 40px 0 40px 0;
         text-align: left;
+        line-height: 45px;
       }
       .sub-consignes {
         display: flex;
         align-items: center;
         justify-content: start;
-        ol li::marker {
-          font-family: 'Marianne-Bold', sans-serif;
+        margin-bottom: 10px;
+        ol {
+          margin: 0;
+          li::marker {
+            font-family: 'Marianne-Bold', sans-serif;
+          }
         }
       }
     }
@@ -38,7 +46,11 @@
       box-shadow: 0px 4px 12px rgba(0, 0, 18, 0.32);
       border-radius: 10px;
       padding: 30px;
+      min-height: 578px;
       form {
+        abbr {
+          text-decoration: none;
+        }
         .div-telechargement {
           display: flex;
           align-items: center;
@@ -50,7 +62,7 @@
         .dossier-telechargement {
           display: none;
           background-color: $very-light-purple;
-          padding: 20px 40px;
+          padding: 20px 40px 20px 20px;
           align-items: center;
           justify-content: space-between;
           margin-bottom: 30px;
@@ -80,8 +92,13 @@
             }
           }
         }
+        .form-check.checkbox {
+          display: flex;
+          align-items: center;
+          padding:0;
+          margin:0;
+        }
         .form-check {
-
           label {
             font-size: 12px;
             width: 90%;
@@ -90,7 +107,7 @@
         }
         input[type=checkbox] {
           border-radius: 4px;
-          background-color: #F0F0F0;
+          background-color: #FFFFFF;
           border: solid 1px #000;
           width: 25px;
           height: 25px;
@@ -123,9 +140,16 @@
         }
         textarea {
           min-height: 150px;
+          margin-bottom: 20px;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1470px) {
+  .case_review_new .div_case_review_new .illu-femme {
+    right: 37%;
   }
 }
 @media only screen and (max-width: 1250px) {
@@ -133,12 +157,13 @@
     padding: 5% 0 0;
     .spectral-title.responsive {
       display: block;
-      padding: 0 5%;
+      padding: 5% 0 0%;
     }
     .div_case_review_new {
       padding: 5%;
       .form-new-case-reviews {
         width: 55%;
+        min-height: 578px;
         .main-paragraphe-medium {
           white-space: nowrap;
           margin-left: 10px;
@@ -150,7 +175,7 @@
           display: none;
         }
         .sub-consignes img {
-          height: 190px;
+          height: 180px;
         }
       }
       .illu-femme {
@@ -162,13 +187,43 @@
 }
 @media only screen and (max-width: 750px) {
   .case_review_new {
+    .spectral-title.responsive {
+      padding: 10% 0 0%;
+    }
     .div_case_review_new {
       display: block;
       padding: 8% 5% 0;
+      .form-new-case-reviews {
+        min-height: 586px;
+        padding: 10% 5%;
+        form {
+          .div-telechargement .main-paragraphe-medium {
+            width: 50%;
+            text-align: left;
+            white-space: normal;
+            margin-bottom: 0;
+          }
+          .link-ajout-dossier .icone-ajout-dossier {
+            background-image: url("ajout-dossier-responsive.svg");
+            width: 62px;
+            height: 62px;
+            &:hover {
+              background-image: url("ajout-dossier-responsive.svg");
+            }
+          }
+        }
+      }
+      .consignes {
+        margin-bottom: 10%;
+        .paragraphe {
+          text-align: left;
+          line-height: 30px;
+        }
+      }
       .form-new-case-reviews,.consignes {
         width: 100%;
         .sub-consignes img {
-          height: 130px;
+          height: 140px;
         }
         form .dossier-telechargement {
           padding: 20px;

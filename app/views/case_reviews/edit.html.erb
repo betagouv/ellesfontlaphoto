@@ -5,11 +5,19 @@
   </div>
   <div class="ajout-case-review-form">
     <%= simple_form_for @case_review, url: case_review_path, method: :patch, id: "edit_case_review", data: {action: "submit->edit-case#submit"} do |f| %>
-      <%= f.input :points_forts, label: "Qu'avez-vous aimé ? Quels sont les points forts de ce travail ?", hint: "Ex : le fond du sujet, la forme du dossier, le choix des images, etc." %>
-      <%= f.input :points_faibles, label: "Selon vous, qu'est-ce-qui pourrait être amélioré ?", hint: "Ex : le fond du sujet, la forme du dossier, le choix des images, etc." %>
+      <%= f.input :points_forts, label: "Qu'avez-vous aimé ? Quels sont les points forts de ce travail ?", hint: "Ex : le fond du sujet, la forme du dossier, le choix des images..." %>
+      <%= f.input :points_faibles, label: "Selon vous, qu'est-ce-qui pourrait être amélioré ?", hint: "Ex : le fond du sujet, la forme du dossier, le choix des images ..." %>
       <%= f.input :lien_video, label: ("Lien de votre vidéo #{link_to 'Loom', "https://www.loom.com/", target: :_blank }").html_safe, hint: "Cet outil vous permet de commenter le dossier avec un partage d'écran de manière simple et intuitive." %>
-      <%= f.input :review_comment, as: :file, label: "Partager un fichier", hint: "Vous pouvez transmettre tous types de fichiers (taille maximale : 1KO). Exemples : fichier audio enregistré à partir de l’enregistreur vocal de votre ordinateur ou de votre téléphone (format .mp3), propositions de mises en page, exemples de dossiers, etc." %>
+
+      <%= f.input :review_comment, as: :file, label: "Partager un fichier", hint: "Vous pouvez transmettre tous types de fichiers (taille maximale : 1KO). Exemples : fichier audio enregistré à partir de l’enregistreur vocal de votre ordinateur ou de votre téléphone (format .mp3), propositions de mises en page, exemples de dossiers..." %>
+      <p class="paragraphe label">Partager un fichier</p>
+      <%= f.label :review_comment, "Your label here", class: "btn btn-black" %>
+      <%= f.input :review_comment, as: :file, label: false, input_html: { style: "display: none" }, hint: "Vous pouvez transmettre tous types de fichiers (taille maximale : 1KO). Exemples : fichier audio (format .mp3) enregistré à partir de l’enregistreur vocal de votre ordinateur ou de votre téléphone, propositions de mises en page, exemples de dossiers..."%>
+
       <%= f.input :autres, label: "Avez-vous autre chose à partager ?" %>
+
+      <%= f.input :accept_partage_email, as: :radio_buttons, include_blank: false, collection: ['oui','non'], label: "Souhaitez vous partager votre adresse mail à votre binôme ?" %>
+
       <div class="btn-submit">
         <%= f.submit "Soumettre", class: "btn btn-black", data: { edit_case_target:"button" }%>
         <div data-edit-case-target="loader" class="loader-upload-edit flex-div justify-center">

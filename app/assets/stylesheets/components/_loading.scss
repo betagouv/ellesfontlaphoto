@@ -6,7 +6,7 @@
     position: relative;
     width: 300px;
     height: 300px;
-    margin: 30px 14%;
+    margin: 0 auto 10% auto;
   }
 
   .lds-ring div {
@@ -36,12 +36,13 @@
 
   .count {
     position: absolute;
-    font-size: 90px;
+    font-size: 75px;
     text-align: center;
-    bottom: 70px;
-    left: 33%;
+    left: 32%;
+    bottom: 39%;
     display: flex;
     flex-direction: row-reverse;
+    line-height: 0px;
   }
 
   @keyframes lds-ring {
@@ -200,11 +201,11 @@
 @media only screen and (max-width: 750px) {
   .loader-upload-new {
     .lds-ring {
-      width: 190px;
-      height: 190px;
+        height: 270px;
+        width: 270px;
     }
     .count {
-      font-size: 53px;
+      font-size: 60px;
     }
   }
 }

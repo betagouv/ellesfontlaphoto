@@ -126,7 +126,7 @@
 
       input[type=checkbox] {
         border-radius: 4px;
-        background-color: #F0F0F0;
+        background-color: #FFFFFF;
         border: solid 1px #000;
         width: 25px;
         height: 25px;
@@ -138,7 +138,7 @@
         }
       }
 
-      .help_permanent {
+      .help_permanent,.case_review_accept_partage_email {
         .form-check {
           display: flex;
           align-items: center;

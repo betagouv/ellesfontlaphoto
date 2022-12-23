@@ -4,13 +4,13 @@ class CaseReviewsController < ApplicationController
     @case_review.status = 'En attente de binôme'
     if @case_review.save
       if CaseReview.where(status: 'En attente de binôme').where.not(candidate_email: @case_review.candidate_email).empty?
-        CaseReviewMailer.confirm(@case_review.candidate_email).deliver_now
+        CaseReviewMailer.confirm(@case_review.candidate_email).deliver_later
       else
         @reviewer_case = CaseReview.where(status: 'En attente de binôme').where.not(candidate_email: @case_review.candidate_email).first
         @reviewer_case.update(reviewer_email: @case_review.candidate_email, status: 'En attente de revue', creation_binome: Date.today)
         @case_review.update(reviewer_email: @reviewer_case.candidate_email, status: 'En attente de revue', creation_binome: Date.today)
-        CaseReviewMailer.send_case_review(@reviewer_case).deliver_now
-        CaseReviewMailer.send_case_review(@case_review).deliver_now
+        CaseReviewMailer.send_case_review(@reviewer_case).deliver_later
+        CaseReviewMailer.send_case_review(@case_review).deliver_later
       end
       respond_to do |format|
         format.html { render redirect_to case_reviews_confirmation_path }
@@ -35,6 +35,7 @@ class CaseReviewsController < ApplicationController
     @case_review = CaseReview.find(params[:id])
     add_feedbacks(@case_review)
     if @case_review.valid?(:review_case)
+      @case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
       redirect_to revue_dossier_confirmation_path
     else
       render :edit
@@ -45,18 +46,19 @@ class CaseReviewsController < ApplicationController
 
   def add_feedbacks(case_review)
     case_review.update(case_review_params_edit)
-    case_review.update(status: 'Revue', date_envoi_feedback: Date.today)
-    case_reviewer = CaseReview.where(reviewer_email: case_review.candidate_email).first
+    case_review.update(accept_partage_email: true) if params[:case_review][:accept_partage_email] == "oui"
+    case_review.update(accept_partage_email: false) if params[:case_review][:accept_partage_email] == "non"
+    case_reviewer = CaseReview.where(candidate_email: case_review.reviewer_email ,reviewer_email: case_review.candidate_email).first
     if case_reviewer.status == 'Revue'
       case_review.update(date_notation: Date.today)
       case_reviewer.update(date_notation: Date.today)
-      CaseReviewMailer.send_feedback_form(case_review).deliver_now
-      CaseReviewMailer.send_feedback_form(case_reviewer).deliver_now
+      CaseReviewMailer.send_feedback_form(case_review).deliver_later
+      CaseReviewMailer.send_feedback_form(case_reviewer).deliver_later
     end
   end
 
   def case_review_params
-    params.require(:case_review).permit(:message, :candidate_email, :case_attachment, :engagement)
+    params.require(:case_review).permit(:message, :candidate_email, :case_attachment, :valid_cgu, :valid_conditions)
   end
 
   def case_review_params_edit
