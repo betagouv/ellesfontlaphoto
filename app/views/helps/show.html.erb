@@ -54,21 +54,23 @@
         <% end %>
       <% end %>
       <hr class="hl">
-      <p class="paragraphe-bold mb0">Conditions de participation :</p>
-      <% if @help.residence_condition.present? %>
-        <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence
-        <% if @help.residence_condition == "Française ou résidant en France" %>
-          en : France
-        <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
-          en : Outre-mer
-        <% elsif @help.residence_condition == "Française résidant à l'étranger" %>
-          à l'étranger
-        <% else %>
-          en : <%= @help.residence_condition %>
-        <% end %></p>
-      <% end %>
-      <% if @help.general_condition.present? %>
-          <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
+      <% if @help.residence_condition.present? || @help.general_condition.present? %>
+        <p class="paragraphe-bold mb0">Conditions de participation :</p>
+        <% if @help.residence_condition.present? %>
+          <p class="paragraphe lh28 mt0 mb0"><%= image_tag "emojis/epingle.png", alt: "émoji résidence", style: "width: 15px;" %>Résidence
+          <% if @help.residence_condition == "Française ou résidant en France" %>
+            en : France
+          <% elsif @help.residence_condition == "Française résidant en outre-mer" %>
+            en : Outre-mer
+          <% elsif @help.residence_condition == "Française résidant à l'étranger" %>
+            à l'étranger
+          <% else %>
+            en : <%= @help.residence_condition %>
+          <% end %></p>
+        <% end %>
+        <% if @help.general_condition.present? %>
+            <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
+        <% end %>
       <% end %>
     </div>
   </div>
