@@ -1,4 +1,4 @@
-namespace :case_reviews do
+namespace :send_relance do
   namespace :relances do
     relancesj2 = CaseReview.where(status: "en attente de revue", creation_binome: Date.today - 13)
     relancesj2.each do |relance|
