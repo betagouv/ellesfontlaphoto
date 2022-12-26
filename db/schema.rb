@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_21_112343) do
+ActiveRecord::Schema.define(version: 2022_12_26_210748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 2022_12_21_112343) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "message"
+    t.boolean "accept_cgu", default: false
   end
 
   create_table "evaluation_helps", force: :cascade do |t|
@@ -253,6 +254,7 @@ ActiveRecord::Schema.define(version: 2022_12_21_112343) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "sent", default: false
+    t.boolean "accept_cgu", default: false
     t.index ["help_id"], name: "index_notification_helps_on_help_id"
   end
 

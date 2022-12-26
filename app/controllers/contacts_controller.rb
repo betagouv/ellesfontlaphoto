@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   def create
     unless params[:email].present?
       @contact = Contact.new(contacts_params)
+      @contact.save
       unless @contact.contact_email == "foo-bar@example.com"
         if @contact.contact_type == "newsletter"
           add_to_sendinblue_list(@contact.contact_email)
@@ -22,7 +23,8 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(
       :contact_email,
       :contact_type,
-      :comment
+      :comment,
+      :accept_cgu
       )
   end
 
