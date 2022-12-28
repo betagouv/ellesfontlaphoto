@@ -2,7 +2,15 @@ import { Controller } from "stimulus"
 import { csrfToken } from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ["modal", "form", "content"]
+  static targets = ["modal", "form", "content", "checkbox", "button"]
+
+  buttonEnable() {
+    if (this.checkboxTarget.checked) {
+      this.buttonTarget.disabled = false
+    } else {
+      this.buttonTarget.disabled = true
+    }
+  }
 
   create() {
     event.preventDefault();
