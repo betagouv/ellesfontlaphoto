@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_12_26_210748) do
+=======
+ActiveRecord::Schema.define(version: 2022_12_27_192243) do
+>>>>>>> 26bbc2426a6f013aa379f7b314193340d5232f83
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,7 +98,7 @@ ActiveRecord::Schema.define(version: 2022_12_26_210748) do
     t.boolean "valid_cgu", default: false
     t.date "date_envoi_feedback"
     t.boolean "valid_conditions", default: false
-    t.boolean "accept_partage_email", default: false
+    t.boolean "accept_partage_email"
   end
 
   create_table "conseils_articles", force: :cascade do |t|

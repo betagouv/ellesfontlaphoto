@@ -37,7 +37,6 @@ export default class extends Controller {
   }
 
   upload(event) {
-    console.log("upload")
     this.divtelechargementTarget.style.display = "none"
     this.divdossierTarget.style.display = "flex"
     this.labelTarget.innerHTML = event.currentTarget.files[0].name
