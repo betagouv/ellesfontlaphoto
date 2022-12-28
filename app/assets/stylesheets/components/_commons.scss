@@ -296,6 +296,10 @@ b, strong {
   justify-content: center;
 }
 
+.justify-start {
+  justify-content: start;
+}
+
 .flex-div-left {
   display: flex;
 }
@@ -403,7 +407,6 @@ a {
 
 .mb0 {
   margin-bottom: 5px;
-  margin-top : 0px;
 }
 
 .mr20 {

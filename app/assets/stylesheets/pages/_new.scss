@@ -37,6 +37,13 @@
           width: 46%;
         }
       }
+
+      .label {
+        margin: 0;
+        margin-right: 20px;
+        line-height: 36px;
+      }
+
       .subtitle-medium {
         font-size: 28px;
         text-align: center;
@@ -50,6 +57,15 @@
           line-height: 20px;
         }
       }
+      .case_review_review_comment {
+        margin-top: 5px;
+      }
+
+      .form-check-input:checked {
+        background-color: $purple;
+        border-color: $purple;
+      }
+
       .help_author_email {
         margin-bottom: 0px;
         #help_author_email {
