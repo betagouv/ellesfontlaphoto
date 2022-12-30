@@ -4,7 +4,15 @@
     <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuie sur les données collectées par le ministère de la Culture pour la<span style="color: #FFB648;"> période 2021-2022</span>.</p>
   </div>
   <div class="flex-div justify-center">
-    <%= link_to "Renseigner des chiffres", "https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-outlined-white" %>
+    <%= form_with url: organizations_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a movie"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to "Renseigner des chiffres", "https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-white" %>
   </div>
   <div class="cards-organizations">
     <% @organizations.each do |organization| %>

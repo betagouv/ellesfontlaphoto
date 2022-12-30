@@ -1,7 +1,12 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.where(visible: true).order("total_nb_expos DESC NULLS LAST")
     @contact = Contact.new
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR organization_type ILIKE :query"
+      @organizations = Organization.where(sql_query, query: "%#{params[:query]}%").order("name")
+    else
+      @organizations = Organization.where(visible: true).order("name")
+    end
   end
 
   def new
