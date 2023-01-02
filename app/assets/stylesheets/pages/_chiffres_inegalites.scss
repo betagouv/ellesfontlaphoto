@@ -1,9 +1,12 @@
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
-  .flex-div {
+  .div-search-form {
     gap: 20px;
-    .search-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    .div-input-form {
       position: relative;
       input[type=text] {
         background-color: $black;
@@ -15,8 +18,9 @@
       }
       .btn-purple {
         right: 0;
+        top: 0;
         position: absolute;
-        padding: 10px 23px;
+        padding: 11px 23px;
         &:hover {
           background-color: $white !important;
         }
@@ -28,6 +32,7 @@
         background-position: center;
       }
       .btn-purple.loupe {
+        background-color: $purple !important;
         background: url("loupe.svg");
         background-repeat: no-repeat;
         background-position: center;
@@ -133,6 +138,16 @@
 @media only screen and (max-width: 750px) {
   .div-index-parite {
     padding: 3%;
+    .div-search-form {
+      display: block;
+      .btn.btn-white {
+        margin: 40px auto 25px auto;
+      }
+      .search-form {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
     }
@@ -148,6 +163,9 @@
           line-height: 24px;
         }
       }
+    }
+    .paragraphe-small {
+      margin: 17% auto 5%;
     }
   }
   .redirection-infographie {

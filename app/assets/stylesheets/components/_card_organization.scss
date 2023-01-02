@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  min-height: 28.2em;
+  min-height: 29.2em;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -204,7 +204,7 @@
 
 @media only screen and (max-width: 750px) {
   .box {
-    min-height: 25.5em;
+    min-height: 26.5em;
     .box-in {
       height: auto;
       .flip-card-front {
@@ -260,7 +260,7 @@
 
 @media only screen and (max-width: 350px) {
   .box {
-    min-height: 22.5em;
+    min-height: 23.5em;
     .box-in {
       .flip-card-front {
         min-height: 21.7em;
