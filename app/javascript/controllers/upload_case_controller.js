@@ -15,7 +15,8 @@ export default class extends Controller {
   "messageinput",
   "submit",
   "engagementinput",
-  "conditionsinput"
+  "conditionsinput",
+  "errorEmail"
   ]
 
   submit() {
@@ -36,6 +37,14 @@ export default class extends Controller {
     })
   }
 
+  checkEmail() {
+    if (new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(this.emailinputTarget.value)) {
+      this.errorEmailTarget.style.display = "none"
+    } else {
+      this.errorEmailTarget.style.display = "block"
+    }
+  }
+
   upload(event) {
     this.divtelechargementTarget.style.display = "none"
     this.divdossierTarget.style.display = "flex"
@@ -50,7 +59,7 @@ export default class extends Controller {
   }
 
   disableButton() {
-    if (this.engagementinputTarget.checked && this.conditionsinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" ) {
+    if (this.engagementinputTarget.checked && this.conditionsinputTarget.checked && this.labelTarget.innerHTML != "" && this.emailinputTarget.value != "" && new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(this.emailinputTarget.value) ) {
       this.submitTarget.disabled = false;
     } else {
       this.submitTarget.disabled = true;
