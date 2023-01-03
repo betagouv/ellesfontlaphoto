@@ -2,14 +2,17 @@
   <div class="div-liens-rencontre">
     <h1 class="title-marianne">Par ici, on vous propose un espace <span class="spectral-title">d'entraide et rencontre</span>, participez !</h1>
     <div class="liens-rencontre">
+<<<<<<< HEAD
       <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#revue-dossier">Revue de dossiers et portfolios</a></p>
+=======
+>>>>>>> 169b006467fa74792b94c8bd2b988a9bd37fbf88
       <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#webinaires">Webinaires</a></p>
       <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#facebook-group">Communauté facebook</a></p>
       <p><%= image_tag "arrow-line.svg", alt: "flèche" %><a href="#abonnement">Suivre les actualités</a></p>
     </div>
   </div>
 
-  <div id="revue-dossier">
+  <div id="revue-dossier" style="display:none">
     <%= render "case_reviews/new" %>
   </div>
 
