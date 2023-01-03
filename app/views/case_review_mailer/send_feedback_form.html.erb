@@ -14,7 +14,7 @@
 <% end %>
 <p style="margin: 0;"><strong>Qu'avez-vous aimé? Quels sont les points forts de ce travail? </strong></p><p style="margin: 0;"><%= @case_review.points_forts %></p><p style="margin: 0;"><br><strong>Selon vous, qu'est-ce-qui pourrait être amélioré?</strong></p><p style="margin: 0;"><%= @case_review.points_faibles %></p>
 
-<% unless @case_review.message.empty? %>
+<% unless @case_review.autres.empty? %>
   <p style="margin: 0;"><br><strong>Avez-vous autre chose à partager? (optionnel)</strong></p><p style="margin: 0;"><%= @case_review.autres %></p><p style="margin: 0;"> </p>
 <% end %>
 
