@@ -9,6 +9,10 @@
   .spectral-title.responsive {
     display: none;
   }
+  .paragraphe-small.red {
+    display: none;
+    color: red;
+  }
   .div_case_review_new {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -29,9 +33,15 @@
       }
       .sub-consignes {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: start;
         margin-bottom: 10px;
+        .arrow-div {
+          margin: 3px 10px 0 0;
+          img {
+            min-height: 100%;
+          }
+        }
         ol {
           margin: 0;
           li::marker {
@@ -71,6 +81,10 @@
             font-family: 'Marianne-Regular', sans-serif;
             font-size: 16px;
             color: $filter-purple;
+            width: 280px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .cross-dossier {
             cursor: pointer;
@@ -174,9 +188,6 @@
         .spectral-title {
           display: none;
         }
-        .sub-consignes img {
-          height: 180px;
-        }
       }
       .illu-femme {
         right: 10%;
@@ -222,9 +233,6 @@
       }
       .form-new-case-reviews,.consignes {
         width: 100%;
-        .sub-consignes img {
-          height: 140px;
-        }
         form .dossier-telechargement {
           padding: 20px;
         }
