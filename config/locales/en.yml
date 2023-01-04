@@ -19,3 +19,6 @@ fr:
         case_attachment: "Votre dossier doit être en format pdf actuellement il y"
       notification_help:
         accept_cgu: La politique de confidentialité
+      contact:
+        accept_cgu: La politique de confidentialité
+        comment: Votre message
