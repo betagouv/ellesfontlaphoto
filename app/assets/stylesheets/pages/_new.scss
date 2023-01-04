@@ -66,6 +66,10 @@
         border-color: $purple;
       }
 
+      .form-check-input:invalid, .form-check-input.is-invalid {
+        border-color: red;
+      }
+
       .help_author_email {
         margin-bottom: 0px;
         #help_author_email {

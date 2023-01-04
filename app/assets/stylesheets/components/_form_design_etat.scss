@@ -5,23 +5,30 @@
   form {
     width: 100%;
     margin: 0 auto;
+    #error_explanation {
+      color: #D52941;
+    }
 
     .input {
       text-align: left;
     }
 
-    .input-error {
-      border-color: #D52941;
-    }
+    // .input-error {
+    //   border-color: #D52941;
+    // }
 
-    .display-error {
-      display: block;
-      color: #D52941;
-    }
+    // .display-error {
+    //   display: block;
+    //   color: #D52941;
+    // }
 
-    .undisplay-error {
+    .invalid-feedback {
       display: none;
     }
+
+    // .undisplay-error {
+    //   display: none;
+    // }
 
     label {
       font-family: "Marianne", sans-serif;
