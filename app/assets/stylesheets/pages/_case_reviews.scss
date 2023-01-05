@@ -2,6 +2,9 @@
   padding: 15% 0;
   .validation-send-case {
     padding: 5%;
+    .subtitle-spectral {
+      line-height: 40px;
+    }
   }
 }
 .case_review_new {
@@ -111,12 +114,17 @@
           align-items: center;
           padding:0;
           margin:0;
+          a {
+            text-decoration: underline !important;
+            color: #6B48F4 !important;
+          }
         }
         .form-check {
           label {
             font-size: 12px;
             width: 90%;
             margin-left: 20px;
+            margin-top: 2px;
           }
         }
         input[type=checkbox] {
@@ -209,7 +217,6 @@
         padding: 10% 5%;
         form {
           .div-telechargement .main-paragraphe-medium {
-            width: 50%;
             text-align: left;
             white-space: normal;
             margin-bottom: 0;
@@ -242,5 +249,11 @@
         margin: 10% 0 0 20%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .case_review_new .div_case_review_new .form-new-case-reviews form .div-telechargement .main-paragraphe-medium {
+    width: 50%;
   }
 }
