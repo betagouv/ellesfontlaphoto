@@ -74,8 +74,10 @@ gem 'invisible_captcha'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Grand text in admin
 gem 'activeadmin_quill_editor'
 
+# Amazon bucket
 gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
