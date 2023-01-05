@@ -32,7 +32,6 @@ class ContactsController < ApplicationController
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    email = email
     list_id = 57
     request = Net::HTTP::Post.new(url)
     request['accept'] = 'application/json'
