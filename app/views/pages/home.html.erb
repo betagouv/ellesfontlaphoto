@@ -9,7 +9,7 @@
         <%= image_tag 'aides/dotation-financiere.png', class: "image-first-block-card", alt: 'Aides financières' %>
         <div class="first-block-card-infos purple">
           <%= image_tag 'money.svg', alt: 'picto aides financières' %>
-          <p class="first-block-card-infos-title">Aides financières</p>
+          <h3 class="first-block-card-infos-title">Aides financières</h3>
           <p class="paragraphe first-block-card-infos-text">Résidences, bourses, prix, appels à candidatures...</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
@@ -20,7 +20,7 @@
         <%= image_tag 'aides/conseils.png', class: "image-first-block-card", alt: 'Ressources et conseils' %>
         <div class="first-block-card-infos orange">
           <%= image_tag 'book.svg', alt: 'picto ressources et conseils' %>
-          <p class="first-block-card-infos-title">Ressources et conseils</p>
+          <h3 class="first-block-card-infos-title">Ressources et conseils</h3>
           <p class="paragraphe first-block-card-infos-text">Construire son portfolio ? <br>Protéger ses droits d’autrice...</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "fleche" %>
@@ -31,7 +31,7 @@
         <%= image_tag 'aides/accompagnement.png', class: "image-first-block-card", alt: 'Entraide et rencontres' %>
         <div class="first-block-card-infos light-orange">
           <%= image_tag 'community.svg', alt: 'picto Entraide et rencontres' %>
-          <p class="first-block-card-infos-title">Entraide et rencontres</p>
+          <h3 class="first-block-card-infos-title">Entraide et rencontres</h3>
           <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses paires, revue de dossiers et portfolios</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "flèche" %>
@@ -68,7 +68,7 @@
 
 <div class="third-block">
   <div class="third-block-div" data-controller="home-carousel">
-    <p class="subtitle-spectral">Derniers contenus ajoutés</p>
+    <h2 class="subtitle-spectral">Derniers contenus ajoutés</h2>
     <div class="cards-carousel" data-home-carousel-target="carousel">
       <% @contenus.each do |item| %>
         <% if item.class == Help %>
