@@ -29,7 +29,7 @@ class CaseReviewMailer < ApplicationMailer
     @case_review = case_review
     if case_review.review_comment.attached?
       attachment = URI.open(case_review.review_comment.url)
-      attachments['commentaire.mp3'] = File.read(attachment)
+      attachments[case_review.review_comment.filename.to_s] = File.read(attachment)
     end
     mail(to: @case_review.candidate_email, cci: 'revue-dossiers@beta.gouv.fr', subject: 'Revue de dossiers - découvrez les retours de votre binôme !')
   end

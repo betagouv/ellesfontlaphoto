@@ -1,0 +1,37 @@
+<!-- MODAL CONTACT -->
+<div id="modal-contact" class="modal">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content">
+      <p class="subtitle"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-large" %> Nous écrire</p>
+      <%= simple_form_for [contact], url: contacts_path, method: :post do |f| %>
+        <%= invisible_captcha %>
+        <%= f.input :contact_type,
+                      as: :select,
+                      label: "Objet",
+                      placeholder: "Sélectionnez une option",
+                      collection: ['Donner son avis', 'Une question ?', 'Devenir Testeuse', 'Partenariat et contribution', 'Autre'],
+                      required: true %>
+        <%= f.input :contact_email,
+                      label: "E-mail",
+                      required: true %>
+        <%#= f.input :email, as: :hidden %>
+        <%= f.input :comment,
+                      as: :text,
+                      label: "Votre message",
+                      required: true %>
+        <div class="form-check checkbox">
+          <%= f.input :accept_cgu, label: false %>
+          <%= f.label :accept_cgu do %>
+            J'accepte la <%= link_to 'politique de confidentialité', politique_confidentialite_path %>
+          <% end %>
+        </div>
+        <div class="btn-div">
+          <%= f.button :submit, "Envoyer", class: "btn btn-purple" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

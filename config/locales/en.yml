@@ -15,4 +15,5 @@ fr:
         candidate_email: "Votre email"
         points_forts: "Ce champ"
         points_faibles: "Ce champ"
+        accept_partage_email: "Ce champ"
         case_attachment: "Votre dossier doit être en format pdf actuellement il y"

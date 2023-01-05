@@ -37,6 +37,13 @@
           width: 46%;
         }
       }
+
+      .label {
+        margin: 0;
+        margin-right: 20px;
+        line-height: 36px;
+      }
+
       .subtitle-medium {
         font-size: 28px;
         text-align: center;
@@ -50,6 +57,15 @@
           line-height: 20px;
         }
       }
+      .case_review_review_comment {
+        margin-top: 5px;
+      }
+
+      .form-check-input:checked {
+        background-color: $purple;
+        border-color: $purple;
+      }
+
       .help_author_email {
         margin-bottom: 0px;
         #help_author_email {
@@ -126,7 +142,7 @@
 
       input[type=checkbox] {
         border-radius: 4px;
-        background-color: #F0F0F0;
+        background-color: #FFFFFF;
         border: solid 1px #000;
         width: 25px;
         height: 25px;
@@ -138,7 +154,7 @@
         }
       }
 
-      .help_permanent {
+      .help_permanent,.case_review_accept_partage_email {
         .form-check {
           display: flex;
           align-items: center;

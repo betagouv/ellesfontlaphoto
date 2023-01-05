@@ -77,7 +77,7 @@ class HelpsController < ApplicationController
     @help.type_list = params["help"]["type_list"]
     @help.type_photo_list = params["help"]["type_photo_list"]
     if @help.save
-      HelpMailer.new_help(@help).deliver_now
+      HelpMailer.new_help(@help).deliver_later
       redirect_to helps_confirm_path
     else
       render :new

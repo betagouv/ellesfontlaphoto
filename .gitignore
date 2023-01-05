@@ -12,9 +12,15 @@
 !/storage/.keep
 .DS_Store
 
-/public/assets
-/public/packs/manifest.json
+/public/assets/*
 .byebug_history
+
+public/packs
+public/packs-test
+/node_modules/*
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
 
 #ignore secret KEYs
 .env*
@@ -24,12 +30,3 @@ application.yml
 
 # Ignore application configuration
 /config/application.yml
-
-
-public/packs/manifest.json
-/public/packs
-/public/packs-test
-/node_modules/*
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
