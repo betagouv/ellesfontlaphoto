@@ -35,19 +35,19 @@
 
   <%= form_tag ressources_path, method: :get, id: "search-form", data: { filter_conseils_target: "form" } do %>
     <% if @selected.present? %>
-      <%= text_field_tag :category_list, params[:category_list], value: selected, data: { filter_conseils_target: "inputCategory" }, aria-label: "catégories" %>
+      <%= text_field_tag :category_list, params[:category_list], value: selected, data: { filter_conseils_target: "inputCategory" }, label: "catégories" %>
     <% else %>
-      <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" }, aria-label: "catégories" %>
+      <%= text_field_tag :category_list, params[:category_list], data: { filter_conseils_target: "inputCategory" }, label: "catégories" %>
     <% end %>
     <% if @selected_document.present? %>
-      <%= text_field_tag :document_type, params[:document_type], value: @selected_document, data: { filter_conseils_target: "inputDocumentType" }, aria-label: "type de document" %>
+      <%= text_field_tag :document_type, params[:document_type], value: @selected_document, data: { filter_conseils_target: "inputDocumentType" }, label: "type de document" %>
     <% else %>
-      <%= text_field_tag :document_type, params[:document_type], data: { filter_conseils_target: "inputDocumentType" }, aria-label: "type de document" %>
+      <%= text_field_tag :document_type, params[:document_type], data: { filter_conseils_target: "inputDocumentType" }, label: "type de document" %>
     <% end %>
     <% if @selected_tag.present? %>
-      <%= text_field_tag :tag_list, selected_tag, aria-label: "tag" %>
+      <%= text_field_tag :tag_list, selected_tag, label: "tag" %>
     <% else %>
-      <%= text_field_tag :tag_list, aria-label: "tag" %>
+      <%= text_field_tag :tag_list, label: "tag" %>
     <% end %>
     <%= submit_tag "Search"%>
   <% end %>

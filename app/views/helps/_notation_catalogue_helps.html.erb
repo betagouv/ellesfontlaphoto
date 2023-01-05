@@ -13,8 +13,8 @@
 
   <%= form_tag notation_catalogues_path, id: "notation-catalogue-helps", method: :post, remote: true,
       data: { notationcatalogue_target: 'form' } do %>
-    <%= text_field_tag :answer, params[:answer], aria-label: "réponse" %>
-    <%= text_field_tag :catalogue, "Aides", aria-label: "aides" %>
+    <%= text_field_tag :answer, params[:answer], label: "réponse" %>
+    <%= text_field_tag :catalogue, "Aides", label: "aides" %>
     <%= submit_tag "Search" %>
   <% end %>
 </div>
