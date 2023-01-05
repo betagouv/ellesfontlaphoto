@@ -19,7 +19,7 @@ scaleway:
   # Do not forget to hide your secrets
   secret_access_key: <%= ENV['SCALEWAY_SECRET_ACCESS_KEY_ID'] %>
   region: fr-par # Your bucket region, here it's Paris
-  bucket: <%= ENV['SCALEWAY_BUCKET_NAME'] %> # Your bucket name
+  bucket: "revuedossier" # Your bucket name
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
