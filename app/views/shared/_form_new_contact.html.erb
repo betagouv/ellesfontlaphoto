@@ -1,6 +1,5 @@
 <div data-contact-target="content">
   <%= simple_form_for [contact], url: contacts_path, method: :post, data: {contact_target:"form"} do |f| %>
-    <%= invisible_captcha %>
     <%= f.input :contact_type,
                   as: :select,
                   label: "Objet",
