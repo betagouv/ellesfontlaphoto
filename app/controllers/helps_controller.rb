@@ -53,6 +53,7 @@ class HelpsController < ApplicationController
     @dossier_grade = @dossier_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count.to_f).round()
     @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count
     @dispositif_grade = @dispositif_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count.to_f).round()
+    @notification_help = NotificationHelp.new
     next_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
     if next_date.nil? || (next_date.start_date - Date.today).to_i > 2
       @help_status = "close"
