@@ -20,5 +20,6 @@ fr:
       notification_help:
         accept_cgu: La politique de confidentialité
       contact:
+        contact_email: Email
         accept_cgu: La politique de confidentialité
         comment: Votre message

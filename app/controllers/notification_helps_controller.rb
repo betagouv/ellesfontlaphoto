@@ -9,6 +9,7 @@ class NotificationHelpsController < ApplicationController
           format.text { render partial: 'notification_helps/done', formats: [:html] }
         end
       else
+        @error_cgu = true unless @notification_help.accept_cgu
         unless NotificationHelp.where(help: @help, email: params[:notification_help][:email]).empty?
           respond_to do |format|
             format.html { render redirect_to helps_path(@help) }
@@ -17,7 +18,7 @@ class NotificationHelpsController < ApplicationController
         else
           respond_to do |format|
             format.html { render redirect_to helps_path(@help) }
-            format.text { render partial: 'notification_helps/notification_helps_modal', locals: { help: @help, error_save: true }, formats: [:html] }
+            format.text { render partial: 'notification_helps/notification_helps_modal', locals: { help: @help, error_cgu: @error_cgu }, formats: [:html] }
           end
         end
       end

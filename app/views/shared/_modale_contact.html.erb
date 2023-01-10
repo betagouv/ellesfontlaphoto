@@ -6,7 +6,7 @@
     </a>
     <div class="modal-content">
       <p class="subtitle"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-large" %> Nous écrire</p>
-        <%= render "shared/form_new_contact", contact: contact %>
+        <%= render "shared/form_new_contact", contact: contact, error_cgu: @error_cgu %>
     </div>
   </div>
 </div>

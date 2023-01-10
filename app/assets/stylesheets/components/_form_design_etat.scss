@@ -13,22 +13,16 @@
       text-align: left;
     }
 
-    // .input-error {
-    //   border-color: #D52941;
-    // }
-
-    // .display-error {
-    //   display: block;
-    //   color: #D52941;
-    // }
-
-    .invalid-feedback {
-      display: none;
+    .invalid-cgu {
+      width: 100%;
+      font-size: 0.875em;
+      color: #dc3545;
+      text-align: left;
     }
 
-    // .undisplay-error {
-    //   display: none;
-    // }
+    .invalid-feedback {
+      text-align: left;
+    }
 
     label {
       font-family: "Marianne", sans-serif;
@@ -59,13 +53,13 @@
       font-size: 14px;
       line-height: 1.42857143;
       background-color: $very-light-grey;
-      vertical-align: middle;
       border-radius: 0;
     }
     .form-check {
       display: flex;
       align-items: center;
-      padding: 0.7rem;
+      padding-left: 0.7rem;
+      margin: 0;
       label {
         margin-left: 10px;
       }
@@ -98,6 +92,7 @@
           width: 20px;
           margin: 0;
           margin-right: 10px;
+          margin-top: 10px;
         }
       }
     }

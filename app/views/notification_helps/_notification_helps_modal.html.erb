@@ -3,22 +3,16 @@
   <p class="paragraphe">Nous vous enverrons un message le jour de l’ouverture des candidatures, il vous rappelera cette page et où candidater !</p>
   <%= simple_form_for @notification_help, id: "notification-help-form", remote: true,
       data: {notificationhelp_target: 'form'} do |f| %>
-       <% if f.object.errors.any? %>
-        <div id="error_explanation">
-          <% f.object.errors.full_messages.each do |msg| %>
-            * <%= msg %><br>
-          <% end %>
-          <br>
-        </div>
-      <% end %>
       <%= f.input :email, required: true %>
-      <div class="form-check checkbox">
-        <%= f.input :accept_cgu, label: false, required: true %>
-        <div class="invalid-feedback">blabl</div>
+      <div class="form-check checkbox mt10">
+        <%= f.input :accept_cgu, label: false, required: true, error: false %>
         <%= f.label :accept_cgu do %>
-          J'accepte la <%= link_to 'politique de confidentialité', politique_confidentialite_path %>
+          J'accepte la <%= link_to 'politique de confidentialité', politique_confidentialite_path %> *
         <% end %>
       </div>
+      <% if @error_cgu %>
+        <div class="invalid-cgu">Vous devez valider la politique de confidentialité</div>
+      <% end %>
     <%= f.input :help_id, input_html: {value: help.id}, as: :hidden %>
     <div class="btn-div">
       <%= f.submit "S'inscrire", data: {action: "click->notificationhelp#create"}, class: "btn btn-purple" %>
