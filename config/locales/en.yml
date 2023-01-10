@@ -5,7 +5,7 @@ fr:
         author_email: "Votre email"
         candidate_url: "Le lien de l'appel à candidatures"
         help_amount: "Le(s) gain(s) pour les lauréates"
-        type_list: "Le type d’aide"
+        type_list: "Le type d'aide"
         description: "La description"
         title: "Le nom de votre aide"
       candidature_date:
@@ -17,3 +17,9 @@ fr:
         points_faibles: "Ce champ"
         accept_partage_email: "Ce champ"
         case_attachment: "Votre dossier doit être en format pdf actuellement il y"
+      notification_help:
+        accept_cgu: La politique de confidentialité
+      contact:
+        contact_email: Email
+        accept_cgu: La politique de confidentialité
+        comment: Votre message

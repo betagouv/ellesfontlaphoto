@@ -1,0 +1,12 @@
+<!-- MODAL NEWSLETTER -->
+<div id="modal-newsletter" class="modal" data-controller="contact">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content">
+      <p class="subtitle"><%= image_tag "emojis/enveloppe-coeur.png", alt: "émoji enveloppe", class: "emojis-eflc-large" %> S'abonner à l'infolettre</p>
+      <%= render "shared/form_newsletter", contact: @contact, error_cgu: @error_cgu %>
+    </div>
+  </div>
+</div>

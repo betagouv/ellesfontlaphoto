@@ -12,7 +12,12 @@
             <% end %>
           </div>
         </div>
-        <div class="c100 p<%= organization.expos_parity.to_i %> center">
+        <%= organization.expos_parity.to_i >= 50 %>
+        <% if organization.expos_parity.to_i >= 50 %>
+          <div class="c100 p<%= organization.expos_parity.to_i %> center purple">
+        <% else %>
+          <div class="c100 p<%= organization.expos_parity.to_i %> center orange">
+        <% end %>
           <span><%= organization.expos_parity.to_i %> %</span>
           <div class="slice">
             <div class="bar"></div>

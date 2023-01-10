@@ -1,4 +1,7 @@
 .rencontre {
+  .btn {
+    padding: 8px 12px 12px;
+  }
   .div-liens-rencontre {
     padding: 5% 10%;
     h1 {
@@ -33,7 +36,7 @@
 
   .webinaires-rencontre {
     background-color: $black;
-    padding: 10%;
+    padding: 7% 10%;
     .spectral-title,.paragraphe {
       color: $white;
     }

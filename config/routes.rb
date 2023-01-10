@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "infographie", to: 'pages#infographie'
 
   resources :contacts, only: :create
+  post "contact/newsletter", to: "contacts#create_newsletter", as: "create_newsletter"
   get "/helps/confirm", to: "helps#confirm"
   get "/organizations/:id/add_request_info", to: "organizations#add_request_info"
   get "aides/ajouter-aide", to: "helps#new"

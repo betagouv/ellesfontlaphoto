@@ -1,0 +1,12 @@
+<!-- MODAL CONTACT -->
+<div id="modal-contact" class="modal" data-controller="contact">
+  <div class="modal-inner">
+    <a class="js-close-modal">
+      <p class="cross">&times;</p>
+    </a>
+    <div class="modal-content">
+      <p class="subtitle"><%= image_tag "emojis/crayon.png", alt: "émoji crayon", class: "emojis-eflc-large" %> Nous écrire</p>
+        <%= render "shared/form_new_contact", contact: contact, error_cgu: @error_cgu %>
+    </div>
+  </div>
+</div>

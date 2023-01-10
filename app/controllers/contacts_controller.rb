@@ -1,16 +1,40 @@
 class ContactsController < ApplicationController
-  invisible_captcha only: [:create]
+  def create_newsletter
+    @contact = Contact.new(contacts_params)
+    @error_cgu = false
+    unless @contact.contact_email == "foo-bar@example.com"
+      if @contact.save
+        add_to_sendinblue_list(@contact.contact_email)
+        respond_to do |format|
+          format.html { render redirect_to root_path }
+          format.text { render partial: 'shared/modale_contact_done', locals: { contact: @contact, error_save: true }, formats: [:html] }
+        end
+      else
+        @error_cgu = true unless @contact.accept_cgu
+        p @error_cgu
+        respond_to do |format|
+          format.html { render redirect_to root_path }
+          format.text { render partial: 'shared/form_newsletter', locals: { contact: @contact, error_cgu: @error_cgu }, formats: [:html] }
+        end
+      end
+    end
+  end
 
   def create
-    unless params[:email].present?
-      @contact = Contact.new(contacts_params)
-      unless @contact.contact_email == "foo-bar@example.com"
-        if @contact.contact_type == "newsletter"
-          add_to_sendinblue_list(@contact.contact_email)
-          redirect_to root_path(anchor: 'contact'), alert: 'Votre demande a bien été prise en compte.'
-        else
-          ContactMailer.new_contact(@contact).deliver_later
-          redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'
+    @contact = Contact.new(contacts_params)
+    @error_cgu = false
+    unless @contact.contact_email == "foo-bar@example.com"
+      if @contact.save
+        ContactMailer.new_contact(@contact).deliver_later
+        respond_to do |format|
+          format.html { render redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'}
+          format.text { render partial: 'shared/modale_contact_done', formats: [:html] }
+        end
+      else
+        @error_cgu = true unless @contact.accept_cgu
+        respond_to do |format|
+          format.html { render redirect_to root_path }
+          format.text { render partial: 'shared/form_new_contact', locals: { contact: @contact, error_cgu: @error_cgu }, formats: [:html] }
         end
       end
     end
@@ -22,7 +46,8 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(
       :contact_email,
       :contact_type,
-      :comment
+      :comment,
+      :accept_cgu
       )
   end
 
@@ -32,7 +57,6 @@ class ContactsController < ApplicationController
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    email = email
     list_id = 57
     request = Net::HTTP::Post.new(url)
     request['accept'] = 'application/json'

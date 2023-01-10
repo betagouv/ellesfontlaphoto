@@ -1,6 +1,6 @@
 <div class="sticky" data-controller="filter-helps" data-filter-helps-target="divNewEval">
   <p class="cross" data-action="click->show-filters#close">&times;</p>
-  <p class="main-bold-paragraphe text-align-center mt0">Filtrer</p>
+  <h3 class="main-bold-paragraphe text-align-center mt0">Filtrer</h3>
   <p class="paragraphe-small text-align-center mt10">Votre besoin</p>
   <p class="button-criteria">
     <% Help::HELP_TYPE.each do |type| %>
@@ -84,19 +84,19 @@
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
     <% if @selected.present? %>
-      <%= text_field_tag :residence, params[:residence], value: @selected %>
+      <%= text_field_tag :residence, params[:residence], value: @selected, label: "résidence" %>
     <% else %>
-      <%= text_field_tag :residence, params[:residence] %>
+      <%= text_field_tag :residence, params[:residence], label: "résidence" %>
     <% end %>
     <% if @selected_photo_type.present? %>
-      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type %>
+      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type, label: "type de photographie" %>
     <% else %>
-      <%= text_field_tag :type_photo, params[:type_photo] %>
+      <%= text_field_tag :type_photo, params[:type_photo], label: "type de photographie" %>
     <% end %>
     <% if @selected_type.present? %>
-      <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" } %>
+      <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" }, label: "type d'aide" %>
     <% else %>
-      <%= text_field_tag :type_list, params[:type_list], data: { filter_helps_target: "inputType" } %>
+      <%= text_field_tag :type_list, params[:type_list], data: { filter_helps_target: "inputType" }, label: "type d'aide" %>
     <% end %>
     <%= submit_tag "Search" %>
   <% end %>
