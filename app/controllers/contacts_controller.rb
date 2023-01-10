@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
     @error_cgu = false
     unless @contact.contact_email == "foo-bar@example.com"
       if @contact.save
-        # add_to_sendinblue_list(@contact.contact_email)
+        add_to_sendinblue_list(@contact.contact_email)
         respond_to do |format|
           format.html { render redirect_to root_path }
           format.text { render partial: 'shared/modale_contact_done', locals: { contact: @contact, error_save: true }, formats: [:html] }
@@ -25,7 +25,7 @@ class ContactsController < ApplicationController
     @error_cgu = false
     unless @contact.contact_email == "foo-bar@example.com"
       if @contact.save
-        # ContactMailer.new_contact(@contact).deliver_later
+        ContactMailer.new_contact(@contact).deliver_later
         respond_to do |format|
           format.html { render redirect_to root_path(anchor: 'contact'), notice: 'Votre demande a bien été prise en compte.'}
           format.text { render partial: 'shared/modale_contact_done', formats: [:html] }
