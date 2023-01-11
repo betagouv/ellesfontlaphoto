@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  min-height: 29.2em;
+  min-height: 30em;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -15,8 +15,8 @@
     background-color: transparent;
     .flip-card-front {
       .card-organization-name {
-        min-height: 230px;
-        padding: 7% 7% 0 7%;
+        min-height: 200px;
+        padding: 5% 7% 0 7%;
 
         .paragraphe-bold {
           font-size: 22px;
@@ -37,7 +37,7 @@
           display: flex;
           justify-content: space-around;
           align-items: center;
-          margin: 25px 0 15px;
+          margin: 25px 0;
           min-height: 50px;
 
           img {
@@ -47,68 +47,32 @@
         }
       }
 
-      .weather-bubble {
-        border-radius: 50%;
-        width: 84px;
-        height: 84px;
-        margin: 25px auto 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-
-        .emoji-weather {
-          max-height: 80%;
-          max-width: 80%;
-        }
-      }
-
-      .weather-bubble.rain {
-        background-color: $dark-orange;
-      }
-
-      .weather-bubble.sun {
-        background-color: $filter-purple;
-      }
-
-      .weather-bubble.cloud {
-        background: #FFAB2D;
-      }
-
       .card-organization-numbers {
         text-align: center;
-        padding: 20px 0 24px;
+        padding: 20px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         position: inherit;
         bottom: 0;
         width: 100%;
-
-        .paragraphe {
-          white-space: pre-wrap;
-          padding: 0;
-          margin: 0;
-        }
-
-        .paragraphe-grey {
-          color: $grey-input;
-        }
-
-        .paragraphe-bold {
+        mark {
+          font-family: 'Marianne-Medium';
           font-size: 16px;
+          line-height: 140%;
+          height: 1.15em;
         }
-      }
-
-      .card-organization-numbers.rain {
-        background-color: rgba(244, 88, 0, 0.4);
-      }
-
-      .card-organization-numbers.cloud {
-        background-color: rgba(255, 171, 45, 0.4);
-      }
-
-      .card-organization-numbers.sun {
-        background-color: rgba(107, 72, 244, 0.4);
+        .purple {
+          padding: 0;
+          background-color: $purple-index;
+          background: linear-gradient(to top, $purple-index 80%, transparent 50%);
+        }
+        .orange {
+          padding: 0;
+          background: linear-gradient(to top, $orange-index 80%, transparent 50%);
+        }
+        .paragraphe-grey {
+          color: #757575;
+        }
       }
     }
 
@@ -230,11 +194,6 @@
               line-height: 20px;
             }
           }
-        }
-        .weather-bubble {
-          width: 74px;
-          height: 74px;
-          margin: 5px auto 20px;
         }
       }
       .flip-card-back {
