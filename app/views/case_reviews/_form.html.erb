@@ -18,7 +18,7 @@
   <p class="paragraphe-small red" data-upload-case-target="errorEmail">Votre Email n'est pas valide</p>
   <%= f.input :message, label: "Message", as: :text, input_html: { :cols => 5, :rows => 6 }, placeholder: "Description de votre travail, demande de retours particuliers..."%>
   <%= f.input :valid_conditions, label: "Je m'engage à respecter la confidentialité du travail qui me sera transmis et partager mes retours sous 15 jours.", input_html: { data: {upload_case_target: "conditionsinput", action: "change->upload-case#disableButton"}} %>
-  <div class="form-check checkbox">
+  <div class="form-check checkbox flex-div">
     <%= f.input :valid_cgu, label: false, input_html: { data: {upload_case_target: "engagementinput", action: "change->upload-case#disableButton"}} %>
     <%= f.label :valid_cgu do %>
       J'accepte la <%= link_to 'politique de confidentialité', politique_confidentialite_path %>
