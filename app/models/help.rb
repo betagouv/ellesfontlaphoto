@@ -14,6 +14,7 @@ class Help < ApplicationRecord
   validates :candidate_url, presence: true
   validates :type_list, presence: true, unless: :from_api
   validates :author_email, presence: true, if: :suggested
+  validates :accept_cgu, presence: true, if: :suggested
 
   PARITE = [
     "respectée",

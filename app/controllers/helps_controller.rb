@@ -53,6 +53,7 @@ class HelpsController < ApplicationController
     @dossier_grade = @dossier_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dossier) / @dossier_grades_count.to_f).round()
     @dispositif_grades_count = @help.evaluation_helps.where.not(eval_dispositif: nil).count
     @dispositif_grade = @dispositif_grades_count == 0 ? nil : (@help.evaluation_helps.sum(:eval_dispositif) / @dispositif_grades_count.to_f).round()
+    @notification_help = NotificationHelp.new
     next_date = @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
     if next_date.nil? || (next_date.start_date - Date.today).to_i > 2
       @help_status = "close"
@@ -80,6 +81,7 @@ class HelpsController < ApplicationController
       HelpMailer.new_help(@help).deliver_later
       redirect_to helps_confirm_path
     else
+      @error_cgu = !@help.accept_cgu
       render :new
     end
   end
@@ -90,13 +92,13 @@ class HelpsController < ApplicationController
   private
 
   def help_params
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :accept_cgu, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
       help_param.require(:author_email)
     end
   end
 
   def help_params_permanent
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :accept_cgu) do |help_param|
       help_param.require(:author_email)
     end
   end

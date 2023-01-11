@@ -32,7 +32,7 @@
         <div class="first-block-card-infos light-orange">
           <%= image_tag 'community.svg', alt: 'picto Entraide et rencontres' %>
           <h3 class="first-block-card-infos-title">Entraide et rencontres</h3>
-          <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses paires, revue de dossiers et portfolios</p>
+          <p class="paragraphe first-block-card-infos-text">Être conseillée ou conseiller ses pairs, revue de dossiers et portfolios</p>
         </div>
         <%= image_tag "arrow-line.svg", class: "arrow-first-block-card", alt: "flèche" %>
       </div>
@@ -118,4 +118,5 @@
   </div>
 </div>
 
-<%= render "shared/modales_contact" %>
+<%= render "shared/modale_contact", contact: @contact %>
+<%= render "shared/modale_newsletter", contact: @contact %>
