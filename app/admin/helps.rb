@@ -95,6 +95,7 @@ ActiveAdmin.register Help do
       row :parentality
       row :accessibility
       row :author_email
+      row :accept_cgu
       row :created_at
       row :updated_at
     end
@@ -263,6 +264,7 @@ ActiveAdmin.register Help do
     column :description_longue
     column :permanent
     column :open
+    column :accept_cgu
   end
 
 end
