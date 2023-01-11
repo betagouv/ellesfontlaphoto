@@ -42,7 +42,15 @@
       <%= f.input :parentality, label: "Précisez les conditions d'accueil des familles (enfant, conjoint)" %>
       <%= f.input :accessibility, label: "Précisez les conditions d'accès aux personnes à mobilité réduite" %>
       <%= f.input :residence_time, label: "Durée de la résidence" %>
-
+      <div class="div-cgu">
+        <%= f.input :accept_cgu, label: false, error: false %>
+        <%= f.label :accept_cgu do %>
+          J'accepte la <%= link_to 'politique de confidentialité', politique_confidentialite_path %> *
+        <% end %>
+      </div>
+      <% if @error_cgu %>
+        <p class="invalid-cgu">Vous devez valider la politique de confidentialité</p>
+      <% end %>
       <div class="btn-submit">
         <%= f.submit "Soumettre", class: "btn btn-black"%>
       </div>

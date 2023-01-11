@@ -61,6 +61,22 @@
         margin-top: 5px;
       }
 
+      .div-cgu {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        label {
+          margin-left: 10px;
+        }
+      }
+
+      .invalid-cgu {
+        width: 100%;
+        font-size: 0.875em;
+        color: #dc3545;
+        text-align: left;
+      }
+
       .form-check-input:checked {
         background-color: $purple;
         border-color: $purple;
