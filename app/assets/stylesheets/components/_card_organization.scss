@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  min-height: 30em;
+  min-height: 23.5em;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -15,8 +15,8 @@
     background-color: transparent;
     .flip-card-front {
       .card-organization-name {
-        min-height: 200px;
-        padding: 5% 7% 0 7%;
+        min-height: 130px;
+        padding: 7% 7% 5% 7%;
 
         .paragraphe-bold {
           font-size: 22px;
@@ -169,14 +169,14 @@
 
 @media only screen and (max-width: 750px) {
   .box {
-    min-height: 26.5em;
+    min-height: 23em;
     .box-in {
       height: auto;
       .flip-card-front {
         margin: 15px auto 0;
-        min-height: 24.5em;
+        min-height: 23em;
         .card-organization-name {
-          min-height: 180px;
+          min-height: 90px;
           padding: 0;
           .paragraphe-bold {
             text-overflow: ellipsis;
@@ -199,7 +199,7 @@
       }
       .flip-card-back {
         padding: 12px 10px;
-        min-height: 25.5em;
+        min-height: 23em;
         .div-ensavoirplus {
           .main-paragraphe {
             font-size: 18px;

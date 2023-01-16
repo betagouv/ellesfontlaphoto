@@ -5,11 +5,11 @@
         <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
           <div>
             <p class="paragraphe-bold"><%= organization.name %><% unless organization.city.blank? %>, <span class="paragraphe"><%= organization.city %></span><% end %></p>
-            <% if organization.logo.attached? %>
-              <div class="flex-div">
-                <%= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
-              </div>
-            <% end %>
+            <%# if organization.logo.attached? %>
+              <%# <div class="flex-div"> %>
+                <%#= cl_image_tag organization.logo.key, alt: "logo #{organization.name}"%>
+              <%# </div> %>
+            <%# end %>
           </div>
         </div>
         <% if organization.expos_parity.to_i >= 50 %>
