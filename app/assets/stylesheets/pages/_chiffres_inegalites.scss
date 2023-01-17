@@ -39,6 +39,25 @@
       }
     }
   }
+  .legendes {
+    margin-top: 40px;
+    ul {
+      display: flex;
+      justify-content: center;
+      li.orange {
+        color: $orange-index;
+        margin-right: 40px;
+        list-style: url("index/legende-orange.svg");
+      }
+      li.purple {
+        color: $purple-index;
+        list-style: url("index/legende-violet.svg");
+      }
+      li span {
+        margin-left: 5px;
+      }
+    }
+  }
   .paragraphe-small {
     color: white;
     text-align: center;
@@ -64,7 +83,7 @@
     }
   }
   .cards-organizations {
-    margin-top: 40px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 16px;

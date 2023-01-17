@@ -17,6 +17,12 @@
       </div>
     <% end %>
   </div>
+  <div class="legendes">
+    <ul>
+      <li class="orange"><span>moins de 50% de femmes exposées</span></li>
+      <li class="purple"><span>plus de 50% de femmes exposées</span></li>
+    </ul>
+  </div>
   <div class="cards-organizations" data-search-organizations-target="list">
     <%= render "organizations/card_organization", organizations: @organizations %>
   </div>
