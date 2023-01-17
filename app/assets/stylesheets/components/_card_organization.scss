@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  min-height: 23.5em;
+  min-height: 24.5em;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -169,12 +169,12 @@
 
 @media only screen and (max-width: 750px) {
   .box {
-    min-height: 23em;
+    min-height: 17.5em;
     .box-in {
       height: auto;
       .flip-card-front {
-        margin: 15px auto 0;
-        min-height: 23em;
+        margin: 0 auto 0;
+        min-height: 17.5em;
         .card-organization-name {
           min-height: 90px;
           padding: 0;
@@ -196,13 +196,26 @@
             }
           }
         }
+        .card-organization-numbers {
+          padding: 0;
+          hr {
+            margin: 0.7rem 0;
+          }
+          mark,.paragraphe-grey {
+            font-size: 14px;
+          }
+        }
       }
       .flip-card-back {
         padding: 12px 10px;
-        min-height: 23em;
+        min-height: 17.5em;
+        .div-cross.cross {
+          margin-bottom: 0;
+        }
         .div-ensavoirplus {
+          margin: 5%;
           .main-paragraphe {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 30px;
           }
           .btn-white {
