@@ -9,9 +9,6 @@
 }
 .case_review_new {
   background-color: $hover-purple;
-  .spectral-title.responsive {
-    display: none;
-  }
   .paragraphe-small.red {
     display: none;
     color: red;
@@ -19,16 +16,11 @@
   .div_case_review_new {
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding: 6% 10%;
     position: relative;
     display: flex;
-    .illu-femme {
-      position: absolute;
-      right: 40%;
-      bottom: 0;
-    }
     .consignes {
       width: 50%;
+      padding: 6% 10% 6% 5%;
       .spectral-title {
         margin: 40px 0 40px 0;
         text-align: left;
@@ -53,189 +45,191 @@
         }
       }
     }
-    .form-new-case-reviews {
-      width: 40%;
-      background-color: $white;
-      box-shadow: 0px 4px 12px rgba(0, 0, 18, 0.32);
-      border-radius: 10px;
-      padding: 30px;
-      min-height: 578px;
-      form {
-        abbr {
-          text-decoration: none;
-        }
-        .div-telechargement {
-          display: flex;
-          align-items: center;
-          margin-bottom: 30px;
-          .main-paragraphe-medium {
-            margin-left: 20px;
+    .div-photo-form {
+      background-image: url("aides/accompagnement.png");
+      padding: 6% 5% 6% 10%;
+      width: 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      .form-new-case-reviews {
+        width: 90%;
+        margin: 0 auto;
+        background-color: $white;
+        box-shadow: 0px 4px 12px rgba(0, 0, 18, 0.32);
+        border-radius: 10px;
+        padding: 30px;
+        min-height: 578px;
+        form {
+          abbr {
+            text-decoration: none;
           }
-        }
-        .dossier-telechargement {
-          display: none;
-          background-color: $very-light-purple;
-          padding: 20px 40px 20px 20px;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 30px;
-          .dossier-name {
-            margin: 0 0 0 15px;
-            font-family: 'Marianne-Regular', sans-serif;
-            font-size: 16px;
-            color: $filter-purple;
-            width: 280px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+          .div-telechargement {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            .main-paragraphe-medium {
+              margin-left: 20px;
+            }
           }
-          .cross-dossier {
-            cursor: pointer;
+          .dossier-telechargement {
+            display: none;
+            background-color: $very-light-purple;
+            padding: 20px 40px 20px 20px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            .dossier-name {
+              margin: 0 0 0 15px;
+              font-family: 'Marianne-Regular', sans-serif;
+              font-size: 16px;
+              color: $filter-purple;
+              width: 280px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .cross-dossier {
+              cursor: pointer;
+            }
           }
-        }
 
-        .link-ajout-dossier {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          .icone-ajout-dossier {
-            background-image: url("ajout-dossier.svg");
-            width: 76px;
-            height: 76px;
-          }
-          &:hover {
+          .link-ajout-dossier {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
             .icone-ajout-dossier {
-              background-image: url("ajout-dossier-hover.svg");
+              background-image: url("ajout-dossier.svg");
+              width: 76px;
+              height: 76px;
+            }
+            &:hover {
+              .icone-ajout-dossier {
+                background-image: url("ajout-dossier-hover.svg");
+              }
+            }
+          }
+          .form-check.checkbox {
+            // display: flex;
+            align-items: center;
+            padding:0;
+            margin:0;
+            a {
+              text-decoration: underline !important;
+              color: #6B48F4 !important;
+            }
+          }
+          .form-check {
+            label {
+              font-size: 12px;
+              width: 90%;
+              margin-left: 20px;
+              margin-top: 2px;
+            }
+          }
+          input[type=checkbox] {
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            border: solid 1px #000;
+            width: 25px;
+            height: 25px;
+            font-size: 14px;
+            &:checked {
+              background-color: $purple-blue;
+               background-image: url("validate-white.svg");
+               background-size: 60%;
+               border: none;
+            }
+          }
+
+          input[type=text],
+          input[type=email],
+          textarea {
+            border: none;
+            border-bottom: 1px solid $black;
+            font-family: "Marianne", sans-serif;
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: 40px;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            background-color: $very-light-grey;
+            border-radius: 0;
+          }
+          textarea {
+            min-height: 150px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .case_review_new {
+    .div_case_review_new {
+      .div-photo-form {
+        padding: 10% 3%;
+        .form-new-case-reviews {
+          width: 100%;
+          min-height: 578px;
+          padding: 40px 20px;
+          .main-paragraphe-medium {
+            white-space: nowrap;
+            margin-left: 10px;
+          }
+          form {
+            .div-telechargement .main-paragraphe-medium {
+              text-align: left;
+              white-space: normal;
+              margin-bottom: 0;
+            }
+            .link-ajout-dossier .icone-ajout-dossier {
+              background-image: url("ajout-dossier-responsive.svg");
+              width: 62px;
+              height: 62px;
+              &:hover {
+                background-image: url("ajout-dossier-responsive.svg");
+              }
             }
           }
         }
-        .form-check.checkbox {
-          // display: flex;
-          align-items: center;
-          padding:0;
-          margin:0;
-          a {
-            text-decoration: underline !important;
-            color: #6B48F4 !important;
-          }
-        }
-        .form-check {
-          label {
-            font-size: 12px;
-            width: 90%;
-            margin-left: 20px;
-            margin-top: 2px;
-          }
-        }
-        input[type=checkbox] {
-          border-radius: 4px;
-          background-color: #FFFFFF;
-          border: solid 1px #000;
-          width: 25px;
-          height: 25px;
-          font-size: 14px;
-          &:checked {
-            background-color: $purple-blue;
-             background-image: url("validate-white.svg");
-             background-size: 60%;
-             border: none;
-          }
-        }
-
-        input[type=text],
-        input[type=email],
-        textarea {
-          border: none;
-          border-bottom: 1px solid $black;
-          font-family: "Marianne", sans-serif;
-          display: block;
-          box-sizing: border-box;
-          width: 100%;
-          height: 40px;
-          padding: 8px 12px;
-          margin-bottom: 10px;
-          margin-top: 10px;
-          font-size: 14px;
-          line-height: 1.42857143;
-          background-color: $very-light-grey;
-          border-radius: 0;
-        }
-        textarea {
-          min-height: 150px;
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1470px) {
-  .case_review_new .div_case_review_new .illu-femme {
-    right: 37%;
-  }
-}
-@media only screen and (max-width: 1250px) {
-  .case_review_new {
-    padding: 5% 0 0;
-    .spectral-title.responsive {
-      display: block;
-      padding: 5% 0 0%;
-    }
-    .div_case_review_new {
-      padding: 5%;
-      .form-new-case-reviews {
-        width: 55%;
-        min-height: 578px;
-        .main-paragraphe-medium {
-          white-space: nowrap;
-          margin-left: 10px;
-        }
       }
       .consignes {
-        width: 40%;
-        .spectral-title {
-          display: none;
-        }
-      }
-      .illu-femme {
-        right: 10%;
-        bottom: 0;
+        width: 50%;
+        padding: 10% 3%;
       }
     }
   }
 }
 @media only screen and (max-width: 750px) {
   .case_review_new {
-    .spectral-title.responsive {
-      padding: 10% 0 0%;
-    }
     .div_case_review_new {
       display: block;
-      padding: 8% 5% 0;
-      .form-new-case-reviews {
-        min-height: 586px;
-        padding: 10% 5%;
-        form {
-          .div-telechargement .main-paragraphe-medium {
-            text-align: left;
-            white-space: normal;
-            margin-bottom: 0;
-          }
-          .link-ajout-dossier .icone-ajout-dossier {
-            background-image: url("ajout-dossier-responsive.svg");
-            width: 62px;
-            height: 62px;
-            &:hover {
-              background-image: url("ajout-dossier-responsive.svg");
-            }
-          }
+      padding: 0;
+      .div-photo-form {
+        width: 100%;
+        padding: 15% 5%;
+        .form-new-case-reviews {
+          min-height: 586px;
+          padding: 10% 5%;
         }
       }
       .consignes {
-        margin-bottom: 10%;
+        padding: 5%;
+        .spectral-title {
+          margin: 20px 0 20px 0;
+        }
         .paragraphe {
           text-align: left;
           line-height: 30px;
+        }
+        .sub-consignes .arrow-div {
+          display: none;
         }
       }
       .form-new-case-reviews,.consignes {
@@ -243,10 +237,6 @@
         form .dossier-telechargement {
           padding: 20px;
         }
-      }
-      .illu-femme {
-        position: static;
-        margin: 10% 0 0 20%;
       }
     }
   }

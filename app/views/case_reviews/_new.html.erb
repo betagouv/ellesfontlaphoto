@@ -1,5 +1,4 @@
 <div class="case_review_new">
-  <p class="spectral-title responsive">Besoin de retours sur votre travail photographique ? </p>
   <div class="div_case_review_new">
     <div class="consignes">
       <h6 class="spectral-title">Besoin de retours sur votre travail photographique ? </h6>
@@ -17,21 +16,21 @@
       </div>
       <p class="paragraphe-x-small">*Les binômes sont constitués aléatoirement, indépendamment de l'expérience ou du type de photographie pratiqué.</p>
     </div>
-
-    <div class="form-new-case-reviews" data-controller="upload-case" data-upload-case-target="div">
-      <div data-upload-case-target="divform">
-        <%= render "case_reviews/form" %>
-      </div>
-      <div data-upload-case-target="loader" class="loader-upload-new flex-div justify-center">
-        <div class="d-flex align-center justify-center">
-          <div class="p-relative">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-            <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
-          </div>
+    <div class="div-photo-form">
+      <div class="form-new-case-reviews" data-controller="upload-case" data-upload-case-target="div">
+        <div data-upload-case-target="divform">
+          <%= render "case_reviews/form" %>
         </div>
-        <p class="paragraphe text-align-center">Dépôt en cours</p>
+        <div data-upload-case-target="loader" class="loader-upload-new flex-div justify-center">
+          <div class="d-flex align-center justify-center">
+            <div class="p-relative">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+              <div data-upload-case-target="count" class="count spectral-italic"><p class=""></p><p>%</p></div>
+            </div>
+          </div>
+          <p class="paragraphe text-align-center">Dépôt en cours</p>
+        </div>
       </div>
     </div>
-    <%= image_tag "illu-femme-stylo.png", class: "illu-femme", alt: "Illustration femme portant un crayon" %>
   </div>
 </div>
