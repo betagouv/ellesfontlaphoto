@@ -1,11 +1,68 @@
 .div-index-parite {
   background-color: $black;
   padding: 3% 10%;
+  .div-search-form {
+    gap: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    .div-input-form {
+      position: relative;
+      input[type=text] {
+        background-color: $black;
+        border-color: $purple;
+        color: $white;
+        border-radius: 44px;
+        padding: 10px 50px 10px 15px;
+        width: 270px;
+      }
+      .btn-purple {
+        right: 0;
+        top: 0;
+        position: absolute;
+        padding: 11px 23px;
+        &:hover {
+          background-color: $white !important;
+        }
+      }
+      .btn-purple.croix {
+        background-color: $white !important;
+        background: url("cross-dossier.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .btn-purple.loupe {
+        background-color: $purple !important;
+        background: url("loupe.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  .legendes {
+    margin-top: 40px;
+    ul {
+      display: flex;
+      justify-content: center;
+      li.orange {
+        color: $orange-index;
+        margin-right: 40px;
+        list-style: url("index/legende-orange.svg");
+      }
+      li.purple {
+        color: $purple-index;
+        list-style: url("index/legende-violet.svg");
+      }
+      li span {
+        margin-left: 5px;
+      }
+    }
+  }
   .paragraphe-small {
     color: white;
     text-align: center;
     width: 80%;
-    margin: 7% auto 5%;
+    margin: 7% auto 3%;
   }
   .div-title-index-parite {
     margin: 3% auto;
@@ -25,13 +82,8 @@
       text-align: center;
     }
   }
-  .btn-outlined-white {
-    padding-bottom: 12px;
-    padding-top: 8px;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
   .cards-organizations {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
@@ -40,7 +92,7 @@
 
 .redirection-infographie {
   background-color: #181818;
-  padding: 5% 0 7%;
+  padding: 3% 0 5%;
   .redirection-infographie-title {
     margin: 0 auto;
     width: 60%;
@@ -106,6 +158,16 @@
 @media only screen and (max-width: 750px) {
   .div-index-parite {
     padding: 3%;
+    .div-search-form {
+      display: block;
+      .btn.btn-white {
+        margin: 40px auto 25px auto;
+      }
+      .search-form {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
     .cards-organizations {
       grid-template-columns: 1fr 1fr;
     }
@@ -121,6 +183,9 @@
           line-height: 24px;
         }
       }
+    }
+    .paragraphe-small {
+      margin: 17% auto 5%;
     }
   }
   .redirection-infographie {
@@ -140,4 +205,3 @@
 @media only screen and (min-width: 1600px) {
 
 }
-

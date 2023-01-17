@@ -1,7 +1,18 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.where(visible: true).order("total_nb_expos DESC NULLS LAST")
     @contact = Contact.new
+    if params[:query].present?
+      @searched = true
+      sql_query = "name ILIKE :query OR organization_type ILIKE :query"
+      @organizations = Organization.where(sql_query, query: "%#{params[:query]}%").order("name")
+    else
+      @searched = false
+      @organizations = Organization.where(visible: true).order("name")
+    end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "card_organization", locals: {organizations: @organizations}, formats: [:html] }
+    end
   end
 
   def new

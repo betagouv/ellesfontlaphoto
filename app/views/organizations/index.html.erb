@@ -1,15 +1,30 @@
-<div class="div-index-parite">
+<div class="div-index-parite" data-controller="search-organizations">
   <div class="div-title-index-parite">
     <h1 class="title-marianne">Index parité : <span class="spectral-title"> structures et festivals photo</span></h1>
     <p class="paragraphe">Cet outil a pour objectif d’apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s’appuie sur les données collectées par le ministère de la Culture pour la<span style="color: #FFB648;"> période 2021-2022</span>.</p>
   </div>
-  <div class="flex-div justify-center">
-    <%= link_to "Renseigner des chiffres", "https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-outlined-white" %>
-  </div>
-  <div class="cards-organizations">
-    <% @organizations.each do |organization| %>
-      <%= render "organizations/card_organization", organization: organization %>
+  <div class="div-search-form">
+    <%= link_to "Renseigner des chiffres", "https://startupdetat.typeform.com/to/qQzzDy9Z", target: :_blank, class: "btn btn-white" %>
+    <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
+      <div class="div-input-form">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Rechercher une structure",
+          data: { search_organizations_target: "input"}
+        %>
+        <%= submit_tag "", class: "btn btn-purple #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>
+      </div>
     <% end %>
+  </div>
+  <div class="legendes">
+    <ul>
+      <li class="orange"><span>moins de 50% de femmes exposées</span></li>
+      <li class="purple"><span>plus de 50% de femmes exposées</span></li>
+    </ul>
+  </div>
+  <div class="cards-organizations" data-search-organizations-target="list">
+    <%= render "organizations/card_organization", organizations: @organizations %>
   </div>
   <p class="paragraphe-small">Source : Ministère de la Culture, Secrétariat général, Deps-doc/dgca, Département de la photographie, 2022. Dernières données communiquées pour la période 2021-2022 (Année 2022 pour les directions de structures et de festivals, année 2021 pour le nombre de femmes exposées dans les structures et année 2022 pour le nombre de femmes exposées dans les festivals). Le code couleur et la météo sont basés sur le pourcentage de femmes exposées : de 0 à 39% la vignette sera pluvieuse et rouge, de 40 à 49% orange et nuageuse; et au dessus de 50% violette et ensoleillée. La proportion de femmes dirigeantes n'est pas prise en compte dans ce calcul.</p>
 </div>
