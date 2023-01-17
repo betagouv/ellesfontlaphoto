@@ -16,7 +16,7 @@
 
   <%= f.input :candidate_email, label: "Votre e-mail", input_html: { data: {upload_case_target: "emailinput", action: "change->upload-case#disableButton change->upload-case#checkEmail"}} %>
   <p class="paragraphe-small red" data-upload-case-target="errorEmail">Votre Email n'est pas valide</p>
-  <%= f.input :message, label: "Message", as: :text, input_html: { :cols => 5, :rows => 6 }, placeholder: "Description de votre travail, demande de retours particuliers..."%>
+  <%= f.input :message, label: "Message pour votre binôme", as: :text, input_html: { :cols => 5, :rows => 6 }, placeholder: "Description de votre travail, demande de retours particuliers..."%>
   <%= f.input :valid_conditions, label: "Je m'engage à respecter la confidentialité du travail qui me sera transmis et partager mes retours sous 15 jours.", input_html: { data: {upload_case_target: "conditionsinput", action: "change->upload-case#disableButton"}} %>
   <div class="form-check checkbox flex-div">
     <%= f.input :valid_cgu, label: false, input_html: { data: {upload_case_target: "engagementinput", action: "change->upload-case#disableButton"}} %>
