@@ -171,10 +171,9 @@
   .box {
     min-height: 17.5em;
     .box-in {
-      height: auto;
       .flip-card-front {
         margin: 0 auto 0;
-        min-height: 17.5em;
+        min-height: 16.5em;
         .card-organization-name {
           min-height: 90px;
           padding: 0;
@@ -208,7 +207,7 @@
       }
       .flip-card-back {
         padding: 12px 10px;
-        min-height: 17.5em;
+        min-height: 16.5em;
         .div-cross.cross {
           margin-bottom: 0;
         }
