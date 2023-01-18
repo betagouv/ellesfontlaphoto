@@ -517,8 +517,8 @@
           padding-bottom: 2%;
           margin-right: 0;
           .main-bold-paragraphe {
-            padding: 5% 2%;
-            text-align: center;
+            margin: 5%;
+            text-align: left;
             font-size: 14px !important;
             line-height: 20px !important;
           }
@@ -541,8 +541,10 @@
                 line-height : 15px;
               }
               ul {
-                padding: 0 20px;
                 line-height: 15px;
+                li {
+                  font-size: 12px;
+                }
               }
             }
           }

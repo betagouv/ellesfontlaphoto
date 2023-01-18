@@ -104,11 +104,6 @@
           li {
             font-size: 14px;
             line-height: 18px;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            font-family: 'Marianne-Regular', sans-serif;
           }
         }
       }
@@ -271,7 +266,7 @@
           ul {
             padding: 0;
             li {
-              font-size: 12px;
+              font-size: 14px;
               -webkit-line-clamp: 2;
             }
           }
