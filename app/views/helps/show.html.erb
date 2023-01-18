@@ -150,10 +150,14 @@
     <div class="block-fiche-aide block-fiche-aide-piece">
       <div>
         <p class="subtitle">Pièces à fournir</p>
-        <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
-        <%= @help.admin_attachment.html_safe %>
-        <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
-        <%= @help.artistic_attachment.html_safe %>
+        <% if @help.admin_attachment.present? %>
+          <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
+          <%= @help.admin_attachment.html_safe %>
+        <% end %>
+        <% if @help.artistic_attachment.present? %>
+          <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
+          <%= @help.artistic_attachment.html_safe %>
+        <% end %>
       </div>
       <div>
         <% if @help.other_attachment.present? %>

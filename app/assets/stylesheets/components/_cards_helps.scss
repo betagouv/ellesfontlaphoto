@@ -86,25 +86,31 @@
 
     .main-bold-paragraphe {
       text-align: left;
-      padding: 12% 12%;
-      margin-bottom: 0;
+      margin: 12%;
     }
 
     .sub-card-index-helps-infos {
       padding: 0 12%;
       transition: transform .3s ease-out;
       background-color: $white;
-      ul {
-        margin-top: 0;
-        font-size: 14px;
-        line-height: 20px;
-      }
-
       .gains-text,.conditions-text {
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
+        ul {
+          margin: 0;
+          padding: 0;
+          li {
+            font-size: 14px;
+            line-height: 18px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            font-family: 'Marianne-Regular', sans-serif;
+          }
+        }
       }
       .paragraphe-general-condition {
         margin-top: 15px;
@@ -275,4 +281,3 @@
     display: inline;
   }
 }
-

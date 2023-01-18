@@ -10,7 +10,9 @@ namespace :candidature_dates do
   task update: :environment do
     puts "updating start_date end_date in helps"
     Help.all.each do |help|
+      p help.id
       next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
+      p next_date
       if help.permanent?
         help.update(start_date: Date.today + 31.days, end_date: Date.today + 31.days)
       elsif next_date.nil? || next_date.end_date < Date.today || help.end_date < Date.today
