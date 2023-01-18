@@ -153,6 +153,12 @@
         min-width: 22%;
         margin-right: 40px;
         padding-bottom: 3%;
+        .sub-card-index-helps .main-bold-paragraphe {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
         .flottante-div .flottante {
           display: none !important;
         }
@@ -164,6 +170,15 @@
         height: fit-content;
         a .flottante-div {
           display: none;
+        }
+        .card-index-conseils-videos-div,.card-index-conseils-articles-div {
+          .main-bold-paragraphe {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+          }
         }
         .card-index-conseils-videos-div {
           padding: 2% 0;
@@ -502,8 +517,8 @@
           padding-bottom: 2%;
           margin-right: 0;
           .main-bold-paragraphe {
-            padding: 5% 2%;
-            text-align: center;
+            margin: 5%;
+            text-align: left;
             font-size: 14px !important;
             line-height: 20px !important;
           }
@@ -526,8 +541,10 @@
                 line-height : 15px;
               }
               ul {
-                padding: 0 20px;
                 line-height: 15px;
+                li {
+                  font-size: 12px;
+                }
               }
             }
           }
@@ -550,6 +567,10 @@
           }
           .card-index-conseils-videos-div,.card-index-conseils-articles-div {
             padding: 2%;
+            .main-bold-paragraphe {
+              font-size: 14px;
+              line-height: 20px;
+            }
             .cards-videos-info,p {
               max-height: 194px !important;
               font-size: 12px;
