@@ -96,7 +96,7 @@
       .gains-text,.conditions-text {
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 5;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         ul {
           margin: 0;
@@ -265,6 +265,16 @@
       .sub-card-index-helps-infos {
         .paragraphe {
           text-align: left;
+        }
+        .gains-text,.conditions-text {
+          -webkit-line-clamp: 2;
+          ul {
+            padding: 0;
+            li {
+              font-size: 12px;
+              -webkit-line-clamp: 2;
+            }
+          }
         }
       }
     }
