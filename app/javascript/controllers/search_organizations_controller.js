@@ -5,6 +5,7 @@ export default class extends Controller {
 
   clear(event) {
     event.preventDefault()
+    console.log(this.boutonTarget.classList.contains("croix"))
     if (this.boutonTarget.classList.contains("croix")) {
       this.inputTarget.value = ""
       this.boutonTarget.classList.remove("croix")
@@ -20,5 +21,13 @@ export default class extends Controller {
       .then((data) => {
         this.listTarget.innerHTML = data
       })
+  }
+
+  check() {
+    console.log(this.inputTarget.value)
+    if (this.inputTarget.value == "") {
+      this.boutonTarget.classList.remove("croix")
+      this.boutonTarget.classList.add("loupe")
+    }
   }
 }
