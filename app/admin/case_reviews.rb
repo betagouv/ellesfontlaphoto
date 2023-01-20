@@ -4,8 +4,6 @@ ActiveAdmin.register CaseReview do
     column "Email Candidate", :candidate_email
     column "Email Évaluatrice", :reviewer_email
     column "Statut", :status
-    column "Points Forts", :points_forts
-    column "Points Faibles", :points_faibles
     column "Date d'inscription", :creation_binome do |obj|
       obj.created_at.strftime("%B %d, %Y %H:%M")
     end
@@ -27,8 +25,11 @@ ActiveAdmin.register CaseReview do
       row :candidate_email
       row :reviewer_email
       row :status
-      row "POints", :points_forts
-      row :points_faibles
+      row :message
+      row "points forts", :points_forts
+      row "points faibles", :points_faibles
+      row :autres
+      row :valid_cgu
       row "Date d'inscription", :creation_binome do |obj|
         obj.created_at.strftime("%B %d, %Y %H:%M")
       end
