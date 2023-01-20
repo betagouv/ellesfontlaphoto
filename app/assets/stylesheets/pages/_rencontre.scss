@@ -242,18 +242,18 @@
 
 @media only screen and (max-width: 750px) {
   .rencontre {
-    .title-marianne {
-      margin-top: 7%;
-      text-align: center !important;
-      min-width: 100%;
-      line-height: 45px;
-      font-size: 30px;
-    }
     .spectral-title {
       font-size: 34px;
       line-height: 45px;
     }
     .div-liens-rencontre {
+      .title-marianne {
+        margin-top: 7%;
+        text-align: center !important;
+        min-width: 100%;
+        line-height: 45px;
+        font-size: 30px;
+      }
       display: block;
       .liens-rencontre {
         text-align: center;

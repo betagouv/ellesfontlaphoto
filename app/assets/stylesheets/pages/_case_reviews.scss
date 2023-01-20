@@ -20,7 +20,7 @@
     display: flex;
     .consignes {
       width: 50%;
-      padding: 6% 10% 6% 5%;
+      padding: 9% 10% 6% 5%;
       .spectral-title {
         margin: 40px 0 40px 0;
         text-align: left;
@@ -46,7 +46,7 @@
       }
     }
     .div-photo-form {
-      background-image: url("aides/accompagnement.png");
+      background-image: url("Accompagnement.png");
       padding: 6% 5% 6% 10%;
       width: 50%;
       background-size: cover;
@@ -214,6 +214,10 @@
       .div-photo-form {
         width: 100%;
         padding: 15% 5%;
+<<<<<<< HEAD
+=======
+        background-image: url("Accompagnement-mobile.png");
+>>>>>>> master
         .form-new-case-reviews {
           min-height: 586px;
           padding: 10% 5%;
