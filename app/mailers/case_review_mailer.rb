@@ -7,14 +7,14 @@ class CaseReviewMailer < ApplicationMailer
     mail(to: candidate, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - Inscription confirmée')
   end
 
-  def relance_j2(case_review)
+  def relance_j13(case_review)
     @case_review = case_review
     mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - plus que 2 jours pour partager vos retours !')
   end
 
   def relance_j7(case_review)
     @case_review = case_review
-    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - votre binôme attend votre retour !')
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - plus que 7 jours pour partager vos retours !')
   end
 
   def send_case_review(case_review)
@@ -37,5 +37,21 @@ class CaseReviewMailer < ApplicationMailer
   def send_feedbacks(case_review)
     @case_review = case_review
     mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - donnez votre avis sur votre expérience !')
+  end
+
+  def send_suppression_compte(case_review)
+    mail(to: case_review.reviewer_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - suppression de votre compte')
+  end
+
+  def send_attribution_nouveau_binome(case_review)
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - suppression de votre compte')
+  end
+
+  def send_attente_feedback(case_review)
+    @case_review = case_review
+    @reviewer = case_review.reviewer_email
+    case_attachment = URI.open(case_review.case_attachment.url)
+    attachments['dossier.pdf'] = File.read(case_attachment)
+    mail(to: @reviewer, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - votre binôme attend vos retours !')
   end
 end

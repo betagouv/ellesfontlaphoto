@@ -18,6 +18,7 @@ fr:
         accept_partage_email: "Ce champ"
         status: "Statut"
         case_attachment: "Votre dossier doit être en format pdf actuellement il y"
+        review_comment: "Fichier joint avec retour"
       notification_help:
         accept_cgu: La politique de confidentialité
       contact:
