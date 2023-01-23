@@ -13,8 +13,8 @@ fr:
         start_date: "La date de début de candidature"
       case_review:
         candidate_email: "Votre email"
-        points_forts: "Ce champ"
-        points_faibles: "Ce champ"
+        points_forts: "Les points forts"
+        points_faibles: "Les points faibles"
         accept_partage_email: "Ce champ"
         case_attachment: "Votre dossier doit être en format pdf actuellement il y"
       notification_help:
