@@ -4,17 +4,17 @@ class CaseReviewMailer < ApplicationMailer
 
   def confirm(candidate)
     @candidate = candidate
-    mail(to: candidate, subject: 'Revue de dossiers - Inscription confirmée')
+    mail(to: candidate, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - Inscription confirmée')
   end
 
   def relance_j2(case_review)
     @case_review = case_review
-    mail(to: case_review.candidate_email, subject: 'Revue de dossiers - plus que 2 jours pour partager vos retours !')
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - plus que 2 jours pour partager vos retours !')
   end
 
   def relance_j7(case_review)
     @case_review = case_review
-    mail(to: case_review.candidate_email, subject: 'Revue de dossiers - votre binôme attend votre retour !')
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - votre binôme attend votre retour !')
   end
 
   def send_case_review(case_review)
@@ -22,7 +22,7 @@ class CaseReviewMailer < ApplicationMailer
     @reviewer = case_review.reviewer_email
     case_attachment = URI.open(case_review.case_attachment.url)
     attachments['dossier.pdf'] = File.read(case_attachment)
-    mail(to: @reviewer, subject: 'Revue de dossiers - À vous de jouer !')
+    mail(to: @reviewer, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - À vous de jouer !')
   end
 
   def send_feedback_form(case_review)
@@ -31,11 +31,11 @@ class CaseReviewMailer < ApplicationMailer
       attachment = URI.open(case_review.review_comment.url)
       attachments[case_review.review_comment.filename.to_s] = File.read(attachment)
     end
-    mail(to: @case_review.candidate_email, subject: 'Revue de dossiers - découvrez les retours de votre binôme !')
+    mail(to: @case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - découvrez les retours de votre binôme !')
   end
 
   def send_feedbacks(case_review)
     @case_review = case_review
-    mail(to: case_review.candidate_email, subject: 'Revue de dossiers - donnez votre avis sur votre expérience !')
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - donnez votre avis sur votre expérience !')
   end
 end
