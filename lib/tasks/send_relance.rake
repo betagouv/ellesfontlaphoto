@@ -18,11 +18,11 @@ namespace :send_relance do
 
     archived = CaseReview.where(status: "En attente de revue", creation_binome: Date.today - 15)
     archived.each do |archive|
-      deleted = CaseReview.where(candidate_email: archive.reviewer_email, reviewer_email: case_review.candidate_email)
-      deleted.update(status: 'Revue non effectuée')
-      archive.update(status: 'En attente de binôme', creation_binome: nil)
-      CaseReviewMailer.send_suppression_compte(deleted).deliver_now
-      CaseReviewMailer.send_attribution_nouveau_binome(archive).deliver_now
+      reassign = CaseReview.where(candidate_email: archive.reviewer_email, reviewer_email: archive.candidate_email).first
+      archive.update(status: 'Revue non effectuée')
+      reassign.en_attente_de_binome
+      CaseReviewMailer.send_suppression_compte(archive).deliver_now
+      CaseReviewMailer.send_attribution_nouveau_binome(reassign).deliver_now
     end
   end
 end
