@@ -30,8 +30,6 @@
   border-radius: 50%;
   float: left;
   background-color: transparent;
-  border: 1px solid #B1B1B1;
-  margin: 0 30% 20px;
 }
 
 .c100 *, .c100 *:before, .c100 *:after {
@@ -46,29 +44,20 @@
 
 .c100 > span {
   position: absolute;
-  width: 100%;
-  z-index: 1;
+  border-radius: 50%;
+  border: 1px solid #B1B1B1;
+  height: 4.5em;
+  width: 4.5em;
+  position: absolute;
+  top: 6px;
+  z-index: -1;
   left: 0;
-  top: 0;
-  width: 5em;
-  line-height: 5em;
+  line-height: 4.5em;
   font-size: 0.2em;
   color: $black;
   display: block;
   text-align: center;
   white-space: nowrap;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
 .c100:after {
   position: absolute;
@@ -80,18 +69,6 @@
   background-color: transparent;
   width: 0.72em;
   height: 0.72em;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
 }
 .c100 .slice {
   position: absolute;
@@ -711,6 +688,9 @@
 @media only screen and (max-width: 750px) {
   .c100 {
     font-size: 70px;
-    margin: 0 30% 10px;
+    margin-bottom: 10px;
+    span {
+      top: 3px;
+    }
   }
 }

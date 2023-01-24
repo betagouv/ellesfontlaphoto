@@ -10,29 +10,30 @@
       position: relative;
       input[type=text] {
         background-color: $black;
-        border-color: $purple;
+        border-color: $purple-index;
         color: $white;
         border-radius: 44px;
         padding: 10px 50px 10px 15px;
         width: 270px;
       }
-      .btn-purple {
+      .btn-purple-index {
         right: 0;
         top: 0;
         position: absolute;
         padding: 11px 23px;
+        background-color: $purple-index;
         &:hover {
           background-color: $white !important;
         }
       }
-      .btn-purple.croix {
+      .btn-purple-index.croix {
         background-color: $white !important;
         background: url("cross-dossier.svg");
         background-repeat: no-repeat;
         background-position: center;
       }
-      .btn-purple.loupe {
-        background-color: $purple !important;
+      .btn-purple-index.loupe {
+        background-color: $purple-index !important;
         background: url("loupe.svg");
         background-repeat: no-repeat;
         background-position: center;
@@ -44,9 +45,9 @@
     ul {
       display: flex;
       justify-content: center;
+      gap: 40px;
       li.orange {
         color: $orange-index;
-        margin-right: 40px;
         list-style: url("index/legende-orange.svg");
       }
       li.purple {
@@ -166,6 +167,12 @@
       .search-form {
         justify-content: center;
         margin-bottom: 30px;
+      }
+    }
+    ul {
+      gap: 15px;
+      li.orange,li.purple {
+        width: 50%;
       }
     }
     .cards-organizations {
