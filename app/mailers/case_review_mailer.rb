@@ -44,7 +44,7 @@ class CaseReviewMailer < ApplicationMailer
   end
 
   def send_attribution_nouveau_binome(case_review)
-    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - suppression de votre compte')
+    mail(to: case_review.candidate_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: "Revue de dossiers - Revue de dossiers - attribution d'un nouveau binôme")
   end
 
   def send_attente_feedback(case_review)
