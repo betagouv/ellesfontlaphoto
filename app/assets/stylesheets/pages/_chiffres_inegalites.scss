@@ -21,10 +21,6 @@
         top: 0;
         position: absolute;
         padding: 11px 23px;
-        background-color: $purple-index;
-        &:hover {
-          background-color: $white !important;
-        }
       }
       .btn-purple-index.croix {
         background-color: $white !important;
@@ -37,6 +33,9 @@
         background: url("loupe.svg");
         background-repeat: no-repeat;
         background-position: center;
+        &:hover {
+          background-color: $white !important;
+        }
       }
     }
   }
