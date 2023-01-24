@@ -26,10 +26,13 @@ ActiveAdmin.register CaseReview do
       row :reviewer_email
       row :status
       row :message
-      row "points forts", :points_forts
-      row "points faibles", :points_faibles
+      row :points_forts
+      row :points_faibles
       row :autres
       row :valid_cgu
+      row :review_comment do |obj|
+        obj.review_comment.attached?
+      end
       row "Date d'inscription", :creation_binome do |obj|
         obj.created_at.strftime("%B %d, %Y %H:%M")
       end

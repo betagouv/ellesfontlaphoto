@@ -48,12 +48,14 @@ class CaseReviewsController < ApplicationController
     case_review.update(case_review_params_edit)
     case_review.update(accept_partage_email: true) if params[:case_review][:accept_partage_email] == "oui"
     case_review.update(accept_partage_email: false) if params[:case_review][:accept_partage_email] == "non"
-    case_reviewer = CaseReview.where(candidate_email: case_review.reviewer_email ,reviewer_email: case_review.candidate_email).first
+    case_reviewer = CaseReview.where(candidate_email: case_review.reviewer_email, reviewer_email: case_review.candidate_email).first
     if case_reviewer.status == 'Revue'
       case_review.update(date_notation: Date.today)
       case_reviewer.update(date_notation: Date.today)
       CaseReviewMailer.send_feedback_form(case_review).deliver_later
       CaseReviewMailer.send_feedback_form(case_reviewer).deliver_later
+    else
+      CaseReviewMailer.send_attente_feedback(case_reviewer).deliver_later
     end
   end
 
