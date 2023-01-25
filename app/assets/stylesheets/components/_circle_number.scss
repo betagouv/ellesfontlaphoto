@@ -4,9 +4,9 @@
 
 .pie, .c100 .bar, .c100.p51 .fill, .c100.p52 .fill, .c100.p53 .fill, .c100.p54 .fill, .c100.p55 .fill, .c100.p56 .fill, .c100.p57 .fill, .c100.p58 .fill, .c100.p59 .fill, .c100.p60 .fill, .c100.p61 .fill, .c100.p62 .fill, .c100.p63 .fill, .c100.p64 .fill, .c100.p65 .fill, .c100.p66 .fill, .c100.p67 .fill, .c100.p68 .fill, .c100.p69 .fill, .c100.p70 .fill, .c100.p71 .fill, .c100.p72 .fill, .c100.p73 .fill, .c100.p74 .fill, .c100.p75 .fill, .c100.p76 .fill, .c100.p77 .fill, .c100.p78 .fill, .c100.p79 .fill, .c100.p80 .fill, .c100.p81 .fill, .c100.p82 .fill, .c100.p83 .fill, .c100.p84 .fill, .c100.p85 .fill, .c100.p86 .fill, .c100.p87 .fill, .c100.p88 .fill, .c100.p89 .fill, .c100.p90 .fill, .c100.p91 .fill, .c100.p92 .fill, .c100.p93 .fill, .c100.p94 .fill, .c100.p95 .fill, .c100.p96 .fill, .c100.p97 .fill, .c100.p98 .fill, .c100.p99 .fill, .c100.p100 .fill {
   position: absolute;
-  border: 0.14em solid #307bbb;
-  width: 0.72em;
-  height: 0.72em;
+  border: 0.10em solid #307bbb;
+  width: 0.66em;
+  height: 0.66em;
   clip: rect(0em, 0.5em, 1em, 0em);
   border-radius: 50%;
   -moz-transform: rotate(0deg);
@@ -46,29 +46,30 @@
   position: absolute;
   border-radius: 50%;
   border: 1px solid #B1B1B1;
-  height: 4.5em;
-  width: 4.5em;
+  height: 4.2em;
+  width: 4.2em;
   position: absolute;
   top: 6px;
   z-index: -1;
   left: 0;
-  line-height: 4.5em;
-  font-size: 0.2em;
+  line-height: 4.1em;
+  font-size: 22px;
   color: $black;
   display: block;
   text-align: center;
   white-space: nowrap;
 }
+
 .c100:after {
   position: absolute;
-  top: 0.14em;
-  left: 0.14em;
+  top: 0.1em;
+  left: 0.1em;
   display: block;
   content: " ";
   border-radius: 50%;
   background-color: transparent;
-  width: 0.72em;
-  height: 0.72em;
+  width: 0.65em;
+  height: 0.65em;
 }
 .c100 .slice {
   position: absolute;
