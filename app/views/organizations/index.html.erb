@@ -10,7 +10,7 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Rechercher une structure",
+          placeholder: "Rechercher structure, ville",
           data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
         %>
         <%= submit_tag "", class: "btn btn-purple-index #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>

@@ -40,9 +40,9 @@
             <% end %>
             <hr>
             <% if organization.nb_women_dir.blank? || organization.total_nb_dir.blank? %>
-              <p class="paragraphe-grey">dirigeante : inconnu</p>
+              <p class="paragraphe-grey">dirigeantes : inconnu</p>
             <% else %>
-              <p class="paragraphe-grey">dirigeante : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p>
+              <p class="paragraphe-grey"><%= "dirigeante".pluralize(organization.total_nb_dir) %> : <%= organization.nb_women_dir %> / <%= organization.total_nb_dir %></p>
             <% end %>
           </div>
         </div>
