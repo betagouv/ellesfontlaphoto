@@ -1,3 +1,18 @@
+.organization-no-result {
+  .no-result {
+    color: $purple-index;
+    font-family: 'Spectral', serif;
+    font-size: 47px;
+    text-align: center;
+    margin: 5% auto 0 auto;
+  }
+  .btn-purple-index {
+    background-color: $purple-index;
+    color: $black !important;
+    margin: 2% auto 0 auto;
+  }
+}
+
 .box {
   width: 100%;
   min-height: 24.5em;
@@ -17,7 +32,12 @@
       .card-organization-name {
         min-height: 130px;
         padding: 7% 7% 5% 7%;
-
+        .organization-name {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin: 0;
+          padding-bottom: 3px;
+        }
         .paragraphe-bold {
           font-size: 22px;
           margin-bottom: 0;

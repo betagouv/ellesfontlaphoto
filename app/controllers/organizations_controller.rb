@@ -9,9 +9,16 @@ class OrganizationsController < ApplicationController
       @searched = false
       @organizations = Organization.where(visible: true).order("name")
     end
-    respond_to do |format|
-      format.html
-      format.text { render partial: "card_organization", locals: {organizations: @organizations}, formats: [:html] }
+    if @organizations.empty?
+      respond_to do |format|
+        format.html
+        format.text { render partial: "no_result", locals: {query: params[:query]}, formats: [:html] }
+      end
+    else
+      respond_to do |format|
+        format.html
+        format.text { render partial: "card_organization", locals: {organizations: @organizations}, formats: [:html] }
+      end
     end
   end
 
