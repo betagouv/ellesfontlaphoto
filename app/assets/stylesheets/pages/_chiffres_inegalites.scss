@@ -168,10 +168,13 @@
         margin-bottom: 30px;
       }
     }
-    ul {
-      gap: 15px;
-      li.orange,li.purple {
-        width: 50%;
+    .legendes {
+      margin: 5% 14%;
+      ul {
+        display: block;
+        li.orange,li.purple {
+          width: 100%;
+        }
       }
     }
     .cards-organizations {

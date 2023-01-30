@@ -56,6 +56,9 @@
         position: inherit;
         bottom: 0;
         width: 100%;
+        hr {
+          margin: 13px 0;
+        }
         mark {
           font-family: 'Marianne-Medium';
           font-size: 16px;
@@ -65,11 +68,11 @@
         .purple {
           padding: 0;
           background-color: $purple-index;
-          background: linear-gradient(to top, $purple-index 80%, transparent 50%);
+          background: linear-gradient(to top, $purple-index 75%, transparent 50%);
         }
         .orange {
           padding: 0;
-          background: linear-gradient(to top, $orange-index 80%, transparent 50%);
+          background: linear-gradient(to top, $orange-index 75%, transparent 50%);
         }
         .paragraphe-grey {
           color: #757575;
