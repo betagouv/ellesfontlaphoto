@@ -30,6 +30,9 @@
         background: url("cross-dossier.svg");
         background-repeat: no-repeat;
         background-position: center;
+        &:hover {
+          background-color: $purple-index !important;
+        }
       }
       .btn-purple-index.loupe {
         background-color: $purple-index !important;
@@ -94,19 +97,19 @@
 }
 
 .redirection-infographie {
-  background-color: #181818;
+  background-color: $purple-index;
   padding: 3% 0 5%;
   .redirection-infographie-title {
     margin: 0 auto;
     width: 60%;
     .title {
-      color: white;
+      color: $black;
       text-align: center;
       font-size: 47px;
       line-height: 50px;
     }
   }
-  .btn-white {
+  .btn-black {
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -135,7 +138,6 @@
     .cards-organizations {
       grid-template-columns: 1fr 1fr 1fr;
       .card-organization .card-organization-name {
-        min-height: 130px;
         .paragraphe-bold {
           width: auto;
           white-space: normal;

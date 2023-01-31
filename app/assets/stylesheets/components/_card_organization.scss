@@ -30,14 +30,13 @@
     background-color: transparent;
     .flip-card-front {
       .card-organization-name {
-        min-height: 130px;
         padding: 7% 7% 5% 7%;
-        .organization-name {
-          text-overflow: ellipsis;
-          overflow: hidden;
-          margin: 0;
-          padding-bottom: 3px;
-        }
+        // .organization-name {
+        //   text-overflow: ellipsis;
+        //   overflow: hidden;
+        //   margin: 0;
+        //   padding-bottom: 3px;
+        // }
         .paragraphe-bold {
           font-size: 22px;
           margin-bottom: 0;
@@ -73,9 +72,9 @@
         padding: 20px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
-        position: inherit;
         bottom: 0;
         width: 100%;
+        position: absolute;
         hr {
           margin: 13px 0;
         }
@@ -96,6 +95,7 @@
         }
         .paragraphe-grey {
           color: #757575;
+          margin: 0;
         }
       }
     }
