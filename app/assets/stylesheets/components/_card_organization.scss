@@ -228,19 +228,19 @@
           font-size: 14px;
         }
       }
-    }
-    .flip-card-back {
-      .div-cross.cross {
-        margin-bottom: 0;
-      }
-      .div-ensavoirplus {
-        margin: 0 5% 5% 5%;
-        .main-paragraphe {
-          font-size: 16px;
-          line-height: 26px;
+      .flip-card-back {
+        padding: 10px;
+        .div-cross.cross {
+          margin-bottom: 0;
         }
-        .btn-white {
-          font-size: 14px;
+        .div-ensavoirplus {
+          .main-paragraphe {
+            font-size: 16px;
+            line-height: 26px;
+          }
+          .btn-white {
+            font-size: 14px;
+          }
         }
       }
     }
