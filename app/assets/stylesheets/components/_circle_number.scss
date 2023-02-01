@@ -25,8 +25,8 @@
 .c100 {
   position: relative;
   font-size: 120px;
-  width: 121px;
-  height: 121px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   float: left;
   background-color: transparent;
@@ -71,8 +71,9 @@
 }
 .c100 .slice {
   position: absolute;
-  width: 1em;
-  height: 1em;
+  bottom: -1px;
+  width: 120px;
+  height: 120px;
   clip: rect(0em, 1em, 1em, 0.5em);
 }
 .c100.p1 .bar {

@@ -13,6 +13,18 @@
   }
 }
 
+div {
+  color: #ffffff;
+}
+
+#flexible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-flow: column wrap;
+}
+
 .box {
   width: 100%;
   min-height: 24.5em;
@@ -29,14 +41,12 @@
     transition: all .8s;
     background-color: transparent;
     .flip-card-front {
+      height: 24.5em;
+      width: 100%;
+      display: flex;
+      flex-flow: column wrap;
       .card-organization-name {
         padding: 7% 7% 5% 7%;
-        // .organization-name {
-        //   text-overflow: ellipsis;
-        //   overflow: hidden;
-        //   margin: 0;
-        //   padding-bottom: 3px;
-        // }
         .paragraphe-bold {
           font-size: 22px;
           margin-bottom: 0;
@@ -69,14 +79,14 @@
 
       .card-organization-numbers {
         text-align: center;
-        padding: 20px 0;
+        padding: 15px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         bottom: 0;
         width: 100%;
-        position: absolute;
         hr {
           margin: 13px 0;
+          color: $black;
         }
         mark {
           font-family: 'Marianne-Medium';

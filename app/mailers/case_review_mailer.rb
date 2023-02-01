@@ -9,11 +9,15 @@ class CaseReviewMailer < ApplicationMailer
 
   def relance_j13(case_review)
     @case_review = case_review
+    case_attachment = URI.open(case_review.case_attachment.url)
+    attachments['dossier.pdf'] = File.read(case_attachment)
     mail(to: case_review.reviewer_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - plus que 2 jours pour partager vos retours !')
   end
 
   def relance_j7(case_review)
     @case_review = case_review
+    case_attachment = URI.open(case_review.case_attachment.url)
+    attachments['dossier.pdf'] = File.read(case_attachment)
     mail(to: case_review.reviewer_email, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - plus que 7 jours pour partager vos retours !')
   end
 
