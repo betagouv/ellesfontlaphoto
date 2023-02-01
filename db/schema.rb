@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_11_162557) do
+ActiveRecord::Schema.define(version: 2023_02_01_124141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 2023_01_11_162557) do
     t.text "points_faibles"
     t.string "lien_video"
     t.text "autres"
-    t.date "creation_binome"
-    t.date "date_notation"
+    t.datetime "creation_binome"
+    t.datetime "date_notation"
     t.text "message"
     t.boolean "valid_cgu", default: false
-    t.date "date_envoi_feedback"
+    t.datetime "date_envoi_feedback"
     t.boolean "valid_conditions", default: false
     t.boolean "accept_partage_email"
   end
