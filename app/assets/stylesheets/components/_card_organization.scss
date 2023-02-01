@@ -75,7 +75,7 @@
 
       .card-organization-numbers {
         text-align: center;
-        padding: 15px 0;
+        padding: 5% 0 15px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         bottom: 0;
@@ -198,10 +198,10 @@
 
 @media only screen and (max-width: 750px) {
   .box {
-    min-height: 21em;
+    min-height: 20em;
     .box-in {
       .flip-card-front {
-        height: 21em;
+        height: 20em;
         .card-organization-name {
           max-width: 100%;
           .paragraphe-bold {
@@ -223,6 +223,7 @@
       }
       .card-organization-numbers {
         padding: 10px 0;
+        font-size: 14px;
         mark,.paragraphe-grey {
           font-size: 14px;
         }
