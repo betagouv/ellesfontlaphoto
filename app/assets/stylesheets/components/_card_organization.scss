@@ -246,6 +246,17 @@
     }
   }
 }
+
+@media only screen and (min-width: 1950px) {
+  .box {
+    min-height: 26em;
+    .box-in {
+      .flip-card-front {
+        height: 26em;
+      }
+    }
+  }
+}
 // @media only screen and (max-width: 350px) {
 //   .box {
 //     min-height: 23.5em;
