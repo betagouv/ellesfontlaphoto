@@ -41,9 +41,6 @@ while result != []
   result = appel_projet["results"]
   result.each do |appel|
     if (appel["eztag_theme"].include? "Photographie") && (HelpApi.where(api_id: appel["id"]).empty?) && (Date.parse(appel["deadline"]) >= Date.today)
-      p appel
-      p (Date.parse(appel["deadline"]) >= Date.today)
-      p appel["deadline"]
       new_help = Help.new(
         visible: false,
         title: appel["title"],
@@ -64,4 +61,3 @@ while result != []
     end
   end
 end
-

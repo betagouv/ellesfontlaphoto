@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   def create_newsletter
     @contact = Contact.new(contacts_params)
     @error_cgu = false
-    unless @contact.contact_email == "foo-bar@example.com"
+    unless INVALID_EMAILS.includes?(@contact.contact_email)
       if @contact.save
         add_to_sendinblue_list(@contact.contact_email)
         respond_to do |format|
@@ -23,7 +23,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
     @error_cgu = false
-    unless @contact.contact_email == "foo-bar@example.com"
+    unless INVALID_EMAILS.includes?(@contact.contact_email)
       if @contact.save
         ContactMailer.new_contact(@contact).deliver_later
         respond_to do |format|

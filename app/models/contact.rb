@@ -4,4 +4,5 @@ class Contact < ApplicationRecord
   validates :comment, presence: true, if: -> { contact_type != 'newsletter' }
   validates :accept_cgu, presence: true
   validates :contact_email, presence: true
+  INVALID_EMAILS = ["foo-bar@example.com"]
 end

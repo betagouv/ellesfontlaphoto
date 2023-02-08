@@ -18,7 +18,13 @@ Création base de donnée en local:
 Lancer serveur en local:
 ``` rails s ```
 
-#### http://localhost:3000 is ready
+Compile les assets:
+``` webpack-dev-server ```
+
+Lance sidekiq:
+``` sidekiq ```
+
+#### http://localhost:3000 est prêt
 
 
 
