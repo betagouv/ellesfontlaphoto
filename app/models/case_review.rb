@@ -1,6 +1,9 @@
 class CaseReview < ApplicationRecord
   has_one_attached :case_attachment, service: :scaleway
   has_one_attached :review_comment, service: :scaleway
+  validates :case_attachment, attached: true, size: { less_than: 20.megabytes }
+  validates :review_comment, size: { less_than: 20.megabytes , message: 'est trop lourd et ne doit pas dépasser 20MB' }
+
   validates :points_faibles, presence: true, on: :review_case
   validates :points_forts, presence: true, on: :review_case
   # validates :accept_partage_email, presence: true, on: :review_case
@@ -8,7 +11,6 @@ class CaseReview < ApplicationRecord
   validates :accept_partage_email, inclusion: { in: [true, false] }, on: :review_case
   validates :candidate_email, uniqueness: { scope: :reviewer_email }
   validates :status, inclusion: { in: ['En attente de binôme', 'En attente de revue', 'Revue', 'Revue non effectuée'] }
-
   validates :candidate_email, presence: true, format: { with: /\A\S+@.+\.\S+\z/ }
 
   def en_attente_de_binome

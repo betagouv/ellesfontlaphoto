@@ -12,6 +12,9 @@
     </div>
     <%= image_tag "cross-dossier.svg", alt: "supprimer téléchargement", data: {upload_case_target:"cross", action: "click->upload-case#delete keyup->upload-case#disableButton"}, class:"cross-dossier", onmouseover:"this.src='#{asset_path("cross-dossier-hover.svg")}'", onmouseout:"this.src='#{asset_path("cross-dossier.svg")}'" %>
   </div>
+  <% if @case_review.errors.map(&:type).include?(:file_size_out_of_range) %>
+    <p class="paragraphe-small red d-block">Votre dossier est trop lourd, réessayez avec un poids inférieur ou égal à 20Mo </p>
+  <% end %>
   <input id="case_review_case" name='case_review[case_attachment]' type="file" style="display:none;" data-action="change->upload-case#upload">
 
   <%= f.input :candidate_email, label: "Votre e-mail", input_html: { data: {upload_case_target: "emailinput", action: "change->upload-case#disableButton change->upload-case#checkEmail"}} %>
