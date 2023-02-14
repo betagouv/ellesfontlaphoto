@@ -6,7 +6,6 @@ class CaseReview < ApplicationRecord
 
   validates :points_faibles, presence: true, on: :review_case
   validates :points_forts, presence: true, on: :review_case
-  # validates :accept_partage_email, presence: true, on: :review_case
   validates :case_attachment, presence: true
   validates :accept_partage_email, inclusion: { in: [true, false] }, on: :review_case
   validates :candidate_email, uniqueness: { scope: :reviewer_email }
