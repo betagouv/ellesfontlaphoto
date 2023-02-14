@@ -1,7 +1,7 @@
 class CaseReview < ApplicationRecord
   has_one_attached :case_attachment, service: :scaleway
   has_one_attached :review_comment, service: :scaleway
-  validates :case_attachment, attached: true, size: { less_than: 20.megabytes }
+  validates :case_attachment, size: { less_than: 20.megabytes }
   validates :review_comment, size: { less_than: 20.megabytes , message: 'est trop lourd et ne doit pas dépasser 20MB' }
 
   validates :points_faibles, presence: true, on: :review_case
