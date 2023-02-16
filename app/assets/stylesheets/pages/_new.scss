@@ -77,6 +77,10 @@
         text-align: left;
       }
 
+      .form-check-input {
+        cursor: pointer;
+      }
+
       .form-check-input:checked {
         background-color: $purple;
         border-color: $purple;

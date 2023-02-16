@@ -63,12 +63,18 @@
           abbr {
             text-decoration: none;
           }
-          .div-telechargement {
-            display: flex;
-            align-items: center;
+          .form-check-input {
+            cursor: pointer;
+          }
+
+          .div-div-telechargement {
             margin-bottom: 30px;
-            .main-paragraphe-medium {
-              margin-left: 20px;
+            .div-telechargement {
+              display: flex;
+              align-items: center;
+              .main-paragraphe-medium {
+                margin-left: 20px;
+              }
             }
           }
           .dossier-telechargement {
@@ -77,7 +83,6 @@
             padding: 20px 40px 20px 20px;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
             .dossier-name {
               margin: 0 0 0 15px;
               font-family: 'Marianne-Regular', sans-serif;
@@ -183,10 +188,12 @@
             margin-left: 10px;
           }
           form {
+            .div-div-telechargement {
+              margin-bottom: 0;
+            }
             .div-telechargement .main-paragraphe-medium {
               text-align: left;
               white-space: normal;
-              margin-bottom: 0;
             }
             .link-ajout-dossier .icone-ajout-dossier {
               background-image: url("ajout-dossier-responsive.svg");

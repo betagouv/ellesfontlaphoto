@@ -16,13 +16,13 @@ namespace :send_relance do
       CaseReviewMailer.send_feedbacks(feedback).deliver_now
     end
 
-    archived = CaseReview.where(status: "En attente de revue", creation_binome: Date.today - 15)
-    archived.each do |archive|
-      reassign = CaseReview.where(candidate_email: archive.reviewer_email, reviewer_email: archive.candidate_email).first
-      archive.update(status: 'Revue non effectuée')
-      reassign.en_attente_de_binome
-      CaseReviewMailer.send_suppression_compte(archive).deliver_now
-      CaseReviewMailer.send_attribution_nouveau_binome(reassign).deliver_now
+    to_reassigns = CaseReview.where(status: "En attente de revue", creation_binome: Date.today - 15)
+    to_reassigns.each do |to_reassign|
+      archived = CaseReview.where(candidate_email: to_reassign.reviewer_email, reviewer_email: to_reassign.candidate_email).first
+      archived.update(status: 'Revue non effectuée')
+      to_reassign.en_attente_de_binome
+      CaseReviewMailer.send_suppression_compte(archived).deliver_now
+      CaseReviewMailer.send_attribution_nouveau_binome(to_reassign).deliver_now
     end
   end
 end

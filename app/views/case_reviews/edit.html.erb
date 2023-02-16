@@ -12,7 +12,10 @@
         <p class="paragraphe label">Partager un fichier</p>
         <%= f.label :review_comment, "Sélectionner", class: "btn btn-black", data: {edit_case_target:"label"} %>
       </div>
-      <%= f.input :review_comment, as: :file, label: false, class:"mt5", input_html: { style: "display: none", data: {action:"change->edit-case#upload"} }, hint: "Vous pouvez transmettre tous types de fichiers (taille maximale : 1KO). Exemples : fichier audio (format .mp3) enregistré à partir de l’enregistreur vocal de votre ordinateur ou de votre téléphone, propositions de mises en page, exemples de dossiers..."%>
+      <%= f.input :review_comment, as: :file, label: false, class:"mt5", input_html: { style: "display: none", data: {action:"change->edit-case#upload"} }, hint: "Vous pouvez transmettre tous types de fichiers (taille maximale : 2OMO). Exemples : fichier audio (format .mp3) enregistré à partir de l’enregistreur vocal de votre ordinateur ou de votre téléphone, propositions de mises en page, exemples de dossiers..."%>
+      <% if @case_review.errors.map(&:type).include?(:file_size_out_of_range) %>
+        <p class="invalid-feedback d-block">Votre fichier est trop lourd, réessayez avec un poids inférieur ou égal à 20Mo </p>
+      <% end %>
 
       <%= f.input :autres, label: "Avez-vous autre chose à partager ?" %>
 
