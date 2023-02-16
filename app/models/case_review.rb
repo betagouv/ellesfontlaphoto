@@ -1,7 +1,7 @@
 class CaseReview < ApplicationRecord
   has_one_attached :case_attachment, service: :scaleway
   has_one_attached :review_comment, service: :scaleway
-  validate :acceptable_dossier
+  validate :acceptable_dossier, on: :create
   validate :acceptable_dossier_comment, on: :review_case
 
   validates :points_faibles, presence: true, on: :review_case
