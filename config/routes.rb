@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "mentions_legales", to: 'pages#mentions_legales'
   get "ajouter-ressources", to: 'pages#ajouter_ressources'
   get "proposer-aide", to: 'pages#proposer_aide'
+  get "renseigner-chiffres", to: 'pages#renseigner_chiffres'
   get "entraide", to: 'pages#entraide'
   get "infographie", to: 'pages#infographie'
 
