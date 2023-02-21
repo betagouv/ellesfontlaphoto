@@ -23,7 +23,7 @@
     <hr class="hl-mobile">
     <div class="fiche-description">
       <p class="paragraphe-bold mb0"><%= image_tag "emojis/gain.png", alt: "émoji gains",class: "emojis-eflc-small" %> Gains :</p>
-      <div class="paragraphe lh28 mt0 mb40">
+      <div class="paragraphe lh28 mt0">
         <%= @help.help_amount.html_safe %>
         <% if @help.help_advantage.present? %>
           <%= @help.help_advantage %>
@@ -46,7 +46,7 @@
               <%= @help.regularity %>
             <% end %>
           </p>
-          <p class="paragraphe lh28 mt0 mb40">
+          <p class="paragraphe lh28 mt0">
             <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
               Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
             <% end %>
@@ -69,7 +69,7 @@
           <% end %></p>
         <% end %>
         <% if @help.general_condition.present? %>
-            <p class="paragraphe mt0 mb40"><%= @help.general_condition.html_safe %></p>
+            <div class="paragraphe mt0"><%= @help.general_condition.html_safe %></div>
         <% end %>
       <% end %>
     </div>
@@ -147,7 +147,7 @@
   <% end %>
   <% if @help.admin_attachment.present? || @help.other_attachment.present? || @help.artistic_attachment.present? %>
     <hr class="bhl">
-    <div class="block-fiche-aide block-fiche-aide-piece">
+    <div class="block-fiche-aide">
       <div>
         <p class="subtitle">Pièces à fournir</p>
         <% if @help.admin_attachment.present? %>
@@ -221,5 +221,7 @@
     </div>
   <% end %>
   <hr class="bhl">
-  <p class="link-blue cursor-normal" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
+  <p class="link-blue cursor-normal mb0" style="text-align:center">N'hésitez pas à déposer votre dossier avant la date limite afin d'obtenir un retour s'il présente une erreur.</p>
+  <p class="link-blue cursor-normal" style="text-align:center">Vous trouverez des exemples de dossiers de candidatures lauréats dans notre bibliothèque publique, par <a href="https://ellesfontlaculture.beta.gouv.fr/conseils_articles/34" class="link-blue">ici</a></p>
+
 </div>

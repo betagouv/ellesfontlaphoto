@@ -7,7 +7,7 @@ fr:
         help_amount: "Le(s) gain(s) pour les lauréates"
         type_list: "Le type d'aide"
         description: "La description"
-        title: "Le nom de votre aide"
+        title: "Titre de l'aide"
       candidature_date:
         end_date: "La date de fin de candidature"
         start_date: "La date de début de candidature"
