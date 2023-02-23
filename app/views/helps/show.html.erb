@@ -193,7 +193,7 @@
     <hr class="bhl">
     <div class="block-fiche-aide">
       <p class="subtitle">Contact</p>
-      <p class="paragraphe-bold mb0">Aide donnée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'institution</a><% end %></p>
+      <p class="paragraphe-bold mb0">Aide proposée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'institution</a><% end %></p>
       <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
         <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
         <% if @help.contact_institution.present? %>

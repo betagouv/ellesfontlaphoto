@@ -7,11 +7,12 @@ class Help < ApplicationRecord
   has_many :evaluation_helps
   accepts_nested_attributes_for :candidature_dates, allow_destroy: true
 
-  acts_as_taggable_on :type, :type_photo
+  acts_as_taggable_on :type
   validates :title, presence: true
   validates :description, presence: true
   validates :help_amount, presence: true
   validates :candidate_url, presence: true
+  validates :general_condition, presence: true
   validates :type_list, presence: true, unless: :from_api
   validates :author_email, presence: true, if: :suggested
   validates :accept_cgu, presence: true, if: :suggested
@@ -28,8 +29,6 @@ class Help < ApplicationRecord
   }
 
   HELP_TYPE = ["dotation financière", "résidence", "édition", "exposition & festival", "accompagnement d'expert(e)"]
-
-  PHOTO_TYPE = ["photojournalisme", "photo artistique", "autre"]
 
   HELP_RESIDENCE = [
     "Auvergne-Rhône Alpes",
@@ -54,9 +53,4 @@ class Help < ApplicationRecord
     "Française résidant en outre-mer",
     "Française résidant à l'étranger"
   ]
-
-  # validates :residence_condition, inclusion: { in: Help::HELP_RESIDENCE << "" }
-  # validates :type_list, inclusion: { in: HELP_TYPE }
-  # validates :type_photo_list, inclusion: { in: PHOTO_TYPE }
-
 end

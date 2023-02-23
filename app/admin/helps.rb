@@ -1,5 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :type_list, :type_photo_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
+  permit_params :title, :description, :sector, :institution_name, :type_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   after_create do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
@@ -31,12 +31,10 @@ ActiveAdmin.register Help do
 
   before_create do |help|
     help.type_list = params["help"]["type_list"]
-    help.type_photo_list = params["help"]["type_photo_list"]
   end
 
   before_update do |help|
     help.type_list = params["help"]["type_list"]
-    help.type_photo_list = params["help"]["type_photo_list"]
   end
 
   show do
@@ -44,7 +42,12 @@ ActiveAdmin.register Help do
       row :id
       row :visible
       row :title
+      row :type_list
       row :description
+      row :help_amount
+      row :general_condition
+      row :residence_condition
+      row :permanent, "Permanent"
       panel "dates de candidatures" do
         table_for help.candidature_dates do
           column "dates début" do |date|
@@ -55,57 +58,29 @@ ActiveAdmin.register Help do
           end
         end
       end
-      row :sector
-      row :type_list
-      row :type_photo_list
-      row :institution_name
-      row :permanent
-      row :help_amount
-      row :residence_condition
-      row :general_condition
-      row :specific_condition
       row :description_longue
       row :candidate_url
-      row :institution_url
+      row :admin_attachment
       row :selection
+      row :specific_condition
       row :compo_commission
-      row :url_commission
       row :commission_parite
       row :old_laureat
-      row :old_laureat_url
       row :old_laureats_parite
-      row :admin_attachment
-      row :artistic_attachment
-      row :other_attachment
+      row :institution_name
+      row :institution_url
       row :contact_institution
-      row :contact_institution_url
       row :contact_intitution_email
-      row :contact_intitution_partenaire
-      row :example_enrollment_url
       row :faq_url
-      row :issue_contact
-      row :statistic
-      row :identifiant
-      row :institution_partenaire
-      row :regularity
-      row :description_url
-      row :residence_time
-      row :help_advantage
-      row :old_laureats_case_url
-      row :parentality
-      row :accessibility
-      row :author_email
       row :accept_cgu
+      row :author_email
       row :created_at
       row :updated_at
     end
   end
 
-  filter :type_list
-  filter :type_photo_list
   filter :title
-  filter :sector
-  filter :objectif
+  filter :type_list
   filter :institution_name
 
   controller do
@@ -119,10 +94,8 @@ ActiveAdmin.register Help do
     column :from_api
     column :visible
     column :title
-    column :residence_condition
-    column :sector
     column :type_list
-    column :type_photo
+    column :general_condition
     column :utile, sortable: 'notation_help.oui' do |help|
       if NotationHelp.find_by(help: help)
         NotationHelp.find_by(help: help).oui
@@ -152,119 +125,97 @@ ActiveAdmin.register Help do
     f.semantic_errors # shows errors on :base
     f.inputs "Bandeau" do
       f.input :visible, as: :boolean, label: "Vibilité"
-      f.input :title, label: "Titre"
-      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE, label: "Type"
-      f.input :type_photo_list, :as => :check_boxes, :collection => Help::PHOTO_TYPE, label: "Type de photo"
-      f.input :description, label: "Description"
-      f.input :description_url, label: "Url de description"
-      f.input :permanent
-      f.input :regularity, label: "Régularité"
-      f.has_many :candidature_dates, allow_destroy: true do |a|
+      f.input :title
+      f.input :type_list, :as => :check_boxes, :collection => Help::HELP_TYPE
+      f.input :description
+      f.input :help_amount, as: :quill_editor
+      f.input :general_condition, as: :quill_editor
+      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
+    end
+    f.inputs "Date de candidatures" do
+      f.input :permanent, label: "Cochez cette case si le dépôt de candidatures est possible toute l'année"
+      f.has_many :candidature_dates, heading: "Date de candidatures", new_record: "Ajouter des dates de candidatures", allow_destroy: true do |a|
         a.inputs do
           a.input :start_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de début de candidature"
           a.input :end_date, as: :date_picker, input_html: {style: "width:20%"}, label: "Date de fin de candidature"
         end
       end
-      f.input :sector, label: "Sécteur"
-      f.input :help_amount, as: :quill_editor, label: "Montant de l'aide"
-      f.input :help_advantage, label: "Avantage de l'aide"
-      f.input :residence_time, label: "Temps de résidence"
-      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
-      f.input :general_condition, as: :quill_editor, label: "Conditions générales"
+    end
+    f.inputs "Description longue" do
+      f.input :description_longue, as: :quill_editor, label: "Description Longue - optionnel"
     end
     f.inputs "Candidatez" do
-      f.input :candidate_url, label: "Url de candidature"
-    end
-
-    f.inputs "Description Longue" do
-      f.input :description_longue, as: :quill_editor, label: "Description Longue"
-    end
-
-    f.inputs "Selection" do
-      f.input :selection, as: :quill_editor, label: "Sélection"
-      f.input :example_enrollment_url, label: "Exemple d'inscription"
-      f.input :compo_commission, as: :quill_editor, label: "Composition de la commission"
-      f.input :url_commission, label: "URL de la commission"
-      f.input :commission_parite, as: :select, collection: Help::PARITE, label: "Parité de la commission"
-      f.input :old_laureat, as: :quill_editor, label: "Anciens lauréates"
-      f.input :old_laureat_url, label: "Anciens lauréates url"
-      f.input :old_laureats_case_url, label: "Anciens lauréates cas url"
-      f.input :old_laureats_parite, as: :select, collection: Help::PARITE, label: "Anciens lauréates parité"
-      f.input :statistic, as: :quill_editor, label: "Statistiques"
+      f.input :candidate_url
     end
     f.inputs "Pièces à fournir" do
-      f.input :admin_attachment, as: :quill_editor, label: "Pièces jointes administratives"
-      f.input :artistic_attachment, as: :quill_editor, label: "Pièces jointes artistiques"
-      f.input :other_attachment, as: :quill_editor, label: "Autres pièces jointes"
-      f.input :specific_condition, as: :quill_editor, label: "Conditions spécifiques"
-      f.input :parentality, label: "Parentalité"
-      f.input :accessibility, label: "Accéssibilité"
+      f.input :admin_attachment, as: :quill_editor
+    end
+    f.inputs "Sélection" do
+      f.input :selection, as: :quill_editor
+      f.input :specific_condition, as: :quill_editor
+      f.input :compo_commission, as: :quill_editor
+      f.input :commission_parite, as: :select, collection: Help::PARITE
+      f.input :old_laureat, as: :quill_editor
+      f.input :old_laureats_parite, as: :select, collection: Help::PARITE
     end
     f.inputs "Contact" do
-      f.input :institution_name, label: "Nom de l'institution"
-      f.input :institution_url, label: "URL de l'institution"
-      f.input :institution_partenaire, as: :quill_editor, label: "Institution partenaires"
-      f.input :contact_institution, as: :quill_editor, label: "Contact institution"
-      f.input :contact_intitution_email, as: :quill_editor, label: "Email contact institution"
-      f.input :contact_intitution_partenaire, as: :quill_editor, label: "Contact institution partenaires"
-      f.input :issue_contact, label: "Contact problèmes"
-      f.input :faq_url, label: "FAQ url"
+      f.input :institution_name
+      f.input :institution_url
+      f.input :contact_institution, as: :quill_editor
+      f.input :contact_intitution_email, as: :quill_editor
+      f.input :faq_url
       f.input :author_email, label: "Email de l'auteur (Si l'aide est proposée)"
+    end
+    f.inputs "A SUPPRIMER" do
+      f.input :sector
+      f.input :description_url, label: "Url de description"
+      f.input :url_commission
+      f.input :old_laureat_url, label: "Anciens lauréates url"
+      f.input :residence_time, label: "Temps de résidence"
+      f.input :artistic_attachment, as: :quill_editor, label: "Pièces jointes artistiques"
+      f.input :help_advantage, label: "Avantage de l'aide"
+      f.input :other_attachment, as: :quill_editor, label: "Autres pièces jointes"
+      f.input :old_laureats_case_url, label: "Anciens lauréates cas url"
+      f.input :contact_intitution_partenaire, as: :quill_editor, label: "Contact institution partenaires"
+      f.input :parentality, label: "Parentalité"
+      f.input :accessibility, label: "Accéssibilité"
+      f.input :regularity, label: "Régularité"
+      f.input :institution_partenaire, as: :quill_editor, label: "Institution partenaires"
+      f.input :statistic, as: :quill_editor, label: "Statistiques"
+      f.input :example_enrollment_url, label: "Exemple d'inscription"
+      f.input :issue_contact, label: "Contact problèmes"
     end
     f.actions
   end
 
   csv do
+    column :visible
     column :title
-    column :description
-    column :sector
     column(:type_list) { |help| help.type_list.map { |e| e } }
-    column(:type_photo) { |help| help.type_photo.map { |e| e.name } }
-    column :institution_name
+    column :description
+    column :help_amount
+    column :general_condition
+    column :residence_condition
+    column :permanent
     column(:start_date) { |help| help.candidature_dates.map { |c| c.start_date } }
     column(:end_date) { |help| help.candidature_dates.map { |c| c.end_date } }
-    column :help_amount
-    column :residence_condition
-    column :general_condition
-    column :specific_condition
+    column :description_longue
     column :candidate_url
-    column :institution_url
-    column :selection
-    column :compo_commission
-    column :url_commission
-    column :old_laureat
-    column :old_laureat_url
     column :admin_attachment
-    column :artistic_attachment
-    column :other_attachment
+    column :selection
+    column :specific_condition
+    column :compo_commission
+    column :commission_parite
+    column :old_laureat
+    column :old_laureats_parite
+    column :institution_name
+    column :institution_url
     column :contact_institution
-    column :contact_institution_url
+    column :contact_intitution_email
+    column :faq_url
+    column :accept_cgu
+    column :author_email
     column :created_at
     column :updated_at
-    column :example_enrollment_url
-    column :faq_url
-    column :issue_contact
-    column :statistic
-    column :end_date
-    column :start_date
-    column :identifiant
-    column :institution_partenaire
-    column :regularity
-    column :description_url
-    column :residence_time
-    column :help_advantage
-    column :old_laureats_case_url
-    column :parentality
-    column :accessibility
-    column :contact_intitution_email
-    column :contact_intitution_partenaire
-    column :commission_parite
-    column :old_laureats_parite
-    column :visible
-    column :description_longue
-    column :permanent
-    column :open
-    column :accept_cgu
   end
-
 end
