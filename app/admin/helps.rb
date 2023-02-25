@@ -1,5 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :type_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :contact_institution_url, :example_enrollment_url, :faq_url, :issue_contact, :statistic, :permanent, :end_date, :start_date, :identifiant, :institution_partenaire, :regularity, :description_url, :residence_time, :help_advantage, :old_laureats_case_url, :parentality, :accessibility, :contact_intitution_email, :contact_intitution_partenaire, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
+  permit_params :title, :description, :sector, :institution_name, :type_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :faq_url, :permanent, :end_date, :start_date, :description_url, :contact_intitution_email, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   after_create do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first
@@ -165,25 +165,6 @@ ActiveAdmin.register Help do
       f.input :contact_intitution_email, as: :quill_editor
       f.input :faq_url
       f.input :author_email, label: "Email de l'auteur (Si l'aide est proposée)"
-    end
-    f.inputs "A SUPPRIMER" do
-      f.input :sector
-      f.input :description_url, label: "Url de description"
-      f.input :url_commission
-      f.input :old_laureat_url, label: "Anciens lauréates url"
-      f.input :residence_time, label: "Temps de résidence"
-      f.input :artistic_attachment, as: :quill_editor, label: "Pièces jointes artistiques"
-      f.input :help_advantage, label: "Avantage de l'aide"
-      f.input :other_attachment, as: :quill_editor, label: "Autres pièces jointes"
-      f.input :old_laureats_case_url, label: "Anciens lauréates cas url"
-      f.input :contact_intitution_partenaire, as: :quill_editor, label: "Contact institution partenaires"
-      f.input :parentality, label: "Parentalité"
-      f.input :accessibility, label: "Accéssibilité"
-      f.input :regularity, label: "Régularité"
-      f.input :institution_partenaire, as: :quill_editor, label: "Institution partenaires"
-      f.input :statistic, as: :quill_editor, label: "Statistiques"
-      f.input :example_enrollment_url, label: "Exemple d'inscription"
-      f.input :issue_contact, label: "Contact problèmes"
     end
     f.actions
   end

@@ -25,12 +25,6 @@
       <p class="paragraphe-bold mb0"><%= image_tag "emojis/gain.png", alt: "émoji gains",class: "emojis-eflc-small" %> Gains :</p>
       <div class="paragraphe lh28 mt0">
         <%= @help.help_amount.html_safe %>
-        <% if @help.help_advantage.present? %>
-          <%= @help.help_advantage %>
-        <% end %>
-        <% if @help.residence_time.present? %>
-          Durée résidence : <%= @help.residence_time %>
-        <% end %>
       </div>
       <% unless next_date.nil? %>
         <hr class="hl">
@@ -41,11 +35,6 @@
       <% else %>
         <% unless next_date.nil? %>
           <p class="paragraphe-bold mb0"><%= image_tag "emojis/calendrier.png", alt: "émoji dates", class: "emojis-eflc-small" %> Dates de candidature :</p>
-          <p class="paragraphe lh28 mt0 mb0">
-            <% if @help.regularity.present? %>
-              <%= @help.regularity %>
-            <% end %>
-          </p>
           <p class="paragraphe lh28 mt0">
             <% @help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").each do |candidature_date| %>
               Clôture : <%= I18n.l candidature_date.end_date, format: :long %><br>
@@ -107,11 +96,6 @@
     <div class="block-fiche-aide">
       <p class="subtitle">Sélection des lauréates et lauréats</p>
       <div class="paragraphe lh28"><%= @help.selection.html_safe %></div>
-
-      <% if @help.example_enrollment_url.present? %>
-        <p class="paragraphe-bold mb0">Exemple de dossiers lauréats</p>
-        <a class="link-blue" target=”_blank” href="<%= @help.example_enrollment_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> C'est ici</a>
-      <% end %>
         <% if @help.compo_commission.present? %>
           <div class="div-parite mt30">
             <div class="div-parite-sub">
@@ -120,9 +104,6 @@
         <% else %>
           <div class="div-parite">
             <div class="div-parite-sub">
-        <% end %>
-        <% if @help.url_commission.present? %>
-            <a class="link-blue" target=”_blank” href="<%= @help.url_commission %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Membres de la commission</a>
         <% end %>
           </div>
         <% if @help.commission_parite.present? %>
@@ -145,7 +126,7 @@
       <% end %>
     </div>
   <% end %>
-  <% if @help.admin_attachment.present? || @help.other_attachment.present? || @help.artistic_attachment.present? %>
+  <% if @help.admin_attachment.present? %>
     <hr class="bhl">
     <div class="block-fiche-aide">
       <div>
@@ -154,40 +135,15 @@
           <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
           <%= @help.admin_attachment.html_safe %>
         <% end %>
-        <% if @help.artistic_attachment.present? %>
-          <p class="paragraphe-bold mb0">🎨 Dossier artistique</p>
-          <%= @help.artistic_attachment.html_safe %>
-        <% end %>
-      </div>
-      <div>
-        <% if @help.other_attachment.present? %>
-          <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet-noir.png", alt:"émoji Pièces spécifiques", class: "emojis-eflc-small" %> Pièces spécifiques</p>
-          <div class="paragraphe"><%= @help.other_attachment.html_safe %></div>
-        <% end %>
       </div>
     </div>
   <% end %>
-  <% if @help.parentality.present? || @help.accessibility.present? || @help.specific_condition.present? %>
+  <% if @help.specific_condition.present? %>
     <hr class="bhl">
-    <% if @help.specific_condition.present? %>
-      <div class="block-fiche-aide">
-        <p class="paragraphe-bold mb0">Conditions spécifiques</p>
-        <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
-      </div>
-    <% end %>
-    <% if @help.parentality.present? || @help.accessibility.present? %>
-      <div class="block-fiche-aide">
-        <p class="paragraphe-bold mb0">Accueil</p>
-        <ul>
-          <% if @help.parentality.present? %>
-            <li><p class="paragraphe lh28 mb0">Conditions d'accueil des familles : <%= @help.parentality %></p></li>
-          <% end %>
-          <% if @help.accessibility.present? %>
-            <li><p class="paragraphe">Conditions d'accès aux personnes à mobilité réduite : <%= @help.accessibility %></p></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <div class="block-fiche-aide">
+      <p class="paragraphe-bold mb0">Conditions spécifiques</p>
+      <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
+    </div>
   <% end %>
   <% if @help.institution_name.present? %>
     <hr class="bhl">
@@ -204,16 +160,6 @@
           <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
           </p>
         <% end %>
-      <% end %>
-      <% if @help.contact_intitution_partenaire.present? || @help.institution_partenaire.present? %>
-        <p class="paragraphe lh28 mb0">Partenaire participant à la sélection :
-        <% if @help.institution_partenaire.present? %>
-          <div class="paragraphe"><%= @help.institution_partenaire.html_safe %></div>
-        <% end %>
-        <% if @help.contact_intitution_partenaire.present? %>
-          <div class="link-blue mb0"><%= @help.contact_intitution_partenaire.html_safe %></div>
-        <% end %>
-        </p>
       <% end %>
       <% if @help.faq_url.present? %>
         <a class="btn btn-faq" target=”_blank” href="<%= @help.faq_url %>">Foire aux questions / FAQ</a>
