@@ -142,7 +142,7 @@ ActiveAdmin.register Help do
       end
     end
     f.inputs "Description longue" do
-      f.input :description_longue, as: :quill_editor, label: "Description Longue - optionnel"
+      f.input :description_longue, label: "Description Longue - optionnel"
     end
     f.inputs "Candidatez" do
       f.input :candidate_url
@@ -161,8 +161,8 @@ ActiveAdmin.register Help do
     f.inputs "Contact" do
       f.input :institution_name
       f.input :institution_url
-      f.input :contact_institution, as: :quill_editor
-      f.input :contact_intitution_email, as: :quill_editor
+      f.input :contact_institution
+      f.input :contact_intitution_email
       f.input :faq_url
       f.input :author_email, label: "Email de l'auteur (Si l'aide est proposée)"
     end

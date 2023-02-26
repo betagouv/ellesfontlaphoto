@@ -88,7 +88,7 @@
     <hr class="bhl">
     <div class="block-fiche-aide">
       <p class="subtitle">Description</p>
-      <div class="paragraphe lh28"><%= @help.description_longue.html_safe %></div>
+      <div class="paragraphe lh28"><%= @help.description_longue %></div>
     </div>
   <% end %>
   <% if @help.selection.present? %>
@@ -126,6 +126,13 @@
       <% end %>
     </div>
   <% end %>
+  <% if @help.specific_condition.present? %>
+    <hr class="bhl">
+    <div class="block-fiche-aide">
+      <p class="paragraphe-bold mb0">Conditions spécifiques</p>
+      <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
+    </div>
+  <% end %>
   <% if @help.admin_attachment.present? %>
     <hr class="bhl">
     <div class="block-fiche-aide">
@@ -138,13 +145,6 @@
       </div>
     </div>
   <% end %>
-  <% if @help.specific_condition.present? %>
-    <hr class="bhl">
-    <div class="block-fiche-aide">
-      <p class="paragraphe-bold mb0">Conditions spécifiques</p>
-      <div class="paragraphe"><%= @help.specific_condition.html_safe %></div>
-    </div>
-  <% end %>
   <% if @help.institution_name.present? %>
     <hr class="bhl">
     <div class="block-fiche-aide">
@@ -153,11 +153,11 @@
       <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
         <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
         <% if @help.contact_institution.present? %>
-          <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
+          <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution %></p>
         <% end %>
         <% if @help.contact_intitution_email.present? %>
           <p class="paragraphe lh28 mb0 mt0">
-          <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
+          <div class="link-blue mb0"><%= @help.contact_intitution_email %></div>
           </p>
         <% end %>
       <% end %>

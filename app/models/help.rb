@@ -9,11 +9,13 @@ class Help < ApplicationRecord
 
   acts_as_taggable_on :type
   validates :title, presence: true
+  validates :type_list, presence: true, unless: :from_api
   validates :description, presence: true
   validates :help_amount, presence: true
-  validates :candidate_url, presence: true
   validates :general_condition, presence: true
-  validates :type_list, presence: true, unless: :from_api
+  validates :candidate_url, presence: true
+  validates :institution_name, presence: true
+  validates :institution_url, presence: true
   validates :author_email, presence: true, if: :suggested
   validates :accept_cgu, presence: true, if: :suggested
 
