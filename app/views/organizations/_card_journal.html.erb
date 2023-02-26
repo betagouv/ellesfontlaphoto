@@ -1,0 +1,34 @@
+<div class="flip-card-front" data-action="click->flip-card#flip">
+  <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
+    <p class="paragraphe-bold">
+    <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
+      <% unless organization.city.blank? %><span class="paragraphe"><%= organization.city %></span><% end %>
+    </p>
+  </div>
+  <div id="flexible">
+    <% if organization.publies_parity.to_i >= 50 %>
+      <div class="c100 p<%= organization.publies_parity.to_i %> purple">
+    <% else %>
+      <div class="c100 p<%= organization.publies_parity.to_i %> orange">
+    <% end %>
+      <span><%= organization.publies_parity.to_i %>%</span>
+      <div class="slice">
+        <div class="bar"></div>
+        <div class="fill"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-organization-numbers">
+    <% if organization.nb_femmes_publiees.blank? || organization.nb_total_publies.blank? %>
+      <p><mark>femmes photographes<br> publiées : inconnu</mark></p>
+    <% else %>
+      <p><mark class="<%= organization.publies_parity.to_i >= 50 ? "purple" : "orange" %>">femmes photographes<br> publiées : <%= organization.nb_femmes_publiees %> / <%= organization.nb_total_publies %></mark></p>
+    <% end %>
+    <hr>
+    <% if organization.nb_femmes_iconographes.blank? || organization.nb_total_iconographes.blank? %>
+      <p class="paragraphe-grey">femmes iconographes : inconnu</p>
+    <% else %>
+      <p class="paragraphe-grey"><%= "iconographe".pluralize(organization.nb_total_iconographes) %> : <%= organization.nb_femmes_iconographes %> / <%= organization.nb_total_iconographes %></p>
+    <% end %>
+  </div>
+</div>

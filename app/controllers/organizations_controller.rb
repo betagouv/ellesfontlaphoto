@@ -17,7 +17,7 @@ class OrganizationsController < ApplicationController
     else
       respond_to do |format|
         format.html
-        format.text { render partial: "card_organization", locals: {organizations: @organizations}, formats: [:html] }
+        format.text { render partial: "list", locals: {organizations: @organizations}, formats: [:html] }
       end
     end
   end
