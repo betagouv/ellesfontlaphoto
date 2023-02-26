@@ -1,9 +1,6 @@
 class Organization < ApplicationRecord
   # validates :organization_type, presence: true
   validates :name, presence: true
-  has_one_attached :logo
-  validates :nb_women_expos, presence: true
-  validates :total_nb_expos, presence: true
   validates :name, uniqueness: true
 
   after_validation :calculate_parity
@@ -17,24 +14,44 @@ class Organization < ApplicationRecord
   ]
 
   def calculate_parity
-    if nb_women_dir && total_nb_dir
-      self.dir_parity = nb_women_dir.fdiv(total_nb_dir) >= 0.5
+    if organization_type == "Structure" || organization_type == "Festival"
+      self.dir_parity = calculate(nb_women_dir, total_nb_dir)
+      self.expos_parity = calculate(nb_women_expos, total_nb_expos)
+      self.score_parity = calculate_score_parity(dir_parity, expos_parity)
+    elsif organization_type == "École"
+      self.enseignants_parity = calculate(nb_femmes_enseignantes, nb_total_enseignants)
+      self.etudiants_parity = calculate(nb_femmes_etudiantes, nb_total_etudiants)
+      self.score_parity = calculate_score_parity(enseignants_parity, etudiants_parity)
+    elsif organization_type == "Prix"
+      self.laureates_parity = calculate(nb_femmes_laureates, nb_total_laureates)
+      self.candidates_parity = calculate(nb_femmes_candidates, nb_total_candidats)
+      self.score_parity = calculate_score_parity(laureates_parity, candidates_parity)
+    elsif organization_type == "Journal/Magazine"
+      self.publies_parity = calculate(nb_femmes_publiees, nb_total_publies)
+      self.iconographes_parity = calculate(nb_femmes_iconographes, nb_total_iconographes)
+      self.score_parity = calculate_score_parity(publies_parity, iconographes_parity)
     end
+  end
 
-    if nb_women_expos && total_nb_expos
-      self.expos_parity = nb_women_expos.fdiv(total_nb_expos) * 100
+  private
+
+  def calculate(nb_women, nb_total)
+    if nb_women && nb_total
+      nb_women.fdiv(nb_total) * 100
     end
+  end
 
-    if dir_parity == nil
-      self.score_parity = expos_parity ? 2 : 0
-    elsif expos_parity == nil
-      self.score_parity = dir_parity ? 2 : 0
-    elsif dir_parity && expos_parity
-      self.score_parity = 2
-    elsif dir_parity || expos_parity
-      self.score_parity = 1
+  def calculate_score_parity(parity, parity2)
+    if parity.nil?
+      parity2 ? 2 : 0
+    elsif parity2.nil?
+      parity ? 2 : 0
+    elsif parity && parity2
+      2
+    elsif parity || parity2
+      1
     else
-      self.score_parity = 0
+      0
     end
   end
 end

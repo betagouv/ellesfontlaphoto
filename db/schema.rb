@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_01_124141) do
+ActiveRecord::Schema.define(version: 2023_02_26_183349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -265,7 +265,6 @@ ActiveRecord::Schema.define(version: 2023_02_01_124141) do
     t.string "city"
     t.integer "nb_women_dir"
     t.integer "total_nb_dir"
-    t.boolean "dir_parity"
     t.integer "nb_women_expos"
     t.integer "total_nb_expos"
     t.integer "score_parity"
@@ -274,6 +273,26 @@ ActiveRecord::Schema.define(version: 2023_02_01_124141) do
     t.float "expos_parity"
     t.integer "request_info_count", default: 0
     t.boolean "visible", default: true
+    t.integer "nb_femmes_laureates"
+    t.integer "nb_total_laureates"
+    t.float "laureates_parity"
+    t.integer "nb_femmes_candidates"
+    t.integer "nb_total_candidats"
+    t.float "candidates_parity"
+    t.integer "nb_femmes_publiees"
+    t.integer "nb_total_publies"
+    t.float "publies_parity"
+    t.integer "nb_femmes_iconographes"
+    t.integer "nb_total_iconographes"
+    t.float "iconographes_parity"
+    t.integer "nb_femmes_enseignantes"
+    t.integer "nb_total_enseignants"
+    t.float "enseignants_parity"
+    t.integer "nb_femmes_etudiantes"
+    t.integer "nb_total_etudiants"
+    t.float "etudiants_parity"
+    t.float "dir_parity"
+    t.string "titre"
   end
 
   create_table "reviews", force: :cascade do |t|
