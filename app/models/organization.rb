@@ -10,7 +10,10 @@ class Organization < ApplicationRecord
 
   ORGANIZATION_TYPE = [
     "Structure",
-    "Festival"
+    "Festival",
+    "École",
+    "Prix",
+    "Journal/Magazine"
   ]
 
   def calculate_parity
