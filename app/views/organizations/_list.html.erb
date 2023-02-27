@@ -1,0 +1,36 @@
+<div class="legendes">
+  <ul>
+    <li class="orange"><span> -  de 50% de femmes</span></li>
+    <li class="purple"><span> + de 50% de femmes</span></li>
+  </ul>
+</div>
+<div class="cards-organizations">
+  <% @organizations.each do |organization| %>
+    <div class="box" data-controller="flip-card">
+      <div class="box-in box-front" data-flip-card-target="frontCard">
+        <% if organization.organization_type == "Structure" || organization.organization_type == "Festival" %>
+          <%= render "organizations/card_organization", organization: organization %>
+        <% elsif organization.organization_type == "École" %>
+          <%= render "organizations/card_ecole", organization: organization %>
+        <% elsif organization.organization_type == "Prix" %>
+          <%= render "organizations/card_prix", organization: organization %>
+        <% elsif organization.organization_type == "Journal/Magazine" %>
+          <%= render "organizations/card_journal", organization: organization %>
+        <% end %>
+      </div>
+      <div class="box-in box-back" data-flip-card-target="backCard">
+        <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
+          <div class="div-cross">
+            <p class="cross" data-action="click->flip-card#close">&times;</p>
+          </div>
+          <div class="div-ensavoirplus" data-orga-info-target="card">
+            <div>
+              <p class="main-paragraphe">Vous souhaitez en savoir plus sur l'égalité dans cette organisation ?</p>
+              <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
