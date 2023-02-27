@@ -1,5 +1,5 @@
 class Organization < ApplicationRecord
-  # validates :organization_type, presence: true
+  validates :organization_type, presence: true
   validates :name, presence: true
   validates :name, uniqueness: true
 
