@@ -26,7 +26,7 @@
     <% end %>
     <hr>
     <% if organization.nb_femmes_enseignantes.blank? || organization.nb_total_enseignants.blank? %>
-      <p class="paragraphe-grey">étudiantes : N/R</p>
+      <p class="paragraphe-grey">enseignantes : N/R</p>
     <% else %>
       <p class="paragraphe-grey"><%= "enseignante".pluralize(organization.nb_total_enseignants) %> : <%= organization.nb_femmes_enseignantes %> / <%= organization.nb_total_enseignants %></p>
     <% end %>
