@@ -20,13 +20,13 @@
   </div>
   <div class="card-organization-numbers">
     <% if organization.nb_femmes_enseignantes.blank? || organization.nb_total_enseignants.blank? %>
-      <p><mark><br> enseignantes : inconnu</mark></p>
+      <p><mark><br> enseignantes : N/R</mark></p>
     <% else %>
       <p><mark class="<%= organization.enseignants_parity.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= organization.nb_femmes_enseignantes %> / <%= organization.nb_total_enseignants %></mark></p>
     <% end %>
     <hr>
     <% if organization.nb_femmes_etudiantes.blank? || organization.nb_total_etudiants.blank? %>
-      <p class="paragraphe-grey">étudiantes : inconnu</p>
+      <p class="paragraphe-grey">étudiantes : N/R</p>
     <% else %>
       <p class="paragraphe-grey"><%= "étudiante".pluralize(organization.nb_total_etudiants) %> : <%= organization.nb_femmes_etudiantes %> / <%= organization.nb_total_etudiants %></p>
     <% end %>
