@@ -1,8 +1,7 @@
 <div class="flip-card-front" data-action="click->flip-card#flip">
   <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
     <p class="paragraphe-bold">
-    <span class="organization-name"><%= organization.name %><% unless organization.titre.blank? %>,<% end %></span>
-      <% unless organization.titre.blank? %><span class="paragraphe"><%= organization.titre %></span><% end %>
+    <span class="organization-name"><%= organization.titre %>, </span><span class="paragraphe"><%= organization.name %></span>
     </p>
   </div>
   <div id="flexible">

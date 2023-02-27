@@ -6,12 +6,12 @@
     </p>
   </div>
   <div id="flexible">
-    <% if organization.etudiants_parity.to_i >= 50 %>
-      <div class="c100 p<%= organization.etudiants_parity.to_i %> purple">
+    <% if organization.enseignants_parity.to_i >= 50 %>
+      <div class="c100 p<%= organization.enseignants_parity.to_i %> purple">
     <% else %>
-      <div class="c100 p<%= organization.etudiants_parity.to_i %> orange">
+      <div class="c100 p<%= organization.enseignants_parity.to_i %> orange">
     <% end %>
-      <span><%= organization.etudiants_parity.to_i %>%</span>
+      <span><%= organization.enseignants_parity.to_i %>%</span>
       <div class="slice">
         <div class="bar"></div>
         <div class="fill"></div>
@@ -19,16 +19,16 @@
     </div>
   </div>
   <div class="card-organization-numbers">
-    <% if organization.nb_femmes_etudiantes.blank? || organization.nb_total_etudiants.blank? %>
-      <p><mark><br> étudiantes : N/R</mark></p>
+    <% if organization.nb_femmes_enseignantes.blank? || organization.nb_total_enseignants.blank? %>
+      <p><mark><br> enseignantes : N/R</mark></p>
     <% else %>
-      <p><mark class="<%= organization.etudiants_parity.to_i >= 50 ? "purple" : "orange" %>"><br> étudiantes : <%= organization.nb_femmes_etudiantes %> / <%= organization.nb_total_etudiants %></mark></p>
+      <p><mark class="<%= organization.enseignants_parity.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= organization.nb_femmes_enseignantes %> / <%= organization.nb_total_enseignants %></mark></p>
     <% end %>
     <hr>
-    <% if organization.nb_femmes_enseignantes.blank? || organization.nb_total_enseignants.blank? %>
-      <p class="paragraphe-grey">enseignantes : N/R</p>
+    <% if organization.nb_femmes_etudiantes.blank? || organization.nb_total_etudiants.blank? %>
+      <p class="paragraphe-grey">étudiantes : N/R</p>
     <% else %>
-      <p class="paragraphe-grey"><%= "enseignante".pluralize(organization.nb_total_enseignants) %> : <%= organization.nb_femmes_enseignantes %> / <%= organization.nb_total_enseignants %></p>
+      <p class="paragraphe-grey"><%= "étudiante".pluralize(organization.nb_total_etudiants) %> : <%= organization.nb_femmes_etudiantes %> / <%= organization.nb_total_etudiants %></p>
     <% end %>
   </div>
 </div>
