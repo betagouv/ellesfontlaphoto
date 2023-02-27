@@ -7,7 +7,6 @@ export default class extends Controller {
     "crossTypePhoto",
     "inputType",
     "switchButton",
-    "switchParite",
     "inputLieu"];
 
   selectCriteria(event) {
@@ -38,7 +37,7 @@ export default class extends Controller {
   }
 
   refreshHelps() {
-    fetch(`${this.formTarget.action}?&type_list=${this.inputTypeTarget.value}&open=${this.switchButtonTarget.checked}&parite=${this.switchPariteTarget.checked}&residence=${this.inputLieuTarget.value}`, { headers: { 'Accept': 'text/plain' } })
+    fetch(`${this.formTarget.action}?&type_list=${this.inputTypeTarget.value}&open=${this.switchButtonTarget.checked}&residence=${this.inputLieuTarget.value}`, { headers: { 'Accept': 'text/plain' } })
     .then(response => response.text())
     .then((data) => {
       document.querySelector("#main-index-helps").outerHTML = data;

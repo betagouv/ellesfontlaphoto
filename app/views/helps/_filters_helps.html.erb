@@ -51,18 +51,6 @@
 
   <div class="line-filter"></div>
 
-  <div class="filter-switch">
-    <div class="d-flex justify-center">
-      <label class="switch">
-        <input type="checkbox" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="switchParite">
-        <span class="slider round"></span>
-      </label>
-    </div>
-    <p class="paragraphe-small text-align-center">Parité respectée</p>
-  </div>
-
-  <div class="line-filter"></div>
-
   <div class="btn btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
