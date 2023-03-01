@@ -32,10 +32,6 @@ class HelpsController < ApplicationController
       @helps = @helps.where(old_laureats_parite: "respectée").or(@helps.where(commission_parite: "respectée"))
     end
     @helps = @helps.order("end_date ASC NULLS LAST")
-    if params[:type_photo_list].present?
-      @selected_photo_type = true
-      @helps = @helps.tagged_with(params[:type_photo_list].split(","), :any => true) | @helps.tagged_with(Help::PHOTO_TYPE.excluding(params[:type_photo_list].split(",")), :exclude => true)
-    end
     @helps_count = @helps.count
 
     respond_to do |format|
@@ -76,7 +72,6 @@ class HelpsController < ApplicationController
       @help = Help.new(help_params)
     end
     @help.type_list = params["help"]["type_list"]
-    @help.type_photo_list = params["help"]["type_photo_list"]
     if @help.save
       HelpMailer.new_help(@help).deliver_later
       redirect_to helps_confirm_path
@@ -92,13 +87,13 @@ class HelpsController < ApplicationController
   private
 
   def help_params
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :accept_cgu, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :admin_attachment, :candidate_url, :selection, :author_email, :suggested, :accept_cgu, :candidature_dates_attributes => [:start_date, :end_date]) do |help_param|
       help_param.require(:author_email)
     end
   end
 
   def help_params_permanent
-    params.require(:help).permit(:visible, :title, :description, :type, :type_photo, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :residence_time, :admin_attachment, :admin_attachment, :artistic_attachment, :candidate_url, :selection, :parentality, :accessibility, :author_email, :suggested, :accept_cgu) do |help_param|
+    params.require(:help).permit(:visible, :title, :description, :type, :institution_name, :institution_url, :contact_intitution_email, :permanent, :help_amount, :residence_condition, :general_condition, :specific_condition, :admin_attachment, :candidate_url, :selection, :author_email, :suggested, :accept_cgu) do |help_param|
       help_param.require(:author_email)
     end
   end

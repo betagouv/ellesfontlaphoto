@@ -26,7 +26,7 @@
     <div class="fiche-description">
       <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/reveil.png", alt: "émoji durée", class: "emojis-eflc-small" %> Durée :</span><%= @conseil_video.lecture_time %> min</p>
       <% if @conseil_video.objectif.present? %>
-        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectifs", class: "emojis-eflc-small" %> Objectifs :</span><%= @conseil_video.objectif %></p>
+        <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectifs", class: "emojis-eflc-small", style: "width: 26px;" %> Objectifs :</span><%= @conseil_video.objectif %></p>
       <% end %>
       <p class="paragraphe"><span class="paragraphe-bold"><%= image_tag "emojis/camera.png", alt: "émoji format vidéo", class: "emojis-eflc-small" %> Format vidéo :</span><%= ConseilsVideo::VIDEO_FORMAT[@conseil_video.format.to_sym] %></p>
     </div>

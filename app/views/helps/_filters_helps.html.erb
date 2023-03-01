@@ -51,35 +51,6 @@
 
   <div class="line-filter"></div>
 
-  <p class="paragraphe-small text-align-center title-filtre">Type de photo</p>
-  <div class="div-select">
-    <div>
-      <select id="select-type-photo" name="residence" class="button-criteria-helps select-wrapper" data-action="change->filter-helps#refreshTypePhoto" data-filter-helps-target="inputTypePhoto">
-          <option value="">secteurs</option>
-          <% Help::PHOTO_TYPE.reject{|i| i == ""}.each do |photo_type| %>
-            <option value="<%= photo_type %>"><%= photo_type %></option>
-          <% end %>
-      </select>
-      <span class="cross-select" data-action="click->filter-helps#clearSelectedTypePhoto" data-filter-helps-target="crossTypePhoto">
-        <%= image_tag "cross-criteria.svg", alt: "icône croix" %>
-      </span>
-    </div>
-  </div>
-
-  <div class="line-filter"></div>
-
-  <div class="filter-switch">
-    <div class="d-flex justify-center">
-      <label class="switch">
-        <input type="checkbox" data-action="change->filter-helps#refreshHelps" data-filter-helps-target="switchParite">
-        <span class="slider round"></span>
-      </label>
-    </div>
-    <p class="paragraphe-small text-align-center">Parité respectée</p>
-  </div>
-
-  <div class="line-filter"></div>
-
   <div class="btn btn-black btn-validate-filter" data-action="click->show-filters#close">Appliquer</div>
 
   <%= form_tag helps_path, method: :get, id: "search-form", data: { filter_helps_target: "form" } do %>
@@ -87,11 +58,6 @@
       <%= text_field_tag :residence, params[:residence], value: @selected, label: "résidence" %>
     <% else %>
       <%= text_field_tag :residence, params[:residence], label: "résidence" %>
-    <% end %>
-    <% if @selected_photo_type.present? %>
-      <%= text_field_tag :type_photo, params[:type_photo], value: @selected_photo_type, label: "type de photographie" %>
-    <% else %>
-      <%= text_field_tag :type_photo, params[:type_photo], label: "type de photographie" %>
     <% end %>
     <% if @selected_type.present? %>
       <%= text_field_tag :type_list, params[:type_list], value: @selected_type, data: { filter_helps_target: "inputType" }, label: "type d'aide" %>

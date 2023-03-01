@@ -14,15 +14,14 @@
       <%= f.input :contact_intitution_email, label: "E-mail de contact", hint: "Sera rendu public et mis à disposition des candidates" %>
 
       <p class="subtitle-medium">Informations essentielles sur l’aide </p>
-      <%= f.input :title, label: "Titre" %>
+      <%= f.input :title, label: "Titre de l'aide" %>
       <div class="flex-div">
         <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type de récompense *", as: :check_boxes, hint: "Plusieurs réponses possibles" %>
-        <%= f.input :type_photo_list, collection: Help::PHOTO_TYPE, label: "Type de photo", as: :check_boxes %>
       </div>
       <%= f.input :help_amount, label: "Gains des lauréates", hint: "Décrivez synthétiquement les récompenses : montant des bourses, lieu ou matériel mis à disposition, exposition...", as: :text, :input_html => { :cols => 5, :rows => 6 }  %>
-      <%= f.input :candidate_url, label: "Lien de l'appel à candidatures" %>
+      <%= f.input :candidate_url %>
       <%= f.input :description, label: "Présentation succinte", as: :text, :input_html => { :cols => 5, :rows => 6 } %>
-      <%= f.input :permanent, label: "Candidatures possibles toute l'année", input_html: { data: { new_help_target: "permanent", action: "change->new-help#selected" }} %>
+      <%= f.input :permanent, label: "Cochez cette case si le dépôt de candidatures est possible toute l'année", input_html: { data: { new_help_target: "permanent", action: "change->new-help#selected" }} %>
       <div data-new-help-target = "candidaturesdates">
         <%= f.simple_fields_for :candidature_dates do |fa| %>
           <%= fa.input :start_date, as: :date, html5: true, label: "Date de début de candidature" %>
@@ -31,17 +30,10 @@
       </div>
 
       <p class="subtitle-medium">Conditions </p>
-      <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Aide réservée à la région...", prompt: "Sélectionnez une option" %>
       <%= f.input :general_condition, label: "Autres conditions pour candidater ", input_html: { maxlength: 800 }, hint: "âge, statut, sujet... (sous forme de tiret)" %>
-      <div class="flex-div">
-        <%= f.input :admin_attachment, label: "Pièces administratives demandées", hint: "Carte d’identité, attestation MDA..." %>
-        <%= f.input :artistic_attachment, label: "Pièces artistiques demandées", hint: "Book, essai, tirages..." %>
-      </div>
+      <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Aide réservée à la région...", prompt: "Sélectionnez une option" %>
+      <%= f.input :admin_attachment, label: "Pièces administratives demandées", hint: "Carte d’identité, attestation MDA..." %>
 
-      <p class="subtitle-medium">Pour les résidences </p>
-      <%= f.input :parentality, label: "Précisez les conditions d'accueil des familles (enfant, conjoint)" %>
-      <%= f.input :accessibility, label: "Précisez les conditions d'accès aux personnes à mobilité réduite" %>
-      <%= f.input :residence_time, label: "Durée de la résidence" %>
       <div class="div-cgu">
         <%= f.input :accept_cgu, label: false, error: false %>
         <%= f.label :accept_cgu do %>

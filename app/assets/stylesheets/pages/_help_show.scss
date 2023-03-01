@@ -1,10 +1,6 @@
 .help-content {
   margin: 0 auto;
-  padding: 5% 20%;
-  .block-fiche-aide-piece {
-    column-count: 2;
-    column-gap: 40px;
-  }
+  padding: 3% 18%;
   .block-fiche-aide{
     .div-parite {
       position: relative;
@@ -67,16 +63,13 @@
     }
     ul li {
       font-family: 'Marianne-Regular', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       color: $black;
     }
   }
   .div-btn {
     text-align: center;
     margin-bottom: 60px;
-    p {
-      margin-top:30px;
-    }
     .btn-candidate {
       margin: 0 auto 40px auto;
       display: table !important;
@@ -166,10 +159,6 @@
       .flex-div-div {
         width: 100%;
       }
-    }
-    .block-fiche-aide.block-fiche-aide-piece {
-      width: 100%;
-      column-count: 1;
     }
     .block-fiche-aide {
       .paragraphe {
