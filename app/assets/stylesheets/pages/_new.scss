@@ -33,7 +33,7 @@
       margin: 0 auto;
       .flex-div {
         align-items: unset;
-        .help_admin_attachment, .help_artistic_attachment {
+        .help_admin_attachment {
           width: 46%;
         }
       }
@@ -290,8 +290,7 @@
       width: 90%;
       .flex-div {
         display: block;
-          .help_admin_attachment,
-          .help_artistic_attachment {
+          .help_admin_attachment {
             width: 100%;
           }
       }

@@ -1,5 +1,5 @@
 ActiveAdmin.register Help do
-  permit_params :title, :description, :sector, :institution_name, :type_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :url_commission, :old_laureat, :old_laureat_url, :admin_attachment, :artistic_attachment, :other_attachment, :contact_institution, :faq_url, :permanent, :end_date, :start_date, :description_url, :contact_intitution_email, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
+  permit_params :title, :description, :institution_name, :type_list, :help_amount, :description_longue, :residence_condition, :general_condition, :specific_condition, :candidate_url, :institution_url, :selection, :compo_commission, :old_laureat, :admin_attachment, :contact_institution, :faq_url, :permanent, :end_date, :start_date, :description_url, :contact_intitution_email, :commission_parite, :old_laureats_parite, :visible, candidature_dates_attributes: [:id, :start_date, :end_date, :_destroy]
 
   after_create do |help|
     next_date = help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first

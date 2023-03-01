@@ -115,9 +115,6 @@
           <div class="div-parite-sub">
             <p class="paragraphe-bold mb0">Précédents lauréates & lauréats</p>
             <div class="paragraphe lh28 mb0 mt0"><%= @help.old_laureat.html_safe %></div>
-            <% if @help.old_laureat_url.present? %>
-              <a class="link-blue" target=”_blank” href="<%= @help.old_laureat_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Voir les lauréats</a>
-            <% end %>
           </div>
           <% if @help.old_laureats_parite.present? %>
             <%= render "shared/parite_pastille", commission_parite: @help.old_laureats_parite %>
