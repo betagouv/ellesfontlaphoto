@@ -150,11 +150,11 @@
       <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
         <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
         <% if @help.contact_institution.present? %>
-          <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution %></p>
+          <p class="paragraphe lh28 mb0 mt0"><%= @help.contact_institution.html_safe %></p>
         <% end %>
         <% if @help.contact_intitution_email.present? %>
           <p class="paragraphe lh28 mb0 mt0">
-          <div class="link-blue mb0"><%= @help.contact_intitution_email %></div>
+          <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
           </p>
         <% end %>
       <% end %>
