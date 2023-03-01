@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_26_183349) do
+ActiveRecord::Schema.define(version: 2023_03_01_085043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(version: 2023_02_26_183349) do
   create_table "helps", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "sector"
     t.string "institution_name"
     t.string "help_amount"
     t.string "residence_condition"
@@ -167,33 +166,16 @@ ActiveRecord::Schema.define(version: 2023_02_26_183349) do
     t.string "institution_url"
     t.text "selection"
     t.string "compo_commission"
-    t.string "url_commission"
     t.string "old_laureat"
-    t.string "old_laureat_url"
     t.text "admin_attachment"
-    t.text "artistic_attachment"
-    t.text "other_attachment"
     t.text "contact_institution"
-    t.string "contact_institution_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "example_enrollment_url"
     t.string "faq_url"
-    t.string "issue_contact"
-    t.text "statistic"
     t.date "end_date"
     t.date "start_date"
-    t.string "identifiant"
-    t.string "institution_partenaire"
-    t.string "regularity"
     t.string "description_url"
-    t.string "residence_time"
-    t.string "help_advantage"
-    t.string "old_laureats_case_url"
-    t.string "parentality"
-    t.string "accessibility"
     t.string "contact_intitution_email"
-    t.string "contact_intitution_partenaire"
     t.string "commission_parite"
     t.string "old_laureats_parite"
     t.boolean "visible", default: true
