@@ -88,7 +88,7 @@
     <hr class="bhl">
     <div class="block-fiche-aide">
       <p class="subtitle">Description</p>
-      <div class="paragraphe lh28"><%= @help.description_longue %></div>
+      <div class="paragraphe lh28"><%= @help.description_longue.html_safe %></div>
     </div>
   <% end %>
   <% if @help.selection.present? %>
@@ -133,20 +133,15 @@
   <% if @help.admin_attachment.present? %>
     <hr class="bhl">
     <div class="block-fiche-aide">
-      <div>
-        <p class="subtitle">Pièces à fournir</p>
-        <% if @help.admin_attachment.present? %>
-          <p class="paragraphe-bold mb0"><%= image_tag "emojis/carnet.png", alt:"émoji Pièces administratives",class: "emojis-eflc-small" %> Pièces administratives</p>
-          <%= @help.admin_attachment.html_safe %>
-        <% end %>
-      </div>
+      <p class="subtitle">Pièces à fournir</p>
+      <%= @help.admin_attachment.html_safe %>
     </div>
   <% end %>
   <% if @help.institution_name.present? %>
     <hr class="bhl">
     <div class="block-fiche-aide">
       <p class="subtitle">Contact</p>
-      <p class="paragraphe-bold mb0">Aide proposée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'institution</a><% end %></p>
+      <p class="paragraphe-bold mb0">Aide proposée par <%= @help.institution_name %> <% if @help.institution_url.present? %><a class="link-blue" target=”_blank” href="<%= @help.institution_url %>"> <%= image_tag "arrow-darkblue.svg", alt: "icône flèche" %> Site de l'organisation</a><% end %></p>
       <% if @help.contact_institution.present? || @help.contact_intitution_email.present? %>
         <p class="paragraphe lh28 mb0 mt0">N'hésitez pas à envoyer un e-mail pour préciser votre candidature :</p>
         <% if @help.contact_institution.present? %>

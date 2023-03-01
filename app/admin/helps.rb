@@ -96,27 +96,6 @@ ActiveAdmin.register Help do
     column :title
     column :type_list
     column :general_condition
-    column :utile, sortable: 'notation_help.oui' do |help|
-      if NotationHelp.find_by(help: help)
-        NotationHelp.find_by(help: help).oui
-      else
-        0
-      end
-    end
-    column :inutile, sortable: 'notation_help.non' do |help|
-      if NotationHelp.find_by(help: help)
-        NotationHelp.find_by(help: help).non
-      else
-        0
-      end
-    end
-    column :utile_mais_fermee, sortable: 'notation_help.oui_mais_fermee' do |help|
-      if NotationHelp.find_by(help: help)
-        NotationHelp.find_by(help: help).oui_mais_fermee
-      else
-        0
-      end
-    end
     column :created_at
     actions
   end
@@ -130,9 +109,10 @@ ActiveAdmin.register Help do
       f.input :description
       f.input :help_amount, as: :quill_editor
       f.input :general_condition, as: :quill_editor
-      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence"
+      f.input :residence_condition, as: :select, collection: Help::HELP_RESIDENCE, label: "Conditions de résidence - optionnel", hint: "Sélectionnez une région si c'est un critère d'éligibilité pour les candidat(e)s (ex: aides régionales, etc.). Sinon, laissez le champ vide."
     end
     f.inputs "Date de candidatures" do
+      li "Ouverte toute l'année", style: "font-weight: bold; color: #5E6469;"
       f.input :permanent, label: "Cochez cette case si le dépôt de candidatures est possible toute l'année"
       f.has_many :candidature_dates, heading: "Date de candidatures", new_record: "Ajouter des dates de candidatures", allow_destroy: true do |a|
         a.inputs do
@@ -142,7 +122,7 @@ ActiveAdmin.register Help do
       end
     end
     f.inputs "Description longue" do
-      f.input :description_longue, label: "Description Longue - optionnel"
+      f.input :description_longue, as: :quill_editor, label: "Description Longue - optionnel"
     end
     f.inputs "Candidatez" do
       f.input :candidate_url
@@ -152,7 +132,7 @@ ActiveAdmin.register Help do
     end
     f.inputs "Sélection" do
       f.input :selection, as: :quill_editor
-      f.input :specific_condition, as: :quill_editor
+      f.input :specific_condition, as: :quill_editor, label: "Conditions de participation détaillées"
       f.input :compo_commission, as: :quill_editor
       f.input :commission_parite, as: :select, collection: Help::PARITE
       f.input :old_laureat, as: :quill_editor
