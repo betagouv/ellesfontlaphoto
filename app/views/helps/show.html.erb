@@ -154,7 +154,7 @@
         <% end %>
         <% if @help.contact_intitution_email.present? %>
           <p class="paragraphe lh28 mb0 mt0">
-          <div class="link-blue mb0"><%= @help.contact_intitution_email.html_safe %></div>
+          <div class="link-blue mb0"><%= mail_to @help.contact_intitution_email.html_safe, "#{@help.contact_intitution_email.html_safe}", { target: '_blank' } %></div>
           </p>
         <% end %>
       <% end %>
