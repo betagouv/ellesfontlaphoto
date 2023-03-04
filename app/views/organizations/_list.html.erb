@@ -8,7 +8,7 @@
   <% @organizations.each do |organization| %>
     <div class="box" data-controller="flip-card">
       <div class="box-in box-front" data-flip-card-target="frontCard">
-        <% if organization.organization_type == "Structure" || organization.organization_type == "Festival" %>
+        <% if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival" %>
           <%= render "organizations/card_organization", organization: organization %>
         <% elsif organization.organization_type == "École" %>
           <%= render "organizations/card_ecole", organization: organization %>

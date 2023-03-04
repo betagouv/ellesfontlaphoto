@@ -1,12 +1,13 @@
 class Organization < ApplicationRecord
+  has_many :chiffres_organizations, dependent: :destroy
   validates :organization_type, presence: true
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  after_validation :calculate_parity
+  # after_validation :calculate_parity
 
   ORGANIZATION_TYPE = [
-    "Structure",
+    "Espace d'exposition",
     "Festival",
     "École",
     "Prix",
@@ -14,7 +15,7 @@ class Organization < ApplicationRecord
   ]
 
   def calculate_parity
-    if organization_type == "Structure" || organization_type == "Festival"
+    if organization_type == "Espace d'exposition" || organization_type == "Festival"
       self.dir_parity = calculate(nb_women_dir, total_nb_dir)
       self.expos_parity = calculate(nb_women_expos, total_nb_expos)
       self.score_parity = calculate_score_parity(dir_parity, expos_parity)

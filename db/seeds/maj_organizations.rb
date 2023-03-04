@@ -33,7 +33,6 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     orga.expos_parity = orga.nb_women_expos.fdiv(orga.total_nb_expos) * 100
   end
 
-
   if orga.dir_parity == nil
     orga.score_parity = orga.expos_parity ? 2 : 0
   elsif orga.expos_parity == nil
@@ -46,10 +45,5 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     orga.score_parity = 0
   end
 
-  logo = File.join(Rails.root, 'db', "logoNB/#{row["ID"]}NB.png").to_s
-  i += 1
-  if File.exists?(logo) && !orga.logo.attached?
-    orga.logo.attach(io: File.open(logo), filename: "logo.png", content_type: "image/png")
-  end
   orga.save
 end

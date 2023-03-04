@@ -32,7 +32,7 @@ ActiveAdmin.register Organization do
       f.input :organization_type, as: :radio, collection: Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
-      f.inputs "Festival ou Structure" do
+      f.inputs "Festival ou Espace d'exposition" do
         f.input :nb_women_dir, label: "Nombre de femmes à la direction"
         f.input :total_nb_dir, label: "Nombre total de personnes à la direction"
         f.input :nb_women_expos, label: "Nombre de femmes exposées"

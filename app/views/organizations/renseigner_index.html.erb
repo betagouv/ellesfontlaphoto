@@ -1,0 +1,43 @@
+<div class="ajout-organization-page">
+  <div class="ajout-organization-title">
+    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
+    <p class="paragraphe">Renseignez ce formulaire pour ajouter ou mettre à jour vos chiffres pour apporter plus de transparence sur les inégalités de genre au sein de votre organisation.</p>
+  </div>
+  <div class="ajout-organization-form" data-controller="renseigner-chiffres">
+    <div id="new_organization">
+      <div class="step-1" data-renseigner-chiffres-target="step1">
+        <p class="main-paragraphe-medium">On commence par quelques questions pour vous reconnaitre.</p>
+        <p class="paragraphe">Votre structure est-elle déjà référencée dans <%= link_to "l'index parité?", organizations_path, style: "color: #161616 !important;" %></p>
+        <div class="btn-flex">
+          <%= link_to "Non", new_organization_path, class:"btn btn-contact" %>
+          <p class="btn btn-contact mb0" data-renseigner-chiffres-target="editBouton" data-action="click->renseigner-chiffres#editChoice">Oui</p>
+        </div>
+      </div>
+      <div class="step-2 d-none" data-renseigner-chiffres-target="step2">
+        <div class="form-group">
+            <label>Sélectionnez</label>
+            <select name="quote[organization_ids][]" id="quote_organization_ids" class="form-control" data-renseigner-chiffres-target="selectOrganization" data-action="change->renseigner-chiffres#changeChoice">
+                <option value="">
+                  Sélectionnez votre organisation
+                </option>
+                <% Organization.all.each do |organization| %>
+                    <option value="<%= organization.id %>">
+                        <%= organization.name %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
+      </div>
+      <div class="step-3 d-none" data-renseigner-chiffres-target="step3">
+        <legend>Vous voulez :</legend>
+        <input type="radio" id="Y" name="choice" value="Y" checked>
+        <label for="huey">modifier les données pour l'année x</label>
+        <input type="radio" id="X" name="choice" value="X">
+        <label for="dewey">modifier les données pour l'année y </label>
+        <input type="radio" id="newyear" name="choice" value="newyear">
+        <label for="louie">renseigner une nouvelle année</label>
+        <a class="btn btn-contact mb0 mt30" data-renseigner-chiffres-target="submitBouton" data-action="click->renseigner-chiffres#submit" href="">C'est parti !</a>
+      </div>
+    </div>
+  </div>
+</div>

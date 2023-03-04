@@ -1,0 +1,63 @@
+<div class="ajout-organization-page">
+  <div class="ajout-organization-title">
+    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
+    <p class="main-paragraphe-medium">Renseigner les chiffres de <%= @organization.name %> sur une nouvelle année.</p>
+  </div>
+  <div class="ajout-organization-form" data-controller="ajout-chiffres-organizations">
+    <div id="new_organization">
+      <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
+        <% if @organization.organization_type == "École" %>
+          <p class="paragraphe">Part des femmes dans votre école de photographie</p>
+          <%= f.input :nb_femmes_etudiantes, label: "Parmi ces étudiants, combien sont des femmes ?" %>
+          <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?" %>
+          <%= f.input :nb_total_enseignants, label: "Combien de professeurs de photographie faites-vous intervenir ?" %>
+          <%= f.input :nb_femmes_enseignantes, label: "Parmi ces professeurs, combien sont des femmes ?" %>
+          <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?" %>
+          <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?" %>
+          <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
+          <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?" %>
+        <% end %>
+        <% if @organization.organization_type == "Journal/Magazine" %>
+          <p class="paragraphe">Part des femmes dans votre journal/magazine</p>
+          <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?"%>
+          <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?"%>
+          <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)" %>
+          <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?" %>
+          <%= f.input :nb_total_directeurs, label: "Combien de personnes composaient la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
+          <%= f.input :nb_femmes_directrices, label: "Parmi ces personnes, combien étaient des femmes ?" %>
+        <% end %>
+        <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+          <p class="paragraphe">Part des femmes photographes dans vos expositions, en 2022 (in situ et hors les murs)</p>
+          <label for="">Avez-vous réalisé des expositions durant cette année ?</label>
+          <input type="radio" data-action="change->ajout-chiffres-organizations#champsExposition" name="yes_no">Oui</input>
+          <input type="radio" data-action="change->ajout-chiffres-organizations#hideChampsExposition" name="yes_no">Non</input>
+          <div class="expos d-none" data-ajout-chiffres-organizations-target="divExpo">
+            <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?" %>
+            <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?" %>
+            <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?" %>
+            <%= f.input :nb_femmes_exposees_expo_mono, label: "Dans ces expositions monographiques combien de photographes étaient des femmes ?" %>
+            <%= f.input :nb_femmes_moins_40, label: "Combien de femmes de moins de 40 ans avez-vous exposé ?", hint: "(pendant cette année, expositions collectives et monographiques confondues)" %>
+            <%= f.input :nb_femmes_plus_40, label: "Combien de femmes de plus de 40 ans avez-vous exposé ?" %>
+            <%= f.input :nb_femmes_post_mortem, label: "Combien de femmes post-mortem avez-vous exposé ?" %>
+            <%= f.input :nb_total_commissaires, label: "Combien de commissaires d'exposition sont intervenus en 2022 ?", hint: "(Commissaires externes inclus)" %>
+            <%= f.input :nb_femmes_commissaires, label: "Parmi ces commissaires d'exposition, combien étaient des femmes ?" %>
+          </div>
+          <label for="">Avez-vous un fonds photographique ou une collection permanente ?</label>
+          <input type="radio" data-action="change->ajout-chiffres-organizations#champsCollection" name="yes_no">Oui</input>
+          <input type="radio" data-action="change->ajout-chiffres-organizations#hideChampsCollection" name="yes_no">Non</input>
+          <div class="expos d-none" data-ajout-chiffres-organizations-target="divCollection">
+            <%= f.input :nb_total_artistes, label: "Combien d'artistes comptait votre fonds/collection en 2022 ?" %>
+            <%= f.input :nb_femmes_artistes, label: "Parmi ces artistes, combien étaient des femmes ?" %>
+            <%= f.input :nb_total_oeuvres_photo, label: "Combien d'œuvres photographiques comptait votre fonds/collection en 2022 ?" %>
+            <%= f.input :nb_oeuvres_photo_femmes, label: "Combien d'œuvres photographiques de femmes comptait votre fonds/collection ?" %>
+            <%= f.input :nb_total_oeuvres_ajoutees, label: "Combien d'œuvres photographiques avez-vous ajouté à votre collection en 2022 ?", hint: "(inclus les acquisitions et les commandes, hors donations et legs)" %>
+            <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?" %>
+          </div>
+        <% end %>
+        <div class="btn-submit">
+        <%= f.submit "Soumettre", class: "btn btn-black" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
