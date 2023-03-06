@@ -6,9 +6,9 @@
       <% end %>
       <div class="card-index-conseils-articles-div">
         <h3 class="main-bold-paragraphe mt0 mb20"><%= conseil.title %></h3>
-        <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-extra-small" %> Lecture:</span> <%= conseil.lecture_time %> minutes</p>
+        <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/reveil.png", alt: "émoji horloge", class: "emojis-eflc-extra-small" %> Lecture :</span> <%= conseil.lecture_time %> minutes</p>
         <% if conseil.objectif.present? %>
-          <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif:</span> <%= conseil.objectif %></p>
+          <p class="paragraphe p-card mb0"><span class="paragraphe-bold p-card"><%= image_tag "emojis/main-pointer.png", alt: "émoji objectif", class: "emojis-eflc-extra-small", style:"width: 22px;" %> Objectif :</span> <%= conseil.objectif %></p>
         <% end %>
         <div class="paragraphe p-card mb0 card-intro"><%= conseil.introduction.html_safe %></div>
       </div>
