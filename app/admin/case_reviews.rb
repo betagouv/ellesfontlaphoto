@@ -1,4 +1,5 @@
 ActiveAdmin.register CaseReview do
+  actions :all, except: [:new]
   index do
     column :id
     column "Email Candidate", :candidate_email

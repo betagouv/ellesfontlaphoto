@@ -14,7 +14,7 @@ class CaseReview < ApplicationRecord
 
   def en_attente_de_binome
     case_review = self
-    case_review.update(status: 'En attente de binôme', creation_binome: nil, points_faibles: nil, points_forts: nil, lien_video: nil, autres: nil)
+    case_review.update(status: 'En attente de binôme', creation_binome: nil, points_faibles: nil, points_forts: nil, lien_video: nil, autres: nil, reviewer_email: nil)
     case_review.review_comment.purge if case_review.review_comment.attached?
   end
 
