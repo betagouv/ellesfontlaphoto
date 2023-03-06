@@ -15,7 +15,6 @@
           color: $black;
           font-size: 14px;
           text-align: center;
-          margin-right: 10px;
         }
         .pastille-parite-respectee {
           font-size: 20px;
@@ -35,7 +34,7 @@
       .pastille-parite-nr {
         position: absolute;
         top: 3%;
-        left: -19%;
+        left: -18%;
         display: block;
         flex-direction: row-reverse;
         .paragraphe-parite {
@@ -43,7 +42,6 @@
           color: $black;
           font-size: 14px;
           text-align: center;
-          margin-right: 10px;
         }
         .pastille-parite-non-respectee {
           padding: 5px 11px 8px 11px;
