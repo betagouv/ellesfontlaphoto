@@ -54,6 +54,28 @@
             <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?" %>
           </div>
         <% end %>
+        <p class="paragraphe">Autres activités, hors expositions</p>
+        <p class="paragraphe">Avez-vous accueilli des photographes en résidence en 2022 ?</p>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#photographesResidence" name="yes_no">Oui</input>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#hidePhotographesResidence" name="yes_no">Non</input>
+        <div class="photographesResidence">
+          <%= f.input :nb_total_accueil_residence, label: "Combien de photographes avez-vous accueilli en résidence en 2022 ?" %>
+          <%= f.input :nb_femmes_accueil_residence, label: "Parmi ces photographes en résidence, combien étaient des femmes ?" %>
+        </div>
+        <p class="paragraphe">Avez-vous édité des ouvrages dédiés à la photographie ?</p>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#photographesOuvrage" name="yes_no">Oui</input>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#hidePhotographesOuvrage" name="yes_no">Non</input>
+        <div class="photographesOuvrage">
+          <%= f.input :nb_total_photo_ouvrages, label: "Combien de photographes figurent dans les ouvrages que vous avez édité en 2022 ?" %>
+          <%= f.input :nb_femmes_photo_ouvrages, label: "Parmi ces photographes, combien sont des femmes ?" %>
+        </div>
+        <p class="paragraphe">Avez-vous invité des photographes en dehors des expositions ?</p>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#photographesExpo" name="yes_no">Oui</input>
+        <input type="radio" data-action="change->ajout-chiffres-organizations#hidePhotographesExpo" name="yes_no">Non</input>
+        <div class="photographesExpo">
+          <%= f.input :nb_total_photographes_invites, label: "Combien de photographes avez-vous invités en dehors des expositions ?", hint: "(événements, interventions, ateliers d’éducation culturelle, etc.)" %>
+          <%= f.input :nb_femmes_photographes_invites, label: "Parmi ces photographes invité(e)s, combien étaient des femmes ?" %>
+        </div>
         <div class="btn-submit">
         <%= f.submit "Soumettre", class: "btn btn-black" %>
         </div>
