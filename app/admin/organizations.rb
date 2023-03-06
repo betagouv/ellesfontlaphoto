@@ -1,12 +1,9 @@
 ActiveAdmin.register Organization do
-  permit_params :visible, :organization_type, :name, :city, :titre, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos, :dir_parity, :expos_parity, :score_parity, :logo, :request_info_count, :nb_femmes_laureates, :nb_total_laureates, :nb_femmes_candidates, :nb_total_candidats, :nb_femmes_publiees, :nb_total_publies, :nb_femmes_iconographes, :nb_total_iconographes, :nb_femmes_enseignantes, :nb_total_enseignants, :nb_femmes_etudiantes, :nb_total_etudiants
-
-  before_destroy do |organization|
-    organization.logo.purge
-  end
+  permit_params :visible, :organization_type, :name, :city, :titre, chiffres_organizations_attributes: [:id, :annee, :nb_femmes_etudiantes, :nb_total_etudiants, :nb_femmes_enseignantes, :nb_total_enseignants, :nb_femmes_photographes_etudiees, :nb_total_photographes_etudies, :nb_femmes_publiees, :nb_total_publies, :nb_femmes_iconographes, :nb_total_iconographes, :nb_femmes_exposees, :nb_total_exposes, :nb_femmes_exposees_expo_collective, :nb_total_exposes_expo_collective, :nb_femmes_exposees_expo_mono, :nb_total_exposes_expo_mono, :nb_femmes_moins_40, :nb_femmes_plus_40, :nb_femmes_post_mortem, :nb_femmes_commissaires, :nb_total_commissaires,  :nb_femmes_artistes, :nb_total_artistes, :nb_oeuvres_photo_femmes, :nb_total_oeuvres_photo, :nb_femmes_oeuvres_ajoutees, :nb_total_oeuvres_ajoutees, :nb_femmes_candidates, :nb_total_candidats, :nb_femmes_laureates, :nb_total_laureates, :nb_femmes_jurys, :nb_total_jurys, :nb_femmes_accueil_residence, :nb_total_accueil_residence, :nb_femmes_photo_ouvrages, :nb_total_photo_ouvrages, :nb_femmes_photographes_invites, :nb_total_photographes_invites, :nb_femmes_directrices, :nb_total_directeurs, :nb_femmes_employees, :nb_total_employes, :actions_egalite, :_destroy]
 
   after_create do |organization|
     organization.organization_type = params["organization"]["organization_type"]
+    organization.save
   end
 
   after_update do |organization|
@@ -20,8 +17,6 @@ ActiveAdmin.register Organization do
     column :organization_type
     column :name
     column :city
-    column :score_parity
-    column :request_info_count
     actions
   end
 
@@ -32,33 +27,72 @@ ActiveAdmin.register Organization do
       f.input :organization_type, as: :radio, collection: Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
-      f.inputs "Festival ou Espace d'exposition" do
-        f.input :nb_women_dir, label: "Nombre de femmes à la direction"
-        f.input :total_nb_dir, label: "Nombre total de personnes à la direction"
-        f.input :nb_women_expos, label: "Nombre de femmes exposées"
-        f.input :total_nb_expos, label: "Nombre total de personnes exposés"
-      end
-      f.inputs "Prix" do
-        f.input :titre, label: "Titre du prix"
-        f.input :nb_femmes_laureates, label: "Nombre de femmes lauréates"
-        f.input :nb_total_laureates, label: "Nombre total de personnes lauréates"
-        f.input :nb_femmes_candidates, label: "Nombre de femmes candidates"
-        f.input :nb_total_candidats, label: "Nombre total de candidats"
-      end
-      f.inputs "Journal/Magazine" do
-        f.input :nb_femmes_publiees, label: "Nombre de femmes publiées"
-        f.input :nb_total_publies, label: "Nombre total de personnes publiés"
-        f.input :nb_femmes_iconographes, label: "Nombre de femmes iconographes"
-        f.input :nb_total_iconographes, label: "Nombre total d'iconographes"
-      end
-      f.inputs "École" do
-        f.input :nb_femmes_enseignantes, label: "Nombre de femmes enseignantes"
-        f.input :nb_total_enseignants, label: "Nombre total d'enseignants"
-        f.input :nb_femmes_etudiantes, label: "Nombre de femmes étudiantes"
-        f.input :nb_total_etudiants, label: "Nombre total d'étudiants"
+      f.inputs "Chiffres" do
+        f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
+          a.inputs do
+            a.input :annee, as: :select, :collection => (2020...Date.today.year).to_a
+            if organization.organization_type == "École"
+              a.input :nb_femmes_etudiantes
+              a.input :nb_total_etudiants
+              a.input :nb_femmes_enseignantes
+              a.input :nb_total_enseignants
+              a.input :nb_femmes_photographes_etudiees
+              a.input :nb_total_photographes_etudies
+            end
+            if organization.organization_type == "Journal/Magazine"
+              a.input :nb_femmes_publiees
+              a.input :nb_total_publies
+              a.input :nb_femmes_iconographes
+              a.input :nb_total_iconographes
+            end
+            if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival"
+              a.input :nb_femmes_exposees
+              a.input :nb_total_exposes
+              a.input :nb_femmes_exposees_expo_collective
+              a.input :nb_total_exposes_expo_collective
+              a.input :nb_femmes_exposees_expo_mono
+              a.input :nb_total_exposes_expo_mono
+              a.input :nb_femmes_moins_40
+              a.input :nb_femmes_plus_40
+              a.input :nb_femmes_post_mortem
+              a.input :nb_femmes_commissaires
+              a.input :nb_total_commissaires
+              a.input :nb_femmes_artistes
+              a.input :nb_total_artistes
+              a.input :nb_oeuvres_photo_femmes
+              a.input :nb_total_oeuvres_photo
+              a.input :nb_femmes_oeuvres_ajoutees
+              a.input :nb_total_oeuvres_ajoutees
+            end
+            a.inputs "Prix et récompenses" do
+              a.input :nb_femmes_candidates
+              a.input :nb_total_candidats
+              a.input :nb_femmes_laureates
+              a.input :nb_total_laureates
+              a.input :nb_femmes_jurys
+              a.input :nb_total_jurys
+            end
+            a.inputs "Autres activités, hors expositions" do
+              a.input :nb_femmes_accueil_residence
+              a.input :nb_total_accueil_residence
+              a.input :nb_femmes_photo_ouvrages
+              a.input :nb_total_photo_ouvrages
+              a.input :nb_femmes_photographes_invites
+              a.input :nb_total_photographes_invites
+            end
+            unless organization.organization_type == "École" || organization.organization_type == "Journal/Magazine"
+            a.inputs "Part des femmes travaillant dans votre structure en 2022" do
+              a.input :nb_femmes_directrices
+              a.input :nb_total_directeurs
+              a.input :nb_femmes_employees
+              a.input :nb_total_employes
+            end
+          end
+          a.input :actions_egalite
+        end
       end
     end
     f.actions
   end
-
+end
 end

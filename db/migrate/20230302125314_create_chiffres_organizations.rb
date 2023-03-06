@@ -81,7 +81,7 @@ class CreateChiffresOrganizations < ActiveRecord::Migration[6.1]
       t.float "employes_parite"
 
       t.text "actions_egalite"
-      t.references "organizations"
+      t.references "organization"
 
       t.timestamps
     end

@@ -163,10 +163,10 @@ ActiveRecord::Schema.define(version: 2023_03_02_125314) do
     t.integer "nb_total_employes"
     t.float "employes_parite"
     t.text "actions_egalite"
-    t.bigint "organizations_id"
+    t.bigint "organization_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["organizations_id"], name: "index_chiffres_organizations_on_organizations_id"
+    t.index ["organization_id"], name: "index_chiffres_organizations_on_organization_id"
   end
 
   create_table "conseils_articles", force: :cascade do |t|
