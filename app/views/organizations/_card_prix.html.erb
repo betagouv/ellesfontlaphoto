@@ -1,16 +1,20 @@
-<div class="flip-card-front" data-action="click->flip-card#flip">
+<% if organization.page_structure %>
+  <div class="flip-card-front">
+<% else %>
+  <div class="flip-card-front" data-action="click->flip-card#flip">
+<% end %>
   <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
     <p class="paragraphe-bold">
     <span class="organization-name"><%= organization.titre %>, </span><span class="paragraphe"><%= organization.name %></span>
     </p>
   </div>
   <div id="flexible">
-    <% if organization.laureates_parity.to_i >= 50 %>
-      <div class="c100 p<%= organization.laureates_parity.to_i %> purple">
+    <% if chiffres_organization.laureates_parite.to_i >= 50 %>
+      <div class="c100 p<%= chiffres_organization.laureates_parite.to_i %> purple">
     <% else %>
-      <div class="c100 p<%= organization.laureates_parity.to_i %> orange">
+      <div class="c100 p<%= chiffres_organization.laureates_parite.to_i %> orange">
     <% end %>
-      <span><%= organization.laureates_parity.to_i %>%</span>
+      <span><%= chiffres_organization.laureates_parite.to_i %>%</span>
       <div class="slice">
         <div class="bar"></div>
         <div class="fill"></div>
@@ -18,16 +22,16 @@
     </div>
   </div>
   <div class="card-organization-numbers">
-    <% if organization.nb_femmes_laureates.blank? || organization.nb_total_laureates.blank? %>
-      <p><mark><br> lauréates : N/R</mark></p>
+    <% if chiffres_organization.nb_femmes_laureates.blank? || chiffres_organization.nb_total_laureates.blank? %>
+      <p><mark><br> lauréates : ?</mark></p>
     <% else %>
-      <p><mark class="<%= organization.laureates_parity.to_i >= 50 ? "purple" : "orange" %>"><br> lauréates : <%= organization.nb_femmes_laureates %> / <%= organization.nb_total_laureates %></mark></p>
+      <p><mark class="<%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><br> lauréates : <%= chiffres_organization.nb_femmes_laureates %> / <%= chiffres_organization.nb_total_laureates %></mark></p>
     <% end %>
     <hr>
-    <% if organization.nb_femmes_candidates.blank? || organization.nb_total_candidats.blank? %>
-      <p class="paragraphe-grey">candidates : N/R</p>
+    <% if chiffres_organization.nb_femmes_candidates.blank? || chiffres_organization.nb_total_candidats.blank? %>
+      <p class="paragraphe-grey">candidates : ?</p>
     <% else %>
-      <p class="paragraphe-grey"><%= "candidate".pluralize(organization.nb_total_candidats) %> : <%= organization.nb_femmes_candidates %> / <%= organization.nb_total_candidats %></p>
+      <p class="paragraphe-grey"><%= "candidate".pluralize(chiffres_organization.nb_total_candidats) %> : <%= chiffres_organization.nb_femmes_candidates %> / <%= chiffres_organization.nb_total_candidats %></p>
     <% end %>
   </div>
 </div>

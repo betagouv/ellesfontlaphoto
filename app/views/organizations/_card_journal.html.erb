@@ -1,4 +1,8 @@
-<div class="flip-card-front" data-action="click->flip-card#flip">
+<% if organization.page_structure %>
+  <div class="flip-card-front">
+<% else %>
+  <div class="flip-card-front" data-action="click->flip-card#flip">
+<% end %>
   <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
     <p class="paragraphe-bold">
     <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
@@ -6,12 +10,12 @@
     </p>
   </div>
   <div id="flexible">
-    <% if organization.publies_parity.to_i >= 50 %>
-      <div class="c100 p<%= organization.publies_parity.to_i %> purple">
+    <% if chiffres_organization.publies_parite.to_i >= 50 %>
+      <div class="c100 p<%= chiffres_organization.publies_parite.to_i %> purple">
     <% else %>
-      <div class="c100 p<%= organization.publies_parity.to_i %> orange">
+      <div class="c100 p<%= chiffres_organization.publies_parite.to_i %> orange">
     <% end %>
-      <span><%= organization.publies_parity.to_i %>%</span>
+      <span><%= chiffres_organization.publies_parite.to_i %>%</span>
       <div class="slice">
         <div class="bar"></div>
         <div class="fill"></div>
@@ -19,16 +23,16 @@
     </div>
   </div>
   <div class="card-organization-numbers">
-    <% if organization.nb_femmes_publiees.blank? || organization.nb_total_publies.blank? %>
+    <% if chiffres_organization.nb_femmes_publiees.blank? || chiffres_organization.nb_total_publies.blank? %>
       <p><mark>femmes photographes<br> publiées : N/R</mark></p>
     <% else %>
-      <p><mark class="<%= organization.publies_parity.to_i >= 50 ? "purple" : "orange" %>">femmes photographes<br> publiées : <%= organization.nb_femmes_publiees %> / <%= organization.nb_total_publies %></mark></p>
+      <p><mark class="<%= chiffres_organization.publies_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes<br> publiées : <%= chiffres_organization.nb_femmes_publiees %> / <%= chiffres_organization.nb_total_publies %></mark></p>
     <% end %>
     <hr>
-    <% if organization.nb_femmes_iconographes.blank? || organization.nb_total_iconographes.blank? %>
+    <% if chiffres_organization.nb_femmes_iconographes.blank? || chiffres_organization.nb_total_iconographes.blank? %>
       <p class="paragraphe-grey">femmes iconographes : N/R</p>
     <% else %>
-      <p class="paragraphe-grey">femmes <%= "iconographe".pluralize(organization.nb_total_iconographes) %> : <%= organization.nb_femmes_iconographes %> / <%= organization.nb_total_iconographes %></p>
+      <p class="paragraphe-grey">femmes <%= "iconographe".pluralize(chiffres_organization.nb_total_iconographes) %> : <%= chiffres_organization.nb_femmes_iconographes %> / <%= organization.nb_total_iconographes %></p>
     <% end %>
   </div>
 </div>

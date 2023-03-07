@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   patch "case_reviews/:id", to: "case_reviews#review_case", as: "case_review"
   get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
   get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
-  resources :organizations, only: [:new, :create, :index] do
+  resources :organizations, only: [:new, :create, :index, :show] do
     resources :chiffres_organizations, only: [:new, :create, :edit, :update]
   end
   resources :notation_helps, only: :create

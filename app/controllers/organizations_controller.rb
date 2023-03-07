@@ -25,6 +25,11 @@ class OrganizationsController < ApplicationController
   def renseigner_index
   end
 
+  def show
+    @organization = Organization.find(params[:id])
+    @chiffres_organization = ChiffresOrganization.where(organization: @organization)
+  end
+
   def new
     @organization = Organization.new
   end
