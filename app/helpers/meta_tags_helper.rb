@@ -12,4 +12,10 @@ module MetaTagsHelper
     # little twist to make it work equally with an asset or a url
     meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
   end
+  
+# ajout par jenn ci dessous d'une fonction pr enlever le nom beta.gouv 
+
+  def meta_product_name
+    meta_product_name = (content_for?(:meta_product_name) ? content_for(:meta_product_name) : DEFAULT_META["meta_product_name"])
+  end
 end
