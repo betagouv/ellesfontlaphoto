@@ -10,7 +10,7 @@
     <% if organization.page_structure %>
       <%= link_to organization_path(organization) do %>
         <div class="box">
-          <div class="box-in box-front" data-flip-card-target="frontCard">
+          <div class="box-in box-front">
             <% if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival" %>
               <%= render "organizations/card_organization", organization: organization, chiffres_organization: @chiffres_organization %>
             <% elsif organization.organization_type == "École" %>

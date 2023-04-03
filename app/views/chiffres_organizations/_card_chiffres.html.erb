@@ -1,0 +1,29 @@
+<div class="box">
+  <div class="box-in box-front">
+    <div class="flip-card-front">
+      <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
+        <p class="paragraphe-bold"><%= title %></p>
+      </div>
+      <div id="flexible">
+        <% if parite.to_i >= 50 %>
+          <div class="c100 p<%= parite.to_i %> purple">
+        <% else %>
+          <div class="c100 p<%= parite.to_i %> orange">
+        <% end %>
+          <span><%= parite.to_i %>%</span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-organization-numbers">
+        <% if nb_femmes.blank? || nb_total.blank? %>
+          <p><mark>femmes photographes <br> exposées : ?</mark></p>
+        <% else %>
+          <p><mark class="<%= parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes <br> exposées : <%= nb_femmes %> / <%= nb_total %></mark></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

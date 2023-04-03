@@ -32,7 +32,7 @@
     <% if chiffres_organization.nb_femmes_iconographes.blank? || chiffres_organization.nb_total_iconographes.blank? %>
       <p class="paragraphe-grey">femmes iconographes : N/R</p>
     <% else %>
-      <p class="paragraphe-grey">femmes <%= "iconographe".pluralize(chiffres_organization.nb_total_iconographes) %> : <%= chiffres_organization.nb_femmes_iconographes %> / <%= organization.nb_total_iconographes %></p>
+      <p class="paragraphe-grey">femmes <%= "iconographe".pluralize(chiffres_organization.nb_total_iconographes) %> : <%= chiffres_organization.nb_femmes_iconographes %> / <%= chiffres_organization.nb_total_iconographes %></p>
     <% end %>
   </div>
 </div>

@@ -30,72 +30,117 @@ ActiveAdmin.register Organization do
       f.input :organization_type, as: :radio, collection: Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
-      f.inputs "Chiffres" do
+      unless f.object.new_record?
         f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
-          a.inputs do
-            a.input :annee, as: :select, :collection => (2020...Date.today.year).to_a
-            if organization.organization_type == "École"
-              a.input :nb_femmes_etudiantes
-              a.input :nb_total_etudiants
-              a.input :nb_femmes_enseignantes
-              a.input :nb_total_enseignants
-              a.input :nb_femmes_photographes_etudiees
-              a.input :nb_total_photographes_etudies
-            end
-            if organization.organization_type == "Journal/Magazine"
-              a.input :nb_femmes_publiees
-              a.input :nb_total_publies
-              a.input :nb_femmes_iconographes
-              a.input :nb_total_iconographes
-            end
-            if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival"
-              a.input :nb_femmes_exposees
-              a.input :nb_total_exposes
-              a.input :nb_femmes_exposees_expo_collective
-              a.input :nb_total_exposes_expo_collective
-              a.input :nb_femmes_exposees_expo_mono
-              a.input :nb_total_exposes_expo_mono
-              a.input :nb_femmes_moins_40
-              a.input :nb_femmes_plus_40
-              a.input :nb_femmes_post_mortem
-              a.input :nb_femmes_commissaires
-              a.input :nb_total_commissaires
-              a.input :nb_femmes_artistes
-              a.input :nb_total_artistes
-              a.input :nb_oeuvres_photo_femmes
-              a.input :nb_total_oeuvres_photo
-              a.input :nb_femmes_oeuvres_ajoutees
-              a.input :nb_total_oeuvres_ajoutees
-            end
-            a.inputs "Prix et récompenses" do
-              a.input :nb_femmes_candidates
-              a.input :nb_total_candidats
-              a.input :nb_femmes_laureates
-              a.input :nb_total_laureates
-              a.input :nb_femmes_jurys
-              a.input :nb_total_jurys
-            end
-            a.inputs "Autres activités, hors expositions" do
-              a.input :nb_femmes_accueil_residence
-              a.input :nb_total_accueil_residence
-              a.input :nb_femmes_photo_ouvrages
-              a.input :nb_total_photo_ouvrages
-              a.input :nb_femmes_photographes_invites
-              a.input :nb_total_photographes_invites
-            end
-            unless organization.organization_type == "École" || organization.organization_type == "Journal/Magazine"
-            a.inputs "Part des femmes travaillant dans votre structure en 2022" do
+          a.input :actions_egalite
+          a.input :annee, as: :select, :collection => (2020...Date.today.year).to_a
+          if organization.organization_type == "École"
+            a.input :nb_femmes_etudiantes
+            a.input :nb_total_etudiants
+            a.input :nb_femmes_enseignantes
+            a.input :nb_total_enseignants
+            a.input :nb_femmes_photographes_etudiees
+            a.input :nb_total_photographes_etudies
+          end
+          if organization.organization_type == "Journal/Magazine"
+            a.input :nb_femmes_publiees
+            a.input :nb_total_publies
+            a.input :nb_femmes_iconographes
+            a.input :nb_total_iconographes
+          end
+          if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival"
+            a.input :nb_femmes_exposees
+            a.input :nb_total_exposes
+            a.input :nb_femmes_exposees_expo_collective
+            a.input :nb_total_exposes_expo_collective
+            a.input :nb_femmes_exposees_expo_mono
+            a.input :nb_total_exposes_expo_mono
+            a.input :nb_femmes_moins_40
+            a.input :nb_femmes_plus_40
+            a.input :nb_femmes_post_mortem
+            a.input :nb_femmes_commissaires
+            a.input :nb_total_commissaires
+            a.input :nb_femmes_artistes
+            a.input :nb_total_artistes
+            a.input :nb_oeuvres_photo_femmes
+            a.input :nb_total_oeuvres_photo
+            a.input :nb_femmes_oeuvres_ajoutees
+            a.input :nb_total_oeuvres_ajoutees
+          # a.inputs "Prix et récompenses" do
+            a.input :nb_femmes_candidates
+            a.input :nb_total_candidats
+            a.input :nb_femmes_laureates
+            a.input :nb_total_laureates
+            a.input :nb_femmes_jurys
+            a.input :nb_total_jurys
+          # end
+          # a.inputs "Autres activités, hors expositions" do
+            a.input :nb_femmes_accueil_residence
+            a.input :nb_total_accueil_residence
+            a.input :nb_femmes_photo_ouvrages
+            a.input :nb_total_photo_ouvrages
+            a.input :nb_femmes_photographes_invites
+            a.input :nb_total_photographes_invites
+          # end
+          end
+          unless organization.organization_type == "École" || organization.organization_type == "Journal/Magazine"
               a.input :nb_femmes_directrices
               a.input :nb_total_directeurs
               a.input :nb_femmes_employees
               a.input :nb_total_employes
-            end
           end
+        end
+      end
+      if f.object.new_record?
+        f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
+          a.input :annee, as: :select, :collection => (2020...Date.today.year).to_a
+          a.input :nb_femmes_etudiantes
+          a.input :nb_total_etudiants
+          a.input :nb_femmes_enseignantes
+          a.input :nb_total_enseignants
+          a.input :nb_femmes_photographes_etudiees
+          a.input :nb_total_photographes_etudies
+          a.input :nb_femmes_publiees
+          a.input :nb_total_publies
+          a.input :nb_femmes_iconographes
+          a.input :nb_total_iconographes
+          a.input :nb_femmes_exposees
+          a.input :nb_total_exposes
+          a.input :nb_femmes_exposees_expo_collective
+          a.input :nb_total_exposes_expo_collective
+          a.input :nb_femmes_exposees_expo_mono
+          a.input :nb_total_exposes_expo_mono
+          a.input :nb_femmes_moins_40
+          a.input :nb_femmes_plus_40
+          a.input :nb_femmes_post_mortem
+          a.input :nb_femmes_commissaires
+          a.input :nb_total_commissaires
+          a.input :nb_femmes_artistes
+          a.input :nb_total_artistes
+          a.input :nb_oeuvres_photo_femmes
+          a.input :nb_total_oeuvres_photo
+          a.input :nb_femmes_oeuvres_ajoutees
+          a.input :nb_total_oeuvres_ajoutees
+          a.input :nb_femmes_candidates
+          a.input :nb_total_candidats
+          a.input :nb_femmes_laureates
+          a.input :nb_total_laureates
+          a.input :nb_femmes_jurys
+          a.input :nb_total_jurys
+          a.input :nb_femmes_accueil_residence
+          a.input :nb_total_accueil_residence
+          a.input :nb_femmes_photo_ouvrages
+          a.input :nb_total_photo_ouvrages
+          a.input :nb_femmes_photographes_invites
+          a.input :nb_total_photographes_invites
+          a.input :nb_femmes_directrices
+          a.input :nb_total_directeurs
+          a.input :nb_femmes_employees
+          a.input :nb_total_employes
           a.input :actions_egalite
         end
       end
     end
     f.actions
   end
-end
 end

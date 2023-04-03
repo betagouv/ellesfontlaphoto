@@ -1,0 +1,54 @@
+<div class="organization-bandeau">
+  <h1 class="title-marianne-bold"><%= @organization.name %>
+    <% if @organization.city %>
+      , <span class="title-marianne"><%= @organization.city %></span>
+    <% end %>
+  </h1>
+  <div class="cards-bandeau">
+    <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+      <div class="box">
+        <div class="box-in box-front">
+          <div class="flip-card-front">
+            <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
+              <p class="paragraphe-bold"><%= chiffre.annee %></p>
+            </div>
+            <div id="flexible">
+              <% if chiffre.exposes_parite.to_i >= 50 %>
+                <div class="c100 p<%= chiffre.exposes_parite.to_i %> purple">
+              <% else %>
+                <div class="c100 p<%= chiffre.exposes_parite.to_i %> orange">
+              <% end %>
+                <span><%= chiffre.exposes_parite.to_i %>%</span>
+                <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-organization-numbers">
+              <% if chiffre.nb_femmes_exposees.blank? || chiffre.nb_total_exposes.blank? %>
+                <p><mark>femmes photographes <br> exposées : ?</mark></p>
+              <% else %>
+                <p><mark class="<%= chiffre.exposes_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes <br> exposées : <%= chiffre.nb_femmes_exposees %> / <%= chiffre.nb_total_exposes %></mark></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="organization-chiffres">
+  <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+    <div class="btn-annee"><%= chiffre.annee %></div>
+    <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+      <%= render "chiffres_organizations/chiffres_organization", organization: @organization, chiffre: chiffre %>
+    <% elsif @organization.organization_type == "École" %>
+      <%= render "chiffres_organizations/chiffres_ecole", organization: @organization, chiffre: chiffre %>
+    <% elsif @organization.organization_type == "Prix" %>
+      <%= render "chiffres_organizations/chiffres_prix", organization: @organization, chiffre: chiffre %>
+    <% elsif @organization.organization_type == "Journal/Magazine" %>
+      <%= render "chiffres_organizations/chiffres_journal", organization: @organization, chiffre: chiffre %>
+    <% end %>
+  <% end %>
+</div>

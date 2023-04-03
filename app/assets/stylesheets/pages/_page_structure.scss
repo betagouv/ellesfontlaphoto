@@ -1,0 +1,29 @@
+.organization-bandeau {
+  background-color: $black;
+  padding: 80px 8%;
+  h1 {
+    color: $white;
+    .title-marianne {
+      color: $white;
+      font-size: 40px;
+    }
+  }
+}
+.cards-bandeau,.chiffres {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  .box {
+    cursor: auto;
+    .box-in {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.organization-chiffres {
+  background-color: $white-grey;
+  padding: 80px 8% 160px;
+}
