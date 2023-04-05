@@ -9,10 +9,6 @@
       <%= f.input :organization_type, label: "Sélectionnez le type de votre organisation", collection: Organization::ORGANIZATION_TYPE %>
       <%= f.input :name, label: "Le nom de votre organisation" %>
       <%= f.input :city, label: "Ville" %>
-      <%= f.input :nb_women_dir, label: "Nombre de femmes au sein de votre direction" %>
-      <%= f.input :total_nb_dir, label: "Nombre total de personne au de sein de votre direction" %>
-      <%= f.input :nb_women_expos, label: "Nombre de femmes exposée(s)" %>
-      <%= f.input :total_nb_expos, label: "Nombre total de personnes exposé(e)s" %>
       <div class="btn-submit">
         <%= f.submit "Soumettre" %>
       </div>

@@ -38,6 +38,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(organization_params)
     @organization.visible = false
     @organization.save
+    redirect_to new_organization_chiffres_organization_path(@organization)
   end
 
   private

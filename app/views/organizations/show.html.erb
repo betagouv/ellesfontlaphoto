@@ -1,4 +1,7 @@
 <div class="organization-bandeau">
+  <%= link_to organizations_path do %>
+    <%= image_tag "arrow-line-white.svg", class: "back-arrow" %>
+  <% end %>
   <h1 class="title-marianne-bold"><%= @organization.name %>
     <% if @organization.city %>
       , <span class="title-marianne"><%= @organization.city %></span>
@@ -39,16 +42,26 @@
   </div>
 </div>
 <div class="organization-chiffres">
-  <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
-    <div class="btn-annee"><%= chiffre.annee %></div>
-    <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
-      <%= render "chiffres_organizations/chiffres_organization", organization: @organization, chiffre: chiffre %>
-    <% elsif @organization.organization_type == "École" %>
-      <%= render "chiffres_organizations/chiffres_ecole", organization: @organization, chiffre: chiffre %>
-    <% elsif @organization.organization_type == "Prix" %>
-      <%= render "chiffres_organizations/chiffres_prix", organization: @organization, chiffre: chiffre %>
-    <% elsif @organization.organization_type == "Journal/Magazine" %>
-      <%= render "chiffres_organizations/chiffres_journal", organization: @organization, chiffre: chiffre %>
+  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+      <li role="presentation">
+        <button class="fr-btn <%= "active" if @chiffres_organization.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>-tab" data-bs-toggle="pill" data-bs-target="#pills-<%= chiffre.annee %>" type="button" role="tab" aria-controls="pills-home" aria-selected="<%= @chiffres_organization.order(annee: :desc).first == chiffre ? "true" : "false" %>">Année <%= chiffre.annee %></button>
+      </li>
     <% end %>
+  </ul>
+  <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade <%= "show active" if @chiffres_organization.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>" role="tabpanel" aria-labelledby="pills-<%= chiffre.annee %>-tab" tabindex="0">
+        <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+          <%= render "chiffres_organizations/chiffres_organization", organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.organization_type == "École" %>
+          <%= render "chiffres_organizations/chiffres_ecole", organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.organization_type == "Prix" %>
+          <%= render "chiffres_organizations/chiffres_prix", organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.organization_type == "Journal/Magazine" %>
+          <%= render "chiffres_organizations/chiffres_journal", organization: @organization, chiffre: chiffre %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>

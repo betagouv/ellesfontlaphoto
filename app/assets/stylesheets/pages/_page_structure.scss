@@ -1,6 +1,12 @@
 .organization-bandeau {
   background-color: $black;
-  padding: 80px 8%;
+  padding: 80px 14%;
+  position: relative;
+  .back-arrow {
+    position: absolute;
+    left: 8%;
+    top: 14%;
+  }
   h1 {
     color: $white;
     .title-marianne {
@@ -25,5 +31,15 @@
 }
 .organization-chiffres {
   background-color: $white-grey;
-  padding: 80px 8% 160px;
+  padding: 80px 14% 160px;
+  .nav .fr-btn {
+    background-color: transparent;
+    border: 1px solid $black;
+    color: $black;
+  }
+  .nav .fr-btn.active {
+    background-color: $black;
+    color: $white;
+    margin: 0 5px 50px 5px;
+  }
 }
