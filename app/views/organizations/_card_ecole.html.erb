@@ -5,8 +5,12 @@
 <% end %>
   <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
     <p class="paragraphe-bold">
-    <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
-      <% unless organization.city.blank? %><span class="paragraphe"><%= organization.city %></span><% end %>
+      <% if annee %>
+        <span class="organization-name"><%= annee %></span>
+      <% else %>
+        <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
+          <% unless organization.city.blank? %><span class="paragraphe"><%= organization.city %></span><% end %>
+      <% end %>
     </p>
   </div>
   <div id="flexible">

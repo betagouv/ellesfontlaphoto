@@ -1,5 +1,8 @@
-<p class="title-marianne-bold">Publications</p>
-<div class="chiffres">
-  <%= render "chiffres_organizations/card_chiffres", title: "photographies publiées", nb_femmes: chiffre.nb_femmes_publiees, nb_total: chiffre.nb_total_publies, parite: chiffre.publies_parite %>
-  <%= render "chiffres_organizations/card_chiffres", title: "iconographes (responsable des images) ", nb_femmes: chiffre.nb_femmes_iconographes, nb_total: chiffre.nb_total_iconographes , parite: chiffre.iconographes_parite %>
+<div class="div-chiffres">
+  <p class="title-marianne-bold">Publications</p>
+  <div class="chiffres">
+    <%= render "chiffres_organizations/card_chiffres", title: "photographies publiées", nb_femmes: chiffre.nb_femmes_publiees, nb_total: chiffre.nb_total_publies, parite: chiffre.publies_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "iconographes (responsable des images) ", nb_femmes: chiffre.nb_femmes_iconographes, nb_total: chiffre.nb_total_iconographes , parite: chiffre.iconographes_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "directrices", nb_femmes: chiffre.nb_femmes_directrices, nb_total: chiffre.nb_total_directeurs, parite: chiffre.directeurs_parite %>
+  </div>
 </div>
