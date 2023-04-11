@@ -1,5 +1,5 @@
 ActiveAdmin.register Organization do
-  permit_params :visible, :organization_type, :name, :city, :titre, :finance_ministre, :page_structure, :observatoire_egalite, chiffres_organizations_attributes: [:id, :annee, :nb_femmes_etudiantes, :nb_total_etudiants, :nb_femmes_enseignantes, :nb_total_enseignants, :nb_femmes_photographes_etudiees, :nb_total_photographes_etudies, :nb_femmes_publiees, :nb_total_publies, :nb_femmes_iconographes, :nb_total_iconographes, :nb_femmes_exposees, :nb_total_exposes, :nb_femmes_exposees_expo_collective, :nb_total_exposes_expo_collective, :nb_femmes_exposees_expo_mono, :nb_total_exposes_expo_mono, :nb_femmes_moins_40, :nb_femmes_plus_40, :nb_femmes_post_mortem, :nb_femmes_commissaires, :nb_total_commissaires,  :nb_femmes_artistes, :nb_total_artistes, :nb_oeuvres_photo_femmes, :nb_total_oeuvres_photo, :nb_femmes_oeuvres_ajoutees, :nb_total_oeuvres_ajoutees, :nb_femmes_candidates, :nb_total_candidats, :nb_femmes_laureates, :nb_total_laureates, :nb_femmes_jurys, :nb_total_jurys, :nb_femmes_accueil_residence, :nb_total_accueil_residence, :nb_femmes_photo_ouvrages, :nb_total_photo_ouvrages, :nb_femmes_photographes_invites, :nb_total_photographes_invites, :nb_femmes_directrices, :nb_total_directeurs, :nb_femmes_employees, :nb_total_employes, :actions_egalite, :_destroy]
+  permit_params :visible, :organization_type, :name, :city, :titre, :finance_ministre, :page_structure, :observatoire_egalite, chiffres_organizations_attributes: [:id, :annee, :visible, :nb_femmes_etudiantes, :nb_total_etudiants, :nb_femmes_enseignantes, :nb_total_enseignants, :nb_femmes_photographes_etudiees, :nb_total_photographes_etudies, :nb_femmes_publiees, :nb_total_publies, :nb_femmes_iconographes, :nb_total_iconographes, :nb_femmes_exposees, :nb_total_exposes, :nb_femmes_exposees_expo_collective, :nb_total_exposes_expo_collective, :nb_femmes_exposees_expo_mono, :nb_total_exposes_expo_mono, :nb_femmes_moins_40, :nb_femmes_plus_40, :nb_femmes_post_mortem, :nb_femmes_commissaires, :nb_total_commissaires,  :nb_femmes_artistes, :nb_total_artistes, :nb_oeuvres_photo_femmes, :nb_total_oeuvres_photo, :nb_femmes_oeuvres_ajoutees, :nb_total_oeuvres_ajoutees, :nb_femmes_candidates, :nb_total_candidats, :nb_femmes_laureates, :nb_total_laureates, :nb_femmes_jurys, :nb_total_jurys, :nb_femmes_accueil_residence, :nb_total_accueil_residence, :nb_femmes_photo_ouvrages, :nb_total_photo_ouvrages, :nb_femmes_photographes_invites, :nb_total_photographes_invites, :nb_femmes_directrices, :nb_total_directeurs, :nb_femmes_employees, :nb_total_employes, :actions_egalite, :_destroy]
 
   after_create do |organization|
     organization.organization_type = params["organization"]["organization_type"]
@@ -32,8 +32,8 @@ ActiveAdmin.register Organization do
       f.input :city, label: "Ville"
       unless f.object.new_record?
         f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
-          a.input :actions_egalite
-          a.input :annee, as: :select, :collection => (2020...Date.today.year).to_a
+          a.input :annee, as: :select, collection: (2020...Date.today.year).to_a
+          a.input :visible
           if organization.organization_type == "École"
             a.input :nb_femmes_etudiantes
             a.input :nb_total_etudiants
@@ -89,6 +89,7 @@ ActiveAdmin.register Organization do
               a.input :nb_femmes_employees
               a.input :nb_total_employes
           end
+          a.input :actions_egalite
         end
       end
       if f.object.new_record?

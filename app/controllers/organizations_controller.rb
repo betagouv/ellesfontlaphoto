@@ -27,7 +27,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    @chiffres_organization = ChiffresOrganization.where(organization: @organization)
+    @chiffres_organization = ChiffresOrganization.where(organization: @organization, visible: true)
   end
 
   def new
