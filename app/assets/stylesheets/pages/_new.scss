@@ -163,6 +163,27 @@
         background-position: right 3% bottom 45%;
       }
 
+    input[type='radio']:after {
+      width: 20px;
+      height: 20px;
+      top: -2px;
+      left: -3px;
+      border-radius: 5px;
+      position: relative;
+      background-color: $white;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid #d1d3d1;
+      cursor: pointer;
+    }
+
+    input[type='radio']:checked:after {
+        background-color: $purple-blue;
+        border: none;
+    }
+
+
       input[type=checkbox] {
         border-radius: 4px;
         background-color: #FFFFFF;
@@ -171,9 +192,9 @@
         height: 25px;
         &:checked {
           background-color: $purple-blue;
-           background-image: url("validate-white.svg");
-           background-size: 60%;
-           border: none;
+          background-image: url("validate-white.svg");
+          background-size: 60%;
+          border: none;
         }
       }
 
@@ -234,6 +255,26 @@
         .btn-black {
           margin: 20px auto;
         }
+      }
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
       }
     }
   }
