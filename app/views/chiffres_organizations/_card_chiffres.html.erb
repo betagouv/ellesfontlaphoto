@@ -19,9 +19,9 @@
       </div>
       <div class="card-organization-numbers">
         <% if nb_femmes.blank? || nb_total.blank? %>
-          <p><mark>femmes photographes <br> exposées : ?</mark></p>
+          <p><mark><%= legende %> : ?</mark></p>
         <% else %>
-          <p><mark class="<%= parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes <br> exposées : <%= nb_femmes %> / <%= nb_total %></mark></p>
+          <p><mark class="<%= parite.to_i >= 50 ? "purple" : "orange" %>"><%= legende %> <%= nb_femmes %> / <%= nb_total %></mark></p>
         <% end %>
       </div>
     </div>

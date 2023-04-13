@@ -46,18 +46,18 @@
           <%= render "chiffres_organizations/chiffres_journal", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
         <% end %>
         <div class="div-chiffres">
-          <p class="title-marianne-bold">Autres activités, hors expositions</p>
+          <p class="title-marianne-bold">Autres activités</p>
           <div class="chiffres">
-            <%= render "chiffres_organizations/card_chiffres", title: "accueil de photographes en résidence", nb_femmes: chiffre.nb_femmes_accueil_residence, nb_total: chiffre.nb_total_accueil_residence, parite: chiffre.accueil_residence_parite %>
-            <%= render "chiffres_organizations/card_chiffres", title: "édit d'ouvrages dédiés à la photographie", nb_femmes: chiffre.nb_femmes_photo_ouvrages, nb_total: chiffre.nb_total_photo_ouvrages , parite: chiffre.photo_ouvrages_parite %>
-            <%= render "chiffres_organizations/card_chiffres", title: "photographes invités", nb_femmes: chiffre.nb_femmes_photographes_invites, nb_total: chiffre.nb_total_photographes_invites, parite: chiffre.photographes_invites_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "résidence", legende: "femmes photographes en résidence", nb_femmes: chiffre.nb_femmes_accueil_residence, nb_total: chiffre.nb_total_accueil_residence, parite: chiffre.accueil_residence_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "édition de livre", legende: "femmes photographes publiées", nb_femmes: chiffre.nb_femmes_photo_ouvrages, nb_total: chiffre.nb_total_photo_ouvrages , parite: chiffre.photo_ouvrages_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "invitation d'artiste (événements, interventions, ateliers...)", legende: "femmes photographes invitées", nb_femmes: chiffre.nb_femmes_photographes_invites, nb_total: chiffre.nb_total_photographes_invites, parite: chiffre.photographes_invites_parite %>
           </div>
         </div>
         <div class="div-chiffres">
-          <p class="title-marianne-bold">Part des femmes travaillant dans votre structure</p>
+          <p class="title-marianne-bold">Effectif de l'organisation</p>
           <div class="chiffres">
-            <%= render "chiffres_organizations/card_chiffres", title: "employé(e)s", nb_femmes: chiffre.nb_femmes_employees, nb_total: chiffre.nb_total_employes, parite: chiffre.employes_parite %>
-            <%= render "chiffres_organizations/card_chiffres", title: "direction", nb_femmes: chiffre.nb_femmes_directrices, nb_total: chiffre.nb_total_directeurs , parite: chiffre.directeurs_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "direction", legende: "femmes", nb_femmes: chiffre.nb_femmes_directrices, nb_total: chiffre.nb_total_directeurs , parite: chiffre.directeurs_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "personnel de la structure", legende: "femmes", nb_femmes: chiffre.nb_femmes_employees, nb_total: chiffre.nb_total_employes, parite: chiffre.employes_parite %>
           </div>
         </div>
         <% if !chiffre.actions_egalite.empty? %>

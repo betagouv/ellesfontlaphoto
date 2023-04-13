@@ -32,13 +32,17 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new
+    @chiffres_organization = ChiffresOrganization.new
   end
 
   def create
     @organization = Organization.new(organization_params)
     @organization.visible = false
-    @organization.save
-    redirect_to new_organization_chiffres_organization_path(@organization)
+    if @organization.save
+      redirect_to new_organization_chiffres_organization_path(@organization)
+    else
+      render :new
+    end
   end
 
   private

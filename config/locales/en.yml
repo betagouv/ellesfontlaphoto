@@ -40,3 +40,5 @@ fr:
         contact_email: Email
         accept_cgu: La politique de confidentialité
         comment: Votre message
+      organization:
+        name: Ce nom

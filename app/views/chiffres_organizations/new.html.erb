@@ -15,7 +15,6 @@
           <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?" %>
           <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?" %>
           <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-          <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?" %>
         <% end %>
         <% if @organization.organization_type == "Journal/Magazine" %>
           <p class="main-paragraphe mt40">Part des femmes dans votre journal/magazine</p>
@@ -24,13 +23,16 @@
           <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)" %>
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?" %>
           <%= f.input :nb_total_directeurs, label: "Combien de personnes composaient la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-          <%= f.input :nb_femmes_directrices, label: "Parmi ces personnes, combien étaient des femmes ?" %>
         <% end %>
         <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
           <p class="main-paragraphe mt40">Part des femmes photographes dans vos expositions, en 2022 (in situ et hors les murs)</p>
-          <label for="">Avez-vous réalisé des expositions durant cette année ?</label>
-          <input type="radio" data-action="change->ajout-chiffres-organizations#champsExposition" name="yes_no">Oui</input>
-          <input type="radio" data-action="change->ajout-chiffres-organizations#hideChampsExposition" name="yes_no">Non</input>
+          <p class="paragraphe mt20 mb0">Avez-vous réalisé des expositions durant cette année ?</p>
+          <fieldset id="champs_exposition">
+            <input type="radio" data-action="change->ajout-chiffres-organizations#champsExposition" name="champs_exposition"></input>
+            <label class="ml3" for="champs_exposition">Oui</label>
+            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsExposition" name="champs_exposition"></input>
+            <label class="ml3" for="champs_exposition">Non</label>
+          </fieldset>
           <div class="expos d-none" data-ajout-chiffres-organizations-target="divExpo">
             <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?" %>
             <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?" %>
@@ -42,9 +44,13 @@
             <%= f.input :nb_total_commissaires, label: "Combien de commissaires d'exposition sont intervenus en 2022 ?", hint: "(Commissaires externes inclus)" %>
             <%= f.input :nb_femmes_commissaires, label: "Parmi ces commissaires d'exposition, combien étaient des femmes ?" %>
           </div>
-          <label for="">Avez-vous un fonds photographique ou une collection permanente ?</label>
-          <input type="radio" data-action="change->ajout-chiffres-organizations#champsCollection" name="yes_no">Oui</input>
-          <input type="radio" data-action="change->ajout-chiffres-organizations#hideChampsCollection" name="yes_no">Non</input>
+          <p class="paragraphe mt20 mb0">Avez-vous un fonds photographique ou une collection permanente ?</p>
+          <fieldset id="champs_collection">
+            <input type="radio" data-action="change->ajout-chiffres-organizations#champsCollection" name="champs_collection"></input>
+            <label class="ml3" for="champs_collection">Oui</label>
+            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsCollection" name="champs_collection"></input>
+            <label class="ml3" for="champs_collection">Non</label>
+          </fieldset>
           <div class="expos d-none" data-ajout-chiffres-organizations-target="divCollection">
             <%= f.input :nb_total_artistes, label: "Combien d'artistes comptait votre fonds/collection en 2022 ?" %>
             <%= f.input :nb_femmes_artistes, label: "Parmi ces artistes, combien étaient des femmes ?" %>
@@ -54,12 +60,12 @@
             <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?" %>
           </div>
         <% end %>
-        <p class="main-paragraphe mt40">Autres activités, hors expositions</p>
+        <p class="main-paragraphe mt40">Autres activités</p>
         <p class="paragraphe mt20 mb0">Avez-vous accueilli des photographes en résidence en 2022 ?</p>
         <fieldset id="accueil_residence">
           <input type="radio" data-action="change->ajout-chiffres-organizations#photographesResidence" name="accueil_residence"></input>
           <label class="ml3" for="accueil_residence">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#photographesResidence" name="accueil_residence"></input>
+          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesResidence" name="accueil_residence"></input>
           <label class="ml3" for="accueil_residence">Non</label>
         </fieldset>
         <div class="photographesResidence d-none" data-ajout-chiffres-organizations-target="photographesResidence">
@@ -88,6 +94,13 @@
           <%= f.input :nb_total_photographes_invites, label: "Combien de photographes avez-vous invités en dehors des expositions ?", hint: "(événements, interventions, ateliers d’éducation culturelle, etc.)" %>
           <%= f.input :nb_femmes_photographes_invites, label: "Parmi ces photographes invité(e)s, combien étaient des femmes ?" %>
         </div>
+        <p class="paragraphe mt20 mb0">Part des femmes travaillant dans votre structure</p>
+        <%= f.input :nb_total_employes, label: "Combien d'employé(e)s travaillent dans votre structure ?" %>
+        <%= f.input :nb_femmes_employees, label: "Combien de ces employé(e)s sont des femmes ?" %>
+        <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
+        <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?" %>
+        <p class="main-paragraphe mt40">C'est la dernière étape !</p>
+        <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l’égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d’alerte ou d’écoute)…" %>
         <div class="btn-submit">
         <%= f.submit "Soumettre", class: "btn btn-black" %>
         </div>

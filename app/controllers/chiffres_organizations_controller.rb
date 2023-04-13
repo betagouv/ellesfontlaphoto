@@ -5,6 +5,7 @@ class ChiffresOrganizationsController < ApplicationController
   end
 
   def create
+    raise
   end
 
   private

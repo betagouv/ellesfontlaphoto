@@ -12,5 +12,4 @@ class Organization < ApplicationRecord
     "Prix",
     "Journal/Magazine"
   ]
-
 end

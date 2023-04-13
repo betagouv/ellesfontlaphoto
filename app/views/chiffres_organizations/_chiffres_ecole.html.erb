@@ -1,9 +1,8 @@
 <div class="div-chiffres">
-  <p class="title-marianne-bold">Enseignements</p>
+  <p class="title-marianne-bold">Enseignement</p>
   <div class="chiffres">
-    <%= render "chiffres_organizations/card_chiffres", title: "étudiant(e)s", nb_femmes: chiffre.nb_femmes_etudiantes, nb_total: chiffre.nb_total_etudiants, parite: chiffre.etudiants_parite %>
-    <%= render "chiffres_organizations/card_chiffres", title: "professeur(e)s", nb_femmes: chiffre.nb_femmes_enseignantes, nb_total: chiffre.nb_total_enseignants , parite: chiffre.enseignants_parite %>
-    <%= render "chiffres_organizations/card_chiffres", title: "photographes étudié(e)s", nb_femmes: chiffre.nb_femmes_photographes_etudiees, nb_total: chiffre.nb_total_photographes_etudies, parite: chiffre.photographes_etudies_parite %>
-    <%= render "chiffres_organizations/card_chiffres", title: "directrices", nb_femmes: chiffre.nb_femmes_directrices, nb_total: chiffre.nb_total_directeurs, parite: chiffre.directeurs_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "étudiant(e)s", legendes: "femmes", nb_femmes: chiffre.nb_femmes_etudiantes, nb_total: chiffre.nb_total_etudiants, parite: chiffre.etudiants_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "professeur(e)s", legendes: "femmes", nb_femmes: chiffre.nb_femmes_enseignantes, nb_total: chiffre.nb_total_enseignants , parite: chiffre.enseignants_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "photographes étudié(e)s", legendes: "femmes", nb_femmes: chiffre.nb_femmes_photographes_etudiees, nb_total: chiffre.nb_total_photographes_etudies, parite: chiffre.photographes_etudies_parite %>
   </div>
 </div>
