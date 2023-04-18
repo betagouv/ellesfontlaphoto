@@ -8,16 +8,17 @@
   <% @organizations.each do |organization| %>
     <% @chiffres_organization = ChiffresOrganization.where(organization: organization).order(annee: :desc).first %>
     <% if organization.page_structure %>
-      <%= link_to organization_path(organization) do %>
+      <% link_ref = organization.organization != nil && organization.prix? ? organization.organization : organization%>
+      <%= link_to organization_path(link_ref) do %>
         <div class="box">
           <div class="box-in box-front">
-            <% if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival" %>
+            <% if organization.orga? %>
               <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.organization_type == "École" %>
+            <% elsif organization.ecole? %>
               <%= render "organizations/card_ecole", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.organization_type == "Prix" %>
+            <% elsif organization.prix? %>
               <%= render "organizations/card_prix", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.organization_type == "Journal/Magazine" %>
+            <% elsif organization.journal? %>
               <%= render "organizations/card_journal", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
             <% end %>
           </div>
@@ -26,13 +27,13 @@
     <% else %>
       <div class="box" data-controller="flip-card">
         <div class="box-in box-front" data-flip-card-target="frontCard">
-          <% if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival" %>
+          <% if organization.orga? %>
             <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.organization_type == "École" %>
+          <% elsif organization.ecole? %>
             <%= render "organizations/card_ecole", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.organization_type == "Prix" %>
+          <% elsif organization.prix? %>
             <%= render "organizations/card_prix", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.organization_type == "Journal/Magazine" %>
+          <% elsif organization.journal? %>
             <%= render "organizations/card_journal", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
           <% end %>
         </div>

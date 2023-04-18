@@ -30,9 +30,10 @@
     </div>
     <div class="ajout-organization-form <%= @organization.errors.any? ? "" : "d-none" %>" data-ajout-organisations-target="divNewOrga">
       <%= simple_form_for @organization do |f| %>
-        <%= f.input :organization_type, label: "Sélectionnez le type de votre organisation", collection: Organization::ORGANIZATION_TYPE %>
-        <%= f.input :name, label: "Le nom de votre organisation" %>
-        <%= f.input :city, label: "Ville" %>
+        <%= f.input :organization_type, label: "Sélectionnez le type de votre organisation", collection: Organization::ORGANIZATION_TYPE, hint: "Vous êtes un espace d'exposition qui a crée son festival? Veuillez remplir 2 fois le formulaire en distinguant la programmation du lieu et celle du festival." %>
+        <%= f.input :name, label: "Votre structure se nomme..." %>
+        <%= f.input :city, label: "Votre structure se situe dans la ville de..." %>
+        <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
         <div class="btn-submit">
           <%= f.submit "Soumettre", class: "btn btn-black" %>
         </div>

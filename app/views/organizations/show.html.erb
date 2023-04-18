@@ -11,13 +11,13 @@
     <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
       <div class="box">
         <div class="box-in box-front">
-          <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+          <% if @organization.orga? %>
             <%= render "organizations/card_organization", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
-          <% elsif @organization.organization_type == "École" %>
+          <% elsif @organization.ecole? %>
             <%= render "organizations/card_ecole", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
-          <% elsif @organization.organization_type == "Prix" %>
+          <% elsif @organization.prix? %>
             <%= render "organizations/card_prix", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
-          <% elsif @organization.organization_type == "Journal/Magazine" %>
+          <% elsif @organization.journal? %>
             <%= render "organizations/card_journal", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
           <% end %>
         </div>
@@ -36,14 +36,19 @@
   <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade <%= "show active" if @chiffres_organization.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>" role="tabpanel" aria-labelledby="pills-<%= chiffre.annee %>-tab" tabindex="0">
-        <% if @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+        <% if @organization.orga? %>
           <%= render "chiffres_organizations/chiffres_organization", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
-        <% elsif @organization.organization_type == "École" %>
+        <% elsif @organization.ecole? %>
           <%= render "chiffres_organizations/chiffres_ecole", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
-        <% elsif @organization.organization_type == "Prix" %>
+        <% elsif @organization.prix? %>
           <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
-        <% elsif @organization.organization_type == "Journal/Magazine" %>
+        <% elsif @organization.journal? %>
           <%= render "chiffres_organizations/chiffres_journal", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
+        <% end %>
+        <% if !@prix.empty? %>
+          <% @prix.each do |prix| %>
+            <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+          <% end %>
         <% end %>
         <div class="div-chiffres">
           <p class="title-marianne-bold">Autres activités</p>

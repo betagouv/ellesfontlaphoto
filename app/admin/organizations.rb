@@ -17,6 +17,8 @@ ActiveAdmin.register Organization do
     column :organization_type
     column :name
     column :city
+    column :organization
+    column :created_at
     actions
   end
 
@@ -42,13 +44,13 @@ ActiveAdmin.register Organization do
             a.input :nb_femmes_photographes_etudiees
             a.input :nb_total_photographes_etudies
           end
-          if organization.organization_type == "Journal/Magazine"
+          if organization.journal?
             a.input :nb_femmes_publiees
             a.input :nb_total_publies
             a.input :nb_femmes_iconographes
             a.input :nb_total_iconographes
           end
-          if organization.organization_type == "Espace d'exposition" || organization.organization_type == "Festival"
+          if organization.orga?
             a.input :nb_femmes_exposees
             a.input :nb_total_exposes
             a.input :nb_femmes_exposees_expo_collective
@@ -83,7 +85,7 @@ ActiveAdmin.register Organization do
             a.input :nb_total_photographes_invites
           # end
           end
-          unless organization.organization_type == "École" || organization.organization_type == "Journal/Magazine"
+          unless organization.organization_type == "École" || organization.journal?
               a.input :nb_femmes_directrices
               a.input :nb_total_directeurs
               a.input :nb_femmes_employees

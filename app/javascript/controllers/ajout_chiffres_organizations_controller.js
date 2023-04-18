@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = [
     "divExpo",
     "divCollection",
+    "divPrix",
     "photographesResidence",
     "photographesOuvrage",
     "photographesExpo"
@@ -23,6 +24,14 @@ export default class extends Controller {
 
   hideChampsCollection() {
     this.divCollectionTarget.classList.add("d-none")
+  }
+
+  champsPrix() {
+    this.divPrixTarget.classList.remove("d-none")
+  }
+
+  hideChampsPrix() {
+    this.divPrixTarget.classList.add("d-none")
   }
 
   photographesResidence() {
