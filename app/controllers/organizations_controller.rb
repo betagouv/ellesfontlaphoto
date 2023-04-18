@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+  before_action :set_organization, only: [:edit, :show, :update]
   def index
     @contact = Contact.new
     if params[:query].present?
@@ -26,7 +27,6 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-    @organization = Organization.find(params[:id])
     @chiffres_organization = ChiffresOrganization.where(organization: @organization, visible: true)
     @prix = Organization.where(organization_type: "Prix", organization: @organization)
   end
@@ -47,6 +47,10 @@ class OrganizationsController < ApplicationController
   end
 
   private
+
+  def set_organization
+    @organization = Organization.find(params[:id])
+  end
 
   def organization_params
     params.require(:organization).permit(:organization_type, :name, :city)

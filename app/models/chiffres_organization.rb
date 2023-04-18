@@ -5,22 +5,22 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :annee, uniqueness: { scope: :organization }
 
   # Validation de présence des chiffres en fonction du type de l'organisation
-  # validates :nb_femmes_exposees, presence: true, if: -> { organization.orga? }
-  # validates :nb_total_exposes, presence: true, if: -> { organization.orga? }
-  # validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
-  # validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
-  # validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
-  # validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
-  # validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
-  # validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
-  # validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
-  # validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
-  # validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
-  # validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
-  # validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
-  # validates :nb_total_publies, presence: true, if: -> { organization.journal? }
-  # validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
-  # validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
+  validates :nb_femmes_exposees, presence: true, if: -> { organization.orga? }
+  validates :nb_total_exposes, presence: true, if: -> { organization.orga? }
+  validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
+  validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
+  validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
+  validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
+  validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
+  validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
+  validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
+  validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
+  validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
+  validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
+  validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
+  validates :nb_total_publies, presence: true, if: -> { organization.journal? }
+  validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
+  validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
 
   # Validations de calcul de parité
   after_validation :calculate_parity

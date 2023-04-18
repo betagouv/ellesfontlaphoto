@@ -36,7 +36,7 @@ ActiveAdmin.register Organization do
         f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
           a.input :annee, as: :select, collection: (2020...Date.today.year).to_a
           a.input :visible
-          if organization.organization_type == "École"
+          if organization.ecole?
             a.input :nb_femmes_etudiantes
             a.input :nb_total_etudiants
             a.input :nb_femmes_enseignantes
@@ -68,29 +68,25 @@ ActiveAdmin.register Organization do
             a.input :nb_total_oeuvres_photo
             a.input :nb_femmes_oeuvres_ajoutees
             a.input :nb_total_oeuvres_ajoutees
-          # a.inputs "Prix et récompenses" do
+          end
+          if organization.prix?
             a.input :nb_femmes_candidates
             a.input :nb_total_candidats
             a.input :nb_femmes_laureates
             a.input :nb_total_laureates
             a.input :nb_femmes_jurys
             a.input :nb_total_jurys
-          # end
-          # a.inputs "Autres activités, hors expositions" do
-            a.input :nb_femmes_accueil_residence
-            a.input :nb_total_accueil_residence
-            a.input :nb_femmes_photo_ouvrages
-            a.input :nb_total_photo_ouvrages
-            a.input :nb_femmes_photographes_invites
-            a.input :nb_total_photographes_invites
-          # end
           end
-          unless organization.organization_type == "École" || organization.journal?
-              a.input :nb_femmes_directrices
-              a.input :nb_total_directeurs
-              a.input :nb_femmes_employees
-              a.input :nb_total_employes
-          end
+          a.input :nb_femmes_accueil_residence
+          a.input :nb_total_accueil_residence
+          a.input :nb_femmes_photo_ouvrages
+          a.input :nb_total_photo_ouvrages
+          a.input :nb_femmes_photographes_invites
+          a.input :nb_total_photographes_invites
+          a.input :nb_femmes_directrices
+          a.input :nb_total_directeurs
+          a.input :nb_femmes_employees
+          a.input :nb_total_employes
           a.input :actions_egalite
         end
       end

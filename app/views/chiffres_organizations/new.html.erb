@@ -6,7 +6,7 @@
     <div id="new_organization">
       <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
         <%= f.input :annee, collection: (2010..Time.now.year).to_a, label: "Pour quelle année souhaitez vous rensigné les chiffres ?" %>
-        <% if @organization.organization_type == "École" %>
+        <% if @organization.ecole? %>
           <p class="main-paragraphe mt40">Part des femmes dans votre école de photographie</p>
           <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?" %>
           <%= f.input :nb_femmes_etudiantes, label: "Parmi ces étudiants, combien sont des femmes ?" %>
@@ -15,14 +15,14 @@
           <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?" %>
           <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?" %>
           <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-        <% elsif @organization.organization_type == "Journal/Magazine" %>
+        <% elsif @organization.jounal? %>
           <p class="main-paragraphe mt40">Part des femmes dans votre journal/magazine</p>
           <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?"%>
           <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?"%>
           <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)" %>
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?" %>
           <%= f.input :nb_total_directeurs, label: "Combien de personnes composaient la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-        <% elsif @organization.organization_type == "Espace d'exposition" || @organization.organization_type == "Festival" %>
+        <% elsif @organization.orga? %>
           <p class="main-paragraphe mt40">Part des femmes photographes dans vos expositions, pendant cette année (in situ et hors les murs)</p>
           <%= f.input :nb_total_exposes, label: "Combien de photographes ont été présentés dans vos expositions ?" %>
           <%= f.input :nb_femmes_exposees, label: "Dans ces expositions  combien de photographes étaient des femmes ?" %>
@@ -60,7 +60,7 @@
             <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?" %>
           </div>
         <% end %>
-        <% unless @organization.organization_type == "Prix" %>
+        <% unless @organization.prix? %>
           <p class="paragraphe mt20 mb0">Avez-vous été à l'initiative de prix ou autres récompenses photographiques durant cette année ?</p>
           <fieldset id="champs_prix">
             <input type="radio" data-action="change->ajout-chiffres-organizations#champsPrix" name="champs_prix"></input>
