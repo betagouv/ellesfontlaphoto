@@ -1,0 +1,75 @@
+<div class="organization-bandeau">
+  <%= link_to organizations_path do %>
+    <%= image_tag "arrow-line-white.svg", class: "back-arrow" %>
+  <% end %>
+  <h1 class="title-marianne-bold"><%= @organization.name %>
+    <% if @organization.city %>
+      , <span class="title-marianne"><%= @organization.city %></span>
+    <% end %>
+  </h1>
+  <div class="cards-bandeau">
+    <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+      <div class="box">
+        <div class="box-in box-front">
+          <% if @organization.orga? %>
+            <%= render "organizations/card_organization", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
+          <% elsif @organization.ecole? %>
+            <%= render "organizations/card_ecole", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
+          <% elsif @organization.prix? %>
+            <%= render "organizations/card_prix", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
+          <% elsif @organization.journal? %>
+            <%= render "organizations/card_journal", annee: chiffre.annee, organization: @organization, chiffres_organization: chiffre %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="organization-chiffres">
+  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+      <li role="presentation">
+        <button class="fr-btn <%= "active" if @chiffres_organization.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>-tab" data-bs-toggle="pill" data-bs-target="#pills-<%= chiffre.annee %>" type="button" role="tab" aria-controls="pills-home" aria-selected="<%= @chiffres_organization.order(annee: :desc).first == chiffre ? "true" : "false" %>">Année <%= chiffre.annee %></button>
+      </li>
+    <% end %>
+  </ul>
+  <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade <%= "show active" if @chiffres_organization.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>" role="tabpanel" aria-labelledby="pills-<%= chiffre.annee %>-tab" tabindex="0">
+        <% if @organization.orga? %>
+          <%= render "chiffres_organizations/chiffres_organization", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.ecole? %>
+          <%= render "chiffres_organizations/chiffres_ecole", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.prix? %>
+          <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
+        <% elsif @organization.journal? %>
+          <%= render "chiffres_organizations/chiffres_journal", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
+        <% end %>
+        <% if !@prix.empty? %>
+          <% @prix.each do |prix| %>
+            <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+          <% end %>
+        <% end %>
+        <div class="div-chiffres">
+          <p class="title-marianne-bold">Autres activités</p>
+          <div class="chiffres">
+            <%= render "chiffres_organizations/card_chiffres", title: "résidence", legende: "femmes photographes en résidence", nb_femmes: chiffre.nb_femmes_accueil_residence, nb_total: chiffre.nb_total_accueil_residence, parite: chiffre.accueil_residence_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "édition de livre", legende: "femmes photographes publiées", nb_femmes: chiffre.nb_femmes_photo_ouvrages, nb_total: chiffre.nb_total_photo_ouvrages , parite: chiffre.photo_ouvrages_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "invitation d'artiste (événements, interventions, ateliers...)", legende: "femmes photographes invitées", nb_femmes: chiffre.nb_femmes_photographes_invites, nb_total: chiffre.nb_total_photographes_invites, parite: chiffre.photographes_invites_parite %>
+          </div>
+        </div>
+        <div class="div-chiffres">
+          <p class="title-marianne-bold">Effectif de l'organisation</p>
+          <div class="chiffres">
+            <%= render "chiffres_organizations/card_chiffres", title: "direction", legende: "femmes", nb_femmes: chiffre.nb_femmes_directrices, nb_total: chiffre.nb_total_directeurs , parite: chiffre.directeurs_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "personnel de la structure", legende: "femmes", nb_femmes: chiffre.nb_femmes_employees, nb_total: chiffre.nb_total_employes, parite: chiffre.employes_parite %>
+          </div>
+        </div>
+        <% if !chiffre.actions_egalite.empty? %>
+          <p class="title-marianne-bold mb20">Actions mises en place pour l'égalité</p>
+          <p class="paragraphe"><%= chiffre.actions_egalite %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

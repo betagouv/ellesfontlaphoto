@@ -1,0 +1,54 @@
+.organization-bandeau {
+  background-color: $black;
+  padding: 80px 14%;
+  position: relative;
+  .back-arrow {
+    position: absolute;
+    left: 8%;
+    top: 14%;
+  }
+  h1 {
+    color: $white;
+    .title-marianne {
+      color: $white;
+      font-size: 40px;
+    }
+  }
+}
+
+.div-chiffres {
+  margin: 60px 0;
+}
+
+.cards-bandeau,.chiffres {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  .box {
+    cursor: auto;
+    .box-in {
+      .flip-card-front .card-organization-name .paragraphe-bold {
+        display: block;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.organization-chiffres {
+  background-color: $white-grey;
+  padding: 80px 14% 160px;
+  .nav .fr-btn {
+    background-color: transparent;
+    border: 1px solid $black;
+    color: $black;
+    padding: 10px 15px;
+  }
+  .nav .fr-btn.active {
+    background-color: $black;
+    color: $white;
+    margin: 0 5px;
+  }
+}

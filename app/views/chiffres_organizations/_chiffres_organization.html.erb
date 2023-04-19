@@ -1,0 +1,29 @@
+<div class="div-chiffres">
+  <p class="title-marianne-bold">Expositions collectives & monographiques</p>
+  <p class="paragraphe">In situ et hors les murs</p>
+  <div class="chiffres">
+    <%= render "chiffres_organizations/card_chiffres", title: "expositions monographiques", legende: "femmes photographes exposées", nb_femmes: chiffre.nb_femmes_exposees_expo_mono, nb_total: chiffre.nb_total_exposes_expo_mono, parite: chiffre.exposes_expo_mono_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "expositions collectives", legende: "femmes photographes exposées", nb_femmes: chiffre.nb_femmes_exposees_expo_collective, nb_total: chiffre.nb_total_exposes_expo_collective, parite: chiffre.exposes_expo_collective_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "commissaires d'exposition", legende: "femmes photographes exposées", nb_femmes: chiffre.nb_femmes_commissaires, nb_total: chiffre.nb_total_commissaires, parite: chiffre.commissaires_parite %>
+  </div>
+</div>
+<% if chiffre.nb_femmes_moins_40 || chiffre.nb_femmes_plus_40 || chiffre.nb_femmes_post_mortem %>
+  <div class="div-chiffres">
+    <p class="main-bold-paragraphe">Âge des femmes photographes exposées</p>
+    <div class="chiffres">
+      <%= render "chiffres_organizations/card_age", title: "moins de 40 ans", nb_femmes_age: chiffre.nb_femmes_moins_40, nb_exposes_total: chiffre.nb_total_exposes, parite: chiffre.nb_femmes_moins_40.fdiv(chiffre.nb_total_exposes) * 100  %>
+      <%= render "chiffres_organizations/card_age", title: "plus de 40 ans", nb_femmes_age: chiffre.nb_femmes_plus_40, nb_exposes_total: chiffre.nb_total_exposes, parite: chiffre.nb_femmes_plus_40.fdiv(chiffre.nb_total_exposes) * 100  %>
+      <%= render "chiffres_organizations/card_age", title: "post mortem", nb_femmes_age: chiffre.nb_femmes_post_mortem, nb_exposes_total: chiffre.nb_total_exposes, parite: chiffre.nb_femmes_post_mortem.fdiv(chiffre.nb_total_exposes) * 100  %>
+    </div>
+  </div>
+<% end %>
+<% if chiffre.nb_femmes_artistes || chiffre.nb_oeuvres_photo_femmes || chiffre.nb_femmes_oeuvres_ajoutees %>
+  <div class="div-chiffres">
+    <p class="title-marianne-bold">Collection permanente ou fond photographique</p>
+    <div class="chiffres">
+      <%= render "chiffres_organizations/card_chiffres", title: "photographes", legende: "femmes", nb_femmes: chiffre.nb_femmes_artistes, nb_total: chiffre.nb_total_artistes, parite: chiffre.artistes_parite %>
+      <%= render "chiffres_organizations/card_chiffres", title: "photographies", legende: "photos réalisées par des femmes", nb_femmes: chiffre.nb_oeuvres_photo_femmes, nb_total: chiffre.nb_total_oeuvres_photo, parite: chiffre.oeuvres_photo_parite %>
+      <%= render "chiffres_organizations/card_chiffres", title: "acquisition #{chiffre.annee} (hors donation et legs)", legende: "photo réalisées par des femmes", nb_femmes: chiffre.nb_femmes_oeuvres_ajoutees, nb_total: chiffre.nb_total_oeuvres_ajoutees, parite: chiffre.oeuvres_ajoutees_parite %>
+    </div>
+  </div>
+<% end %>

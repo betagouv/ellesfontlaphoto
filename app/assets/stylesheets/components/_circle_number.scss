@@ -685,6 +685,24 @@
   border-color: $orange-index !important;
 }
 
+.c100.noir .bar, .c100.noir .fill {
+  border-color: $black !important;
+}
+
+.box.noir {
+  min-height: 18.5em;
+}
+
+.box-front.noir, .box .box-in .flip-card-front.noir {
+  height: 18em;
+  .card-organization-numbers {
+    padding-top: 0px;
+    .card-organization-name {
+      padding-top: 0px;
+    }
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .c100 {
     font-size: 80px;

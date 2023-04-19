@@ -1,0 +1,9 @@
+<div class="div-chiffres">
+  <p class="title-marianne-bold">Prix et récompenses</p>
+  <p class="paragraphe mt30"><%= organization.titre %></p>
+  <div class="chiffres mt0">
+    <%= render "chiffres_organizations/card_chiffres", title: "personnes candidates", legende: "femmes", nb_femmes: chiffre.nb_femmes_candidates, nb_total: chiffre.nb_total_candidats, parite: chiffre.candidates_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "personnes laurétes", legende: "femmes", nb_femmes: chiffre.nb_femmes_laureates, nb_total: chiffre.nb_total_laureates , parite: chiffre.laureates_parite %>
+    <%= render "chiffres_organizations/card_chiffres", title: "membres du jury",  legende: "femmes", nb_femmes: chiffre.nb_femmes_jurys, nb_total: chiffre.nb_total_jurys, parite: chiffre.jurys_parite %>
+  </div>
+</div>
