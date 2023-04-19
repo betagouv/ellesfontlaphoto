@@ -32,6 +32,7 @@ ActiveAdmin.register Organization do
       f.input :organization_type, as: :radio, collection: Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
+      f.input :organization, label: "Organization porteuse du prix", hint: "Remplir ce champ seulement si l'organization est un prix et qu"
       unless f.object.new_record?
         f.has_many :chiffres_organizations, heading: "Chiffres", new_record: "Renseigner les chiffres pour une nouvelle annee", allow_destroy: true do |a|
           a.input :annee, as: :select, collection: (2020...Date.today.year).to_a
