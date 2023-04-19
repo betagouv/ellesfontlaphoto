@@ -30,28 +30,6 @@
   position: relative;
   display: inline-block;
   .box-in {
-    .flottante {
-      left: 45%;
-      top: -3%;
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      z-index: 2;
-      border-radius: 30px;
-      padding: 1px;
-      img {
-        height: 16px;
-      }
-      .see-more {
-        opacity: 0;
-      }
-    }
-    .flottante.purple {
-      background: $purple-index;
-    }
-    .flottante.orange {
-      background: $orange-index;
-    }
     width: 100%;
     height: 100%;
     border-radius: 16px;
@@ -97,7 +75,7 @@
 
       .card-organization-numbers {
         text-align: center;
-        padding: 5% 10px 17px 10px;
+        padding: 5% 0 17px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         bottom: 0;
@@ -183,24 +161,6 @@
 
     &:hover {
       opacity: 60%;
-      .flottante {
-        display: flex;
-        align-items: center;
-        left: 33%;
-        width: 95px;
-        transition: 0.3s;
-        opacity: 1 !important;
-        padding: 6px;
-        .see-more {
-          white-space: nowrap;
-          opacity: 1;
-          transition: 0.7s;
-          color: $black;
-          font-size: 14px;
-          margin-bottom: 4px;
-          margin-left: 5px;
-        }
-      }
     }
 
     &:active {

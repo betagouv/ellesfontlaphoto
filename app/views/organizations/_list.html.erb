@@ -6,54 +6,31 @@
 </div>
 <div class="cards-organizations">
   <% @organizations.each do |organization| %>
-    <% @chiffres_organization = ChiffresOrganization.where(organization: organization).order(annee: :desc).first %>
-    <% if organization.page_structure %>
-      <% link_ref = organization.organization != nil && organization.prix? ? organization.organization : organization%>
-      <%= link_to organization_path(link_ref) do %>
-        <div class="box">
-          <div class="box-in box-front">
-            <% if organization.orga? %>
-              <%= render "organizations/flottante", chiffre: @chiffres_organization.exposes_parite.to_i %>
-              <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.ecole? %>
-              <%= render "organizations/flottante", chiffre: @chiffres_organization.enseignants_parite.to_i %>
-              <%= render "organizations/card_ecole", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.prix? %>
-              <%= render "organizations/flottante", chiffre: @chiffres_organization.laureates_parite.to_i %>
-              <%= render "organizations/card_prix", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% elsif organization.journal? %>
-              <%= render "organizations/flottante", chiffre: @chiffres_organization.publies_parite.to_i %>
-              <%= render "organizations/card_journal", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-            <% end %>
+    <div class="box" data-controller="flip-card">
+      <div class="box-in box-front" data-flip-card-target="frontCard">
+        <% if organization.organization_type == "Structure" || organization.organization_type == "Festival" %>
+          <%= render "organizations/card_organization", organization: organization %>
+        <% elsif organization.organization_type == "École" %>
+          <%= render "organizations/card_ecole", organization: organization %>
+        <% elsif organization.organization_type == "Prix" %>
+          <%= render "organizations/card_prix", organization: organization %>
+        <% elsif organization.organization_type == "Journal/Magazine" %>
+          <%= render "organizations/card_journal", organization: organization %>
+        <% end %>
+      </div>
+      <div class="box-in box-back" data-flip-card-target="backCard">
+        <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
+          <div class="div-cross">
+            <p class="cross" data-action="click->flip-card#close">&times;</p>
           </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="box" data-controller="flip-card">
-        <div class="box-in box-front" data-flip-card-target="frontCard">
-          <% if organization.orga? %>
-            <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.ecole? %>
-            <%= render "organizations/card_ecole", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.prix? %>
-            <%= render "organizations/card_prix", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% elsif organization.journal? %>
-            <%= render "organizations/card_journal", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
-          <% end %>
-        </div>
-        <div class="box-in box-back" data-flip-card-target="backCard">
-          <div class="flip-card-back"  data-controller="orga-info" data-orga-info-orga-id-value="<%= organization.id %>">
-            <div class="div-cross">
-              <p class="cross" data-action="click->flip-card#close">&times;</p>
-            </div>
-            <div class="div-ensavoirplus" data-orga-info-target="card">
-              <div>
-                <p class="main-paragraphe">Aucune autre donnée pour cette structure.</p>
-              </div>
+          <div class="div-ensavoirplus" data-orga-info-target="card">
+            <div>
+              <p class="main-paragraphe">Vous souhaitez en savoir plus sur l'égalité dans cette organisation ?</p>
+              <div class="btn btn-white" data-action="click->orga-info#submit">dîtes-le nous !</div>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
 </div>

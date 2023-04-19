@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization, only: [:edit, :show, :update]
   def index
     @contact = Contact.new
     if params[:query].present?
@@ -13,46 +12,41 @@ class OrganizationsController < ApplicationController
     if @organizations.empty?
       respond_to do |format|
         format.html
-        format.text { render partial: "no_result", locals: { query: params[:query]}, formats: [:html] }
+        format.text { render partial: "no_result", locals: {query: params[:query]}, formats: [:html] }
       end
     else
       respond_to do |format|
         format.html
-        format.text { render partial: "list", locals: { organizations: @organizations}, formats: [:html] }
+        format.text { render partial: "list", locals: {organizations: @organizations}, formats: [:html] }
       end
     end
   end
 
-  def renseigner_index
-  end
-
-  def show
-    @chiffres_organization = ChiffresOrganization.where(organization: @organization, visible: true)
-    @prix = Organization.where(organization_type: "Prix", organization: @organization)
-  end
-
   def new
     @organization = Organization.new
-    @chiffres_organization = ChiffresOrganization.new
   end
 
   def create
     @organization = Organization.new(organization_params)
     @organization.visible = false
-    if @organization.save
-      redirect_to new_organization_chiffres_organization_path(@organization)
-    else
-      render :new
+    @organization.save
+  end
+
+  def add_request_info
+    if params[:id]
+      @organization = Organization.find(params[:id])
+      @organization.request_info_count += 1
+      @organization.save
+    end
+    respond_to do |format|
+      format.html { render redirect_to organizations_path }
+      format.text { render partial: 'organizations/info_orga_validate', formats: [:html] }
     end
   end
 
   private
 
-  def set_organization
-    @organization = Organization.find(params[:id])
-  end
-
   def organization_params
-    params.require(:organization).permit(:organization_type, :name, :city)
+    params.require(:organization).permit(:organization_type, :name, :city, :nb_women_dir, :total_nb_dir, :nb_women_expos, :total_nb_expos)
   end
 end
