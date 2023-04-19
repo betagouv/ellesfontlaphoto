@@ -1,27 +1,27 @@
 <div class="div-index-parite" data-controller="search-organizations">
-  <div class="div-title-index-parite">
-    <h1 class="title-marianne">Index parité : <span class="spectral-title"> part des femmes dans la photographie</span></h1>
-    <p class="paragraphe">Espaces d'expositions, festivals, écoles, prix et journaux/magazines</p>
-    <p class="paragraphe">Cet outil a pour objectif d'apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s'appuie sur les données collectées par le ministère de la Culture pour la<span style="font-family:'Marianne-Bold';"> période 2021-2022</span>.</p>
-  </div>
-  <div class="div-search-form">
+  <div style="width: 30%;">
+    <div class="div-title-index-parite">
+      <h1 class="title-marianne">Index parité : <span class="spectral-title"> part des femmes dans la photographie</span></h1>
+      <p class="paragraphe">Espaces d'expositions, festivals, écoles, prix et journaux/magazines</p>
+    </div>
+    <div class="div-search-form">
+      <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
+        <div class="div-input-form">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Rechercher structure, ville",
+            data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
+          %>
+          <%= submit_tag "", class: "btn btn-purple-index #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>
+        </div>
+      <% end %>
+    </div>
     <%= link_to "Renseigner des chiffres", new_organization_path, target: :_blank, class: "btn btn-white" %>
-    <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
-      <div class="div-input-form">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Rechercher structure, ville",
-          data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
-        %>
-        <%= submit_tag "", class: "btn btn-purple-index #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>
-      </div>
-    <% end %>
   </div>
-  <div data-search-organizations-target="list">
+  <div style="width:65%" data-search-organizations-target="list">
     <%= render 'list', organizations: @organizations %>
   </div>
-  <p class="paragraphe-small">Source : Ministère de la Culture, Secrétariat général, Deps-doc/dgca, Département de la photographie, 2022. Dernières données communiquées pour la période 2021-2022 (Année 2022 pour les directions de structures et de festivals, année 2021 pour le nombre de femmes exposées dans les structures et année 2022 pour le nombre de femmes exposées dans les festivals).</p>
 </div>
 <div class="redirection-infographie">
   <div class="redirection-infographie-title">

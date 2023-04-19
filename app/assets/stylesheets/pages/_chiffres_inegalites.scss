@@ -1,14 +1,8 @@
 .div-index-parite {
   background-color: $black;
-  padding: 3% 10%;
+  padding: 3%;
+  display: flex;
   .div-search-form {
-    gap: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    .btn-white {
-      height: 100%;
-    }
     .div-input-form {
       position: relative;
       input[type=text] {
@@ -44,9 +38,12 @@
         }
       }
     }
+    .btn-white {
+      height: 100%;
+    }
   }
   .legendes {
-    margin-top: 40px;
+    margin-top: 15px;
     ul {
       display: flex;
       justify-content: center;
@@ -71,27 +68,28 @@
     margin: 7% auto 3%;
   }
   .div-title-index-parite {
-    margin: 3% auto;
-    width: 65%;
+    width: 90%;
     .title-marianne {
       font-family: 'Marianne-Bold';
       line-height: 50px;
       margin-bottom: 30px;
       min-width: 100%;
       font-size: 40px;
+      text-align: left;
+      font-size: 30px;
     }
     .spectral-title {
-      font-size: 47px;
+      font-size: 36px;
     }
     .title-marianne,.spectral-title,.paragraphe {
       color: $white;
-      text-align: center;
+      text-align: left;
     }
   }
   .cards-organizations {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
   }
 }
