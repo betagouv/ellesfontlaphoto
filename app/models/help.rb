@@ -1,4 +1,5 @@
 class Help < ApplicationRecord
+
   has_one :notation_help
   has_many :candidature_dates, dependent: :destroy
   has_many :notification_helps

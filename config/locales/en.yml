@@ -40,26 +40,3 @@ fr:
         contact_email: Email
         accept_cgu: La politique de confidentialité
         comment: Votre message
-      organization:
-        name: Ce nom
-      chiffres_organization:
-        nb_total_exposes: Le nombre total d'exposés
-        nb_total_exposes_expo_collective: Le nombre total d'exposés en exposition collective
-        nb_total_exposes_expo_mono: Le nombre total d'exposés en exposition monographique
-        nb_total_commissaires: Le nombre total de commissaires
-        nb_total_artistes: Le nombre total d'artistes
-        nb_total_oeuvres_photo: Le nombre total d'oeuvres photographique
-        nb_total_oeuvres_ajoutees: Le nombre total d'oeuvres ajoutées
-        nb_total_enseignants: Le nombre total d'enseignants
-        nb_total_etudiants: Le nombre total d'étudiants
-        nb_total_photographes_etudies: Le nombre total de photographies étudiées
-        nb_total_laureates: Le nombre total de lauréates
-        nb_total_candidats: Le nombre total de candidats
-        nb_total_jurys: Le nombre total de jurys
-        nb_total_publies: Le nombre total doeuvre publiées
-        nb_total_iconographes: Le nombre total d'iconographes
-        nb_total_accueil_residence: Le nombre total de personnes accueilis en résidence
-        nb_total_photo_ouvrages: Le nombre total d'oeuvres d'ouvrage
-        nb_total_photographes_invites: Le nombre total
-        nb_total_directeurs: Le nombre total de directeurs
-        nb_total_employes: Le nombre total d'employés
