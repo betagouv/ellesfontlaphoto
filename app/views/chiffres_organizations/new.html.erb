@@ -15,7 +15,7 @@
           <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?" %>
           <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?" %>
           <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-        <% elsif @organization.jounal? %>
+        <% elsif @organization.journal? %>
           <p class="main-paragraphe mt40">Part des femmes dans votre journal/magazine</p>
           <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?"%>
           <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?"%>
