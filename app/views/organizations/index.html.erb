@@ -5,7 +5,7 @@
     <p class="paragraphe">Cet outil a pour objectif d'apporter plus de transparence sur les inégalités de genre dans le secteur de la photographie et aiguiller les organisations culturelles. Il s'appuie sur les données collectées par le ministère de la Culture pour la<span style="font-family:'Marianne-Bold';"> période 2021-2022</span>.</p>
   </div>
   <div class="div-search-form">
-    <%= link_to "Renseigner des chiffres", new_organization_path, target: :_blank, class: "btn btn-white" %>
+    <%= link_to "Renseigner des chiffres", renseigner_chiffres_path , target: :_blank, class: "btn btn-white" %>
     <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
       <div class="div-input-form">
         <%= text_field_tag :query,

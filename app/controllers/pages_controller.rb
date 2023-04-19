@@ -28,4 +28,5 @@ class PagesController < ApplicationController
     end
     @contact = Contact.new
   end
+
 end

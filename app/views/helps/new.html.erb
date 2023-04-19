@@ -10,10 +10,10 @@
       <p class="subtitle-medium">La structure </p>
       <%= f.input :institution_name, label: "Nom de la structure" %>
       <%= f.input :institution_url, label: "Site internet" %>
-      <%= f.input :author_email, label: "Votre email", required: "required", hint: "Ne sera pas rendu public, sera utilisé pour d'éventuels complément d'information" %>
+      <%= f.input :author_email, label: "Votre email", required: "required", hint: "Ne sera pas rendu public, sera utilisé pour d’éventuels complément d’information" %>
       <%= f.input :contact_intitution_email, label: "E-mail de contact", hint: "Sera rendu public et mis à disposition des candidates" %>
 
-      <p class="subtitle-medium">Informations essentielles sur l'aide </p>
+      <p class="subtitle-medium">Informations essentielles sur l’aide </p>
       <%= f.input :title, label: "Titre de l'aide" %>
       <div class="flex-div">
         <%= f.input :type_list, collection: Help::HELP_TYPE, label: "Type de récompense *", as: :check_boxes, hint: "Plusieurs réponses possibles" %>
@@ -32,7 +32,7 @@
       <p class="subtitle-medium">Conditions </p>
       <%= f.input :general_condition, label: "Autres conditions pour candidater ", input_html: { maxlength: 800 }, hint: "âge, statut, sujet... (sous forme de tiret)" %>
       <%= f.input :residence_condition, collection: Help::HELP_RESIDENCE, label: "Aide réservée à la région...", prompt: "Sélectionnez une option" %>
-      <%= f.input :admin_attachment, label: "Pièces administratives demandées", hint: "Carte d'identité, attestation MDA..." %>
+      <%= f.input :admin_attachment, label: "Pièces administratives demandées", hint: "Carte d’identité, attestation MDA..." %>
 
       <div class="div-cgu">
         <%= f.input :accept_cgu, label: false, error: false %>

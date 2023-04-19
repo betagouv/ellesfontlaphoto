@@ -1,25 +1,17 @@
-<% if organization.page_structure %>
-  <div class="flip-card-front">
-<% else %>
-  <div class="flip-card-front" data-action="click->flip-card#flip">
-<% end %>
+<div class="flip-card-front" data-action="click->flip-card#flip">
   <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
     <p class="paragraphe-bold">
-      <% if annee %>
-        <span class="organization-name"><%= annee %></span>
-      <% else %>
-        <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
-          <% unless organization.city.blank? %><span class="paragraphe"><%= organization.city %></span><% end %>
-      <% end %>
+    <span class="organization-name"><%= organization.name %><% unless organization.city.blank? %>,<% end %></span>
+      <% unless organization.city.blank? %><span class="paragraphe"><%= organization.city %></span><% end %>
     </p>
   </div>
   <div id="flexible">
-    <% if chiffres_organization.enseignants_parite.to_i >= 50 %>
-      <div class="c100 p<%= chiffres_organization.enseignants_parite.to_i %> purple">
+    <% if organization.enseignants_parity.to_i >= 50 %>
+      <div class="c100 p<%= organization.enseignants_parity.to_i %> purple">
     <% else %>
-      <div class="c100 p<%= chiffres_organization.enseignants_parite.to_i %> orange">
+      <div class="c100 p<%= organization.enseignants_parity.to_i %> orange">
     <% end %>
-      <span><%= chiffres_organization.enseignants_parite.to_i %>%</span>
+      <span><%= organization.enseignants_parity.to_i %>%</span>
       <div class="slice">
         <div class="bar"></div>
         <div class="fill"></div>
@@ -27,16 +19,16 @@
     </div>
   </div>
   <div class="card-organization-numbers">
-    <% if chiffres_organization.nb_femmes_enseignantes.blank? || chiffres_organization.nb_total_enseignants.blank? %>
-      <p><mark><br> enseignantes : ?</mark></p>
+    <% if organization.nb_femmes_enseignantes.blank? || organization.nb_total_enseignants.blank? %>
+      <p><mark><br> enseignantes : N/R</mark></p>
     <% else %>
-      <p><mark class="<%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= chiffres_organization.nb_femmes_enseignantes %> / <%= chiffres_organization.nb_total_enseignants %></mark></p>
+      <p><mark class="<%= organization.enseignants_parity.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= organization.nb_femmes_enseignantes %> / <%= organization.nb_total_enseignants %></mark></p>
     <% end %>
     <hr>
-    <% if chiffres_organization.nb_femmes_etudiantes.blank? || chiffres_organization.nb_total_etudiants.blank? %>
-      <p class="paragraphe-grey">étudiantes : ?</p>
+    <% if organization.nb_femmes_etudiantes.blank? || organization.nb_total_etudiants.blank? %>
+      <p class="paragraphe-grey">étudiantes : N/R</p>
     <% else %>
-      <p class="paragraphe-grey"><%= "étudiante".pluralize(chiffres_organization.nb_total_etudiants) %> : <%= chiffres_organization.nb_femmes_etudiantes %> / <%= chiffres_organization.nb_total_etudiants %></p>
+      <p class="paragraphe-grey"><%= "étudiante".pluralize(organization.nb_total_etudiants) %> : <%= organization.nb_femmes_etudiantes %> / <%= organization.nb_total_etudiants %></p>
     <% end %>
   </div>
 </div>
