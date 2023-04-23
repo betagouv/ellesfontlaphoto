@@ -15,11 +15,12 @@ class ChiffresOrganizationsController < ApplicationController
       @chiffres_organization = ChiffresOrganization.new(chiffres_organization_params)
     end
     @chiffres_organization.organization = @organization
-    if @chiffres_organization.save && @chiffres_prix.save
+    if !titre_params.empty?
+      redirect_to confirm_organization_path if @chiffres_organization.save && @chiffres_prix.save
+    elsif @chiffres_organization.save
       redirect_to confirm_organization_path
-    else
-      render :new
     end
+    render :new
   end
 
   private
