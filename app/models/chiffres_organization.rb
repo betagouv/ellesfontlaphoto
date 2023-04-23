@@ -75,14 +75,6 @@ class ChiffresOrganization < ActiveRecord::Base
     self.employes_parite = calculate(nb_femmes_employees, nb_total_employes)
   end
 
-  def organization
-    if !self.id.nil?
-      Organization.find(self.organization_id)
-    else
-      Organization.first
-    end
-  end
-
   private
 
   def calculate(nb_women, nb_total)
