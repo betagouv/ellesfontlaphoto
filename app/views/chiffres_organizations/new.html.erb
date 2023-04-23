@@ -5,7 +5,7 @@
   <div class="ajout-organization-form" data-controller="ajout-chiffres-organizations">
     <div id="new_organization">
       <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
-        <%= f.input :annee, collection: (2010..Time.now.year).to_a, label: "Pour quelle année souhaitez vous rensigné les chiffres ?" %>
+        <%= f.input :annee, collection: (2000..Time.now.year).to_a, label: "Pour quelle année souhaitez vous rensigné les chiffres ?" %>
         <% if @organization.ecole? %>
           <p class="main-paragraphe mt40">Part des femmes dans votre école de photographie</p>
           <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?" %>
