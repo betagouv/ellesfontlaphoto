@@ -55,7 +55,7 @@ gem 'pg_search', '~> 2.3.0'
 gem "sentry-raven"
 
 # Jobs
-gem 'sidekiq', '<7'
+gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
 # Object taggables
