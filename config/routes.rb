@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   require "sidekiq/web"
-  # if Rails.env.development? || Rails.env.production?
-    mount Sidekiq::Web => '/sidekiq'
-  # end
+  authenticate :admin_user do
+    mount Sidekiq::Web => "/sidekiq"
+  end
 
   root to: 'pages#home'
   get "stats", to: 'pages#stats'
