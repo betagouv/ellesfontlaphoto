@@ -45,12 +45,10 @@
           </div>
           <p class="paragraphe mt20 mb0">Avez-vous un fonds photographique ou une collection permanente ?</p>
           <fieldset id="champs_collection">
-            <input type="radio" data-action="change->ajout-chiffres-organizations#champsCollection" name="champs_collection"></input>
-            <label class="ml3" for="champs_collection">Oui</label>
-            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsCollection" name="champs_collection"></input>
-            <label class="ml3" for="champs_collection">Non</label>
+            <%= radio_button_tag 'champs_collection', 'champs_collection', !(@chiffres_organization.errors.attribute_names & [:nb_total_artistes, :nb_total_oeuvres_photo, :nb_total_oeuvres_ajoutees]).empty?, data: {action:"change->ajout-chiffres-organizations#champsCollection"} %> Oui
+            <%= radio_button_tag 'champs_collection', 'champs_collection', false, data: {action:"change->ajout-chiffres-organizations#champsCollection"} %> Non
           </fieldset>
-          <div class="expos d-none" data-ajout-chiffres-organizations-target="divCollection">
+          <div class="expos <%= !(@chiffres_organization.errors.attribute_names & [:nb_total_artistes, :nb_total_oeuvres_photo, :nb_total_oeuvres_ajoutees]).empty? ? "d-block" : "d-none"%>" data-ajout-chiffres-organizations-target="divCollection">
             <%= f.input :nb_total_artistes, label: "Combien d'artistes comptait votre fonds/collection en 2022 ?" %>
             <%= f.input :nb_femmes_artistes, label: "Parmi ces artistes, combien étaient des femmes ?" %>
             <%= f.input :nb_total_oeuvres_photo, label: "Combien d'œuvres photographiques comptait votre fonds/collection en 2022 ?" %>
@@ -62,12 +60,13 @@
         <% unless @organization.prix? %>
           <p class="paragraphe mt20 mb0">Avez-vous été à l'initiative de prix ou autres récompenses photographiques durant cette année ?</p>
           <fieldset id="champs_prix">
-            <input type="radio" data-action="change->ajout-chiffres-organizations#champsPrix" name="champs_prix"></input>
-            <label class="ml3" for="champs_prix">Oui</label>
-            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsPrix" name="champs_prix"></input>
-            <label class="ml3" for="champs_prix">Non</label>
+            <%= radio_button_tag 'champs_prix', 'champs_prix', @chiffres_prix.errors.any?, data: {action:"change->ajout-chiffres-organizations#champsPrix"} %> Oui
+            <%= radio_button_tag 'champs_prix', 'champs_prix', false, data: {action:"change->ajout-chiffres-organizations#hideChampsPrix"} %> Non
           </fieldset>
-          <div class="expos d-none" data-ajout-chiffres-organizations-target="divPrix">
+          <div class="expos <%= @chiffres_prix.errors.any? ? "d-block" : "d-none" %>" data-ajout-chiffres-organizations-target="divPrix">
+          <% if @chiffres_prix.errors.any?  %>
+            <p class="display-error">Attention il y a des erreurs concernant votre prix: <%= @chiffres_prix.errors.full_message %></p>
+          <% end %>
         <% else %>
           <div class="expos d-block" data-ajout-chiffres-organizations-target="divPrix">
         <% end %>
@@ -82,34 +81,28 @@
         <p class="main-paragraphe mt40">Autres activités</p>
         <p class="paragraphe mt20 mb0">Avez-vous accueilli des photographes en résidence en 2022 ?</p>
         <fieldset id="accueil_residence">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesResidence" name="accueil_residence"></input>
-          <label class="ml3" for="accueil_residence">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesResidence" name="accueil_residence"></input>
-          <label class="ml3" for="accueil_residence">Non</label>
+          <%= radio_button_tag 'accueil_residence', 'accueil_residence', @chiffres_organization.errors[:nb_total_accueil_residence].any?, data: {action:"change->ajout-chiffres-organizations#photographesResidence"} %> Oui
+          <%= radio_button_tag 'accueil_residence', 'accueil_residence', false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesResidence"} %> Non
         </fieldset>
-        <div class="photographesResidence d-none" data-ajout-chiffres-organizations-target="photographesResidence">
+        <div class="photographesResidence <%= @chiffres_organization.errors[:nb_total_accueil_residence].any? ? "d-block" : "d-none" %>" data-ajout-chiffres-organizations-target="photographesResidence">
           <%= f.input :nb_total_accueil_residence, label: "Combien de photographes avez-vous accueilli en résidence en 2022 ?" %>
           <%= f.input :nb_femmes_accueil_residence, label: "Parmi ces photographes en résidence, combien étaient des femmes ?" %>
         </div>
         <p class="paragraphe mt20 mb0">Avez-vous édité des ouvrages dédiés à la photographie ?</p>
         <fieldset id="photographe_ouvrage">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesOuvrage" name="photographe_ouvrage"></input>
-          <label class="ml3" for="photographe_ouvrage">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesOuvrage" name="photographe_ouvrage"></input>
-          <label class="ml3" for="photographe_ouvrage">Non</label>
+          <%= radio_button_tag 'photographe_ouvrage', 'photographe_ouvrage', @chiffres_organization.errors[:nb_total_photo_ouvrages].any?, data: {action:"change->ajout-chiffres-organizations#photographesOuvrage"} %> Oui
+          <%= radio_button_tag 'photographe_ouvrage', 'photographe_ouvrage', false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesOuvrage"} %> Non
         </fieldset>
-        <div class="photographesOuvrage d-none" data-ajout-chiffres-organizations-target="photographesOuvrage">
+        <div class="photographesOuvrage <%= @chiffres_organization.errors[:nb_total_photo_ouvrages].any? ? "d-block" : "d-none" %>" data-ajout-chiffres-organizations-target="photographesOuvrage">
           <%= f.input :nb_total_photo_ouvrages, label: "Combien de photographes figurent dans les ouvrages que vous avez édité en 2022 ?" %>
           <%= f.input :nb_femmes_photo_ouvrages, label: "Parmi ces photographes, combien sont des femmes ?" %>
         </div>
         <p class="paragraphe mt20 mb0">Avez-vous invité des photographes en dehors des expositions ?</p>
         <fieldset id="photographes_expo">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesExpo" name="photographes_expo"></input>
-          <label class="ml3" for="photographes_expo">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesExpo" name="photographes_expo"></input>
-          <label class="ml3" for="photographes_expo">Non</label>
+          <%= radio_button_tag 'photographes_expo', 'photographes_expo', @chiffres_organization.errors[:nb_total_photographes_invites].any?, data: {action:"change->ajout-chiffres-organizations#photographesExpo"} %> Oui
+          <%= radio_button_tag 'photographes_expo', 'photographes_expo', false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesExpo"} %> Non
         </fieldset>
-        <div class="photographesExpo d-none" data-ajout-chiffres-organizations-target="photographesExpo">
+        <div class="photographesExpo <%= @chiffres_organization.errors[:nb_total_photographes_invites].any? ? "d-block" : "d-none" %>" data-ajout-chiffres-organizations-target="photographesExpo">
           <%= f.input :nb_total_photographes_invites, label: "Combien de photographes avez-vous invités en dehors des expositions ?", hint: "(événements, interventions, ateliers d’éducation culturelle, etc.)" %>
           <%= f.input :nb_femmes_photographes_invites, label: "Parmi ces photographes invité(e)s, combien étaient des femmes ?" %>
         </div>

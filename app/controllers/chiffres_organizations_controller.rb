@@ -3,6 +3,7 @@ class ChiffresOrganizationsController < ApplicationController
 
   def new
     @chiffres_organization = ChiffresOrganization.new
+    @chiffres_prix = ChiffresOrganization.new
   end
 
   def create
@@ -15,13 +16,18 @@ class ChiffresOrganizationsController < ApplicationController
       @chiffres_organization = ChiffresOrganization.new(chiffres_organization_params)
     end
     @chiffres_organization.organization = @organization
+    p @chiffres_organization.errors.messages
     if !titre_params.empty?
-      redirect_to confirm_organization_path if @chiffres_organization.save && @chiffres_prix.save
+      if @chiffres_prix.save && @chiffres_organization.save
+        redirect_to confirm_organization_path
+      else
+        render :new
+      end
     elsif @chiffres_organization.save
       redirect_to confirm_organization_path
+    else
+      render :new
     end
-    p @chiffres_organization.errors.messages
-    render :new
   end
 
   private

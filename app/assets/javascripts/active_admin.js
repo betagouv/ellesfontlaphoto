@@ -12,12 +12,4 @@ $(document).ready(function(){
       element.innerText = pastedData
     })
   })
-  if (document.querySelector("#new_organization")) {
-    let li_choices = document.querySelectorAll("#organization_organization_type_input > fieldset > ol > li")
-    li_choices.forEach((choice) => {
-      choice.addEventListener("change", () => {
-        console.log(choice.querySelector("input").value)
-      })
-    })
-  }
 })
