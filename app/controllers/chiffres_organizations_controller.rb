@@ -21,7 +21,6 @@ class ChiffresOrganizationsController < ApplicationController
       redirect_to confirm_organization_path
     end
     p @chiffres_organization.errors.messages
-    raise
     render :new
   end
 
