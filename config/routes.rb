@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   require "sidekiq/web"
-  if Rails.env.development? && Rails.env.production?
+  if Rails.env.development? || Rails.env.production?
     mount Sidekiq::Web => '/sidekiq'
   end
 
