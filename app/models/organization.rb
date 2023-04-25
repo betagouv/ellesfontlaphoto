@@ -1,7 +1,7 @@
 class Organization < ApplicationRecord
   has_many :chiffres_organizations, dependent: :destroy
   validates :organization_type, presence: true
-  validates :titre, presence: true, if: :organization_type == "Prix"
+  validates :titre, presence: true, if: -> { organization_type == "Prix" }
   validates :name, presence: true
   accepts_nested_attributes_for :chiffres_organizations, allow_destroy: true
   belongs_to :organization, optional: true
