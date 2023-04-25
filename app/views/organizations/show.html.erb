@@ -2,11 +2,15 @@
   <%= link_to organizations_path do %>
     <%= image_tag "arrow-line-white.svg", class: "back-arrow" %>
   <% end %>
-  <h1 class="title-marianne-bold"><%= @organization.name %>
-    <% if @organization.city %>
-      , <span class="title-marianne"><%= @organization.city %></span>
-    <% end %>
-  </h1>
+  <div class="page-structure-title">
+    <h1 class="title-marianne-bold"><%= @organization.name %>
+      <% if @organization.city %>
+        , <span class="title-marianne"><%= @organization.city %></span>
+      <% end %>
+      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white">Espace d'exposition</span><% end %>
+      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure publique</span><% end %>
+    </h1>
+  </div>
   <div class="cards-bandeau">
     <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
       <div class="box">

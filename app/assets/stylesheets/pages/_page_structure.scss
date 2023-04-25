@@ -5,13 +5,28 @@
   .back-arrow {
     position: absolute;
     left: 8%;
-    top: 14%;
+    top: 30%;
   }
   h1 {
     color: $white;
+    text-align: left;
+    width: 70%;
+    line-height: 65px;
     .title-marianne {
       color: $white;
       font-size: 40px;
+    }
+    .btn-outlined-white {
+      border-radius: 25px;
+      font-size: 14px;
+      padding: 3px 10px 8px 10px;
+      font-family: 'Marianne-Regular', sans-serif;
+    }
+    .btn-outlined-white.marianne {
+      padding: 3px 10px 8px 0px;
+      img {
+        padding-right: 6px;
+      }
     }
   }
 }
