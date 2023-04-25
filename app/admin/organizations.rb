@@ -13,7 +13,7 @@ ActiveAdmin.register Organization do
   end
 
   action_item :new, only: :show do
-    link_to 'Ajouter des chiffres', new_admin_organization_chiffres_organization_path(resource)
+    link_to 'Ajouter des chiffres', new_admin_organization_chiffres_organization_path(organization)
   end
 
   index do
@@ -53,7 +53,7 @@ ActiveAdmin.register Organization do
       row :city, label: "Ville"
       row :organization, label: "Organization porteuse du prix", hint: "Remplir ce champ seulement si l'organization est un prix et qu'il depend d'une organisation"
       row :chiffres_organizations do |obj|
-        obj.chiffres_organizations.map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(chiffre)) }.compact
+        obj.chiffres_organizations.map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(organization, chiffre)) }.compact
       end
     end
   end

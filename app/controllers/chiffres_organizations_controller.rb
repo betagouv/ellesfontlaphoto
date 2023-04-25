@@ -7,6 +7,7 @@ class ChiffresOrganizationsController < ApplicationController
   end
 
   def create
+    @chiffres_prix = ChiffresOrganization.new
     if !titre_params.empty?
       @chiffres_organization = ChiffresOrganization.new(chiffres_organization_avec_prix_params)
       @prix = create_price(@organization)
