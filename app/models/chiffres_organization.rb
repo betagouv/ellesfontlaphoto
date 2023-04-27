@@ -5,22 +5,22 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :annee, uniqueness: { scope: :organization }
 
   # Validation de présence des chiffres en fonction du type de l'organisation
-  validates :nb_femmes_exposees, presence: true, if: -> { organization.orga? }
-  validates :nb_total_exposes, presence: true, if: -> { organization.orga? }
-  validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
-  validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
-  validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
-  validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
-  validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
-  validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
-  validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
-  validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
-  validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
-  validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
-  validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
-  validates :nb_total_publies, presence: true, if: -> { organization.journal? }
-  validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
-  validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
+  # validates :nb_femmes_exposees, presence: true, if: -> { organization.orga? }
+  # validates :nb_total_exposes, presence: true, if: -> { organization.orga? }
+  # validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
+  # validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
+  # validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
+  # validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
+  # validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
+  # validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
+  # validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
+  # validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
+  # validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
+  # validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
+  # validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
+  # validates :nb_total_publies, presence: true, if: -> { organization.journal? }
+  # validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
+  # validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
 
   # Validations de calcul de parité
   after_validation :calculate_parity
@@ -49,13 +49,13 @@ class ChiffresOrganization < ActiveRecord::Base
   def calculate_parity
     case organization.organization_type
     when "Espace d'exposition" || 'Festival'
-      self.exposes_parite = calculate(nb_femmes_exposees, nb_total_exposes)
-      self.exposes_expo_collective_parite = calculate(nb_femmes_exposees_expo_collective, nb_total_exposes_expo_collective)
+      self.exposes_expo_collective_parite = calculate(nb_femmes_exposees_expo_collective, nb_total_exposes_expo_collective) unless nb_total_exposes_expo_collective.nil? || nb_total_exposes_expo_collective == 0
       self.exposes_expo_mono_parite = calculate(nb_femmes_exposees_expo_mono, nb_total_exposes_expo_mono)
       self.commissaires_parite = calculate(nb_femmes_commissaires, nb_total_commissaires)
       self.artistes_parite = calculate(nb_femmes_artistes, nb_total_artistes)
       self.oeuvres_photo_parite = calculate(nb_oeuvres_photo_femmes, nb_total_oeuvres_photo)
       self.oeuvres_ajoutees_parite = calculate(nb_femmes_oeuvres_ajoutees, nb_total_oeuvres_ajoutees)
+      self.exposes_parite = calculate(nb_femmes_exposees_expo_mono + nb_femmes_exposees_expo_collective , nb_total_exposes_expo_mono + nb_total_exposes_expo_collective) unless nb_total_exposes_expo_collective.nil? || nb_total_exposes_expo_collective == 0 || nb_total_exposes_expo_mono.nil? || nb_total_exposes_expo_mono == 0
     when 'École'
       self.enseignants_parite = calculate(nb_femmes_enseignantes, nb_total_enseignants)
       self.etudiants_parite = calculate(nb_femmes_etudiantes, nb_total_etudiants)
