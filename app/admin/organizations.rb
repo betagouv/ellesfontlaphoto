@@ -23,6 +23,9 @@ ActiveAdmin.register Organization do
     column :name
     column :city
     column :organization
+    column :chiffres_organizations do |obj|
+      obj.chiffres_organizations.map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(obj, chiffre)) }.compact
+    end
     column :created_at
     actions
   end

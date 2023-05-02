@@ -22,8 +22,6 @@
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.orga? %>
           <p class="main-paragraphe-medium mt40">Part des femmes photographes dans vos expositions (in situ et hors les murs)</p>
-          <%= f.input :nb_total_exposes, label: "Combien de photographes ont été présentés dans vos expositions ?", input_html: { min: '0' } %>
-          <%= f.input :nb_femmes_exposees, label: "Dans ces expositions combien de photographes étaient des femmes ?", input_html: { min: '0' } %>
           <p class="paragraphe mt20 mb0">Avez-vous réalisé des expositions durant cette année ?</p>
           <fieldset id="champs_exposition">
             <%= radio_button_tag 'champs_exposition', 'champs_exposition', false, data: {action:"change->ajout-chiffres-organizations#champsExposition", ajout_chiffres_organizations_target: "radioChampsExpo" }, class: "mr5" %> Oui
