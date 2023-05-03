@@ -15,7 +15,7 @@ ActiveAdmin.register ChiffresOrganization do
     f.semantic_errors
     f.inputs "Chiffre pour #{organization.name}" do
       f.input :organization, input_html: { disabled: true }
-      f.input :annee, as: :select, collection: (2020...Date.today.year).to_a
+      f.input :annee, as: :select, collection: (Date.today.year - 10..Date.today.year).to_a
       f.input :visible
       if organization.ecole?
         f.input :nb_femmes_etudiantes

@@ -1,7 +1,7 @@
 <div class="ajout-organization-page">
   <div class="ajout-organization-title">
-    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
-    <p class="paragraphe" style="width: 70%" >Renseignez ce formulaire pour ajouter ou mettre à jour vos chiffres pour apporter plus de transparence sur les inégalités de genre au sein de votre organisation. </p>
+    <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
+    <p class="paragraphe" style="width: 70%" >Afin d'apporter plus de transparence, valoriser vos actions et adapter les nôtres, renseignez les chiffres de votre organisation.</p>
 
   </div>
   <div data-controller="ajout-organisations">
@@ -19,12 +19,13 @@
         <p class="paragraphe mt20">Pour en être certain(e), veuillez rechercher le nom de votre structure avec l'outil de recherche.</p>
         <select name="organization" id="select-organization" data-action="change->ajout-organisations#selectOrga" data-ajout-organisations-target="selectOrga">
           <option name="" id="" selected disabled>Selectionnez votre organisation</option>
-          <% Organization.all.where(visible: true).order(:name).each do |organization| %>
+          <% Organization.all.where(visible: true, organization: nil).order("name").each do |organization| %>
             <option value="<%= organization.id %>"><%= organization.name %></option>
           <% end %>
         </select>
+        <p class="paragraphe-small">Tapez la première lettre de votre structure pour naviguer dans la liste</p>
         <div class="btn-submit">
-          <%= link_to "Soumettre", "", class: "btn btn-black isDisabled", data: { ajout_organisations_target: "linkNew"} %>
+          <%= link_to "Suivant", "", class: "btn btn-black isDisabled", data: { ajout_organisations_target: "linkNew"} %>
         </div>
       </div>
     </div>
@@ -35,11 +36,9 @@
         <%= f.input :city, label: "Votre structure se situe dans la ville de..." %>
         <p class="paragraphe">Votre structure est elle financée par le ministère ?</p>
         <%= f.collection_radio_buttons :finance_ministre, [[true, 'oui'] ,[false, 'non']],:first, :last %>
-        <p class="paragraphe">Votre structure appartient elle à l'observatoire de l'égalité ?</p>
-        <%= f.collection_radio_buttons :observatoire_egalite, [[true, 'oui'] ,[false, 'non']],:first, :last%>
         <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
         <div class="btn-submit">
-          <%= f.submit "Soumettre", class: "btn btn-black" %>
+          <%= f.submit "Suivant", class: "btn btn-black" %>
         </div>
       <% end %>
     </div>

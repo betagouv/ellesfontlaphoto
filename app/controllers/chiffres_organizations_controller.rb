@@ -17,16 +17,18 @@ class ChiffresOrganizationsController < ApplicationController
       @chiffres_organization = ChiffresOrganization.new(chiffres_organization_params)
     end
     @chiffres_organization.organization = @organization
-    p @chiffres_organization.errors.messages
     if !titre_params.empty?
       if @chiffres_prix.save && @chiffres_organization.save
         redirect_to confirm_organization_path
       else
+        p @chiffres_organization.errors.messages
+        p @chiffres_prix.errors.messages
         render :new
       end
     elsif @chiffres_organization.save
       redirect_to confirm_organization_path
     else
+      p @chiffres_organization.errors.messages
       render :new
     end
   end
