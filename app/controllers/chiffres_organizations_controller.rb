@@ -19,6 +19,8 @@ class ChiffresOrganizationsController < ApplicationController
     @chiffres_organization.organization = @organization
     if !titre_params.empty?
       if @chiffres_prix.save && @chiffres_organization.save
+        # Decommenter quand pret à être en production
+        # OrganizationMailer.new_chiffres(@chiffres_organization).deliver_later
         redirect_to confirm_organization_path
       else
         p @chiffres_organization.errors.messages
@@ -26,6 +28,8 @@ class ChiffresOrganizationsController < ApplicationController
         render :new
       end
     elsif @chiffres_organization.save
+      # Decommenter quand pret à être en production
+      # OrganizationMailer.new_chiffres(@chiffres_organization).deliver_later
       redirect_to confirm_organization_path
     else
       p @chiffres_organization.errors.messages
