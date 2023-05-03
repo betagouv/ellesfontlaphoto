@@ -36,6 +36,16 @@ class OrganizationsController < ApplicationController
     @chiffres_organization = ChiffresOrganization.new
   end
 
+  def edit
+    @chiffres_organization = ChiffresOrganization.new
+  end
+
+  def update
+    @organization.update(organization_params)
+    @chiffres_organization = ChiffresOrganization.new
+    redirect_to new_organization_chiffres_organization_path(@organization, @chiffres_organization)
+  end
+
   def create
     @organization = Organization.new(organization_params)
     @organization.visible = false

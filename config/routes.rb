@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
   get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
   get "organisation/confirm", to: "organizations#confirm", as: "confirm_organization"
-  resources :organizations, only: [:new, :create, :index, :show] do
+  resources :organizations, only: [:new, :create, :index, :show, :edit, :update] do
     resources :chiffres_organizations, only: [:new, :create, :edit, :update]
   end
   resources :notation_helps, only: :create

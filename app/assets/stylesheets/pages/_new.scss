@@ -27,7 +27,7 @@
     margin-top: 10%;
   }
   .ajout-aide-form, .ajout-organization-form, .ajout-case-review-form {
-    #new_help, #new_organization, .edit_case_review {
+    #new_help, #new_organization, .edit_case_review, .edit_organization {
       width: 42%;
       margin: 0 auto;
       .flex-div {
@@ -308,7 +308,7 @@
         width: 90%;
       }
     }
-    .ajout-aide-form #new_help, .ajout-organization-form #new_help {
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization, .ajout-organization-form .edit_organization {
       width: 70%;
     }
   }
@@ -329,7 +329,7 @@
     .paragraphe {
       width: 90%;
     }
-    .ajout-aide-form #new_help, .ajout-organization-form #new_organization,
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization, .ajout-organization-form .edit_organization,
     .ajout-organization-form .edit_case_review {
       width: 90%;
       .flex-div {
