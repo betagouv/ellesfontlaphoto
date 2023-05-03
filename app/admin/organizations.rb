@@ -7,8 +7,15 @@ ActiveAdmin.register Organization do
     organization.save
   end
 
-  after_update do |organization|
+  before_update do |organization|
     organization.organization_type = params["organization"]["organization_type"]
+    if organization.visible_changed? && organization.visible
+      Organization.where(organization: organization).each do |orga|
+        orga.update(visible: true)
+        orga.chiffres_organizations.each { |chiffre| chiffre.update(visible: true)}
+      end
+      organization.chiffres_organizations.each { |chiffre| chiffre.update(visible: true)}
+    end
     organization.save
   end
 
@@ -23,8 +30,11 @@ ActiveAdmin.register Organization do
     column :name
     column :city
     column :organization
-    column :chiffres_organizations do |obj|
-      obj.chiffres_organizations.map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(obj, chiffre)) }.compact
+    column :chiffres_organizations_visible do |obj|
+      obj.chiffres_organizations.where(visible: true).map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(obj, chiffre)) }.compact
+    end
+    column :chiffres_organizations_non_visible do |obj|
+      obj.chiffres_organizations.where(visible: false).map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(obj, chiffre)) }.compact
     end
     column :created_at
     actions
