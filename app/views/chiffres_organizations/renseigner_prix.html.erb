@@ -1,0 +1,28 @@
+<div class="ajout-organization-page">
+  <%#= link_to image_tag("arrow-carousel-chiffres-left.svg"), edit_organization_path(@organization), class: "edit-orga" %>
+  <div class="ajout-organization-title">
+    <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez les chiffres de <%= @organization.name %> ! </span></p>
+  </div>
+  <div class="ajout-organization-form">
+    <div id="new_organization">
+      <p class="main-paragraphe-medium mt40">À propos de votre prix et récompenses</p>
+      <%= simple_form_for [@organization, @chiffres_prix], url: :create_prix do |f| %>
+        <% if params[:chiffres_organization].nil? %>
+          <%= f.input :titre, label: "Quel est le titre de votre prix ?" %>
+        <% else %>
+          <%= f.input :titre, label: "Quel est le titre de votre prix ?", value: params["chiffres_organization"]["titre"] %>
+        <% end %>
+        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a, label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
+        <%= f.input :nb_total_candidats, label: "Combien de personnes ont candidaté à vos appels à candidatures ?", input_html: { min: '0' } %>
+        <%= f.input :nb_femmes_candidates, label: "Parmi ces candidats, combien étaient des femmes ?", input_html: { min: '0' } %>
+        <%= f.input :nb_total_laureates, label: "Combien de lauréat(e)s avez-vous récompensé ?", input_html: { min: '0' } %>
+        <%= f.input :nb_femmes_laureates, label: "Parmi ces lauréat(e)s, combien étaient des femmes ?", input_html: { min: '0' } %>
+        <%= f.input :nb_total_jurys, label: "Combien de personnes ont participé au jury de sélection des photographes ?", input_html: { min: '0' } %>
+        <%= f.input :nb_femmes_jurys, label:"Parmi ces personnes, combien étaient des femmes ?", input_html: { min: '0' } %>
+        <div class="btn-submit">
+          <%= f.submit "Soumettre", class: "btn btn-black" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

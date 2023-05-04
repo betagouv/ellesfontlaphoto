@@ -41,9 +41,12 @@ class OrganizationsController < ApplicationController
   end
 
   def update
-    @organization.update(organization_params)
     @chiffres_organization = ChiffresOrganization.new
-    redirect_to new_organization_chiffres_organization_path(@organization, @chiffres_organization)
+    if @organization.update(organization_params)
+      redirect_to new_organization_chiffres_organization_path(@organization, @chiffres_organization)
+    else
+      render :edit
+    end
   end
 
   def create
@@ -63,6 +66,6 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre)
+    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre)
   end
 end
