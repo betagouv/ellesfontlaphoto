@@ -22,25 +22,25 @@ class ChiffresOrganization < ActiveRecord::Base
 
   # Validations de calcul de parité
   after_validation :calculate_parity
-  validates :nb_total_exposes_expo_collective, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_collective, only_integer: true, allow_nil: true }
-  validates :nb_total_exposes_expo_mono, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_mono, only_integer: true, allow_nil: true }
-  validates :nb_total_commissaires, numericality: { greater_than_or_equal_to: :nb_femmes_commissaires, only_integer: true, allow_nil: true }
-  validates :nb_total_artistes, numericality: { greater_than_or_equal_to: :nb_femmes_artistes, only_integer: true, allow_nil: true }
-  validates :nb_total_oeuvres_photo, numericality: { greater_than_or_equal_to: :nb_total_oeuvres_photo, only_integer: true, allow_nil: true }
-  validates :nb_total_oeuvres_ajoutees, numericality: { greater_than_or_equal_to: :nb_femmes_oeuvres_ajoutees, only_integer: true, allow_nil: true }
-  validates :nb_total_enseignants, numericality: { greater_than_or_equal_to: :nb_femmes_enseignantes, only_integer: true, allow_nil: true }
-  validates :nb_total_etudiants, numericality: { greater_than_or_equal_to: :nb_femmes_etudiantes, only_integer: true, allow_nil: true }
-  validates :nb_total_photographes_etudies, numericality: { greater_than_or_equal_to: :nb_femmes_photographes_etudiees, only_integer: true, allow_nil: true }
-  validates :nb_total_laureates, numericality: { greater_than_or_equal_to: :nb_femmes_laureates, only_integer: true, allow_nil: true }
-  validates :nb_total_candidats, numericality: { greater_than_or_equal_to: :nb_femmes_candidates, only_integer: true, allow_nil: true }
-  validates :nb_total_jurys, numericality: { greater_than_or_equal_to: :nb_femmes_jurys, only_integer: true, allow_nil: true }
-  validates :nb_total_publies, numericality: { greater_than_or_equal_to: :nb_femmes_publiees, only_integer: true, allow_nil: true }
-  validates :nb_total_iconographes, numericality: { greater_than_or_equal_to: :nb_femmes_iconographes, only_integer: true, allow_nil: true }
-  validates :nb_total_accueil_residence, numericality: { greater_than_or_equal_to: :nb_femmes_accueil_residence, only_integer: true, allow_nil: true }
-  validates :nb_total_photo_ouvrages, numericality: { greater_than_or_equal_to: :nb_femmes_photo_ouvrages, only_integer: true, allow_nil: true }
-  validates :nb_total_photographes_invites, numericality: { greater_than_or_equal_to: :nb_femmes_photographes_invites, only_integer: true, allow_nil: true }
-  validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices, only_integer: true, allow_nil: true }
-  validates :nb_total_employes, numericality: { greater_than_or_equal_to: :nb_femmes_employees, only_integer: true, allow_nil: true }
+  validates :nb_total_exposes_expo_collective, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_collective, allow_nil: true }
+  validates :nb_total_exposes_expo_mono, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_mono, allow_nil: true }
+  validates :nb_total_commissaires, numericality: { greater_than_or_equal_to: :nb_femmes_commissaires, allow_nil: true }
+  validates :nb_total_artistes, numericality: { greater_than_or_equal_to: :nb_femmes_artistes, allow_nil: true }
+  validates :nb_total_oeuvres_photo, numericality: { greater_than_or_equal_to: :nb_total_oeuvres_photo, allow_nil: true }
+  validates :nb_total_oeuvres_ajoutees, numericality: { greater_than_or_equal_to: :nb_femmes_oeuvres_ajoutees, allow_nil: true }
+  validates :nb_total_enseignants, numericality: { greater_than_or_equal_to: :nb_femmes_enseignantes, allow_nil: true }
+  validates :nb_total_etudiants, numericality: { greater_than_or_equal_to: :nb_femmes_etudiantes, allow_nil: true }
+  validates :nb_total_photographes_etudies, numericality: { greater_than_or_equal_to: :nb_femmes_photographes_etudiees, allow_nil: true }
+  validates :nb_total_laureates, numericality: { greater_than_or_equal_to: :nb_femmes_laureates, allow_nil: true }
+  validates :nb_total_candidats, numericality: { greater_than_or_equal_to: :nb_femmes_candidates, allow_nil: true }
+  validates :nb_total_jurys, numericality: { greater_than_or_equal_to: :nb_femmes_jurys, allow_nil: true }
+  validates :nb_total_publies, numericality: { greater_than_or_equal_to: :nb_femmes_publiees, allow_nil: true }
+  validates :nb_total_iconographes, numericality: { greater_than_or_equal_to: :nb_femmes_iconographes, allow_nil: true }
+  validates :nb_total_accueil_residence, numericality: { greater_than_or_equal_to: :nb_femmes_accueil_residence, allow_nil: true }
+  validates :nb_total_photo_ouvrages, numericality: { greater_than_or_equal_to: :nb_femmes_photo_ouvrages, allow_nil: true }
+  validates :nb_total_photographes_invites, numericality: { greater_than_or_equal_to: :nb_femmes_photographes_invites, allow_nil: true }
+  validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices, allow_nil: true }
+  validates :nb_total_employes, numericality: { greater_than_or_equal_to: :nb_femmes_employees, allow_nil: true }
 
   # Calcul du score de parité
   def calculate_parity
