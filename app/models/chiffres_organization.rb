@@ -4,6 +4,7 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :annee, presence: true
   validates :annee, uniqueness: { scope: :organization }
 
+  before_validation :validates_for_orga
   # Validation de présence des chiffres en fonction du type de l'organisation
   validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
   validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
@@ -42,6 +43,13 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices }, if: -> { !nb_total_directeurs.nil? && !nb_femmes_directrices.nil? }
   validates :nb_total_employes, numericality: { greater_than_or_equal_to: :nb_femmes_employees }, if: -> { !nb_total_employes.nil? && !nb_femmes_employees.nil? }
 
+  def validates_for_orga
+    if organization.orga?
+      if (nb_total_exposes_expo_collective.nil? && nb_femmes_exposees_expo_collective.nil?) || (nb_total_exposes_expo_mono.nil? && nb_femmes_exposees_expo_mono.nil?)
+        errors.add(:orga, 'Vous devez au moins préciser les chiffres de vos expositions monographiques ou de vos expositions collectives')
+      end
+    end
+  end
   # Calcul du score de parité
   def calculate_parity
     if organization.orga?

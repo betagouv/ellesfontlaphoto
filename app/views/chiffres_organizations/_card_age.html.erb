@@ -1,10 +1,10 @@
-<% unless nb_exposes_total.nil? %>
+<% unless nb_femmes_age.nil? %>
   <div class="box noir">
     <div class="box-in box-front noir">
       <div class="flip-card-front noir">
         <div id="flexible">
-          <div class="c100 p<%= nb_femmes_age.fdiv(nb_exposes_total).to_i * 100 %> noir">
-            <span><%= nb_femmes_age.fdiv(nb_exposes_total).to_i * 100 %>%</span>
+          <div class="c100 p<%= (nb_femmes_age.fdiv(nb_exposes_total) * 100).to_i %> noir">
+            <span><%= (nb_femmes_age.fdiv(nb_exposes_total) * 100).to_i %>%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>

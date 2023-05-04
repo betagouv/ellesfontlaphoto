@@ -29,16 +29,7 @@ export default class extends Controller {
     "inputFemmesOeuvresPhotoAjoutees",
 
     "radioChampsCollection",
-    // champsPrix
-    "inputTitrePrix",
-    "inputTotalCandidatPrix",
-    "inputFemmesCandidatesPrix",
-    "inputTotalLaureatsPrix",
-    "inputFemmesLaureatesPrix",
-    "inputTotalJuryPrix",
-    "inputFemmesJuryPrix",
 
-    "radioChampsPrix",
     // photographesResidence
     "inputTotalResidence",
     "inputFemmesResidence",
@@ -83,17 +74,6 @@ export default class extends Controller {
       this.champsCollection();
       this.radioChampsCollectionTarget.checked = true;
     }
-
-    // if (this.inputTitrePrixTarget.value.trim().length != 0 ||
-    // this.inputTotalCandidatPrixTarget.value.trim().length != 0 ||
-    // this.inputFemmesCandidatesPrixTarget.value.trim().length != 0 ||
-    // this.inputTotalLaureatsPrixTarget.value.trim().length != 0 ||
-    // this.inputFemmesLaureatesPrixTarget.value.trim().length != 0 ||
-    // this.inputTotalJuryPrixTarget.value.trim().length != 0 ||
-    // this.inputFemmesJuryPrixTarget.value.trim().length != 0) {
-    //   this.champsPrix();
-    //   this.radioChampsPrixTarget.checked = true;
-    // }
 
     if (this.inputTotalResidenceTarget.value.trim().length != 0 ||
     this.inputFemmesResidenceTarget.value.trim().length != 0) {
