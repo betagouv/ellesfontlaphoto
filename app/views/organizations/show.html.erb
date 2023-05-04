@@ -51,7 +51,9 @@
         <% end %>
         <% if !@prix.empty? %>
           <% @prix.each do |prix| %>
-            <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+            <% prix.chiffres_organizations.each do |chiffre| %>
+              <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+            <% end %>
           <% end %>
         <% end %>
         <% if chiffre.accueil_residence_parite != 0 || chiffre.photo_ouvrages_parite != 0 || chiffre.photographes_invites_parite != 0 %>

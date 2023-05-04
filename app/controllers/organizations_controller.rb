@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization, only: [:edit, :show, :update]
+  before_action :set_organization, only: [:edit, :show, :update, :renseigner_prix, :create_prix]
   def index
     @contact = Contact.new
     if params[:query].present?
@@ -41,9 +41,12 @@ class OrganizationsController < ApplicationController
   end
 
   def update
-    @organization.update(organization_params)
     @chiffres_organization = ChiffresOrganization.new
-    redirect_to new_organization_chiffres_organization_path(@organization, @chiffres_organization)
+    if @organization.update(organization_params)
+      redirect_to new_organization_chiffres_organization_path(@organization, @chiffres_organization)
+    else
+      render :edit
+    end
   end
 
   def create
@@ -56,13 +59,45 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def renseigner_prix
+    @organization = Organization.new
+    @organization.chiffres_organizations.build
+  end
+
+  def create_prix
+    @prix_organization = new_price(@organization)
+    @chiffres_prix = ChiffresOrganization.new(organization_params[:chiffres_organizations_attributes]["0"])
+    @chiffres_prix.organization = @prix_organization
+    # raise
+    if @chiffres_prix.valid? && @prix_organization.valid?
+      @chiffres_prix.save
+      @prix_organization.save
+      redirect_to confirm_organization_path
+    else
+      render :renseigner_prix
+    end
+  end
+
   private
+
+  def new_price(organization)
+    Organization.new(
+      organization_type: "Prix",
+      name: organization.name,
+      city: organization.city,
+      titre: organization_params[:titre],
+      email: organization.email,
+      visible: false,
+      organization: organization,
+      finance_ministre: organization.finance_ministre
+    )
+  end
 
   def set_organization
     @organization = Organization.find(params[:id])
   end
 
   def organization_params
-    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre)
+    params.require(:organization).permit(:titre, chiffres_organizations_attributes:[:annee, :nb_total_candidats, :nb_femmes_candidates, :nb_total_laureates, :nb_femmes_laureates, :nb_total_jurys, :nb_femmes_jurys])
   end
 end

@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
   get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
   get "organisation/confirm", to: "organizations#confirm", as: "confirm_organization"
+  get "organisation/:id/chiffres_prix", to: "organizations#renseigner_prix", as: "renseigner_prix"
+  post "organisation/:id/chiffres_prix", to: "organizations#create_prix", as: "create_prix"
+
   resources :organizations, only: [:new, :create, :index, :show, :edit, :update] do
     resources :chiffres_organizations, only: [:new, :create, :edit, :update]
   end
