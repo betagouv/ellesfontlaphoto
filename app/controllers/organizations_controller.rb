@@ -66,7 +66,7 @@ class OrganizationsController < ApplicationController
 
   def create_prix
     @prix_organization = new_price(@organization)
-    @chiffres_prix = ChiffresOrganization.new(organization_params[:chiffres_organizations_attributes]["0"])
+    @chiffres_prix = ChiffresOrganization.new(organization_avec_prix_params[:chiffres_organizations_attributes]["0"])
     @chiffres_prix.organization = @prix_organization
     # raise
     if @chiffres_prix.valid? && @prix_organization.valid?
@@ -85,7 +85,7 @@ class OrganizationsController < ApplicationController
       organization_type: "Prix",
       name: organization.name,
       city: organization.city,
-      titre: organization_params[:titre],
+      titre: organization_avec_prix_params[:titre],
       email: organization.email,
       visible: false,
       organization: organization,
@@ -93,11 +93,15 @@ class OrganizationsController < ApplicationController
     )
   end
 
+  def organization_params
+    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre)
+  end
+
   def set_organization
     @organization = Organization.find(params[:id])
   end
 
-  def organization_params
+  def organization_avec_prix_params
     params.require(:organization).permit(:titre, chiffres_organizations_attributes:[:annee, :nb_total_candidats, :nb_femmes_candidates, :nb_total_laureates, :nb_femmes_laureates, :nb_total_jurys, :nb_femmes_jurys])
   end
 end
