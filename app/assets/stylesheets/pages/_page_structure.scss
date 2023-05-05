@@ -11,7 +11,7 @@
     color: $white;
     text-align: left;
     width: 80%;
-    line-height: 65px;
+    line-height: 50px;
     .title-marianne {
       color: $white;
       font-size: 40px;
@@ -21,6 +21,7 @@
       font-size: 14px;
       padding: 3px 10px 8px 10px;
       font-family: 'Marianne-Regular', sans-serif;
+      white-space: nowrap;
     }
     .btn-outlined-white.marianne {
       padding: 3px 10px 8px 0px;
