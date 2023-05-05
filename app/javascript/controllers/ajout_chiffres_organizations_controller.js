@@ -7,8 +7,92 @@ export default class extends Controller {
     "divPrix",
     "photographesResidence",
     "photographesOuvrage",
-    "photographesExpo"
+    "photographesExpo",
+    // champsExposition
+    "inputTotalExpoCollective",
+    "inputFemmesExpoCollective",
+    "inputTotalExpoMono",
+    "inputFemmesExpoCollective",
+    "inputMoins40",
+    "inputPlus40",
+    "inputPostMortem",
+    "inputTotalCommissaires",
+    "inputFemmesCommissaires",
+
+    "radioChampsExpo",
+    // ChampsCollection
+    "inputTotalFonds",
+    "inputFemmesFonds",
+    "inputTotalOeuvresPhoto",
+    "inputTotalFemmesOeuvresPhoto",
+    "inputTotalOeuvresPhotoAjoutees",
+    "inputFemmesOeuvresPhotoAjoutees",
+
+    "radioChampsCollection",
+
+    // photographesResidence
+    "inputTotalResidence",
+    "inputFemmesResidence",
+
+    "radioChampsResidence",
+    // photographesOuvrage
+    "inputTotalOuvrages",
+    "inputFemmesOuvrages",
+
+    "radioChampsPhotographeOuvrage",
+    // photographesExpo
+    "inputTotalInvites",
+    "inputFemmesInvites",
+
+    "radioChampsPhotographeExpo"
+
+
   ]
+
+  connect() {
+    console.log(this.inputTotalExpoCollectiveTarget.value)
+    if (this.inputTotalExpoCollectiveTarget.value.trim().length != 0 ||
+    this.inputTotalExpoCollectiveTarget.value.trim().length != 0 ||
+    this.inputFemmesExpoCollectiveTarget.value.trim().length != 0 ||
+    this.inputTotalExpoMonoTarget.value.trim().length != 0 ||
+    this.inputFemmesExpoCollectiveTarget.value.trim().length != 0 ||
+    this.inputMoins40Target.value.trim().length != 0 ||
+    this.inputPlus40Target.value.trim().length != 0 ||
+    this.inputPostMortemTarget.value.trim().length != 0 ||
+    this.inputTotalCommissairesTarget.value.trim().length != 0 ||
+    this.inputFemmesCommissairesTarget.value.trim().length != 0) {
+      this.champsExposition();
+      this.radioChampsExpoTarget.checked = true
+    }
+
+    if (this.inputTotalFondsTarget.value.trim().length != 0 ||
+    this.inputFemmesFondsTarget.value.trim().length != 0 ||
+    this.inputTotalOeuvresPhotoTarget.value.trim().length != 0 ||
+    this.inputTotalFemmesOeuvresPhotoTarget.value.trim().length != 0 ||
+    this.inputTotalOeuvresPhotoAjouteesTarget.value.trim().length != 0 ||
+    this.inputFemmesOeuvresPhotoAjouteesTarget.value.trim().length != 0) {
+      this.champsCollection();
+      this.radioChampsCollectionTarget.checked = true;
+    }
+
+    if (this.inputTotalResidenceTarget.value.trim().length != 0 ||
+    this.inputFemmesResidenceTarget.value.trim().length != 0) {
+      this.photographesResidence();
+      this.radioChampsResidenceTarget.checked = true;
+    }
+
+    if (this.inputTotalOuvragesTarget.value.trim().length != 0 ||
+    this.inputFemmesOuvragesTarget.value.trim().length != 0) {
+      this.photographesOuvrage();
+      this.radioChampsPhotographeOuvrageTarget.checked = true;
+    }
+
+    if(this.inputTotalInvitesTarget.value.trim().length != 0 ||
+    this.inputFemmesInvitesTarget.value.trim().length != 0) {
+      this.photographesExpo();
+      this.radioChampsPhotographeExpoTarget.checked = true;
+    }
+  }
 
   champsExposition() {
     this.divExpoTarget.classList.remove("d-none")

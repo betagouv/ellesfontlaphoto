@@ -27,7 +27,7 @@
     margin-top: 10%;
   }
   .ajout-aide-form, .ajout-organization-form, .ajout-case-review-form {
-    #new_help, #new_organization, .edit_case_review {
+    #new_help, #new_organization, .edit_case_review, .edit_organization {
       width: 42%;
       margin: 0 auto;
       .flex-div {
@@ -110,6 +110,7 @@
       .display-error {
         display: block;
         color: #D52941;
+        font-size: 0.875em;
       }
 
       .undisplay-error {
@@ -163,24 +164,28 @@
         background-position: right 3% bottom 45%;
       }
 
-    input[type='radio']:after {
-      width: 20px;
-      height: 20px;
-      top: -2px;
-      left: -3px;
-      border-radius: 5px;
-      position: relative;
-      background-color: $white;
-      content: '';
-      display: inline-block;
-      visibility: visible;
-      border: 1px solid #d1d3d1;
-      cursor: pointer;
-    }
+      .collection_radio_buttons {
+        margin: 0 20px 0 8px;
+      }
 
-    input[type='radio']:checked:after {
-        background-color: $purple-blue;
-        border: none;
+      input[type='radio']:after {
+        width: 20px;
+        height: 20px;
+        top: -2px;
+        left: -3px;
+        border-radius: 5px;
+        position: relative;
+        background-color: $white;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid #d1d3d1;
+        cursor: pointer;
+      }
+
+      input[type='radio']:checked:after {
+          background-color: $purple-blue;
+          border: none;
     }
 
 
@@ -304,7 +309,7 @@
         width: 90%;
       }
     }
-    .ajout-aide-form #new_help, .ajout-organization-form #new_help {
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization, .ajout-organization-form .edit_organization {
       width: 70%;
     }
   }
@@ -325,7 +330,7 @@
     .paragraphe {
       width: 90%;
     }
-    .ajout-aide-form #new_help, .ajout-organization-form #new_organization,
+    .ajout-aide-form #new_help, .ajout-organization-form #new_organization, .ajout-organization-form .edit_organization,
     .ajout-organization-form .edit_case_review {
       width: 90%;
       .flex-div {

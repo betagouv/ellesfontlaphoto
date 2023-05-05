@@ -1,3 +1,4 @@
+import { computeStyles } from "@popperjs/core"
 import { Controller } from "stimulus"
 
 export default class extends Controller {
@@ -5,7 +6,9 @@ export default class extends Controller {
     "divNewOrga",
     "divSearchOrga",
     "selectOrga",
-    "linkNew"
+    "linkNew",
+    "organizationTypeInput",
+    "titreInput"
   ]
 
   newOrganisation() {
@@ -25,6 +28,15 @@ export default class extends Controller {
     } else {
       this.linkNewTarget.classList.add("isDisabled")
     }
+  }
+
+  selectType() {
+    if (this.organizationTypeInputTarget.value == "Prix") {
+      this.titreInputTarget.classList.remove("d-none")
+    } else {
+      this.titreInputTarget.classList.add("d-none")
+    }
+
   }
 
 }

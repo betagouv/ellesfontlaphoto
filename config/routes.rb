@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   require "sidekiq/web"
-  if Rails.env.development?
-    mount Sidekiq::Web => '/sidekiq'
+  authenticate :admin_user do
+    mount Sidekiq::Web => "/sidekiq"
   end
 
   root to: 'pages#home'
@@ -34,7 +34,10 @@ Rails.application.routes.draw do
   get "/revue-dossier/confirmation", to: "case_reviews#confirmation"
   get "/revue-dossier/revue", to: "case_reviews#already_reviewed"
   get "organisation/confirm", to: "organizations#confirm", as: "confirm_organization"
-  resources :organizations, only: [:new, :create, :index, :show] do
+  get "organisation/:id/chiffres_prix", to: "organizations#renseigner_prix", as: "renseigner_prix"
+  post "organisation/:id/chiffres_prix", to: "organizations#create_prix", as: "create_prix"
+
+  resources :organizations, only: [:new, :create, :index, :show, :edit, :update] do
     resources :chiffres_organizations, only: [:new, :create, :edit, :update]
   end
   resources :notation_helps, only: :create

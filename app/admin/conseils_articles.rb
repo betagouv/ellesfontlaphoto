@@ -1,5 +1,4 @@
 ActiveAdmin.register ConseilsArticle do
-
   permit_params :title, :subtitle, :category_list, :objectif, :iframe_url, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources, :tag_list
   #
   # or

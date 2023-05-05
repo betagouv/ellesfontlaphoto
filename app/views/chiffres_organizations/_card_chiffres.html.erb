@@ -21,7 +21,7 @@
         <% if nb_femmes.blank? || nb_total.blank? %>
           <p><mark><%= legende %> : ?</mark></p>
         <% else %>
-          <p><mark class="<%= parite.to_i >= 50 ? "purple" : "orange" %>"><%= legende %> <%= nb_femmes %> / <%= nb_total %></mark></p>
+          <p><mark class="<%= parite.to_i >= 50 ? "purple" : "orange" %>"><%= legende %> : <%= nb_femmes %> / <%= nb_total %></mark></p>
         <% end %>
       </div>
     </div>

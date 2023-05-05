@@ -1,2 +1,3 @@
 web: bundle exec puma -C config/puma.rb
-worker: bundle exec sidekiq -C config/sidekiq.yml
+worker: RAILS_MAX_THREADS=5 bundle exec sidekiq
+postdeploy: bundle exec rails db:migrate

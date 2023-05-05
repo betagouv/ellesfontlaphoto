@@ -2,11 +2,15 @@
   <%= link_to organizations_path do %>
     <%= image_tag "arrow-line-white.svg", class: "back-arrow" %>
   <% end %>
-  <h1 class="title-marianne-bold"><%= @organization.name %>
-    <% if @organization.city %>
-      , <span class="title-marianne"><%= @organization.city %></span>
-    <% end %>
-  </h1>
+  <div class="page-structure-title">
+    <h1 class="title-marianne-bold"><%= @organization.name %>
+      <% if @organization.city %>
+        , <span class="title-marianne"><%= @organization.city %></span>
+      <% end %>
+      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white">Espace d'exposition</span><% end %>
+      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure publique</span><% end %>
+    </h1>
+  </div>
   <div class="cards-bandeau">
     <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
       <div class="box">
@@ -47,17 +51,21 @@
         <% end %>
         <% if !@prix.empty? %>
           <% @prix.each do |prix| %>
-            <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+            <% prix.chiffres_organizations.each do |chiffre| %>
+              <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
+            <% end %>
           <% end %>
         <% end %>
-        <div class="div-chiffres">
-          <p class="title-marianne-bold">Autres activités</p>
-          <div class="chiffres">
-            <%= render "chiffres_organizations/card_chiffres", title: "résidence", legende: "femmes photographes en résidence", nb_femmes: chiffre.nb_femmes_accueil_residence, nb_total: chiffre.nb_total_accueil_residence, parite: chiffre.accueil_residence_parite %>
-            <%= render "chiffres_organizations/card_chiffres", title: "édition de livre", legende: "femmes photographes publiées", nb_femmes: chiffre.nb_femmes_photo_ouvrages, nb_total: chiffre.nb_total_photo_ouvrages , parite: chiffre.photo_ouvrages_parite %>
-            <%= render "chiffres_organizations/card_chiffres", title: "invitation d'artiste (événements, interventions, ateliers...)", legende: "femmes photographes invitées", nb_femmes: chiffre.nb_femmes_photographes_invites, nb_total: chiffre.nb_total_photographes_invites, parite: chiffre.photographes_invites_parite %>
+        <% if chiffre.accueil_residence_parite != 0 || chiffre.photo_ouvrages_parite != 0 || chiffre.photographes_invites_parite != 0 %>
+          <div class="div-chiffres">
+            <p class="title-marianne-bold">Autres activités</p>
+            <div class="chiffres">
+              <%= render "chiffres_organizations/card_chiffres", title: "résidence", legende: "femmes photographes en résidence", nb_femmes: chiffre.nb_femmes_accueil_residence, nb_total: chiffre.nb_total_accueil_residence, parite: chiffre.accueil_residence_parite %>
+              <%= render "chiffres_organizations/card_chiffres", title: "édition de livre", legende: "femmes photographes publiées", nb_femmes: chiffre.nb_femmes_photo_ouvrages, nb_total: chiffre.nb_total_photo_ouvrages , parite: chiffre.photo_ouvrages_parite %>
+              <%= render "chiffres_organizations/card_chiffres", title: "invitation d'artiste (événements, interventions, ateliers...)", legende: "femmes photographes invitées", nb_femmes: chiffre.nb_femmes_photographes_invites, nb_total: chiffre.nb_total_photographes_invites, parite: chiffre.photographes_invites_parite %>
+            </div>
           </div>
-        </div>
+        <% end %>
         <div class="div-chiffres">
           <p class="title-marianne-bold">Effectif de l'organisation</p>
           <div class="chiffres">

@@ -1,20 +1,22 @@
-<div class="box noir">
-  <div class="box-in box-front noir">
-    <div class="flip-card-front noir">
-      <div id="flexible">
-        <div class="c100 p<%= parite.to_i %> noir">
-          <span><%= parite.to_i %>%</span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
+<% unless nb_femmes_age.nil? %>
+  <div class="box noir">
+    <div class="box-in box-front noir">
+      <div class="flip-card-front noir">
+        <div id="flexible">
+          <div class="c100 p<%= (nb_femmes_age.fdiv(nb_exposes_total) * 100).to_i %> noir">
+            <span><%= (nb_femmes_age.fdiv(nb_exposes_total) * 100).to_i %>%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-organization-numbers">
-        <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
-          <p class="paragraphe-bold"><%= title %></p>
+        <div class="card-organization-numbers">
+          <div class="card-organization-name" style="display: flex; align-items: center; justify-content:center;">
+            <p class="paragraphe-bold"><%= title %></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

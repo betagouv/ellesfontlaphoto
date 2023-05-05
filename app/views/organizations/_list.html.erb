@@ -7,7 +7,7 @@
 <div class="cards-organizations">
   <% @organizations.each do |organization| %>
     <% @chiffres_organization = ChiffresOrganization.where(organization: organization).order(annee: :desc).first %>
-    <% if organization.page_structure %>
+    <% if organization.page_structure && !@chiffres_organization.nil? %>
       <% link_ref = organization.organization != nil && organization.prix? ? organization.organization : organization%>
       <%= link_to organization_path(link_ref) do %>
         <div class="box">
@@ -28,7 +28,7 @@
           </div>
         </div>
       <% end %>
-    <% else %>
+    <% elsif !@chiffres_organization.nil? %>
       <div class="box" data-controller="flip-card">
         <div class="box-in box-front" data-flip-card-target="frontCard">
           <% if organization.orga? %>
