@@ -241,6 +241,10 @@
   .box {
     min-height: 20em;
     .box-in {
+      .flottante {
+        left: 40%;
+        top: -5%;
+      }
       .flip-card-front {
         height: 20em;
         .card-organization-name {
@@ -250,7 +254,6 @@
             line-height: 20px;
             padding-bottom: 3px;
             .organization-name {
-              // display: inline-block;
               max-width: 150px;
               overflow: hidden !important;
               text-overflow: ellipsis;
