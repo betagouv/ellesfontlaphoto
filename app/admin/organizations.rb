@@ -12,9 +12,9 @@ ActiveAdmin.register Organization do
     if organization.visible_changed? && organization.visible
       Organization.where(organization: organization).each do |orga|
         orga.update(visible: true)
-        orga.chiffres_organizations.each { |chiffre| chiffre.update(visible: true)}
+        orga.chiffres_organizations.each {|chiffre| chiffre.update(visible: true)}
       end
-      organization.chiffres_organizations.each { |chiffre| chiffre.update(visible: true)}
+      organization.chiffres_organizations.each {|chiffre| chiffre.update(visible: true)}
     end
     organization.save
   end

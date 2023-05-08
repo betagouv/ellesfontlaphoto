@@ -2,24 +2,11 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = [
-    "divExpo",
     "divCollection",
-    "divPrix",
     "photographesResidence",
     "photographesOuvrage",
     "photographesExpo",
-    // champsExposition
-    "inputTotalExpoCollective",
-    "inputFemmesExpoCollective",
-    "inputTotalExpoMono",
-    "inputFemmesExpoCollective",
-    "inputMoins40",
-    "inputPlus40",
-    "inputPostMortem",
-    "inputTotalCommissaires",
-    "inputFemmesCommissaires",
 
-    "radioChampsExpo",
     // ChampsCollection
     "inputTotalFonds",
     "inputFemmesFonds",
@@ -50,21 +37,6 @@ export default class extends Controller {
   ]
 
   connect() {
-    console.log(this.inputTotalExpoCollectiveTarget.value)
-    if (this.inputTotalExpoCollectiveTarget.value.trim().length != 0 ||
-    this.inputTotalExpoCollectiveTarget.value.trim().length != 0 ||
-    this.inputFemmesExpoCollectiveTarget.value.trim().length != 0 ||
-    this.inputTotalExpoMonoTarget.value.trim().length != 0 ||
-    this.inputFemmesExpoCollectiveTarget.value.trim().length != 0 ||
-    this.inputMoins40Target.value.trim().length != 0 ||
-    this.inputPlus40Target.value.trim().length != 0 ||
-    this.inputPostMortemTarget.value.trim().length != 0 ||
-    this.inputTotalCommissairesTarget.value.trim().length != 0 ||
-    this.inputFemmesCommissairesTarget.value.trim().length != 0) {
-      this.champsExposition();
-      this.radioChampsExpoTarget.checked = true
-    }
-
     if (this.inputTotalFondsTarget.value.trim().length != 0 ||
     this.inputFemmesFondsTarget.value.trim().length != 0 ||
     this.inputTotalOeuvresPhotoTarget.value.trim().length != 0 ||
@@ -92,14 +64,6 @@ export default class extends Controller {
       this.photographesExpo();
       this.radioChampsPhotographeExpoTarget.checked = true;
     }
-  }
-
-  champsExposition() {
-    this.divExpoTarget.classList.remove("d-none")
-  }
-
-  hideChampsExposition() {
-    this.divExpoTarget.classList.add("d-none")
   }
 
   champsCollection() {
