@@ -7,14 +7,16 @@
     left: 8%;
     top: 103px;
   }
-  h1 {
-    color: $white;
-    text-align: left;
+  .page-structure-title {
     width: 80%;
-    line-height: 50px;
-    .title-marianne {
+    h1 {
       color: $white;
-      font-size: 40px;
+      text-align: left;
+      line-height: 50px;
+      .title-marianne {
+        color: $white;
+        font-size: 40px;
+      }
     }
     .btn-outlined-white {
       border-radius: 25px;
@@ -22,6 +24,7 @@
       padding: 3px 10px 8px 10px;
       font-family: 'Marianne-Regular', sans-serif;
       white-space: nowrap;
+      margin: 10px 0 10px 10px;
     }
     .btn-outlined-white.marianne {
       padding: 3px 10px 8px 0px;
@@ -56,15 +59,68 @@
 .organization-chiffres {
   background-color: $white-grey;
   padding: 80px 14% 160px;
-  .nav .fr-btn {
-    background-color: transparent;
-    border: 1px solid $black;
-    color: $black;
-    padding: 10px 15px;
+  .nav {
+    display: flex;
+    gap: 10px;
+    .fr-btn {
+      background-color: transparent;
+      border: 1px solid $black;
+      color: $black;
+      padding: 10px 15px;
+      width: 126px;
+    }
+    .fr-btn.active {
+      background-color: $black;
+      color: $white;
+    }
   }
-  .nav .fr-btn.active {
-    background-color: $black;
-    color: $white;
-    margin: 0 5px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .organization-bandeau {
+    padding: 80px 7%;
+    .back-arrow {
+      left: 4%;
+      top: 40px;
+    }
+    .cards-bandeau,.chiffres {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .organization-chiffres {
+    padding: 80px 7%;
+    .div-chiffres .chiffres {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  .organization-bandeau {
+    .page-structure-title {
+      width: 100%;
+      h1, h1 .title-marianne {
+        font-size: 28px;
+        padding-bottom: 5px;
+      }
+      .btn-outlined-white {
+        margin: 0;
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+    .back-arrow {
+      left: 5%;
+    }
+    .cards-bandeau,.chiffres {
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+  .organization-chiffres .div-chiffres {
+    .paragraphe {
+      text-align: left;
+    }
+    .chiffres {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

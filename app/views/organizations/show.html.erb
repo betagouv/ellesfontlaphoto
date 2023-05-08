@@ -7,9 +7,9 @@
       <% if @organization.city %>
         , <span class="title-marianne"><%= @organization.city %></span>
       <% end %>
-      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white">Espace d'exposition</span><% end %>
-      <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure publique</span><% end %>
     </h1>
+    <% if @organization.observatoire_egalite %> <span class="btn-outlined-white">Espace d'exposition</span><% end %>
+    <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure publique</span><% end %>
   </div>
   <div class="cards-bandeau">
     <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>
@@ -51,7 +51,7 @@
         <% end %>
         <% if !@prix.empty? %>
           <% @prix.each do |prix| %>
-            <% prix.chiffres_organizations.each do |chiffre| %>
+            <% prix.chiffres_organizations.where(annee: chiffre.annee).each do |chiffre| %>
               <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
             <% end %>
           <% end %>
