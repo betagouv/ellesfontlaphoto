@@ -96,31 +96,45 @@
 }
 @media only screen and (max-width: 750px) {
   .organization-bandeau {
+    padding: 40px 4%;
     .page-structure-title {
       width: 100%;
       h1, h1 .title-marianne {
         font-size: 28px;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
       }
       .btn-outlined-white {
-        margin: 0;
-        margin-right: 10px;
+        margin: 0 10px 20px 0px;
         font-size: 12px;
       }
     }
     .back-arrow {
-      left: 5%;
+      position: initial;
+      margin-bottom: 10px;
+    }
+    .cards-bandeau {
+      margin-top: 20px;
     }
     .cards-bandeau,.chiffres {
       grid-template-columns: 1fr 1fr ;
     }
   }
-  .organization-chiffres .div-chiffres {
-    .paragraphe {
-      text-align: left;
-    }
-    .chiffres {
-      grid-template-columns: 1fr 1fr;
+  .organization-chiffres {
+    padding: 40px 4%;
+    .div-chiffres {
+      margin: 40px 0;
+      .title-marianne-bold {
+        font-size: 28px;
+        line-height: 30px;
+      }
+      .paragraphe {
+        text-align: left;
+      }
+      .chiffres {
+        // grid-gap: 5px;
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 }
