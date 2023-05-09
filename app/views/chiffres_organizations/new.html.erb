@@ -22,12 +22,7 @@
           <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)", input_html: { min: '0' } %>
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.orga? %>
-          <p class="main-paragraphe-medium mt40">Part des femmes photographes dans vos expositions (in situ et hors les murs)</p>
-          <p class="paragraphe mt20 mb0">Avez-vous réalisé des expositions durant cette année ?</p>
-          <fieldset id="champs_exposition">
-            <%= radio_button_tag 'champs_exposition', true, false, data: {action:"change->ajout-chiffres-organizations#champsExposition", ajout_chiffres_organizations_target: "radioChampsExpo" }, class: "mr5" %> Oui
-            <%= radio_button_tag 'champs_exposition', false, false, data: {action:"change->ajout-chiffres-organizations#hideChampsExposition"}, class: "ml20 mr5" %> Non
-          <div class="expos d-none" data-ajout-chiffres-organizations-target="divExpo">
+          <div class="expos" data-ajout-chiffres-organizations-target="divExpo">
             <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoCollective" }, min: '0' } %>
             <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0' } %>
             <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoMono" }, min: '0' } %>
