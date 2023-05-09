@@ -1,16 +1,15 @@
 .organization-no-result {
   .no-result {
-    color: $purple-index;
-    font-family: 'Spectral', serif;
-    font-size: 47px;
+    color: $white;
+    font-family: 'Marianne-Regular', serif;
+    font-size: 30px;
     text-align: center;
-    margin: 5% auto 0 auto;
+    margin: 15% auto 0 auto;
+    width: 30%;
   }
-  .btn-purple-index {
-    background-color: $purple-index;
-    color: $black !important;
-    margin: 2% auto 0 auto;
-  }
+  // .btn-outlined-white {
+  //   margin: 2% auto 0 auto;
+  // }
 }
 
 #flexible {

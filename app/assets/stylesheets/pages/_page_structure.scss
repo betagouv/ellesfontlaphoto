@@ -5,14 +5,15 @@
   .back-arrow {
     position: absolute;
     left: 8%;
-    top: 103px;
+    top: 90px;
   }
   .page-structure-title {
-    width: 80%;
+    width: 100%;
     h1 {
       color: $white;
       text-align: left;
       line-height: 50px;
+      margin-bottom: 20px;
       .title-marianne {
         color: $white;
         font-size: 40px;

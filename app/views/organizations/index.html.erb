@@ -1,31 +1,46 @@
 <div class="div-index-parite" data-controller="search-organizations">
   <div class="d-flex">
-    <div class="filter-index">
-    <div class="filter-sticky>
-      <div class="div-title-index-parite">
-        <h1 class="title-marianne">Index parité : <span class="spectral-title"> part des femmes dans la photographie</span></h1>
-      </div>
-      <div class="legendes">
-        <ul>
-          <li class="orange"><span> -  de 50% de femmes</span></li>
-          <li class="purple"><span> + de 50% de femmes</span></li>
-        </ul>
-      </div>
-      <div class="div-search-form">
-        <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
-          <div class="div-input-form">
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Rechercher structure, ville",
-              data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
-            %>
-            <%= submit_tag "", class: "btn btn-purple-index #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>
-          </div>
+    <div class="filter-index div-filters">
+      <div class="sticky">
+        <div class="div-title-index-parite">
+          <h1 class="title-marianne">Index parité : <span class="spectral-title"> part des femmes dans la photographie</span></h1>
+        </div>
+        <div class="legendes">
+          <ul>
+            <li class="orange"><span> -  de 50% de femmes</span></li>
+            <li class="purple"><span> + de 50% de femmes</span></li>
+          </ul>
+        </div>
+        <div class="div-search-form">
+          <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
+            <div class="div-input-form">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Rechercher structure, ville",
+                data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
+              %>
+              <% if @selected_type.present? %>
+                <%= text_field_tag :type, params[:type], value: @selected_type, data: { search_organizations_target: "inputType" }, label: "type d'organisation", class: "d-none" %>
+              <% else %>
+                <%= text_field_tag :type, params[:type], data: { search_organizations_target: "inputType" }, label: "type d'organisation", class: "d-none" %>
+              <% end %>
+              <%= submit_tag "", class: "btn btn-purple-index #{params[:query] ? "croix" : "loupe"}", data: { search_organizations_target: "bouton", action: "click->search-organizations#clear"} %>
+            </div>
+          <% end %>
+        </div>
+        <p class="button-criteria">
+          <% Organization::ORGANIZATION_TYPE.each do |type| %>
+            <span class="button-criteria-helps-elements <%= @selected_type == type ? "selected" : "" %>" data-action="click->search-organizations#selectCriteria" data-text="<%= type %>">
+              <%= type %>
+              <span class="cross-criteria <%= @selected_type == type ? "display-inline" : "" %>">&times;</span>
+            </span>
+          <% end %>
+        </p>
+        <%= link_to new_organization_path, target: :_blank, class: "btn btn-outlined-white" do %>
+          <%= image_tag "pencil.svg", alt: "stylo" %> Renseigner des chiffres
         <% end %>
       </div>
-      <%= link_to "Renseigner des chiffres", new_organization_path, target: :_blank, class: "btn btn-white" %>
-    </div>
     </div>
     <div class="list-organizations"  data-search-organizations-target="list">
       <%= render 'list', organizations: @organizations %>

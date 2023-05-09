@@ -3,79 +3,86 @@
   padding: 50px 60px;
   .filter-index {
     width: 35%;
-    .div-search-form {
-      .div-input-form {
-        position: relative;
-        input[type=text] {
-          background-color: $black;
-          border-color: $purple-index;
-          color: $white;
-          border-radius: 44px;
-          padding: 10px 50px 10px 15px;
-          width: 280px;
-        }
-        .btn-purple-index {
-          right: 0;
-          top: 0;
-          position: absolute;
-          padding: 10px 23px 11px 23px;
-        }
-        .btn-purple-index.croix {
-          background-color: $white !important;
-          background: url("cross-dossier.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          &:hover {
-            background-color: $purple-index !important;
+    .sticky {
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 100px);
+      padding: 0;
+      .div-search-form {
+        .div-input-form {
+          position: relative;
+          input[type=text] {
+            background-color: $black;
+            border-color: $purple-index;
+            color: $white;
+            border-radius: 44px;
+            padding: 10px 50px 10px 15px;
+            width: 280px;
           }
-        }
-        .btn-purple-index.loupe {
-          background-color: $purple-index !important;
-          background: url("loupe.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          &:hover {
+          .btn-purple-index {
+            right: 0;
+            top: 0;
+            position: absolute;
+            padding: 10px 23px 11px 23px;
+          }
+          .btn-purple-index.croix {
             background-color: $white !important;
+            background: url("cross-dossier.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            &:hover {
+              background-color: $purple-index !important;
+            }
+          }
+          .btn-purple-index.loupe {
+            background-color: $purple-index !important;
+            background: url("loupe.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            &:hover {
+              background-color: $white !important;
+            }
           }
         }
       }
-    }
-    .btn-white {
-      position: absolute;
-      bottom: 50px;
-    }
-    .legendes {
-      ul {
-        margin-bottom: 50px;
-        li.orange {
-          color: $orange-index;
-          list-style: url("index/legende-orange.svg");
-        }
-        li.purple {
-          color: $purple-index;
-          list-style: url("index/legende-violet.svg");
-        }
-        li span {
-          margin-left: 5px;
+      .btn-outlined-white {
+        position: absolute;
+        bottom: 50px;
+        padding: 9px 15px;
+      }
+      .legendes {
+        ul {
+          margin-bottom: 50px;
+          li.orange {
+            color: $orange-index;
+            list-style: url("index/legende-orange.svg");
+          }
+          li.purple {
+            color: $purple-index;
+            list-style: url("index/legende-violet.svg");
+          }
+          li span {
+            margin-left: 5px;
+          }
         }
       }
-    }
-    .div-title-index-parite {
-      width: 60%;
-      .title-marianne {
-        font-family: 'Marianne-Bold';
-        margin-bottom: 50px;
-        font-size: 40px;
-        text-align: left;
-        font-size: 30px;
-      }
-      .spectral-title {
-        font-size: 36px;
-        line-height: 40px;
-      }
-      .title-marianne,.spectral-title,.paragraphe {
-        color: $white;
-        text-align: left;
+      .div-title-index-parite {
+        width: 60%;
+        .title-marianne {
+          font-family: 'Marianne-Bold';
+          margin-bottom: 50px;
+          font-size: 40px;
+          text-align: left;
+          font-size: 30px;
+        }
+        .spectral-title {
+          font-size: 36px;
+          line-height: 40px;
+        }
+        .title-marianne,.spectral-title,.paragraphe {
+          color: $white;
+          text-align: left;
+        }
       }
     }
   }
