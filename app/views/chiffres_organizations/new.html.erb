@@ -1,119 +1,110 @@
 <div class="ajout-organization-page">
+  <%= link_to image_tag("arrow-carousel-chiffres-left.svg"), edit_organization_path(@organization), class: "edit-orga" %>
   <div class="ajout-organization-title">
-    <p class="subtitle-spectral">Participez à elles font la culture ! <span class="subtitle-regular">Renseignez les chiffres de <%= @organization.name %> ! </span></p>
+    <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez les chiffres de <%= @organization.name %> ! </span></p>
   </div>
   <div class="ajout-organization-form" data-controller="ajout-chiffres-organizations">
     <div id="new_organization">
       <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
-        <%= f.input :annee, collection: (2010..Time.now.year).to_a, label: "Pour quelle année souhaitez vous rensigné les chiffres ?" %>
+        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a, label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
         <% if @organization.ecole? %>
-          <p class="main-paragraphe mt40">Part des femmes dans votre école de photographie</p>
-          <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?" %>
-          <%= f.input :nb_femmes_etudiantes, label: "Parmi ces étudiants, combien sont des femmes ?" %>
-          <%= f.input :nb_total_enseignants, label: "Combien de professeurs de photographie faites-vous intervenir ?" %>
-          <%= f.input :nb_femmes_enseignantes, label: "Parmi ces professeurs, combien sont des femmes ?" %>
-          <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?" %>
-          <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?" %>
-          <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
+          <p class="main-paragraphe-medium mt40">Part des femmes dans votre école de photographie</p>
+          <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?", input_html: { min: '0' } %>
+          <%= f.input :nb_femmes_etudiantes, label: "Parmi ces étudiants, combien sont des femmes ?", input_html: { min: '0' } %>
+          <%= f.input :nb_total_enseignants, label: "Combien de professeurs de photographie faites-vous intervenir ?", input_html: { min: '0' } %>
+          <%= f.input :nb_femmes_enseignantes, label: "Parmi ces professeurs, combien sont des femmes ?", input_html: { min: '0' } %>
+          <%= f.input :nb_total_photographes_etudies, label: "Combien de photographes étudiez-vous dans vos programmes pédagogiques ?", input_html: { min: '0' } %>
+          <%= f.input :nb_femmes_photographes_etudiees, label: "Parmi les photographes étudiés, combien sont des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.journal? %>
-          <p class="main-paragraphe mt40">Part des femmes dans votre journal/magazine</p>
-          <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?"%>
-          <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?"%>
-          <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)" %>
-          <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?" %>
-          <%= f.input :nb_total_directeurs, label: "Combien de personnes composaient la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
+          <p class="main-paragraphe-medium mt40">Part des femmes dans votre journal/magazine</p>
+          <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?", input_html: { min: '0' }%>
+          <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?", input_html: { min: '0' }%>
+          <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)", input_html: { min: '0' } %>
+          <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.orga? %>
-          <p class="main-paragraphe mt40">Part des femmes photographes dans vos expositions, pendant cette année (in situ et hors les murs)</p>
-          <div class="expos">
-            <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?" %>
-            <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?" %>
-            <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?" %>
-            <%= f.input :nb_femmes_exposees_expo_mono, label: "Dans ces expositions monographiques combien de photographes étaient des femmes ?" %>
-            <%= f.input :nb_femmes_moins_40, label: "Combien de femmes de moins de 40 ans avez-vous exposé ?", hint: "(pendant cette année, expositions collectives et monographiques confondues)" %>
-            <%= f.input :nb_femmes_plus_40, label: "Combien de femmes de plus de 40 ans avez-vous exposé ?" %>
-            <%= f.input :nb_femmes_post_mortem, label: "Combien de femmes post-mortem avez-vous exposé ?" %>
-            <%= f.input :nb_total_commissaires, label: "Combien de commissaires d'exposition sont intervenus en 2022 ?", hint: "(Commissaires externes inclus)" %>
-            <%= f.input :nb_femmes_commissaires, label: "Parmi ces commissaires d'exposition, combien étaient des femmes ?" %>
+          <div class="expos" data-ajout-chiffres-organizations-target="divExpo">
+            <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoCollective" }, min: '0' } %>
+            <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0' } %>
+            <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoMono" }, min: '0' } %>
+            <%= f.input :nb_femmes_exposees_expo_mono, label: "Dans ces expositions monographiques combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0' } %>
+            <%= f.input :nb_femmes_moins_40, label: "Combien de femmes de moins de 40 ans avez-vous exposé ?", hint: "(expositions collectives et monographiques confondues)", input_html: { data: { ajout_chiffres_organizations_target: "inputMoins40" }, min: '0' } %>
+            <%= f.input :nb_femmes_plus_40, label: "Combien de femmes de plus de 40 ans avez-vous exposé ?", input_html: { data: { ajout_chiffres_organizations_target: "inputPlus40" }, min: '0' } %>
+            <%= f.input :nb_femmes_post_mortem, label: "Combien de femmes post-mortem avez-vous exposé ?", input_html: { data: { ajout_chiffres_organizations_target: "inputPostMortem" }, min: '0' } %>
+            <%= f.input :nb_total_commissaires, label: "Combien de commissaires d'exposition sont intervenus en 2022 ?", hint: "(Commissaires externes inclus)", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalCommissaires" }, min: '0' } %>
+            <%= f.input :nb_femmes_commissaires, label: "Parmi ces commissaires d'exposition, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesCommissaires" }, min: '0' } %>
           </div>
+          <p class="main-paragraphe-medium mt40">Fonds photographique et collections permanentes</p>
           <p class="paragraphe mt20 mb0">Avez-vous un fonds photographique ou une collection permanente ?</p>
           <fieldset id="champs_collection">
-            <input type="radio" data-action="change->ajout-chiffres-organizations#champsCollection" name="champs_collection"></input>
-            <label class="ml3" for="champs_collection">Oui</label>
-            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsCollection" name="champs_collection"></input>
-            <label class="ml3" for="champs_collection">Non</label>
+            <%= radio_button_tag 'champs_collection', true, false, data: {action:"change->ajout-chiffres-organizations#champsCollection", ajout_chiffres_organizations_target: "radioChampsCollection"}, class: "mr5" %> Oui
+            <%= radio_button_tag 'champs_collection', false, false, data: {action:"change->ajout-chiffres-organizations#hideChampsCollection"}, class: "ml20 mr5" %> Non
           </fieldset>
           <div class="expos d-none" data-ajout-chiffres-organizations-target="divCollection">
-            <%= f.input :nb_total_artistes, label: "Combien d'artistes comptait votre fonds/collection en 2022 ?" %>
-            <%= f.input :nb_femmes_artistes, label: "Parmi ces artistes, combien étaient des femmes ?" %>
-            <%= f.input :nb_total_oeuvres_photo, label: "Combien d'œuvres photographiques comptait votre fonds/collection en 2022 ?" %>
-            <%= f.input :nb_oeuvres_photo_femmes, label: "Combien d'œuvres photographiques de femmes comptait votre fonds/collection ?" %>
-            <%= f.input :nb_total_oeuvres_ajoutees, label: "Combien d'œuvres photographiques avez-vous ajouté à votre collection en 2022 ?", hint: "(inclus les acquisitions et les commandes, hors donations et legs)" %>
-            <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?" %>
+            <%= f.input :nb_total_artistes, label: "Combien d'artistes comptait votre fonds/collection en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalFonds" }, min: '0' } %>
+            <%= f.input :nb_femmes_artistes, label: "Parmi ces artistes, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesFonds" }, min: '0' } %>
+            <%= f.input :nb_total_oeuvres_photo, label: "Combien d'œuvres photographiques comptait votre fonds/collection en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalOeuvresPhoto" }, min: '0' } %>
+            <%= f.input :nb_oeuvres_photo_femmes, label: "Combien d'œuvres photographiques de femmes comptait votre fonds/collection ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalFemmesOeuvresPhoto" }, min: '0' } %>
+            <%= f.input :nb_total_oeuvres_ajoutees, label: "Combien d'œuvres photographiques avez-vous ajouté à votre collection en 2022 ?", hint: "(inclus les acquisitions et les commandes, hors donations et legs)", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalOeuvresPhotoAjoutees" }, min: '0' } %>
+            <%= f.input :nb_femmes_oeuvres_ajoutees, label:"Parmi les œuvres photographiques ajoutées en 2022, combien ont été réalisées par des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesOeuvresPhotoAjoutees" }, min: '0' } %>
           </div>
         <% end %>
-        <% unless @organization.prix? %>
-          <p class="paragraphe mt20 mb0">Avez-vous été à l'initiative de prix ou autres récompenses photographiques durant cette année ?</p>
-          <fieldset id="champs_prix">
-            <input type="radio" data-action="change->ajout-chiffres-organizations#champsPrix" name="champs_prix"></input>
-            <label class="ml3" for="champs_prix">Oui</label>
-            <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hideChampsPrix" name="champs_prix"></input>
-            <label class="ml3" for="champs_prix">Non</label>
-          </fieldset>
-          <div class="expos d-none" data-ajout-chiffres-organizations-target="divPrix">
-        <% else %>
+        <% if @organization.prix? %>
           <div class="expos d-block" data-ajout-chiffres-organizations-target="divPrix">
+            <%= f.input :nb_total_candidats, label: "Combien de personnes ont candidaté à vos appels à candidatures ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalCandidatPrix" }, min: '0' } %>
+            <%= f.input :nb_femmes_candidates, label: "Parmi ces candidats, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesCandidatesPrix" }, min: '0' } %>
+            <%= f.input :nb_total_laureates, label: "Combien de lauréat(e)s avez-vous récompensé ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalLaureatsPrix" }, min: '0' } %>
+            <%= f.input :nb_femmes_laureates, label: "Parmi ces lauréat(e)s, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesLaureatesPrix" }, min: '0' } %>
+            <%= f.input :nb_total_jurys, label: "Combien de personnes ont participé au jury de sélection des photographes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalJuryPrix" }, min: '0' } %>
+            <%= f.input :nb_femmes_jurys, label:"Parmi ces personnes, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesJuryPrix" }, min: '0' } %>
+          </div>
         <% end %>
-          <%= f.input :titre, label: "Quel est le nom de ce prix" %>
-          <%= f.input :nb_total_candidats, label: "Combien de personnes ont candidaté à vos appels à candidatures ?" %>
-          <%= f.input :nb_femmes_candidates, label: "Parmi ces candidats, combien étaient des femmes ?" %>
-          <%= f.input :nb_total_laureates, label: "Combien de lauréat(e)s avez-vous récompensé?" %>
-          <%= f.input :nb_femmes_laureates, label: "Parmi ces lauréat(e)s, combien étaient des femmes?" %>
-          <%= f.input :nb_total_jurys, label: "Combien de personnes ont participé au jury de sélection des photographes ?" %>
-          <%= f.input :nb_femmes_jurys, label:"Parmi ces personnes, combien étaient des femmes ?" %>
-        </div>
-        <p class="main-paragraphe mt40">Autres activités</p>
+        <p class="main-paragraphe-medium mt40">Autres activités, hors expositions</p>
         <p class="paragraphe mt20 mb0">Avez-vous accueilli des photographes en résidence en 2022 ?</p>
         <fieldset id="accueil_residence">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesResidence" name="accueil_residence"></input>
-          <label class="ml3" for="accueil_residence">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesResidence" name="accueil_residence"></input>
-          <label class="ml3" for="accueil_residence">Non</label>
+          <%= radio_button_tag 'accueil_residence', true, false , data: {action:"change->ajout-chiffres-organizations#photographesResidence", ajout_chiffres_organizations_target: "radioChampsResidence" }, class: "mr5" %> Oui
+          <%= radio_button_tag 'accueil_residence', false, false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesResidence"}, class: "ml20 mr5" %> Non
         </fieldset>
         <div class="photographesResidence d-none" data-ajout-chiffres-organizations-target="photographesResidence">
-          <%= f.input :nb_total_accueil_residence, label: "Combien de photographes avez-vous accueilli en résidence en 2022 ?" %>
-          <%= f.input :nb_femmes_accueil_residence, label: "Parmi ces photographes en résidence, combien étaient des femmes ?" %>
+          <%= f.input :nb_total_accueil_residence, label: "Combien de photographes avez-vous accueilli en résidence en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalResidence" }, min: '0' } %>
+          <%= f.input :nb_femmes_accueil_residence, label: "Parmi ces photographes en résidence, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesResidence" }, min: '0' } %>
         </div>
         <p class="paragraphe mt20 mb0">Avez-vous édité des ouvrages dédiés à la photographie ?</p>
         <fieldset id="photographe_ouvrage">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesOuvrage" name="photographe_ouvrage"></input>
-          <label class="ml3" for="photographe_ouvrage">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesOuvrage" name="photographe_ouvrage"></input>
-          <label class="ml3" for="photographe_ouvrage">Non</label>
+          <%= radio_button_tag 'photographe_ouvrage', true, false, data: {action:"change->ajout-chiffres-organizations#photographesOuvrage", ajout_chiffres_organizations_target: "radioChampsPhotographeOuvrage" }, class: "mr5" %> Oui
+          <%= radio_button_tag 'photographe_ouvrage', false, false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesOuvrage"}, class: "ml20 mr5" %> Non
         </fieldset>
         <div class="photographesOuvrage d-none" data-ajout-chiffres-organizations-target="photographesOuvrage">
-          <%= f.input :nb_total_photo_ouvrages, label: "Combien de photographes figurent dans les ouvrages que vous avez édité en 2022 ?" %>
-          <%= f.input :nb_femmes_photo_ouvrages, label: "Parmi ces photographes, combien sont des femmes ?" %>
+          <%= f.input :nb_total_photo_ouvrages, label: "Combien de photographes figurent dans les ouvrages que vous avez édité en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalOuvrages" }, min: '0' } %>
+          <%= f.input :nb_femmes_photo_ouvrages, label: "Parmi ces photographes, combien sont des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesOuvrages" }, min: '0' } %>
         </div>
         <p class="paragraphe mt20 mb0">Avez-vous invité des photographes en dehors des expositions ?</p>
         <fieldset id="photographes_expo">
-          <input type="radio" data-action="change->ajout-chiffres-organizations#photographesExpo" name="photographes_expo"></input>
-          <label class="ml3" for="photographes_expo">Oui</label>
-          <input type="radio" class="ml10" data-action="change->ajout-chiffres-organizations#hidePhotographesExpo" name="photographes_expo"></input>
-          <label class="ml3" for="photographes_expo">Non</label>
+          <%= radio_button_tag 'photographes_expo', true, false, data: {action:"change->ajout-chiffres-organizations#photographesExpo", ajout_chiffres_organizations_target: "radioChampsPhotographeExpo" }, class: "mr5" %> Oui
+          <%= radio_button_tag 'photographes_expo', false, false, data: {action:"change->ajout-chiffres-organizations#hidePhotographesExpo"}, class: "ml20 mr5" %> Non
         </fieldset>
         <div class="photographesExpo d-none" data-ajout-chiffres-organizations-target="photographesExpo">
-          <%= f.input :nb_total_photographes_invites, label: "Combien de photographes avez-vous invités en dehors des expositions ?", hint: "(événements, interventions, ateliers d’éducation culturelle, etc.)" %>
-          <%= f.input :nb_femmes_photographes_invites, label: "Parmi ces photographes invité(e)s, combien étaient des femmes ?" %>
+          <%= f.input :nb_total_photographes_invites, label: "Combien de photographes avez-vous invités en dehors des expositions ?", hint: "(événements, interventions, ateliers d'éducation culturelle, etc.)", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalInvites" }, min: '0' } %>
+          <%= f.input :nb_femmes_photographes_invites, label: "Parmi ces photographes invité(e)s, combien étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesInvites" }, min: '0' } %>
         </div>
-        <p class="paragraphe mt20 mb0">Part des femmes travaillant dans votre structure</p>
-        <%= f.input :nb_total_employes, label: "Combien d'employé(e)s travaillent dans votre structure ?" %>
-        <%= f.input :nb_femmes_employees, label: "Combien de ces employé(e)s sont des femmes ?" %>
-        <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)" %>
-        <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?" %>
-        <p class="main-paragraphe mt40">C'est la dernière étape !</p>
-        <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l’égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d’alerte ou d’écoute)…" %>
+        <p class="main-paragraphe-medium mt40 mb0">Part des femmes travaillant dans votre structure</p>
+        <% if @organization.orga? %>
+          <%= f.input :nb_total_employes, label: "Combien d'employé(e)s travaillent dans votre structure ?", input_html: { min: '0' } %>
+          <%= f.input :nb_femmes_employees, label: "Combien de ces employé(e)s sont des femmes ?", input_html: { min: '0' } %>
+        <% end %>
+        <%= f.input :nb_total_directeurs, label: "Combien de personnes composent la direction de votre structure ?", hint: "(Directeurs et directrices, hors adjoint(e)s et assistant(e)s)", input_html: { min: '0' } %>
+        <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?", input_html: { min: '0' } %>
+        <% unless @organization.prix? %>
+        <p class="main-paragraphe-medium mt40">Prix et récompenses</p>
+          <p class="paragraphe mt20 mb0">Avez-vous été à l'initiative de prix ou autres récompenses photographiques durant cette année ?</p>
+          <fieldset id="champs_prix">
+            <%= radio_button_tag 'champs_prix', true, params[:champs_prix] == "true", data: {action:"change->ajout-chiffres-organizations#champsPrix", ajout_chiffres_organizations_target: "radioChampsPrix" }, class: "mr5" %> Oui
+            <%= radio_button_tag 'champs_prix', false, false, data: {action:"change->ajout-chiffres-organizations#hideChampsPrix"}, class: "ml20 mr5" %> Non
+          </fieldset>
+        <% end %>
+        <p class="main-paragraphe-medium mt40">C'est la dernière étape !</p>
+        <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l'égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d'alerte ou d'écoute)…" %>
         <div class="btn-submit">
-        <%= f.submit "Soumettre", class: "btn btn-black" %>
+          <%= f.submit "Soumettre", class: "btn btn-black" %>
         </div>
       <% end %>
     </div>
