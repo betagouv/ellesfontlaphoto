@@ -6,7 +6,7 @@
   <div class="ajout-organization-form" data-controller="ajout-chiffres-organizations">
     <div id="new_organization">
       <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
-        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a, label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
+        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a - @organization.chiffres_organizations.pluck(:annee), label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
         <% if @organization.ecole? %>
           <p class="main-paragraphe-medium mt40">Part des femmes dans votre école de photographie</p>
           <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?", input_html: { min: '0' } %>
@@ -19,14 +19,15 @@
           <p class="main-paragraphe-medium mt40">Part des femmes dans votre journal/magazine</p>
           <%= f.input :nb_total_publies, label: "Avec combien de photographes avez-vous collaboré pour l'ensemble de vos publications/interviews/commandes?", input_html: { min: '0' }%>
           <%= f.input :nb_femmes_publiees, label: "Parmi ces photographes, combien étaient des femmes ?", input_html: { min: '0' }%>
-          <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ? *(Iconographes externes inclus)*", hint: "(Iconographes externes inclus)", input_html: { min: '0' } %>
+          <%= f.input :nb_total_iconographes, label: "Dans l'ensemble de votre structure et de vos publications, avec combien d'iconographes avez-vous collaboré ?", hint: "(Iconographes externes inclus)", input_html: { min: '0' } %>
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.orga? %>
           <div class="expos" data-ajout-chiffres-organizations-target="divExpo">
-            <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoCollective" }, min: '0' } %>
-            <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0' } %>
-            <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoMono" }, min: '0' } %>
-            <%= f.input :nb_femmes_exposees_expo_mono, label: "Dans ces expositions monographiques combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0' } %>
+            <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoCollective" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
+            <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
+            <%= f.input :nb_total_exposes_expo_mono, label: "Combien d'expositions monographiques avez-vous réalisé en 2022 ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoMono" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
+            <%= f.input :nb_femmes_exposees_expo_mono, label: "Dans ces expositions monographiques combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
+            <p class="display-error"><%= @chiffres_organization.errors[:orga][0] %></p>
             <%= f.input :nb_femmes_moins_40, label: "Combien de femmes de moins de 40 ans avez-vous exposé ?", hint: "(expositions collectives et monographiques confondues)", input_html: { data: { ajout_chiffres_organizations_target: "inputMoins40" }, min: '0' } %>
             <%= f.input :nb_femmes_plus_40, label: "Combien de femmes de plus de 40 ans avez-vous exposé ?", input_html: { data: { ajout_chiffres_organizations_target: "inputPlus40" }, min: '0' } %>
             <%= f.input :nb_femmes_post_mortem, label: "Combien de femmes post-mortem avez-vous exposé ?", input_html: { data: { ajout_chiffres_organizations_target: "inputPostMortem" }, min: '0' } %>
@@ -101,10 +102,10 @@
             <%= radio_button_tag 'champs_prix', false, false, data: {action:"change->ajout-chiffres-organizations#hideChampsPrix"}, class: "ml20 mr5" %> Non
           </fieldset>
         <% end %>
-        <p class="main-paragraphe-medium mt40">C'est la dernière étape !</p>
+        <p class="main-paragraphe-medium mt40">Vos initiatives pour l'égalité</p>
         <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l'égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d'alerte ou d'écoute)…" %>
         <div class="btn-submit">
-          <%= f.submit "Soumettre", class: "btn btn-black" %>
+          <%= f.submit "Soumettre", class: "btn btn-black", data: {ajout_chiffres_organizations_target: "button"} %>
         </div>
       <% end %>
     </div>

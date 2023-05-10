@@ -54,7 +54,9 @@ fr:
         nb_total_etudiants: Le nombre total d'étudiants
         nb_total_photographes_etudies: Le nombre total de photographies étudiées
         nb_total_laureates: Le nombre total de lauréates
+        nb_femmes_laureates: Le nombre de femmes lauréates
         nb_total_candidats: Le nombre total de candidats
+        nb_femmes_candidates: Le nombre de femmes candidats
         nb_total_jurys: Le nombre total de jurys
         nb_total_publies: Le nombre total doeuvre publiées
         nb_total_iconographes: Le nombre total d'iconographes

@@ -60,21 +60,23 @@ class OrganizationsController < ApplicationController
   end
 
   def renseigner_prix
-    @organization = Organization.new
-    @organization.chiffres_organizations.build
+    @prix_organization = Organization.new
+    @prix_organization.chiffres_organizations.build
   end
 
   def create_prix
     @prix_organization = new_price(@organization)
     @chiffres_prix = ChiffresOrganization.new(organization_avec_prix_params[:chiffres_organizations_attributes]["0"])
     @chiffres_prix.organization = @prix_organization
-    # raise
     if @chiffres_prix.valid? && @prix_organization.valid?
       @chiffres_prix.save
       @prix_organization.save
       redirect_to confirm_organization_path
     else
-      render :renseigner_prix
+      @prix_organization.chiffres_organizations.build
+      @prix_organization.valid?
+      render :action => "renseigner_prix"
+      # render :renseigner_prix
     end
   end
 

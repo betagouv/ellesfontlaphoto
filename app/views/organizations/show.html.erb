@@ -75,7 +75,7 @@
         </div>
         <% if !chiffre.actions_egalite.empty? %>
           <p class="title-marianne-bold mb20">Actions mises en place pour l'égalité</p>
-          <p class="paragraphe"><%= chiffre.actions_egalite %></p>
+          <p class="paragraphe"><%= chiffre.actions_egalite.html_safe %></p>
         <% end %>
       </div>
     </div>
