@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get "organisation/:id/chiffres_prix", to: "organizations#renseigner_prix", as: "renseigner_prix"
   post "organisation/:id/chiffres_prix", to: "organizations#create_prix", as: "create_prix"
 
-  resources :organizations, only: [:new, :create, :index, :show, :edit, :update] do
+  resources :organizations, only: [:new, :create, :index, :show, :edit, :update], path: "index-parite" do
     resources :chiffres_organizations, only: [:new, :create, :edit, :update]
   end
   resources :notation_helps, only: :create

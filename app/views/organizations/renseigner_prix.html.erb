@@ -1,10 +1,9 @@
 <div class="ajout-organization-page" data-controller="price-validation">
-  <%#= link_to image_tag("arrow-carousel-chiffres-left.svg"), edit_organization_path(@organization), class: "edit-orga" %>
+  <%= link_to image_tag("arrow-carousel-chiffres-left.svg"), edit_organization_chiffres_organization_path(@organization, @organization.chiffres_organizations.order(:created_at).last), class: "edit-orga" %>
   <div class="ajout-organization-title">
     <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez les chiffres de votre prix ! </span></p>
   </div>
   <div class="ajout-organization-form">
-    <%# raise %>
     <%= simple_form_for [@prix_organization], url: :create_prix, style: "width:100%;", data: {action: "submit->price-validation#submit", price_validation_target: "form"} do |f| %>
       <p class="main-paragraphe-medium mt40">C'est la dernière étape !</p>
       <%= f.input :titre, label: "Quel est le titre de votre prix ?" %>

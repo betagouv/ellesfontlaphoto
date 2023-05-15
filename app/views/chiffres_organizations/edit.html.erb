@@ -1,12 +1,11 @@
 <div class="ajout-organization-page">
-  <%= link_to image_tag("arrow-carousel-chiffres-left.svg"), edit_organization_path(@organization), class: "edit-orga" %>
   <div class="ajout-organization-title">
     <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez les chiffres de <%= @organization.name %> ! </span></p>
   </div>
   <div class="ajout-organization-form" data-controller="ajout-chiffres-organizations">
     <div id="new_organization">
       <%= simple_form_for [@organization, @chiffres_organization] do |f| %>
-        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a - @organization.chiffres_organizations.pluck(:annee), label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
+        <%= f.input :annee, collection: (Time.now.year - 10..Time.now.year).to_a, label: "Pour quelle année souhaitez vous renseigné les chiffres ?" %>
         <% if @organization.ecole? %>
           <p class="main-paragraphe-medium mt40">Part des femmes dans votre école de photographie</p>
           <%= f.input :nb_total_etudiants, label: "Combien d'étudiants en photographie comptez-vous dans vos effectifs ?", input_html: { min: '0' } %>
@@ -25,7 +24,6 @@
           <p class="display-error"><%= @chiffres_organization.errors[:nb_total_iconographes].join(",") %></p>
           <%= f.input :nb_femmes_iconographes, label: "Parmi ces iconographes, combien étaient des femmes ?", input_html: { min: '0' } %>
         <% elsif @organization.orga? %>
-          <p class="main-paragraphe-medium mt40">Part des femmes dans vos expositions</p>
           <div class="expos" data-ajout-chiffres-organizations-target="divExpo">
             <%= f.input :nb_total_exposes_expo_collective, label: "Combien de photographes ont été présentés dans vos expositions collectives ?", input_html: { data: { ajout_chiffres_organizations_target: "inputTotalExpoCollective" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
             <%= f.input :nb_femmes_exposees_expo_collective, label: "Dans ces expositions collectives combien de photographes étaient des femmes ?", input_html: { data: { ajout_chiffres_organizations_target: "inputFemmesExpoCollective" }, min: '0', class: "#{"is-invalid" unless @chiffres_organization.errors[:orga].empty?}" } %>
@@ -113,8 +111,6 @@
         <%= f.input_field :nb_total_directeurs, min: '0' %>
         <p class="display-error"><%= @chiffres_organization.errors[:nb_total_directeurs].join(",") %></p>
         <%= f.input :nb_femmes_directrices, label: "Combien de femmes compte cette direction ?", input_html: { min: '0' } %>
-        <p class="main-paragraphe-medium mt40">Vos initiatives pour l'égalité</p>
-        <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l'égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d'alerte ou d'écoute)…" %>
         <% unless @organization.prix? %>
         <p class="main-paragraphe-medium mt40">Prix et récompenses</p>
           <p class="paragraphe mt20 mb0">Avez-vous été à l'initiative de prix ou autres récompenses photographiques durant cette année ?</p>
@@ -123,6 +119,8 @@
             <%= radio_button_tag 'champs_prix', false, false, data: {action:"change->ajout-chiffres-organizations#hideChampsPrix"}, class: "ml20 mr5" %> Non
           </fieldset>
         <% end %>
+        <p class="main-paragraphe-medium mt40">Vos initiatives pour l'égalité</p>
+        <%= f.input :actions_egalite, label: "Listez les mesures en faveur de l'égalité existantes dans votre organisation.", placeholder: "Ex : dispositifs de soutiens et/ou de visibilité spécifiques aux femmes artistes (résidences, prix, expositions), sensibilisation des équipes à la lutte contre les violences sexistes et sexuelles, référent(e) égalité, prévention et sanction liées au harcèlement sexuel (procédure de signalement, cellule d'alerte ou d'écoute)…" %>
         <div class="btn-submit">
           <%= f.submit "Soumettre", class: "btn btn-black", data: {ajout_chiffres_organizations_target: "button"} %>
         </div>

@@ -1,5 +1,6 @@
 class ChiffresOrganizationsController < ApplicationController
-  before_action :set_organization, only: [:new, :create, :renseigner_prix, :create_prix]
+  before_action :set_organization, only: [:new, :create, :edit, :update]
+  before_action :set_chiffre_organization, only: [:edit, :update]
 
   def new
     @chiffres_organization = ChiffresOrganization.new
@@ -8,6 +9,7 @@ class ChiffresOrganizationsController < ApplicationController
 
 
   def create
+    # raise
     @chiffres_organization = ChiffresOrganization.new(chiffres_organization_params)
     @chiffres_organization.organization = @organization
     if @chiffres_organization.save
@@ -21,7 +23,23 @@ class ChiffresOrganizationsController < ApplicationController
     end
   end
 
+  def edit
+    @chiffres_organization = ChiffresOrganization.find(74)
+  end
+
+  def update
+    if @chiffres_organization.update(chiffres_organization_params)
+      redirect_to renseigner_prix_path(@organization)
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_chiffre_organization
+    @chiffres_organization = ChiffresOrganization.find(params[:id])
+  end
 
   def set_organization
     @organization = Organization.find(params[:organization_id])

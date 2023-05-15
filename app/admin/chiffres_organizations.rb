@@ -37,17 +37,19 @@ ActiveAdmin.register ChiffresOrganization do
         end
       end
       if organization.orga?
-        f.input :nb_femmes_exposees
-        f.input :nb_total_exposes
-        f.input :nb_femmes_exposees_expo_collective
-        f.input :nb_total_exposes_expo_collective
-        f.input :nb_femmes_exposees_expo_mono
-        f.input :nb_total_exposes_expo_mono
-        f.input :nb_femmes_moins_40
-        f.input :nb_femmes_plus_40
-        f.input :nb_femmes_post_mortem
-        f.input :nb_femmes_commissaires
-        f.input :nb_total_commissaires
+        f.inputs "Part des femmes dans vos expositions", style: "width: 100%;" do
+          f.input :nb_femmes_exposees
+          f.input :nb_total_exposes
+          f.input :nb_femmes_exposees_expo_collective
+          f.input :nb_total_exposes_expo_collective
+          f.input :nb_femmes_exposees_expo_mono
+          f.input :nb_total_exposes_expo_mono
+          f.input :nb_femmes_moins_40
+          f.input :nb_femmes_plus_40
+          f.input :nb_femmes_post_mortem
+          f.input :nb_femmes_commissaires
+          f.input :nb_total_commissaires
+        end
         f.inputs "Fonds photographique et collections permanentes", style: "width: 100%;" do
           f.input :nb_femmes_artistes
           f.input :nb_total_artistes
@@ -79,7 +81,9 @@ ActiveAdmin.register ChiffresOrganization do
         f.input :nb_femmes_employees
         f.input :nb_total_employes
       end
-      f.input :actions_egalite, as: :quill_editor
+      f.inputs "Actions mise en place pour l'égalité", style: "width: 100%;" do
+        f.input :actions_egalite, as: :quill_editor
+      end
     end
     f.actions
   end
