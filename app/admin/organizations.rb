@@ -36,6 +36,9 @@ ActiveAdmin.register Organization do
     column :chiffres_organizations_non_visible do |obj|
       obj.chiffres_organizations.where(visible: false).map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(obj, chiffre)) }.compact
     end
+    column :chiffres_organizations_unseen, sortable: 'organization.chiffres_organizations.where(visible: false).count' do |obj|
+      obj.chiffres_organizations.where(visible: false).count
+    end
     column :created_at
     actions
   end
@@ -43,7 +46,7 @@ ActiveAdmin.register Organization do
   form do |f|
     f.semantic_errors
     f.inputs "Organisation" do
-      f.input :finance_ministre, default: false
+      f.input :finance_ministre, default: false, label: "Financement ministère"
       f.input :page_structure, default: false
       f.input :observatoire_egalite, default: false
       f.input :visible
@@ -57,7 +60,7 @@ ActiveAdmin.register Organization do
 
   show do
     attributes_table do
-      row :finance_ministre, default: false
+      row :finance_ministre, default: false, label: "Financement ministère"
       row :page_structure, default: false
       row :observatoire_egalite, default: false
       row :visible
@@ -70,4 +73,14 @@ ActiveAdmin.register Organization do
       end
     end
   end
+
+  filter :organization_type
+  filter :visible
+  filter :name
+  filter :city
+  filter :created_at
+  filter :titre
+  filter :finance_ministre
+  filter :page_structure
+  filter :observatoire_egalite
 end

@@ -31,8 +31,8 @@ export default class extends Controller {
     "inputTotalInvites",
     "inputFemmesInvites",
 
-    "radioChampsPhotographeExpo"
-
+    "radioChampsPhotographeExpo",
+    "button"
 
   ]
 
@@ -75,11 +75,11 @@ export default class extends Controller {
   }
 
   champsPrix() {
-    this.divPrixTarget.classList.remove("d-none")
+    this.buttonTarget.value = "Suivant"
   }
 
   hideChampsPrix() {
-    this.divPrixTarget.classList.add("d-none")
+    this.buttonTarget.value = "Soumettre"
   }
 
   photographesResidence() {

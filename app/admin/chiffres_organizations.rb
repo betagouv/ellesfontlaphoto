@@ -17,38 +17,47 @@ ActiveAdmin.register ChiffresOrganization do
       f.input :organization, input_html: { disabled: true }
       f.input :annee, as: :select, collection: (Date.today.year - 10..Date.today.year).to_a
       f.input :visible
+      # raise
       if organization.ecole?
-        f.input :nb_femmes_etudiantes
-        f.input :nb_total_etudiants
-        f.input :nb_femmes_enseignantes
-        f.input :nb_total_enseignants
-        f.input :nb_femmes_photographes_etudiees
-        f.input :nb_total_photographes_etudies
+        f.inputs "Part des femmes dans votre école de photographie", style: "width: 100%;" do
+          f.input :nb_femmes_etudiantes
+          f.input :nb_total_etudiants
+          f.input :nb_femmes_enseignantes
+          f.input :nb_total_enseignants
+          f.input :nb_femmes_photographes_etudiees
+          f.input :nb_total_photographes_etudies
+        end
       end
       if organization.journal?
-        f.input :nb_femmes_publiees
-        f.input :nb_total_publies
-        f.input :nb_femmes_iconographes
-        f.input :nb_total_iconographes
+        f.inputs "Part des femmes dans votre journal/magazine", style: "width: 100%;" do
+          f.input :nb_femmes_publiees
+          f.input :nb_total_publies
+          f.input :nb_femmes_iconographes
+          f.input :nb_total_iconographes
+        end
       end
       if organization.orga?
-        f.input :nb_femmes_exposees
-        f.input :nb_total_exposes
-        f.input :nb_femmes_exposees_expo_collective
-        f.input :nb_total_exposes_expo_collective
-        f.input :nb_femmes_exposees_expo_mono
-        f.input :nb_total_exposes_expo_mono
-        f.input :nb_femmes_moins_40
-        f.input :nb_femmes_plus_40
-        f.input :nb_femmes_post_mortem
-        f.input :nb_femmes_commissaires
-        f.input :nb_total_commissaires
-        f.input :nb_femmes_artistes
-        f.input :nb_total_artistes
-        f.input :nb_oeuvres_photo_femmes
-        f.input :nb_total_oeuvres_photo
-        f.input :nb_femmes_oeuvres_ajoutees
-        f.input :nb_total_oeuvres_ajoutees
+        f.inputs "Part des femmes dans vos expositions", style: "width: 100%;" do
+          f.input :nb_femmes_exposees
+          f.input :nb_total_exposes
+          f.input :nb_femmes_exposees_expo_collective
+          f.input :nb_total_exposes_expo_collective
+          f.input :nb_femmes_exposees_expo_mono
+          f.input :nb_total_exposes_expo_mono
+          f.input :nb_femmes_moins_40
+          f.input :nb_femmes_plus_40
+          f.input :nb_femmes_post_mortem
+          f.input :nb_femmes_commissaires
+          f.input :nb_total_commissaires
+        end
+        f.inputs "Fonds photographique et collections permanentes", style: "width: 100%;" do
+          f.input :nb_femmes_artistes
+          f.input :nb_total_artistes
+          f.input :nb_oeuvres_photo_femmes
+          f.input :nb_total_oeuvres_photo
+          f.input :nb_femmes_oeuvres_ajoutees
+          f.input :nb_total_oeuvres_ajoutees
+        end
       end
       if organization.prix?
         f.input :nb_femmes_candidates
@@ -58,17 +67,23 @@ ActiveAdmin.register ChiffresOrganization do
         f.input :nb_femmes_jurys
         f.input :nb_total_jurys
       end
-      f.input :nb_femmes_accueil_residence
-      f.input :nb_total_accueil_residence
-      f.input :nb_femmes_photo_ouvrages
-      f.input :nb_total_photo_ouvrages
-      f.input :nb_femmes_photographes_invites
-      f.input :nb_total_photographes_invites
-      f.input :nb_femmes_directrices
-      f.input :nb_total_directeurs
-      f.input :nb_femmes_employees
-      f.input :nb_total_employes
-      f.input :actions_egalite
+      f.inputs "Autres activités, hors expositions", style: "width: 100%;" do
+        f.input :nb_femmes_accueil_residence
+        f.input :nb_total_accueil_residence
+        f.input :nb_femmes_photo_ouvrages
+        f.input :nb_total_photo_ouvrages
+        f.input :nb_femmes_photographes_invites
+        f.input :nb_total_photographes_invites
+      end
+      f.inputs "Part des femmes travaillant dans votre structure", style: "width: 100%;" do
+        f.input :nb_femmes_directrices
+        f.input :nb_total_directeurs
+        f.input :nb_femmes_employees
+        f.input :nb_total_employes
+      end
+      f.inputs "Actions mise en place pour l'égalité", style: "width: 100%;" do
+        f.input :actions_egalite, as: :quill_editor
+      end
     end
     f.actions
   end

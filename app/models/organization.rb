@@ -14,6 +14,14 @@ class Organization < ApplicationRecord
     "Journal/Magazine"
   ]
 
+  def self.chiffres_organizations_unseen
+    chiffres_organizations.where(visible: false)
+  end
+
+  def self.chiffres_organizations_seen
+    chiffres_organizations.where(visible: true)
+  end
+
   def prix?
     organization_type == "Prix"
   end
@@ -29,4 +37,5 @@ class Organization < ApplicationRecord
   def journal?
     organization_type == "Journal/Magazine"
   end
+
 end

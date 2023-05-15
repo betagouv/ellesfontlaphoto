@@ -41,7 +41,8 @@ fr:
         accept_cgu: La politique de confidentialité
         comment: Votre message
       organization:
-        name: Ce nom
+        name: Nom
+        finance_ministre: "Financement ministère"
       chiffres_organization:
         nb_total_exposes: Le nombre total d'exposés
         nb_total_exposes_expo_collective: Le nombre total d'exposés en exposition collective
@@ -54,7 +55,9 @@ fr:
         nb_total_etudiants: Le nombre total d'étudiants
         nb_total_photographes_etudies: Le nombre total de photographies étudiées
         nb_total_laureates: Le nombre total de lauréates
+        nb_femmes_laureates: Le nombre de femmes lauréates
         nb_total_candidats: Le nombre total de candidats
+        nb_femmes_candidates: Le nombre de femmes candidats
         nb_total_jurys: Le nombre total de jurys
         nb_total_publies: Le nombre total doeuvre publiées
         nb_total_iconographes: Le nombre total d'iconographes
@@ -63,3 +66,26 @@ fr:
         nb_total_photographes_invites: Le nombre total
         nb_total_directeurs: Le nombre total de directeurs
         nb_total_employes: Le nombre total d'employés
+        nb_femmes_etudiantes: Le nombre de femmes étudiantes
+        nb_femmes_enseignantes: Le nombre de femmes enseignantes
+        nb_femmes_photographes_etudiees: Le nombre de femmes photographies étudiées
+        nb_femmes_publiees: Le nombre de femmes publiées
+        nb_femmes_iconographes: Le nombre de femmes iconographes
+        nb_femmes_exposees: Le nombre de femmes exposées
+        nb_femmes_exposees_expo_collective: Le nombre de femmes exposées en exposition collectives
+        nb_femmes_exposees_expo_mono: Le nombre de femmes exposées en exposition monographiques
+        nb_femmes_moins_40: Le nombre de femmes de moins de 40 ans
+        nb_femmes_plus_40: Le nombre de femmes de plus de 40 ans
+        nb_femmes_post_mortem: Le nombre de femmes post mortem
+        nb_femmes_commissaires: Le nombre de femmes commissaires
+        nb_femmes_artistes: Le nombre de femmes artistes
+        nb_oeuvres_photo_femmes: Le nombre d'oeuvres photo de femmes
+        nb_femmes_oeuvres_ajoutees: Le nombre d'oeuvres ajoutées de femmes
+        nb_femmes_candidates: Le nombre de femmes candidates
+        nb_femmes_laureates: Le nombre de femmes lauréates
+        nb_femmes_jurys: Le nombre de femmes jurys
+        nb_femmes_accueil_residence: Le nombre de femmes accueilies en résidence
+        nb_femmes_photo_ouvrages: Le nombre de femmes d'oeuvres d'ouvrage
+        nb_femmes_photographes_invites: Le nombre de femmes photographes invitées
+        nb_femmes_directrices: Le nombre de femmes directrices
+        nb_femmes_employees: Le nombre de femmes employées

@@ -33,12 +33,12 @@
       <%= simple_form_for @organization do |f| %>
         <%= f.input :organization_type, label: "Sélectionnez le type de votre organisation", input_html: { data: { action: "change->ajout-organisations#selectType", ajout_organisations_target: "organizationTypeInput" } }, collection: Organization::ORGANIZATION_TYPE, hint: "Vous êtes un espace d'exposition qui a crée son festival? Veuillez remplir 2 fois le formulaire en distinguant la programmation du lieu et celle du festival." %>
         <%= f.input :name, label: "Votre structure se nomme..." %>
-        <div class="d-none" data-ajout-organisations-target="titreInput">
+        <div class="<%= @organization.errors[:titre] ? "" : "d-none" %>" data-ajout-organisations-target="titreInput">
           <%= f.input :titre, label: "Le titre de votre prix ..." %>
         </div>
         <%= f.input :city, label: "Votre structure se situe dans la ville de..." %>
         <p class="paragraphe">Votre structure est elle financée par le ministère ?</p>
-        <%= f.collection_radio_buttons :finance_ministre, [[true, 'oui'] ,[false, 'non']],:first, :last %>
+        <%= f.collection_radio_buttons :finance_ministre, [[true, 'Oui'] ,[false, 'Non']],:first, :last %>
         <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
         <div class="btn-submit">
           <%= f.submit "Suivant", class: "btn btn-black" %>
