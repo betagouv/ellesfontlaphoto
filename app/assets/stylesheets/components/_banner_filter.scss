@@ -29,7 +29,7 @@
           border: 1px solid $orange;
         }
       }
-      .button-criteria-helps-elements,.button-criteria-conseils-elements {
+      .button-criteria-helps-elements,.button-criteria-conseils-elements,.button-criteria-organizations-elements {
         background-color: $white;
         border-radius: 40px;
         border: 1px solid $black;
@@ -50,6 +50,15 @@
           top: 15%;
         }
       }
+      .button-criteria-organizations-elements {
+        background-color: $purple-index;
+      }
+    }
+
+    .button-criteria-organizations {
+      text-align: left;
+      width: 70%;
+      margin: 10px 0 0;
     }
 
     .button-criteria.inline {
@@ -119,6 +128,13 @@
 
     .button-criteria-conseils-elements.selected {
       border: 2px solid $orange !important;
+      padding-right: 20px;
+      position: relative;
+    }
+
+    .button-criteria-organizations-elements.selected {
+      background-color: $white;
+      border: none;
       padding-right: 20px;
       position: relative;
     }

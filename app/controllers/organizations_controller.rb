@@ -2,13 +2,20 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:edit, :show, :update, :renseigner_prix, :create_prix]
   def index
     @contact = Contact.new
-    if params[:query].present?
-      @searched = true
+    @organizations = Organization.all
+    # raise
+    if params[:query].present? && !params[:query].empty?
+      @searched_name = params[:query]
       sql_query = "name ILIKE :query OR city ILIKE :query"
       @organizations = Organization.where(sql_query, query: "%#{params[:query]}%").order("name")
-    else
-      @searched = false
-      @organizations = Organization.where(visible: true).order("name")
+    end
+    if params[:type].present? && params[:type].split(",").length != 0
+      @selected_type = params[:type].split(",")
+      @organizations = @organizations.where(organization_type: params[:type].split(",")).order("name")
+    end
+    unless (params[:type].present? && params[:type].split(",").length != 0) && params[:query].present?
+      @selected_type = ""
+      @organizations = @organizations.where(visible: true).order("name")
     end
     if @organizations.empty?
       respond_to do |format|

@@ -1,98 +1,105 @@
 .div-index-parite {
   background-color: $black;
-  padding: 3% 10%;
-  .div-search-form {
-    gap: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    .btn-white {
-      height: 100%;
-    }
-    .div-input-form {
-      position: relative;
-      input[type=text] {
-        background-color: $black;
-        border-color: $purple-index;
-        color: $white;
-        border-radius: 44px;
-        padding: 10px 50px 10px 15px;
-        width: 280px;
+  padding: 50px 60px;
+  .filter-index {
+    width: 35%;
+    .sticky {
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 100px);
+      padding: 0;
+      .div-search-form {
+        .div-input-form {
+          position: relative;
+          input[type=text] {
+            background-color: $black;
+            border-color: $purple-index;
+            color: $white;
+            border-radius: 44px;
+            padding: 10px 50px 10px 15px;
+            width: 280px;
+          }
+          .btn-purple-index {
+            right: 0;
+            top: 0;
+            position: absolute;
+            padding: 10px 23px 11px 23px;
+          }
+          .btn-purple-index.croix {
+            background-color: $white !important;
+            background: url("cross-dossier.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            &:hover {
+              background-color: $purple-index !important;
+            }
+          }
+          .btn-purple-index.loupe {
+            background-color: $purple-index !important;
+            background: url("loupe.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            &:hover {
+              background-color: $white !important;
+            }
+          }
+        }
       }
-      .btn-purple-index {
-        right: 0;
-        top: 0;
+      .btn-outlined-white {
         position: absolute;
-        padding: 10px 23px 11px 23px;
+        bottom: 50px;
+        padding: 9px 15px;
       }
-      .btn-purple-index.croix {
-        background-color: $white !important;
-        background: url("cross-dossier.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        &:hover {
-          background-color: $purple-index !important;
+      .legendes {
+        ul {
+          margin-bottom: 50px;
+          li.orange {
+            color: $orange-index;
+            list-style: url("index/legende-orange.svg");
+          }
+          li.purple {
+            color: $purple-index;
+            list-style: url("index/legende-violet.svg");
+          }
+          li span {
+            margin-left: 5px;
+          }
         }
       }
-      .btn-purple-index.loupe {
-        background-color: $purple-index !important;
-        background: url("loupe.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        &:hover {
-          background-color: $white !important;
+      .div-title-index-parite {
+        width: 60%;
+        .title-marianne {
+          font-family: 'Marianne-Bold';
+          margin-bottom: 50px;
+          font-size: 40px;
+          text-align: left;
+          font-size: 30px;
+        }
+        .spectral-title {
+          font-size: 36px;
+          line-height: 40px;
+        }
+        .title-marianne,.spectral-title,.paragraphe {
+          color: $white;
+          text-align: left;
         }
       }
     }
   }
-  .legendes {
-    margin-top: 40px;
-    ul {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      li.orange {
-        color: $orange-index;
-        list-style: url("index/legende-orange.svg");
-      }
-      li.purple {
-        color: $purple-index;
-        list-style: url("index/legende-violet.svg");
-      }
-      li span {
-        margin-left: 5px;
-      }
+  .list-organizations {
+    width: 65%;
+    .cards-organizations {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
     }
   }
-  .paragraphe-small {
+  .paragraphe-x-small {
     color: white;
     text-align: center;
-    width: 80%;
-    margin: 7% auto 3%;
-  }
-  .div-title-index-parite {
-    margin: 3% auto;
-    width: 65%;
-    .title-marianne {
-      font-family: 'Marianne-Bold';
-      line-height: 50px;
-      margin-bottom: 30px;
-      min-width: 100%;
-      font-size: 40px;
-    }
-    .spectral-title {
-      font-size: 47px;
-    }
-    .title-marianne,.spectral-title,.paragraphe {
-      color: $white;
-      text-align: center;
-    }
-  }
-  .cards-organizations {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 16px;
+    max-width: 60%;
+    margin: 0 auto;
   }
 }
 

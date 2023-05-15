@@ -28,4 +28,3 @@ export default class extends Controller {
     modal.classList.add( 'modal-visible' );
   }
 }
-
