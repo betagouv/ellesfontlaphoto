@@ -14,14 +14,23 @@
         <div class="div-search-form">
           <%= form_with url: organizations_path, method: :get, class: "d-flex search-form", data: {search_organizations_target: "form"} do %>
             <div class="div-input-form">
+            <% if params[:query].present? %>
+              <%= text_field_tag :query,
+                @searched_name,
+                class: "form-control",
+                placeholder: "Rechercher structure, ville",
+                data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
+              %>
+            <% else %>
               <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
                 placeholder: "Rechercher structure, ville",
                 data: { search_organizations_target: "input", action: "keyup->search-organizations#check"}
               %>
-              <% if @selected_type.present? %>
-                <%= text_field_tag :type, params[:type], value: @selected_type, data: { search_organizations_target: "inputType" }, label: "type d'organisation", class: "d-none" %>
+            <% end %>
+              <% if params[:type].present? %>
+                <%= text_field_tag :type, params[:type], value: params[:type], data: { search_organizations_target: "inputType" }, label: "type d'organisation", class: "d-none" %>
               <% else %>
                 <%= text_field_tag :type, params[:type], data: { search_organizations_target: "inputType" }, label: "type d'organisation", class: "d-none" %>
               <% end %>
@@ -29,11 +38,11 @@
             </div>
           <% end %>
         </div>
-        <p class="button-criteria">
+        <p class="button-criteria button-criteria-organizations">
           <% Organization::ORGANIZATION_TYPE.each do |type| %>
-            <span class="button-criteria-helps-elements <%= @selected_type == type ? "selected" : "" %>" data-action="click->search-organizations#selectCriteria" data-text="<%= type %>">
-              <%= type %>
-              <span class="cross-criteria <%= @selected_type == type ? "display-inline" : "" %>">&times;</span>
+            <span class="button-criteria-organizations-elements <%= params[:type] == type ? "selected" : "" %>" data-action="click->search-organizations#selectCriteria" data-text="<%= type %>">
+              <%= type %> (<%= Organization.where(organization_type: type).count %>)
+              <span class="cross-criteria <%= params[:type] == type ? "display-inline" : "" %>">&times;</span>
             </span>
           <% end %>
         </p>

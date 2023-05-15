@@ -3,21 +3,20 @@ class OrganizationsController < ApplicationController
   def index
     @contact = Contact.new
     @organizations = Organization.all
-    if params[:type].present? && params[:type].split(",").length != 0
-      @searched = true
-      @organizations = Organization.where(organization_type: params[:type].split(",")).order("name")
-    end
-    if params[:query].present?
-      @searched = true
+    # raise
+    if params[:query].present? && !params[:query].empty?
+      @searched_name = params[:query]
       sql_query = "name ILIKE :query OR city ILIKE :query"
       @organizations = Organization.where(sql_query, query: "%#{params[:query]}%").order("name")
     end
+    if params[:type].present? && params[:type].split(",").length != 0
+      @selected_type = params[:type].split(",")
+      @organizations = @organizations.where(organization_type: params[:type].split(",")).order("name")
+    end
     unless (params[:type].present? && params[:type].split(",").length != 0) && params[:query].present?
-      @searched = false
       @selected_type = ""
       @organizations = @organizations.where(visible: true).order("name")
     end
-
     if @organizations.empty?
       respond_to do |format|
         format.html
