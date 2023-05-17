@@ -1,103 +1,109 @@
 .div-index-parite {
   background-color: $black;
   padding: 50px 60px;
-  .filter-index {
-    width: 35%;
-    .sticky {
-      position: sticky;
-      top: 100px;
-      height: calc(100vh - 100px);
-      padding: 0;
-      .div-search-form {
-        .div-input-form {
-          position: relative;
-          input[type=text] {
-            background-color: $black;
-            border-color: $purple-index;
-            color: $white;
-            border-radius: 44px;
-            padding: 10px 50px 10px 15px;
-            width: 280px;
-          }
-          .btn-purple-index {
-            right: 0;
-            top: 0;
-            position: absolute;
-            padding: 10px 23px 11px 23px;
-          }
-          .btn-purple-index.croix {
-            background-color: $white !important;
-            background: url("cross-dossier.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            &:hover {
-              background-color: $purple-index !important;
+  .sub-div-index-parite {
+    display: flex;
+    .filter-index {
+      width: 35%;
+      .sticky {
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 100px);
+        padding: 0;
+        .div-search-form {
+          .div-input-form {
+            position: relative;
+            input[type=text] {
+              background-color: $black;
+              border-color: $purple-index;
+              color: $white;
+              border-radius: 44px;
+              padding: 10px 50px 10px 15px;
+              width: 280px;
             }
-          }
-          .btn-purple-index.loupe {
-            background-color: $purple-index !important;
-            background: url("loupe.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            &:hover {
+            .btn-purple-index {
+              right: 0;
+              top: 0;
+              position: absolute;
+              padding: 10px 23px 11px 23px;
+            }
+            .btn-purple-index.croix {
               background-color: $white !important;
+              background: url("cross-dossier.svg");
+              background-repeat: no-repeat;
+              background-position: center;
+              &:hover {
+                background-color: $purple-index !important;
+              }
+            }
+            .btn-purple-index.loupe {
+              background-color: $purple-index !important;
+              background: url("loupe.svg");
+              background-repeat: no-repeat;
+              background-position: center;
+              &:hover {
+                background-color: $white !important;
+              }
             }
           }
         }
-      }
-      .btn-outlined-white {
-        position: absolute;
-        bottom: 50px;
-        padding: 9px 15px;
-        &:hover {
-          background: transparent !important;
-          border-color: rgb(255, 255, 255) !important;
-          opacity: 0.7;
-        }
-      }
-      .legendes {
-        ul {
-          margin-bottom: 50px;
-          li.orange {
-            color: $orange-index;
-            list-style: url("index/legende-orange.svg");
-          }
-          li.purple {
-            color: $purple-index;
-            list-style: url("index/legende-violet.svg");
-          }
-          li span {
-            margin-left: 5px;
+        .btn-outlined-white {
+          position: absolute;
+          bottom: 50px;
+          padding: 9px 15px;
+          &:hover {
+            background: transparent !important;
+            border-color: rgb(255, 255, 255) !important;
+            opacity: 0.7;
           }
         }
-      }
-      .div-title-index-parite {
-        width: 60%;
-        .title-marianne {
-          font-family: 'Marianne-Bold';
-          margin-bottom: 50px;
-          font-size: 40px;
-          text-align: left;
-          font-size: 30px;
+        .legendes {
+          ul {
+            margin-bottom: 50px;
+            li.orange {
+              color: $orange-index;
+              list-style: url("index/legende-orange.svg");
+            }
+            li.purple {
+              color: $purple-index;
+              list-style: url("index/legende-violet.svg");
+            }
+            li span {
+              margin-left: 5px;
+            }
+          }
         }
-        .spectral-title {
-          font-size: 36px;
-          line-height: 40px;
+        .legendes-mobile {
+          display: none;
         }
-        .title-marianne,.spectral-title,.paragraphe {
-          color: $white;
-          text-align: left;
+        .div-title-index-parite {
+          width: 60%;
+          .title-marianne {
+            font-family: 'Marianne-Bold';
+            margin-bottom: 50px;
+            font-size: 40px;
+            text-align: left;
+            font-size: 30px;
+          }
+          .spectral-title {
+            font-size: 36px;
+            line-height: 40px;
+          }
+          .title-marianne,.spectral-title,.paragraphe {
+            color: $white;
+            text-align: left;
+          }
         }
       }
     }
-  }
-  .list-organizations {
-    width: 65%;
-    .cards-organizations {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 16px;
+    .list-organizations {
+      width: 65%;
+      .cards-organizations {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 16px;
+      }
     }
   }
   .paragraphe-x-small {
@@ -143,21 +149,28 @@
 
 @media only screen and (max-width: 1250px) {
   .div-index-parite {
-    padding: 3% 5%;
+    padding: 3%;
     .div-title-index-parite {
       width: 80%;
     }
-    .cards-organizations {
-      grid-template-columns: 1fr 1fr 1fr;
-      .card-organization .card-organization-name {
-        .paragraphe-bold {
-          width: auto;
-          white-space: normal;
-          word-break: break-word;
-        }
-        .flex-div img {
-          padding: 5px;
-          max-height: 60px;
+    .sub-div-index-parite {
+      .filter-index .sticky .div-search-form .div-input-form input[type=text] {
+        width: 260px;
+      }
+      .list-organizations {
+        .cards-organizations {
+          grid-template-columns: 1fr 1fr;
+          .card-organization .card-organization-name {
+            .paragraphe-bold {
+              width: auto;
+              white-space: normal;
+              word-break: break-word;
+            }
+            .flex-div img {
+              padding: 5px;
+              max-height: 60px;
+            }
+          }
         }
       }
     }
@@ -182,21 +195,66 @@
       }
       .search-form {
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
     }
     .legendes {
-      ul {
+      display: none;
+    }
+    .sub-div-index-parite {
+      display: block;
+      .filter-index.div-filters {
         display: block;
-        width: fit-content;
-        margin: 5% auto;
-        li.orange,li.purple {
-          width: 100%;
+        width: 100%;
+        .sticky {
+          position: initial;
+          height: auto;
+          margin-bottom: 50px;
+          .legendes-mobile {
+            display: block;
+            ul {
+              display: block;
+              width: fit-content;
+              margin: 5% auto;
+              li.orange {
+                color: $orange-index;
+                list-style: url("index/legende-orange.svg");
+              }
+              li.purple {
+                color: $purple-index;
+                list-style: url("index/legende-violet.svg");
+              }
+              li span {
+                margin-left: 5px;
+              }
+              li.orange,li.purple {
+                width: 100%;
+              }
+            }
+          }
+          .div-title-index-parite {
+            width: 100%;
+            h1 {
+              text-align: center;
+              margin-bottom: 30px;
+            }
+          }
+          .button-criteria-organizations {
+            display: none;
+          }
+          .btn-outlined-white {
+            position: initial;
+            bottom: 0;
+            margin: 0 auto 25px auto;
+          }
         }
       }
-    }
-    .cards-organizations {
-      grid-template-columns: 1fr 1fr;
+      .list-organizations {
+        width: 100%;
+        .cards-organizations {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
     }
     .div-title-index-parite {
       .title-marianne {

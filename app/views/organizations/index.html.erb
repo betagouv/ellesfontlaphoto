@@ -1,5 +1,5 @@
 <div class="div-index-parite" data-controller="search-organizations">
-  <div class="d-flex">
+  <div class="sub-div-index-parite">
     <div class="filter-index div-filters">
       <div class="sticky">
         <div class="div-title-index-parite">
@@ -49,6 +49,12 @@
         <%= link_to new_organization_path, target: :_blank, class: "btn btn-outlined-white" do %>
           <%= image_tag "pencil.svg", alt: "stylo" %> Renseigner des chiffres
         <% end %>
+        <div class="legendes-mobile">
+          <ul>
+            <li class="orange"><span> -  de 50% de femmes</span></li>
+            <li class="purple"><span> + de 50% de femmes</span></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="list-organizations"  data-search-organizations-target="list">
