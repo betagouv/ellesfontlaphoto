@@ -49,6 +49,11 @@
         position: absolute;
         bottom: 50px;
         padding: 9px 15px;
+        &:hover {
+          background: transparent !important;
+          border-color: rgb(255, 255, 255) !important;
+          opacity: 0.7;
+        }
       }
       .legendes {
         ul {

@@ -28,9 +28,9 @@
   </div>
   <div class="card-organization-numbers">
     <% if chiffres_organization.nb_femmes_publiees.blank? || chiffres_organization.nb_total_publies.blank? %>
-      <p><mark>femmes photographes<br> publiées : N/R</mark></p>
+      <p><mark>femmes photographes<br> publiées : N/R</mark><span class="card-annee <%= chiffres_organization.nb_femmes_publiees.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
     <% else %>
-      <p><mark class="<%= chiffres_organization.publies_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes<br> publiées : <%= chiffres_organization.nb_femmes_publiees %> / <%= chiffres_organization.nb_total_publies %></mark></p>
+      <p><mark class="<%= chiffres_organization.publies_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes<br> publiées : <%= chiffres_organization.nb_femmes_publiees %> / <%= chiffres_organization.nb_total_publies %></mark><span class="card-annee <%= chiffres_organization.nb_femmes_publiees.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
     <% end %>
     <hr>
     <% if chiffres_organization.nb_femmes_iconographes.blank? || chiffres_organization.nb_total_iconographes.blank? %>

@@ -52,6 +52,9 @@
       }
       .button-criteria-organizations-elements {
         background-color: $purple-index;
+        &:hover {
+          background-color: $white;
+        }
       }
     }
 
@@ -133,7 +136,7 @@
     }
 
     .button-criteria-organizations-elements.selected {
-      background-color: $white;
+      background-color: $purple-index;
       border: none;
       padding-right: 20px;
       position: relative;
