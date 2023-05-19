@@ -9,6 +9,14 @@
   }
   .page-structure-title {
     width: 100%;
+    a {
+      &:hover {
+        opacity: 0.8;
+      }
+      h1,span {
+        text-decoration: underline;
+      }
+    }
     h1 {
       color: $white;
       text-align: left;

@@ -291,6 +291,9 @@
 .ajout-aide-page.confirm, .ajout-case-review-page.confirm {
   padding-bottom: 100px;
   .ajout-aide-title {
+    .subtitle-spectral .subtitle-regular a {
+      color: $black !important;
+    }
     img {
       width: 30%;
       display: block;

@@ -22,7 +22,6 @@ export default class extends Controller {
   }
 
   submit() {
-    window.location.href = `/organizations/${this.selectOrganizationTarget.value}/chiffres_organizations/new`
-    // window.location.href = `organizations/${this.selectOrganizationTarget.value}/chiffres_organization/${}/edit?&choice=${document.querySelector('input[name="choice"]:checked').value}`;
+    window.location.href = `/index-parite/${this.selectOrganizationTarget.value}/chiffres_organizations/new`
   }
 }

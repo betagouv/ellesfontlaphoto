@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   selectOrga() {
-    this.linkNewTarget.href = `/organizations/${this.selectOrgaTarget.value}/chiffres_organizations/new`
+    this.linkNewTarget.href = `/index-parite/${this.selectOrgaTarget.value}/chiffres_organizations/new`
     if (this.selectOrgaTarget.value != "") {
       this.linkNewTarget.classList.remove("isDisabled")
     } else {

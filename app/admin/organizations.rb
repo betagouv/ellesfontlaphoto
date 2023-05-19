@@ -1,5 +1,5 @@
 ActiveAdmin.register Organization do
-  permit_params :visible, :organization_type, :organization, :name, :city, :titre, :finance_ministre, :page_structure, :observatoire_egalite, :email
+  permit_params :visible, :organization_type, :organization, :name, :city, :titre, :finance_ministre, :page_structure, :observatoire_egalite, :email, :website
   menu label: "Organisation"
 
   after_create do |organization|
@@ -53,6 +53,8 @@ ActiveAdmin.register Organization do
       f.input :organization_type, as: :radio, collection: Organization::ORGANIZATION_TYPE, label: "Type"
       f.input :name, label: "Nom"
       f.input :city, label: "Ville"
+      f.input :email
+      f.input :website
       f.input :organization, label: "Organization porteuse du prix", hint: "Remplir ce champ seulement si l'organization est un prix et qu'il depend d'une organisation"
     end
     f.actions
@@ -68,6 +70,9 @@ ActiveAdmin.register Organization do
       row :name, label: "Nom"
       row :city, label: "Ville"
       row :organization, label: "Organization porteuse du prix", hint: "Remplir ce champ seulement si l'organization est un prix et qu'il depend d'une organisation"
+      row :email
+      row :website
+
       row :chiffres_organizations do |obj|
         obj.chiffres_organizations.map { |chiffre| link_to(chiffre.annee, admin_organization_chiffres_organization_path(organization, chiffre)) }.compact
       end

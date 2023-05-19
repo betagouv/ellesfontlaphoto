@@ -3,13 +3,23 @@
     <%= image_tag "arrow-line-white.svg", class: "back-arrow" %>
   <% end %>
   <div class="page-structure-title">
-    <h1 class="title-marianne-bold"><%= @organization.name %>
-      <% if @organization.city %>
-        , <span class="title-marianne"><%= @organization.city %></span>
+    <% if @organization.website.nil? %>
+      <h1 class="title-marianne-bold"><%= @organization.name %>
+        <% if @organization.city %>
+          , <span class="title-marianne"><%= @organization.city %></span>
+        <% end %>
+      </h1>
+    <% else %>
+      <%= link_to @organization.website do %>
+        <h1 class="title-marianne-bold"><%= @organization.name %>
+          <% if @organization.city %>
+            , <span class="title-marianne"><%= @organization.city %></span>
+          <% end %>
+        </h1>
       <% end %>
-    </h1>
+    <% end %>
     <% if @organization.observatoire_egalite %> <span class="btn-outlined-white">Espace d'exposition</span><% end %>
-    <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure publique</span><% end %>
+    <% if @organization.observatoire_egalite %> <span class="btn-outlined-white marianne"><%= image_tag "index/marianne.svg", alt: "Marianne" %>Structure financée par le ministère</span><% end %>
   </div>
   <div class="cards-bandeau">
     <% @chiffres_organization.order(annee: :desc).each do |chiffre| %>

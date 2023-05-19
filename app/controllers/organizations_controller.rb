@@ -3,7 +3,6 @@ class OrganizationsController < ApplicationController
   def index
     @contact = Contact.new
     @organizations = Organization.all
-    # raise
     if params[:query].present? && !params[:query].empty?
       @searched_name = params[:query]
       sql_query = "name ILIKE :query OR city ILIKE :query"
@@ -82,8 +81,7 @@ class OrganizationsController < ApplicationController
     else
       @prix_organization.chiffres_organizations.build
       @prix_organization.valid?
-      render :action => "renseigner_prix"
-      # render :renseigner_prix
+      render action: "renseigner_prix"
     end
   end
 
@@ -103,7 +101,7 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre)
+    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre, :website)
   end
 
   def set_organization

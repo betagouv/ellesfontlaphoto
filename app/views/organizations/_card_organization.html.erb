@@ -28,9 +28,17 @@
   </div>
   <div class="card-organization-numbers">
     <% if chiffres_organization.nb_femmes_exposees.blank? || chiffres_organization.nb_total_exposes.blank? %>
-      <p><mark>femmes photographes <br> exposées : ?</mark><span class="card-annee <%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
+      <p><mark>femmes photographes <br> exposées : ?</mark>
+      <% if annee.nil? %>
+        <span class="card-annee <%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span>
+      <% end %>
+      </p>
     <% else %>
-      <p><mark class="<%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes <br> exposées : <%= chiffres_organization.nb_femmes_exposees %> / <%= chiffres_organization.nb_total_exposes %></mark><span class="card-annee <%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee if annee.nil? %></span></p>
+      <p><mark class="<%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>">femmes photographes <br> exposées : <%= chiffres_organization.nb_femmes_exposees %> / <%= chiffres_organization.nb_total_exposes %></mark>
+      <% if annee.nil? %>
+        <span class="card-annee <%= chiffres_organization.exposes_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee if annee.nil? %></span>
+      <% end %>
+      </p>
     <% end %>
     <hr>
     <% if chiffres_organization.nb_femmes_directrices.blank? || chiffres_organization.nb_total_directeurs.blank? %>

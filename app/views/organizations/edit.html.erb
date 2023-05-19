@@ -10,6 +10,7 @@
       <%= f.input :city, label: "Votre structure se situe dans la ville de..." %>
       <p class="paragraphe">Votre structure est elle financée par le ministère ?</p>
       <%= f.collection_radio_buttons :finance_ministre, [[true, 'oui'] ,[false, 'non']],:first, :last %>
+      <%= f.input :website, label: "Lien de votre site web" %>
       <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
       <div class="btn-submit">
         <%= f.submit "Suivant", class: "btn btn-black" %>

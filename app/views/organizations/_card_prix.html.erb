@@ -28,9 +28,18 @@
   </div>
   <div class="card-organization-numbers">
     <% if chiffres_organization.nb_femmes_laureates.blank? || chiffres_organization.nb_total_laureates.blank? %>
-      <p><mark><br> lauréates : ?</mark><span class="card-annee <%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
+      <p>
+        <mark><br> lauréates : ?</mark>
+        <% if annee.nil? %>
+          <span class="card-annee <%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span>
+        <% end %>
+      </p>
     <% else %>
-      <p><mark class="<%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><br> lauréates : <%= chiffres_organization.nb_femmes_laureates %> / <%= chiffres_organization.nb_total_laureates %></mark><span class="card-annee <%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
+      <p><mark class="<%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><br> lauréates : <%= chiffres_organization.nb_femmes_laureates %> / <%= chiffres_organization.nb_total_laureates %></mark>
+      <% if annee.nil? %>
+        <span class="card-annee <%= chiffres_organization.laureates_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span>
+      <% end %>
+      </p>
     <% end %>
     <hr>
     <% if chiffres_organization.nb_femmes_candidates.blank? || chiffres_organization.nb_total_candidats.blank? %>

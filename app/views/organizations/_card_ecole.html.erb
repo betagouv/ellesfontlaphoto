@@ -28,9 +28,17 @@
   </div>
   <div class="card-organization-numbers">
     <% if chiffres_organization.nb_femmes_enseignantes.blank? || chiffres_organization.nb_total_enseignants.blank? %>
-      <p><mark><br> enseignantes : ?</mark><span class="card-annee <%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
+      <p><mark><br> enseignantes : ?</mark>
+      <% if annee.nil? %>
+        <span class="card-annee <%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span>
+      <% end %>
+      </p>
     <% else %>
-      <p><mark class="<%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= chiffres_organization.nb_femmes_enseignantes %> / <%= chiffres_organization.nb_total_enseignants %></mark><span class="card-annee <%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span></p>
+      <p><mark class="<%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><br> enseignantes : <%= chiffres_organization.nb_femmes_enseignantes %> / <%= chiffres_organization.nb_total_enseignants %></mark>
+      <% if annee.nil? %>
+        <span class="card-annee <%= chiffres_organization.enseignants_parite.to_i >= 50 ? "purple" : "orange" %>"><%= chiffres_organization.annee %></span>
+      <% end %>
+      </p>
     <% end %>
     <hr>
     <% if chiffres_organization.nb_femmes_etudiantes.blank? || chiffres_organization.nb_total_etudiants.blank? %>
