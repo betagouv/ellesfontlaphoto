@@ -55,7 +55,7 @@ class CaseReviewMailer < ApplicationMailer
     @case_review = case_review
     @reviewer = case_review.reviewer_email
     case_attachment = URI.open(case_review.case_attachment.url)
-    attachments[case_review.case_attachment.filename.to_s.gsub(/[^0-9A-Za-z]/, '')] = File.read(case_attachment)
+    attachments[case_review.case_attachment.filename.to_s.gsub(/[^0-9A-Za-z.]/, '')] = File.read(case_attachment)
     mail(to: @reviewer, cc: ["revue-dossiers@beta.gouv.fr"], subject: 'Revue de dossiers - votre binôme attend vos retours !')
   end
 end
