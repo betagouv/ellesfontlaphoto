@@ -41,7 +41,7 @@
         <p class="button-criteria button-criteria-organizations">
           <% Organization::ORGANIZATION_TYPE.each do |type| %>
             <span class="button-criteria-organizations-elements <%= params[:type] == type ? "selected" : "" %>" data-action="click->search-organizations#selectCriteria" data-text="<%= type %>">
-              <%= type %> (<%= Organization.where(organization_type: type).count %>)
+              <%= type.downcase %> (<%= Organization.where(organization_type: type).count %>)
               <span class="cross-criteria <%= params[:type] == type ? "display-inline" : "" %>">&times;</span>
             </span>
           <% end %>

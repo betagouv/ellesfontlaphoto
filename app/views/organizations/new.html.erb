@@ -40,6 +40,10 @@
         <p class="paragraphe">Votre structure est elle financée par le ministère ?</p>
         <%= f.collection_radio_buttons :finance_ministre, [[true, 'Oui'] ,[false, 'Non']],:first, :last %>
         <%= f.input :website, label: "Lien de votre site web" %>
+        <%= f.input :reseau, collection: ["Diagonale", "Arts en Résidence", "Platform", "France Photo Book", "Autre"], input_html: { data: {action: "change->ajout-organisations#reseau", ajout_organisations_target: "reseauCollection"}} %>
+        <div class="d-none" data-ajout-organisations-target="reseauInput">
+          <%= f.input :reseau, label: false, placeholder: "Veuillez renseigner votre réseau" %>
+        </div>
         <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
         <div class="btn-submit">
           <%= f.submit "Suivant", class: "btn btn-black" %>

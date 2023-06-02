@@ -11,7 +11,7 @@ class Organization < ApplicationRecord
     "Festival",
     "École",
     "Prix",
-    "Journal/Magazine"
+    "Journal / Magazine"
   ]
 
   def self.chiffres_organizations_unseen
@@ -35,7 +35,7 @@ class Organization < ApplicationRecord
   end
 
   def journal?
-    organization_type == "Journal/Magazine"
+    organization_type == "Journal / Magazine"
   end
 
 end

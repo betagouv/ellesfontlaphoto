@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_18_144723) do
+ActiveRecord::Schema.define(version: 2023_06_02_090851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -328,6 +328,7 @@ ActiveRecord::Schema.define(version: 2023_05_18_144723) do
     t.boolean "observatoire_egalite", default: false
     t.bigint "organization_id"
     t.string "website"
+    t.string "reseau"
     t.index ["organization_id"], name: "index_organizations_on_organization_id"
   end
 

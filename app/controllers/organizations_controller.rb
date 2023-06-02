@@ -56,6 +56,7 @@ class OrganizationsController < ApplicationController
   end
 
   def create
+    raise
     @organization = Organization.new(organization_params)
     @organization.visible = false
     if @organization.save
@@ -101,7 +102,7 @@ class OrganizationsController < ApplicationController
   end
 
   def organization_params
-    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre, :website)
+    params.require(:organization).permit(:organization_type, :name, :city, :email, :finance_ministre, :titre, :website, :reseau)
   end
 
   def set_organization

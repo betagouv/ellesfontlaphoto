@@ -8,7 +8,9 @@ export default class extends Controller {
     "selectOrga",
     "linkNew",
     "organizationTypeInput",
-    "titreInput"
+    "titreInput",
+    "reseauCollection",
+    "reseauInput"
   ]
 
   newOrganisation() {
@@ -37,6 +39,15 @@ export default class extends Controller {
       this.titreInputTarget.classList.add("d-none")
     }
 
+  }
+
+  reseau() {
+    if (this.reseauCollectionTarget.value === "Autre") {
+      this.reseauInputTarget.classList.remove("d-none")
+    } else {
+      this.reseauInputTarget.classList.add("d-none")
+      this.reseauInputTarget.value = ""
+    }
   }
 
 }
