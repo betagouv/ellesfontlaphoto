@@ -6,12 +6,15 @@
     position: absolute;
     left: 8%;
     top: 90px;
+    &:hover {
+      opacity: 0.7;
+    }
   }
   .page-structure-title {
     width: 100%;
     a {
       &:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
       h1,span {
         text-decoration: underline;
@@ -46,6 +49,9 @@
 
 .div-chiffres {
   margin: 60px 0;
+  .paragraphe {
+    margin-left: 3px;
+  }
 }
 
 .cards-bandeau,.chiffres {
