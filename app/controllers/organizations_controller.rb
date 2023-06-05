@@ -56,7 +56,6 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    raise
     @organization = Organization.new(organization_params)
     @organization.visible = false
     if @organization.save

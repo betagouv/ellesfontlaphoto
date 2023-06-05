@@ -310,6 +310,26 @@
   }
 }
 
+@media only screen and (max-width: 750px) {
+  .box .box-in {
+    .flottante {
+      left: 41%;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+    }
+    .flip-card-front .card-organization-numbers {
+      width: 98%;
+      mark,.paragraphe-grey {
+        font-size: 13px;
+      }
+      p .card-annee {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 1950px) {
   .box {
     min-height: 26em;

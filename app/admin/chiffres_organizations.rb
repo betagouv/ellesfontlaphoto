@@ -17,7 +17,6 @@ ActiveAdmin.register ChiffresOrganization do
       f.input :organization, input_html: { disabled: true }
       f.input :annee, as: :select, collection: (Date.today.year - 10..Date.today.year).to_a
       f.input :visible
-      # raise
       if organization.ecole?
         f.inputs "Part des femmes dans votre école de photographie", style: "width: 100%;" do
           f.input :nb_femmes_etudiantes

@@ -9,7 +9,6 @@ class ChiffresOrganizationsController < ApplicationController
 
 
   def create
-    # raise
     @chiffres_organization = ChiffresOrganization.new(chiffres_organization_params)
     @chiffres_organization.organization = @organization
     if @chiffres_organization.save

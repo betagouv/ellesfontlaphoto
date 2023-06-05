@@ -1,7 +1,7 @@
 <div class="ajout-organization-page">
   <div class="ajout-organization-title">
-    <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular">Renseignez vos chiffres ! </span></p>
-    <p class="paragraphe" style="width: 70%" >Afin d'apporter plus de transparence, valoriser vos actions et adapter les nôtres, renseignez les chiffres de votre organisation.</p>
+    <p class="subtitle-spectral">Chiffrer l'égalité femmes-hommes, secteur de la photographie.<span class="subtitle-regular"> Renseignez vos chiffres ! </span></p>
+    <p class="paragraphe">Afin d'apporter plus de transparence, valoriser vos actions et adapter les nôtres, renseignez les chiffres de votre organisation.</p>
   </div>
   <div class="ajout-organization-form">
     <%= simple_form_for @organization do |f| %>
@@ -9,7 +9,7 @@
       <%= f.input :name, label: "Votre structure se nomme..." %>
       <%= f.input :city, label: "Votre structure se situe dans la ville de..." %>
       <p class="paragraphe">Votre structure est elle financée par le ministère ?</p>
-      <%= f.collection_radio_buttons :finance_ministre, [[true, 'oui'] ,[false, 'non']],:first, :last %>
+      <%= f.collection_radio_buttons :finance_ministre, [[true, 'Oui'] ,[false, 'Non']],:first, :last %>
       <%= f.input :website, label: "Lien de votre site web" %>
       <%= f.input :email, label: "À quelle adresse e-mail pouvons-nous vous contacter si besoin ?" %>
       <div class="btn-submit">

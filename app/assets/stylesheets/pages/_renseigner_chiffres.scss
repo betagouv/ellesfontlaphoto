@@ -9,3 +9,21 @@
     margin: 0 auto;
   }
 }
+
+@media only screen and (max-width: 750px) {
+  .ajout-organization-page {
+    .paragraphe {
+      text-align: left;
+    }
+    fieldset {
+      margin-left: 4px;
+    }
+    .edit-orga {
+      top: 8%;
+      left: 4%;
+      img {
+        width: 44px;
+      }
+    }
+  }
+}

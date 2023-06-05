@@ -512,9 +512,12 @@ a {
     padding-bottom: 20px;
   }
   h2,.subtitle,.subtitle-regular {
-    font-size: 30px;
+    font-size: 30px !important;
     line-height: 43px;
     padding-bottom: 10px;
+    a {
+      font-size: 22px;
+    }
   }
   .main-paragraphe-medium {
     font-size: 20px;
@@ -523,7 +526,7 @@ a {
     font-size: 40px;
   }
   .subtitle-spectral {
-    font-size: 34px;
+    font-size: 34px !important;
   }
   .paragraphe-title {
     font-size: 18px;
