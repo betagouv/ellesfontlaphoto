@@ -102,7 +102,7 @@
         margin-top: 10px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 20px 30px;
+        grid-gap: 30px;
       }
     }
   }
@@ -160,6 +160,7 @@
       .list-organizations {
         .cards-organizations {
           grid-template-columns: 1fr 1fr;
+          grid-gap: 30px 45px;
           .card-organization .card-organization-name {
             .paragraphe-bold {
               width: auto;
@@ -253,7 +254,7 @@
         width: 100%;
         .cards-organizations {
           grid-template-columns: 1fr 1fr;
-          gap: 20px 10px;
+          gap: 20px;
         }
       }
     }
