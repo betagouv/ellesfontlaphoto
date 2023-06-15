@@ -25,7 +25,7 @@
     <% elsif !@chiffres_organization.nil? %>
       <div class="box" data-controller="flip-card">
         <div class="box-in box-front" data-flip-card-target="frontCard">
-          <% if organization.orga? %>
+          <% if organization.orga? || organization.organization_type == "Structure"%>
             <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
           <% elsif organization.ecole? %>
             <%= render "organizations/card_ecole", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
