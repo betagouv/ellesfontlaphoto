@@ -12,6 +12,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   )
   new_chiffre.organization = organization
   new_chiffre.save
+  p new_chiffre.valid?
+  p new_chiffre.errors.messages
   p "chiffre organization pour #{organization.name} ajouté"
 end
 
@@ -40,5 +42,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     nb_total_directeurs: row["nb_total_directeurs"].to_i
   )
   chiffre_orga.organization = organization
+  chiffre_orga.save
+  p chiffre_orga.valid?
+  p chiffre_orga.errors.messages
   p "chiffre organization pour #{chiffre_orga.annee} ajouté for #{organization.name}"
 end
