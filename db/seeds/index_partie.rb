@@ -3,7 +3,7 @@ filepath = File.join(Rails.root, 'db', 'donnees_histo.csv')
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   organization = Organization.find(row["id"].to_i)
-  new_chiffre = ChiffreOrganization.new(
+  new_chiffre = ChiffresOrganization.new(
     annee: row["annee"].to_i,
     nb_femmes_exposees_expo_collective: row["nb_femmes_exposees_expo_collective"].to_i,
     nb_total_exposes_expo_collective: row["nb_total_exposes_expo_collective"].to_i,
@@ -30,7 +30,7 @@ filepath = File.join(Rails.root, 'db', 'datas_nouvelles_orga.csv')
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   organization = Organization.where(name: row["name"]).first
-  chiffre_orga = ChiffreOrganization.new(
+  chiffre_orga = ChiffresOrganization.new(
     anne: row["annee"].to_i,
     nb_femmes_exposees_expo_collective: row["nb_femmes_exposees_expo_collective"].to_i,
     nb_total_exposes_expo_collective: row["nb_total_exposes_expo_collective"].to_i,
