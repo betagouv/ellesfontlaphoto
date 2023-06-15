@@ -6,7 +6,7 @@ class ChiffresOrganization < ActiveRecord::Base
 
   before_validation :validates_for_orga
   # Validation de présence des chiffres en fonction du type de l'organisation
-  validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
+  # validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
   validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
   validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
   validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
