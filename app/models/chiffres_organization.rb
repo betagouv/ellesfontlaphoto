@@ -4,10 +4,10 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :annee, presence: true
   validates :annee, uniqueness: { scope: :organization }
 
-  before_validation :validates_for_orga
+  # before_validation :validates_for_orga
   # Validation de présence des chiffres en fonction du type de l'organisation
   # validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
-  validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
+  # validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
   validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
   validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
   validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
@@ -41,7 +41,7 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :nb_total_accueil_residence, numericality: { greater_than: 0, allow_nil: true }
   validates :nb_total_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true }
   validates :nb_total_photographes_invites, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_directeurs, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_directeurs, numericality: { greater_than: 0, allow_nil: true }
   validates :nb_total_employes, numericality: { greater_than: 0, allow_nil: true }
 
   validates :nb_total_exposes_expo_collective, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_collective }, if: -> { !nb_femmes_exposees_expo_collective.nil? && !nb_total_exposes_expo_collective.nil? }
@@ -61,7 +61,7 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :nb_total_accueil_residence, numericality: { greater_than_or_equal_to: :nb_femmes_accueil_residence }, if: -> { !nb_total_accueil_residence.nil? && !nb_femmes_accueil_residence.nil? }
   validates :nb_total_photo_ouvrages, numericality: { greater_than_or_equal_to: :nb_femmes_photo_ouvrages }, if: -> { !nb_total_photo_ouvrages.nil? && !nb_femmes_photo_ouvrages.nil? }
   validates :nb_total_photographes_invites, numericality: { greater_than_or_equal_to: :nb_femmes_photographes_invites }, if: -> { !nb_total_photographes_invites.nil? && !nb_femmes_photographes_invites.nil? }
-  validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices }, if: -> { !nb_total_directeurs.nil? && !nb_femmes_directrices.nil? }
+  # validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices }, if: -> { !nb_total_directeurs.nil? && !nb_femmes_directrices.nil? }
   validates :nb_total_employes, numericality: { greater_than_or_equal_to: :nb_femmes_employees }, if: -> { !nb_total_employes.nil? && !nb_femmes_employees.nil? }
 
   validates :nb_femmes_etudiantes, numericality: { greater_than: 0, allow_nil: true}
@@ -85,7 +85,7 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :nb_femmes_accueil_residence, numericality: { greater_than: 0, allow_nil: true}
   validates :nb_femmes_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true}
   validates :nb_femmes_photographes_invites, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_directrices, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_directrices, numericality: { greater_than: 0, allow_nil: true}
   validates :nb_femmes_employees, numericality: { greater_than: 0, allow_nil: true}
 
   def validates_for_orga
