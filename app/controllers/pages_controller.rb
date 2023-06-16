@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    raise
     @contact = Contact.new
     @helps = Help.all.where(visible: true).sort_by {|help| help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.nil? ? Date.today + 9000 : help.candidature_dates.where("end_date >= ?", Date.today).order("end_date ASC").first.end_date }.first(5)
     @conseils_articles = ConseilsArticle.order(created_at: :desc).first(5)

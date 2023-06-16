@@ -134,7 +134,7 @@ class ChiffresOrganization < ActiveRecord::Base
 
   def calculate(nb_women, nb_total)
     if nb_total.to_i && nb_women.to_i
-      nb_total.to_i == 0 ? 0 : nb_women.to_i.fdiv(nb_total.to_i) * 100
+      e
     else
       0
     end

@@ -6,7 +6,7 @@
       <%= link_to organization_path(link_ref) do %>
         <div class="box">
           <div class="box-in box-front">
-            <% if organization.orga? %>
+            <% if organization.orga? || organization.organization_type == "Structure"%>
               <%= render "organizations/flottante", chiffre: @chiffres_organization.exposes_parite.to_i %>
               <%= render "organizations/card_organization", annee: nil, organization: organization, chiffres_organization: @chiffres_organization %>
             <% elsif organization.ecole? %>
