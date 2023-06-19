@@ -83,7 +83,7 @@
             <%= render "chiffres_organizations/card_chiffres", title: "personnel de la structure", legende: "femmes", nb_femmes: chiffre.nb_femmes_employees, nb_total: chiffre.nb_total_employes, parite: chiffre.employes_parite %>
           </div>
         </div>
-        <% if !chiffre.actions_egalite.empty? %>
+        <% if !chiffre.actions_egalite.to_s.empty? %>
           <p class="title-marianne-bold mb20">Actions mises en place pour l'égalité</p>
           <p class="paragraphe"><%= chiffre.actions_egalite.html_safe %></p>
         <% end %>
