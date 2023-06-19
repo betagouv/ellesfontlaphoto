@@ -4,45 +4,45 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :annee, presence: true
   validates :annee, uniqueness: { scope: :organization }
 
-  before_validation :validates_for_orga
-  # Validation de présence des chiffres en fonction du type de l'organisation
-  validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
-  validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
-  validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
-  validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
-  validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
-  validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
-  validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
-  validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
-  validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
-  validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
-  validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
-  validates :nb_total_publies, presence: true, if: -> { organization.journal? }
-  validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
-  validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
+  # before_validation :validates_for_orga
+  # # Validation de présence des chiffres en fonction du type de l'organisation
+  # validates :nb_femmes_directrices, presence: true, if: -> { organization.orga? }
+  # validates :nb_total_directeurs, presence: true, if: -> { organization.orga? }
+  # validates :nb_femmes_enseignantes, presence: true, if: -> { organization.ecole? }
+  # validates :nb_total_enseignants, presence: true, if: -> { organization.ecole? }
+  # validates :nb_femmes_etudiantes, presence: true, if: -> { organization.ecole? }
+  # validates :nb_total_etudiants, presence: true, if: -> { organization.ecole? }
+  # validates :nb_femmes_laureates, presence: true, if: -> { organization.prix? }
+  # validates :nb_total_laureates, presence: true, if: -> { organization.prix? }
+  # validates :nb_femmes_candidates, presence: true, if: -> { organization.prix? }
+  # validates :nb_total_candidats, presence: true, if: -> { organization.prix? }
+  # validates :nb_femmes_publiees, presence: true, if: -> { organization.journal? }
+  # validates :nb_total_publies, presence: true, if: -> { organization.journal? }
+  # validates :nb_femmes_iconographes, presence: true, if: -> { organization.journal? }
+  # validates :nb_total_iconographes, presence: true, if: -> { organization.journal? }
 
   # Validations de calcul de parité
   after_validation :calculate_parity
 
-  validates :nb_total_exposes_expo_collective, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_exposes_expo_mono, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_commissaires, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_artistes, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_oeuvres_photo, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_oeuvres_ajoutees, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_enseignants, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_etudiants, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_photographes_etudies, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_laureates, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_candidats, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_jurys, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_publies, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_iconographes, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_accueil_residence, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_photographes_invites, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_directeurs, numericality: { greater_than: 0, allow_nil: true }
-  validates :nb_total_employes, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_exposes_expo_collective, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_exposes_expo_mono, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_commissaires, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_artistes, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_oeuvres_photo, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_oeuvres_ajoutees, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_enseignants, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_etudiants, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_photographes_etudies, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_laureates, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_candidats, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_jurys, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_publies, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_iconographes, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_accueil_residence, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_photographes_invites, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_directeurs, numericality: { greater_than: 0, allow_nil: true }
+  # validates :nb_total_employes, numericality: { greater_than: 0, allow_nil: true }
 
   validates :nb_total_exposes_expo_collective, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_collective }, if: -> { !nb_femmes_exposees_expo_collective.nil? && !nb_total_exposes_expo_collective.nil? }
   validates :nb_total_exposes_expo_mono, numericality: { greater_than_or_equal_to: :nb_femmes_exposees_expo_mono }, if: -> { !nb_total_exposes_expo_mono.nil? && !nb_femmes_exposees_expo_mono.nil? }
@@ -64,29 +64,29 @@ class ChiffresOrganization < ActiveRecord::Base
   validates :nb_total_directeurs, numericality: { greater_than_or_equal_to: :nb_femmes_directrices }, if: -> { !nb_total_directeurs.nil? && !nb_femmes_directrices.nil? }
   validates :nb_total_employes, numericality: { greater_than_or_equal_to: :nb_femmes_employees }, if: -> { !nb_total_employes.nil? && !nb_femmes_employees.nil? }
 
-  validates :nb_femmes_etudiantes, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_enseignantes, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_photographes_etudiees, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_publiees, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_iconographes, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_exposees, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_exposees_expo_collective, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_exposees_expo_mono, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_moins_40, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_plus_40, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_post_mortem, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_commissaires, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_artistes, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_oeuvres_photo_femmes, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_oeuvres_ajoutees, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_candidates, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_laureates, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_jurys, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_accueil_residence, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_photographes_invites, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_directrices, numericality: { greater_than: 0, allow_nil: true}
-  validates :nb_femmes_employees, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_etudiantes, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_enseignantes, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_photographes_etudiees, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_publiees, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_iconographes, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_exposees, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_exposees_expo_collective, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_exposees_expo_mono, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_moins_40, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_plus_40, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_post_mortem, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_commissaires, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_artistes, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_oeuvres_photo_femmes, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_oeuvres_ajoutees, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_candidates, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_laureates, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_jurys, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_accueil_residence, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_photo_ouvrages, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_photographes_invites, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_directrices, numericality: { greater_than: 0, allow_nil: true}
+  # validates :nb_femmes_employees, numericality: { greater_than: 0, allow_nil: true}
 
   def validates_for_orga
     if organization.orga?
