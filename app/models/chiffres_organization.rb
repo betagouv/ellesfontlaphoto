@@ -104,8 +104,8 @@ class ChiffresOrganization < ActiveRecord::Base
       self.artistes_parite = calculate(nb_femmes_artistes, nb_total_artistes)
       self.oeuvres_photo_parite = calculate(nb_oeuvres_photo_femmes, nb_total_oeuvres_photo)
       self.oeuvres_ajoutees_parite = calculate(nb_femmes_oeuvres_ajoutees, nb_total_oeuvres_ajoutees)
-      self.nb_femmes_exposees = nb_femmes_exposees_expo_mono.to_i + nb_femmes_exposees_expo_collective.to_i
-      self.nb_total_exposes = nb_total_exposes_expo_mono.to_i + nb_total_exposes_expo_collective.to_i
+      self.nb_femmes_exposees = nb_femmes_exposees_expo_mono.to_i + nb_femmes_exposees_expo_collective.to_i + nb_femmes_exposees.to_i
+      self.nb_total_exposes = nb_total_exposes_expo_mono.to_i + nb_total_exposes_expo_collective.to_i + nb_total_exposes.to_i
       self.exposes_parite = calculate(nb_femmes_exposees, nb_total_exposes)
     elsif organization.ecole?
       self.enseignants_parite = calculate(nb_femmes_enseignantes, nb_total_enseignants)
