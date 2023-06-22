@@ -54,8 +54,8 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'ssl0.ovh.net',
-    port: 587,
+    address: Figaro.env.smtp_address,
+    port: 465,
     user_name: Figaro.env.smtp_email,
     password: Figaro.env.smtp_password,
     authentication: 'login',

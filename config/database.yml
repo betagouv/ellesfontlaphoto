@@ -81,12 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: ellesfontlaphoto_production
-  username: ellesfontlaphoto
-  password: <%= ENV['ELLESFONTLAPHOTO_DATABASE_PASSWORD'] %>
-
-production:
-  <<: *default
-  database: ellesfontlaphoto_staging
-  username: ellesfontlaphoto
-  password: <%= ENV['ELLESFONTLAPHOTO_DATABASE_PASSWORD'] %>
+  database: main
+  username: main
+  password: main
+  host: postgresdatabase.internal
