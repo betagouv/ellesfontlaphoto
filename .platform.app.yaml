@@ -21,7 +21,7 @@ dependencies:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    postgresdatabase: 'ellesfontlaphoto_production:postgresql'
+    postgresdatabase: 'database_postgres:postgresql'
     rediscache: "cacheredis:redis"
 # The size of the persistent disk of the application (in MB).
 disk: 1024
