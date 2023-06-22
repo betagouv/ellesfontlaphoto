@@ -1,0 +1,21 @@
+# The services of the project.
+#
+# Each service listed will be deployed
+# to power your Platform.sh project.
+
+ellesfontlaphoto_production:
+    type: postgresql:13
+    disk: 1024
+
+# cacheredis:
+#     type: redis:4.0
+
+
+# The name given to the Redis service (lowercase alphanumeric only).
+cacheredis:
+    # The type of your service (redis), which uses the format
+    # 'type:version'. Be sure to consult the Redis documentation
+    # (https://docs.platform.sh/add-services/redis.html#supported-versions)
+    # when choosing a version. If you specify a version number which is not available,
+    # the CLI will return an error.
+    type: redis:7.0
