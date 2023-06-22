@@ -125,13 +125,12 @@ source:
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
 
 crons:
-  schedulers:
-    update_candidatures_dates:
-      spec: '0 5 * * *'
-      cmd: 'rails candidature_dates:update'
-    relances_case_reviews:
-      spec: '0 8 * * *'
-      cmd: 'rails send_relance:relances'
-    seed_api_ministere:
-      spec: '45 23 * * 6'
-      cmd: 'rails db:seed:api_ministere'
+  update_candidatures_dates:
+    spec: '0 5 * * *'
+    cmd: 'rails candidature_dates:update'
+  relances_case_reviews:
+    spec: '0 8 * * *'
+    cmd: 'rails send_relance:relances'
+  seed_api_ministere:
+    spec: '45 23 * * 6'
+    cmd: 'rails db:seed:api_ministere'
