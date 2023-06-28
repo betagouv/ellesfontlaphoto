@@ -1,0 +1,23 @@
+<p class="paragraphe mt30"><%= organization.titre %></p>
+<div class="organization-chiffres prix-associes">
+  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <% organization.chiffres_organizations.order(annee: :desc).each do |chiffre| %>
+      <li role="presentation">
+        <button class="fr-btn <%= "active" if organization.chiffres_organizations.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>-<%= chiffre.organization.titre.to_s.gsub(/[^0-9A-Za-z]/, '').downcase %>-tab" data-bs-toggle="pill" data-bs-target="#pills-<%= chiffre.annee %>-<%= chiffre.organization.titre.to_s.gsub(/[^0-9A-Za-z]/, '').downcase %>" type="button" role="tab" aria-controls="pills-home" aria-selected="<%= @chiffres_organization.order(annee: :desc).first == chiffre ? "true" : "false" %>">Année <%= chiffre.annee %></button>
+      </li>
+    <% end %>
+  </ul>
+  <% organization.chiffres_organizations.order(annee: :desc).each do |chiffre| %>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade <%= "show active" if organization.chiffres_organizations.order(annee: :desc).first == chiffre %>" id="pills-<%= chiffre.annee %>-<%= chiffre.organization.titre.to_s.gsub(/[^0-9A-Za-z]/, '').downcase %>" role="tabpanel" aria-labelledby="pills-<%= chiffre.annee %>-<%= chiffre.organization.titre.to_s.gsub(/[^0-9A-Za-z]/, '').downcase %>-tab" tabindex="0">
+        <div class="div-chiffres">
+          <div class="chiffres mt0">
+            <%= render "chiffres_organizations/card_chiffres", title: "personnes candidates", legende: "femmes", nb_femmes: chiffre.nb_femmes_candidates, nb_total: chiffre.nb_total_candidats, parite: chiffre.candidates_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "personnes lauréates", legende: "femmes", nb_femmes: chiffre.nb_femmes_laureates, nb_total: chiffre.nb_total_laureates , parite: chiffre.laureates_parite %>
+            <%= render "chiffres_organizations/card_chiffres", title: "membres du jury",  legende: "femmes", nb_femmes: chiffre.nb_femmes_jurys, nb_total: chiffre.nb_total_jurys, parite: chiffre.jurys_parite %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

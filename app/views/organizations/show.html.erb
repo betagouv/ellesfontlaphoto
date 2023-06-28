@@ -60,10 +60,9 @@
           <%= render "chiffres_organizations/chiffres_journal", annee: chiffre.annee, organization: @organization, chiffre: chiffre %>
         <% end %>
         <% if !@prix.empty? %>
+          <p class="title-marianne-bold">Prix et récompenses</p>
           <% @prix.each do |prix| %>
-            <% prix.chiffres_organizations.where(annee: chiffre.annee).each do |chiffre| %>
-              <%= render "chiffres_organizations/chiffres_prix", annee: chiffre.annee, organization: prix, chiffre: prix.chiffres_organizations.where(annee: chiffre.annee).first %>
-            <% end %>
+            <%= render "chiffres_organizations/chiffres_prix_associes", organization: prix %>
           <% end %>
         <% end %>
         <% if chiffre.accueil_residence_parite != 0 || chiffre.photo_ouvrages_parite != 0 || chiffre.photographes_invites_parite != 0 %>

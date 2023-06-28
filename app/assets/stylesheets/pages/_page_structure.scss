@@ -91,6 +91,10 @@
   }
 }
 
+.organization-chiffres .prix-associes {
+  padding: 0;
+}
+
 @media only screen and (max-width: 1250px) {
   .organization-bandeau {
     padding: 80px 7%;
@@ -136,6 +140,9 @@
   }
   .organization-chiffres {
     padding: 40px 4%;
+    .nav {
+      justify-content: center;
+    }
     .div-chiffres {
       margin: 40px 0;
       .title-marianne-bold {

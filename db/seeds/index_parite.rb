@@ -8,7 +8,9 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   prix = Organization.new(
     name: row["name"],
     titre: row["name"],
-    organization_type: "Prix"
+    organization_type: "Prix",
+    visible: true,
+    page_structure: true
   )
   prix.save
   p prix.valid?
@@ -23,7 +25,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   chiffres_prix = ChiffresOrganization.new(
     annee: row["annee"].to_i,
     nb_femmes_laureates: row["nb_femmes_laureates"].to_i,
-    nb_total_laureates: row["nb_total_laureates"].to_i
+    nb_total_laureates: row["nb_total_laureates"].to_i,
+    visible: true
   )
   chiffres_prix.organization = prix
   chiffres_prix.save
@@ -39,9 +42,11 @@ filepath = File.join(Rails.root, 'db', 'import_prix_associes_a_org.csv')
 CSV.foreach(filepath, headers: :first_row) do |row|
   organization = Organization.find(row["organization_id"].to_i)
   prix = Organization.new(
-    name: row["name"],
+    name: row["titre"],
     titre: row["titre"],
-    organization_type: "Prix"
+    organization_type: "Prix",
+    page_structure: true,
+    visible: true
   )
   prix.organization = organization
   prix.save
@@ -57,7 +62,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   chiffres_prix = ChiffresOrganization.new(
     annee: row["annee"].to_i,
     nb_femmes_laureates: row["nb_femmes_laureates"].to_i,
-    nb_total_laureates: row["nb_total_laureates"].to_i
+    nb_total_laureates: row["nb_total_laureates"].to_i,
+    visible: true
   )
   chiffres_prix.organization = prix
   chiffres_prix.save
@@ -91,7 +97,7 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     nb_femmes_etudiantes: row["nb_femmes_etudiantes"].to_i,
     nb_total_etudiants: row["nb_total_etudiants"].to_i,
     annee: row["annee"].to_i,
-    titre: row["titre"]
+    titre: row["titre"],
     visible: true
   )
   chiffre.organization = organization

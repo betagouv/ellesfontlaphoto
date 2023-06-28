@@ -14,7 +14,6 @@ class Help < ApplicationRecord
   validates :general_condition, presence: true
   validates :candidate_url, presence: true
   validates :institution_name, presence: true
-  validates :institution_url, presence: true
   validates :author_email, presence: true, if: :suggested
   validates :accept_cgu, presence: true, if: :suggested
 
