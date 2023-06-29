@@ -84,10 +84,29 @@
             height: 55px;
             background-repeat: no-repeat;
           }
+          .avenir {
+            position: absolute;
+            bottom: -1.5em;
+            right: 2em;
+            object-fit: cover;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-color: $orange;
+            border-radius: 100px;
+            height: 36px;
+            width: 73px;
+            color: black;
+            line-height: 32px;
+            font-size: 14px;
+            text-align: center;
+          }
         }
         &:hover {
           .play {
             background-image: url("play-hover.svg");
+          }
+          .avenir {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20)
           }
         }
         .webinaire-info {
@@ -100,56 +119,41 @@
   }
 
   .join-community {
-    padding: 6% 7%;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    div {
+    padding: 7%;
+    background-color: $hover-purple;
+    .spectral-title {
+      text-align: left;
+      margin-bottom: 55px !important;
       width: 50%;
-      .spectral-title {
-        text-align: left;
-        margin-bottom: 20px;
-      }
-      .paragraphe {
-        line-height: 25px;
-      }
-      .btn-purple {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .join-community-div {
+      justify-content: space-between;
+      align-items: center;
+      justify-content: space-around;
+      display: flex;
+      .expertise {
+        background-color: $white;
+        border-radius: 10px;
+        width: 35%;
+        height: 342px;
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
-        width: -webkit-fill-available;
-        width: fit-content;
-        margin-top: 30px;
-        &:hover {
-          background-color: $hover-purple !important;
-        }
-        img {
-          margin-right: 10px;
-        }
       }
-      .btn-orange-home {
-        justify-content: space-between;
-        margin-top: 30px;
-        &:hover {
-          background-color: $hover-orange !important;
-        }
+      .main-paragraphe-medium {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 34px;
+      }
+      .btn-black {
+        margin: 40px auto 20px auto;
+        font-size: 16px !important;
+        padding: 9px 26px 13px;
       }
     }
-    .img-community {
-      width: 40%;
-    }
-    .img-community.desk {
-      display: block;
-    }
-    .img-community.mob {
-      display: none;
-    }
-  }
-
-  .join-community.bck {
-    background-image: url(background-shadow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
   }
 
   .rencontre-inscription {
@@ -197,30 +201,7 @@
       }
     }
     .join-community {
-      display: block;
-      padding: 10% 7%;
-      div {
-        width: 100%;
-        .spectral-title {
-          margin-bottom: 40px;
-        }
-      }
-      .img-community {
-        width: 100%;
-      }
-      .img-community.desk {
-        display: none;
-      }
-      .img-community.mob {
-        display: block;
-        margin-bottom: 20px;
-      }
-      div .paragraphe {
-        text-align: left;
-      }
-    }
-    .join-community.bck {
-      padding-top: 20%;
+
     }
     .rencontre-inscription {
       .rencontre-inscription-div {
