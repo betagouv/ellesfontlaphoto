@@ -52,7 +52,7 @@
             <%= image_tag "money.png", alt: "image finance" %>
           </div>
           <p class="main-paragraphe-medium">Tarifs pratiqués par la communauté</p>
-          <a href="#" class="btn btn-black">consulter</a>
+          <%= link_to "consulter", conseils_article_path(ConseilsArticle.find(40)), class: "btn btn-black" %>
         </div>
       </div>
       <div class="expertise">
@@ -61,7 +61,7 @@
             <%= image_tag "digital-art.png", alt: "image art digital" %>
           </div>
           <p class="main-paragraphe-medium">Exemples de dossiers de candidature lauréats</p>
-          <a href="#" class="btn btn-black">consulter</a>
+          <%= link_to "consulter", conseils_article_path(ConseilsArticle.find(34)), class: "btn btn-black" %>
         </div>
       </div>
     </div>
