@@ -4,10 +4,12 @@ class ConseilsVideo < ApplicationRecord
   validate :correct_type_attachment
 
   validates :video, presence: true
+  validates :lecture_time, presence: true
+  validates :objectif, presence: true
 
   has_one :notation_conseils_video
 
-  acts_as_taggable_on :tags, :category
+  acts_as_taggable_on :category
 
   CONSEIL_CATEGORIES = [
     "promotion et commercial",
@@ -15,8 +17,6 @@ class ConseilsVideo < ApplicationRecord
     "artistiques et techniques",
     "égalité et inclusion",
   ]
-
-  CONSEIL_TAGS = ["Commencer mon activité", "Me former"]
 
   VIDEO_FORMAT = {
     "Verbatim": "Un jour, on m'a dit que…",

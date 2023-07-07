@@ -1,13 +1,5 @@
 ActiveAdmin.register ConseilsArticle do
-  permit_params :title, :subtitle, :category_list, :objectif, :iframe_url, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources, :tag_list
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :subtitle, :category, :objectif, :lecture_time, :introduction, :explication, :perspective, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources, :tag_list]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :title, :subtitle, :category_list, :objectif, :lecture_time, :introduction, :explication, :citation, :liens_utiles, :auteur, :citation_auteur, :a_retenir, :sources
 
   before_create do |conseils_article|
     categories = []
@@ -15,12 +7,10 @@ ActiveAdmin.register ConseilsArticle do
       categories << category
     end
     conseils_article.category_list = categories
-    conseils_article.tag_list = params["conseils_article"]["tag_list"]
   end
 
   before_update do |conseils_article|
     conseils_article.category_list = params["conseils_article"]["category_list"].reject{ |c| c.empty? }
-    conseils_article.tag_list = params["conseils_article"]["tag_list"]
   end
 
   filter :title
@@ -34,22 +24,19 @@ ActiveAdmin.register ConseilsArticle do
 
   show do
     attributes_table do
+      row :category_list
       row :title
       row :subtitle
-      row :category_list
-      row :tag_list
-      row :objectif
       row :lecture_time
+      row :objectif
       row :introduction
+      row :a_retenir
       row :explication
-      row :perspective
-      row :iframe_url
       row :citation
       row :citation_auteur
       row :liens_utiles
-      row :auteur
-      row :a_retenir
       row :sources
+      row :auteur
     end
   end
 
@@ -60,27 +47,13 @@ ActiveAdmin.register ConseilsArticle do
   end
 
   index do
-    id_column
+    column :id
     column :title
     column :subtitle
-    column :auteur
     column :objectif
+    column :auteur
     column :created_at
     column :updated_at
-    column :utile, sortable: 'notation_conseils_article.utile' do |conseils_article|
-      if NotationConseilsArticle.find_by(conseils_article: conseils_article)
-        NotationConseilsArticle.find_by(conseils_article: conseils_article).utile
-      else
-        0
-      end
-    end
-    column :inutile, sortable: 'notation_conseils_article.inutile' do |conseils_article|
-      if NotationConseilsArticle.find_by(conseils_article: conseils_article)
-        NotationConseilsArticle.find_by(conseils_article: conseils_article).inutile
-      else
-        0
-      end
-    end
     actions
   end
 
@@ -89,8 +62,6 @@ ActiveAdmin.register ConseilsArticle do
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
-      f.input :tag_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_TAGS, label: "List Tags"
       f.input :title, label: "Titre"
       f.input :subtitle, label: "Sous titre"
       f.input :lecture_time, label: "Temps de Lecture (chiffre)"
@@ -99,15 +70,13 @@ ActiveAdmin.register ConseilsArticle do
     f.inputs "Introduction" do
       f.input :introduction, as: :quill_editor
     end
-    f.inputs "En détails" do
-      f.input :explication, as: :quill_editor
-      f.input :perspective, as: :quill_editor
-      f.input :iframe_url
-      f.input :citation, as: :quill_editor
-      f.input :citation_auteur, label: "Autrice/eur de la citation"
-    end
     f.inputs "A retenir" do
       f.input :a_retenir, as: :quill_editor, label: "A retenir"
+    end
+    f.inputs "En détails" do
+      f.input :explication, as: :quill_editor
+      f.input :citation, as: :quill_editor
+      f.input :citation_auteur, label: "Autrice/eur de la citation"
     end
     f.inputs "Liens utiles" do
       f.input :liens_utiles, as: :quill_editor, label: "Liens Utiles (⚠️: FAIRE UNE LISTE ICI)"
@@ -121,23 +90,20 @@ ActiveAdmin.register ConseilsArticle do
 
 
   csv do
+    column(:category_list) { |conseils_article| conseils_article.category.map { |c| c.name } }
     column :title
     column :subtitle
-    column(:tag_list) { |conseils_article| conseils_article.tags.map { |c| c.name } }
-    column(:category_list) { |conseils_article| conseils_article.category.map { |c| c.name } }
-    column :objectif
     column :lecture_time
+    column :objectif
     column :introduction
-    column :explication
-    column :perspective
-    column :citation
     column :a_retenir
+    column :explication
+    column :citation
+    column :citation_auteur
+    column :liens_utiles
+    column :sources
     column :auteur
     column :created_at
     column :updated_at
-    column :citation_auteur
-    column :sources
-    column :liens_utiles
-    column :iframe_url
   end
 end

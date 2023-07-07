@@ -47,7 +47,7 @@ ActiveAdmin.register Help do
       row :help_amount
       row :general_condition
       row :residence_condition
-      row :permanent, "Permanent"
+      row "Permanent", :permanent
       panel "dates de candidatures" do
         table_for help.candidature_dates do
           column "dates début" do |date|

@@ -123,38 +123,6 @@
         }
       }
     }
-    .info-contenu-div-conseil {
-      margin: 0;
-      grid-column-start: 3;
-      grid-row-start: 2;
-      background-color: $purple;
-      padding: 22px 22px 35px 22px;
-      border-radius: 16px;
-      max-height: 300px;
-      .info-contenu-conseil {
-        color: $black;
-        text-align: center !important;
-        margin-bottom: 40px;
-      }
-
-      div {
-        margin-bottom: 30px;
-
-        .button-contenu-conseil {
-          margin: 0 auto !important;
-          background-color: $white;
-          padding: 11px 19.5px;
-          border-radius: 50px;
-          font-size: 14px;
-          color: $black !important;
-          white-space: nowrap;
-
-          &:hover {
-            opacity: 80%;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -261,10 +229,6 @@
     padding: 5% 5% 3% 5%;
     .cards {
       .info-contenu-div-help {
-        grid-column-start: 1;
-        grid-row-start: 6;
-      }
-      .info-contenu-div-conseil {
         grid-column-start: 1;
         grid-row-start: 6;
       }

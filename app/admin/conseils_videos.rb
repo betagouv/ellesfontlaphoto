@@ -1,6 +1,6 @@
 ActiveAdmin.register ConseilsVideo do
 
-  permit_params :title, :subtitle, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :video, :image, :category_list, :type_list
+  permit_params :title, :subtitle, :format, :objectif, :lecture_time, :contenu_explication, :liens_utiles, :protagoniste, :video, :image, :category_list
 
   before_create do |conseils_video|
     categories = []
@@ -8,7 +8,6 @@ ActiveAdmin.register ConseilsVideo do
       categories << category
     end
     conseils_video.category_list = categories
-    conseils_video.tag_list = params["conseils_video"]["tag_list"]
     if params["conseils_video"]["video"].present?
       conseils_video.video = params["conseils_video"]["video"]
     end
@@ -23,7 +22,6 @@ ActiveAdmin.register ConseilsVideo do
       categories << category
     end
     conseils_video.category_list = categories
-    conseils_video.tag_list = params["conseils_video"]["tag_list"]
     if params["conseils_video"]["video"].present?
       conseils_video.video = params["conseils_video"]["video"]
     end
@@ -32,11 +30,10 @@ ActiveAdmin.register ConseilsVideo do
     end
   end
 
-  filter :title
-  filter :tags
   filter :category_list
-  filter :protagoniste
+  filter :title
   filter :objectif
+  filter :protagoniste
   filter :created_at
   filter :updated_at
 
@@ -48,43 +45,27 @@ ActiveAdmin.register ConseilsVideo do
 
   index do
     id_column
+    column :category_list
     column :title
-    column :subtitle
     column :objectif
+    column :subtitle
     column :protagoniste
     column :created_at
     column :updated_at
-    column :category_list
-    column :tag_list
-    column :utile, sortable: 'notation_conseils_video.utile' do |conseils_video|
-      if NotationConseilsVideo.find_by(conseils_video: conseils_video)
-        NotationConseilsVideo.find_by(conseils_video: conseils_video).utile
-      else
-        0
-      end
-    end
-    column :inutile, sortable: 'notation_conseils_video.inutile' do |conseils_video|
-      if NotationConseilsVideo.find_by(conseils_video: conseils_video)
-        NotationConseilsVideo.find_by(conseils_video: conseils_video).inutile
-      else
-        0
-      end
-    end
     actions
   end
 
   show do
     attributes_table do
-      row :title
-      row :subtitle
       row :category_list
-      row :format
-      row :objectif
+      row :title
       row :lecture_time
+      row :objectif
+      row :format
+      row :subtitle
+      row :protagoniste
       row :contenu_explication
       row :liens_utiles
-      row :protagoniste
-      row :tag_list
     end
   end
 
@@ -93,13 +74,18 @@ ActiveAdmin.register ConseilsVideo do
     f.inputs "Bandeau" do
       f.input :category_list, :as => :check_boxes, \
         :collection => ConseilsVideo::CONSEIL_CATEGORIES, label: "Categorie List"
-      f.input :tag_list, :as => :check_boxes, \
-        :collection => ConseilsVideo::CONSEIL_TAGS
       f.input :title, label: "Titre"
-      f.input :format, as: :select, collection: ConseilsVideo::VIDEO_FORMAT.keys
-      f.input :protagoniste
       f.input :lecture_time, label: "Temps de Lecture"
       f.input :objectif
+      f.input :format, as: :select, collection: ConseilsVideo::VIDEO_FORMAT.keys
+      f.input :subtitle, label: "Description"
+    end
+    f.inputs "Contenu" do
+      f.input :protagoniste
+      f.input :contenu_explication, as: :quill_editor, label: "Contenu explication"
+    end
+    f.inputs "Liens utiles" do
+      f.input :liens_utiles, as: :quill_editor, label: "Liens utiles"
     end
     f.inputs "Multimedias" do
       if f.object.video.attached?
@@ -113,31 +99,20 @@ ActiveAdmin.register ConseilsVideo do
         f.input :image, as: :file, label: "Image (dans le catalogue)"
       end
     end
-    f.inputs "Description" do
-      f.input :subtitle, label: "Description"
-    end
-    f.inputs "Protagoniste" do
-      f.input :contenu_explication, as: :quill_editor, label: "Contenu explication"
-    end
-    f.inputs "Liens utiles" do
-      f.input :liens_utiles, as: :quill_editor, label: "Liens utiles"
-    end
     f.actions
   end
 
   csv do
-    column :title
-    column :subtitle
-    column(:tag_list) { |conseils_video| conseils_video.tags.map { |c| c.name } }
     column(:category_list) { |conseils_video| conseils_video.category.map { |c| c.name } }
-    column :format
-    column :objectif
+    column :title
     column :lecture_time
-    column :contenu_explication
+    column :objectif
+    column :format
+    column :subtitle
     column :protagoniste
+    column :contenu_explication
+    column :liens_utiles
     column :created_at
     column :updated_at
-    column :liens_utiles
   end
 end
-

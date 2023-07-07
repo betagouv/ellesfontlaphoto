@@ -11,13 +11,6 @@
     <% @conseil_article.category_list.each do |category| %>
       <a href="/ressources?category_list=<%= category %>"><p class="fiche-tag"><%= category %></p></a>
     <% end %>
-    <div class="d-none">
-      <% @conseil_article.tag_list.each do |tag| %>
-        <%= link_to ressources_path do %>
-          <p class="fiche-tag"><%= tag %></p>
-        <% end %>
-      <% end %>
-    </div>
   </div>
   <div class="banner-show">
     <div class="fiche-title">
@@ -49,12 +42,6 @@
   <div class="block-conseils-article">
     <p class="subtitle">En détails</p>
     <div class="paragraphe lh28"><%= @conseil_article.explication.html_safe %></div>
-    <div class="paragraphe lh28"><%= @conseil_article.perspective.html_safe %></div>
-    <% if @conseil_article.iframe_url.present? %>
-      <div class="iframe-conseil-article">
-        <iframe width="100%" height="500" src="<%= @conseil_article.iframe_url %>" frameborder="0" style="max-width:100%" allowfullscreen allowtransparency allow="geolocation; camera; accelerometer; gyroscope; magnetometer; fullscreen"></iframe>
-      </div>
-    <% end %>
     <div class="quote">
       <div class="paragraphe-spectral-italic">
         <%= @conseil_article.citation.html_safe %>
