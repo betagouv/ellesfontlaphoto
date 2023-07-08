@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_02_090851) do
+ActiveRecord::Schema.define(version: 2023_07_07_213155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,7 +177,6 @@ ActiveRecord::Schema.define(version: 2023_06_02_090851) do
     t.integer "lecture_time"
     t.text "introduction"
     t.text "explication"
-    t.text "perspective"
     t.text "citation"
     t.text "a_retenir"
     t.string "auteur"
@@ -186,7 +185,6 @@ ActiveRecord::Schema.define(version: 2023_06_02_090851) do
     t.string "citation_auteur"
     t.string "sources"
     t.string "liens_utiles"
-    t.string "iframe_url"
   end
 
   create_table "conseils_videos", force: :cascade do |t|
@@ -376,12 +374,8 @@ ActiveRecord::Schema.define(version: 2023_06_02_090851) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "sous_titre"
-    t.boolean "page_rencontre"
     t.string "participant"
     t.string "url_inscription"
-    t.boolean "show_date"
-    t.boolean "show_visio"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

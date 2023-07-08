@@ -2,7 +2,7 @@ class ConseilsPratiquesController < ApplicationController
   def index
     @conseil_articles = ConseilsArticle.all
     @conseil_videos = ConseilsVideo.all
-    @webinaires = Webinaire.tagged_with("webinaire").where("date <= ? OR page_rencontre = ?", Date.today, false).order(:date)
+    @webinaires = Webinaire.tagged_with("webinaire").where("date <= ?", Date.today).order(:date)
     @contact = Contact.new
     @total_count = @conseil_articles.length + @conseil_videos.length + @webinaires.length
     unless @conseil_articles.empty? || @conseil_videos.empty?
@@ -28,13 +28,6 @@ class ConseilsPratiquesController < ApplicationController
         b.created_at <=> a.created_at
       end
     end
-    # if params[:tag_list].present?
-    #   @conseil_articles = @conseil_articles.tagged_with(params[:tag_list])
-    #   @conseil_videos = @conseil_videos.tagged_with(params[:tag_list])
-    #   @conseils = @conseil_articles + @conseil_videos
-    #   @selected_tag = params[:tag_list]
-    #   @searched = true
-    # end
     respond_to do |format|
       format.html
       format.text { render partial: 'main_index_conseils', locals: { conseils: @conseils, last_date_updated: @last_date_updated }, formats: [:html] }
